@@ -9,7 +9,7 @@ Repo: github.com/NoelM74/sunnie-website (public)
 The whole project is three sub-projects, built in order:
 
 1. **Storefront (this spec).** Catalog site: every product has its own page with a "Buy on Etsy" button.
-2. **Cart + PayPal checkout.** Replaces the Etsy buttons with add to cart. Separate spec. Also covers shipping rates, terms of sale, EU 14-day withdrawal right, order emails, stock sync with Etsy.
+2. **Cart + PayPal checkout.** Replaces the Etsy buttons with add to cart. Separate spec. Also covers shipping rates, terms of sale, EU 14-day withdrawal right, order emails, stock sync with Etsy, and products from other makers (Etsy won't allow those, so they can only be sold once site checkout exists).
 3. **Extras.** Newsletter, per-product reviews, gift cards. Separate spec.
 
 Out of scope for Phase 1: cart, payments, newsletter signup, contact form backend, any login or admin UI.
@@ -17,7 +17,10 @@ Out of scope for Phase 1: cart, payments, newsletter signup, contact form backen
 ## 2. Brand
 
 - Name: **Sunnie Designs**. Etsy shop is SunnieDesignCo.
-- People: Hui (maker, designer) and Nollaig (runs the shop). Maker line everywhere: **"Handmade by Hui"**. Never state a country of manufacture.
+- People: Hui (maker, designer) and Nollaig (runs the shop). Never state a country of manufacture.
+- Makers: all current pieces are by Hui. The business plans to add curated bags and hats from other makers later. The site-wide maker line lives in one setting (`src/data/site.ts` → `makerLine`), which reads **"Handmade by Hui"** at launch. Each product also names its own maker.
+- Other sales channels: Etsy (★ 4.9, Star Seller) and eBay (100% positive, 250+ feedback; machine-knit bags at lower prices). The site cites the eBay feedback count but never links to the eBay store.
+- Email (placeholders until the mailboxes exist): `hello@sunniedesigns.com` for Contact, footer and Shipping; `hui@sunniedesigns.com` on Our story. Both are set in `src/data/site.ts`.
 - Palette, type scale, button states, focus rings and component styles follow the "Morning Sun" spec supplied by the owner. Key tokens:
   - Linen `#FBF6EE` (page), Sand `#F3E7D3` (cards), Sand-hover `#EAD9BC`, Butter `#F0E2C4` (badges)
   - Umber `#4A3222` (body text), Umber-muted `#7A6855` (meta)
@@ -44,7 +47,7 @@ Header nav: **Bags · Coasters · Our story · Shop all**, with the logo on the 
 | Hats | `/shop/hats/` | Grid (not in nav yet) |
 | Product | `/products/<slug>/` | Gallery, name, price, options, description, materials, size, Buy on Etsy button, 4 related products from the same category/group |
 | Our story | `/our-story/` | Hui and Nollaig, how pieces are made |
-| Reviews | `/reviews/` | All Etsy reviews; German ones shown with an English translation underneath |
+| Reviews | `/reviews/` | All Etsy reviews except "noel francis"; German ones shown with an English translation underneath. A line above them links the eBay feedback count as text only |
 | Shipping & returns | `/shipping/` | Ships in 3–7 days; returns handled via Etsy while orders go through Etsy |
 | Care guide | `/care/` | Washing and care for crochet pieces |
 | Contact | `/contact/` | Email link only |
@@ -54,8 +57,12 @@ Header nav: **Bags · Coasters · Our story · Shop all**, with the logo on the 
 ### Homepage sections
 
 1. Sticky header
-2. Hero: headline "Made by hand. Made to keep.", one sentence, primary button "Shop bags", ghost link "Our story". Hero photo is the **Poodle crossbody bag**. This image is the LCP element.
-3. Trust bar: "Ships in 3–7 days" · "★ 4.9 from Etsy buyers" · "Etsy Star Seller" · "Handmade by Hui"
+2. Hero. Hero photo is the **Poodle crossbody bag**; this image is the LCP element.
+   - H1: **"So cute you'll grin. Sturdy enough to carry every day."**
+   - Subhead: "Crochet phone bags, totes and coasters, each one made by hand by Hui. Rated 4.9 on Etsy and 100% positive by 250+ eBay buyers."
+   - Primary button **"Find your bag"** (→ `/shop/bags/`); ghost link "Meet Hui" (→ `/our-story/`).
+   - When other makers join, the subhead's maker clause changes via `makerLine`; the H1 stays.
+3. Trust bar: "Ships in 3–7 days" · "★ 4.9 on Etsy · Star Seller" · "100% positive from 250+ eBay buyers" · `makerLine`
 4. Bestsellers, exactly four, no carousel, in this order:
    1. Frog phone crossbody, kawaii green character bag (Pink / Blue / Brown)
    2. Crochet sunflower drawstring backpack (Regular / Dark green)
@@ -63,7 +70,12 @@ Header nav: **Bags · Coasters · Our story · Shop all**, with the logo on the 
    4. Crochet crossbody phone bag with tassel (Off white / Khaki)
 5. Story: hands-at-work photo and three sentences
 6. Categories: tiles for Bags and Coasters. A Hats tile appears once there are 4+ hats.
-7. Reviews: three quotes chosen for durability and gifting, e.g. hexfeather, Hannah, and noel francis
+7. Reviews: three quotes, all 5★ Etsy reviews:
+   - hexfeather (sturdy)
+   - Hannah (fits phone and Kindle)
+   - Antje-Susan, 06/02/2026, repeat buyer, shown in English translation: "Very friendly seller, super-fast shipping and an absolutely unique, beautiful little bag. That was already my second purchase."
+   
+   **Exclude the review by "noel francis" everywhere on the site** (it was left by a friend of the owners).
 8. Newsletter: **omitted in Phase 1**
 9. Footer on sand: page links, Etsy shop link, social links, © line
 
@@ -84,6 +96,7 @@ group: characters | flowers | totes   # required when category is bags
 price: number                # EUR
 inStock: boolean
 etsyUrl: url
+maker: string                # "Hui" for all current products
 options?: [{ name: string, values: string[] }]
 materials: string[]
 size?: string
@@ -108,7 +121,7 @@ The body is the product description as Markdown.
 - Materials wording: check every listing that says "wool" against what the piece actually contains. The only 3-star review was about this.
 - Etsy listing URLs are not in the CSV. Collect them from the public shop page (etsy.com/shop/SunnieDesignCo) and match them by title. Fallback: the owner pastes them from Shop Manager.
 
-Reviews go in `src/data/reviews.json`, adding an `en` translation field for German entries.
+Reviews go in `src/data/reviews.json`, adding an `en` translation field for German entries. The import script drops the "noel francis" review.
 
 ### Updating after launch
 
@@ -173,3 +186,15 @@ The owner describes changes in chat ("frog bag sold out", "new bunny bag, photos
 - The build is the main test: schema validation catches bad product data.
 - `scripts/check-links.mjs` checks every `etsyUrl` and internal link. Run before launch and on demand.
 - Lighthouse CI run locally before launch.
+
+## 11. Skills applied during the build
+
+| Stage | Skills |
+|---|---|
+| Plan | `site-architecture`, `page-cro` |
+| Logo, favicon, OG images | `brand-visuals` |
+| Build pages | `frontend-design`, `make-interfaces-feel-better` |
+| Copy | `copywriting`, `ogilvy-copywriting`, `copy-editing` (product descriptions), `stop-slop` on all text |
+| SEO | `schema-markup`, `seo-audit` (pre-launch) |
+| Performance and hosting | `cloudflare:web-perf`, `cloudflare:wrangler`, `cloudflare:workers-best-practices` |
+| QA | `design:accessibility-review`, `web-design-guidelines`, `design-review`, `qa`, `benchmark` |
