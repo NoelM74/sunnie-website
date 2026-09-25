@@ -9,7 +9,8 @@ etsyUrl: "https://www.etsy.com/listing/4467412712/3d-flower-crochet-phone-bag-su
 maker: "Hui"
 options: [{"name":"Colour","values":["Rose","Sunflower"]}]
 materials: ["Wool"]
-images: [{"src":"../../assets/products/3d-flower-crochet-phone-bag/01.jpg","alt":"3D flower crochet phone bag"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/02.jpg","alt":"3D flower crochet phone bag, photo 2 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/03.jpg","alt":"3D flower crochet phone bag, photo 3 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/04.jpg","alt":"3D flower crochet phone bag, photo 4 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/05.jpg","alt":"3D flower crochet phone bag, photo 5 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/06.jpg","alt":"3D flower crochet phone bag, photo 6 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/07.jpg","alt":"3D flower crochet phone bag, photo 7 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/08.jpg","alt":"3D flower crochet phone bag, photo 8 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/09.jpg","alt":"3D flower crochet phone bag, photo 9 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/10.jpg","alt":"3D flower crochet phone bag, photo 10 of 10"}]
+size: "W 12 × H 18 × D 1 cm, strap 110 cm"
+images: [{"src":"../../assets/products/3d-flower-crochet-phone-bag/01.jpg","alt":"Crochet phone bags with a 3D sunflower and a 3D rose, side by side"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/02.jpg","alt":"Cream crochet phone bag with a large pink 3D rose and green leaves"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/03.jpg","alt":"Cream crochet phone bag with a large yellow 3D sunflower and stem"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/04.jpg","alt":"3D flower crochet phone bag, photo 4 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/05.jpg","alt":"3D flower crochet phone bag, photo 5 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/06.jpg","alt":"3D flower crochet phone bag, photo 6 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/07.jpg","alt":"3D flower crochet phone bag, photo 7 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/08.jpg","alt":"3D flower crochet phone bag, photo 8 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/09.jpg","alt":"3D flower crochet phone bag, photo 9 of 10"},{"src":"../../assets/products/3d-flower-crochet-phone-bag/10.jpg","alt":"3D flower crochet phone bag, photo 10 of 10"}]
 ---
 
 A handmade crochet phone bag with a large 3D sculptural flower on the front. Available in yellow sunflower or pink rose on a cream base. Fits phones up to 6.5 inches.
@@ -36,5 +37,4 @@ Care Instructions:
 - Spot clean with a damp cloth for minor marks.
 
 SHIPPING:
-Made and shipped within 2–5 business days. Tracking provided.
-All taxes and tariffs are included in the price, so no nasty surprises when your bag arrives
+Made and shipped within 2 to 5 business days. Tracking provided.

@@ -9,7 +9,8 @@ etsyUrl: "https://www.etsy.com/listing/4467407026/crochet-bunny-crossbody-bag-pi
 maker: "Hui"
 options: []
 materials: ["Wool"]
-images: [{"src":"../../assets/products/bunny-crossbody-bag/01.jpg","alt":"Bunny crossbody bag"},{"src":"../../assets/products/bunny-crossbody-bag/02.jpg","alt":"Bunny crossbody bag, photo 2 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/03.jpg","alt":"Bunny crossbody bag, photo 3 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/04.jpg","alt":"Bunny crossbody bag, photo 4 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/05.jpg","alt":"Bunny crossbody bag, photo 5 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/06.jpg","alt":"Bunny crossbody bag, photo 6 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/07.jpg","alt":"Bunny crossbody bag, photo 7 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/08.jpg","alt":"Bunny crossbody bag, photo 8 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/09.jpg","alt":"Bunny crossbody bag, photo 9 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/10.jpg","alt":"Bunny crossbody bag, photo 10 of 10"}]
+size: "W 12 × H 29 × D 1 cm, strap 116 cm"
+images: [{"src":"../../assets/products/bunny-crossbody-bag/01.jpg","alt":"Pink crochet bunny bag with rainbow striped body and carrot in hand, hanging"},{"src":"../../assets/products/bunny-crossbody-bag/02.jpg","alt":"Pink crochet bunny bag, front view showing mouth opening and mushroom charm"},{"src":"../../assets/products/bunny-crossbody-bag/03.jpg","alt":"Pink crochet bunny bag worn crossbody from behind"},{"src":"../../assets/products/bunny-crossbody-bag/04.jpg","alt":"Bunny crossbody bag, photo 4 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/05.jpg","alt":"Bunny crossbody bag, photo 5 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/06.jpg","alt":"Bunny crossbody bag, photo 6 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/07.jpg","alt":"Bunny crossbody bag, photo 7 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/08.jpg","alt":"Bunny crossbody bag, photo 8 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/09.jpg","alt":"Bunny crossbody bag, photo 9 of 10"},{"src":"../../assets/products/bunny-crossbody-bag/10.jpg","alt":"Bunny crossbody bag, photo 10 of 10"}]
 ---
 
 A handmade crochet bunny bag you open through the mouth. The rainbow-striped wool body holds your phone, cards, and daily essentials on a 116 cm adjustable strap.
@@ -39,5 +40,4 @@ Do not tumble dry as heat shrinks wool yarn.
 Reshape gently while still damp.
 
 SHIPPING:
-Made and shipped within 2–5 business days. Tracking provided.
-All taxes and tariffs are included in the price, so no nasty surprises when your bag arrives.
+Made and shipped within 2 to 5 business days. Tracking provided.

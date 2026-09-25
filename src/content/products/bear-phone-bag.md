@@ -9,7 +9,8 @@ etsyUrl: "https://www.etsy.com/listing/4541827924/crochet-bear-phone-bag-striped
 maker: "Hui"
 options: [{"name":"Colour","values":["Light Brown","Dark Brown"]}]
 materials: ["Polyester"]
-images: [{"src":"../../assets/products/bear-phone-bag/01.jpg","alt":"Bear phone bag"},{"src":"../../assets/products/bear-phone-bag/02.jpg","alt":"Bear phone bag, photo 2 of 10"},{"src":"../../assets/products/bear-phone-bag/03.jpg","alt":"Bear phone bag, photo 3 of 10"},{"src":"../../assets/products/bear-phone-bag/04.jpg","alt":"Bear phone bag, photo 4 of 10"},{"src":"../../assets/products/bear-phone-bag/05.jpg","alt":"Bear phone bag, photo 5 of 10"},{"src":"../../assets/products/bear-phone-bag/06.jpg","alt":"Bear phone bag, photo 6 of 10"},{"src":"../../assets/products/bear-phone-bag/07.jpg","alt":"Bear phone bag, photo 7 of 10"},{"src":"../../assets/products/bear-phone-bag/08.jpg","alt":"Bear phone bag, photo 8 of 10"},{"src":"../../assets/products/bear-phone-bag/09.jpg","alt":"Bear phone bag, photo 9 of 10"},{"src":"../../assets/products/bear-phone-bag/10.jpg","alt":"Bear phone bag, photo 10 of 10"}]
+size: "W 11 × H 20 × D 2 cm, strap 104 cm"
+images: [{"src":"../../assets/products/bear-phone-bag/01.jpg","alt":"Brown crochet bear phone bag with striped scarf, worn crossbody from behind"},{"src":"../../assets/products/bear-phone-bag/02.jpg","alt":"Brown crochet bear phone bag with teal satchel pocket, close up worn crossbody"},{"src":"../../assets/products/bear-phone-bag/03.jpg","alt":"Brown crochet bear phone bag worn crossbody, side view"},{"src":"../../assets/products/bear-phone-bag/04.jpg","alt":"Bear phone bag, photo 4 of 10"},{"src":"../../assets/products/bear-phone-bag/05.jpg","alt":"Bear phone bag, photo 5 of 10"},{"src":"../../assets/products/bear-phone-bag/06.jpg","alt":"Bear phone bag, photo 6 of 10"},{"src":"../../assets/products/bear-phone-bag/07.jpg","alt":"Bear phone bag, photo 7 of 10"},{"src":"../../assets/products/bear-phone-bag/08.jpg","alt":"Bear phone bag, photo 8 of 10"},{"src":"../../assets/products/bear-phone-bag/09.jpg","alt":"Bear phone bag, photo 9 of 10"},{"src":"../../assets/products/bear-phone-bag/10.jpg","alt":"Bear phone bag, photo 10 of 10"}]
 ---
 
 This hand crocheted bear phone bag has a striped scarf and a little satchel pocket stitched onto its front, made for kids and adults who like a cute character bag.
@@ -40,5 +41,4 @@ Care:
 Hand wash in cool or lukewarm water, below 40C. Lay flat to dry and keep it out of strong sun for long periods so the colours don't fade.
 
 Shipping:
-All taxes and tariffs are included in the price, so there's no surprise cost when your bag arrives.
-Ships with tracking!
+Ships with tracking.
