@@ -27,7 +27,7 @@ Character Design Details:
 - Yellow version: Yellow fuzzy body, blue wings, pink mouth, yellow antennae, yellow arms and legs, brown feet.
 - Pink version: Pink fuzzy body, gray wings, orange mouth, small gray horns, peach arms, purple and green striped boots.
 - Strap: Braided cord in matching color. 102 cm (40.2 in) adjustable for crossbody or shoulder wear.
-- What Fits Inside Fits smartphones up to 6.5 inches, a flat cardholder, lip gloss, and small items like earbuds or a hand sanitizer. This is a compact carry pouch, not a full-size purse — the mouth opening is the only entry point.
+- What fits inside: smartphones up to 6.5 inches, a flat cardholder, lip gloss, and small items like earbuds or a hand sanitizer. This is a compact carry pouch, not a full-size purse. The mouth opening is the only entry point.
 
 Dimensions Width 11 cm, Height 31 cm (including all features), Depth 1 cm, Strap 102 cm Weight: 0.08 kg (2.8 oz).
  Measurements may vary 1 to 3 cm.

@@ -24,7 +24,7 @@ Product Details:
 - Texture: Loop-stitch fuzzy yarn gives the body a soft, dense, plush surface that holds its shape after wear.
 - Face: Two black safety eyes, large crocheted black nose centered on the face.
 - Ears: Two floppy side ears crocheted and attached at each side of the body, extending the silhouette.
-- Opening: Open top — items sit inside and access is from above.
+- Opening: Open top, items sit inside and access is from above.
 - Strap: Adjustable brown PU leather strap with metal ring attachment and knotted length adjustment. 120 cm (47.2 in).
 - Capacity: Fits a phone up to 6.5 inches alongside a small notebook, travel-sized bottle, and cardholder as seen in the product photo.
 - Weight: 0.11 kg (3.9 oz).

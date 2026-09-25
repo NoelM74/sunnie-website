@@ -16,7 +16,7 @@ images: [{"src":"../../assets/products/monster-phone-bag/01.jpg","alt":"Blue cro
 A handmade crochet phone bag that fits up to a 6.7-inch smartphone. Crocheted from soft blue chenille with a smiling monster face and braided yellow-brown strap.
 
 How to Use/Style:
-- Sling it crossbody over casual outfits, concert tees, or festival looks — the character design does the talking.
+- Sling it crossbody over casual outfits, concert tees, or festival looks. The character design does the talking.
 - Tuck a cardholder and your phone inside for a minimal carry on errand days.
 - The braided yellow-and-brown strap pops against neutral tones for a dopamine dressing effect.
 

@@ -17,7 +17,7 @@ This handmade crochet dog crossbody bag has a chunky knit body, floppy contrast 
 
 Inside, it's roomy enough for a phone, lipstick, tissues, keys, or a bus card, so it holds up as a real bag rather than just a display piece. For kids, it doubles as a coin purse or a spot to stash small toys and treats.
 
-It's genuinely light to wear too — no shoulder strain even with the strap fully loaded.
+It's genuinely light to wear too, with no shoulder strain even with the strap fully loaded.
 
 Comes in two colourways: sunny yellow with black ears and tail, or khaki with dark brown ears and tail. Both share the same chunky, hand-crocheted body and floppy ear shape, just a different coat of yarn.
 
