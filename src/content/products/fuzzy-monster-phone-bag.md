@@ -11,33 +11,19 @@ options: [{"name":"Colour","values":["Pink","Yellow"]}]
 materials: ["Polyester"]
 size: "W 11 × H 31 × D 1 cm, strap 102 cm"
 images: [{"src":"../../assets/products/fuzzy-monster-phone-bag/01.jpg","alt":"Pink and yellow fuzzy crochet monster bags with wings, side by side"},{"src":"../../assets/products/fuzzy-monster-phone-bag/02.jpg","alt":"Yellow fuzzy crochet monster bag worn crossbody, held next to a phone"},{"src":"../../assets/products/fuzzy-monster-phone-bag/03.jpg","alt":"Pink fuzzy crochet monster bag hanging by its crossbody strap"},{"src":"../../assets/products/fuzzy-monster-phone-bag/04.jpg","alt":"Fuzzy monster phone bag, photo 4 of 10"},{"src":"../../assets/products/fuzzy-monster-phone-bag/05.jpg","alt":"Fuzzy monster phone bag, photo 5 of 10"},{"src":"../../assets/products/fuzzy-monster-phone-bag/06.jpg","alt":"Fuzzy monster phone bag, photo 6 of 10"},{"src":"../../assets/products/fuzzy-monster-phone-bag/07.jpg","alt":"Fuzzy monster phone bag, photo 7 of 10"},{"src":"../../assets/products/fuzzy-monster-phone-bag/08.jpg","alt":"Fuzzy monster phone bag, photo 8 of 10"},{"src":"../../assets/products/fuzzy-monster-phone-bag/09.jpg","alt":"Fuzzy monster phone bag, photo 9 of 10"},{"src":"../../assets/products/fuzzy-monster-phone-bag/10.jpg","alt":"Fuzzy monster phone bag, photo 10 of 10"}]
+faq: [{"q":"Will my phone fit?","a":"Phones up to 6.5 inches fit, with room for a cardholder, lip gloss and earbuds."},{"q":"How do I wash it?","a":"Hand wash or a gentle cold machine cycle below 40°C, washed separately, then lay flat to dry. It may shed a little fluff on the first wash."},{"q":"Can I wear it two ways?","a":"Yes. The 102 cm strap adjusts for crossbody or shoulder wear."}]
 ---
 
-A handmade crochet phone bag with a fuzzy plush body and dragonfly-style wings. Opens through the wide crocheted mouth. Available in yellow or pink with colorful mismatched limbs.
+A shaggy little monster with dragonfly wings that opens through its own mouth, so getting your phone out takes one reach, not a zip fight.
 
-How to Use/Style:
-- Wear it crossbody over a hoodie or oversized tee. The fluffy body and dangling legs move when you walk, which is half the appeal.
-- Take it to a convention, festival, or themed event. It photographs well and gets attention in person.
-- Style the yellow version against earth tones for contrast, or the pink version with neutrals for a soft Y2K look.
+Hui crochets the body from fuzzy plush yarn for a shaggy, soft texture, then attaches flat dragonfly wings to each side and finishes the face with oversized eyes and a wide open mouth in contrast yarn.
 
-Character Design Details:
-- Body: Fuzzy plush-style yarn gives the torso a shaggy, soft texture that stands out from standard crocheted bags.
-- Wings: Dragonfly-style wings crocheted in flat panels and attached on each side. Blue on the yellow version, gray on the pink version.
-- Face: Large crocheted eyes with white pupils and black safety eye centers. Wide open mouth edged in contrast yarn serves as the bag entry.
-- Yellow version: Yellow fuzzy body, blue wings, pink mouth, yellow antennae, yellow arms and legs, brown feet.
-- Pink version: Pink fuzzy body, gray wings, orange mouth, small gray horns, peach arms, purple and green striped boots.
-- Strap: Braided cord in matching color. 102 cm (40.2 in) adjustable for crossbody or shoulder wear.
-- What fits inside: smartphones up to 6.5 inches, a flat cardholder, lip gloss, and small items like earbuds or a hand sanitizer. This is a compact carry pouch, not a full-size purse. The mouth opening is the only entry point.
+- **Mouth-opening entry:** no zip or clasp, just reach in.
+- **Fits phones up to 6.5 inches:** plus a flat cardholder, lip gloss and earbuds.
+- **102 cm adjustable strap:** braided cord in a matching colour, worn crossbody or on the shoulder.
+- **Two colourways:** yellow with blue wings and yellow limbs, or pink with grey wings and striped boots.
+- **About 80 g:** barely there on your shoulder.
 
-Dimensions Width 11 cm, Height 31 cm (including all features), Depth 1 cm, Strap 102 cm Weight: 0.08 kg (2.8 oz).
- Measurements may vary 1 to 3 cm.
+It's built for anyone who wants to be noticed at a festival, convention or themed event, and just as fun as a daily bag for a shaggy bit of personality.
 
-Care Instructions:
-- Hand wash or gentle machine wash cold, below 40°C (104°F).
-- Wash separately to prevent color bleeding.
-- Fuzzy yarn may release a small amount of fluff when first washed. Avoid washing with lint-prone fabrics.
-- Lay flat to air dry. Do not tumble dry.
-
-SHIPPING:
-Made and shipped within 2–5 business days. Tracking provided.
-All taxes and tariffs are included in the price, so no nasty surprises when your bag arrives.
+*W 11 cm, H 31 cm including the wings and legs, D 1 cm, strap 102 cm. Hand crocheted, so allow 1 to 3 cm either way.*

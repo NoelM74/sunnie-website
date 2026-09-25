@@ -11,28 +11,19 @@ options: [{"name":"Colour","values":["Blue","Yellow"]}]
 materials: ["Polyester"]
 size: "W 14 × H 27 × D 1 cm, strap 120 cm"
 images: [{"src":"../../assets/products/frog-crossbody-purse/01.jpg","alt":"Yellow and blue crochet frog bags side by side with hooded jackets and long legs"},{"src":"../../assets/products/frog-crossbody-purse/02.jpg","alt":"Blue crochet frog bag worn crossbody on a person's back over a black sweater"},{"src":"../../assets/products/frog-crossbody-purse/03.jpg","alt":"Yellow crochet frog bag worn crossbody over a navy sweater"},{"src":"../../assets/products/frog-crossbody-purse/04.jpg","alt":"Frog crossbody purse, photo 4 of 10"},{"src":"../../assets/products/frog-crossbody-purse/05.jpg","alt":"Frog crossbody purse, photo 5 of 10"},{"src":"../../assets/products/frog-crossbody-purse/06.jpg","alt":"Frog crossbody purse, photo 6 of 10"},{"src":"../../assets/products/frog-crossbody-purse/07.jpg","alt":"Frog crossbody purse, photo 7 of 10"},{"src":"../../assets/products/frog-crossbody-purse/08.jpg","alt":"Frog crossbody purse, photo 8 of 10"},{"src":"../../assets/products/frog-crossbody-purse/09.jpg","alt":"Frog crossbody purse, photo 9 of 10"},{"src":"../../assets/products/frog-crossbody-purse/10.jpg","alt":"Frog crossbody purse, photo 10 of 10"}]
+faq: [{"q":"What fits inside?","a":"A phone, lipstick, tissues, keys and a bus card, or coins and small toys for kids."},{"q":"Is it suitable for children?","a":"Yes. Kids use it for coins, tiny toys and candy, and the 120 cm strap adjusts to fit."},{"q":"How do I wash it?","a":"Hand wash in cool or lukewarm water under 40°C, lay flat to dry and keep it out of long direct sun."}]
 ---
 
-This handmade crochet frog bag has a giant red-lipped mouth, wide button eyes, and a little patchwork hooded jacket, equal parts silly and adorable, and genuinely one of a kind once it's on your shoulder.
+Most phone bags make you fish around inside a plain pouch. This one opens through a giant red frog mouth, so you just reach in.
 
-Every stitch is done by hand, so no two bags are perfectly identical, and that's kind of the point.
+Hui hand-crochets the patchwork hooded jacket and wide button eyes onto each frog, stitch by stitch, so no two turn out quite the same.
 
-Inside, there's enough room for a phone, lipstick, tissues, keys, or a bus card, so it works as a real everyday crossbody, not just a display piece. Kids tend to use it for coins, tiny toys, or candy, which makes it just as fun as a first "big kid" bag as it is a statement accessory for teens and adults.
+- **Open-mouth entry:** no zip or clasp, reach in and your things are right there.
+- **Room for the everyday carry:** phone, lipstick, tissues, keys and a bus card.
+- **120 cm adjustable strap:** wear it crossbody or shorten it for the shoulder.
+- **About 170 g:** light enough to forget you have it on.
+- **Two colourways:** sunny yellow with an orange and cream jacket, or sky blue with a cream and yellow jacket.
 
-Comes in two colourways: sunny yellow with an orange-and-cream jacket, or sky blue with a cream-and-yellow jacket. Both have the same oversized red mouth and hooded design, just a different coat on.
+Frog and kawaii fans will spot it from across the room. For kids it doubles as a first coin bag for candy and tiny toys.
 
-Product details
-- Material: 100% polyester yarn, hand-crocheted
-- Top width: 14 cm | Bottom width: 12 cm | Height: 27 cm | Depth: 1 cm
-- Strap length: 120 cm, adjustable crossbody style
-- Weight: 0.17 kg
-- Closure: open-top (mouth) opening
-- Colours: yellow, blue
-
-* A note on sizing: Everything is measured by hand, so please allow 1–3 cm of natural variation, and expect very slight colour differences between screens and the real yarn.
-
-Who it's great for: Frog lovers, kawaii and weird-cute fashion fans, teens who want something nobody else has, or as a genuinely funny birthday, holiday, or "just because" gift for a friend or family member who appreciates something a bit different.
-
-Care instructions: Hand wash in cool or lukewarm water under 40°C. Lay flat to dry. Avoid leaving it in direct sun for long periods, since it can affect the colour over time.
-
-Shipping: Handmade to order, so allow a few extra days before it ships if you need it by a certain date.
+*Top W 14 cm, bottom W 12 cm, H 27 cm, D 1 cm, strap 120 cm. Hand crocheted, so allow 1 to 3 cm either way.*

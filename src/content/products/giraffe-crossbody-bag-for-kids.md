@@ -11,33 +11,19 @@ options: []
 materials: ["Acrylic"]
 size: "W 18 × H 28 × D 5 cm, strap 85 cm"
 images: [{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/01.jpg","alt":"Girl wearing a yellow crochet giraffe crossbody bag with brown spots in a garden"},{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/02.jpg","alt":"Girl smiling with a yellow crochet giraffe bag slung across her chest"},{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/03.jpg","alt":"Girl waving while wearing a yellow crochet giraffe crossbody bag on a bench"},{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/04.jpg","alt":"Giraffe crossbody bag for kids, photo 4 of 10"},{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/05.jpg","alt":"Giraffe crossbody bag for kids, photo 5 of 10"},{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/06.jpg","alt":"Giraffe crossbody bag for kids, photo 6 of 10"},{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/07.jpg","alt":"Giraffe crossbody bag for kids, photo 7 of 10"},{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/08.jpg","alt":"Giraffe crossbody bag for kids, photo 8 of 10"},{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/09.jpg","alt":"Giraffe crossbody bag for kids, photo 9 of 10"},{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/10.jpg","alt":"Giraffe crossbody bag for kids, photo 10 of 10"}]
+faq: [{"q":"What age is it sized for?","a":"The 85 cm strap fits most kids from about 2 to 7 years old."},{"q":"What can it hold?","a":"Candy, coins, a small toy, hair clips or a snack bar. It's a kids' bag, so it won't hold much more."},{"q":"How do I wash it?","a":"Hand wash in cool or warm water below 40°C, reshape the head and legs while damp, and lay flat to dry."}]
 ---
 
-Hand-crocheted yellow giraffe bag with a 3D head, four dangling legs, brown spots, and an adjustable strap. Sized for little kids. Holds candy, coins, small toys, and whatever treasures they pick up along the way.
+A soft yellow giraffe that a toddler wants to wear, not just carry, with a 3D head, dangling legs and just enough room for the day's treasures.
 
-Product details
-- Material: acrylic yarn, crocheted throughout. Orange fabric lining inside.
-- Yellow giraffe body with brown crocheted spots, two small brown-tipped horns, little ears, black safety eyes, and a white muzzle with an embroidered nose and mouth. The head sticks up from the back of the bag on a long neck, and four stubby legs with brown hooves dangle from the bottom and sides.
-- Body width 18 cm, body height 12 cm, depth 5 cm. Total height, including the giraffe's head is about 28 cm. The bag is the giraffe's belly, basically.
-- Strap length 85 cm, adjustable. Yellow crocheted cord. Sits crossbody on most kids between ages 2 and 7 or so.
-- Open top with crochet button closure. The opening is between the giraffe's back and the start of the neck.
-- Weight about 130 g. Very light for small shoulders.
-- Fits candy, coins, a small toy, hair clips, a snack bar. It's a kids' bag, so don't expect it to hold much more than that.
+Hui crochets the giraffe from acrylic yarn, sets the head on a long neck at the back of the bag, adds brown spots and small horns, then finishes the face with a white embroidered muzzle and black safety eyes. Four stubby legs with brown hooves dangle from the bottom.
 
-Great for
-A little kid who loves animals. They can carry their own snacks and small toys, and the giraffe is squishy enough to double as something to hug. It works for trips to the park, the zoo, or just around the house.
+- **Open top with a button closure:** sized right for small fingers.
+- **Holds candy, coins, a small toy, hair clips or a snack bar:** enough for a day out, no more.
+- **85 cm adjustable strap:** fits most kids from about 2 to 7 years old.
+- **About 130 g:** light enough for small shoulders.
+- **Orange lining inside:** keeps small items from catching on the crochet stitches.
 
-Birthday or holiday gift for a toddler or young child. It ships light and looks fun the second they open it.
+It's built for park days, zoo trips and afternoons at home, squishy enough to double as something to hug. A bright birthday or holiday gift for a toddler or young child.
 
-Handmade notes
-Each giraffe is crocheted by hand, so spot placement, leg length, head angle, and facial features will vary a little from bag to bag. Allow 2 to 3 cm difference in measurements.
-* Colours on your screen may not match the yarn exactly.
-
-Care
-- Hand wash in cool or warm water below 40 degrees C.
-- Reshape the head and legs while damp.
-- Lay flat to dry.
-- Avoid prolonged direct sunlight to keep the yellow from fading.
-
-Shipping
-Processing time: 2 to 4 business days. Ships with tracking.
+*Body W 18 cm, H 12 cm, D 5 cm, total height about 28 cm with the head, strap 85 cm. Hand crocheted, so allow 2 to 3 cm either way.*

@@ -10,31 +10,19 @@ maker: "Hui"
 options: [{"name":"Colour","values":["Pink","Beige","Orange","Purple"]}]
 materials: ["Acrylic"]
 images: [{"src":"../../assets/products/granny-square-flower-crossbody-bag/01.jpg","alt":"Pink granny square crochet bag with four flower panels worn crossbody"},{"src":"../../assets/products/granny-square-flower-crossbody-bag/02.jpg","alt":"Beige granny square crochet bag with white and orange flowers worn crossbody"},{"src":"../../assets/products/granny-square-flower-crossbody-bag/03.jpg","alt":"Orange granny square crochet bag with yellow and blue flowers worn crossbody"},{"src":"../../assets/products/granny-square-flower-crossbody-bag/04.jpg","alt":"Granny square flower crossbody bag, photo 4 of 10"},{"src":"../../assets/products/granny-square-flower-crossbody-bag/05.jpg","alt":"Granny square flower crossbody bag, photo 5 of 10"},{"src":"../../assets/products/granny-square-flower-crossbody-bag/06.jpg","alt":"Granny square flower crossbody bag, photo 6 of 10"},{"src":"../../assets/products/granny-square-flower-crossbody-bag/07.jpg","alt":"Granny square flower crossbody bag, photo 7 of 10"},{"src":"../../assets/products/granny-square-flower-crossbody-bag/08.jpg","alt":"Granny square flower crossbody bag, photo 8 of 10"},{"src":"../../assets/products/granny-square-flower-crossbody-bag/09.jpg","alt":"Granny square flower crossbody bag, photo 9 of 10"},{"src":"../../assets/products/granny-square-flower-crossbody-bag/10.jpg","alt":"Granny square flower crossbody bag, photo 10 of 10"}]
+faq: [{"q":"What fits inside?","a":"A phone, cards, lip balm, keys and tissues, thanks to the lined phone and document pockets."},{"q":"Can I wear it two ways?","a":"Yes. Use the built-in top handles or clip on the detachable strap for crossbody wear."},{"q":"How do I wash it?","a":"Hand wash in warm water below 40°C with mild detergent, do not wring or twist, and lay flat to dry."}]
 ---
 
-Hand-crocheted granny square bag with four chunky flower panels, a scalloped ruffle edge, and a detachable shoulder strap. Comes in four colors and fits your phone, keys, and daily small stuff.
+Four crocheted flower panels and a scalloped ruffle turn a small everyday bag into something people stop to ask about.
 
-Product details
+Hui crochets four granny-square panels per side, centres each with a chunky flower, finishes the edge with a ruffle, then lines the inside in polyester with a phone pocket and a document pocket.
 
-- Material: knit fabric yarn, crocheted throughout. Polyester lining inside with a phone pocket and a document pocket.
-- Four granny square panels on each side, each with a large crocheted flower in the center. Scalloped ruffle border all the way around.
-- Built-in top handles with a cutout grip. Detachable crocheted shoulder strap clips on with gold-tone hardware. Wear it by hand or crossbody.
-- Open top, no zipper or button.
-- Soft body, vertical square shape.
-- Weight about 140 g.
-- Colors available: beige (with white and orange flowers), orange (with yellow and blue flowers), purple (with lavender, white, and green flowers), pink (with pink and green flowers).
+- **Two ways to carry:** built-in top handles, or clip on the detachable crocheted strap for crossbody wear.
+- **Lined with a phone pocket and a document pocket:** keeps small essentials sorted.
+- **Open top, no zipper or button:** quick in, quick out.
+- **About 140 g:** light for everyday use.
+- **Four colourways:** beige with white and orange flowers, orange with yellow and blue, purple with lavender, white and green, or pink with pink and green.
 
-Great for
-Carrying your phone, cards, lip balm, keys, and tissues. Not a big bag. Just the small stuff you actually need.
+Sized for a phone, cards, lip balm, keys and tissues, not a big bag, just the small stuff you actually carry. A colourful, handmade gift for anyone into cottagecore style.
 
-A fun gift for someone who loves cottagecore style or colorful handmade accessories.
-
-Handmade notes
-Each bag is crocheted by hand, so flower placement, ruffle shape, and stitch tension will vary a little. Measurements can be off by 1 to 3 cm. Colors on your screen may look different from the real thing.
-
-Care
-- Hand wash in warm water below 40 degrees C with mild detergent. Lay flat to dry. Do not wring or twist.
-- Avoid prolonged direct sunlight, which can fade the yarn over time.
-
-Shipping
-Processing time: 2 to 4 business days. Ships with tracking.
+*About 140 g, with gold-tone hardware on the detachable strap. Hand crocheted, so flower placement and ruffle shape vary slightly from bag to bag.*

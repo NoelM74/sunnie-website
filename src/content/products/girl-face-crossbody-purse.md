@@ -11,31 +11,18 @@ options: [{"name":"Colour","values":["Yellow","Pink","Green"]}]
 materials: ["Thermal knit","Polyester"]
 size: "W 11 × H 18 × D 1 cm, strap 120 cm"
 images: [{"src":"../../assets/products/girl-face-crossbody-purse/01.jpg","alt":"Three crochet girl-face phone bags in peach, green and orange with yarn hair"},{"src":"../../assets/products/girl-face-crossbody-purse/02.jpg","alt":"Yellow and orange crochet girl-face bag worn crossbody with a phone in hand"},{"src":"../../assets/products/girl-face-crossbody-purse/03.jpg","alt":"Yellow and orange crochet girl-face bag worn crossbody over a beige hoodie"},{"src":"../../assets/products/girl-face-crossbody-purse/04.jpg","alt":"Girl face crossbody purse, photo 4 of 10"},{"src":"../../assets/products/girl-face-crossbody-purse/05.jpg","alt":"Girl face crossbody purse, photo 5 of 10"},{"src":"../../assets/products/girl-face-crossbody-purse/06.jpg","alt":"Girl face crossbody purse, photo 6 of 10"},{"src":"../../assets/products/girl-face-crossbody-purse/07.jpg","alt":"Girl face crossbody purse, photo 7 of 10"},{"src":"../../assets/products/girl-face-crossbody-purse/08.jpg","alt":"Girl face crossbody purse, photo 8 of 10"},{"src":"../../assets/products/girl-face-crossbody-purse/09.jpg","alt":"Girl face crossbody purse, photo 9 of 10"},{"src":"../../assets/products/girl-face-crossbody-purse/10.jpg","alt":"Girl face crossbody purse, photo 10 of 10"}]
+faq: [{"q":"What's the difference between the colours?","a":"Yellow has curly purple hair with a starfish and a candy charm, green has brown hair under a red knit beanie, and pink has braids with a flower and a hanging strawberry."},{"q":"Is it suitable for children?","a":"Yes. Kids use it as a first coin purse for small toys and treats, and the 120 cm strap adjusts to fit."},{"q":"How do I wash it?","a":"Hand wash in room-temperature or lukewarm water under 40°C and lay flat to dry, out of direct sun."}]
 ---
 
-This handmade crochet girl-face crossbody bag has a chunky knit body and a hand-embroidered doll face, with a curly wig, a knit beanie, or a little flower charm depending on the colour.
+A doll-faced crochet purse with its own tiny charm, a starfish, a strawberry or a knit beanie, so no two colours feel the same.
 
-It's a fun coin pouch for kids, and a genuinely eye-catching everyday crossbody for teens and adults who like a bit of whimsy in their accessories.
+Hui hand-embroiders each doll face onto a chunky knit body, then dresses it by colour: a curly wig and a candy charm, a red knit beanie, or braids with a flower and a hanging strawberry.
 
-Inside, there's enough room for a phone, lipstick, tissues, keys, or a bus card. It works as a proper everyday bag, not just something to look at. For kids, it makes an easy first coin purse, or a spot to keep small toys and treats.
+- **Room for the everyday carry:** phone, lipstick, tissues, keys and a bus card.
+- **120 cm adjustable strap:** crossbody for teens and adults, or shortened for kids.
+- **About 90 g:** light enough to forget you're wearing it.
+- **Three colourways, three charms:** yellow with a starfish, green with a red knit beanie, or pink with a hanging strawberry.
 
-Comes in three colourways, each with its own character:
+It works as a proper everyday bag for anyone who likes a bit of whimsy, and doubles as a first coin purse for kids' small toys and treats. A good pick for a birthday, anniversary or holiday gift.
 
-- Yellow: curly purple hair, a small green starfish, and a tiny blue candy charm
-- Green: brown curly hair tucked under a red knit beanie
-- Pink: colourful purple braids, a yellow flower in her hair, and a tiny crocheted strawberry hanging underneath
-- All three share the same chunky knit body and doll-face design, just dressed differently.
-
-Product details
-- Material: 100% polyester yarn, hand-crocheted
-- Width: 11 cm | Height: 18 cm | Depth: 1 cm
-- Strap length: 120 cm, adjustable crossbody strap
-- Weight: 0.09 kg
-
-* A note on sizing: Hand-measured, so please allow 1 to 3 cm of natural variation, and expect very slight colour differences between screens and the real yarn.
-
-Who it's great for:  Anyone who likes a bit of whimsy in their everyday bag, kids who want a fun coin purse, or as a birthday, anniversary, or holiday gift for a friend or family member.
-
-Care instructions:  Hand wash in room-temperature or lukewarm water under 40°C. Lay flat to dry. Avoid long stretches in direct sunlight.
-
-Shipping: Made to order, usually ships in 2 to 4 days.
+*W 11 cm, H 18 cm, D 1 cm, strap 120 cm. Hand crocheted, so allow 1 to 3 cm either way.*

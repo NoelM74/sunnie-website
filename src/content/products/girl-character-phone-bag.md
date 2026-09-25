@@ -11,32 +11,19 @@ options: []
 materials: ["Polyester"]
 size: "W 15 × H 31 × D 15 cm, strap 120 cm"
 images: [{"src":"../../assets/products/girl-character-phone-bag/01.jpg","alt":"Crochet girl doll bag with curly pigtails and gingham bow, held in a hand"},{"src":"../../assets/products/girl-character-phone-bag/02.jpg","alt":"Crochet girl doll bag worn crossbody on a red braided strap, held by a coffee cup"},{"src":"../../assets/products/girl-character-phone-bag/03.jpg","alt":"Crochet girl doll bag on a red strap worn crossbody over a black hoodie"},{"src":"../../assets/products/girl-character-phone-bag/04.jpg","alt":"Girl character phone bag, photo 4 of 10"},{"src":"../../assets/products/girl-character-phone-bag/05.jpg","alt":"Girl character phone bag, photo 5 of 10"},{"src":"../../assets/products/girl-character-phone-bag/06.jpg","alt":"Girl character phone bag, photo 6 of 10"},{"src":"../../assets/products/girl-character-phone-bag/07.jpg","alt":"Girl character phone bag, photo 7 of 10"},{"src":"../../assets/products/girl-character-phone-bag/08.jpg","alt":"Girl character phone bag, photo 8 of 10"},{"src":"../../assets/products/girl-character-phone-bag/09.jpg","alt":"Girl character phone bag, photo 9 of 10"},{"src":"../../assets/products/girl-character-phone-bag/10.jpg","alt":"Girl character phone bag, photo 10 of 10"}]
+faq: [{"q":"Will my phone fit?","a":"Phones up to 6.7 inches fit, with room for a lip product, hand sanitizer and a cardholder."},{"q":"How roomy is it?","a":"At 15 cm deep, it is one of the roomier bags in the range."},{"q":"How do I wash it?","a":"Hand wash in cool water below 40°C with mild detergent, wash it separately to protect the red yarn, and lay flat to dry."}]
 ---
 
-A handmade crochet girl doll bag that opens through the mouth. Brown pigtails, gingham bow, red striped shirt, blue ruffled dress. Bold red braided strap included.
+Most character bags are too small for a real day out. This one has 15 cm of depth, room enough for a phone, a lip product and your keys.
 
-How to Use/Style:
-- Carry it crossbody on errand days or casual outings. The red strap makes it stand out and feel intentional against neutral coats or hoodies.
-- Style it with wide-leg trousers and a plain tee for a dopamine dressing look, exactly like the lifestyle photo.
-- Gift it boxed as-is. The character design needs no gift wrap to make an impression.
+Hui crochets the pigtailed head first, ties on a red and white gingham bow, then builds down through a red striped shirt that blends into a ruffled blue dress, finishing with white arms and red striped legs and shoes. The smiling mouth, edged in peach yarn, is the way in.
 
-Character Design Details:
-- Head: Brown curly textured hair with braided pigtails, tied with small yarn rings. Red and white gingham fabric bow sits on top.
-- Face: Black safety eyes, peach-toned cheeks, and a wide smiling mouth edged in peach yarn. The mouth is the bag opening.
-- Body: Red and white horizontal striped shirt section transitioning to a light blue ruffled crochet dress at the bottom.
-- Limbs: Short white arms and red striped legs with red shoes, all crocheted and hand-attached.
-- Strap: 120 cm (47.2 in) adjustable red braided cord.
-- What Fits Inside The 15 cm depth makes this one of the roomier bags in the range. Fits smartphones up to 6.7 inches alongside a lip product, hand sanitizer, and a cardholder. Keys clip onto the strap or sit flat inside.
+- **Mouth-opening entry:** reach through the smiling face for your things.
+- **Fits smartphones up to 6.7 inches:** plus a lip product, hand sanitizer and a cardholder.
+- **15 cm of depth:** one of the roomier bags in the range.
+- **120 cm adjustable red braided strap:** clip your keys onto it or drop them inside.
+- **About 130 g:** roomy without feeling heavy.
 
-Dimensions Top Width 13 cm, Bottom Width 15 cm, Height 31 cm, Depth 15 cm, Strap 120 cm Weight: 0.13 kg (4.6 oz).
- Manual measurements may vary 1 to 3 cm.
+The bold red strap stands out against a neutral coat on errand days, and the character design needs no gift wrap to make an impression.
 
-Care Instructions:
-- Hand wash recommended in cool water, below 40°C (104°F), with mild detergent.
-- Wash separately or with similar colors to prevent the red yarn from bleeding.
-- Lay flat to air dry. Do not tumble dry.
-- Reshape gently while damp if needed.
-
-SHIPPING:
-Made and shipped within 2–5 business days. Tracking provided.
-All taxes and tariffs are included in the price, so no nasty surprises when your bag arrives.
+*Top W 13 cm, bottom W 15 cm, H 31 cm, D 15 cm, strap 120 cm. Hand crocheted, so allow 1 to 3 cm either way.*
