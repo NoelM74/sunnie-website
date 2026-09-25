@@ -9,7 +9,8 @@ etsyUrl: "https://www.etsy.com/listing/4501304176/crochet-hot-air-balloon-crossb
 maker: "Hui"
 options: []
 materials: ["Wool","Metal","Polyester"]
-images: [{"src":"../../assets/products/hot-air-balloon-crossbody-bag/01.jpg","alt":"Hot air balloon crossbody bag"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/02.jpg","alt":"Hot air balloon crossbody bag, photo 2 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/03.jpg","alt":"Hot air balloon crossbody bag, photo 3 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/04.jpg","alt":"Hot air balloon crossbody bag, photo 4 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/05.jpg","alt":"Hot air balloon crossbody bag, photo 5 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/06.jpg","alt":"Hot air balloon crossbody bag, photo 6 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/07.jpg","alt":"Hot air balloon crossbody bag, photo 7 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/08.jpg","alt":"Hot air balloon crossbody bag, photo 8 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/09.jpg","alt":"Hot air balloon crossbody bag, photo 9 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/10.jpg","alt":"Hot air balloon crossbody bag, photo 10 of 10"}]
+size: "W 7–11 × H 16 cm, strap 60 cm"
+images: [{"src":"../../assets/products/hot-air-balloon-crossbody-bag/01.jpg","alt":"Rainbow striped crochet hot air balloon bag with a phone tucked inside"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/02.jpg","alt":"Rainbow striped crochet hot air balloon bag with braided orange crossbody strap"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/03.jpg","alt":"Rainbow striped crochet hot air balloon bag hanging by its braided strap"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/04.jpg","alt":"Hot air balloon crossbody bag, photo 4 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/05.jpg","alt":"Hot air balloon crossbody bag, photo 5 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/06.jpg","alt":"Hot air balloon crossbody bag, photo 6 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/07.jpg","alt":"Hot air balloon crossbody bag, photo 7 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/08.jpg","alt":"Hot air balloon crossbody bag, photo 8 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/09.jpg","alt":"Hot air balloon crossbody bag, photo 9 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/10.jpg","alt":"Hot air balloon crossbody bag, photo 10 of 10"}]
 ---
 
 A hand-crocheted hot air balloon crossbody bag in rainbow gradient stripes, sized for a phone, wallet, and daily essentials, with a cream button closure and braided orange strap.
@@ -43,7 +44,7 @@ Handmade notes
 
 Care
 
-- Hand wash in cool to warm water below 40°C with a mild detergent. • • • • Gentle machine cycle works if needed, but hand washing keeps the shape longer.
+- Hand wash in cool to warm water below 40°C with a mild detergent. Gentle machine cycle works if needed, but hand washing keeps the shape longer.
 - Wash separately to avoid color bleeding.
 - Keep away from rough fabrics or anything with zippers that could snag the crochet.
 - Lay flat to dry. No tumble drying.
@@ -52,4 +53,3 @@ Care
 Shipping
 - Orders processed and shipped within 1 to 3 business days.
 - All orders include tracking.
-- Message me with any questions before ordering.
