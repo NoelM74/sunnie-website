@@ -25,7 +25,7 @@
 - **Never state where products are made.** Site-wide maker wording comes from `site.makerLine` / `site.heroMakerClause`. Each product shows its own `maker`.
 - **Never render the review by "noel francis".** Never link to the eBay store (quoting the feedback count as text is fine).
 - **Never commit `shop_settings.json`** or any phone number, address, card or bank detail from it.
-- Image masters are 1400px max, JPEG quality 80. AVIF + WebP only for the hero, product cards and the first gallery slide; every other image is WebP only (this keeps build time down).
+- Image masters are 1400px max, JPEG quality 75 (lowered from 80 by the Task 7 size fallback). AVIF + WebP only for the hero, product cards and the first gallery slide; every other image is WebP only (this keeps build time down).
 - All internal URLs end with `/`. Email addresses come only from `site.email`.
 - Commits: repo-local author is already set. End every commit message with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
 - Etsy source data lives outside the repo at `E:\SUNNIE BUSINESS FILES AND PHOTOS\1. New ETSY Products\` (Git Bash path: `/e/SUNNIE BUSINESS FILES AND PHOTOS/1. New ETSY Products`).
