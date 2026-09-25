@@ -1,0 +1,39 @@
+---
+import { site } from '../data/site';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-brand">{site.name}</p>
+      <p>{site.makerLine}. Ships in {site.shipsIn}.</p>
+      <p><a href={`mailto:${site.email.hello}`}>{site.email.hello}</a></p>
+    </div>
+    <nav aria-label="Shop">
+      <h2>Shop</h2>
+      <ul>
+        <li><a href="/shop/bags/">Bags</a></li>
+        <li><a href="/shop/coasters/">Coasters</a></li>
+        <li><a href="/shop/">Shop all</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Help">
+      <h2>Help</h2>
+      <ul>
+        <li><a href="/shipping/">Shipping and returns</a></li>
+        <li><a href="/care/">Care guide</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="About">
+      <h2>About</h2>
+      <ul>
+        <li><a href="/our-story/">Our story</a></li>
+        <li><a href="/reviews/">Reviews</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href={site.etsyShopUrl} rel="noopener">Our Etsy shop</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="container footer-legal">© {year} {site.name}</p>
+</footer>
