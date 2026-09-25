@@ -1,0 +1,17 @@
+---
+interface Review { reviewer: string; date: string; rating: number; text: string; lang: 'en' | 'de'; en?: string }
+interface Props { review: Review; showOriginal?: boolean }
+const { review, showOriginal = false } = Astro.props;
+const translated = review.lang === 'de' && review.en;
+const month = new Date(`${review.date}T00:00:00Z`).toLocaleDateString('en-IE', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+<figure class="quote">
+  <p class="quote-stars" aria-label={`${review.rating} out of 5 stars`}><span aria-hidden="true">{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</span></p>
+  <blockquote>
+    <p>{translated ? review.en : review.text}</p>
+    {translated && showOriginal && <p class="small muted" lang="de">{review.text}</p>}
+  </blockquote>
+  <figcaption class="small">
+    {review.reviewer}, {month}, Etsy{translated && <span class="muted"> · Translated from German</span>}
+  </figcaption>
+</figure>

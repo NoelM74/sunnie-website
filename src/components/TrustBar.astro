@@ -1,0 +1,11 @@
+---
+import { site } from '../data/site';
+---
+<section class="trust" aria-label="Why buy from us">
+  <ul class="container trust-list" role="list">
+    <li>Ships in {site.shipsIn}</li>
+    <li><span aria-hidden="true">★ </span>{site.proof.etsyRating} on Etsy · Star Seller</li>
+    <li>{site.proof.ebayPositive} positive from {site.proof.ebayCount} eBay buyers</li>
+    <li>{site.makerLine}</li>
+  </ul>
+</section>
