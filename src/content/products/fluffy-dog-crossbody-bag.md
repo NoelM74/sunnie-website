@@ -11,40 +11,19 @@ options: [{"name":"Colour","values":["Brown","Beige","Blue"]}]
 materials: ["Polyester"]
 size: "W 13 × H 18 × D 3 cm, strap 120 cm"
 images: [{"src":"../../assets/products/fluffy-dog-crossbody-bag/01.jpg","alt":"Cream fluffy crochet dog bag with floppy ears, worn crossbody"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/02.jpg","alt":"Cream, brown and blue fluffy crochet dog bags laid out side by side"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/03.jpg","alt":"Brown fluffy crochet dog bag with floppy ears and leather strap"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/04.jpg","alt":"Fluffy dog crossbody bag, photo 4 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/05.jpg","alt":"Fluffy dog crossbody bag, photo 5 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/06.jpg","alt":"Fluffy dog crossbody bag, photo 6 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/07.jpg","alt":"Fluffy dog crossbody bag, photo 7 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/08.jpg","alt":"Fluffy dog crossbody bag, photo 8 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/09.jpg","alt":"Fluffy dog crossbody bag, photo 9 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/10.jpg","alt":"Fluffy dog crossbody bag, photo 10 of 10"}]
+faq: [{"q":"Will my phone fit?","a":"Phones up to 6.5 inches fit, with room for a small notebook, a travel-sized bottle and a cardholder."},{"q":"Can I adjust the strap?","a":"Yes. The brown PU leather strap adjusts with a knot at the metal ring."},{"q":"How do I wash it?","a":"Hand wash only in cool water below 40°C, wash separately to prevent colour transfer, and lay flat to dry."}]
 ---
 
-A handmade crochet dog purse in fuzzy loop-stitch yarn. Puppy face with floppy ears and black nose. Brown leather strap. Choose beige, brown, or blue.
+Fuzzy loop-stitch fur and a floppy-eared puppy face on a bag that still fits your phone, a notebook and a water bottle.
 
-How to Use/Style:
-- Wear it crossbody for a casual, hands-free carry that works over hoodies, denim jackets, or cozy outerwear.
-- Style it against a neutral or dark outfit. The fluffy texture and floppy ear silhouette do the visual work on their own.
-- Gift it in the matching color to the recipient's dog breed. The brown version is close to a golden retriever, the beige to a cream poodle.
+Hui crochets the body in a dense loop stitch for a soft, plush surface that holds its shape after wear, then adds two floppy side ears and a big crocheted nose. The strap is adjustable brown PU leather with a metal ring and a knotted length adjustment.
 
-Product Details:
-- Texture: Loop-stitch fuzzy yarn gives the body a soft, dense, plush surface that holds its shape after wear.
-- Face: Two black safety eyes, large crocheted black nose centered on the face.
-- Ears: Two floppy side ears crocheted and attached at each side of the body, extending the silhouette.
-- Opening: Open top, items sit inside and access is from above.
-- Strap: Adjustable brown PU leather strap with metal ring attachment and knotted length adjustment. 120 cm (47.2 in).
-- Capacity: Fits a phone up to 6.5 inches alongside a small notebook, travel-sized bottle, and cardholder as seen in the product photo.
-- Weight: 0.11 kg (3.9 oz).
+- **Fits phones up to 6.5 inches:** plus a small notebook, a travel-sized bottle and a cardholder.
+- **120 cm leather strap:** adjusts with a knot, so the length is yours to set.
+- **Loop-stitch fur:** dense and plush, it keeps its shape through daily wear.
+- **About 0.11 kg:** light enough to forget you're wearing it.
+- **Three colours:** beige, brown or blue, all with black eyes and nose.
 
-Color Options:
-- Beige: light cream fluffy body, black eyes and nose.
-- Brown: warm chocolate fluffy body, black eyes and nose.
-- Blue: soft grey-blue fluffy body, black eyes and nose.
+A cozy, hands-free everyday bag for anyone who wants a dog-lover's accessory without the fuss of a novelty piece.
 
-Dimensions Width 13 cm, Height 18 cm, Depth 3 cm, Strap 120 cm
- Measurements may vary 1 to 3 cm. Each bag is crocheted by hand.
-
-Care Instructions
-- Hand wash only in cool water, below 40°C (104°F).
-- Wash separately to prevent color transfer.
-- Gently squeeze out water. Do not wring.
-- Lay flat to dry. Reshape ears while damp.
-- Spot clean where possible to protect the fuzzy texture.
-
-SHIPPING:
-Made and shipped within 2 to 5 business days. Tracking provided.
-
-All taxes and tariffs are included in the price, so there's no surprise cost when your bag arrives.
+*W 13 × H 18 × D 3 cm, strap 120 cm. Each bag is crocheted by hand, so allow 1 to 3 cm either way.*

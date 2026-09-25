@@ -11,35 +11,18 @@ options: [{"name":"Style","values":["Pink Large","Yellow Large","Blue Large","Pi
 materials: ["Polyester","Faux pearls"]
 size: "W 23 × H 18 × D 6.5 cm, strap 120 cm"
 images: [{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/01.jpg","alt":"Cream crochet flower bag with yellow buds and a sunflower charm, worn crossbody"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/02.jpg","alt":"Two blue crochet flower bags with pastel buds and a daisy charm, large and small"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/03.jpg","alt":"Large and small cream crochet flower bags with yellow buds and sunflower charms"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/04.jpg","alt":"Flower shoulder bag with flower charm, photo 4 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/05.jpg","alt":"Flower shoulder bag with flower charm, photo 5 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/06.jpg","alt":"Flower shoulder bag with flower charm, photo 6 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/07.jpg","alt":"Flower shoulder bag with flower charm, photo 7 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/08.jpg","alt":"Flower shoulder bag with flower charm, photo 8 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/09.jpg","alt":"Flower shoulder bag with flower charm, photo 9 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/10.jpg","alt":"Flower shoulder bag with flower charm, photo 10 of 10"}]
+faq: [{"q":"What sizes are available?","a":"Large, W 23 × H 18 × D 6.5 cm, or small, W 17.5 × H 13 × D 2 cm. Both use a 120 cm strap."},{"q":"What fits inside?","a":"The large holds a phone, wallet, keys, sunglasses and a small water bottle. The small fits a phone, cards and lip balm."},{"q":"How do I wash it?","a":"Hand wash in cool or lukewarm water at 40°C or below, lay flat to dry and reshape while damp."}]
 ---
 
-Hand-crocheted bag covered in rows of puffy little flower buds with green stems. Comes in two sizes so you and your kid can match, or just pick the one that fits your life.
+A crochet bag covered in rows of puffy flower buds, sized so you and your kid can match without wearing the same bag.
 
-Product details
-- Material: acrylic yarn, crocheted throughout. The large size has a structured fabric base with gold stud feet on the bottom.
-- Flower buds are crocheted in rows across the body with green leaf stitches between them. The top edge has a scalloped ruffle rim.
-- Three colors. Pink bag with pink flower buds and a pink flower charm. Blue bag with mixed pastel buds and a white daisy charm. Yellow/cream bag with yellow buds and a yellow sunflower charm.
-- Each charm clips onto the strap with a small metal clasp.
-- Pearl bead button closure at the front center.
-- Two crocheted top handles on each bag, plus a detachable longer crossbody strap.
-- Large: top width 29 cm, bottom width 23 cm, height 18 cm, depth 6.5 cm. Strap 120 cm. Weight about 250 g.
-- Small: top width 23 cm, bottom width 17.5 cm, height 13 cm, depth 2 cm. Strap 120 cm. Weight about 80 g.
-- The large holds a phone, wallet, keys, sunglasses, small water bottle. The small fits a phone, cards, lip balm. It's more of a going-out bag.
+Hui crochets the buds in rows with green leaf stitches between them, finishes the top in a scalloped ruffle, and closes the front with a pearl bead button. A flower charm, matching the bud colour, clips onto the strap with a small metal clasp.
 
-Great for
-Mommy-and-me matching sets. The large and small in the same color look really sweet together.
+- **Two sizes:** large, about 250 g, or small, about 80 g. Both share a 120 cm strap.
+- **Three colours:** pink with a pink charm, blue with a white daisy charm, or yellow with a sunflower charm.
+- **Two top handles plus a detachable crossbody strap:** carry it by hand or hands-free.
+- **Large holds a phone, wallet, keys, sunglasses and a water bottle:** the small fits a phone, cards and lip balm.
 
-Daily carry, brunch, weekend markets, vacations. Also a lovely birthday gift for someone who likes flowers.
+A sweet mommy-and-me matching set in the large and small together, or a flower lover's birthday gift on its own.
 
-Handmade notes
-- Every bag is crocheted by hand, so flower placement, bud size, and handle thickness will vary slightly.
-- Measurements can be off by 1 to 3 cm.
-- Screen colors may differ from the real yarn.
-
-Care
-- Hand wash in cool or lukewarm water, 40 C or below.
-- Lay flat to dry and reshape while damp.
-- Avoid long sun exposure.
-
-Shipping
-Processing time: 2 to 4 business days. Ships with tracking.
+*W 23 × H 18 × D 6.5 cm, strap 120 cm. Each bag is crocheted by hand, so allow 1 to 3 cm either way.*
