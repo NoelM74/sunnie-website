@@ -11,36 +11,19 @@ options: []
 materials: ["Polyester"]
 size: "W 15 × H 20 × D 10 cm, strap 120 cm"
 images: [{"src":"../../assets/products/panda-coin-purse/01.jpg","alt":"White and black crochet panda coin purse with kiss-lock clasp holding bamboo"},{"src":"../../assets/products/panda-coin-purse/02.jpg","alt":"Crochet panda coin purse worn crossbody over a grey hoodie"},{"src":"../../assets/products/panda-coin-purse/03.jpg","alt":"Crochet panda coin purse held crossbody by its black strap"},{"src":"../../assets/products/panda-coin-purse/04.jpg","alt":"Panda coin purse, photo 4 of 10"},{"src":"../../assets/products/panda-coin-purse/05.jpg","alt":"Panda coin purse, photo 5 of 10"},{"src":"../../assets/products/panda-coin-purse/06.jpg","alt":"Panda coin purse, photo 6 of 10"},{"src":"../../assets/products/panda-coin-purse/07.jpg","alt":"Panda coin purse, photo 7 of 10"},{"src":"../../assets/products/panda-coin-purse/08.jpg","alt":"Panda coin purse, photo 8 of 10"},{"src":"../../assets/products/panda-coin-purse/09.jpg","alt":"Panda coin purse, photo 9 of 10"},{"src":"../../assets/products/panda-coin-purse/10.jpg","alt":"Panda coin purse, photo 10 of 10"}]
+faq: [{"q":"Will my phone fit?","a":"Phones up to 6.7 inches fit, with room for a cardholder, lip balm and earbuds."},{"q":"Can I remove the strap?","a":"Yes, the 120 cm cord detaches with lobster claw clasps."},{"q":"How do I wash it?","a":"Hand wash only in cool water below 30°C with mild detergent, remove the strap first, squeeze rather than wring and lay flat to dry."}]
 ---
 
-Store your essentials in this handmade crochet panda coin purse. Featuring a secure kiss-lock clasp and an adjustable strap, it easily holds your phone and keys.
+Snap it open with one hand, drop your coins in, snap it shut. No zip to fight, just a kiss-lock clasp that closes with a click.
 
-How to Use/Style:
-Wear the long strap across your body for hands-free convenience while running errands.
-Remove the strap to use the interior compartment as a dedicated organizer inside a larger tote.
-Pair it with casual streetwear or dopamine dressing outfits for a relaxed, fun aesthetic.
+Hui crochets the round bear body first, then finishes the face with safety eyes and a stitched nose, with a little green bamboo shoot tucked into its paws. A silver-tone kiss-lock frame snaps the top shut, and a detachable 120 cm cord lets you wear it crossbody or carry it as a stand-alone purse.
 
-Product Details:
-- Design: 3D amigurumi bear body featuring a green shoot held by the paws.
-- Closure: Silver-tone metal clasp frame snaps open and closed securely.
-- Strap: 120 cm (47.2 in) adjustable and detachable black cord with lobster claw clasps.
-- Capacity: Fits smartphones up to 6.7 inches (slim case), a cardholder, lip balm, and earbuds.
-- Interior: Unlined, showcasing the reverse side of the tight stitching. Flat base provides stability when resting.
-- Weight: Lightweight at just 0.19 kg (6.7 oz).
+- **Kiss-lock clasp:** snaps open and shut with one hand, no zip to fight.
+- **Fits phones up to 6.7 inches:** plus a cardholder, lip balm and earbuds.
+- **120 cm detachable strap:** lobster claw clasps let you wear it crossbody or take the strap off.
+- **Flat base:** stands upright on its own when you set it down.
+- **About 190 g:** light enough for everyday carry.
 
-Care Instructions:
-- Hand wash only in cool water (below 30°C / 86°F) with mild detergent.
-- Remove the strap before washing.
-- Gently squeeze water through the yarn; do not wring or twist.
-- Lay flat to dry on a towel, reshaping the round form while damp.
-- Keep the metal clasp dry to prevent tarnishing.
+A cheerful everyday coin purse for panda lovers, or a fun gift for anyone who likes their accessories with a bit of personality.
 
-ATTRIBUTES
-- Primary Color: White
-- Secondary Color: Black
-- Material: Polyester Yarn, Metal Kiss Lock Clasp
-- Dimensions/Size: Top Width: 10 cm, Bottom Width: 15 cm, Height: 20 cm, Thickness: 10 cm, Strap Length: 120 cm
-
-SHIPPING:
-Made and shipped within 2–5 business days. Tracking provided.
-All taxes and tariffs are included in the price, so no nasty surprises when your bag arrives
+*Top W 10 cm, bottom W 15 cm, H 20 cm, D 10 cm, strap 120 cm. Each purse is crocheted by hand, so allow 1 to 3 cm either way.*

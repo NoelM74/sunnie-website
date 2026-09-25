@@ -11,39 +11,19 @@ options: [{"name":"Style","values":["Mini Tote Bag","Crossbody Sling Bag"]}]
 materials: ["Polyester"]
 size: "Mini Tote W 18 × H 14 × D 2 cm, strap 112 cm / Sling W 12 × H 26 × D 3 cm, strap 120 cm"
 images: [{"src":"../../assets/products/panda-crossbody-bag/01.jpg","alt":"White crochet panda mini tote bag with black ears held by its braided handle"},{"src":"../../assets/products/panda-crossbody-bag/02.jpg","alt":"White crochet panda bottle sling bag worn crossbody over a grey sweater"},{"src":"../../assets/products/panda-crossbody-bag/03.jpg","alt":"Two panda crochet bags side by side, mini tote and taller sling style"},{"src":"../../assets/products/panda-crossbody-bag/04.jpg","alt":"Panda crossbody bag, photo 4 of 10"},{"src":"../../assets/products/panda-crossbody-bag/05.jpg","alt":"Panda crossbody bag, photo 5 of 10"},{"src":"../../assets/products/panda-crossbody-bag/06.jpg","alt":"Panda crossbody bag, photo 6 of 10"},{"src":"../../assets/products/panda-crossbody-bag/07.jpg","alt":"Panda crossbody bag, photo 7 of 10"},{"src":"../../assets/products/panda-crossbody-bag/08.jpg","alt":"Panda crossbody bag, photo 8 of 10"},{"src":"../../assets/products/panda-crossbody-bag/09.jpg","alt":"Panda crossbody bag, photo 9 of 10"},{"src":"../../assets/products/panda-crossbody-bag/10.jpg","alt":"Panda crossbody bag, photo 10 of 10"}]
+faq: [{"q":"What's the difference between the two styles?","a":"The mini tote is a wider face shape with a short handle. The bottle sling is taller and slimmer with dangling legs."},{"q":"What fits inside?","a":"Phone, cards, keys, lip balm and maybe a small wallet. Not sized for A4 paper or a tablet."},{"q":"How do I wash it?","a":"Hand wash in cool water with mild detergent and lay flat to dry. Wash separately the first time, since the black yarn can bleed a little."}]
 ---
 
-I hand-crochet these grumpy little panda bags in black and white yarn. Two styles to pick from, both sized for your phone and small daily bits.
+A grumpy-looking panda bag that somehow makes you smile every time you look down at it, in two shapes to suit however you carry things.
 
-Product details
+Hui hand-crochets each panda in black and white yarn, with big black eye patches, round ears and two stitched red blush marks that give it that permanently unimpressed look. Choose the mini tote, a wider face shape with a short handle, or the bottle sling, a taller body with dangling legs, both worked as a single unlined compartment.
 
-Hand-crocheted from polyester yarn in black and white. Each panda has big black eye patches, round ears, a tiny stitched nose, and little red blush marks on the cheeks. She looks permanently unimpressed and that's kind of why people love her.
+- **Two styles:** mini tote (18 × 14 × 2 cm) or bottle sling (12 × 26 × 3 cm), each with its own strap.
+- **Stitched blush marks:** placed individually, so no two pandas match exactly.
+- **Holds the basics:** phone, cards, keys, lip balm and maybe a small wallet.
+- **Fixed-length crossbody strap:** hands free for coffee runs and weekend walks.
+- **About 130 to 140 g:** light enough for all-day wear.
 
-Two styles available. The mini tote is a wider panda face shape with a short handle and a longer crossbody strap. The bottle sling is a taller, slimmer panda body with round ears on top, stubby arms, and dangling legs.
+A fun gift for panda lovers or anyone who wants a bag with a bit of attitude. Fair warning: kids will try to claim it.
 
-- Mini tote: 18 cm wide at the bottom, 13 cm at the top, 14 cm tall, 2 cm thick. Strap 112 cm. Weight 130 g.
-- Bottle sling: 12 cm wide, 26 cm tall, 3 cm thick. Strap 120 cm. Weight 140 g.
-
-Both have a single compartment, no lining, no dividers. Fixed length strap. Soft and squishy. Neither will fit A4 paper or an iPad, just so you know.
-
-What fits inside
-- Phone, cards, keys, lip balm, maybe a small wallet.
-- The bottle sling is taller so it holds a phone with more room above it.
-- The mini tote is wider so things sit side by side.
-- Both are grab-your-basics bags, not carry-your-life bags.
-
-Great for
-Days when you just need your phone and want something that makes you happy to look down at. Coffee runs, weekend walks, markets. The crossbody strap keeps your hands free.
-
-A fun gift for anyone who loves pandas or has a thing for cute bags with a bit of attitude. Kids will want to steal it from you. Fair warning.
-
-Handmade notes
-Each panda is crocheted by hand, so the face, the ears, and the proportions will vary slightly from bag to bag. Measurements can shift by 2 to 3 cm. Screen colors won't be exact.
-
-The red blush marks are stitched individually so their placement will differ too. I think the small wonkiness is what makes each panda feel alive.
-
-Care
-Hand wash in cool water with mild detergent. Reshape gently and lay flat to dry. Don't machine wash or tumble dry. The black yarn can bleed a little on the first wash, so wash separately that first time.
-
-Shipping
-Processing time: 3 to 5 business days. Ships with tracking.
+*Mini tote: bottom W 18 cm, top W 13 cm, H 14 cm, D 2 cm, strap 112 cm. Bottle sling: W 12 cm, H 26 cm, D 3 cm, strap 120 cm. Hand crocheted, so allow 2 to 3 cm either way.*
