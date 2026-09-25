@@ -11,49 +11,19 @@ options: []
 materials: ["Cotton"]
 size: "W 34 × H 36 × D 2 cm, strap 30 cm"
 images: [{"src":"../../assets/products/daisy-granny-square-tote-bag-with-matching-coin/01.jpg","alt":"Blue, white and beige daisy granny square tote bag hanging on a bench"},{"src":"../../assets/products/daisy-granny-square-tote-bag-with-matching-coin/02.jpg","alt":"Woman on a beach carrying a daisy granny square tote with matching coin purse"},{"src":"../../assets/products/daisy-granny-square-tote-bag-with-matching-coin/03.jpg","alt":"Woman in a park carrying a daisy granny square tote bag on her shoulder"},{"src":"../../assets/products/daisy-granny-square-tote-bag-with-matching-coin/04.jpg","alt":"Daisy granny square tote bag with matching coin, photo 4 of 10"},{"src":"../../assets/products/daisy-granny-square-tote-bag-with-matching-coin/05.jpg","alt":"Daisy granny square tote bag with matching coin, photo 5 of 10"},{"src":"../../assets/products/daisy-granny-square-tote-bag-with-matching-coin/06.jpg","alt":"Daisy granny square tote bag with matching coin, photo 6 of 10"},{"src":"../../assets/products/daisy-granny-square-tote-bag-with-matching-coin/07.jpg","alt":"Daisy granny square tote bag with matching coin, photo 7 of 10"},{"src":"../../assets/products/daisy-granny-square-tote-bag-with-matching-coin/08.jpg","alt":"Daisy granny square tote bag with matching coin, photo 8 of 10"},{"src":"../../assets/products/daisy-granny-square-tote-bag-with-matching-coin/09.jpg","alt":"Daisy granny square tote bag with matching coin, photo 9 of 10"},{"src":"../../assets/products/daisy-granny-square-tote-bag-with-matching-coin/10.jpg","alt":"Daisy granny square tote bag with matching coin, photo 10 of 10"}]
+faq: [{"q":"What fits inside?","a":"Tablets up to about 11 inches, books, a 500 to 750 ml water bottle, wallet, phone, keys and sunglasses."},{"q":"What is the coin purse for?","a":"Coins, keys, lip balm, earbuds or cards. Clip it to the tote handle, your keyring, or carry it on its own."},{"q":"How do I wash it?","a":"Hand wash in cool water below 30°C, wash the coin purse separately to protect the green border, and lay flat to dry."}]
 ---
 
-This crochet daisy granny square tote bag comes with a matching coin purse, hand‑made from soft cotton yarn for everyday use. Seven daisy granny squares in yellow, white, light blue, and beige create a cottagecore‑style tote with braided cotton rope handles. The open‑top design fits tablets, books, and daily essentials, while the daisy coin purse keeps your small items together.
+A roomy crochet tote built from seven daisy granny squares, with a matching coin purse that clips right onto the handle.
 
-Materials & construction
-This tote is hand‑crocheted from cotton yarn using a classic granny square technique. The main bag consists of seven daisy squares joined with beige yarn strips to form a cross pattern. Each square features a golden yellow center, white petals, a light sky blue inner border, and a beige outer border.
+Hui joins seven daisy squares, each with a golden center, white petals and a sky blue inner border, with beige strips in a cross pattern, then finishes the top edge with braided cotton rope handles. The coin purse is a single daisy square edged in lime green, with its own loop handle.
 
-The handles are braided natural cotton rope attached at reinforced points along the top edge. The interior is unlined and shows the reverse side of the crochet stitches. The matching coin purse is a single daisy granny square with a bright lime green border and a small loop handle.
+- **Fits an 11-inch tablet, books or a water bottle:** roomy enough for a full day out.
+- **Braided cotton rope handles:** sewn into reinforced edge stitches, with a 30 cm drop.
+- **Matching coin purse:** holds coins, cards, lip balm or earbuds, and clips to the handle or your keyring.
+- **Cotton yarn:** crocheted square by square in a classic granny square technique.
+- **About 0.42 kg:** substantial without feeling heavy empty.
 
-Dimensions
-- Main bag width: 34 cm (13.4 in)
-- Main bag height: 36 cm (14.2 in)
-- Depth: approx. 2 cm (0.8 in) when empty, expands to about 10–12 cm when filled
-- Handle drop: 30 cm (11.8 in)
-- Weight: approx. 0.42 kg (14.8 oz)
-- Coin purse: approx. 10 × 10 cm (4 × 4 in), loop handle 6 cm
-* Manual measurements may vary by 1–3 cm due to the flexible, hand‑crocheted construction.
+An easy everyday tote for markets, the beach or the library, and a pretty gift for a cottagecore fan.
 
-Color details
-- Daisy centers: golden yellow
-- Petals: white
-- Inner border: light sky blue
-- Outer border and joining strips: beige
-- Handles: natural cotton rope
-- Coin purse border: bright lime green
-
-What fits inside
-
-The main bag is designed to hold tablets up to around 11 inches, books, a 500–750 ml water bottle, wallet, smartphone, keys, sunglasses, and similar daily essentials. The open‑top design and flexible crochet fabric make it easy to carry irregular‑shaped items.
-
-The matching coin purse is ideal for coins, keys, lip balm, earbuds, cards, or other pocket‑sized items and can be clipped to the handle, your keyring, or carried separately.
-
-Carry style
-With a 30 cm handle drop, this daisy tote can be carried on the shoulder or by hand. The braided cotton rope handles are comfortable for extended wear and help distribute weight evenly. The lightweight construction makes it a practical choice for markets, beach days, library trips, or everyday errands.
-
-Care instructions:
-- Hand wash in cool water (below 30°C / 86°F) with mild detergent. Gently squeeze water through the yarn without wringing or twisting. Wash the coin purse separately to protect the bright green border.
-
-- Lay flat on a towel to dry, reshaping while damp, and avoid prolonged direct sunlight to prevent fading. Do not machine wash, tumble dry, or bleach.
-
-Handmade notes:
-Each granny square is crocheted individually and then joined using a slip‑stitch method. Slight variations in square size, petal shape, and yarn tension are normal and add to the unique character of each bag.
-Handles are sewn into reinforced edge stitches to support the weight of your items when the bag is loaded.
-
-Shipping
-Orders are processed within 2–3 business days and ship with tracking so you can follow your package until it arrives.
+*W 34 × H 36 × D 2 cm, strap 30 cm. Each square is crocheted and joined by hand, so allow 1 to 3 cm either way.*

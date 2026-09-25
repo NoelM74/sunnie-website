@@ -10,35 +10,19 @@ options: [{"name":"Set","values":["Set Of Two","Set Of Four"]}]
 materials: ["Acrylic"]
 size: "Ø 14.5 cm"
 images: [{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/01.jpg","alt":"Four crochet carnation bouquets folded into cones, two purple and two pink"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/02.jpg","alt":"Purple and pink crochet carnation bouquets folded into cones with leaf ties"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/03.jpg","alt":"Round cream crochet coaster unfolded, showing a purple carnation and stem"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/04.jpg","alt":"Carnation mug rug that folds into a mini, photo 4 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/05.jpg","alt":"Carnation mug rug that folds into a mini, photo 5 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/06.jpg","alt":"Carnation mug rug that folds into a mini, photo 6 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/07.jpg","alt":"Carnation mug rug that folds into a mini, photo 7 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/08.jpg","alt":"Carnation mug rug that folds into a mini, photo 8 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/09.jpg","alt":"Carnation mug rug that folds into a mini, photo 9 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/10.jpg","alt":"Carnation mug rug that folds into a mini, photo 10 of 10"}]
+faq: [{"q":"What's in the set?","a":"Choose a set of two (one pink, one purple) or a set of four (two pink, two purple)."},{"q":"How do I wash it?","a":"Hand wash in cool water below 40°C, do not wring, and lay flat to dry."},{"q":"Does folding damage the yarn?","a":"No. The yarn is soft enough that folding it into a bouquet shape does not leave creases."}]
 ---
 
-Hand-crocheted carnation coaster that doubles as a tiny flower bouquet. Fold it up, tie the green leaf ribbon, and it looks like a wrapped carnation. Lay it flat and it's a 14.5 cm mug rug.
+A gift that looks like a bouquet until they discover it is a coaster.
 
-Product details
-- Material: acrylic yarn, crocheted throughout. No backing.
-- Each coaster is a round cream granny-stitch disc, about 14.5 cm across, with a 3D ruffled carnation flower crocheted on top. The flower head is about 8 cm wide. A green crocheted stem with a small leaf runs down the center of the disc.
-- Comes with a separate crocheted tie that has green leaves on each end. Fold the round coaster into a cone shape around the flower, wrap the tie around it, and it becomes a little bouquet. Unfold it and lay it flat to use as a coaster. The yarn is soft enough that folding doesn't leave creases.
-- Weight about 20 g each.
-- Two flower colors: pink carnation or purple carnation. Both have a cream base disc and green stem details.
-- Available as a set of 2 (one pink, one purple) or a set of 4 (two pink, two purple).
+Hui crochets each disc in cream granny stitch, about 14.5 cm across, with a ruffled carnation and a leafed green stem worked into the center. Fold the disc into a cone around the flower, tie it with the matching leaf cord, and it holds its shape like a wrapped stem. Unfold it and it lies flat under a mug.
 
-Great for
-- A small, thoughtful gift that actually does something.
-- Give it as a bouquet, and the person can unfold it into a coaster they'll use every day.
-- Nice for birthdays, Mother's Day, or anniversaries.
-- Decorating a coffee table or desk.
-- When you're not using them under a mug, fold them up and stand the little bouquets next to your books or on a shelf.
+- **Folds into a mini bouquet:** wrap the leaf tie around the cone and hand it over looking like a fresh-cut flower.
+- **Unfolds into a mug rug:** lies flat and ready the moment they want to use it.
+- **Soft acrylic yarn:** folds without creasing, wash after wash.
+- **About 20 g each:** light enough to tuck into a card or gift bag.
+- **Two colours, two set sizes:** pink or purple carnations, sold as a set of two or a set of four.
 
-Handmade notes
-Each coaster is crocheted by hand, so flower fullness, stem placement, and overall diameter will vary a little from piece to piece.
+A small, thoughtful gift for a birthday, Mother's Day or anniversary, for someone who will actually use it once the bouquet act is over.
 
-* Allow 1 to 2 cm difference in measurements. Colors on your screen may not match the yarn exactly.
-
-Care
-- Hand wash in cool or warm water below 40 degrees C.
-- Lay flat on a towel to dry.
-- Do not wring.
-- Avoid prolonged direct sunlight to prevent fading.
-
-Shipping
-Processing time: 2 to 4 business days. Ships with tracking.
+*Ø 14.5 cm. Each coaster is crocheted by hand, so allow 1 to 2 cm either way.*

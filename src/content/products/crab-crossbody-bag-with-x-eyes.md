@@ -11,30 +11,19 @@ options: [{"name":"Colour","values":["Red","Brown"]}]
 materials: ["Acrylic"]
 size: "W 21 × H 10 × D 3 cm, strap 118 cm"
 images: [{"src":"../../assets/products/crab-crossbody-bag-with-x-eyes/01.jpg","alt":"Brown crochet crab crossbody bag with white x-eyes, worn at the hip"},{"src":"../../assets/products/crab-crossbody-bag-with-x-eyes/02.jpg","alt":"Red crochet crab crossbody bag with white x-eyes, worn at the hip"},{"src":"../../assets/products/crab-crossbody-bag-with-x-eyes/03.jpg","alt":"Brown crochet crab crossbody bag with tan claws, worn over a hoodie"},{"src":"../../assets/products/crab-crossbody-bag-with-x-eyes/04.jpg","alt":"Crab crossbody bag with x-eyes, photo 4 of 10"},{"src":"../../assets/products/crab-crossbody-bag-with-x-eyes/05.jpg","alt":"Crab crossbody bag with x-eyes, photo 5 of 10"},{"src":"../../assets/products/crab-crossbody-bag-with-x-eyes/06.jpg","alt":"Crab crossbody bag with x-eyes, photo 6 of 10"},{"src":"../../assets/products/crab-crossbody-bag-with-x-eyes/07.jpg","alt":"Crab crossbody bag with x-eyes, photo 7 of 10"},{"src":"../../assets/products/crab-crossbody-bag-with-x-eyes/08.jpg","alt":"Crab crossbody bag with x-eyes, photo 8 of 10"},{"src":"../../assets/products/crab-crossbody-bag-with-x-eyes/09.jpg","alt":"Crab crossbody bag with x-eyes, photo 9 of 10"},{"src":"../../assets/products/crab-crossbody-bag-with-x-eyes/10.jpg","alt":"Crab crossbody bag with x-eyes, photo 10 of 10"}]
+faq: [{"q":"Will my phone fit?","a":"It holds a small cosmetic jar, lipstick, keys, cards and coins. Smaller phones may fit, but it will not lie flat with a full-size phone."},{"q":"How does it close?","a":"There is no zip or button. Spread the shell apart by hand to reach inside."},{"q":"How do I wash it?","a":"Hand wash in cool water with mild detergent, reshape the claws and eyes while damp, and lay flat to dry."}]
 ---
 
-Hand-crocheted crab bag with big white bobble eyes, stitched x-marks on each pupil, chunky claws, and little legs sticking out underneath. It gets laughs every single time.
+Big white x-eyes and chunky claws make this crab bag impossible to ignore, and it still carries your lipstick, cards and keys.
 
-Product details
-- Material: acrylic yarn, crocheted throughout. No lining.
-- Round crab body with a spiral stitch pattern on the shell. Two large white crocheted bobble eyes with black x-stitch pupils sit on top. Two chunky claws stick out to the sides. Small legs along the bottom edge.
-- Two colors available. Red crab with red strap. Brown/coffee crab with brown strap and beige claw tips.
-- Top width 21 cm (claw to claw), bottom width 15 cm (body only), height 10 cm, depth 3 cm. Strap 118 cm, crocheted cord. Works crossbody or over the shoulder.
-- Weight: about 100 to 150 g.
-- The opening is across the top of the shell. No zipper, no button. You spread the body apart to get things in and out.
-- Fits a small cosmetic jar, lipstick, keys, cards, coins. It won't hold a full-size phone flat, but smaller phones may squeeze in.
+Hui crochets the shell in a spiral stitch, then builds two bobble eyes with black x-stitch pupils and a pair of chunky claws that stick out to the sides. The top spreads open by hand, since there is no zip or button to fight.
 
-Great for
-A silly crossbody for kids or adults who like wearing something that makes people do a double take.
-Fun birthday gift for ocean lovers, crab fans, or anyone who collects weird bags.
+- **Bobble eyes with x-stitch pupils:** the detail that gets a second look.
+- **118 cm crocheted strap:** wear it crossbody or over one shoulder.
+- **Holds a cosmetic jar, lipstick, keys, cards and coins:** smaller phones may fit, though it won't lie flat with a full-size phone.
+- **Two colours:** red with a red strap, or brown with a beige-tipped strap.
+- **About 100 to 150 g:** substantial without weighing you down.
 
-Handmade notes
-Each crab is crocheted by hand, so claw size, eye placement, and leg length will vary a little. Measurements can be off by 1 to 3 cm. Colors on screen may differ from the real yarn.
+A silly, memorable crossbody for kids or adults, and a fun birthday gift for ocean lovers or crab fans.
 
-Care
-- Hand wash in cool water with mild detergent.
-- Reshape the claws and eyes while damp, lay flat to dry.
-- Do not machine wash or tumble dry.
-
-Shipping
-Processing time: 2 to 4 business days. Ships with tracking.
+*W 21 × H 10 × D 3 cm, strap 118 cm. Each crab is crocheted by hand, so allow 1 to 3 cm either way.*

@@ -11,34 +11,19 @@ options: []
 materials: ["Acrylic"]
 size: "W 10 × H 20 × D 2 cm, strap 120 cm"
 images: [{"src":"../../assets/products/clown-crossbody-phone-bag/01.jpg","alt":"Red and blue crochet clown phone bag worn crossbody from behind"},{"src":"../../assets/products/clown-crossbody-phone-bag/02.jpg","alt":"Crochet clown phone bag with toothy grin and blue overalls, close up"},{"src":"../../assets/products/clown-crossbody-phone-bag/03.jpg","alt":"Crochet clown phone bag worn crossbody, front view on white shirt"},{"src":"../../assets/products/clown-crossbody-phone-bag/04.jpg","alt":"Clown crossbody phone bag, photo 4 of 10"},{"src":"../../assets/products/clown-crossbody-phone-bag/05.jpg","alt":"Clown crossbody phone bag, photo 5 of 10"},{"src":"../../assets/products/clown-crossbody-phone-bag/06.jpg","alt":"Clown crossbody phone bag, photo 6 of 10"},{"src":"../../assets/products/clown-crossbody-phone-bag/07.jpg","alt":"Clown crossbody phone bag, photo 7 of 10"},{"src":"../../assets/products/clown-crossbody-phone-bag/08.jpg","alt":"Clown crossbody phone bag, photo 8 of 10"},{"src":"../../assets/products/clown-crossbody-phone-bag/09.jpg","alt":"Clown crossbody phone bag, photo 9 of 10"},{"src":"../../assets/products/clown-crossbody-phone-bag/10.jpg","alt":"Clown crossbody phone bag, photo 10 of 10"}]
+faq: [{"q":"What fits inside?","a":"A phone, a few cards, a lip balm, keys or some coins. It is too slim for an iPad or a book."},{"q":"Is it suitable for kids?","a":"Yes. The 120 cm strap works crossbody on adults and sits well on kids too."},{"q":"How do I wash it?","a":"Hand wash in cool water below 40°C, reshape while damp and lay flat to dry."}]
 ---
 
-Hand-crocheted clown bag with a big toothy grin, red ruffled face, blue overalls, and a twisted green strap. Small enough for just a phone and a few extras. Kids and adults both love this one.
+This clown bag with a toothy grin and a pointed hat turns a boring errand run into a bit people stop you for.
 
-Product details
-- Material: acrylic yarn, crocheted throughout. No lining inside.
-- Round red clown face with a cream center, small black bead eyes, a red pom-pom nose, blue crocheted eyebrows, and a wide white zigzag mouth showing pointy teeth. A small blue pointed hat sits on top of the head.
-- Blue rectangular body below the face, like the clown is wearing overalls. Two small orange button details where the straps meet the body. Green crocheted patches on each side of the shoulders.
-- Twisted green and black braided strap, 120 cm long, fixed length. Wear it crossbody or over one shoulder.
-- Width 10 cm, height 20 cm (including head), depth 2 cm. This is a slim bag. It fits a phone, some cards, a lip balm, keys, or a few coins. Not big enough for an iPad or a book.
-- Open top, no zipper or closure. You just slide things in from the top.
-- Weight about 80 g.
+Hui crochets the round red face with bead eyes, a red pom-pom nose and a wide white zigzag mouth, then finishes it with a pointed blue hat and green patches on the blue overalls body. The strap is a twisted green and black braid, fixed at 120 cm.
 
-Great for
-A funny little bag for running errands, going to a market, or just carrying your phone when you don't want pockets. The strap is long enough to work crossbody on adults, and it sits nicely on kids too.
+- **Toothy grin and pom-pom nose:** a face that gets noticed and remembered.
+- **120 cm fixed strap:** wear it crossbody or over one shoulder.
+- **Open top, no closure:** slide your phone, cards or keys straight in.
+- **W 10 × H 20 × D 2 cm:** slim enough for a phone and a few extras, not an iPad.
+- **About 80 g:** light on the shoulder all day.
 
-Birthday gift or stocking stuffer for someone who likes weird, funny accessories. It gets attention. People will comment on it.
+A funny everyday bag for markets and errands, and a birthday or stocking-stuffer pick for anyone who likes their accessories weird and loud.
 
-Handmade notes
-Each clown is crocheted by hand, so the face shape, tooth spacing, and overall proportions will vary a little from bag to bag.
-
-*Allow 1 to 3 cm difference in measurements. Screen colors may not match the yarn exactly.
-
-Care
-- Hand wash in cool or warm water below 40 degrees C.
-- Reshape while damp and lay flat to dry.
-- Do not wring.
-- Avoid prolonged direct sunlight to prevent fading.
-
-Shipping
-Processing time: 2 to 4 business days. Ships with tracking.
+*W 10 × H 20 × D 2 cm, strap 120 cm. Each clown is crocheted by hand, so allow 1 to 3 cm either way.*
