@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ProductCard from './ProductCard.astro';
+
+interface Props {
+  products: CollectionEntry<'products'>[];
+  headingLevel?: 'h2' | 'h3';
+  eagerFirst?: number;
+}
+const { products, headingLevel = 'h3', eagerFirst = 0 } = Astro.props;
+---
+<ul class="grid" role="list">
+  {products.map((p, i) => (
+    <li><ProductCard product={p} headingLevel={headingLevel} eager={i < eagerFirst} /></li>
+  ))}
+</ul>

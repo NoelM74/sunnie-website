@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProductGrid from '../../components/ProductGrid.astro';
+import { GROUP_LABELS, GROUP_ORDER, inGroup } from '../../lib/products';
+import { breadcrumbJsonLd, pageTitle } from '../../lib/seo';
+
+const all = await getCollection('products');
+const groups = GROUP_ORDER.map((g) => ({ key: g, label: GROUP_LABELS[g], items: inGroup(all, g) })).filter((g) => g.items.length > 0);
+const crumbs = [{ name: 'Home', path: '/' }, { name: 'Bags', path: '/shop/bags/' }];
+---
+<BaseLayout
+  title={pageTitle('Handmade crochet bags and phone crossbodies')}
+  description="Crochet phone bags, character crossbodies and totes. Frogs, poodles, sunflowers and more, each one made by hand. Ships in 3–7 days."
+  current="bags"
+  jsonLd={[breadcrumbJsonLd(crumbs)]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <header class="page-head">
+      <h1>Crochet bags</h1>
+      <p>Frogs, poodles, sunflowers and totes, each one crocheted by hand. Tap any bag for its size, colours and more photos.</p>
+      <ul class="jump" role="list">
+        {groups.map((g) => <li><a href={`#${g.key}`}>{g.label}</a></li>)}
+      </ul>
+    </header>
+    {groups.map((g, i) => (
+      <section class="group" id={g.key} aria-labelledby={`${g.key}-h`}>
+        <h2 id={`${g.key}-h`}>{g.label}</h2>
+        <ProductGrid products={g.items} eagerFirst={i === 0 ? 4 : 0} />
+      </section>
+    ))}
+  </div>
+</BaseLayout>

@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProductGrid from '../../components/ProductGrid.astro';
+import { sortForGrid } from '../../lib/products';
+import { breadcrumbJsonLd, pageTitle } from '../../lib/seo';
+
+const products = sortForGrid(await getCollection('products'));
+const crumbs = [{ name: 'Home', path: '/' }, { name: 'Shop all', path: '/shop/' }];
+---
+<BaseLayout
+  title={pageTitle('Shop all handmade crochet bags and coasters')}
+  description="Every crochet bag, coaster and hat in the Sunnie Designs shop, each one made by hand. In-stock pieces first."
+  current="shop"
+  jsonLd={[breadcrumbJsonLd(crumbs)]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <header class="page-head">
+      <h1>Shop all</h1>
+      <p>Everything in the shop, with in-stock pieces first. Tap any piece for sizes, colours and more photos.</p>
+    </header>
+    <ProductGrid products={products} headingLevel="h2" eagerFirst={4} />
+  </div>
+</BaseLayout>

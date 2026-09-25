@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProductGrid from '../../components/ProductGrid.astro';
+import { CATEGORY_LABELS, inCategory } from '../../lib/products';
+import { breadcrumbJsonLd, pageTitle } from '../../lib/seo';
+
+const COPY = {
+  coasters: {
+    title: 'Handmade crochet coasters and mug rugs',
+    h1: 'Crochet coasters',
+    intro: 'Coasters and mug rugs for your table, from rose baskets to cat, pig and bear sets. They make an easy gift.',
+    description: 'Handmade crochet coasters and mug rugs: flower sets, rose baskets and animal designs. Ships in 3–7 days.',
+  },
+  hats: {
+    title: 'Handmade crochet hats',
+    h1: 'Crochet hats',
+    intro: 'Crochet hats, made by hand. Tap a hat for sizes and more photos.',
+    description: 'Handmade crochet hats from Sunnie Designs. Ships in 3–7 days.',
+  },
+} as const;
+
+export function getStaticPaths() {
+  return [{ params: { category: 'coasters' } }, { params: { category: 'hats' } }];
+}
+
+const category = Astro.params.category as keyof typeof COPY;
+const copy = COPY[category];
+const products = inCategory(await getCollection('products'), category);
+const path = `/shop/${category}/`;
+const crumbs = [{ name: 'Home', path: '/' }, { name: CATEGORY_LABELS[category], path }];
+---
+<BaseLayout title={pageTitle(copy.title)} description={copy.description} current={category} jsonLd={[breadcrumbJsonLd(crumbs)]}>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <header class="page-head">
+      <h1>{copy.h1}</h1>
+      <p>{copy.intro}</p>
+    </header>
+    <ProductGrid products={products} headingLevel="h2" eagerFirst={4} />
+  </div>
+</BaseLayout>

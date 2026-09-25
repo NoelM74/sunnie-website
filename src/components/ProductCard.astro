@@ -1,0 +1,32 @@
+---
+import { Picture } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { formatPrice } from '../lib/products';
+
+interface Props {
+  product: CollectionEntry<'products'>;
+  headingLevel?: 'h2' | 'h3';
+  eager?: boolean;
+}
+const { product, headingLevel = 'h3', eager = false } = Astro.props;
+const { name, price, inStock, isNew, images } = product.data;
+const Heading = headingLevel;
+const badge = !inStock ? 'Sold out' : isNew ? 'New' : null;
+---
+<article class="card">
+  <a class="card-link" href={`/products/${product.id}/`}>
+    <div class="card-media">
+      <Picture
+        src={images[0].src}
+        alt=""
+        formats={['avif', 'webp']}
+        widths={[300, 450, 600]}
+        sizes="(min-width: 72rem) 270px, (min-width: 40rem) 30vw, 46vw"
+        loading={eager ? 'eager' : 'lazy'}
+      />
+      {badge && <span class="badge card-badge">{badge}</span>}
+    </div>
+    <Heading class="card-title">{name}</Heading>
+  </a>
+  <p class="card-price">{formatPrice(price)}</p>
+</article>
