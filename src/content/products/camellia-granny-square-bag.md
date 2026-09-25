@@ -9,7 +9,8 @@ etsyUrl: "https://www.etsy.com/listing/4467432960/crochet-camellia-granny-square
 maker: "Hui"
 options: [{"name":"Colour","values":["Red","Green","Pink","Orange"]}]
 materials: ["Polyester"]
-images: [{"src":"../../assets/products/camellia-granny-square-bag/01.jpg","alt":"Camellia granny square bag"},{"src":"../../assets/products/camellia-granny-square-bag/02.jpg","alt":"Camellia granny square bag, photo 2 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/03.jpg","alt":"Camellia granny square bag, photo 3 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/04.jpg","alt":"Camellia granny square bag, photo 4 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/05.jpg","alt":"Camellia granny square bag, photo 5 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/06.jpg","alt":"Camellia granny square bag, photo 6 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/07.jpg","alt":"Camellia granny square bag, photo 7 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/08.jpg","alt":"Camellia granny square bag, photo 8 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/09.jpg","alt":"Camellia granny square bag, photo 9 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/10.jpg","alt":"Camellia granny square bag, photo 10 of 10"}]
+size: "W 16 × H 15 cm"
+images: [{"src":"../../assets/products/camellia-granny-square-bag/01.jpg","alt":"Four crochet granny square bags with orange, green, pink and red 3D flowers"},{"src":"../../assets/products/camellia-granny-square-bag/02.jpg","alt":"Cream granny square bag with a large red 3D camellia flower and bud charm"},{"src":"../../assets/products/camellia-granny-square-bag/03.jpg","alt":"Cream granny square bag with a large green 3D camellia flower and bud charm"},{"src":"../../assets/products/camellia-granny-square-bag/04.jpg","alt":"Camellia granny square bag, photo 4 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/05.jpg","alt":"Camellia granny square bag, photo 5 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/06.jpg","alt":"Camellia granny square bag, photo 6 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/07.jpg","alt":"Camellia granny square bag, photo 7 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/08.jpg","alt":"Camellia granny square bag, photo 8 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/09.jpg","alt":"Camellia granny square bag, photo 9 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/10.jpg","alt":"Camellia granny square bag, photo 10 of 10"}]
 ---
 
 A handmade crochet granny square bag with a 3D camellia and matching flower charm on the drawstring. Fits a phone, keys, and daily essentials for hands-free carry.
@@ -38,5 +39,4 @@ Care Instructions:
 - Do not machine wash or tumble dry.
 
 SHIPPING:
-Made and shipped within 2–5 business days. Tracking provided.
-All taxes and tariffs are included in the price, so no nasty surprises when your bag arrives.
+Made and shipped within 2 to 5 business days. Tracking provided.

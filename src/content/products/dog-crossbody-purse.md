@@ -9,10 +9,11 @@ etsyUrl: "https://www.etsy.com/listing/4568779203/crochet-dog-crossbody-purse-ha
 maker: "Hui"
 options: [{"name":"Colour","values":["Khaki","Yellow"]}]
 materials: ["Wool","Polyester"]
-images: [{"src":"../../assets/products/dog-crossbody-purse/01.jpg","alt":"Dog crossbody purse"},{"src":"../../assets/products/dog-crossbody-purse/02.jpg","alt":"Dog crossbody purse, photo 2 of 10"},{"src":"../../assets/products/dog-crossbody-purse/03.jpg","alt":"Dog crossbody purse, photo 3 of 10"},{"src":"../../assets/products/dog-crossbody-purse/04.jpg","alt":"Dog crossbody purse, photo 4 of 10"},{"src":"../../assets/products/dog-crossbody-purse/05.jpg","alt":"Dog crossbody purse, photo 5 of 10"},{"src":"../../assets/products/dog-crossbody-purse/06.jpg","alt":"Dog crossbody purse, photo 6 of 10"},{"src":"../../assets/products/dog-crossbody-purse/07.jpg","alt":"Dog crossbody purse, photo 7 of 10"},{"src":"../../assets/products/dog-crossbody-purse/08.jpg","alt":"Dog crossbody purse, photo 8 of 10"},{"src":"../../assets/products/dog-crossbody-purse/09.jpg","alt":"Dog crossbody purse, photo 9 of 10"},{"src":"../../assets/products/dog-crossbody-purse/10.jpg","alt":"Dog crossbody purse, photo 10 of 10"}]
+size: "W 34 × H 15 × D 2 cm, strap 130 cm"
+images: [{"src":"../../assets/products/dog-crossbody-purse/01.jpg","alt":"Yellow and khaki crochet dog crossbody purses laid side by side on a bed"},{"src":"../../assets/products/dog-crossbody-purse/02.jpg","alt":"Khaki crochet dog crossbody purse with brown ears, held against a dress"},{"src":"../../assets/products/dog-crossbody-purse/03.jpg","alt":"Yellow crochet dog crossbody purse with black ears, worn crossbody"},{"src":"../../assets/products/dog-crossbody-purse/04.jpg","alt":"Dog crossbody purse, photo 4 of 10"},{"src":"../../assets/products/dog-crossbody-purse/05.jpg","alt":"Dog crossbody purse, photo 5 of 10"},{"src":"../../assets/products/dog-crossbody-purse/06.jpg","alt":"Dog crossbody purse, photo 6 of 10"},{"src":"../../assets/products/dog-crossbody-purse/07.jpg","alt":"Dog crossbody purse, photo 7 of 10"},{"src":"../../assets/products/dog-crossbody-purse/08.jpg","alt":"Dog crossbody purse, photo 8 of 10"},{"src":"../../assets/products/dog-crossbody-purse/09.jpg","alt":"Dog crossbody purse, photo 9 of 10"},{"src":"../../assets/products/dog-crossbody-purse/10.jpg","alt":"Dog crossbody purse, photo 10 of 10"}]
 ---
 
-This handmade crochet dog crossbody bag has a chunky knit body, floppy contrast ears, and a soft, pillowy texture that feels almost squishy to hold — a fun pick for kids who want a cute coin pouch, or teens and adults after a quirky everyday crossbody.
+This handmade crochet dog crossbody bag has a chunky knit body, floppy contrast ears, and a soft, pillowy texture that feels almost squishy to hold, a fun pick for kids who want a cute coin pouch, or teens and adults after a quirky everyday crossbody.
 
 Inside, it's roomy enough for a phone, lipstick, tissues, keys, or a bus card, so it holds up as a real bag rather than just a display piece. For kids, it doubles as a coin purse or a spot to stash small toys and treats.
 
@@ -33,4 +34,4 @@ Who it's great for: Dog lovers, kids who want a first "big kid" coin purse, or t
 
 Care instructions: Hand wash in room-temperature or lukewarm water under 40°C. Lay flat to dry. Avoid long stretches in direct sunlight.
 
-Shipping: Made to order — check my shop's current processing time if you need it by a specific date. Ships with tracking.
+Shipping: Made to order. Ships with tracking.
