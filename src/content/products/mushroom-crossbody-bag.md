@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/mushroom-crossbody-bag/01.jpg","alt":"Mus
 
 Hand-crocheted mushroom bag in red and cream cotton with a drawstring top, sized to hold your phone and small daily carry items.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Material: cotton yarn throughout, cotton lining inside.
 - Shape: cylindrical mushroom with a red cap, white spots, a small crocheted flower with a yellow center, and a cream-colored stem base.
 - Drawstring closure with braided cotton ties.
@@ -23,16 +23,16 @@ Hand-crocheted mushroom bag in red and cream cotton with a drawstring top, sized
 - Weight: about 170 g (source also lists 300 g for packaged weight).
 - Single compartment, soft body, no dividers.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 Phone, keys, cards, lip balm. Enough room for the basics without the bulk.
 A fun gift for someone who collects mushroom things or just likes bags with personality.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 Each bag is crocheted by hand, so expect small differences in stitch tension, spot placement, and flower position.
 
 Measurements may vary 1 to 3 cm. Screen colors can look different from the real thing.
 
-𝗖𝗮𝗿𝗲
+Care
 Hand wash in cool water with mild detergent. Reshape while damp, lay flat to dry.
 Do not machine wash or tumble dry.
 

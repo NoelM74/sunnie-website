@@ -13,25 +13,25 @@ images: [{"src":"../../assets/products/flower-mandala-coaster/01.jpg","alt":"Flo
 
 A hand crocheted flower mandala coaster with scalloped petals and a green leaf ring, made to sit under your morning mug or a lit candle without sliding around.
 
-𝐏𝐫𝐨𝐝𝐮𝐜𝐭 𝐝𝐞𝐭𝐚𝐢𝐥𝐬
+Product details
 - Hooked by hand in a flower mandala pattern with a sunburst middle, white petal ring, tiny green leaves, and a scalloped colored edge
 - Choose from 8 shades: yellow, purple, pink, red, plus yellow, purple, pink, and blue ombre
 - Soft and slightly squishy so it grips the table and stays put under a heavy mug
 - Thick enough to soak up cold drink condensation before it hits your wood
 - Doubles as a small doily under a candle, a plant pot, or your rings and earrings at the end of the day
 
-𝐆𝐫𝐞𝐚𝐭 𝐟𝐨𝐫
+Great for
 - Coffee mugs, iced drinks, candles, and small ceramic pots
 - A thoughtful little gift when you do not want to show up empty handed at a friend's place
 - Bringing color to a plain kitchen table, nightstand, or work from home desk.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 - Each coaster is hooked one at a time, so tiny size differences and small quirks are part of the look
 - Screen colors can read a touch different from the real thing
 - Order 4 and I will pop in a free mini crochet flower basket. Order 8 and you get 2 baskets
 
-𝐂𝐚𝐫𝐞
+Care
 Hand wash gently in cool or lukewarm water under 40 C, press the water out in a towel, and lay flat to dry away from direct sun so the colors stay rich.
 
-𝐒𝐡𝐢𝐩𝐩𝐢𝐧𝐠
+Shipping
 Ships from my studio with tracking. Pick your colours at checkout and I will get it packed up within my listed processing time.

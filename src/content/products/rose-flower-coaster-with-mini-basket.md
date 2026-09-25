@@ -13,7 +13,7 @@ images: [{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/01.j
 
 I hand-crochet this little rose coaster with 12 roses and a tiny matching basket that holds it when you fold it up. It's like having a small garden on your table.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 
 - Hand-crocheted from yarn, every single rose done individually.
 - Coaster diameter: 16 cm (about 6.3 inches). Each rose is roughly 3 cm wide and 2 cm tall.
@@ -21,19 +21,19 @@ I hand-crochet this little rose coaster with 12 roses and a tiny matching basket
 - Coaster weight: 40g. Basket weight: 20g.
 - Available in six colours: yellow, purple, pink, red, white, and blue.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 - Setting your tea or coffee on something that actually brings a bit of warmth to your morning. Friends always comment on these when they visit.
 - A really thoughtful gift for birthdays or holidays. It's the kind of thing people keep on their table long after the occasion because it just makes them happy to look at.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 I crochet every rose and leaf on this coaster by hand. No two are exactly the same. Measurements can be off by 1 to 2 cm, and colors may look slightly different on your screen than in person.
 
 That's just the nature of handmade work, and honestly it's what gives each one its own personality.
 
-𝗖𝗮𝗿𝗲
+Care
 Hand wash in cool water or lukewarm water under 40 degrees Celsius. Lay flat to dry.
 Don't leave it in direct sunlight for long periods.
 No machine washing.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 2 to 5 business days. Ships with tracking.

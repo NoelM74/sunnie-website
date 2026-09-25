@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/crab-crossbody-bag-with-x-eyes/01.jpg","a
 
 Hand-crocheted crab bag with big white bobble eyes, stitched x-marks on each pupil, chunky claws, and little legs sticking out underneath. It gets laughs every single time.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Material: acrylic yarn, crocheted throughout. No lining.
 - Round crab body with a spiral stitch pattern on the shell. Two large white crocheted bobble eyes with black x-stitch pupils sit on top. Two chunky claws stick out to the sides. Small legs along the bottom edge.
 - Two colors available. Red crab with red strap. Brown/coffee crab with brown strap and beige claw tips.
@@ -23,17 +23,17 @@ Hand-crocheted crab bag with big white bobble eyes, stitched x-marks on each pup
 - The opening is across the top of the shell. No zipper, no button. You spread the body apart to get things in and out.
 - Fits a small cosmetic jar, lipstick, keys, cards, coins. It won't hold a full-size phone flat, but smaller phones may squeeze in.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 A silly crossbody for kids or adults who like wearing something that makes people do a double take.
 Fun birthday gift for ocean lovers, crab fans, or anyone who collects weird bags.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 Each crab is crocheted by hand, so claw size, eye placement, and leg length will vary a little. Measurements can be off by 1 to 3 cm. Colors on screen may differ from the real yarn.
 
-𝗖𝗮𝗿𝗲
+Care
 - Hand wash in cool water with mild detergent.
 - Reshape the claws and eyes while damp, lay flat to dry.
 - Do not machine wash or tumble dry.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 2 to 4 business days. Ships with tracking.

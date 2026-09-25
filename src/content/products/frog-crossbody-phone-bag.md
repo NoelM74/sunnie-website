@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/frog-crossbody-phone-bag/01.jpg","alt":"F
 
 Hand-crocheted frog bag with bulging eyes, a pink wide mouth, and a speckled yarn belly. Fits your phone, a small snack, lip balm, and not much else, which is kind of the point.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Material: polyester yarn, crocheted throughout. No lining inside.
 - Green frog head with two big white-and-black bobble eyes on crocheted stalks. Pink chunky yarn mouth rim. Green ruffled collar below the mouth.
 - Body is a speckled cream and multicolor yarn, soft and slightly fuzzy.
@@ -24,19 +24,19 @@ Hand-crocheted frog bag with bulging eyes, a pink wide mouth, and a speckled yar
 - Opening: the mouth flaps open. No zipper, no button, no snap. You just reach in.
 - Single compartment, soft body, no dividers.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 Carrying your phone, cards, keys, a small wallet, lip balm. That's about all it wants to hold.
 
 A goofy gift for frog lovers, or anyone who likes their accessories with some personality.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 Each frog is crocheted by hand, so stitch tension, eye placement, and mouth shape will vary a little. Measurements can be off by 1 to 3 cm. The speckled belly yarn means every bag has a slightly different color mix. Screen colors may not match exactly.
 
-𝗖𝗮𝗿𝗲
+Care
 - Hand wash in cool water with mild detergent.
 - Reshape the mouth and eyes while damp, then lay flat to dry.
 - Do not machine wash or tumble dry.
 - The bobble eyes can lose shape if wrung out.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 2 to 4 business days. Ships with tracking.

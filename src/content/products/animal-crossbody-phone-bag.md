@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/animal-crossbody-phone-bag/01.jpg","alt":
 
 I hand-crochet these silly little animal bags that hold your phone and always start conversations. Four characters to choose from, each with its own goofy face and dangling legs.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Hand-crocheted from polyester yarn. Soft and squishy with a white belly panel, big round eyes, and little limbs that hang down.
 - Four characters: pink cat, green frog, yellow duck, or brown sloth.
 - Each one has a different face and personality. Pick yours from the variation menu.
@@ -23,25 +23,25 @@ I hand-crochet these silly little animal bags that hold your phone and always st
 - Strap is 110 cm, sits nicely crossbody on most teens and adults.
 - Weighs about 100 g. You genuinely forget you're wearing it.
 
-𝗪𝗵𝗮𝘁 𝗳𝗶𝘁𝘀 𝗶𝗻𝘀𝗶𝗱𝗲
+What fits inside
 Your phone, a few cards, keys, lip balm. Maybe a small wallet if you're good at tetris. It's a grab-your-phone-and-go kind of bag, not an everything bag.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 Days when you want to carry the basics and nothing else. Markets, walks, nights out, errands. It goes crossbody so your hands stay free.
 These are honestly great gifts too.
 
 If someone in your life lights up over cute bags or funny animals, this is the kind of thing they'll actually wear and not just put on a shelf.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 I crochet each bag from scratch, so no two come out identical. Stitch tension, face placement, and limb length will vary slightly.
 
 Measurements can be off by 1 to 3 cm. Screen colors aren't always exact either. I think the small differences are what give each bag its own mood.
 
-𝗖𝗮𝗿𝗲
+Care
 - Hand wash in cool water with a little mild detergent.
 - Reshape gently and lay flat to dry.
 - Don't machine wash or tumble dry.
 - Keep the magnetic snap dry when you can.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 2 to 4 business days. Ships with tracking.

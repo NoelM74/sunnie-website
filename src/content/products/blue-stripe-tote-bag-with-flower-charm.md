@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/blue-stripe-tote-bag-with-flower-charm/01
 
 Hand-crocheted cream and blue striped tote with a magnetic snap closure, a detachable navy flower charm, and a smiley face charm. Soft, lightweight, fits an iPad.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Material: acrylic yarn, crocheted throughout.
 - Cream body with horizontal blue stripes in two tones: thin teal accent lines and wider openwork stitch rows. The mix of solid and lacy stitch patterns gives the bag texture without making it heavy.
 - Magnetic snap closure at the top center keeps things from sliding out.
@@ -25,23 +25,23 @@ Hand-crocheted cream and blue striped tote with a magnetic snap closure, a detac
 - Fits an iPad, phone, paperback book, small umbrella, wallet, and a water bottle if you're not too ambitious about it.
 - Brown faux leather "Hand made" label with a bunny logo stitched to the upper front.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 - Daily commute, weekend errands, coffee shop trips, or light travel. It holds more than it looks like it should.
 - Birthday or holiday gift for someone who likes handmade bags or cottagecore style.
 - The flower charm makes it feel a little special without being over the top.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 
 Each bag is crocheted by hand, so stitch tension, stripe spacing, and charm shape will vary slightly from piece to piece.
 *Allow 1 to 3 cm difference in measurements. Screen colors may not match the yarn exactly.
 
-𝗖𝗮𝗿𝗲
+Care
 - Hand wash in cool or warm water below 40 degrees C with a mild detergent.
 - Lay flat on a towel to dry. Do not wring or twist.
 - Keep out of prolonged direct sunlight to prevent fading.
 - The magnetic snap is metal, so dry it well after washing.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 - Processing time: 2 to 4 business days.
 - Ships with tracking.
 - Bag may arrive lightly compressed from packaging. Just reshape it and it bounces right back.

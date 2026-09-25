@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/blue-monster-crossbody-phone-bag-with-lol
 
 Hand-crocheted blue monster bag with a big coral mouth, googly eyes, purple ears, and a pink swirl lollipop on its belly. Soft, squishy, and honestly a little weird. People love it.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Material: yarn, crocheted throughout. No lining inside.
 - Blue body with coral/salmon pink wide mouth, white-and-black bead eyes, purple crocheted ears, and small crocheted arms and feet with ruffled edges.
 - White crocheted flower shape on the belly with a pink spiral in the center. Looks like a lollipop.
@@ -23,19 +23,19 @@ Hand-crocheted blue monster bag with a big coral mouth, googly eyes, purple ears
 - Open top. The mouth flaps open to reveal the compartment inside. No zipper, no snap.
 - Single compartment, soft body, no dividers. Fits a phone, keys, lip balm, cards, tissues, coins.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 Kids can stash candy, small toys, or pocket money. Adults can carry a phone and daily small items.
 A funny birthday gift for anyone who likes strange little creatures.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 Each monster is crocheted by hand, so the mouth shape, eye placement, and ear size will differ a bit from bag to bag.
 
 Measurements can be off by 1 to 3 cm. Screen colors may look different from the actual yarn.
 
-𝗖𝗮𝗿𝗲
+Care
 Hand wash in cool or lukewarm water, 40 C or below.
 Lay flat to dry.
 Avoid long sun exposure.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 2 to 4 business days. Ships with tracking.

@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/ostrich-crossbody-bag-with-loop-yarn-body
 
 Hand-crocheted ostrich bag with a shaggy loop yarn body, dangling yellow legs, and a little white head wearing a crown. Kids love it. Adults love it too.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Material: polyester yarn. Loop-stitch body gives it that fluffy, scruffy look. No lining inside.
 - White crocheted ostrich head with black stitched eyes, a yellow crocheted crown, and two faux pearl bead accents on the body.
 - Yellow crocheted legs dangle from the bottom.
@@ -24,18 +24,18 @@ Hand-crocheted ostrich bag with a shaggy loop yarn body, dangling yellow legs, a
 - Open top. No zipper, no snap, no drawstring. You just reach in.
 - Fits a phone, keys, lip balm, a small tin, cards. Won't fit a full iPad or A4 Magazine.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 A fun crossbody for kids or adults who want something with personality. Works at markets, on walks, or just running around.
 Makes a great birthday gift for anyone who likes birds or goofy bags.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 Every bag is crocheted by hand, so the loop texture, pearl placement, and face details will differ slightly. Measurements can be off by 2 to 3 cm. Colors on screen may look a bit different from the real thing.
 
-𝗖𝗮𝗿𝗲
+Care
 - Hand wash in cool water with mild detergent.
 - Reshape the body while damp and lay flat to dry.
 - Do not machine wash or tumble dry.
 - Be gentle with the pearl beads.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 2 to 4 business days. Ships with tracking.

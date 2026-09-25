@@ -15,7 +15,7 @@ featured: 4
 
 A handmade crochet crossbody phone bag with an open knit pattern and tassel, made for everyday carry and holidays, with a magnetic snap top and two swappable straps.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Outer layer is hollow crochet knit with a canvas inner lining so small items stay put
 - Magnetic snap closure at the top keeps your phone and bits from slipping out through the gaps
 - Comes with 2 straps: a woven knit strap and a faux leather (PU) strap, both fully removable so you can switch the look
@@ -24,26 +24,26 @@ A handmade crochet crossbody phone bag with an open knit pattern and tassel, mad
 - Wood bead and tassel detail with a small Hand Made tag on the front
 - Available in cream white or khaki
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 Festivals, beach days and holidays when you just want your phone, keys and cards on you.
 
 Daily commuting and quick errands when a full handbag feels like too much.
 
 A birthday or anniversary present for a friend or family member who loves boho pieces
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 Each bag is hand knitted, so the stitch pattern and tassel can vary a little from piece to piece. That's part of the handmade charm.
 
 Measurements are taken by hand, so please allow 1 to 3cm difference.
 
 *Colours may look slightly different depending on your screen and lighting.
 
-𝗖𝗮𝗿𝗲
+Care
 - Hand wash in cool or lukewarm water below 40C
 - Lay flat to dry
 - Keep out of long direct sunlight to protect the colour
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 I aim to make and dispatch your bag within 2 to 4 business days
 Sent with tracking so you can follow it the whole way
 

@@ -54,6 +54,9 @@ describe('cleanDescription', () => {
       'Intro <3\n\n- One\n- Two\nA note',
     );
   });
+  it('converts Unicode math-bold letters to plain text', () => {
+    expect(cleanDescription('𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀\n🐸 Frog')).toBe('Product details\n🐸 Frog');
+  });
 });
 
 describe('fields', () => {

@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/burger-monster-crossbody-bag/01.jpg","alt
 
 Hand-crocheted little monster bag with googly eyes, a big red mouth, curly hair, and dangling arms and legs. It looks like a grumpy striped creature and people will absolutely stop you to ask about it.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Material: yarn, crocheted throughout. No lining inside.
 - Yellow head with curly brown loop-stitch hair on top. Two white googly bead eyes sit just above a thick red crocheted mouth.
 - Body is striped in horizontal bands: yellow, rust red, coral, green, speckled cream, and lemon yellow. Each bag's color mix will vary slightly.
@@ -24,20 +24,20 @@ Hand-crocheted little monster bag with googly eyes, a big red mouth, curly hair,
 - Open top. No zipper or button. You just reach in past the mouth.
 - Fits a phone, keys, lip balm, cards, some coins. Small essentials only.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 A conversation starter at markets, school, coffee shops. Kids and adults both go nuts for this one.
 Birthday or holiday gift for anyone who likes weird, funny accessories.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 Every bag is crocheted by hand, so stitch tension, stripe width, arm length, and face placement will differ a little from bag to bag.
 
 Measurements can be off by 1 to 3 cm. Colors on your screen may not match the real thing exactly.
 
-𝗖𝗮𝗿𝗲
+Care
 - Hand wash or gentle machine wash below 40 C.
 - Wash separately from dark colors to avoid bleeding.
 - Don't wash with rough items that could snag the yarn.
 - Reshape while damp and lay flat to dry.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 2 to 4 business days. Ships with tracking.

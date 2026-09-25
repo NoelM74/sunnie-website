@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/01.
 
 Hand-crocheted bag covered in rows of puffy little flower buds with green stems. Comes in two sizes so you and your kid can match, or just pick the one that fits your life.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Material: acrylic yarn, crocheted throughout. The large size has a structured fabric base with gold stud feet on the bottom.
 - Flower buds are crocheted in rows across the body with green leaf stitches between them. The top edge has a scalloped ruffle rim.
 - Three colors. Pink bag with pink flower buds and a pink flower charm. Blue bag with mixed pastel buds and a white daisy charm. Yellow/cream bag with yellow buds and a yellow sunflower charm.
@@ -25,20 +25,20 @@ Hand-crocheted bag covered in rows of puffy little flower buds with green stems.
 - Small: top width 23 cm, bottom width 17.5 cm, height 13 cm, depth 2 cm. Strap 120 cm. Weight about 80 g.
 - The large holds a phone, wallet, keys, sunglasses, small water bottle. The small fits a phone, cards, lip balm. It's more of a going-out bag.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 Mommy-and-me matching sets. The large and small in the same color look really sweet together.
 
 Daily carry, brunch, weekend markets, vacations. Also a lovely birthday gift for someone who likes flowers.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 - Every bag is crocheted by hand, so flower placement, bud size, and handle thickness will vary slightly.
 - Measurements can be off by 1 to 3 cm.
 - Screen colors may differ from the real yarn.
 
-𝗖𝗮𝗿𝗲
+Care
 - Hand wash in cool or lukewarm water, 40 C or below.
 - Lay flat to dry and reshape while damp.
 - Avoid long sun exposure.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 2 to 4 business days. Ships with tracking.

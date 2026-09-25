@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/overalls-character-crossbody-bag-with-pea
 
 Handmade crochet character bag shaped like a smiling little figure in overalls with dangling legs and boots, worn as a crossbody or shoulder bag with a pearl bead chain strap.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Body: cream/beige crochet knit in a chunky stitch, shaped like a pair of overalls with a smiling face on the front bib
 - Straps: teal/green crochet suspender straps with button closures at the top
 - Feet: yellow crochet boots that dangle freely from the bottom of the bag
@@ -25,22 +25,22 @@ Handmade crochet character bag shaped like a smiling little figure in overalls w
 - No lining
 - Color: beige body, teal straps, yellow boots, white pearl chain
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 Carrying your phone, keys, cards, lip balm, and small daily essentials
 Adding a fun conversation piece to casual outfits
 
 Teens and young adults who love quirky, character style accessories
 A thoughtful handmade gift for friends who collect unusual bags
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 Each bag is crocheted by hand, so small variations in stitch tension or sizing (up to 2 to 4cm) are normal and part of the charm.
 
 The smiling face on the bib is hand embroidered in yellow and black thread. Buttons on the suspender straps are functional
 
-𝗖𝗮𝗿𝗲
+Care
 - Spot clean with a damp cloth or hand wash gently in cool water
 - Reshape while damp and lay flat to air dry
 - Do not machine wash, tumble dry, or iron
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 3 to 5 business days. Ships with tracking.

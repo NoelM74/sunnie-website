@@ -54,6 +54,7 @@ const ENTITIES = { '&lt;': '<', '&gt;': '>', '&amp;': '&', '&quot;': '"', '&#39;
 export function cleanDescription(text) {
   return text
     .replace(/\r\n?/g, '\n')
+    .replace(/[\u{1D400}-\u{1D7FF}]/gu, (c) => c.normalize('NFKC'))
     .replace(/&(lt|gt|amp|quot|#39);/g, (m) => ENTITIES[m])
     .replace(/ /g, ' ')
     .split('\n')

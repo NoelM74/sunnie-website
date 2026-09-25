@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/01.jpg","a
 
 Hand-crocheted yellow giraffe bag with a 3D head, four dangling legs, brown spots, and an adjustable strap. Sized for little kids. Holds candy, coins, small toys, and whatever treasures they pick up along the way.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Material: acrylic yarn, crocheted throughout. Orange fabric lining inside.
 - Yellow giraffe body with brown crocheted spots, two small brown-tipped horns, little ears, black safety eyes, and a white muzzle with an embroidered nose and mouth. The head sticks up from the back of the bag on a long neck, and four stubby legs with brown hooves dangle from the bottom and sides.
 - Body width 18 cm, body height 12 cm, depth 5 cm. Total height, including the giraffe's head is about 28 cm. The bag is the giraffe's belly, basically.
@@ -23,20 +23,20 @@ Hand-crocheted yellow giraffe bag with a 3D head, four dangling legs, brown spot
 - Weight about 130 g. Very light for small shoulders.
 - Fits candy, coins, a small toy, hair clips, a snack bar. It's a kids' bag, so don't expect it to hold much more than that.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 A little kid who loves animals. They can carry their own snacks and small toys, and the giraffe is squishy enough to double as something to hug. It works for trips to the park, the zoo, or just around the house.
 
 Birthday or holiday gift for a toddler or young child. It ships light and looks fun the second they open it.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 Each giraffe is crocheted by hand, so spot placement, leg length, head angle, and facial features will vary a little from bag to bag. Allow 2 to 3 cm difference in measurements.
 * Colours on your screen may not match the yarn exactly.
 
-𝗖𝗮𝗿𝗲
+Care
 - Hand wash in cool or warm water below 40 degrees C.
 - Reshape the head and legs while damp.
 - Lay flat to dry.
 - Avoid prolonged direct sunlight to keep the yellow from fading.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 2 to 4 business days. Ships with tracking.

@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/mushroom-house-mini-crossbody-bag/01.jpg"
 
 Tiny hand-crocheted mushroom house bag with a red cap, white spots, a little door, a window, and yellow flowers around the base. It's about the size of your fist and people will not stop asking about it.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Material: yarn, crocheted throughout. No lining.
 - Red mushroom cap with white spot details on top. Cream colored body shaped like a little cottage. Brown crocheted door, green and brown round window, small yellow flowers and green leaves around the base.
 - Width 11 cm, height 6 cm, depth 6 cm. Strap 100 cm, crocheted cord. Works crossbody or over the shoulder.
@@ -22,18 +22,18 @@ Tiny hand-crocheted mushroom house bag with a red cap, white spots, a little doo
 - The cap lifts open at the top. That's how you get things in and out.
 - This is a mini bag. It holds lipstick, a small perfume, keys, coins, earbuds, or a few pieces of candy. It will not hold a phone.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 A fun little going-out bag when you only need the basics. Also great as a decorative piece or a conversation starter worn over a coat.
 Birthday gift for anyone who likes mushrooms, fairy gardens, or cottagecore style.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 Each mushroom house is crocheted by hand, so the door, window, flower placement, and cap shape will vary a little.
 Measurements can be off by 1 to 3 cm. Colors on screen may differ from the real yarn.
 
-𝗖𝗮𝗿𝗲
+Care
 - Hand wash in cool or lukewarm water, 40 C or below.
 - Lay flat to dry and reshape while damp.
 - Avoid long sun exposure.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 2 to 4 business days. Ships with tracking.

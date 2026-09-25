@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/puppy-face-crossbody-bag/01.jpg","alt":"P
 
 Hand-crocheted puppy bag with big mismatched eyes, floppy ears, and a tiny round nose. It's the kind of bag that makes strangers smile at you on the street.
 
-𝗣𝗿𝗼𝗱𝘂𝗰𝘁 𝗱𝗲𝘁𝗮𝗶𝗹𝘀
+Product details
 - Material: yarn, crocheted throughout. No lining inside.
 - Two colours available.
 - Cream body with black ears, black handle, and black nose.
@@ -26,20 +26,20 @@ Hand-crocheted puppy bag with big mismatched eyes, floppy ears, and a tiny round
 - Open top with a drawstring tie. Short crocheted top handle plus a longer crossbody strap.
 - Single compartment, soft body, no dividers.
 
-𝗪𝗵𝗮𝘁 𝗳𝗶𝘁𝘀 𝗶𝗻𝘀𝗶𝗱𝗲
+What fits inside
 Phone, keys, lip balm, cards, tissues, coins. Kids can stash candy or a small toy. It holds more than you'd think for its size.
 
-𝗚𝗿𝗲𝗮𝘁 𝗳𝗼𝗿
+Great for
 Kids and adults. The strap is long enough for crossbody wear on grown-ups, and the short handle works for little hands.
 A fun birthday gift for dog lovers of any age.
 
-𝗛𝗮𝗻𝗱𝗺𝗮𝗱𝗲 𝗻𝗼𝘁𝗲𝘀
+Handmade notes
 Each bag is crocheted by hand, so eye placement, ear shape, and stitch tension will differ slightly. Measurements can be off by 1 to 3 cm. Colours on screen may not match the real yarn exactly.
 
-𝗖𝗮𝗿𝗲
+Care
 - Hand wash in cool or lukewarm water, 40 C or below.
 - Lay flat to dry and reshape while damp.
 - Avoid long sun exposure.
 
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴
+Shipping
 Processing time: 2 to 4 business days. Ships with tracking.
