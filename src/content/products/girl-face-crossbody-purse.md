@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4571000902/crochet-girl-face-crossbody-purse"
 maker: "Hui"
 options: [{"name":"Colour","values":["Yellow","Pink","Green"]}]
 materials: ["Thermal knit","Polyester"]

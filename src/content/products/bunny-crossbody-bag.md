@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 22.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4467407026/crochet-bunny-crossbody-bag-pink-rainbow"
 maker: "Hui"
 options: []
 materials: ["Wool"]

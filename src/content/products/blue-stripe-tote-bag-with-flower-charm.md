@@ -5,7 +5,7 @@ category: "bags"
 group: "totes"
 price: 26.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4511341114/crochet-blue-stripe-tote-bag-with-flower"
 maker: "Hui"
 options: []
 materials: ["Metal","Acrylic"]

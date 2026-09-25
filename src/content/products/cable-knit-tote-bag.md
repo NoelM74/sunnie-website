@@ -5,7 +5,7 @@ category: "bags"
 group: "totes"
 price: 19.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4501259489/cable-knit-tote-bag-aran-pattern"
 maker: "Hui"
 options: [{"name":"Colour","values":["Cream","Khaki","Terracotta"]}]
 materials: ["Cable knit","Acrylic"]

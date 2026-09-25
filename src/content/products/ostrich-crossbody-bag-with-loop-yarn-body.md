@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 26.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4507539740/crochet-ostrich-crossbody-bag-with-loop"
 maker: "Hui"
 options: [{"name":"Colour","values":["Pink","Black","Brown"]}]
 materials: ["Polyester","Faux pearls"]

@@ -4,7 +4,7 @@ seoTitle: "Crochet rose flower coaster with mini basket, 12 roses handmade mug r
 category: "coasters"
 price: 19.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4506497053/crochet-rose-flower-coaster-with-mini"
 maker: "Hui"
 options: [{"name":"Coasters","values":["2 Coasters and Pots","4 Coasters and Pots","6 coasters and Pots"]}]
 materials: ["Acrylic"]

@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4507559457/crochet-burger-monster-crossbody-bag"
 maker: "Hui"
 options: []
 materials: ["Polyester"]

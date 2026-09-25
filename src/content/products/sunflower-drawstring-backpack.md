@@ -5,7 +5,7 @@ category: "bags"
 group: "totes"
 price: 29.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4517279965/crochet-sunflower-drawstring-backpack"
 maker: "Hui"
 options: [{"name":"Colour","values":["Regular Green","Dark Green"]}]
 materials: ["Wool","Metal","Polyester"]

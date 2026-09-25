@@ -5,7 +5,7 @@ category: "bags"
 group: "flowers"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4467432960/crochet-camellia-granny-square-bag-3d"
 maker: "Hui"
 options: [{"name":"Colour","values":["Red","Green","Pink","Orange"]}]
 materials: ["Polyester"]

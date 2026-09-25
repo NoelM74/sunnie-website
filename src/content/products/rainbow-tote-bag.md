@@ -5,7 +5,7 @@ category: "bags"
 group: "totes"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4501233499/crochet-rainbow-tote-bag-open-mesh"
 maker: "Hui"
 options: [{"name":"Colour","values":["warm rainbow","cool rainbow"]}]
 materials: ["Polyester"]

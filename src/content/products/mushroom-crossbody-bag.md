@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 23.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4506963387/crochet-mushroom-crossbody-bag-red"
 maker: "Hui"
 options: []
 materials: ["Polyester"]

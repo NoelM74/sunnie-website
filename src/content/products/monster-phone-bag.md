@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 16.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4467396559/crochet-monster-phone-bag-chenille"
 maker: "Hui"
 options: []
 materials: ["Chenille","Faux pearls"]

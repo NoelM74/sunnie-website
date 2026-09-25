@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 26.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4581502292/crochet-poodle-crossbody-bag-fluffy"
 maker: "Hui"
 options: [{"name":"Colour","values":["Honey Yellow","Cream White","Caramel"]}]
 materials: ["Polyester"]

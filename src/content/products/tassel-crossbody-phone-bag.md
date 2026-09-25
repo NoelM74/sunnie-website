@@ -5,7 +5,7 @@ category: "bags"
 group: "totes"
 price: 23.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4518728952/crochet-crossbody-phone-bag-with-tassel"
 maker: "Hui"
 options: [{"name":"Colour","values":["Off White/Cream","Khaki/Beige"]}]
 materials: ["Canvas","Wool","Metal","Faux leather","Polyester"]

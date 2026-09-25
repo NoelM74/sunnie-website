@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4508117727/crochet-puppy-face-crossbody-bag-floppy"
 maker: "Hui"
 options: [{"name":"Colour","values":["Cream with Black","Tan with dark brown"]}]
 materials: ["Polyester"]

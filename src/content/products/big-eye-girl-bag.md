@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4541834507/crochet-big-eye-girl-bag-fuzzy-hair"
 maker: "Hui"
 options: [{"name":"Colour","values":["Pink","Purple","Blue","Green"]}]
 materials: ["Fabric","Polyester"]

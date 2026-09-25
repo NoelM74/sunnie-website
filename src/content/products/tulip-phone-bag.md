@@ -5,7 +5,7 @@ category: "bags"
 group: "flowers"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4467416734/crochet-tulip-phone-bag-sunflower"
 maker: "Hui"
 options: [{"name":"Flower","values":["Tulip","Sunflower"]}]
 materials: ["Wool"]

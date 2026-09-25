@@ -5,7 +5,7 @@ category: "bags"
 group: "flowers"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4467412712/3d-flower-crochet-phone-bag-sunflower"
 maker: "Hui"
 options: [{"name":"Colour","values":["Rose","Sunflower"]}]
 materials: ["Wool"]

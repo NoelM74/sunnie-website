@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 18.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4501304176/crochet-hot-air-balloon-crossbody-bag"
 maker: "Hui"
 options: []
 materials: ["Wool","Metal","Polyester"]

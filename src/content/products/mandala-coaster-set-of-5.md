@@ -4,7 +4,7 @@ seoTitle: "Crochet mandala coaster set of 5, handmade scalloped mug rugs 19 cm"
 category: "coasters"
 price: 26.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4511450036/crochet-mandala-coaster-set-of-5"
 maker: "Hui"
 options: []
 materials: ["Acrylic"]

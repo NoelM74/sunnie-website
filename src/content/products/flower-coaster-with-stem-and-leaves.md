@@ -4,7 +4,7 @@ seoTitle: "Crochet flower coaster with stem and leaves, handmade mug rug 15 cm"
 category: "coasters"
 price: 26.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4511428686/crochet-flower-coaster-with-stem-and"
 maker: "Hui"
 options: []
 materials: ["Acrylic"]

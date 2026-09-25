@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4506899315/crochet-animal-crossbody-phone-bag"
 maker: "Hui"
 options: [{"name":"Select your animal","values":["Sloth","Pink Cat","Yellow Duck","Green Frog"]}]
 materials: ["Polyester"]

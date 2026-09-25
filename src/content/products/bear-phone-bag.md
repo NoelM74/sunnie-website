@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4541827924/crochet-bear-phone-bag-striped-scarf"
 maker: "Hui"
 options: [{"name":"Colour","values":["Light Brown","Dark Brown"]}]
 materials: ["Polyester"]

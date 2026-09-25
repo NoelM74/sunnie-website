@@ -5,7 +5,7 @@ category: "bags"
 group: "flowers"
 price: 26.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4509960719/crochet-granny-square-flower-crossbody"
 maker: "Hui"
 options: [{"name":"Colour","values":["Pink","Beige","Orange","Purple"]}]
 materials: ["Acrylic"]

@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 22.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4464797368/crochet-sheep-crossbody-bag-3d-lamb"
 maker: "Hui"
 options: []
 materials: ["Wool"]

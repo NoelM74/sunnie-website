@@ -5,7 +5,7 @@ category: "bags"
 group: "flowers"
 price: 23.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4518751146/crochet-flower-crossbody-phone-bag"
 maker: "Hui"
 options: [{"name":"Colour","values":["Style 1 - Pink Strap","Style 2 - Teal Strap"]}]
 materials: ["Wool","Metal","Acrylic","Faux pearls"]

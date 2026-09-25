@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4467429871/crochet-fluffy-dog-crossbody-bag-kawaii"
 maker: "Hui"
 options: [{"name":"Colour","values":["Brown","Beige","Blue"]}]
 materials: ["Polyester"]

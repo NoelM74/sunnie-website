@@ -4,7 +4,7 @@ seoTitle: "Crochet Animal Coasters Set of 3 Pig Bear Cat Fruit Design Handmade D
 category: "coasters"
 price: 17.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4500120022/crochet-animal-coasters-set-of-3-pig"
 maker: "Hui"
 options: [{"name":"Animal","values":["Cat","Pig","Bear","Set Of 3"]}]
 materials: ["Wool"]

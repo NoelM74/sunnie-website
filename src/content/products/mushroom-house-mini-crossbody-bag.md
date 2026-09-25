@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 19.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4509914518/crochet-mushroom-house-mini-crossbody"
 maker: "Hui"
 options: []
 materials: ["Acrylic"]

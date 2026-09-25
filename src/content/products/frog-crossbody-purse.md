@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 29.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4568711479/crochet-frog-crossbody-purse-handmade"
 maker: "Hui"
 options: [{"name":"Colour","values":["Blue","Yellow"]}]
 materials: ["Polyester"]

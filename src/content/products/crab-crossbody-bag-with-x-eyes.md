@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 23.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4509927120/crochet-crab-crossbody-bag-with-x-eyes"
 maker: "Hui"
 options: [{"name":"Colour","values":["Red","Brown"]}]
 materials: ["Acrylic"]

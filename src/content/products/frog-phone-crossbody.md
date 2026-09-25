@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 29.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4464749739/crochet-frog-phone-crossbody-kawaii"
 maker: "Hui"
 options: [{"name":"Colour","values":["Pink","Blue","Brown"]}]
 materials: ["Polyester","Resin","Faux pearls","Metal"]

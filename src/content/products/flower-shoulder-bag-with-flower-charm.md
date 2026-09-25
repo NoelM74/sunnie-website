@@ -5,7 +5,7 @@ category: "bags"
 group: "flowers"
 price: 23.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4508210534/crochet-flower-shoulder-bag-with-flower"
 maker: "Hui"
 options: [{"name":"Colour","values":["Pink Large","Yellow Large","Blue Large","Pink Small","Yellow Small","Blue Small"]}]
 materials: ["Polyester","Faux pearls"]

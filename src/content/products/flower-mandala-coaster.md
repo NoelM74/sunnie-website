@@ -4,7 +4,7 @@ seoTitle: "Crochet Flower Mandala Coaster Cottagecore Kitchen Decor Granny Chic 
 category: "coasters"
 price: 16.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4506465591/crochet-flower-mandala-coaster"
 maker: "Hui"
 options: [{"name":"Choose your pack","values":["4 Coasters + 1 Pot","6 Coasters + 1 pot","8 Coasters + 2 Pots"]}]
 materials: ["Polyester"]

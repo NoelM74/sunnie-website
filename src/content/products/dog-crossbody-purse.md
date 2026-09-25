@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4568779203/crochet-dog-crossbody-purse-handmade"
 maker: "Hui"
 options: [{"name":"Colour","values":["Khaki","Yellow"]}]
 materials: ["Wool","Polyester"]

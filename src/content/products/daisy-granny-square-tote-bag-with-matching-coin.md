@@ -5,7 +5,7 @@ category: "bags"
 group: "totes"
 price: 29.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4464774236/crochet-daisy-granny-square-tote-bag"
 maker: "Hui"
 options: []
 materials: ["Cotton"]

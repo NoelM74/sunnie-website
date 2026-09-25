@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 19.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4506953013/crochet-fat-lips-girl-crossbody-phone"
 maker: "Hui"
 options: [{"name":"Size","values":["Large 28 x 11 cm","Small 20 x 10 cm"]}]
 materials: ["Polyester","Faux pearls"]

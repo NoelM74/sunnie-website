@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 23.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4508140294/crochet-blue-monster-crossbody-phone-bag"
 maker: "Hui"
 options: []
 materials: ["Polyester"]

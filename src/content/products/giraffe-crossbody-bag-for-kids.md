@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 24.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4517246912/crochet-giraffe-crossbody-bag-for-kids"
 maker: "Hui"
 options: []
 materials: ["Acrylic"]

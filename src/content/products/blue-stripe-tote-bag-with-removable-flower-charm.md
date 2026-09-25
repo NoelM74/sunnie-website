@@ -5,7 +5,7 @@ category: "bags"
 group: "totes"
 price: 29.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4518794316/crochet-blue-stripe-tote-bag-with"
 maker: "Hui"
 options: []
 materials: ["Wool","Acrylic","Metal"]

@@ -4,7 +4,7 @@ seoTitle: "Crochet carnation mug rug that folds into a mini bouquet, handmade co
 category: "coasters"
 price: 19.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4511442184/crochet-carnation-mug-rug-that-folds"
 maker: "Hui"
 options: [{"name":"No of pieces","values":["Set Of Two","Set Of Four"]}]
 materials: ["Acrylic"]

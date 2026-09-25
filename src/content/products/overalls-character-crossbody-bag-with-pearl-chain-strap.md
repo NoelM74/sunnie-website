@@ -5,7 +5,7 @@ category: "bags"
 group: "characters"
 price: 27.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4507646259/crochet-overalls-character-crossbody-bag"
 maker: "Hui"
 options: []
 materials: ["Polyester","Faux pearls"]

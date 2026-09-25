@@ -4,7 +4,7 @@ seoTitle: "Rainbow Crochet Wizard Hat, Pointed Kids Winter Elf Costume Cap"
 category: "hats"
 price: 22.95
 inStock: true
-etsyUrl: "https://www.etsy.com/shop/SunnieDesignCo"
+etsyUrl: "https://www.etsy.com/listing/4467377580/rainbow-crochet-wizard-hat-pointed-kids"
 maker: "Hui"
 options: [{"name":"Size","values":["2–5 years -48cm brim","5–9 years -58cm brim"]}]
 materials: []
