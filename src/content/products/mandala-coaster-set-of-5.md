@@ -15,10 +15,10 @@ faq: [{"q":"Do I get all five colours?","a":"Yes, one set includes all five colo
 
 Mug rings don't come out of a wooden table. This set of five means everyone at the table gets a coaster of their own, no two alike.
 
-Hui crochets each coaster from the centre out in concentric rings of colour, mixing bobble clusters and fan shells, then finishes the edge with a scalloped petal border. At 19 cm across, they're bigger than a standard coaster, room enough for a mug and a spoon or a small biscuit beside it.
+Hui crochets each coaster from the centre out in concentric rings of colour, mixing bobble clusters and fan shells, then finishes the edge with a scalloped petal border.
 
-- **Five colourways in one set:** green, yellow, blue and yellow, white and teal, and orange, each with its own ring pattern.
-- **19 cm across:** room for a large mug, not just a cup.
+- **Five colourways in one set:** green with a teal border, yellow with a yellow scalloped border, blue and yellow with a navy border, white and teal with a navy border, and orange with an orange border, each with its own ring pattern.
+- **19 cm across:** bigger than a standard coaster, room for a mug and a spoon or a small biscuit beside it.
 - **About 20 g each:** soft, flat and flexible, they stack neatly when not in use.
 - **No backing needed:** crocheted acrylic yarn throughout, front and back.
 

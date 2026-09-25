@@ -14,9 +14,9 @@ images: [{"src":"../../assets/products/giraffe-crossbody-bag-for-kids/01.jpg","a
 faq: [{"q":"What age is it sized for?","a":"The 85 cm strap fits most kids from about 2 to 7 years old."},{"q":"What can it hold?","a":"Candy, coins, a small toy, hair clips or a snack bar. It's a kids' bag, so it won't hold much more."},{"q":"How do I wash it?","a":"Hand wash in cool or warm water below 40°C, reshape the head and legs while damp, and lay flat to dry."}]
 ---
 
-A soft yellow giraffe that a toddler wants to wear, not just carry, with a 3D head, dangling legs and just enough room for the day's treasures.
+A soft yellow giraffe that a toddler wants to wear, not just carry, with a 3D head and just enough room for the day's treasures.
 
-Hui crochets the giraffe from acrylic yarn, sets the head on a long neck at the back of the bag, adds brown spots and small horns, then finishes the face with a white embroidered muzzle and black safety eyes. Four stubby legs with brown hooves dangle from the bottom.
+Hui crochets the giraffe from acrylic yarn, sets the head on a long neck, adds brown spots, brown-tipped horns and small ears, then finishes the face with a white embroidered muzzle and black safety eyes. Four stubby legs with brown hooves dangle from the bottom.
 
 - **Open top with a button closure:** sized right for small fingers.
 - **Holds candy, coins, a small toy, hair clips or a snack bar:** enough for a day out, no more.
@@ -24,6 +24,6 @@ Hui crochets the giraffe from acrylic yarn, sets the head on a long neck at the 
 - **About 130 g:** light enough for small shoulders.
 - **Orange lining inside:** keeps small items from catching on the crochet stitches.
 
-It's built for park days, zoo trips and afternoons at home, squishy enough to double as something to hug. A bright birthday or holiday gift for a toddler or young child.
+It's built for park days, zoo trips and afternoons at home, squishy enough to double as something to hug. A bright gift for a toddler or young child.
 
 *Body W 18 cm, H 12 cm, D 5 cm, total height about 28 cm with the head, strap 85 cm. Hand crocheted, so allow 2 to 3 cm either way.*

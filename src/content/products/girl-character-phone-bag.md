@@ -14,9 +14,9 @@ images: [{"src":"../../assets/products/girl-character-phone-bag/01.jpg","alt":"C
 faq: [{"q":"Will my phone fit?","a":"Phones up to 6.7 inches fit, with room for a lip product, hand sanitizer and a cardholder."},{"q":"How roomy is it?","a":"At 15 cm deep, it is one of the roomier bags in the range."},{"q":"How do I wash it?","a":"Hand wash in cool water below 40°C with mild detergent, wash it separately to protect the red yarn, and lay flat to dry."}]
 ---
 
-Most character bags are too small for a real day out. This one has 15 cm of depth, room enough for a phone, a lip product and your keys.
+Most character bags are too small for a real day out. This one has 15 cm of depth, room enough for a phone, a lip product and keys.
 
-Hui crochets the pigtailed head first, ties on a red and white gingham bow, then builds down through a red striped shirt that blends into a ruffled blue dress, finishing with white arms and red striped legs and shoes. The smiling mouth, edged in peach yarn, is the way in.
+Hui crochets the head with brown curly hair in braided pigtails, ties on a red and white gingham bow, adds black safety eyes and peach-toned cheeks, then builds down through a red striped shirt that blends into a ruffled blue dress, finishing with white arms and red striped legs and shoes. The smiling mouth, edged in peach yarn, is the way in.
 
 - **Mouth-opening entry:** reach through the smiling face for your things.
 - **Fits smartphones up to 6.7 inches:** plus a lip product, hand sanitizer and a cardholder.
@@ -24,6 +24,6 @@ Hui crochets the pigtailed head first, ties on a red and white gingham bow, then
 - **120 cm adjustable red braided strap:** clip your keys onto it or drop them inside.
 - **About 130 g:** roomy without feeling heavy.
 
-The bold red strap stands out against a neutral coat on errand days, and the character design needs no gift wrap to make an impression.
+The bold red strap stands out against a neutral coat, and the design needs no gift wrap to impress.
 
 *Top W 13 cm, bottom W 15 cm, H 31 cm, D 15 cm, strap 120 cm. Hand crocheted, so allow 1 to 3 cm either way.*

@@ -16,12 +16,12 @@ faq: [{"q":"What's the difference between the colours?","a":"Yellow has curly pu
 
 A doll-faced crochet purse with its own tiny charm, a starfish, a strawberry or a knit beanie, so no two colours feel the same.
 
-Hui hand-embroiders each doll face onto a chunky knit body, then dresses it by colour: a curly wig and a candy charm, a red knit beanie, or braids with a flower and a hanging strawberry.
+Hui hand-embroiders each doll face onto a chunky knit body, then dresses it by colour: yellow with curly purple hair, a green starfish and a blue candy charm, green with brown curly hair under a red knit beanie, or pink with purple braids, a yellow flower and a hanging strawberry.
 
 - **Room for the everyday carry:** phone, lipstick, tissues, keys and a bus card.
 - **120 cm adjustable strap:** crossbody for teens and adults, or shortened for kids.
 - **About 90 g:** light enough to forget you're wearing it.
-- **Three colourways, three charms:** yellow with a starfish, green with a red knit beanie, or pink with a hanging strawberry.
+- **Three colourways:** each one dressed differently, down to its own charm.
 
 It works as a proper everyday bag for anyone who likes a bit of whimsy, and doubles as a first coin purse for kids' small toys and treats. A good pick for a birthday, anniversary or holiday gift.
 

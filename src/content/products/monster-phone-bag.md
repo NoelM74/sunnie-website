@@ -16,7 +16,7 @@ faq: [{"q":"Will my phone fit?","a":"Phones up to 6.7 inches fit, with room for 
 
 A smiling blue monster light enough to forget you're wearing it, with just enough room for your phone and some cash.
 
-Hui crochets the body from soft chenille, attaches fully three-dimensional arms and legs finished with brown pom-pom hands and feet, then closes the top with a single white pearl button.
+Hui crochets the body from soft chenille, gives it white crocheted eyes with black safety eye pupils and a white yarn smile, attaches fully three-dimensional arms and legs finished with brown pom-pom hands and feet, then closes the top with a single white pearl button.
 
 - **Fits phones up to 6.7 inches:** plus flat cards or folded cash.
 - **Pearl button closure:** quick to open, secure enough to stay shut.

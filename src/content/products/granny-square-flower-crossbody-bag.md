@@ -17,7 +17,7 @@ Four crocheted flower panels and a scalloped ruffle turn a small everyday bag in
 
 Hui crochets four granny-square panels per side, centres each with a chunky flower, finishes the edge with a ruffle, then lines the inside in polyester with a phone pocket and a document pocket.
 
-- **Two ways to carry:** built-in top handles, or clip on the detachable crocheted strap for crossbody wear.
+- **Two ways to carry:** built-in top handles with a cutout grip, or clip on the detachable crocheted strap for crossbody wear.
 - **Lined with a phone pocket and a document pocket:** keeps small essentials sorted.
 - **Open top, no zipper or button:** quick in, quick out.
 - **About 140 g:** light for everyday use.

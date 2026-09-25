@@ -16,14 +16,14 @@ faq: [{"q":"Will my phone fit?","a":"Phones up to 6.5 inches fit, with room for 
 
 A shaggy little monster with dragonfly wings that opens through its own mouth, so getting your phone out takes one reach, not a zip fight.
 
-Hui crochets the body from fuzzy plush yarn for a shaggy, soft texture, then attaches flat dragonfly wings to each side and finishes the face with oversized eyes and a wide open mouth in contrast yarn.
+Hui crochets the body from fuzzy plush yarn for a shaggy, soft texture, then attaches flat dragonfly wings to each side and finishes the face with oversized safety eyes and a wide open mouth in contrast yarn.
 
 - **Mouth-opening entry:** no zip or clasp, just reach in.
 - **Fits phones up to 6.5 inches:** plus a flat cardholder, lip gloss and earbuds.
 - **102 cm adjustable strap:** braided cord in a matching colour, worn crossbody or on the shoulder.
-- **Two colourways:** yellow with blue wings and yellow limbs, or pink with grey wings and striped boots.
+- **Two colourways:** yellow body with blue wings, pink mouth, yellow antennae and limbs, brown feet, or pink body with grey wings, orange mouth, grey horns, peach arms and striped boots.
 - **About 80 g:** barely there on your shoulder.
 
-It's built for anyone who wants to be noticed at a festival, convention or themed event, and just as fun as a daily bag for a shaggy bit of personality.
+It's built for anyone who wants to be noticed at a festival, convention or themed event, and just as fun as an everyday bag.
 
 *W 11 cm, H 31 cm including the wings and legs, D 1 cm, strap 102 cm. Hand crocheted, so allow 1 to 3 cm either way.*
