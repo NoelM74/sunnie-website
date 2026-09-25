@@ -8,48 +8,22 @@ inStock: true
 etsyUrl: "https://www.etsy.com/listing/4501304176/crochet-hot-air-balloon-crossbody-bag"
 maker: "Hui"
 options: []
-materials: ["Wool","Metal","Polyester"]
+materials: ["Polyester-acrylic yarn","Metal"]
 size: "W 7–11 × H 16 cm, strap 60 cm"
 images: [{"src":"../../assets/products/hot-air-balloon-crossbody-bag/01.jpg","alt":"Rainbow striped crochet hot air balloon bag with a phone tucked inside"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/02.jpg","alt":"Rainbow striped crochet hot air balloon bag with braided orange crossbody strap"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/03.jpg","alt":"Rainbow striped crochet hot air balloon bag hanging by its braided strap"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/04.jpg","alt":"Hot air balloon crossbody bag, photo 4 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/05.jpg","alt":"Hot air balloon crossbody bag, photo 5 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/06.jpg","alt":"Hot air balloon crossbody bag, photo 6 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/07.jpg","alt":"Hot air balloon crossbody bag, photo 7 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/08.jpg","alt":"Hot air balloon crossbody bag, photo 8 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/09.jpg","alt":"Hot air balloon crossbody bag, photo 9 of 10"},{"src":"../../assets/products/hot-air-balloon-crossbody-bag/10.jpg","alt":"Hot air balloon crossbody bag, photo 10 of 10"}]
+faq: [{"q":"What fits inside?","a":"A smartphone, a slim wallet, coins, keys, lip balm, earbuds and folded sunglasses. The balloon shape holds more than it looks like it should."},{"q":"Can I remove the strap?","a":"Yes. The braided strap clips on with metal clasps, so you can adjust or remove it."},{"q":"How do I wash it?","a":"Hand wash in cool to warm water below 40°C with mild detergent, keep it away from rough fabrics or zippers, and lay flat to dry."}]
 ---
 
-A hand-crocheted hot air balloon crossbody bag in rainbow gradient stripes, sized for a phone, wallet, and daily essentials, with a cream button closure and braided orange strap.
+A hot air balloon bag that actually expands once you fill it, rainbow stripes and all, so it carries more than it looks like it should.
 
-The shape is the thing people notice first. Horizontal stripes in red, pink, purple, blue, yellow, and orange stack up to create the hot air balloon silhouette, and the bag gently expands once you fill it.
+Hui crochets every stripe by hand, row by row, changing the acrylic yarn colour to build the gradient, then closes the top with a cream button and a hand-braided orange strap that clips on and off.
 
-Every row is crocheted by hand, start to finish, with no machine construction involved. The stripe placement and width shift slightly from bag to bag, which is just how hand crochet works.
+- **Expands as you fill it:** the balloon shape holds more than the exterior suggests.
+- **Fits a smartphone, slim wallet, coins, keys, lip balm, earbuds and folded sunglasses.**
+- **60 cm braided strap with metal clasps:** adjust it or take it off.
+- **Cream button closure and a small leather "Hand Made" patch on the front.**
+- **About 90 g:** light for a festival or travel day.
 
-The braided strap is hand-made in a coordinating orange tone and attaches with metal clips, so it can be adjusted or removed. A cream button closes the top. A small leather "Hand Made" patch is sewn onto the front.
+Built for festivals, concerts and travel days when you want your hands free, and a genuinely handmade gift for someone who values things made by a person, not a machine.
 
-Product details
-- Material: soft acrylic or cotton yarn (rainbow gradient), hand-braided rope strap, metal clip hardware
-- Closure: single cream button at top
-- Strap: hand-braided orange cord, 60cm total length, metal clasps for adjustment or removal
-- Height: 16cm, width 7 to 11cm (expands with contents)
-Weight: 0.09kg
-- No lining. Crochet construction visible inside and out.
-- Small leather "Hand Made" patch on exterior
-
-What fits inside A smartphone of most sizes, a slim wallet, coins, keys, lip balm, earbuds, folded sunglasses. The balloon shape gives more interior room than the exterior suggests.
-
-Great for
-- Festivals, concerts, travel days, or any occasion where you want your hands free
-- A genuinely handmade gift for someone who likes things that are actually made by a person.
-
-Handmade notes
-- Every single stitch is done by hand. No machine construction, no pre-made base, no lining.
-- The rainbow gradient is created by changing yarn colors as the bag is crocheted row by row.
-- Stripe width, color placement, and exact sizing vary slightly between bags. Please allow 1 to 3cm variance in measurements.
-- Each bag is its own thing. No two are exactly the same.
-
-Care
-
-- Hand wash in cool to warm water below 40°C with a mild detergent. Gentle machine cycle works if needed, but hand washing keeps the shape longer.
-- Wash separately to avoid color bleeding.
-- Keep away from rough fabrics or anything with zippers that could snag the crochet.
-- Lay flat to dry. No tumble drying.
-- Reshape while still damp if needed.
-
-Shipping
-- Orders processed and shipped within 1 to 3 business days.
-- All orders include tracking.
+*H 16 cm, W 7 to 11 cm depending on contents, strap 60 cm. Hand crocheted, so allow 1 to 3 cm either way and expect each balloon's stripes to fall a little differently.*

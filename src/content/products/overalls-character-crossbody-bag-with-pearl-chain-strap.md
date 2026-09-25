@@ -11,37 +11,19 @@ options: []
 materials: ["Polyester","Faux pearls"]
 size: "W 30 × H 27 × D 2 cm"
 images: [{"src":"../../assets/products/overalls-character-crossbody-bag-with-pearl-chain-strap/01.jpg","alt":"Cream crochet overalls character bag with teal straps and yellow boots, held up"},{"src":"../../assets/products/overalls-character-crossbody-bag-with-pearl-chain-strap/02.jpg","alt":"Cream crochet overalls bag with teal straps worn crossbody on a pearl chain"},{"src":"../../assets/products/overalls-character-crossbody-bag-with-pearl-chain-strap/03.jpg","alt":"Cream crochet overalls bag with dangling yellow boots worn crossbody, back view"},{"src":"../../assets/products/overalls-character-crossbody-bag-with-pearl-chain-strap/04.jpg","alt":"Overalls character crossbody bag with pearl chain strap, photo 4 of 10"},{"src":"../../assets/products/overalls-character-crossbody-bag-with-pearl-chain-strap/05.jpg","alt":"Overalls character crossbody bag with pearl chain strap, photo 5 of 10"},{"src":"../../assets/products/overalls-character-crossbody-bag-with-pearl-chain-strap/06.jpg","alt":"Overalls character crossbody bag with pearl chain strap, photo 6 of 10"},{"src":"../../assets/products/overalls-character-crossbody-bag-with-pearl-chain-strap/07.jpg","alt":"Overalls character crossbody bag with pearl chain strap, photo 7 of 10"},{"src":"../../assets/products/overalls-character-crossbody-bag-with-pearl-chain-strap/08.jpg","alt":"Overalls character crossbody bag with pearl chain strap, photo 8 of 10"},{"src":"../../assets/products/overalls-character-crossbody-bag-with-pearl-chain-strap/09.jpg","alt":"Overalls character crossbody bag with pearl chain strap, photo 9 of 10"},{"src":"../../assets/products/overalls-character-crossbody-bag-with-pearl-chain-strap/10.jpg","alt":"Overalls character crossbody bag with pearl chain strap, photo 10 of 10"}]
+faq: [{"q":"What fits inside?","a":"A phone, keys, cards, lip balm and other daily essentials."},{"q":"Do the suspender buttons actually work?","a":"Yes, they're functional, not decorative."},{"q":"How do I wash it?","a":"Spot clean with a damp cloth, or hand wash gently in cool water, then reshape while damp and lay flat to air dry."}]
 ---
 
-Handmade crochet character bag shaped like a smiling little figure in overalls with dangling legs and boots, worn as a crossbody or shoulder bag with a pearl bead chain strap.
+A grinning overalls character with dangling boots and a pearl chain strap, carrying your phone like it's the easiest thing in the world.
 
-Product details
-- Body: cream/beige crochet knit in a chunky stitch, shaped like a pair of overalls with a smiling face on the front bib
-- Straps: teal/green crochet suspender straps with button closures at the top
-- Feet: yellow crochet boots that dangle freely from the bottom of the bag
-- Chain: faux pearl bead crossbody strap, long enough to wear across the body or over one shoulder
-- Dimensions: approximately 30cm wide x 27cm tall, 2cm base depth (11.8 x 10.6 x 0.8 inches)
-- Total height with straps: approximately 28.5cm (11.2 inches)
-- Weight: approximately 110g (3.9 oz), ultra lightweight
-- No lining
-- Color: beige body, teal straps, yellow boots, white pearl chain
+Hui crochets the cream overalls body in a chunky stitch, hand-embroiders the smiling face onto the bib, adds teal suspender straps with working buttons, and lets a pair of yellow crochet boots dangle free from the bottom.
 
-Great for
-Carrying your phone, keys, cards, lip balm, and small daily essentials
-Adding a fun conversation piece to casual outfits
+- **Room for the everyday carry:** phone, keys, cards, lip balm and other daily essentials.
+- **Functional suspender buttons:** not just for looks, they actually close.
+- **Pearl bead chain strap:** long enough for crossbody or a single shoulder.
+- **About 110 g:** ultra light for its size.
+- **Dangling yellow boots:** move as you walk, part of the character.
 
-Teens and young adults who love quirky, character style accessories
-A thoughtful handmade gift for friends who collect unusual bags
+A quirky character piece for teens and young adults who want something different, and a thoughtful handmade gift for anyone who collects unusual bags.
 
-Handmade notes
-Each bag is crocheted by hand, so small variations in stitch tension or sizing (up to 2 to 4cm) are normal and part of the charm.
-
-The smiling face on the bib is hand embroidered in yellow and black thread. Buttons on the suspender straps are functional
-
-Care
-- Spot clean with a damp cloth or hand wash gently in cool water
-- Reshape while damp and lay flat to air dry
-- Do not machine wash, tumble dry, or iron
-
-Shipping
-Processing time: 3 to 5 business days. Ships with tracking.
+*W 30 cm, H 27 cm, D 2 cm, total height with straps about 28.5 cm. Hand crocheted, so allow 2 to 4 cm either way.*
