@@ -10,37 +10,19 @@ options: []
 materials: ["Acrylic"]
 size: "Ø 15 cm"
 images: [{"src":"../../assets/products/flower-coaster-with-stem-and-leaves/01.jpg","alt":"Four crochet flower coasters in blue, orange, red and pink with stems"},{"src":"../../assets/products/flower-coaster-with-stem-and-leaves/02.jpg","alt":"Orange crochet flower coaster with red scalloped edge and white center"},{"src":"../../assets/products/flower-coaster-with-stem-and-leaves/03.jpg","alt":"Red crochet flower coaster with cream scalloped edge and yellow center"},{"src":"../../assets/products/flower-coaster-with-stem-and-leaves/04.jpg","alt":"Flower coaster with stem and leaves, photo 4 of 10"},{"src":"../../assets/products/flower-coaster-with-stem-and-leaves/05.jpg","alt":"Flower coaster with stem and leaves, photo 5 of 10"},{"src":"../../assets/products/flower-coaster-with-stem-and-leaves/06.jpg","alt":"Flower coaster with stem and leaves, photo 6 of 10"},{"src":"../../assets/products/flower-coaster-with-stem-and-leaves/07.jpg","alt":"Flower coaster with stem and leaves, photo 7 of 10"},{"src":"../../assets/products/flower-coaster-with-stem-and-leaves/08.jpg","alt":"Flower coaster with stem and leaves, photo 8 of 10"},{"src":"../../assets/products/flower-coaster-with-stem-and-leaves/09.jpg","alt":"Flower coaster with stem and leaves, photo 9 of 10"},{"src":"../../assets/products/flower-coaster-with-stem-and-leaves/10.jpg","alt":"Flower coaster with stem and leaves, photo 10 of 10"}]
+faq: [{"q":"Can I buy a matching set?","a":"This listing is for one coaster. Order multiples to build a set or mix colours."},{"q":"How do I wash it?","a":"Hand wash below 40°C, lay flat to dry and avoid long stretches in direct sunlight."},{"q":"What colours are available?","a":"Red with a cream edge, blue with teal, pink with sage green, or yellow with a red edge."}]
 ---
 
-Hand-crocheted flower-shaped coaster with a scalloped petal edge, contrasting center, and a small green stem with two leaves. Sold individually in four colors. Soft, flat, and about the size of a saucer.
+One crochet flower coaster catches every ring your mug would leave on the table, in whichever colour matches your kitchen.
 
-Product details
-- Material: acrylic yarn, crocheted throughout. No backing or felt underside.
-- Each coaster is shaped like a five-petal flower with a slightly cupped scalloped edge. The center is a contrasting color, the petals are a solid main color, and the outer rim is a darker or lighter accent. A short crocheted green stem with two small leaves extends from the bottom.
-- Flower diameter 15 cm. Stem length 4 cm. Depth about 0.5 cm, so it sits flat on a table with a gentle petal curve at the edges.
-- Weight 20 g each. Very light.
-- Four color options, each sold separately.
-- Red: red petals, cream scalloped edge, yellow center, green stem.  -
-- Blue: sky blue petals, teal scalloped edge, white center, green stem.
-- Pink: peach-pink petals, light pink scalloped edge, sage green center, green stem.
-- Yellow: golden yellow petals, red scalloped edge, white center, green stem.
-- This listing is for one coaster. Order multiples if you want a matching set or mix colors.
+Hui shapes each coaster into five scalloped petals around a contrasting center, then finishes it with a short green stem and two little leaves. It measures 15 cm across and about 0.5 cm thick, with just enough curve to sit flat and steady under a mug or a candle.
 
-Great for
-Protecting your table from coffee rings and condensation while adding a pop of color. They double as little decorative accents even when you're not using a mug.
+- **Four colourways:** red with a cream edge, blue with teal, pink with sage green, or yellow with a red edge, each sold on its own.
+- **Scalloped petal edge:** catches drips before they reach the wood.
+- **About 20 g:** light, but substantial enough to stay put.
+- **Stem and leaf detail:** a small decorative touch even when there's no mug on it.
+- **Order multiples:** build a matching set or mix colours.
 
-A thoughtful small gift for a friend who loves handmade kitchen things. Nice as a stocking stuffer, housewarming add-on, or birthday card extra.
+A small, thoughtful gift for anyone who loves handmade kitchen things, and an easy stocking stuffer or housewarming add-on.
 
-Handmade notes
-Each coaster is crocheted by hand, so petal shape, center size, and overall diameter will vary a little.
-
-*Allow 1 to 2 cm difference. Colors on your screen may not match the yarn exactly, but the photos are taken of the actual product.
-
-Care
-- Hand wash in cool or warm water below 40 degrees C.
-- Lay flat on a towel to dry.
-- Do not wring or twist.
-- Avoid leaving in direct sunlight for long periods to prevent color fading.
-
-Shipping
-Processing time: 2 to 4 business days. Ships with tracking.
+*Ø 15 cm. Each coaster is crocheted by hand, so allow 1 to 2 cm either way.*

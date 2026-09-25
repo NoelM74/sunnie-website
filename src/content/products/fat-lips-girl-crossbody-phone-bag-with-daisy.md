@@ -11,36 +11,19 @@ options: [{"name":"Size","values":["Large 28 x 11 cm","Small 20 x 10 cm"]}]
 materials: ["Polyester","Faux pearls"]
 size: "W 11 × H 28 × D 1 cm, strap 105 cm"
 images: [{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/01.jpg","alt":"Crochet doll bag with big red lips, pearl hair and a daisy, held in a hand"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/02.jpg","alt":"Crochet doll bag with red lips and pearls worn crossbody over a sweatshirt"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/03.jpg","alt":"Large and small crochet doll bags with red lips shown side by side"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/04.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 4 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/05.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 5 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/06.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 6 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/07.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 7 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/08.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 8 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/09.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 9 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/10.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 10 of 10"}]
+faq: [{"q":"What sizes are available?","a":"Large, 28 cm tall with a 105 cm strap, or small, 20 cm tall with a 100 cm strap."},{"q":"Will my phone fit?","a":"The large fits most phones with room for cards or a key. The small is tighter, more of a phone-only bag."},{"q":"How do I wash it?","a":"Hand wash in cool water with mild detergent, reshape and lay flat to dry, and go easy on the pearl beads."}]
 ---
 
-I hand-crochet this chubby little fat lips girl crossbody bag with big red pouty lips, pearl beads, and a daisy on her belly. She's ridiculous and people love her.
+A chubby crochet bag with big red pouty lips, pearl details and a daisy on her belly, made to be noticed.
 
-Product details
-Hand-crocheted from yarn in beige, pink, red, cream, and yellow. She has curly blonde hair, pearl bead accents in her hair and around her neck, a crocheted daisy on her body, and tiny polka dot bows on her feet.
-- Open top design, no closure or lining. Just yarn throughout.
-- Two sizes available.
-- Large: 28 cm tall, 11 cm wide, 1 cm thick, strap 105 cm. About 140 g.
-- Small: 20 cm tall, 10 cm wide, 1 cm thick, strap 100 cm. About 80 g.
-- Crocheted strap works crossbody or over the shoulder.
-- Both sizes hold a phone plus a few small essentials.
+Hui crochets her from yarn in beige, pink, red, cream and yellow, with curly blonde hair, pearl beads at the neck and hair, and tiny polka dot bows on her feet. She stays open at the top, no zip or clasp, just yarn.
 
-What fits inside
-The large fits most phones with room for cards or a key. The small is tighter, more of a phone-only situation. No closure on top, so this is a casual carry, not a running-for-the-bus bag.
+- **Pearl bead and daisy details:** hand-finished touches that make her a talking point.
+- **Two sizes:** large, 28 cm tall with a 105 cm strap, or small, 20 cm tall with a 100 cm strap.
+- **Holds a phone plus a few extras:** the large fits cards or a key too; the small is more phone-only.
+- **Open top, casual carry:** no closure, so it suits easy days, not a dash for the bus.
+- **About 80 to 140 g depending on size:** light to wear all day.
 
-Great for
-Honestly, wearing this bag is a conversation starter. Markets, coffee runs, lazy weekends. People will stop you to ask about her, guaranteed.
+A fun gift for anyone who collects weird, cute things, or for teens and adults with a bit of attitude.
 
-A seriously fun gift. If someone in your life collects weird cute things or just appreciates something with personality, this is it. Works for teens and adults who don't take themselves too seriously.
-
-Handmade notes
-- Each girl is crocheted by hand from scratch.
-- The face, the curls, the pearl placement will all be slightly different on yours.
-- Measurements can shift by 1 to 3 cm.
-- Screen colors won't be exact either.
-- Every one ends up with her own attitude and I kind of love that.
-
-Care
-Hand wash in cool water with mild detergent. Reshape and lay flat to dry. Don't machine wash or tumble dry. Go easy on the pearl beads when washing.
-
-Shipping
-Processing time: 2 to 4 business days. Ships with tracking.
+*W 11 × H 28 × D 1 cm, strap 105 cm. Each piece is crocheted by hand, so allow 1 to 3 cm either way.*
