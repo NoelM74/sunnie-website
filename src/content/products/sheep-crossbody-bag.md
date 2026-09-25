@@ -9,7 +9,8 @@ etsyUrl: "https://www.etsy.com/listing/4464797368/crochet-sheep-crossbody-bag-3d
 maker: "Hui"
 options: []
 materials: ["Wool"]
-images: [{"src":"../../assets/products/sheep-crossbody-bag/01.jpg","alt":"Sheep crossbody bag"},{"src":"../../assets/products/sheep-crossbody-bag/02.jpg","alt":"Sheep crossbody bag, photo 2 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/03.jpg","alt":"Sheep crossbody bag, photo 3 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/04.jpg","alt":"Sheep crossbody bag, photo 4 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/05.jpg","alt":"Sheep crossbody bag, photo 5 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/06.jpg","alt":"Sheep crossbody bag, photo 6 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/07.jpg","alt":"Sheep crossbody bag, photo 7 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/08.jpg","alt":"Sheep crossbody bag, photo 8 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/09.jpg","alt":"Sheep crossbody bag, photo 9 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/10.jpg","alt":"Sheep crossbody bag, photo 10 of 10"}]
+size: "W 18 × H 11 × D 4 cm"
+images: [{"src":"../../assets/products/sheep-crossbody-bag/01.jpg","alt":"Cream crochet sheep crossbody bag with fluffy head and dangling legs, held in hand"},{"src":"../../assets/products/sheep-crossbody-bag/02.jpg","alt":"Cream crochet sheep crossbody bag with brown ears held up by its strap"},{"src":"../../assets/products/sheep-crossbody-bag/03.jpg","alt":"Cream crochet sheep crossbody bag worn over the shoulder on a cream outfit"},{"src":"../../assets/products/sheep-crossbody-bag/04.jpg","alt":"Sheep crossbody bag, photo 4 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/05.jpg","alt":"Sheep crossbody bag, photo 5 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/06.jpg","alt":"Sheep crossbody bag, photo 6 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/07.jpg","alt":"Sheep crossbody bag, photo 7 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/08.jpg","alt":"Sheep crossbody bag, photo 8 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/09.jpg","alt":"Sheep crossbody bag, photo 9 of 10"},{"src":"../../assets/products/sheep-crossbody-bag/10.jpg","alt":"Sheep crossbody bag, photo 10 of 10"}]
 ---
 
 This crochet sheep crossbody bag is a 3D lamb character phone purse with a fluffy textured head and compact main compartment. Cream and dark brown wool‑blend yarn create a cute sheep with bobble‑stitch “wool,” dangling legs, and a dark brown rope strap for shoulder or crossbody wear.
@@ -52,8 +53,8 @@ Hand wash gently in cool water (below 30°C / 86°F) with mild soap if needed. G
 
 Do not machine wash, tumble dry, or apply direct heat, and avoid washing with items that have zippers or hooks that could snag the crochet stitches or pull on the legs.
 
-Handmade Irish sheep bag
-Each sheep crossbody bag is crocheted by hand, so no two are exactly alike. Small differences in expression and proportions give every lamb its own personality, making your bag a one‑of‑a‑kind handmade Irish sheep accessory.
+Handmade notes
+Each sheep crossbody bag is crocheted by hand, so no two are exactly alike. Small differences in expression and proportions give every lamb its own personality, making your bag a one‑of‑a‑kind handmade accessory.
 
 Shipping:
 Orders are processed and dispatched within 1–3 business days. Standard tracked shipping is included so you can follow your sheep bag’s journey from my studio to your door.

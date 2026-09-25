@@ -9,7 +9,8 @@ etsyUrl: "https://www.etsy.com/listing/4501233499/crochet-rainbow-tote-bag-open-
 maker: "Hui"
 options: [{"name":"Colour","values":["warm rainbow","cool rainbow"]}]
 materials: ["Polyester"]
-images: [{"src":"../../assets/products/rainbow-tote-bag/01.jpg","alt":"Rainbow tote bag"},{"src":"../../assets/products/rainbow-tote-bag/02.jpg","alt":"Rainbow tote bag, photo 2 of 10"},{"src":"../../assets/products/rainbow-tote-bag/03.jpg","alt":"Rainbow tote bag, photo 3 of 10"},{"src":"../../assets/products/rainbow-tote-bag/04.jpg","alt":"Rainbow tote bag, photo 4 of 10"},{"src":"../../assets/products/rainbow-tote-bag/05.jpg","alt":"Rainbow tote bag, photo 5 of 10"},{"src":"../../assets/products/rainbow-tote-bag/06.jpg","alt":"Rainbow tote bag, photo 6 of 10"},{"src":"../../assets/products/rainbow-tote-bag/07.jpg","alt":"Rainbow tote bag, photo 7 of 10"},{"src":"../../assets/products/rainbow-tote-bag/08.jpg","alt":"Rainbow tote bag, photo 8 of 10"},{"src":"../../assets/products/rainbow-tote-bag/09.jpg","alt":"Rainbow tote bag, photo 9 of 10"},{"src":"../../assets/products/rainbow-tote-bag/10.jpg","alt":"Rainbow tote bag, photo 10 of 10"}]
+size: "W 31 × H 27 × D 6 cm, strap 48 cm"
+images: [{"src":"../../assets/products/rainbow-tote-bag/01.jpg","alt":"Open mesh crochet tote bag in warm rainbow stripes with a heart coin purse charm"},{"src":"../../assets/products/rainbow-tote-bag/02.jpg","alt":"Open mesh crochet tote bag in pink and yellow tones with a heart coin purse"},{"src":"../../assets/products/rainbow-tote-bag/03.jpg","alt":"Open mesh crochet tote bag in pastel rainbow stripes hanging by its straps"},{"src":"../../assets/products/rainbow-tote-bag/04.jpg","alt":"Rainbow tote bag, photo 4 of 10"},{"src":"../../assets/products/rainbow-tote-bag/05.jpg","alt":"Rainbow tote bag, photo 5 of 10"},{"src":"../../assets/products/rainbow-tote-bag/06.jpg","alt":"Rainbow tote bag, photo 6 of 10"},{"src":"../../assets/products/rainbow-tote-bag/07.jpg","alt":"Rainbow tote bag, photo 7 of 10"},{"src":"../../assets/products/rainbow-tote-bag/08.jpg","alt":"Rainbow tote bag, photo 8 of 10"},{"src":"../../assets/products/rainbow-tote-bag/09.jpg","alt":"Rainbow tote bag, photo 9 of 10"},{"src":"../../assets/products/rainbow-tote-bag/10.jpg","alt":"Rainbow tote bag, photo 10 of 10"}]
 ---
 
 A hand-crocheted open-mesh tote in rainbow colorblock stripes, roomy enough for real life, with a little heart coin purse that clips on and comes off whenever you want.
@@ -50,4 +51,3 @@ Care
 Shipping
 - Estimated delivery times show at checkout.
 - Arrives with the coin purse and puff flower charm.
-- Questions before ordering are always welcome.
