@@ -22,7 +22,7 @@ Hui crochets the body in a dense loop stitch for a soft, plush surface that hold
 - **120 cm leather strap:** adjusts with a knot, so the length is yours to set.
 - **Loop-stitch fur:** dense and plush, it keeps its shape through daily wear.
 - **About 0.11 kg:** light enough to forget you're wearing it.
-- **Three colours:** beige, brown or blue, all with black eyes and nose.
+- **Three colours:** beige, brown or blue, all with black safety eyes and nose.
 
 A cozy, hands-free everyday bag for anyone who wants a dog-lover's accessory without the fuss of a novelty piece.
 

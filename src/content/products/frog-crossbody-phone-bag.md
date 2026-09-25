@@ -16,7 +16,7 @@ faq: [{"q":"How does it open?","a":"The mouth flaps open. There is no zip, butto
 
 This frog's mouth flaps open like a hinge, so your phone drops straight in without a zip to fight.
 
-Hui crochets the head with bulging bobble eyes on stalks and a chunky pink mouth rim, then finishes the ruffled collar and a speckled, fuzzy body in cream and multicolour yarn. The mouth is the only opening: no zip, no button, no snap, just reach in.
+Hui crochets the head with bulging white-and-black bobble eyes on stalks and a chunky pink mouth rim, then finishes the ruffled collar and a speckled, fuzzy body in cream and multicolour yarn. The mouth is the only opening: no zip, no button, no snap, just reach in.
 
 - **Mouth-flap opening:** reach straight in for your phone, no fumbling with a closure.
 - **110 cm crocheted strap:** wear it crossbody or over one shoulder.
@@ -26,4 +26,4 @@ Hui crochets the head with bulging bobble eyes on stalks and a chunky pink mouth
 
 A goofy, memorable gift for frog lovers, or anyone who wants an accessory with real personality.
 
-*W 12 × H 26 × D 1 cm, strap 110 cm. Each frog is crocheted by hand, so allow 1 to 3 cm either way.*
+*Top W 14 cm, bottom W 12 cm, H 26 cm, D 1 cm, strap 110 cm. Each frog is crocheted by hand, so allow 1 to 3 cm either way.*
