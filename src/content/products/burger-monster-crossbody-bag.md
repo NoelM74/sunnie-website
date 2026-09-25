@@ -11,34 +11,19 @@ options: []
 materials: ["Polyester"]
 size: "W 14 × H 27 × D 1 cm, strap 120 cm"
 images: [{"src":"../../assets/products/burger-monster-crossbody-bag/01.jpg","alt":"Yellow crochet monster bag with curly hair and striped body, worn crossbody"},{"src":"../../assets/products/burger-monster-crossbody-bag/02.jpg","alt":"Yellow crochet monster bag close up showing googly eyes and red mouth"},{"src":"../../assets/products/burger-monster-crossbody-bag/03.jpg","alt":"Yellow crochet monster bag worn crossbody from behind on stairs"},{"src":"../../assets/products/burger-monster-crossbody-bag/04.jpg","alt":"Burger monster crossbody bag, photo 4 of 10"},{"src":"../../assets/products/burger-monster-crossbody-bag/05.jpg","alt":"Burger monster crossbody bag, photo 5 of 10"},{"src":"../../assets/products/burger-monster-crossbody-bag/06.jpg","alt":"Burger monster crossbody bag, photo 6 of 10"},{"src":"../../assets/products/burger-monster-crossbody-bag/07.jpg","alt":"Burger monster crossbody bag, photo 7 of 10"},{"src":"../../assets/products/burger-monster-crossbody-bag/08.jpg","alt":"Burger monster crossbody bag, photo 8 of 10"},{"src":"../../assets/products/burger-monster-crossbody-bag/09.jpg","alt":"Burger monster crossbody bag, photo 9 of 10"},{"src":"../../assets/products/burger-monster-crossbody-bag/10.jpg","alt":"Burger monster crossbody bag, photo 10 of 10"}]
+faq: [{"q":"What fits inside?","a":"A phone, keys, lip balm, cards and some coins. Small essentials only."},{"q":"How does it open?","a":"There is no zip or button. You reach in past the mouth at the top."},{"q":"How do I wash it?","a":"Hand wash or gentle machine wash below 40°C, wash separately from dark colours, reshape while damp and lay flat to dry."}]
 ---
 
-Hand-crocheted little monster bag with googly eyes, a big red mouth, curly hair, and dangling arms and legs. It looks like a grumpy striped creature and people will absolutely stop you to ask about it.
+A hand-crocheted monster with curly hair, a big red mouth and a striped body that looks like nothing else in your bag drawer.
 
-Product details
-- Material: yarn, crocheted throughout. No lining inside.
-- Yellow head with curly brown loop-stitch hair on top. Two white googly bead eyes sit just above a thick red crocheted mouth.
-- Body is striped in horizontal bands: yellow, rust red, coral, green, speckled cream, and lemon yellow. Each bag's color mix will vary slightly.
-- Two yellow crocheted arms stick out from the sides. Two yellow legs dangle from the bottom.
-- Top width 12 cm, bottom width 14 cm, height 27 cm, depth 1 cm. Strap 120 cm, crocheted cord with metal clip hardware. Works crossbody or over the shoulder.
-- Weight: about 110 g.
-- Open top. No zipper or button. You just reach in past the mouth.
-- Fits a phone, keys, lip balm, cards, some coins. Small essentials only.
+Hui tops the yellow head with loop-stitch curly hair, sets two googly eyes above a thick red mouth, then works the body in horizontal stripes that shift from yellow through rust, coral and green. There's no zip or button, you just reach in past the mouth.
 
-Great for
-A conversation starter at markets, school, coffee shops. Kids and adults both go nuts for this one.
-Birthday or holiday gift for anyone who likes weird, funny accessories.
+- **Fits a phone, keys, lip balm, cards and some coins.**
+- **120 cm strap with metal clip hardware:** crossbody or over the shoulder.
+- **Open-mouth top:** no zip to fumble with.
+- **About 110 g:** light enough to forget you're wearing it.
+- **Dangling arms and legs:** move when you walk, which is part of the fun.
 
-Handmade notes
-Every bag is crocheted by hand, so stitch tension, stripe width, arm length, and face placement will differ a little from bag to bag.
+A conversation starter for markets, school runs or coffee shops, and a funny gift for anyone who likes weird little creatures more than a plain purse.
 
-Measurements can be off by 1 to 3 cm. Colors on your screen may not match the real thing exactly.
-
-Care
-- Hand wash or gentle machine wash below 40 C.
-- Wash separately from dark colors to avoid bleeding.
-- Don't wash with rough items that could snag the yarn.
-- Reshape while damp and lay flat to dry.
-
-Shipping
-Processing time: 2 to 4 business days. Ships with tracking.
+*Top W 12 cm, bottom W 14 cm, H 27 cm, D 1 cm, strap 120 cm. Each monster is crocheted by hand, so stripe width, arm length and face placement vary a little from bag to bag.*
