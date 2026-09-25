@@ -22,7 +22,7 @@ Hui works the flower stitch across the whole body, pink and green for the tulip 
 - **Faux pearl charm included:** a bead chain with a matching crocheted flower bud and leaf.
 - **Drawstring with wooden button:** closes the top without a zip.
 - **Fits a phone and lip gloss side by side:** plus a cardholder or folded cash flat against the phone.
-- **About 70 g:** barely there on the 120 cm braided cord strap.
+- **About 70 g:** barely there on the 120 cm adjustable cream braided cord strap.
 
 A pretty everyday bag for cottagecore and soft-girl outfits, and a sweet gift for anyone who likes flowers worked into every stitch rather than printed on.
 

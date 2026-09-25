@@ -22,8 +22,8 @@ Hui works the outer layer in a hollow knit stitch and lines it in canvas, then f
 - **Canvas lining:** keeps small items from falling through the open knit stitches.
 - **Magnetic snap closure:** faster than fumbling with a clasp.
 - **Two removable straps included:** a woven knit strap and a faux leather strap.
-- **Tassel and wood bead detail:** finishes the look with a boho touch.
-- **120 cm strap:** wear it crossbody or over the shoulder.
+- **Tassel and wood bead detail:** finishes the look with a boho touch, plus a small Hand Made tag.
+- **120 cm strap, about 200 g:** wear it crossbody or over the shoulder.
 
 Light enough for festivals, beach days, holidays or a quick errand run, and a nice gift for anyone who likes boho style.
 

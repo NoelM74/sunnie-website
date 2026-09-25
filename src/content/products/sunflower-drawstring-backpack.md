@@ -19,7 +19,7 @@ A crochet backpack shaped like a little garden pot, topped with a ring of yellow
 
 Hui works the bucket body in soft green yarn, then finishes the top with a ring of crocheted sunflowers, brown centres and leaf vines included. Close the single compartment with a drawstring that ends in a small crocheted leaf charm.
 
-- **Two ways to wear it:** both straps as a backpack, or pulled together for one shoulder.
+- **Two straps on yellow metal D-rings:** wear both as a backpack, or pull them together for one shoulder.
 - **Roomy single compartment:** holds books, a tablet, a phone and an umbrella.
 - **Drawstring with leaf charm:** cinches the top shut and doubles as a pull.
 - **Two greens, about 340 g:** regular green or dark green, light enough for everyday wear.
