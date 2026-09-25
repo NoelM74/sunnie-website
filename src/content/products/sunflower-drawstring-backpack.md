@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/sunflower-drawstring-backpack/01.jpg","al
 featured: 2
 ---
 
-A hand-crocheted bucket backpack in dark green wool yarn, topped with a ring of yellow sunflowers that gives it the look of a small garden pot.
+A hand-crocheted bucket backpack in dark green wool yarn, a thoughtful pick for sunflower and handmade-accessory lovers, topped with a ring of yellow sunflowers that gives it the look of a small garden pot.
 
 Wear it with both straps as a backpack or pull them together for a single-shoulder carry. The single open compartment is roomy enough for books, a tablet, a phone and an umbrella, closed with a drawstring cord that ends in a small crocheted leaf charm.
 

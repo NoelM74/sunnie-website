@@ -13,7 +13,7 @@ images: [{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/01.jpg",
 featured: 3
 ---
 
-Handmade crochet coasters shaped like a pig, bear or cat, each with a fruit belly design, sold individually or as a set of three.
+Handmade crochet coasters shaped like a pig, bear or cat, made as a birthday, anniversary, housewarming or holiday gift for friends and family, each with a fruit belly design and sold individually or as a set of three.
 
 Choose the pink pig with a watermelon centre, the brown bear with an orange slice, or the beige cat with a kiwi, or get all three together. The soft yarn body cushions glasses and mugs and protects the table underneath, with four round legs, ears and a tail giving each coaster its 3D shape.
 

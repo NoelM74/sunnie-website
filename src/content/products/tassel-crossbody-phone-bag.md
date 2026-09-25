@@ -14,7 +14,7 @@ images: [{"src":"../../assets/products/tassel-crossbody-phone-bag/01.jpg","alt":
 featured: 4
 ---
 
-A handmade crochet crossbody phone bag with an open knit pattern, tassel and wood bead detail, made for everyday carry and holidays.
+A handmade crochet crossbody phone bag with an open knit pattern, tassel and wood bead detail, made for everyday carry and as a gift for anyone who loves boho style.
 
 The outer knit layer has a canvas inner lining so small items stay put, and a magnetic snap closure keeps your phone and cards from slipping out through the open stitch gaps. It comes with two removable straps, a woven knit strap and a faux leather strap, so you can switch the look.
 
