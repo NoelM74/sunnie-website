@@ -1,0 +1,37 @@
+---
+import { Picture } from 'astro:assets';
+
+interface Props {
+  images: { src: ImageMetadata; alt: string }[];
+  name: string;
+}
+const { images, name } = Astro.props;
+---
+<div class="gallery">
+  <ul class="gallery-main" role="list" aria-label={`Photos of ${name}`}>
+    {images.map((img, i) => (
+      <li class="gallery-slide" id={`photo-${i + 1}`}>
+        <Picture
+          src={img.src}
+          alt={img.alt}
+          formats={i === 0 ? ['avif', 'webp'] : ['webp']}
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 56rem) 52vw, 100vw"
+          loading={i === 0 ? 'eager' : 'lazy'}
+          {...(i === 0 ? { fetchpriority: 'high' } : {})}
+        />
+      </li>
+    ))}
+  </ul>
+  {images.length > 1 && (
+    <ul class="gallery-thumbs" role="list">
+      {images.map((img, i) => (
+        <li>
+          <a href={`#photo-${i + 1}`} aria-label={`Show photo ${i + 1} of ${images.length}`}>
+            <Picture src={img.src} alt="" formats={['webp']} widths={[96, 192]} sizes="96px" loading="lazy" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  )}
+</div>

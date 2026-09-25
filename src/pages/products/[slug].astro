@@ -1,0 +1,85 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { getImage } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Gallery from '../../components/Gallery.astro';
+import ProductGrid from '../../components/ProductGrid.astro';
+import { site } from '../../data/site';
+import { CATEGORY_LABELS, formatPrice, related } from '../../lib/products';
+import { absoluteUrl, breadcrumbJsonLd, metaDescription, productJsonLd, productTitle } from '../../lib/seo';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  return products.map((product) => ({ params: { slug: product.id }, props: { product, all: products } }));
+}
+
+interface Props {
+  product: CollectionEntry<'products'>;
+  all: CollectionEntry<'products'>[];
+}
+const { product, all } = Astro.props;
+const d = product.data;
+const { Content } = await render(product);
+
+const path = `/products/${product.id}/`;
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: CATEGORY_LABELS[d.category], path: `/shop/${d.category}/` },
+  { name: d.name, path },
+];
+const ldImages = await Promise.all(
+  d.images.slice(0, 3).map(async (img) => absoluteUrl((await getImage({ src: img.src, width: 1200, format: 'jpg' })).src)),
+);
+const description = metaDescription(product.body ?? d.name);
+const current = d.category;
+const optionNames = d.options.map((o) => o.name.toLowerCase()).join(' and ');
+---
+<BaseLayout
+  title={productTitle(d.name)}
+  description={description}
+  path={path}
+  image={ldImages[0]}
+  type="product"
+  current={current}
+  jsonLd={[
+    productJsonLd({ name: d.name, description, url: absoluteUrl(path), images: ldImages, price: d.price, inStock: d.inStock }),
+    breadcrumbJsonLd(crumbs),
+  ]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <div class="product">
+      <Gallery images={d.images} name={d.name} />
+      <div class="product-info">
+        {d.isNew && d.inStock && <span class="badge">New</span>}
+        <h1>{d.name}</h1>
+        <p class="product-price">{formatPrice(d.price)}</p>
+        <p class="product-maker">Made by {d.maker}</p>
+        {d.options.map((o) => (
+          <p class="product-option"><strong>{o.name}:</strong> {o.values.join(', ')}</p>
+        ))}
+        {d.inStock ? (
+          <>
+            <a class="btn btn-primary btn-block" href={d.etsyUrl} rel="noopener">Buy on Etsy</a>
+            <p class="small muted buy-note">
+              You'll check out on our Etsy shop{optionNames ? `, where you choose your ${optionNames}` : ''}. Etsy handles payment and buyer protection.
+            </p>
+          </>
+        ) : (
+          <span class="btn btn-disabled btn-block" aria-disabled="true">Sold out</span>
+        )}
+        <ul class="product-facts">
+          {d.size && <li><strong>Size:</strong> {d.size}</li>}
+          {d.materials.length > 0 && <li><strong>Materials:</strong> {d.materials.join(', ')}</li>}
+          <li><strong>Ships in:</strong> {site.shipsIn}</li>
+        </ul>
+        <div class="prose product-body"><Content /></div>
+      </div>
+    </div>
+    <section class="section related" aria-labelledby="related-h">
+      <h2 id="related-h">You might also like</h2>
+      <ProductGrid products={related(all, product)} />
+    </section>
+  </div>
+</BaseLayout>
