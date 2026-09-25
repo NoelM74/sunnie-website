@@ -225,5 +225,5 @@ main:focus { outline: none; }
 .quote { margin: 0; background: var(--linen); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; }
 .quote blockquote { margin: 0 0 1rem; font-size: var(--fs-body-lg); }
 .quote figcaption { margin-top: auto; color: var(--umber); }
+/* Quote cards have a linen background, so full terracotta passes contrast even inside .section-sand. */
 .quote-stars { color: var(--terracotta); letter-spacing: 0.1em; margin-bottom: 0.5rem; }
-.section-sand .quote a { color: var(--terracotta); }
