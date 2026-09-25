@@ -42,3 +42,5 @@ Hand wash in cool or lukewarm water, below 40C. Lay flat to dry and keep it out 
 
 Shipping:
 Ships with tracking.
+
+All taxes and tariffs are included in the price, so there's no surprise cost when your bag arrives.

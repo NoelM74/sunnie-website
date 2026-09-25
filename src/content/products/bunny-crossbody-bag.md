@@ -41,3 +41,5 @@ Reshape gently while still damp.
 
 SHIPPING:
 Made and shipped within 2 to 5 business days. Tracking provided.
+
+All taxes and tariffs are included in the price, so there's no surprise cost when your bag arrives.

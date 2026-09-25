@@ -41,3 +41,5 @@ Hand wash only in cool water or lukewarm water up to 40°C. Lay flat to dry. Kee
 
 Shipping
 Made to order with a 2 to 4 day processing time before dispatch.
+
+All taxes and tariffs are included in the price, so there's no surprise cost when your bag arrives.
