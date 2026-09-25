@@ -16,7 +16,7 @@ faq: [{"q":"Will my phone fit?","a":"Phones up to 6.7 inches fit, with room for 
 
 A little lamb bag with a soft curly bobble-stitch head and dangling legs, sized for a phone and the odds and ends you actually carry.
 
-Hui crochets the head in a bobble stitch for that curly, fleecy look, then works the body in a smoother stitch to hold your things. Two ears, a tail and four dangling legs finish the character, with a dark brown rope strap for crossbody or shoulder wear.
+Hui crochets the cream body and a dark brown head in a bobble stitch for that curly, fleecy look, then works the body in a smoother stitch to hold your things. Dark brown ears, a tail, black safety eyes and four dangling legs finish the character, with a dark brown rope strap for crossbody or shoulder wear.
 
 - **Bobble-stitch head:** gives the lamb its curly, fleecy texture in soft acrylic yarn.
 - **Fits phones up to 6.7 inches:** plus a slim cardholder, folded cash, lip balm and earbuds.

@@ -15,7 +15,7 @@ faq: [{"q":"What sizes can I order?","a":"Sets of 2, 4 or 6 coasters, each with 
 
 Mug rings and hot glass marks are the kind of thing this rose coaster prevents, and it tucks into its own tiny basket when you are not using it.
 
-Hui crochets twelve tiny roses by hand around each coaster, then finishes the centre in soft white so it feels like a doily but works like a coaster. Fold it up and tuck it into the matching mini basket, and it becomes a small pot of flowers sitting on your shelf.
+Hui crochets twelve tiny roses with green leaves by hand around each coaster, then finishes the centre in soft white. Fold it up and tuck it into the matching mini basket, and it becomes a small pot of flowers sitting on your shelf.
 
 - **12 hand-crocheted roses:** each about 3 cm wide, ringing a 16 cm coaster.
 - **Matching mini basket included:** fold the coaster up and store it inside, like a little potted flower.
