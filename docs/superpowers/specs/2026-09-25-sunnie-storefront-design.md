@@ -19,7 +19,7 @@ Out of scope for Phase 1: cart, payments, newsletter signup, contact form backen
 - Name: **Sunnie Designs**. Etsy shop is SunnieDesignCo.
 - People: Hui (maker, designer) and Nollaig (runs the shop). Never state a country of manufacture.
 - Makers: all current pieces are by Hui. The business plans to add curated bags and hats from other makers later. The site-wide maker line lives in one setting (`src/data/site.ts` → `makerLine`), which reads **"Handmade by Hui"** at launch. Each product also names its own maker.
-- Other sales channels: Etsy (★ 4.9, Star Seller) and eBay (100% positive, 250+ feedback; machine-knit bags at lower prices). The site cites the eBay feedback count but never links to the eBay store.
+- Other sales channels: Etsy (★ 4.9, Star Seller) and eBay (100% positive, 287 feedback from 432 items sold; machine-knit bags at lower prices). The site cites the eBay feedback count but never links to the eBay store.
 - Email (placeholders until the mailboxes exist): `hello@sunniedesigns.com` for Contact, footer and Shipping; `hui@sunniedesigns.com` on Our story. Both are set in `src/data/site.ts`.
 - Palette, type scale, button states, focus rings and component styles follow the "Morning Sun" spec supplied by the owner. Key tokens:
   - Linen `#FBF6EE` (page), Sand `#F3E7D3` (cards), Sand-hover `#EAD9BC`, Butter `#F0E2C4` (badges)
@@ -59,10 +59,10 @@ Header nav: **Bags · Coasters · Our story · Shop all**, with the logo on the 
 1. Sticky header
 2. Hero. Hero photo is the **Poodle crossbody bag**; this image is the LCP element.
    - H1: **"So cute you'll grin. Sturdy enough to carry every day."**
-   - Subhead: "Crochet phone bags, totes and coasters, each one made by hand by Hui. Rated 4.9 on Etsy and 100% positive by 250+ eBay buyers."
+   - Subhead: "Crochet phone bags, totes and coasters, each one made by hand by Hui. Rated 4.9 on Etsy and 100% positive across 287 eBay ratings."
    - Primary button **"Find your bag"** (→ `/shop/bags/`); ghost link "Meet Hui" (→ `/our-story/`).
    - When other makers join, the subhead's maker clause changes via `makerLine`; the H1 stays.
-3. Trust bar: "Ships in 3–7 days" · "★ 4.9 on Etsy · Star Seller" · "100% positive from 250+ eBay buyers" · `makerLine`
+3. Trust bar: "Ships in 3–7 days" · "★ 4.9 on Etsy · Star Seller" · "100% positive from 287 eBay ratings" · `makerLine`
 4. Bestsellers, exactly four, no carousel, in this order:
    1. Frog phone crossbody, kawaii green character bag (Pink / Blue / Brown)
    2. Crochet sunflower drawstring backpack (Regular / Dark green)

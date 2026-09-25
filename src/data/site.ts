@@ -15,7 +15,7 @@ export const site = {
   replyTime: 'within 24 hours',
   proof: {
     etsyRating: '4.9',
-    ebayCount: '250+',
+    ebayCount: '287',
     ebayPositive: '100%',
   },
 } as const;

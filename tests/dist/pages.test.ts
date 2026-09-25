@@ -16,7 +16,7 @@ describe('info pages', () => {
     const html = page('/reviews/');
     expect((html.match(/class="quote"/g) ?? []).length).toBe(reviews.length);
     expect(html).toContain('lang="de"');
-    expect(html).toContain('250+');
+    expect(html).toContain('287 ratings on eBay');
   });
   it('404 is noindexed', () => {
     expect(page('/404/')).toContain('<meta name="robots" content="noindex"');
