@@ -16,7 +16,7 @@ faq: [{"q":"What fits inside?","a":"A phone, keys, lip balm, cards and some coin
 
 A hand-crocheted monster with curly hair, a big red mouth and a striped body that looks like nothing else in your bag drawer.
 
-Hui tops the yellow head with loop-stitch curly hair, sets two googly eyes above a thick red mouth, then works the body in horizontal stripes that shift from yellow through rust, coral and green. There's no zip or button, you just reach in past the mouth.
+Hui tops the yellow head with loop-stitch curly hair, sets two white googly eyes above a thick red mouth, then works the body in horizontal stripes that shift from yellow through rust, coral, green, speckled cream and lemon yellow. There's no zip or button, you just reach in past the mouth.
 
 - **Fits a phone, keys, lip balm, cards and some coins.**
 - **120 cm strap with metal clip hardware:** crossbody or over the shoulder.

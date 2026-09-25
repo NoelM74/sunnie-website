@@ -21,9 +21,9 @@ Hui crochets the shell in a spiral stitch, then builds two bobble eyes with blac
 - **Bobble eyes with x-stitch pupils:** the detail that gets a second look.
 - **118 cm crocheted strap:** wear it crossbody or over one shoulder.
 - **Holds a cosmetic jar, lipstick, keys, cards and coins:** smaller phones may fit, though it won't lie flat with a full-size phone.
-- **Two colours:** red with a red strap, or brown with a beige-tipped strap.
+- **Two colours:** red with a red strap, or brown with a brown strap and beige-tipped claws.
 - **About 100 to 150 g:** substantial without weighing you down.
 
 A silly, memorable crossbody for kids or adults, and a fun birthday gift for ocean lovers or crab fans.
 
-*W 21 × H 10 × D 3 cm, strap 118 cm. Each crab is crocheted by hand, so allow 1 to 3 cm either way.*
+*Top W 21 cm claw to claw, bottom W 15 cm body, H 10 cm, D 3 cm, strap 118 cm. Each crab is crocheted by hand, so allow 1 to 3 cm either way.*

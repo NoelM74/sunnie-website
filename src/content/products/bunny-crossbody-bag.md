@@ -16,7 +16,7 @@ faq: [{"q":"Will my phone fit?","a":"Yes, along with a flat cardholder, folded c
 
 A hand-crocheted bunny bag that opens through its mouth, with a rainbow-striped body and a tiny carrot tucked in its paw.
 
-Hui crochets the ears tall in pink, tops the head with yellow curly hair and a green flower, and works the body in horizontal rainbow stripes. A small crocheted mushroom charm and a carrot in one paw finish the look, and the wide mouth doubles as the opening.
+Hui crochets the ears tall in pink, tops the head with yellow curly hair, a green flower and red safety eyes, and works the body in horizontal rainbow stripes. A small crocheted mushroom charm and a carrot in one paw finish the look, and the wide mouth doubles as the opening.
 
 - **Fits a phone, a flat cardholder, folded cash, lip balm, keys and earbuds.**
 - **116 cm adjustable strap:** crossbody or shoulder wear.

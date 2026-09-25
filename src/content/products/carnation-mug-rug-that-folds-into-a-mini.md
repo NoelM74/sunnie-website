@@ -15,7 +15,7 @@ faq: [{"q":"What's in the set?","a":"Choose a set of two (one pink, one purple) 
 
 A gift that looks like a bouquet until they discover it is a coaster.
 
-Hui crochets each disc in cream granny stitch, about 14.5 cm across, with a ruffled carnation and a leafed green stem worked into the center. Fold the disc into a cone around the flower, tie it with the matching leaf cord, and it holds its shape like a wrapped stem. Unfold it and it lies flat under a mug.
+Hui crochets each disc in cream granny stitch, about 14.5 cm across, with a ruffled carnation about 8 cm wide and a leafed green stem worked into the center. Fold the disc into a cone, tie it with the matching leaf cord, and it holds its shape like a wrapped stem. Unfold it flat under a mug.
 
 - **Folds into a mini bouquet:** wrap the leaf tie around the cone and hand it over looking like a fresh-cut flower.
 - **Unfolds into a mug rug:** lies flat and ready the moment they want to use it.

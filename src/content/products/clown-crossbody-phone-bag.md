@@ -16,7 +16,7 @@ faq: [{"q":"What fits inside?","a":"A phone, a few cards, a lip balm, keys or so
 
 This clown bag with a toothy grin and a pointed hat turns a boring errand run into a bit people stop you for.
 
-Hui crochets the round red face with bead eyes, a red pom-pom nose and a wide white zigzag mouth, then finishes it with a pointed blue hat and green patches on the blue overalls body. The strap is a twisted green and black braid, fixed at 120 cm.
+Hui crochets the round red face with a cream center, black bead eyes, a red pom-pom nose and a white zigzag mouth of pointy teeth, then adds a pointed blue hat, orange button details and green patches on the blue overalls body. The strap is a twisted green and black braid, fixed at 120 cm.
 
 - **Toothy grin and pom-pom nose:** a face that gets noticed and remembered.
 - **120 cm fixed strap:** wear it crossbody or over one shoulder.
@@ -24,6 +24,6 @@ Hui crochets the round red face with bead eyes, a red pom-pom nose and a wide wh
 - **W 10 × H 20 × D 2 cm:** slim enough for a phone and a few extras, not an iPad.
 - **About 80 g:** light on the shoulder all day.
 
-A funny everyday bag for markets and errands, and a birthday or stocking-stuffer pick for anyone who likes their accessories weird and loud.
+A funny bag for markets and errands, and a birthday or stocking-stuffer pick for anyone who likes accessories weird and loud.
 
 *W 10 × H 20 × D 2 cm, strap 120 cm. Each clown is crocheted by hand, so allow 1 to 3 cm either way.*
