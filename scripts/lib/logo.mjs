@@ -1,39 +1,42 @@
-export const COLORS = {
-  umber: '#4A3222',
-  umberMuted: '#7A6855',
-  terracotta: '#B04A24',
-  butter: '#F0E2C4',
-  linen: '#FBF6EE',
-};
+// Pure helpers for assembling traced logo assets. No file or network I/O here
+// so they stay easy to unit test; scripts/build-logo.mjs does the tracing/IO.
 
-export function variantColors(variant) {
-  switch (variant) {
-    case 'full':
-      return { ray: COLORS.terracotta, ring: COLORS.terracotta, center: COLORS.butter, word: COLORS.umber, sub: COLORS.umberMuted };
-    case 'umber':
-      return { ray: COLORS.umber, ring: COLORS.umber, center: null, word: COLORS.umber, sub: COLORS.umber };
-    case 'terracotta':
-      return { ray: COLORS.terracotta, ring: COLORS.terracotta, center: null, word: COLORS.terracotta, sub: COLORS.terracotta };
-    default:
-      throw new Error(`Unknown logo variant: ${variant}`);
-  }
+function round(n, decimals = 2) {
+  const f = 10 ** decimals;
+  return Math.round(n * f) / f;
 }
 
-// Sun drawn in a 100×100 box centred on (50,50). Rays run from r=30 to r=46.
-export function rays(color, count = 7) {
-  const out = [];
-  for (let i = 0; i < count; i++) {
-    const angle = ((360 / count) * i).toFixed(2);
-    out.push(`<rect x="45.5" y="4" width="9" height="16" rx="4.5" fill="${color}" transform="rotate(${angle} 50 50)"/>`);
-  }
-  return out.join('');
+/**
+ * Pads a raster bounding box (as returned by sharp's `.trim()`, in source
+ * pixel units) and returns an SVG viewBox string cropped tightly to it.
+ *
+ * @param {{left: number, top: number, width: number, height: number}} bbox
+ * @param {number} padPct - padding on each side, as a fraction of the larger dimension
+ */
+export function cropViewBox({ left, top, width, height }, padPct = 0.02) {
+  const pad = Math.round(Math.max(width, height) * padPct);
+  return `${left - pad} ${top - pad} ${width + pad * 2} ${height + pad * 2}`;
 }
 
-// Ring spans r=17..24. With no centre colour the middle stays transparent (one-colour builds).
-export function sunMark({ ray, ring, center }) {
-  return `<g>${rays(ray)}<circle cx="50" cy="50" r="20.5" fill="${center ?? 'none'}" stroke="${ring}" stroke-width="7"/></g>`;
+/**
+ * Computes an SVG transform that centres a traced shape's bounding box
+ * inside a canvas at a given target width, preserving aspect ratio.
+ *
+ * @param {{left: number, top: number, width: number, height: number}} bbox - shape bbox, source pixel units
+ * @param {number} targetWidth - desired rendered width within the canvas
+ * @param {number} canvasWidth
+ * @param {number} canvasHeight
+ * @returns {string} an SVG `transform` attribute value
+ */
+export function centeredTransform({ bbox, targetWidth, canvasWidth, canvasHeight }) {
+  const scale = targetWidth / bbox.width;
+  const targetHeight = bbox.height * scale;
+  const tx = (canvasWidth - targetWidth) / 2 - bbox.left * scale;
+  const ty = (canvasHeight - targetHeight) / 2 - bbox.top * scale;
+  return `translate(${round(tx)} ${round(ty)}) scale(${round(scale, 4)})`;
 }
 
-export function svgDoc({ width, height, label, body }) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="${label}">${body}</svg>\n`;
+/** Wraps SVG body markup in an accessible document with the given viewBox. */
+export function svgDoc({ viewBox, label, body }) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" role="img" aria-label="${label}">${body}</svg>\n`;
 }

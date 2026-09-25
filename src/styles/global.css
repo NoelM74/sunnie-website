@@ -91,7 +91,7 @@ main:focus { outline: none; }
 .site-header { position: sticky; top: 0; z-index: 50; background: var(--linen); border-bottom: 1px solid var(--border); }
 .header-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.25rem 1.5rem; padding-block: 0.6rem; }
 .brand { display: block; color: inherit; }
-.brand svg { height: 52px; width: auto; }
+.brand svg { height: 34px; width: auto; }
 .site-nav ul { display: flex; flex-wrap: wrap; gap: 0 1.25rem; list-style: none; margin: 0; padding: 0; }
 .site-nav a {
   display: inline-flex; align-items: center; min-height: 48px; padding-inline: 0.1rem;
@@ -102,7 +102,7 @@ main:focus { outline: none; }
 .site-nav a[aria-current='page'] { color: var(--terracotta); border-bottom-color: var(--terracotta); }
 @media (max-width: 40rem) {
   :root { --header-h: 7.5rem; }
-  .brand svg { height: 44px; }
+  .brand svg { height: 30px; }
   .site-nav ul { gap: 0 1rem; }
 }
 

@@ -28,11 +28,10 @@ Out of scope for Phase 1: cart, payments, newsletter signup, contact form backen
   - Olive `#8A9A5B` / Olive-deep `#6B6B1F`, Border `#E5D5B8` / Border-strong `#DCC9A6`
   - Fraunces 500 for headings (Hero 40 / H1 34 / H2 27 / H3 22 px), Atkinson Hyperlegible for body (19 / 18 / 16 px), body line length ≤ 65ch
   - 3px `#96401E` focus ring with 3px offset on every interactive element; 48px minimum input height; 150ms ease transitions
-- Logo, drawn as SVG by us from the spec's description: umber "Sunnie" wordmark, "Designs" subtitle in umber-muted Fraunces italic, sun mark with 5–7 bold terracotta rays and a butter centre. Deliverables:
-  - `logo-full.svg`, `logo-umber.svg`, `logo-terracotta.svg`
-  - `favicon.svg` (sun only) + `favicon-32.png`, `apple-touch-icon.png` (180px)
-  - `og-default.png` 1200×630
-  - The owner may send an existing logo instead; if so we build these from it.
+- Logo: the owner's registered "sunnie" wordmark (umber, with the smile mark built into the two n's and a ® mark), traced from their supplied artwork. Deliverables:
+  - `logo-wordmark.svg` — the wordmark, used in the header
+  - `favicon.svg` — the cream smile mark on an umber rounded square — + `favicon-32.png`, `apple-touch-icon.png` (180px)
+  - `og-default.png` 1200×630 — the white wordmark on an umber circle, centred on linen
 
 ## 3. Pages and navigation
 
