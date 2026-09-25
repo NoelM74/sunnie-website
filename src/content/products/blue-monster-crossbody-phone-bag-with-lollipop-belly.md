@@ -16,10 +16,10 @@ faq: [{"q":"What fits inside?","a":"A phone, keys, lip balm, cards, tissues and 
 
 A hand-crocheted blue monster with a lollipop for a belly button, wide enough to fit your phone and strange enough to make people ask about it.
 
-Hui crochets the body in solid blue yarn, builds up a coral mouth, googly bead eyes and purple ears, then finishes with a white and pink spiral on the belly shaped like a lollipop. The mouth flaps open at the top, so there's no zip or snap to fight when you reach in.
+Hui crochets the body in solid blue yarn, builds up a coral mouth, googly white and black bead eyes and purple ears, then finishes with a white and pink spiral on the belly shaped like a lollipop. The mouth flaps open at the top, so there's no zip or snap to fight when you reach in.
 
 - **Fits phone, keys, lip balm, cards, tissues and coins:** all in one open compartment.
-- **112 cm adjustable strap:** crossbody or over the shoulder.
+- **112 cm strap:** crossbody or over the shoulder.
 - **Open-mouth top:** no zip, no snap, just flap and reach in.
 - **About 90 g:** light enough that you forget it's there.
 - **Lollipop belly detail:** a white and pink spiral crocheted onto the front.

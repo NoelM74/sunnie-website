@@ -19,7 +19,7 @@ A hand-crocheted bear with a striped scarf and a tiny satchel of its own, small 
 Hui crochets the bear in soft polyester yarn, so the fur comes out slightly bobbled rather than smooth, then adds a red and white striped scarf and a teal satchel with an orange button as a finishing touch. The bear's smiling mouth is the opening, so a phone or a few coins slide right in.
 
 - **Fits phone, lipstick, tissues, keys or a bus card:** with room for coins and small toys too.
-- **104 cm adjustable strap:** crossbody fit for kids, teens or adults.
+- **104 cm strap:** crossbody fit for kids, teens or adults.
 - **About 70 g:** light enough for a child to carry all day.
 - **Two colourways:** light brown or dark coffee brown.
 - **Striped scarf and satchel detail:** stitched on for character.
