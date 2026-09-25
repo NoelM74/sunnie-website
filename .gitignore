@@ -7,3 +7,7 @@ dist/
 # Private Etsy account data - never commit
 shop_settings.json
 **/shop_settings.json
+.superpowers/
+
+# Etsy raw exports stay outside the repo
+EtsyListingsDownload.csv
