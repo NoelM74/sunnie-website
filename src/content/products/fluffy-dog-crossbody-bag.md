@@ -9,7 +9,8 @@ etsyUrl: "https://www.etsy.com/listing/4467429871/crochet-fluffy-dog-crossbody-b
 maker: "Hui"
 options: [{"name":"Colour","values":["Brown","Beige","Blue"]}]
 materials: ["Polyester"]
-images: [{"src":"../../assets/products/fluffy-dog-crossbody-bag/01.jpg","alt":"Fluffy dog crossbody bag"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/02.jpg","alt":"Fluffy dog crossbody bag, photo 2 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/03.jpg","alt":"Fluffy dog crossbody bag, photo 3 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/04.jpg","alt":"Fluffy dog crossbody bag, photo 4 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/05.jpg","alt":"Fluffy dog crossbody bag, photo 5 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/06.jpg","alt":"Fluffy dog crossbody bag, photo 6 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/07.jpg","alt":"Fluffy dog crossbody bag, photo 7 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/08.jpg","alt":"Fluffy dog crossbody bag, photo 8 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/09.jpg","alt":"Fluffy dog crossbody bag, photo 9 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/10.jpg","alt":"Fluffy dog crossbody bag, photo 10 of 10"}]
+size: "W 13 × H 18 × D 3 cm, strap 120 cm"
+images: [{"src":"../../assets/products/fluffy-dog-crossbody-bag/01.jpg","alt":"Cream fluffy crochet dog bag with floppy ears, worn crossbody"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/02.jpg","alt":"Cream, brown and blue fluffy crochet dog bags laid out side by side"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/03.jpg","alt":"Brown fluffy crochet dog bag with floppy ears and leather strap"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/04.jpg","alt":"Fluffy dog crossbody bag, photo 4 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/05.jpg","alt":"Fluffy dog crossbody bag, photo 5 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/06.jpg","alt":"Fluffy dog crossbody bag, photo 6 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/07.jpg","alt":"Fluffy dog crossbody bag, photo 7 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/08.jpg","alt":"Fluffy dog crossbody bag, photo 8 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/09.jpg","alt":"Fluffy dog crossbody bag, photo 9 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/10.jpg","alt":"Fluffy dog crossbody bag, photo 10 of 10"}]
 ---
 
 A handmade crochet dog purse in fuzzy loop-stitch yarn. Puppy face with floppy ears and black nose. Brown leather strap. Choose beige, brown, or blue.
@@ -17,7 +18,7 @@ A handmade crochet dog purse in fuzzy loop-stitch yarn. Puppy face with floppy e
 How to Use/Style:
 - Wear it crossbody for a casual, hands-free carry that works over hoodies, denim jackets, or cozy outerwear.
 - Style it against a neutral or dark outfit. The fluffy texture and floppy ear silhouette do the visual work on their own.
-- Gift it in the matching color to the recipient's dog breed — the brown version is close to a golden retriever, the beige to a cream poodle.
+- Gift it in the matching color to the recipient's dog breed. The brown version is close to a golden retriever, the beige to a cream poodle.
 
 Product Details:
 - Texture: Loop-stitch fuzzy yarn gives the body a soft, dense, plush surface that holds its shape after wear.
@@ -44,5 +45,4 @@ Care Instructions
 - Spot clean where possible to protect the fuzzy texture.
 
 SHIPPING:
-Made and shipped within 2–5 business days. Tracking provided.
-All taxes and tariffs are included in the price, so no nasty surprises when your bag arrives.
+Made and shipped within 2 to 5 business days. Tracking provided.

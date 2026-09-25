@@ -7,9 +7,10 @@ price: 23.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4518751146/crochet-flower-crossbody-phone-bag"
 maker: "Hui"
-options: [{"name":"Colour","values":["Style 1 - Pink Strap","Style 2 - Teal Strap"]}]
+options: [{"name":"Strap","values":["Style 1 - Pink Strap","Style 2 - Teal Strap"]}]
 materials: ["Wool","Metal","Acrylic","Faux pearls"]
-images: [{"src":"../../assets/products/flower-crossbody-phone-bag/01.jpg","alt":"Flower crossbody phone bag"},{"src":"../../assets/products/flower-crossbody-phone-bag/02.jpg","alt":"Flower crossbody phone bag, photo 2 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/03.jpg","alt":"Flower crossbody phone bag, photo 3 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/04.jpg","alt":"Flower crossbody phone bag, photo 4 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/05.jpg","alt":"Flower crossbody phone bag, photo 5 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/06.jpg","alt":"Flower crossbody phone bag, photo 6 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/07.jpg","alt":"Flower crossbody phone bag, photo 7 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/08.jpg","alt":"Flower crossbody phone bag, photo 8 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/09.jpg","alt":"Flower crossbody phone bag, photo 9 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/10.jpg","alt":"Flower crossbody phone bag, photo 10 of 10"}]
+size: "W 12 × H 18 × D 1 cm, strap 120 cm"
+images: [{"src":"../../assets/products/flower-crossbody-phone-bag/01.jpg","alt":"Multicolour crochet flower crossbody bag with pink strap, worn from behind"},{"src":"../../assets/products/flower-crossbody-phone-bag/02.jpg","alt":"Multicolour crochet flower crossbody bag with teal strap, worn over a skirt"},{"src":"../../assets/products/flower-crossbody-phone-bag/03.jpg","alt":"Multicolour crochet flower crossbody bag close up, showing teal strap detail"},{"src":"../../assets/products/flower-crossbody-phone-bag/04.jpg","alt":"Flower crossbody phone bag, photo 4 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/05.jpg","alt":"Flower crossbody phone bag, photo 5 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/06.jpg","alt":"Flower crossbody phone bag, photo 6 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/07.jpg","alt":"Flower crossbody phone bag, photo 7 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/08.jpg","alt":"Flower crossbody phone bag, photo 8 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/09.jpg","alt":"Flower crossbody phone bag, photo 9 of 10"},{"src":"../../assets/products/flower-crossbody-phone-bag/10.jpg","alt":"Flower crossbody phone bag, photo 10 of 10"}]
 ---
 
 A handmade crochet mini crossbody bag covered in multicolour flowers, sized to fit a phone, lip balm, keys and small essentials.
@@ -39,5 +40,3 @@ Hand wash in cool or lukewarm water up to 40°C. Lay flat to dry and keep it out
 
 Shipping:
 Made to order with a 2 to 4 day processing time before dispatch with tracking.
-
-All applicable taxes and import tariffs are included in the price, so no surprise charges when your bag arrives.

@@ -6,9 +6,9 @@ price: 16.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4506465591/crochet-flower-mandala-coaster"
 maker: "Hui"
-options: [{"name":"Choose your pack","values":["4 Coasters + 1 Pot","6 Coasters + 1 pot","8 Coasters + 2 Pots"]}]
+options: [{"name":"Pack","values":["4 Coasters + 1 Pot","6 Coasters + 1 pot","8 Coasters + 2 Pots"]}]
 materials: ["Polyester"]
-images: [{"src":"../../assets/products/flower-mandala-coaster/01.jpg","alt":"Flower mandala coaster"},{"src":"../../assets/products/flower-mandala-coaster/02.jpg","alt":"Flower mandala coaster, photo 2 of 10"},{"src":"../../assets/products/flower-mandala-coaster/03.jpg","alt":"Flower mandala coaster, photo 3 of 10"},{"src":"../../assets/products/flower-mandala-coaster/04.jpg","alt":"Flower mandala coaster, photo 4 of 10"},{"src":"../../assets/products/flower-mandala-coaster/05.jpg","alt":"Flower mandala coaster, photo 5 of 10"},{"src":"../../assets/products/flower-mandala-coaster/06.jpg","alt":"Flower mandala coaster, photo 6 of 10"},{"src":"../../assets/products/flower-mandala-coaster/07.jpg","alt":"Flower mandala coaster, photo 7 of 10"},{"src":"../../assets/products/flower-mandala-coaster/08.jpg","alt":"Flower mandala coaster, photo 8 of 10"},{"src":"../../assets/products/flower-mandala-coaster/09.jpg","alt":"Flower mandala coaster, photo 9 of 10"},{"src":"../../assets/products/flower-mandala-coaster/10.jpg","alt":"Flower mandala coaster, photo 10 of 10"}]
+images: [{"src":"../../assets/products/flower-mandala-coaster/01.jpg","alt":"Eight crochet flower mandala coasters in assorted colours with a pot"},{"src":"../../assets/products/flower-mandala-coaster/02.jpg","alt":"Pink, red, purple and yellow crochet flower mandala coasters on a black tray"},{"src":"../../assets/products/flower-mandala-coaster/03.jpg","alt":"Purple, blue, yellow and pink crochet flower mandala coasters on a black tray"},{"src":"../../assets/products/flower-mandala-coaster/04.jpg","alt":"Flower mandala coaster, photo 4 of 10"},{"src":"../../assets/products/flower-mandala-coaster/05.jpg","alt":"Flower mandala coaster, photo 5 of 10"},{"src":"../../assets/products/flower-mandala-coaster/06.jpg","alt":"Flower mandala coaster, photo 6 of 10"},{"src":"../../assets/products/flower-mandala-coaster/07.jpg","alt":"Flower mandala coaster, photo 7 of 10"},{"src":"../../assets/products/flower-mandala-coaster/08.jpg","alt":"Flower mandala coaster, photo 8 of 10"},{"src":"../../assets/products/flower-mandala-coaster/09.jpg","alt":"Flower mandala coaster, photo 9 of 10"},{"src":"../../assets/products/flower-mandala-coaster/10.jpg","alt":"Flower mandala coaster, photo 10 of 10"}]
 ---
 
 A hand crocheted flower mandala coaster with scalloped petals and a green leaf ring, made to sit under your morning mug or a lit candle without sliding around.
@@ -34,4 +34,4 @@ Care
 Hand wash gently in cool or lukewarm water under 40 C, press the water out in a towel, and lay flat to dry away from direct sun so the colors stay rich.
 
 Shipping
-Ships from my studio with tracking. Pick your colours at checkout and I will get it packed up within my listed processing time.
+Ships with tracking.
