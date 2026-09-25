@@ -1,12 +1,16 @@
 ---
+import { getCollection } from 'astro:content';
 import logo from '../assets/brand/logo-full.svg?raw';
+import { showHatsInNav } from '../lib/products';
 
 interface Props { current?: 'bags' | 'coasters' | 'hats' | 'story' | 'shop' }
 const { current } = Astro.props;
 
+const products = await getCollection('products');
 const links = [
   { key: 'bags', href: '/shop/bags/', label: 'Bags' },
   { key: 'coasters', href: '/shop/coasters/', label: 'Coasters' },
+  ...(showHatsInNav(products) ? [{ key: 'hats', href: '/shop/hats/', label: 'Hats' }] : []),
   { key: 'story', href: '/our-story/', label: 'Our story' },
   { key: 'shop', href: '/shop/', label: 'Shop all' },
 ];
