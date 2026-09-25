@@ -47,7 +47,7 @@ Header nav: **Bags · Coasters · Our story · Shop all**, with the logo on the 
 | Product | `/products/<slug>/` | Gallery, name, price, options, description, materials, size, Buy on Etsy button, 4 related products from the same category/group |
 | Our story | `/our-story/` | Hui and Nollaig, how pieces are made |
 | Reviews | `/reviews/` | All Etsy reviews except "noel francis"; German ones shown with an English translation underneath. A line above them links the eBay feedback count as text only |
-| Shipping & returns | `/shipping/` | Ships in 3–7 days; returns handled via Etsy while orders go through Etsy |
+| Shipping & returns | `/shipping/` | Ships in 3–5 days; returns handled via Etsy while orders go through Etsy |
 | Care guide | `/care/` | Washing and care for crochet pieces |
 | Contact | `/contact/` | Email link only |
 | Privacy | `/privacy/` | GDPR privacy notice (cookieless analytics, no tracking) |
@@ -61,7 +61,7 @@ Header nav: **Bags · Coasters · Our story · Shop all**, with the logo on the 
    - Subhead: "Crochet phone bags, totes and coasters, each one made by hand by Hui. Rated 4.9 on Etsy and 100% positive across 287 eBay ratings."
    - Primary button **"Find your bag"** (→ `/shop/bags/`); ghost link "Meet Hui" (→ `/our-story/`).
    - When other makers join, the subhead's maker clause changes via `makerLine`; the H1 stays.
-3. Trust bar: "Ships in 3–7 days" · "★ 4.9 on Etsy · Star Seller" · "100% positive from 287 eBay ratings" · `makerLine`
+3. Trust bar: "Ships in 3–5 days" · "★ 4.9 on Etsy · Star Seller" · "100% positive from 287 eBay ratings" · `makerLine`
 4. Bestsellers, exactly four, no carousel, in this order:
    1. Frog phone crossbody, kawaii green character bag (Pink / Blue / Brown)
    2. Crochet sunflower drawstring backpack (Regular / Dark green)
