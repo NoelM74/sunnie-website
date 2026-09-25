@@ -1,0 +1,10 @@
+[
+  { "match": "Crochet frog phone crossbody, kawaii", "featured": 1 },
+  { "match": "Crochet sunflower drawstring backpack", "featured": 2 },
+  { "match": "Crochet Animal Coasters Set of 3", "name": "Animal coasters, cat, pig and bear", "featured": 3 },
+  { "match": "Crochet Crossbody Phone Bag with Tassel", "name": "Tassel crossbody phone bag", "featured": 4 },
+  { "match": "Crochet Poodle Crossbody Bag", "isNew": true },
+  { "match": "Crochet Flower Mandala Coaster", "name": "Flower mandala coaster" },
+  { "match": "Crochet Palm Tree Phone Bag", "group": "characters" },
+  { "match": "Crochet hot air balloon crossbody bag", "group": "characters" }
+]
