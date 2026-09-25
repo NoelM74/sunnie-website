@@ -23,8 +23,6 @@ Hui works the body in cream yarn with navy stripes through an open-weave stitch,
 - **30 cm handle drop:** comfortable for a full day out.
 - **About 140 g total,** bag plus charm.
 
-> "Thank you so much for the sweet bag and the heart. Great item, fast delivery, all top. I'd happily order here again." *Denise, Etsy buyer of a Sunnie tote, translated from German*
-
 A day bag for commutes, markets or a weekend away, and a thoughtful gift for anyone who likes a small charm as much as the bag.
 
 *W 25 × H 27 × D 6 cm, handle drop 30 cm. Each bag is crocheted by hand, so proportions vary slightly.*
