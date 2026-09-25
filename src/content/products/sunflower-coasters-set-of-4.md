@@ -17,7 +17,7 @@ Four little sunflowers to slide under your mugs, each one a full flower shape wi
 
 Hui crochets a spiral brown centre first, then rings it with puffy yellow and orange petals in a scalloped edge, and finishes each one with a short green stem and two leaves. Flat enough to sit properly under a cup, they look like a small flower even when nobody is using them.
 
-- **Full sunflower shape:** brown spiral centre, scalloped petal edge, stem and leaves included, not just a plain circle.
+- **Full sunflower shape:** brown spiral centre, scalloped edge, stem and leaves included, not just a plain circle.
 - **Set of 4:** enough for a full table setting.
 - **14 cm flower, 7 cm stem:** about 21 cm end to end.
 - **About 0.5 cm thick:** lies flat and stable under a mug or glass.

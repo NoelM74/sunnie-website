@@ -16,9 +16,8 @@ faq: [{"q":"Will my phone fit?","a":"Phones up to 6.7 inches fit, with room for 
 
 Snap it open with one hand, drop your coins in, snap it shut. No zip to fight, just a kiss-lock clasp that closes with a click.
 
-Hui crochets the round bear body first, then finishes the face with safety eyes and a stitched nose, with a little green bamboo shoot tucked into its paws. A silver-tone kiss-lock frame snaps the top shut, and a detachable 120 cm cord lets you wear it crossbody or carry it as a stand-alone purse.
+Hui crochets the round bear body first, then finishes the face with safety eyes, a stitched nose and a little green bamboo shoot tucked into its paws. A detachable 120 cm cord lets you wear it crossbody or carry it as a stand-alone purse.
 
-- **Kiss-lock clasp:** snaps open and shut with one hand, no zip to fight.
 - **Fits phones up to 6.7 inches:** plus a cardholder, lip balm and earbuds.
 - **120 cm detachable strap:** lobster claw clasps let you wear it crossbody or take the strap off.
 - **Flat base:** stands upright on its own when you set it down.

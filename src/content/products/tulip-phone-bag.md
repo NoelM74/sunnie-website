@@ -16,7 +16,7 @@ faq: [{"q":"What's included?","a":"A faux pearl chain charm with a matching croc
 
 A phone bag covered edge to edge in tiny crocheted tulips or sunflowers, with its own faux pearl charm dangling off the side.
 
-Hui works the flower stitch across the whole body, pink and green for the tulip version or yellow, orange and green for the sunflower, both on a cream base. A faux pearl chain finishes with a small matching flower bud and leaf, and a drawstring with a wooden button keeps the top closed.
+Hui works the flower stitch across the whole body, pink and green for the tulip version or yellow, orange and green for the sunflower, both on a cream base. A drawstring with a wooden button keeps the top closed.
 
 - **All-over flower stitch:** tulip or sunflower pattern worked into the entire body, not just a patch.
 - **Faux pearl charm included:** a bead chain with a matching crocheted flower bud and leaf.

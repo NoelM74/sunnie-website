@@ -16,14 +16,13 @@ faq: [{"q":"Is it suitable for kids?","a":"Yes. The short top handle suits littl
 
 A puppy bag with two mismatched eyes and ears that flop when you walk, the kind of bag that gets strangers smiling at you on the street.
 
-Hui crochets the body in one colour with the ears, handle and nose worked in a contrast shade, then sets two white-and-black eyes at different sizes so the face has real character. An open top with a drawstring tie sits under a short top handle and a longer 100 cm crossbody strap, so it switches between a grab-and-go handbag and hands-free wear.
+Hui crochets the body in one colour with the ears, handle and nose in a contrast shade, then sets two white-and-black eyes at different sizes so the face has real character. An open top with a drawstring tie sits under a short top handle and a longer 100 cm crossbody strap.
 
-- **Mismatched eyes:** one bigger than the other, so every puppy has its own expression.
 - **Two straps in one:** a short top handle for little hands, plus a 100 cm crossbody strap for grown-ups.
 - **Drawstring top:** cinches shut, no zip to catch on the yarn.
-- **Room for the everyday:** phone, keys, lip balm, cards, tissues and coins, with space for a kid's small toy or sweets.
+- **Room for the everyday:** phone, keys, lip balm, cards, tissues and coins, with space for a kid's toy or sweets.
 - **Two colourways:** cream with black trim or tan with dark brown.
 
-A fun birthday gift for dog lovers of any age, from a child who wants their own bag to an adult who wants one with a bit of personality.
+A fun birthday gift for dog lovers of any age, from a child who wants their own bag to an adult who wants a bit of personality.
 
 *Top W 16 cm, bottom W 17 cm, H 15 cm, D 2 cm, strap 100 cm. Hand crocheted, so allow 1 to 3 cm either way.*

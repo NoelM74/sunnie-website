@@ -16,12 +16,11 @@ faq: [{"q":"What's the difference between the two styles?","a":"The mini tote is
 
 A grumpy-looking panda bag that somehow makes you smile every time you look down at it, in two shapes to suit however you carry things.
 
-Hui hand-crochets each panda in black and white yarn, with big black eye patches, round ears and two stitched red blush marks that give it that permanently unimpressed look. Choose the mini tote, a wider face shape with a short handle, or the bottle sling, a taller body with dangling legs, both worked as a single unlined compartment.
+Hui hand-crochets each panda in black and white yarn, with big black eye patches, round ears and stitched red blush marks that give it that unimpressed look. Choose the mini tote, a wider face shape with a short handle, or the bottle sling, a taller body with dangling legs.
 
 - **Two styles:** mini tote (18 × 14 × 2 cm) or bottle sling (12 × 26 × 3 cm), each with its own strap.
 - **Stitched blush marks:** placed individually, so no two pandas match exactly.
 - **Holds the basics:** phone, cards, keys, lip balm and maybe a small wallet.
-- **Fixed-length crossbody strap:** hands free for coffee runs and weekend walks.
 - **About 130 to 140 g:** light enough for all-day wear.
 
 A fun gift for panda lovers or anyone who wants a bag with a bit of attitude. Fair warning: kids will try to claim it.

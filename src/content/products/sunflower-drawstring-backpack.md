@@ -17,14 +17,13 @@ faq: [{"q":"What fits inside?","a":"Books, a tablet, a phone and an umbrella, in
 
 A crochet backpack shaped like a little garden pot, topped with a ring of yellow sunflowers and roomy enough for actual daily use.
 
-Hui works the bucket body in soft green yarn, then finishes the top with a ring of crocheted sunflowers, brown centres and leaf vines included. Wear both straps as a backpack, or pull them together over one shoulder, and close the single compartment with a drawstring that ends in a small crocheted leaf charm.
+Hui works the bucket body in soft green yarn, then finishes the top with a ring of crocheted sunflowers, brown centres and leaf vines included. Close the single compartment with a drawstring that ends in a small crocheted leaf charm.
 
-- **Sunflower ring on top:** crocheted flowers, centres and leaf vines finish the bucket shape.
 - **Two ways to wear it:** both straps as a backpack, or pulled together for one shoulder.
 - **Roomy single compartment:** holds books, a tablet, a phone and an umbrella.
 - **Drawstring with leaf charm:** cinches the top shut and doubles as a pull.
 - **Two greens, about 340 g:** regular green or dark green, light enough for everyday wear.
 
-A thoughtful pick for sunflower and handmade-accessory lovers, roomy enough to be an actual everyday bag rather than just a pretty one.
+A thoughtful pick for sunflower and handmade-accessory lovers, roomy enough to be an everyday bag rather than just a pretty one.
 
 *W 20 cm, H 23 cm, D 20 cm. Hand crocheted, so the sunflower count and dimensions vary a little, allow 1 to 3 cm either way.*

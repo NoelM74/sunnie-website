@@ -16,14 +16,14 @@ faq: [{"q":"What comes with the bag?","a":"A detachable 8 x 11 cm heart coin pur
 
 A roomy open-mesh tote with its own detachable heart coin purse, so you always know exactly where your cards and lip balm are.
 
-Hui crochets the body in colourblock stripes with double straps finished in yellow, in a warm palette of blush, yellow, pink and blue or a cool one of white, yellow, purple, lavender and teal. A heart-shaped coin purse clips onto a metal ring and comes right back off, and a puff flower charm rides along too, its colour a surprise.
+Hui crochets the body in colourblock stripes with double straps finished in yellow. A heart-shaped coin purse clips onto a metal ring and comes right back off, and a puff flower charm rides along too, its colour a surprise.
 
 - **Free heart coin purse included:** ruffled white edge, holds cards, lip balm, coins and earbuds, clips anywhere on the bag.
-- **Puff flower charm included:** colour assigned at random, adds a bit of extra character.
+- **Puff flower charm included:** colour assigned at random.
 - **Open mesh body:** roomy enough for a hardback book, an iPad, an umbrella, a phone and a wallet at once.
 - **Two colourways:** warm (blush, yellow, pink, blue) or cool (white, yellow, purple, lavender, teal).
 - **About 200 g:** light for how much it holds.
 
-An everyday tote for anyone who wants something that makes them smile to look at, and a thoughtful gift for someone who values things made by hand.
+An everyday tote for anyone who wants something that makes them smile to look at, and a gift for someone who values things made by hand.
 
 *W 31 cm, H 27 cm, D 6 cm, strap 48 cm. Hand crocheted, so allow 1 to 3 cm either way.*
