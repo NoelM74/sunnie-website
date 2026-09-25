@@ -8,30 +8,23 @@ inStock: true
 etsyUrl: "https://www.etsy.com/listing/4517279965/crochet-sunflower-drawstring-backpack"
 maker: "Hui"
 options: [{"name":"Colour","values":["Regular Green","Dark Green"]}]
-materials: ["Wool","Metal","Polyester"]
+materials: ["Polyester-acrylic yarn","Metal"]
 size: "W 20 × H 23 × D 20 cm"
 images: [{"src":"../../assets/products/sunflower-drawstring-backpack/01.jpg","alt":"Green crochet bucket backpack topped with yellow sunflowers, worn on the back"},{"src":"../../assets/products/sunflower-drawstring-backpack/02.jpg","alt":"Close-up of crochet sunflowers clustered atop a green bucket backpack"},{"src":"../../assets/products/sunflower-drawstring-backpack/03.jpg","alt":"Green sunflower crochet backpack carried over the shoulder, seen from behind"},{"src":"../../assets/products/sunflower-drawstring-backpack/04.jpg","alt":"Sunflower drawstring backpack, photo 4 of 10"},{"src":"../../assets/products/sunflower-drawstring-backpack/05.jpg","alt":"Sunflower drawstring backpack, photo 5 of 10"},{"src":"../../assets/products/sunflower-drawstring-backpack/06.jpg","alt":"Sunflower drawstring backpack, photo 6 of 10"},{"src":"../../assets/products/sunflower-drawstring-backpack/07.jpg","alt":"Sunflower drawstring backpack, photo 7 of 10"},{"src":"../../assets/products/sunflower-drawstring-backpack/08.jpg","alt":"Sunflower drawstring backpack, photo 8 of 10"},{"src":"../../assets/products/sunflower-drawstring-backpack/09.jpg","alt":"Sunflower drawstring backpack, photo 9 of 10"},{"src":"../../assets/products/sunflower-drawstring-backpack/10.jpg","alt":"Sunflower drawstring backpack, photo 10 of 10"}]
 featured: 2
+faq: [{"q":"What fits inside?","a":"Books, a tablet, a phone and an umbrella, in one open compartment."},{"q":"Can I wear it as a backpack?","a":"Yes. Wear both straps as a backpack, or pull them together for a single-shoulder carry."},{"q":"How do I wash it?","a":"Hand wash in cool or warm water below 40°C, reshape while damp and lay flat to dry, out of prolonged direct sun."}]
 ---
 
-A hand-crocheted bucket backpack in dark green wool yarn, a thoughtful pick for sunflower and handmade-accessory lovers, topped with a ring of yellow sunflowers that gives it the look of a small garden pot.
+A crochet backpack shaped like a little garden pot, topped with a ring of yellow sunflowers and roomy enough for actual daily use.
 
-Wear it with both straps as a backpack or pull them together for a single-shoulder carry. The single open compartment is roomy enough for books, a tablet, a phone and an umbrella, closed with a drawstring cord that ends in a small crocheted leaf charm.
+Hui works the bucket body in soft green yarn, then finishes the top with a ring of crocheted sunflowers, brown centres and leaf vines included. Wear both straps as a backpack, or pull them together over one shoulder, and close the single compartment with a drawstring that ends in a small crocheted leaf charm.
 
-Details
-- Material: wool yarn, crocheted throughout, no lining
-- Colour: dark green body with yellow sunflowers, brown centres and green leaf vines
-- Size: W 20 × H 23 × D 20 cm
-- Straps: two crocheted straps on yellow metal D-rings
-- Closure: drawstring with leaf-charm pull
-- Weight: about 340 g
+- **Sunflower ring on top:** crocheted flowers, centres and leaf vines finish the bucket shape.
+- **Two ways to wear it:** both straps as a backpack, or pulled together for one shoulder.
+- **Roomy single compartment:** holds books, a tablet, a phone and an umbrella.
+- **Drawstring with leaf charm:** cinches the top shut and doubles as a pull.
+- **Two greens, about 340 g:** regular green or dark green, light enough for everyday wear.
 
-Each backpack is crocheted by hand, so the sunflower count, strap length and overall dimensions vary a little from piece to piece. Allow 1 to 3 cm difference, and note that colours on screen may not match the yarn exactly.
+A thoughtful pick for sunflower and handmade-accessory lovers, roomy enough to be an actual everyday bag rather than just a pretty one.
 
-Care
-- Hand wash in cool or warm water below 40 degrees C.
-- Reshape while damp and lay flat to dry.
-- Avoid prolonged direct sunlight to prevent the green and yellow from fading.
-
-Shipping
-Processing time: 2 to 4 business days. Ships with tracking.
+*W 20 cm, H 23 cm, D 20 cm. Hand crocheted, so the sunflower count and dimensions vary a little, allow 1 to 3 cm either way.*
