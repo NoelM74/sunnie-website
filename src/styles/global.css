@@ -227,3 +227,7 @@ main:focus { outline: none; }
 .quote figcaption { margin-top: auto; color: var(--umber); }
 /* Quote cards have a linen background, so full terracotta passes contrast even inside .section-sand. */
 .quote-stars { color: var(--terracotta); letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+
+/* Narrow content pages */
+.narrow { max-width: 44rem; }
+.narrow .story-img { margin-bottom: 2rem; }

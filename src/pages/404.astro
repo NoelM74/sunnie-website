@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { pageTitle } from '../lib/seo';
+---
+<BaseLayout title={pageTitle('Page not found')} description="This page doesn't exist." path="/404/" noindex>
+  <div class="container narrow page-head">
+    <h1>We couldn't find that page</h1>
+    <p>The piece may have sold out or moved. Try one of these instead.</p>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="/shop/">Shop all</a>
+      <a class="btn-ghost" href="/">Go to the homepage</a>
+    </p>
+  </div>
+</BaseLayout>

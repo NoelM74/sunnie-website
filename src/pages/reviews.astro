@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ReviewQuote from '../components/ReviewQuote.astro';
+import reviews from '../data/reviews.json';
+import { site } from '../data/site';
+import { pageTitle } from '../lib/seo';
+
+const list = reviews as ((typeof reviews)[number] & { lang: 'en' | 'de' })[];
+---
+<BaseLayout
+  title={pageTitle('Customer reviews')}
+  description={`Reviews from Sunnie Designs buyers on Etsy, where we're a Star Seller rated ${site.proof.etsyRating}.`}
+>
+  <div class="container">
+    <header class="page-head">
+      <h1>What buyers say</h1>
+      <p>
+        We're rated {site.proof.etsyRating} out of 5 on Etsy, where we're a Star Seller, and {site.proof.ebayPositive}
+        positive from {site.proof.ebayCount} buyers on eBay. These reviews come from our Etsy shop. German reviews show
+        an English translation with the original underneath.
+      </p>
+    </header>
+    <div class="quotes">
+      {list.map((r) => <ReviewQuote review={r} showOriginal />)}
+    </div>
+    <p class="section"><a href={site.etsyShopUrl} rel="noopener">See our Etsy shop</a></p>
+  </div>
+</BaseLayout>

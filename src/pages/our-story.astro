@@ -1,0 +1,43 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import storyPhoto from '../assets/story/hands.jpg';
+import { site } from '../data/site';
+import { pageTitle } from '../lib/seo';
+---
+<BaseLayout
+  title={pageTitle('Our story')}
+  description="Meet Hui, who designs and crochets every Sunnie Designs bag by hand, and Nollaig, who runs the shop."
+  current="story"
+>
+  <article class="container narrow">
+    <header class="page-head">
+      <h1>Meet Hui, who makes every bag</h1>
+      <p>Sunnie Designs is two people: Hui, who designs and crochets each piece, and Nollaig, who runs the shop.</p>
+    </header>
+    <Picture src={storyPhoto} alt="A handmade crochet bag by Hui" formats={['avif', 'webp']} widths={[600, 1000]} sizes="(min-width: 48rem) 44rem, 100vw" class="story-img" loading="eager" />
+    <div class="prose">
+      <h2>Made by hand, one piece at a time</h2>
+      <p>
+        Hui designs every frog, poodle and sunflower you see here, then crochets it stitch by stitch. Hand-worked yarn
+        means your piece can differ from the photos by a centimetre or two. We measure everything by hand and list the
+        sizes on each product page.
+      </p>
+      <p>
+        Our thank-you note says it best: small, intentional imperfections make your piece yours. You're carrying something
+        a person made, and you're helping keep slow craft going.
+      </p>
+      <h2>The shop side</h2>
+      <p>
+        Nollaig takes the photos, packs your order and answers your messages, usually {site.replyTime}. Orders ship in
+        {site.shipsIn}.
+      </p>
+      <h2>Say hello</h2>
+      <p>
+        Questions about an order: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>. Custom colour or a special
+        request: write to Hui at <a href={`mailto:${site.email.hui}`}>{site.email.hui}</a>.
+      </p>
+      <p><a class="btn btn-primary" href="/shop/bags/">Find your bag</a></p>
+    </div>
+  </article>
+</BaseLayout>

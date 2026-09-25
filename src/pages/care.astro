@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+import { pageTitle } from '../lib/seo';
+---
+<BaseLayout title={pageTitle('Care guide')} description="How to wash, dry and store your crochet bag, hat or coasters so they keep their shape.">
+  <article class="container narrow prose">
+    <header class="page-head"><h1>Caring for your crochet</h1></header>
+    <p>Crochet lasts for years with a little care. Check the materials on your product page, then follow these steps.</p>
+    <h2>Washing</h2>
+    <ul>
+      <li>Hand wash in cool water with a mild detergent.</li>
+      <li>Squeeze the water out gently. Twisting or wringing pulls the stitches out of shape.</li>
+      <li>Spot clean pieces with pearls, metal chains or charms, and keep those parts dry.</li>
+    </ul>
+    <h2>Drying</h2>
+    <ul>
+      <li>Reshape the piece while damp and dry it flat on a towel, away from direct heat.</li>
+      <li>Skip the tumble dryer.</li>
+    </ul>
+    <h2>Fluffy and plush yarns</h2>
+    <p>Brush plush pieces like the poodle bag gently with a wide comb to lift the fur again.</p>
+    <h2>Storing</h2>
+    <p>Stuff bags with tissue paper so they hold their shape, and keep them out of strong sunlight to protect the colours.</p>
+    <p>Not sure about a piece? Email <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.</p>
+  </article>
+</BaseLayout>
