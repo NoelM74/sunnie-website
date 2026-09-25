@@ -16,7 +16,7 @@ faq: [{"q":"Will my phone fit?","a":"No. It's a mini bag sized for lipstick, a s
 
 A tiny crochet mushroom house that opens at the cap, sized to carry your essentials and spark a conversation everywhere you wear it.
 
-Hui crochets the red spotted cap, a cream cottage-shaped body, a brown door and a round window, then rings the base with small yellow flowers and green leaves.
+Hui crochets the red cap with white spots, a cream cottage-shaped body, a brown door and a green and brown round window, then rings the base with small yellow flowers and green leaves.
 
 - **Cap lifts open at the top:** that's how you get things in and out.
 - **Holds lipstick, a small perfume, keys, coins, earbuds or a few pieces of candy:** a true mini bag, not a phone bag.

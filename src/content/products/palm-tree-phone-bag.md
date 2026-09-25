@@ -16,7 +16,7 @@ faq: [{"q":"Can I remove the strap?","a":"Yes. Metal swivel hooks let you unclip
 
 A bright little bag for your phone, lip balm and lipstick, small enough to vanish into a beach tote and cheerful enough to spot from across the sand.
 
-Hui crochets the palm tree, sun and wave scene straight into the stitches in contrast yarn, not printed on. A wooden button loop closes the top, and metal swivel hooks let you unclip the strap and carry it as a stand-alone pouch.
+Hui crochets the body in cream and yellow stripes, then works the palm tree, sun and wave scene straight into the stitches in contrast yarn, not printed on. A wooden button loop closes the top, and metal swivel hooks let you unclip the strap and carry it as a stand-alone pouch.
 
 - **Wooden button loop:** closes the top without a zip to snag.
 - **Metal swivel hooks:** unclip the 115 cm strap and carry it as a pouch on its own.

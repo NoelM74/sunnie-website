@@ -16,11 +16,11 @@ faq: [{"q":"What fits inside?","a":"A phone, keys, cards, lip balm and other dai
 
 A grinning overalls character with dangling boots and a pearl chain strap, carrying your phone like it's the easiest thing in the world.
 
-Hui crochets the cream overalls body in a chunky stitch, hand-embroiders the smiling face onto the bib, adds teal suspender straps with working buttons, and lets a pair of yellow crochet boots dangle free from the bottom.
+Hui crochets the cream overalls body in a chunky stitch, hand-embroiders the smiling face onto the bib in yellow and black thread, adds teal suspender straps with working buttons, and lets a pair of yellow crochet boots dangle free from the bottom.
 
 - **Room for the everyday carry:** phone, keys, cards, lip balm and other daily essentials.
 - **Functional suspender buttons:** not just for looks, they actually close.
-- **Pearl bead chain strap:** long enough for crossbody or a single shoulder.
+- **White pearl bead chain strap:** long enough for crossbody or a single shoulder.
 - **About 110 g:** ultra light for its size.
 - **Dangling yellow boots:** move as you walk, part of the character.
 

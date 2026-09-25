@@ -16,7 +16,7 @@ faq: [{"q":"What fits inside?","a":"A phone, keys, lip balm, a small tin and car
 
 A shaggy loop-yarn ostrich wearing a tiny crown, roomy enough for your phone and just goofy enough that everyone asks about it.
 
-Hui crochets the body in a loop stitch for a fluffy, scruffy texture, tops it with a white head in a yellow crown, and lets the yellow legs dangle from the bottom.
+Hui crochets the body in a loop stitch for a fluffy, scruffy texture, tops it with a white head, black stitched eyes and a yellow crown, adds two faux pearl accents to the body, and lets the yellow legs dangle from the bottom.
 
 - **Open top, reach right in:** no zip, snap or drawstring.
 - **Fits a phone, keys, lip balm, a small tin and cards:** not a full iPad or magazine.
