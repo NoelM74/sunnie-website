@@ -11,32 +11,19 @@ options: []
 materials: ["Polyester"]
 size: "W 12 × H 26 × D 1 cm, strap 112 cm"
 images: [{"src":"../../assets/products/blue-monster-crossbody-phone-bag-with-lollipop-belly/01.jpg","alt":"Blue crochet monster bag with coral mouth and lollipop belly, worn crossbody"},{"src":"../../assets/products/blue-monster-crossbody-phone-bag-with-lollipop-belly/02.jpg","alt":"Blue crochet monster bag close up showing googly eyes and lollipop detail"},{"src":"../../assets/products/blue-monster-crossbody-phone-bag-with-lollipop-belly/03.jpg","alt":"Blue crochet monster bag worn crossbody from behind, full length"},{"src":"../../assets/products/blue-monster-crossbody-phone-bag-with-lollipop-belly/04.jpg","alt":"Blue monster crossbody phone bag with lollipop belly, photo 4 of 10"},{"src":"../../assets/products/blue-monster-crossbody-phone-bag-with-lollipop-belly/05.jpg","alt":"Blue monster crossbody phone bag with lollipop belly, photo 5 of 10"},{"src":"../../assets/products/blue-monster-crossbody-phone-bag-with-lollipop-belly/06.jpg","alt":"Blue monster crossbody phone bag with lollipop belly, photo 6 of 10"},{"src":"../../assets/products/blue-monster-crossbody-phone-bag-with-lollipop-belly/07.jpg","alt":"Blue monster crossbody phone bag with lollipop belly, photo 7 of 10"},{"src":"../../assets/products/blue-monster-crossbody-phone-bag-with-lollipop-belly/08.jpg","alt":"Blue monster crossbody phone bag with lollipop belly, photo 8 of 10"},{"src":"../../assets/products/blue-monster-crossbody-phone-bag-with-lollipop-belly/09.jpg","alt":"Blue monster crossbody phone bag with lollipop belly, photo 9 of 10"},{"src":"../../assets/products/blue-monster-crossbody-phone-bag-with-lollipop-belly/10.jpg","alt":"Blue monster crossbody phone bag with lollipop belly, photo 10 of 10"}]
+faq: [{"q":"What fits inside?","a":"A phone, keys, lip balm, cards, tissues and coins, all in one open compartment."},{"q":"How does it close?","a":"It doesn't. The mouth is an open flap, so you reach straight in."},{"q":"How do I wash it?","a":"Hand wash in cool or lukewarm water at 40°C or below, lay flat to dry and avoid long sun exposure."}]
 ---
 
-Hand-crocheted blue monster bag with a big coral mouth, googly eyes, purple ears, and a pink swirl lollipop on its belly. Soft, squishy, and honestly a little weird. People love it.
+A hand-crocheted blue monster with a lollipop for a belly button, wide enough to fit your phone and strange enough to make people ask about it.
 
-Product details
-- Material: yarn, crocheted throughout. No lining inside.
-- Blue body with coral/salmon pink wide mouth, white-and-black bead eyes, purple crocheted ears, and small crocheted arms and feet with ruffled edges.
-- White crocheted flower shape on the belly with a pink spiral in the center. Looks like a lollipop.
-- Top width 20 cm, bottom width 12 cm, height 26 cm, depth 1 cm. Strap 112 cm, crocheted cord. Works crossbody or over the shoulder.
-- Weight: about 90 g. Very light.
-- Open top. The mouth flaps open to reveal the compartment inside. No zipper, no snap.
-- Single compartment, soft body, no dividers. Fits a phone, keys, lip balm, cards, tissues, coins.
+Hui crochets the body in solid blue yarn, builds up a coral mouth, googly bead eyes and purple ears, then finishes with a white and pink spiral on the belly shaped like a lollipop. The mouth flaps open at the top, so there's no zip or snap to fight when you reach in.
 
-Great for
-Kids can stash candy, small toys, or pocket money. Adults can carry a phone and daily small items.
-A funny birthday gift for anyone who likes strange little creatures.
+- **Fits phone, keys, lip balm, cards, tissues and coins:** all in one open compartment.
+- **112 cm adjustable strap:** crossbody or over the shoulder.
+- **Open-mouth top:** no zip, no snap, just flap and reach in.
+- **About 90 g:** light enough that you forget it's there.
+- **Lollipop belly detail:** a white and pink spiral crocheted onto the front.
 
-Handmade notes
-Each monster is crocheted by hand, so the mouth shape, eye placement, and ear size will differ a bit from bag to bag.
+A funny gift for kids who like strange little creatures, and just as at home on an adult who wants a phone bag with personality.
 
-Measurements can be off by 1 to 3 cm. Screen colors may look different from the actual yarn.
-
-Care
-Hand wash in cool or lukewarm water, 40 C or below.
-Lay flat to dry.
-Avoid long sun exposure.
-
-Shipping
-Processing time: 2 to 4 business days. Ships with tracking.
+*Top W 20 cm, bottom W 12 cm, H 26 cm, D 1 cm, strap 112 cm. Each monster is crocheted by hand, so mouth shape, eye placement and ear size vary a little from bag to bag.*

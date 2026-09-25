@@ -11,36 +11,19 @@ options: [{"name":"Colour","values":["Light Brown","Dark Brown"]}]
 materials: ["Polyester"]
 size: "W 11 × H 20 × D 2 cm, strap 104 cm"
 images: [{"src":"../../assets/products/bear-phone-bag/01.jpg","alt":"Brown crochet bear phone bag with striped scarf, worn crossbody from behind"},{"src":"../../assets/products/bear-phone-bag/02.jpg","alt":"Brown crochet bear phone bag with teal satchel pocket, close up worn crossbody"},{"src":"../../assets/products/bear-phone-bag/03.jpg","alt":"Brown crochet bear phone bag worn crossbody, side view"},{"src":"../../assets/products/bear-phone-bag/04.jpg","alt":"Bear phone bag, photo 4 of 10"},{"src":"../../assets/products/bear-phone-bag/05.jpg","alt":"Bear phone bag, photo 5 of 10"},{"src":"../../assets/products/bear-phone-bag/06.jpg","alt":"Bear phone bag, photo 6 of 10"},{"src":"../../assets/products/bear-phone-bag/07.jpg","alt":"Bear phone bag, photo 7 of 10"},{"src":"../../assets/products/bear-phone-bag/08.jpg","alt":"Bear phone bag, photo 8 of 10"},{"src":"../../assets/products/bear-phone-bag/09.jpg","alt":"Bear phone bag, photo 9 of 10"},{"src":"../../assets/products/bear-phone-bag/10.jpg","alt":"Bear phone bag, photo 10 of 10"}]
+faq: [{"q":"Is it suitable for children?","a":"Yes. At about 70 g it is light enough for kids to carry coins, small toys or sweets, and adults use it for a phone and daily essentials."},{"q":"How does it open?","a":"Through the bear's smiling mouth, which is where a phone or small items go in."},{"q":"How do I wash it?","a":"Hand wash in cool or lukewarm water under 40°C and lay flat to dry, away from strong sun."}]
 ---
 
-This hand crocheted bear phone bag has a striped scarf and a little satchel pocket stitched onto its front, made for kids and adults who like a cute character bag.
+A hand-crocheted bear with a striped scarf and a tiny satchel of its own, small enough for kids and grown-ups to carry the same way.
 
-It's crocheted by hand in soft polyester yarn, so the bear has a slightly bobbled, textured finish rather than a smooth machine knit. The main opening is the bear's smiling mouth, which is where a phone or small items go in.
+Hui crochets the bear in soft polyester yarn, so the fur comes out slightly bobbled rather than smooth, then adds a red and white striped scarf and a teal satchel with an orange button as a finishing touch. The bear's smiling mouth is the opening, so a phone or a few coins slide right in.
 
-There's a tiny teal satchel with an orange button stitched on the front as a decorative touch. Its scarf is worked in red and white stripes, and two little crochet feet dangle from the base.
+- **Fits phone, lipstick, tissues, keys or a bus card:** with room for coins and small toys too.
+- **104 cm adjustable strap:** crossbody fit for kids, teens or adults.
+- **About 70 g:** light enough for a child to carry all day.
+- **Two colourways:** light brown or dark coffee brown.
+- **Striped scarf and satchel detail:** stitched on for character.
 
-It comes in two colourways, a lighter brown and a darker coffee brown, so you can pick whichever suits you better.
+A first bag for a small child moving up from a backpack, or a soft, funny gift for anyone who likes handmade things.
 
-Size:
-- Top width: 9cm
-- Bottom width: 11cm
-- Height: 20cm
-- Thickness: 2cm
-- Strap length: 104cm
-
-At just 70g, kids can carry it easily for coins, small toys, sweets or little treasures. It works just as well for teens or adults who want somewhere for a phone, lipstick, tissues, keys or a bus card.
-
-It also makes a nice birthday or anniversary gift for anyone who likes handmade, slightly silly things.
-
-Handmade notes:
-Each bear is crocheted by hand, so please allow 1 to 3cm difference from the measurements above. Expect small variations in stitch tension or scarf pattern between bags too.
-
-Screen settings and lighting can also shift the colour slightly from what you see in photos.
-
-Care:
-Hand wash in cool or lukewarm water, below 40C. Lay flat to dry and keep it out of strong sun for long periods so the colours don't fade.
-
-Shipping:
-Ships with tracking.
-
-All taxes and tariffs are included in the price, so there's no surprise cost when your bag arrives.
+*Bottom W 11 cm, top W 9 cm, H 20 cm, D 2 cm, strap 104 cm. Each bear is crocheted by hand, so allow 1 to 3 cm of variation, plus small differences in the scarf pattern.*
