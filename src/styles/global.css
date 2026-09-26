@@ -126,6 +126,10 @@ main:focus { outline: none; }
 .prose li + li { margin-top: 0.35em; }
 .prose h2 { margin-top: 1.5em; }
 
+/* Category buying guide */
+.guide { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); max-width: var(--measure); }
+.guide h2 { margin-bottom: 0.75rem; }
+
 /* Product grid and cards */
 .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (min-width: 40rem) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; } }

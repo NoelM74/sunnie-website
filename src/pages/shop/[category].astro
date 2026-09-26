@@ -12,14 +12,16 @@ const COPY = {
   coasters: {
     title: 'Handmade crochet coasters and mug rugs',
     h1: 'Crochet coasters',
-    intro: 'Coasters and mug rugs for your table, from rose baskets to cat, pig and bear sets. They make an easy gift.',
-    description: 'Handmade crochet coasters and mug rugs: flower sets, rose baskets and animal designs. Ships in 3–5 days.',
+    intro:
+      "A bare table doesn't need much to look finished. These coasters and mug rugs are crocheted by hand in flower, mandala and animal designs, and most come as a ready-to-gift set.",
+    description: 'Crochet coasters and mug rugs in flower, mandala and animal sets, each one made by hand. Ships in 3–5 days with tracking.',
   },
   hats: {
     title: 'Handmade crochet hats',
     h1: 'Crochet hats',
-    intro: 'Crochet hats, made by hand. Tap a hat for sizes and more photos.',
-    description: 'Handmade crochet hats from Sunnie Designs. Ships in 3–5 days.',
+    intro:
+      'A crochet hat, made by hand and sized for real heads, not a one-size guess. Tap through for sizes, brim measurements and more photos.',
+    description: 'Handmade crochet hats, sized by age and made one at a time. Ships in 3–5 days with tracking.',
   },
 } as const;
 
@@ -52,6 +54,52 @@ const faq = faqJsonLd(faqItems);
       <p>{copy.intro}</p>
     </header>
     <ProductGrid products={products} headingLevel="h2" eagerFirst={4} />
+    {category === 'coasters' ? (
+      <section class="guide prose" aria-labelledby="guide-h">
+        <h2 id="guide-h">How to choose crochet coasters</h2>
+        <p>
+          Coasters and mug rugs come as singles, in sets of four or five, or as a themed trio like the
+          <a href="/products/animal-coasters-cat-pig-and-bear/">cat, pig and bear set</a>, each piece about 15 cm
+          across and 3.5 cm tall. Flower designs like the
+          <a href="/products/sunflower-coasters-set-of-4/">sunflower coasters</a> and the
+          <a href="/products/mandala-coaster-set-of-5/">mandala coaster set</a> run 14 to 19 cm across, wide enough
+          for a mug or a small plant pot.
+        </p>
+        <p>
+          For gifting, a set does more work than a single coaster: four or five pieces cover a small table
+          setting, and the set unpacks as a ready-made housewarming or birthday gift. If you want something that
+          looks less like tableware in the wrapping, the
+          <a href="/products/carnation-mug-rug-that-folds-into-a-mini/">carnation mug rug</a> folds into a bouquet
+          shape for gifting, then unfolds flat under a mug once it's opened.
+        </p>
+        <p>
+          Every coaster is crocheted stitch by stitch, so expect a centimetre of size variation between pieces,
+          even within the same set. Hand wash and reshape damp, the same care as the shop's bags, and keep them out
+          of direct sun so the colours hold.
+        </p>
+      </section>
+    ) : (
+      <section class="guide prose" aria-labelledby="guide-h">
+        <h2 id="guide-h">How to choose a crochet hat</h2>
+        <p>
+          The <a href="/products/rainbow-crochet-wizard-hat/">rainbow wizard hat</a> comes in two sizes: 2 to 5
+          years with a 48 cm brim, and 5 to 9 years with a 58 cm brim. If your child is between sizes, measure head
+          circumference where you can. The stretchy ruffled brim runs slightly generous, so a child near the top of
+          the younger range often still fits the smaller size.
+        </p>
+        <p>
+          It's worked in soft acrylic yarn, warm enough for actual winter wear and light enough that kids keep it
+          on instead of pulling it off after five minutes. The pointed peak and star appliqué double it as a
+          costume piece long after the cold snap passes, useful for dress-up days or a school play.
+        </p>
+        <p>
+          Buying as a gift, the size options mean you can go by age instead of guessing a headband size, and the
+          bright rainbow stripes are easy to spot on a crowded playground or ski slope. Hand wash on a cool cycle
+          and reshape while damp, the same care as the rest of the shop, and expect a little stitch variation
+          between hats since each one is crocheted individually.
+        </p>
+      </section>
+    )}
     {faqItems.length > 0 && <FaqList items={faqItems} />}
   </div>
 </BaseLayout>

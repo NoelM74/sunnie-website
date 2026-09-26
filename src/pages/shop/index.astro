@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqList from '../../components/FaqList.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 import { categoryFaq } from '../../data/category-faq';
+import { site } from '../../data/site';
 import { sortForGrid } from '../../lib/products';
 import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageTitle } from '../../lib/seo';
 
@@ -15,7 +16,7 @@ const faq = faqJsonLd(faqItems);
 ---
 <BaseLayout
   title={pageTitle('Shop all handmade crochet bags and coasters')}
-  description="Every crochet bag, coaster and hat in the Sunnie Designs shop, each one made by hand. In-stock pieces first."
+  description="Every crochet bag, coaster and hat from Sunnie Designs, rated 4.9 on Etsy. In-stock pieces first, ships in 3–5 days."
   current="shop"
   jsonLd={[
     breadcrumbJsonLd(crumbs),
@@ -27,9 +28,34 @@ const faq = faqJsonLd(faqItems);
     <Breadcrumbs items={crumbs} />
     <header class="page-head">
       <h1>Shop all</h1>
-      <p>Everything in the shop, with in-stock pieces first. Tap any piece for sizes, colours and more photos.</p>
+      <p>
+        Every bag, coaster and hat we make lives on this one page. In-stock pieces show first, so tap through for
+        sizes, colours and more photos.
+      </p>
     </header>
     <ProductGrid products={products} headingLevel="h2" eagerFirst={4} />
+    <section class="guide prose" aria-labelledby="guide-h">
+      <h2 id="guide-h">How to choose what to buy</h2>
+      <p>
+        Phone bags and totes cover the day to day, coasters dress up a table or travel well as a gift, and the
+        rainbow wizard hat covers cold-weather kids' gifts. Every price runs from €16.95 to €29.95, and every piece
+        ships in {site.shipsIn} with tracking, whatever the category.
+      </p>
+      <p>
+        Buying for yourself, start with a phone bag like the
+        <a href="/products/frog-phone-crossbody/">frog phone crossbody</a>, which comes in a regular and a large
+        size, or a roomier piece like the
+        <a href="/products/sunflower-drawstring-backpack/">sunflower drawstring backpack</a> for days you need more
+        than a phone and keys. Buying a gift, a themed coaster set such as
+        <a href="/products/animal-coasters-cat-pig-and-bear/">animal coasters, cat, pig and bear</a> travels well
+        and needs no sizing decision at all.
+      </p>
+      <p>
+        Every piece is crocheted by hand, so allow a centimetre or two of size variation from the photos, and check
+        the size and materials listed on each product page before you buy. Orders route through our Etsy shop,
+        where Etsy handles payment and buyer protection, and Hui ships everything in {site.shipsIn} with tracking.
+      </p>
+    </section>
     {faqItems.length > 0 && <FaqList items={faqItems} />}
   </div>
 </BaseLayout>

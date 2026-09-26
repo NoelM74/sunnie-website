@@ -17,7 +17,7 @@ const faq = faqJsonLd(faqItems);
 ---
 <BaseLayout
   title={pageTitle('Handmade crochet bags and phone crossbodies')}
-  description="Crochet phone bags, character crossbodies and totes. Frogs, poodles, sunflowers and more, each one made by hand. Ships in 3–5 days."
+  description="Phone bags, crossbodies and totes, each one crocheted by hand and rated 4.9 on Etsy. Ships in 3–5 days with tracking."
   current="bags"
   jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd('Crochet bags', productUrls), ...(faq ? [faq] : [])]}
 >
@@ -25,7 +25,11 @@ const faq = faqJsonLd(faqItems);
     <Breadcrumbs items={crumbs} />
     <header class="page-head">
       <h1>Crochet bags</h1>
-      <p>Frogs, poodles, sunflowers and totes, each one crocheted by hand. Tap any bag for its size, colours and more photos.</p>
+      <p>
+        Carrying a phone in your hand all day gets old fast. These crossbodies, totes and character bags are
+        crocheted by hand and built to hold your phone, cards and keys, so tap any bag for its size, colours and
+        more photos.
+      </p>
       <ul class="jump" role="list">
         {groups.map((g) => <li><a href={`#${g.key}`}>{g.label}</a></li>)}
       </ul>
@@ -36,6 +40,29 @@ const faq = faqJsonLd(faqItems);
         <ProductGrid products={g.items} eagerFirst={i === 0 ? 4 : 0} />
       </section>
     ))}
+    <section class="guide prose" aria-labelledby="guide-h">
+      <h2 id="guide-h">How to choose a crochet bag</h2>
+      <p>
+        Phone bags run small on purpose. Most sit 10 to 15 cm wide with a strap between 100 and 130 cm, long enough
+        to wear crossbody with your phone, cards and lip balm inside and both hands free. Totes and shoulder bags
+        run bigger, 25 to 37 cm wide, with room for a water bottle, a paperback or an 11-inch tablet. The
+        <a href="/products/daisy-granny-square-tote-bag-with-matching-coin/">daisy granny square tote</a> is a good
+        example, with its own coin purse that clips to the handle.
+      </p>
+      <p>
+        For a phone, check the width against your phone's longest edge plus a centimetre of padding. Bags from 12
+        to 15 cm wide fit most phones from a mini to a plus-size model. Straps vary by design: some are a fixed
+        crossbody length, others, like the <a href="/products/frog-phone-crossbody/">frog phone crossbody</a>, come
+        in a regular and a large size so you can pick your drop.
+      </p>
+      <p>
+        Buying for someone else, a character bag like the
+        <a href="/products/giraffe-crossbody-bag-for-kids/">giraffe crossbody for kids</a> or a
+        <a href="/products/tassel-crossbody-phone-bag/">tassel phone bag</a> makes a gift with a story attached, and
+        every piece lists its size so there's no guessing. Hand-worked yarn means a centimetre or two of variation
+        from the photos, and washing instructions live on each product page.
+      </p>
+    </section>
     {faqItems.length > 0 && <FaqList items={faqItems} />}
   </div>
 </BaseLayout>
