@@ -15,6 +15,7 @@ const { images, name } = Astro.props;
           src={img.src}
           alt={img.alt}
           formats={i === 0 ? ['avif', 'webp'] : ['webp']}
+          {...(i === 0 ? {} : { fallbackFormat: 'webp' })}
           widths={[480, 800, 1200]}
           sizes="(min-width: 56rem) 52vw, 100vw"
           loading={i === 0 ? 'eager' : 'lazy'}
@@ -28,7 +29,7 @@ const { images, name } = Astro.props;
       {images.map((img, i) => (
         <li>
           <a href={`#photo-${i + 1}`} aria-label={`Show photo ${i + 1} of ${images.length}`}>
-            <Picture src={img.src} alt="" formats={['webp']} widths={[96, 192]} sizes="96px" loading="eager" decoding="async" />
+            <Picture src={img.src} alt="" formats={['webp']} fallbackFormat="webp" widths={[96, 192]} sizes="96px" loading="eager" decoding="async" />
           </a>
         </li>
       ))}
