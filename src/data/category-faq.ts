@@ -4,7 +4,7 @@ export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: str
   bags: [
     {
       q: 'What phone sizes fit in a crossbody bag?',
-      a: 'Most crossbody phone bags run 10 to 15 cm wide, wide enough for a mini to a plus-size phone. The exact width is listed on each product page.',
+      a: 'Each product page lists its exact width and what fits. The frog phone crossbody, for example, fits phones up to 6.7 inches, and most other phone bags in the shop fit a similar range.',
     },
     {
       q: 'Can I adjust the strap length?',
@@ -12,7 +12,7 @@ export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: str
     },
     {
       q: 'What are the bags made from?',
-      a: 'Cotton or acrylic yarn, depending on the design, always polyester or acrylic, with no animal wool. Each product page lists its exact materials.',
+      a: 'Cotton, polyester or acrylic yarn, depending on the design, with no animal wool anywhere. The daisy granny square tote, for example, is cotton. Each product page lists its exact materials.',
     },
     {
       q: 'How much can a bag differ from the photos?',
@@ -48,7 +48,7 @@ export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: str
     },
     {
       q: 'Can it double as a costume?',
-      a: 'The pointed peak and star appliqué work for dress-up days and school plays, not only cold weather.',
+      a: 'The pointed peak and star appliqué work for dress-up days, not only cold weather.',
     },
     {
       q: 'How do I wash it?',
@@ -58,7 +58,7 @@ export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: str
   shop: [
     {
       q: 'Where do I buy from Sunnie Designs?',
-      a: 'Every "Buy on Etsy" button leads to the same piece in our Etsy shop. You pay there, and Etsy handles the transaction and buyer protection.',
+      a: 'Every "Buy on Etsy" button leads to the same piece in our Etsy shop. You check out securely on Etsy, and eligible orders are covered by Etsy\'s Purchase Protection.',
     },
     {
       q: 'Who makes everything in the shop?',

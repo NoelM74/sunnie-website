@@ -40,7 +40,7 @@ export const GET: APIRoute = async () => {
 - Ships in ${site.shipsIn} with tracking
 - Rated ${site.proof.etsyRating} on Etsy (Star Seller)
 - ${site.proof.ebayPositive} positive across ${site.proof.ebayCount} eBay ratings
-- Yarns are polyester and acrylic, with no animal wool
+- Yarns are cotton, polyester or acrylic depending on the design, with no animal wool
 - Orders are placed on Etsy
 
 ${sections}
