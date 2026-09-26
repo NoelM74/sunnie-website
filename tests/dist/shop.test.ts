@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { jsonLd, page } from './helpers';
+import { jsonLd, page, productCategoryCounts, productCount } from './helpers';
 
 const cards = (html: string) => (html.match(/class="card"/g) ?? []).length;
 
 describe('shop pages', () => {
-  it('shop all lists all 51 products', () => {
-    expect(cards(page('/shop/'))).toBe(51);
+  it('shop all lists every product', () => {
+    expect(cards(page('/shop/'))).toBe(productCount());
   });
   it('bags page has three group sections', () => {
     const html = page('/shop/bags/');
@@ -15,7 +15,8 @@ describe('shop pages', () => {
     expect(cards(html)).toBeGreaterThan(40);
   });
   it('coasters and hats pages exist', () => {
-    expect(cards(page('/shop/coasters/'))).toBe(7);
+    const counts = productCategoryCounts();
+    expect(cards(page('/shop/coasters/'))).toBe(counts.coasters);
     expect(cards(page('/shop/hats/'))).toBeGreaterThanOrEqual(1);
   });
   it('category pages carry breadcrumbs', () => {

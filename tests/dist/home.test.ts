@@ -37,6 +37,8 @@ describe('homepage', () => {
   it('title and description fit', () => {
     const title = html.match(/<title>([^<]+)<\/title>/)![1];
     expect(title.length).toBeLessThanOrEqual(60);
+    const description = html.match(/<meta name="description" content="([^"]*)"/)![1];
+    expect(description.length).toBeLessThanOrEqual(155);
   });
 });
 

@@ -1,12 +1,12 @@
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { DIST, jsonLd, page } from './helpers';
+import { DIST, jsonLd, page, productCount } from './helpers';
 
 const slugs = readdirSync(join(DIST, 'products'));
 
 describe('product pages', () => {
-  it('builds all 51', () => expect(slugs).toHaveLength(51));
+  it('builds every product', () => expect(slugs).toHaveLength(productCount()));
 
   it.each(slugs)('%s has Product data, a price and a buy action', (slug) => {
     const html = page(`/products/${slug}/`);

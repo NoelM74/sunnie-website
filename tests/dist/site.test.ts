@@ -11,7 +11,10 @@ describe('every page', () => {
     expect(html).toMatch(/<html lang="en"/);
     expect(html.match(/<h1[\s>]/g) ?? []).toHaveLength(1);
     expect(html).toContain('class="skip-link" href="#main"');
-    expect(html).toMatch(/<link rel="canonical" href="https:\/\/sunniedesigns\.com\//);
+    // The 404 page opts out of canonical/og:url: it isn't a real, indexable URL.
+    if (!html.includes('content="noindex"')) {
+      expect(html).toMatch(/<link rel="canonical" href="https:\/\/sunniedesigns\.com\//);
+    }
     const scripts = html.match(/<script\b[^>]*>/g) ?? [];
     expect(scripts.every((s) => s.includes('application/ld+json'))).toBe(true);
     // Astro's build-time HTML compressor serializes alt="" as a bare `alt` attribute
