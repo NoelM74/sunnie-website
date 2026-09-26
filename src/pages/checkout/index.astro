@@ -48,10 +48,10 @@ const fields = [
           ))}
           <div class="field">
             <label for="country">Country</label>
-            <select id="country" name="country" autocomplete="country" required aria-invalid={e.country ? 'true' : undefined}>
+            <select id="country" name="country" autocomplete="country" required aria-invalid={e.country ? 'true' : undefined} aria-describedby={e.country ? 'country-err' : undefined}>
               {countries.map((c) => <option value={c.code} selected={c.code === v.country}>{c.name}</option>)}
             </select>
-            {e.country && <p class="field-error">{e.country}</p>}
+            {e.country && <p class="field-error" id="country-err">{e.country}</p>}
           </div>
         </fieldset>
         <p class="small">By paying you agree to our <a href="/terms/">terms of sale</a>. Ships within 3–5 days with tracking. Returns accepted within 30 days.</p>
