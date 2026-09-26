@@ -26,6 +26,14 @@ describe('memoryOrders', () => {
     await repo.insertPending(input());
     await expect(repo.insertPending(input())).rejects.toThrow();
   });
+  it('marks an order for review when the capture is pending at PayPal', async () => {
+    const repo = memoryOrders();
+    await repo.insertPending(input());
+    await repo.markReview('SUN-AAAAAA', 'CAP-9', 'PENDING_REVIEW');
+    const row = await repo.findByRef('SUN-AAAAAA');
+    expect(row).toMatchObject({ status: 'review', captureId: 'CAP-9' });
+    expect(row?.emailError).toMatch(/^PAYPAL_PENDING:/);
+  });
 });
 
 describe('d1Orders', () => {
@@ -35,11 +43,16 @@ describe('d1Orders', () => {
     const repo = d1Orders(db);
     await repo.insertPending(input());
     await repo.markPaid('SUN-AAAAAA', 'CAP-1');
+    await repo.markReview('SUN-AAAAAA', 'CAP-2', 'PENDING_REVIEW');
     for (const c of calls) {
       expect(c.sql).not.toContain('SUN-AAAAAA');
       expect(c.sql).toMatch(/\?/);
     }
     expect(calls[0].args).toContain('SUN-AAAAAA');
+    const reviewCall = calls[calls.length - 1];
+    expect(reviewCall.sql).toMatch(/status = 'review'/);
+    expect(reviewCall.args).toContain('CAP-2');
+    expect(reviewCall.args).toContain('PAYPAL_PENDING:PENDING_REVIEW');
   });
 });
 

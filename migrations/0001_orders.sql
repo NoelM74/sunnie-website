@@ -1,7 +1,8 @@
 CREATE TABLE IF NOT EXISTS orders (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   ref TEXT NOT NULL UNIQUE,
-  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'paid')),
+  -- 'review' means the capture is PENDING at PayPal (e.g. PENDING_REVIEW, ECHECK): the order must not ship until PayPal shows the capture as COMPLETED.
+  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'paid', 'review')),
   paypal_env TEXT NOT NULL CHECK (paypal_env IN ('sandbox', 'live')),
   paypal_order_id TEXT UNIQUE,
   capture_id TEXT,

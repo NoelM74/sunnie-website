@@ -33,6 +33,10 @@ describe('buildOrderPayload', () => {
     const q = buildOrderPayload({ ...order, address: { ...order.address, line2: '', region: '', postcode: '' } }, urls) as any;
     expect(q.purchase_units[0].shipping.address).toEqual({ address_line_1: '1 Main St', admin_area_2: 'Ennis', country_code: 'IE' });
   });
+  it('throws when the totals do not reconcile', () => {
+    const bad: OrderInput = { ...order, totalCents: order.totalCents + 1 };
+    expect(() => buildOrderPayload(bad, urls)).toThrow('Order totals are inconsistent');
+  });
 });
 
 describe('paypalClient', () => {
@@ -48,17 +52,65 @@ describe('paypalClient', () => {
     expect(calls[1].url).toBe('https://api-m.sandbox.paypal.com/v2/checkout/orders');
     expect((calls[1].init.headers as Record<string, string>)['PayPal-Request-Id']).toBe('create-SUN-ABC123');
   });
-  it('maps capture outcomes', async () => {
-    const ok = mk([[200, token], [201, { status: 'COMPLETED', payer: { email_address: 'p@x.ie' }, purchase_units: [{ payments: { captures: [{ id: 'CAP-1', status: 'COMPLETED' }] } }] }]]);
-    expect(await ok.client.captureOrder('PP-1', 'SUN-ABC123')).toEqual({ status: 'COMPLETED', captureId: 'CAP-1', payerEmail: 'p@x.ie' });
-    const dup = mk([[200, token], [422, { details: [{ issue: 'ORDER_ALREADY_CAPTURED' }] }]]);
-    expect(await dup.client.captureOrder('PP-1', 'r')).toEqual({ status: 'ALREADY_CAPTURED' });
-    const bad = mk([[200, token], [422, { details: [{ issue: 'INSTRUMENT_DECLINED' }] }]]);
-    expect(await bad.client.captureOrder('PP-1', 'r')).toEqual({ status: 'FAILED', detail: 'INSTRUMENT_DECLINED' });
-  });
   it('throws PayPalError with the issue on create failure', async () => {
     const { client } = mk([[200, token], [422, { details: [{ issue: 'SHIPPING_ADDRESS_INVALID' }] }]]);
     await expect(client.createOrder(order, urls)).rejects.toMatchObject({ name: 'PayPalError', status: 422, issue: 'SHIPPING_ADDRESS_INVALID' });
     expect(PayPalError).toBeDefined();
+  });
+  it('uses Basic auth for the token request and Bearer for API calls', async () => {
+    const { calls, client } = mk([[200, token], [200, { id: 'PP-1', links: [{ rel: 'payer-action', href: 'https://x/y' }] }]]);
+    await client.createOrder(order, urls);
+    const tokenHeaders = calls[0].init.headers as Record<string, string>;
+    expect(tokenHeaders.Authorization).toBe(`Basic ${btoa('id:sec')}`);
+    const apiHeaders = calls[1].init.headers as Record<string, string>;
+    expect(apiHeaders.Authorization).toBe('Bearer T');
+  });
+  it('returns COMPLETED with the capture id and payer email', async () => {
+    const ok = mk([[200, token], [201, { status: 'COMPLETED', payer: { email_address: 'p@x.ie' }, purchase_units: [{ payments: { captures: [{ id: 'CAP-1', status: 'COMPLETED' }] } }] }]]);
+    expect(await ok.client.captureOrder('PP-1', 'SUN-ABC123')).toEqual({ status: 'COMPLETED', captureId: 'CAP-1', payerEmail: 'p@x.ie' });
+  });
+  it('returns PENDING when the capture itself is not settled', async () => {
+    const pending = mk([[200, token], [201, { status: 'COMPLETED', purchase_units: [{ payments: { captures: [{ id: 'CAP-2', status: 'PENDING', status_details: { reason: 'PENDING_REVIEW' } }] } }] }]]);
+    expect(await pending.client.captureOrder('PP-1', 'r')).toEqual({ status: 'PENDING', captureId: 'CAP-2', reason: 'PENDING_REVIEW' });
+  });
+  it('returns DECLINED when the capture itself was declined', async () => {
+    const declined = mk([[200, token], [201, { status: 'COMPLETED', purchase_units: [{ payments: { captures: [{ id: 'CAP-3', status: 'DECLINED' }] } }] }]]);
+    expect(await declined.client.captureOrder('PP-1', 'r')).toEqual({ status: 'DECLINED', detail: 'CAPTURE_DECLINED' });
+  });
+  it('throws PayPalError NO_CAPTURE on a 2xx with no usable capture', async () => {
+    const noCap = mk([[200, token], [201, { status: 'COMPLETED', purchase_units: [{ payments: {} }] }]]);
+    await expect(noCap.client.captureOrder('PP-1', 'r')).rejects.toMatchObject({ name: 'PayPalError', issue: 'NO_CAPTURE' });
+  });
+  it('returns DECLINED for a definite 422 decline', async () => {
+    const bad = mk([[200, token], [422, { details: [{ issue: 'INSTRUMENT_DECLINED' }] }]]);
+    expect(await bad.client.captureOrder('PP-1', 'r')).toEqual({ status: 'DECLINED', detail: 'INSTRUMENT_DECLINED' });
+  });
+  it('resolves ORDER_ALREADY_CAPTURED via getOrder', async () => {
+    const dup = mk([
+      [200, token],
+      [422, { details: [{ issue: 'SOMETHING' }, { issue: 'ORDER_ALREADY_CAPTURED' }] }],
+      [200, { purchase_units: [{ payments: { captures: [{ id: 'CAP-4', status: 'COMPLETED' }] } }] }],
+    ]);
+    expect(await dup.client.captureOrder('PP-1', 'r')).toEqual({ status: 'COMPLETED', captureId: 'CAP-4', payerEmail: undefined });
+    expect(dup.calls[2].url).toBe('https://api-m.sandbox.paypal.com/v2/checkout/orders/PP-1');
+    expect(dup.calls[2].init?.method ?? 'GET').toBe('GET');
+  });
+  it('throws PayPalError on a 5xx capture response', async () => {
+    const boom = mk([[200, token], [503, { name: 'SERVICE_UNAVAILABLE' }]]);
+    await expect(boom.client.captureOrder('PP-1', 'r')).rejects.toMatchObject({ name: 'PayPalError', status: 503 });
+  });
+  it('throws PayPalError NETWORK when fetch rejects', async () => {
+    let n = 0;
+    const f = (async () => {
+      n++;
+      if (n === 1) return new Response(JSON.stringify(token), { status: 200 });
+      throw new TypeError('network down');
+    }) as unknown as typeof fetch;
+    const client = paypalClient({ clientId: 'id', secret: 'sec', env: 'sandbox', fetch: f });
+    await expect(client.captureOrder('PP-1', 'r')).rejects.toMatchObject({ name: 'PayPalError', issue: 'NETWORK' });
+  });
+  it('getOrder returns NOT_CAPTURED when there are no captures', async () => {
+    const { client } = mk([[200, token], [200, { purchase_units: [{ payments: {} }] }]]);
+    expect(await client.getOrder('PP-1')).toEqual({ status: 'NOT_CAPTURED' });
   });
 });
