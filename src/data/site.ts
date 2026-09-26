@@ -2,7 +2,7 @@ export const site = {
   name: 'Sunnie Designs',
   url: 'https://sunniedesigns.com',
   description:
-    'Crochet phone bags, totes and coasters, each one made by hand by Hui. Rated 4.9 on Etsy. Ships in 3–5 days.',
+    'Crochet phone bags, totes and coasters, each one made by hand by Hui. Rated 4.9 on Etsy. Ships in 3–5 days with tracking.',
   // Change these two lines when pieces from other makers join the shop.
   makerLine: 'Handmade by Hui',
   heroMakerClause: 'each one made by hand by Hui',

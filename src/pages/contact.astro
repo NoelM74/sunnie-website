@@ -3,10 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
 ---
-<BaseLayout title={pageTitle('Contact')} description={`Email Sunnie Designs at ${site.email.hello}. We reply ${site.replyTime}.`}>
+<BaseLayout title={pageTitle('Contact')} description={`Email Sunnie Designs at ${site.email.hello}. A real person replies ${site.replyTime}.`}>
   <article class="container narrow prose">
     <header class="page-head"><h1>Contact us</h1></header>
-    <p>Email us and a real person replies, usually {site.replyTime}.</p>
+    <p>Question about an order, a custom colour or anything else: email us and a real person replies, usually {site.replyTime}.</p>
     <p><a class="btn btn-primary" href={`mailto:${site.email.hello}`}>Email {site.email.hello}</a></p>
     <p>Already ordered on Etsy? You can also message us through your Etsy order page.</p>
   </article>

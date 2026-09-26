@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqList from '../components/FaqList.astro';
 import ProductGrid from '../components/ProductGrid.astro';
 import TrustBar from '../components/TrustBar.astro';
 import ReviewQuote from '../components/ReviewQuote.astro';
@@ -9,12 +10,32 @@ import reviews from '../data/reviews.json';
 import storyPhoto from '../assets/story/hands.jpg';
 import { site } from '../data/site';
 import { featured, formatPrice, newest, showHatsInNav } from '../lib/products';
-import { organizationJsonLd, websiteJsonLd } from '../lib/seo';
+import { faqJsonLd, organizationJsonLd, websiteJsonLd } from '../lib/seo';
 
 const all = await getCollection('products');
 const best = featured(all);
 const hero = newest(all) ?? best[0];
 const coaster = best.find((p) => p.data.category === 'coasters') ?? best[2];
+
+const homeFaq = [
+  {
+    q: 'Where do I buy from Sunnie Designs?',
+    a: 'Every "Buy on Etsy" button on this site leads to the same piece in our Etsy shop. You pay there, and Etsy handles the transaction and buyer protection.',
+  },
+  {
+    q: 'Who makes the pieces?',
+    a: `${site.makerLine}, who designs each piece and crochets it stitch by stitch. Nollaig runs the shop side: photos, packing and messages, usually answered ${site.replyTime}.`,
+  },
+  {
+    q: 'What yarn do you use?',
+    a: 'Polyester and acrylic yarns. No animal wool.',
+  },
+  {
+    q: 'How fast does it ship?',
+    a: `Orders ship in ${site.shipsIn}, with tracking.`,
+  },
+];
+const homeFaqLd = faqJsonLd(homeFaq);
 
 const HOME_REVIEWS = ['hexfeather|2026-09-25', 'Hannah|2026-06-04', 'Antje-Susan|2026-06-02'];
 const quotes = HOME_REVIEWS.map((key) => {
@@ -35,7 +56,7 @@ const tiles = [
   title="Sunnie Designs | Handmade crochet bags and coasters"
   description={site.description}
   path="/"
-  jsonLd={[organizationJsonLd(), websiteJsonLd()]}
+  jsonLd={[organizationJsonLd(), websiteJsonLd(), ...(homeFaqLd ? [homeFaqLd] : [])]}
 >
   <section class="hero">
     <div class="container hero-inner">
@@ -73,6 +94,7 @@ const tiles = [
         <h2 id="best-h">Bestsellers</h2>
         <a href="/shop/">Shop all</a>
       </div>
+      <p class="lead">The four pieces buyers pick most, in stock and ready to ship.</p>
       <ProductGrid products={best} />
     </div>
   </section>
@@ -81,10 +103,14 @@ const tiles = [
     <div class="container story">
       <Picture src={storyPhoto} alt="A handmade crochet bag by Hui" formats={['avif', 'webp']} widths={[480, 800]} sizes="(min-width: 56rem) 40vw, 100vw" loading="lazy" class="story-img" />
       <div>
-        <h2 id="story-h">Every bag starts with Hui and a crochet hook</h2>
+        <h2 id="story-h">Every piece starts with Hui and a crochet hook</h2>
         <p class="lead">
-          Hui designs each piece and crochets it by hand. Hand-worked yarn means your bag can differ from the photos by a
-          centimetre or two, and no two come out quite the same.
+          Hui designs each piece and works it stitch by stitch. Hand-worked yarn means small differences from the
+          photos, a centimetre or two, the kind of imperfection that makes a piece yours.
+        </p>
+        <p>
+          Rated {site.proof.etsyRating} on Etsy and a Star Seller, with buyers who come back for a second and third
+          piece. Every order helps keep slow, handmade craft going.
         </p>
         <p><a href="/our-story/">Read our story</a></p>
       </div>
@@ -94,6 +120,7 @@ const tiles = [
   <section class="section" aria-labelledby="cats-h">
     <div class="container">
       <h2 id="cats-h">Shop by type</h2>
+      <p class="lead">Bags for every day, coasters for the table, hats for cold snaps.</p>
       <ul class="tiles" role="list">
         {tiles.map((t) => (
           <li>
@@ -113,9 +140,16 @@ const tiles = [
         <h2 id="reviews-h">What buyers say</h2>
         <a href="/reviews/">Read all reviews</a>
       </div>
+      <p class="lead">Every quote here comes from a verified Etsy buyer, not a script.</p>
       <div class="quotes">
         {quotes.map((r) => <ReviewQuote review={r} />)}
       </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="faq-h">
+    <div class="container">
+      <FaqList items={homeFaq} heading="Good to know" />
     </div>
   </section>
 </BaseLayout>

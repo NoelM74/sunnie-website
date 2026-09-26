@@ -3,16 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
 ---
-<BaseLayout title={pageTitle('Shipping and returns')} description={`Orders ship in ${site.shipsIn}. Checkout, shipping costs and returns run through our Etsy shop.`}>
+<BaseLayout title={pageTitle('Shipping and returns')} description={`Orders ship in ${site.shipsIn} with tracking. Checkout, shipping costs and returns run through our Etsy shop.`}>
   <article class="container narrow prose">
     <header class="page-head"><h1>Shipping and returns</h1></header>
     <h2>How ordering works</h2>
     <p>
-      Every "Buy on Etsy" button takes you to the same piece in our Etsy shop. You pay there, and Etsy shows the shipping
-      cost for your country before you pay.
+      Every "Buy on Etsy" button takes you to the same piece in our Etsy shop. You pay there, and Etsy shows the
+      shipping cost for your country before you pay.
     </p>
     <h2>When your order ships</h2>
-    <p>We pack and ship orders in {site.shipsIn}. Etsy sends you tracking details once your parcel is on its way.</p>
+    <p>
+      Hui and Nollaig pack and ship orders in {site.shipsIn}, with tracking. Etsy emails you the tracking number once
+      your parcel is on its way.
+    </p>
     <h2>Returns</h2>
     <p>
       Returns follow the policy shown on each Etsy listing. If something isn't right with your order, email
