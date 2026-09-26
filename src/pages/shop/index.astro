@@ -6,17 +6,20 @@ import FaqList from '../../components/FaqList.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 import { categoryFaq } from '../../data/category-faq';
 import { site } from '../../data/site';
-import { sortForGrid } from '../../lib/products';
+import { formatPrice, sortForGrid } from '../../lib/products';
 import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageTitle } from '../../lib/seo';
 
 const products = sortForGrid(await getCollection('products'));
+const prices = products.map((p) => p.data.price);
+const minPrice = formatPrice(Math.min(...prices));
+const maxPrice = formatPrice(Math.max(...prices));
 const crumbs = [{ name: 'Home', path: '/' }, { name: 'Shop all', path: '/shop/' }];
 const faqItems = categoryFaq.shop;
 const faq = faqJsonLd(faqItems);
 ---
 <BaseLayout
   title={pageTitle('Shop all handmade crochet bags and coasters')}
-  description="Every crochet bag, coaster and hat from Sunnie Designs, rated 4.9 on Etsy. In-stock pieces first, ships in 3–5 days."
+  description={`Every crochet bag, coaster and hat from Sunnie Designs, rated ${site.proof.etsyRating} on Etsy. In-stock pieces first, ships in ${site.shipsIn}.`}
   current="shop"
   jsonLd={[
     breadcrumbJsonLd(crumbs),
@@ -38,8 +41,8 @@ const faq = faqJsonLd(faqItems);
       <h2 id="guide-h">How to choose what to buy</h2>
       <p>
         Phone bags and totes cover the day to day, coasters dress up a table or travel well as a gift, and the
-        rainbow wizard hat covers cold-weather kids' gifts. Every price runs from €16.95 to €29.95, and every piece
-        ships in {site.shipsIn} with tracking, whatever the category.
+        rainbow wizard hat covers cold-weather kids' gifts. Prices run from {minPrice} to {maxPrice}, and every
+        piece ships in {site.shipsIn} with tracking, whatever the category.
       </p>
       <p>
         Buying for yourself, start with a phone bag like the
@@ -53,8 +56,8 @@ const faq = faqJsonLd(faqItems);
       <p>
         Every piece is crocheted by hand, so allow a centimetre or two of size variation from the photos, and check
         the size and materials listed on each product page before you buy. Orders route through our Etsy shop,
-        where you check out securely and eligible orders are covered by Etsy's Purchase Protection, and Hui ships
-        everything in {site.shipsIn} with tracking.
+        where you check out securely and eligible orders are covered by Etsy's Purchase Protection, and Nollaig
+        packs and ships every order in {site.shipsIn} with tracking.
       </p>
     </section>
     {faqItems.length > 0 && <FaqList items={faqItems} />}

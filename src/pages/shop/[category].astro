@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqList from '../../components/FaqList.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 import { categoryFaq } from '../../data/category-faq';
+import { site } from '../../data/site';
 import { CATEGORY_LABELS, inCategory } from '../../lib/products';
 import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageTitle } from '../../lib/seo';
 
@@ -14,14 +15,14 @@ const COPY = {
     h1: 'Crochet coasters',
     intro:
       "A bare table doesn't need much to look finished. These coasters and mug rugs are crocheted by hand in flower, mandala and animal designs, and most come as a ready-to-gift set.",
-    description: 'Crochet coasters and mug rugs in flower, mandala and animal sets, each one made by hand. Ships in 3–5 days with tracking.',
+    description: `Crochet coasters and mug rugs in flower, mandala and animal sets, each one made by hand. Ships in ${site.shipsIn} with tracking.`,
   },
   hats: {
     title: 'Handmade crochet hats',
     h1: 'Crochet hats',
     intro:
       'A crochet hat, made by hand and sized for real heads, not a one-size guess. Tap through for sizes, brim measurements and more photos.',
-    description: 'Handmade crochet hats, sized by age and made one at a time. Ships in 3–5 days with tracking.',
+    description: `Handmade crochet hats, sized by age and made one at a time. Ships in ${site.shipsIn} with tracking.`,
   },
 } as const;
 
@@ -58,9 +59,10 @@ const faq = faqJsonLd(faqItems);
       <section class="guide prose" aria-labelledby="guide-h">
         <h2 id="guide-h">How to choose crochet coasters</h2>
         <p>
-          Coasters and mug rugs come as singles, in sets of four or five, or as a themed trio like the
-          <a href="/products/animal-coasters-cat-pig-and-bear/">cat, pig and bear set</a>, each piece about 15 cm
-          across and 3.5 cm tall. Flower designs like the
+          Coasters and mug rugs come as singles and sets, so check each product page for its exact pack sizes, from
+          a single design up to a set of eight. The
+          <a href="/products/animal-coasters-cat-pig-and-bear/">cat, pig and bear set</a> comes as one design or as
+          a trio, each piece about 15 cm across and 3.5 cm tall. Flower designs like the
           <a href="/products/sunflower-coasters-set-of-4/">sunflower coasters</a> and the
           <a href="/products/mandala-coaster-set-of-5/">mandala coaster set</a> run 14 to 19 cm across, wide enough
           for a mug or a small plant pot.
@@ -93,9 +95,9 @@ const faq = faqJsonLd(faqItems);
         </p>
         <p>
           Buying as a gift, the size options mean you can go by age instead of guessing a headband size, and the
-          bright rainbow stripes are easy to spot on a crowded playground. Hand wash on a cool cycle and reshape
-          while damp, the same care as the rest of the shop, and expect a little stitch variation between hats
-          since each one is crocheted individually.
+          bright rainbow stripes are easy to spot on a crowded playground. Hand wash or machine wash on a cool
+          cycle at 40°C or below, wash separately from dark colours, and reshape while damp. Expect a little
+          stitch variation between hats since each one is crocheted individually.
         </p>
       </section>
     )}

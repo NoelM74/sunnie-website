@@ -22,7 +22,7 @@ export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: str
   coasters: [
     {
       q: 'How many coasters come in a set?',
-      a: 'Most sets run four or five pieces. Some designs, like the cat, pig and bear trio, come as a set of three.',
+      a: 'Pack sizes vary by design, from a single coaster up to a set of eight. See each product page for its exact pack sizes.',
     },
     {
       q: 'What size are the coasters?',

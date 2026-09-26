@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqList from '../../components/FaqList.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 import { categoryFaq } from '../../data/category-faq';
+import { site } from '../../data/site';
 import { GROUP_LABELS, GROUP_ORDER, inGroup } from '../../lib/products';
 import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageTitle } from '../../lib/seo';
 
@@ -17,7 +18,7 @@ const faq = faqJsonLd(faqItems);
 ---
 <BaseLayout
   title={pageTitle('Handmade crochet bags and phone crossbodies')}
-  description="Phone bags, crossbodies and totes, each one crocheted by hand and rated 4.9 on Etsy. Ships in 3–5 days with tracking."
+  description={`Phone bags, crossbodies and totes, each one crocheted by hand and rated ${site.proof.etsyRating} on Etsy. Ships in ${site.shipsIn} with tracking.`}
   current="bags"
   jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd('Crochet bags', productUrls), ...(faq ? [faq] : [])]}
 >

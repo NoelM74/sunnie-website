@@ -94,7 +94,7 @@ const tiles = [
         <h2 id="best-h">Bestsellers</h2>
         <a href="/shop/">Shop all</a>
       </div>
-      <p class="lead">The four pieces buyers pick most, in stock and ready to ship.</p>
+      <p class="lead">The four pieces buyers pick most.</p>
       <ProductGrid products={best} />
     </div>
   </section>
@@ -103,10 +103,11 @@ const tiles = [
     <div class="container story">
       <Picture src={storyPhoto} alt="A handmade crochet bag by Hui" formats={['avif', 'webp']} widths={[480, 800]} sizes="(min-width: 56rem) 40vw, 100vw" loading="lazy" class="story-img" />
       <div>
-        <h2 id="story-h">Every piece starts with Hui and a crochet hook</h2>
+        <h2 id="story-h">{site.makerLine}, one stitch at a time</h2>
         <p class="lead">
-          Hui designs each piece and works it stitch by stitch. Hand-worked yarn means small differences from the
-          photos, a centimetre or two, the kind of imperfection that makes a piece yours.
+          {site.makerLine}, working each piece stitch by stitch from the first row to the last knot. Hand-worked
+          yarn means small differences from the photos, a centimetre or two, the kind of imperfection that makes a
+          piece yours.
         </p>
         <p>
           Rated {site.proof.etsyRating} on Etsy and a Star Seller. Every order helps keep slow, handmade craft
@@ -120,7 +121,7 @@ const tiles = [
   <section class="section" aria-labelledby="cats-h">
     <div class="container">
       <h2 id="cats-h">Shop by type</h2>
-      <p class="lead">Bags for every day, coasters for the table, hats for cold snaps.</p>
+      <p class="lead">Bags for every day, coasters for the table, <a href="/shop/hats/">hats</a> for cold snaps.</p>
       <ul class="tiles" role="list">
         {tiles.map((t) => (
           <li>
