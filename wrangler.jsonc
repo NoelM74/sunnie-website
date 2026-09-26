@@ -8,7 +8,14 @@
     "binding": "ASSETS",
     "directory": "./dist",
     "not_found_handling": "404-page",
-    "html_handling": "auto-trailing-slash"
+    "html_handling": "auto-trailing-slash",
+    // On-demand routes (prerender = false) must always reach the Worker. Without this,
+    // Cloudflare's asset routing intercepts navigations (Sec-Fetch-Mode: navigate) and
+    // form POSTs to paths with no matching static asset - such as /bag/ and /bag/add/ -
+    // and answers with its own not_found_handling / 405 response before the Worker ever
+    // runs. curl and fetch() don't send Sec-Fetch-Mode, so this only shows up for real
+    // browser navigations and form submissions. See p2-task-5-report.md for repro.
+    "run_worker_first": ["/bag/*"]
   },
   "d1_databases": [
     // database_id is filled in by the owner in Task 12 (npx wrangler d1 create sunnie-orders).

@@ -45,6 +45,10 @@ a:hover { color: var(--terracotta-hover); }
 }
 .skip-link:focus { top: 1rem; color: var(--white); }
 main:focus { outline: none; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
 
 /* Sections */
 .section { padding-block: clamp(2.5rem, 2rem + 3vw, 4.5rem); }
@@ -300,3 +304,23 @@ main:focus { outline: none; }
 }
 .bag-link:hover { background: var(--sand); color: var(--terracotta-deep); }
 @media (max-width: 48rem) { .bag-link { margin-left: auto; min-height: 44px; padding: 0 0.8rem; } }
+
+/* Bag */
+.narrow-wide { max-width: 60rem; }
+.notice { background: var(--sand); border-left: 4px solid var(--olive); padding: 0.75rem 1rem; border-radius: var(--radius-sm); }
+.notice-warn { border-left-color: var(--terracotta); }
+.bag-grid { display: grid; gap: 2rem; }
+@media (min-width: 56rem) { .bag-grid { grid-template-columns: 1.6fr 1fr; align-items: start; } }
+.bag-lines { list-style: none; margin: 0; padding: 0; }
+.bag-line { display: grid; grid-template-columns: 80px 1fr auto; gap: 0.5rem 1rem; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border); max-width: none; }
+.bag-line img { border-radius: var(--radius-sm); grid-row: span 2; }
+.bag-line-info { display: flex; flex-direction: column; gap: 0.15rem; }
+.bag-line-total { font-weight: 700; justify-self: end; }
+.bag-qty { display: flex; align-items: center; gap: 0.5rem; }
+.bag-qty select { min-height: 44px; border: 2px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--linen); font: inherit; padding: 0 0.6rem; }
+.bag-summary { background: var(--sand); border-radius: var(--radius); padding: 1.5rem; display: grid; gap: 1rem; }
+.bag-summary dl { margin: 0; display: grid; gap: 0.5rem; }
+.bag-summary dl div { display: flex; justify-content: space-between; }
+.bag-summary dd { margin: 0; font-weight: 700; }
+.bag-total { border-top: 1px solid var(--border-strong); padding-top: 0.5rem; font-size: var(--fs-body-lg); }
+.bag-summary a:not(.btn) { color: var(--terracotta-deep); }

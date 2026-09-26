@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "check": "astro check",
+    "check": "wrangler types && astro check",
     "test": "vitest run tests/unit",
     "test:dist": "vitest run tests/dist",
     "verify": "npm run check && npm test && npm run build && npm run test:dist",
