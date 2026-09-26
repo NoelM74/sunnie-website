@@ -3,11 +3,12 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FaqList from '../../components/FaqList.astro';
 import Gallery from '../../components/Gallery.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 import { site } from '../../data/site';
 import { CATEGORY_LABELS, formatPrice, related } from '../../lib/products';
-import { absoluteUrl, breadcrumbJsonLd, metaDescription, productJsonLd, productTitle } from '../../lib/seo';
+import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, metaDescription, productJsonLd, productTitle } from '../../lib/seo';
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
@@ -34,6 +35,10 @@ const ldImages = await Promise.all(
 const description = metaDescription(product.body ?? d.name);
 const current = d.category;
 const optionNames = d.options.map((o) => o.name.toLowerCase()).join(' and ');
+const colourOption = d.options.find((o) => o.name === 'Colour');
+const color = colourOption ? colourOption.values.join(', ') : undefined;
+const material = d.materials.length > 0 ? d.materials.join(', ') : undefined;
+const faq = faqJsonLd(d.faq);
 ---
 <BaseLayout
   title={productTitle(d.name)}
@@ -43,8 +48,20 @@ const optionNames = d.options.map((o) => o.name.toLowerCase()).join(' and ');
   type="product"
   current={current}
   jsonLd={[
-    productJsonLd({ name: d.name, description, url: absoluteUrl(path), images: ldImages, price: d.price, inStock: d.inStock }),
+    productJsonLd({
+      name: d.name,
+      description,
+      url: absoluteUrl(path),
+      images: ldImages,
+      price: d.price,
+      inStock: d.inStock,
+      sku: product.id,
+      material,
+      color,
+      category: d.category,
+    }),
     breadcrumbJsonLd(crumbs),
+    ...(faq ? [faq] : []),
   ]}
 >
   <div class="container">
@@ -75,6 +92,7 @@ const optionNames = d.options.map((o) => o.name.toLowerCase()).join(' and ');
           <li><strong>Ships in:</strong> {site.shipsIn}</li>
         </ul>
         <div class="prose product-body"><Content /></div>
+        {d.faq.length > 0 && <FaqList items={d.faq} />}
       </div>
     </div>
     <section class="section related" aria-labelledby="related-h">

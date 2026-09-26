@@ -166,6 +166,12 @@ main:focus { outline: none; }
 .product-facts li + li { margin-top: 0.35rem; }
 .product-body { font-size: var(--fs-body-lg); }
 
+/* FAQ */
+.faq { margin-top: 2rem; }
+.faq dt { font-weight: 700; color: var(--umber); margin-top: 1rem; }
+.faq dt:first-child { margin-top: 0; }
+.faq dd { margin: 0.35rem 0 1rem; }
+
 /* Gallery: horizontal scroll-snap strip + anchor thumbnails, no JS */
 .gallery-main {
   list-style: none; margin: 0; padding: 0;
