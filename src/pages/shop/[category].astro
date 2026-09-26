@@ -2,9 +2,11 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FaqList from '../../components/FaqList.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
+import { categoryFaq } from '../../data/category-faq';
 import { CATEGORY_LABELS, inCategory } from '../../lib/products';
-import { breadcrumbJsonLd, pageTitle } from '../../lib/seo';
+import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageTitle } from '../../lib/seo';
 
 const COPY = {
   coasters: {
@@ -30,8 +32,19 @@ const copy = COPY[category];
 const products = inCategory(await getCollection('products'), category);
 const path = `/shop/${category}/`;
 const crumbs = [{ name: 'Home', path: '/' }, { name: CATEGORY_LABELS[category], path }];
+const faqItems = categoryFaq[category];
+const faq = faqJsonLd(faqItems);
 ---
-<BaseLayout title={pageTitle(copy.title)} description={copy.description} current={category} jsonLd={[breadcrumbJsonLd(crumbs)]}>
+<BaseLayout
+  title={pageTitle(copy.title)}
+  description={copy.description}
+  current={category}
+  jsonLd={[
+    breadcrumbJsonLd(crumbs),
+    itemListJsonLd(copy.h1, products.map((p) => `/products/${p.id}/`)),
+    ...(faq ? [faq] : []),
+  ]}
+>
   <div class="container">
     <Breadcrumbs items={crumbs} />
     <header class="page-head">
@@ -39,5 +52,6 @@ const crumbs = [{ name: 'Home', path: '/' }, { name: CATEGORY_LABELS[category], 
       <p>{copy.intro}</p>
     </header>
     <ProductGrid products={products} headingLevel="h2" eagerFirst={4} />
+    {faqItems.length > 0 && <FaqList items={faqItems} />}
   </div>
 </BaseLayout>

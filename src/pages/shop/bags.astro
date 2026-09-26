@@ -2,19 +2,24 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FaqList from '../../components/FaqList.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
+import { categoryFaq } from '../../data/category-faq';
 import { GROUP_LABELS, GROUP_ORDER, inGroup } from '../../lib/products';
-import { breadcrumbJsonLd, pageTitle } from '../../lib/seo';
+import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageTitle } from '../../lib/seo';
 
 const all = await getCollection('products');
 const groups = GROUP_ORDER.map((g) => ({ key: g, label: GROUP_LABELS[g], items: inGroup(all, g) })).filter((g) => g.items.length > 0);
 const crumbs = [{ name: 'Home', path: '/' }, { name: 'Bags', path: '/shop/bags/' }];
+const productUrls = groups.flatMap((g) => g.items.map((p) => `/products/${p.id}/`));
+const faqItems = categoryFaq.bags;
+const faq = faqJsonLd(faqItems);
 ---
 <BaseLayout
   title={pageTitle('Handmade crochet bags and phone crossbodies')}
   description="Crochet phone bags, character crossbodies and totes. Frogs, poodles, sunflowers and more, each one made by hand. Ships in 3–5 days."
   current="bags"
-  jsonLd={[breadcrumbJsonLd(crumbs)]}
+  jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd('Crochet bags', productUrls), ...(faq ? [faq] : [])]}
 >
   <div class="container">
     <Breadcrumbs items={crumbs} />
@@ -31,5 +36,6 @@ const crumbs = [{ name: 'Home', path: '/' }, { name: 'Bags', path: '/shop/bags/'
         <ProductGrid products={g.items} eagerFirst={i === 0 ? 4 : 0} />
       </section>
     ))}
+    {faqItems.length > 0 && <FaqList items={faqItems} />}
   </div>
 </BaseLayout>
