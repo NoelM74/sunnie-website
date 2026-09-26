@@ -9,5 +9,8 @@ shop_settings.json
 **/shop_settings.json
 .superpowers/
 
+# Raw logo source files - only assets-src/brand/ is committed
+/brand/
+
 # Etsy raw exports stay outside the repo
 EtsyListingsDownload.csv

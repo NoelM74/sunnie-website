@@ -41,7 +41,7 @@ mkdirSync('src/assets/brand', { recursive: true });
 mkdirSync('public', { recursive: true });
 
 // --- 1. Wordmark ("sunnie®") -------------------------------------------
-const wordmarkBitmap = await toBilevel('brand/sunnie-logo-01.svg', {
+const wordmarkBitmap = await toBilevel('assets-src/brand/sunnie-logo-01.svg', {
   width: 1200,
   background: '#ffffff',
   threshold: 140,
@@ -56,7 +56,7 @@ const wordmarkSvg = svgDoc({
 writeFileSync('src/assets/brand/logo-wordmark.svg', wordmarkSvg);
 
 // --- 2. Smile mark (two arches + smile) ---------------------------------
-const smileBitmap = await toBilevel('brand/sunnie-logo-03.svg', {
+const smileBitmap = await toBilevel('assets-src/brand/sunnie-logo-03.svg', {
   width: 800,
   background: COLORS.umber,
   threshold: 180,
