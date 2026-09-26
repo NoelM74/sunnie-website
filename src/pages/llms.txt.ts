@@ -4,14 +4,8 @@ import { site } from '../data/site';
 import { CATEGORY_LABELS, formatPrice, inCategory, type Category } from '../lib/products';
 import { absoluteUrl } from '../lib/seo';
 
-function firstSentence(body: string): string {
-  const plain = body
-    .replace(/^\s*[-*]\s+/gm, '')
-    .replace(/[*_#>`]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-  const match = plain.match(/^.*?[.!?](?=\s|$)/);
-  return (match ? match[0] : plain).trim();
+function describe(seoTitle: string): string {
+  return seoTitle.replace(/\bWool\b/g, 'yarn').replace(/\bwool\b/g, 'yarn');
 }
 
 const CATEGORY_ORDER: Category[] = ['bags', 'coasters', 'hats'];
@@ -21,7 +15,7 @@ export const GET: APIRoute = async () => {
 
   const sections = CATEGORY_ORDER.map((category) => {
     const items = inCategory(products, category)
-      .map((p) => `- [${p.data.name}](${absoluteUrl(`/products/${p.id}/`)}): ${formatPrice(p.data.price)}. ${firstSentence(p.body ?? '')}`)
+      .map((p) => `- [${p.data.name}](${absoluteUrl(`/products/${p.id}/`)}): ${formatPrice(p.data.price)}. ${describe(p.data.seoTitle)}`)
       .join('\n');
     return `## ${CATEGORY_LABELS[category]}\n\n${items}`;
   }).join('\n\n');

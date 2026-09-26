@@ -8,7 +8,7 @@ import Gallery from '../../components/Gallery.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 import { site } from '../../data/site';
 import { CATEGORY_LABELS, formatPrice, related } from '../../lib/products';
-import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, metaDescription, productJsonLd, productTitle } from '../../lib/seo';
+import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, firstSentences, metaDescription, productJsonLd, productTitle } from '../../lib/seo';
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
@@ -32,7 +32,7 @@ const crumbs = [
 const ldImages = await Promise.all(
   d.images.slice(0, 3).map(async (img) => absoluteUrl((await getImage({ src: img.src, width: 1200, format: 'jpg' })).src)),
 );
-const description = metaDescription(product.body ?? d.name);
+const description = metaDescription(firstSentences(product.body ?? d.name, 2));
 const current = d.category;
 const optionNames = d.options.map((o) => o.name.toLowerCase()).join(' and ');
 const colourOption = d.options.find((o) => o.name === 'Colour');

@@ -16,6 +16,21 @@ export function productTitle(name: string): string {
   return `${name.slice(0, room).trimEnd()}…${BRAND_SUFFIX}`;
 }
 
+export function firstSentences(text: string, count: number): string {
+  const plain = text
+    .replace(/^\s*[-*]\s+/gm, '')
+    .replace(/[*_#>`]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const matches = plain.match(/[^.!?]+[.!?]+(?=\s|$)/g);
+  if (!matches || matches.length === 0) return plain;
+  return matches
+    .slice(0, count)
+    .map((s) => s.trim())
+    .join(' ')
+    .trim();
+}
+
 export function metaDescription(text: string, max = 155): string {
   const plain = text
     .replace(/^\s*[-*]\s+/gm, '')

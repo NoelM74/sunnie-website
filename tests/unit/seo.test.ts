@@ -3,6 +3,7 @@ import {
   absoluteUrl,
   breadcrumbJsonLd,
   faqJsonLd,
+  firstSentences,
   itemListJsonLd,
   metaDescription,
   organizationJsonLd,
@@ -42,6 +43,20 @@ describe('metaDescription', () => {
     expect(d.length).toBeLessThanOrEqual(155);
     expect(d.endsWith('…')).toBe(true);
     expect(d).not.toMatch(/\s…$/);
+  });
+});
+
+describe('firstSentences', () => {
+  it('takes the first two sentences and drops the rest', () => {
+    expect(firstSentences('Is your bag too small? This one is not. Hui makes it by hand.', 2)).toBe(
+      'Is your bag too small? This one is not.',
+    );
+  });
+  it('strips markdown before counting sentences', () => {
+    expect(firstSentences('**Soft** bag. Fits a phone. Hand-crocheted.', 2)).toBe('Soft bag. Fits a phone.');
+  });
+  it('returns the whole text when it has fewer sentences than asked', () => {
+    expect(firstSentences('One sentence only.', 2)).toBe('One sentence only.');
   });
 });
 
