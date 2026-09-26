@@ -188,7 +188,6 @@ main:focus { outline: none; }
 .product-info h1 { margin-top: 0.5rem; }
 .product-price { font-size: var(--fs-h3); font-weight: 700; margin-bottom: 0.25rem; }
 .product-maker { color: var(--umber-muted); }
-.product-option { margin-bottom: 0.5rem; }
 .buy-note { margin-top: 0.75rem; }
 .product-info .btn-block { margin-top: 1rem; }
 .product-facts { list-style: none; padding: 1rem 0; margin: 1.5rem 0; border-block: 1px solid var(--border); }
@@ -271,3 +270,33 @@ main:focus { outline: none; }
 /* Narrow content pages */
 .narrow { max-width: 44rem; }
 .narrow .story-img { margin-bottom: 2rem; }
+
+/* Buy box */
+.buy-form { display: grid; gap: 1rem; margin-top: 1rem; }
+.choice { border: 0; margin: 0; padding: 0; }
+.choice legend { font-weight: 700; margin-bottom: 0.5rem; }
+.choice-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.choice-opt { position: relative; }
+.choice-opt input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.choice-opt span {
+  display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.1rem;
+  border: 2px solid var(--border-strong); border-radius: 999px; background: var(--linen);
+  font-weight: 700; transition: border-color var(--transition), background-color var(--transition);
+}
+.choice-opt input:checked + span { border-color: var(--terracotta); background: var(--sand); color: var(--terracotta-deep); }
+.choice-opt input:focus-visible + span { outline: var(--focus-ring); outline-offset: 3px; }
+.qty { display: inline-flex; align-items: center; gap: 0.75rem; font-weight: 700; }
+.qty select { min-height: 48px; padding: 0 2rem 0 0.9rem; border: 2px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--linen); color: var(--umber); font: inherit; }
+.buy-note { margin: 0; color: var(--umber-muted); }
+.etsy-link { color: var(--terracotta); }
+
+/* Header bag link */
+.header-inner { gap: 0.25rem 1.25rem; }
+.site-nav--desktop { margin-left: auto; }
+.bag-link {
+  display: inline-flex; align-items: center; min-height: 48px; padding: 0 0.9rem;
+  border: 2px solid var(--terracotta); border-radius: 999px;
+  color: var(--terracotta-deep); font-weight: 700; text-decoration: none;
+}
+.bag-link:hover { background: var(--sand); color: var(--terracotta-deep); }
+@media (max-width: 48rem) { .bag-link { margin-left: auto; min-height: 44px; padding: 0 0.8rem; } }

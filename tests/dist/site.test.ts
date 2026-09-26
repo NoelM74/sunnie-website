@@ -3,9 +3,9 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { DIST, htmlFiles, page, rel } from './helpers';
 
-describe('every page', () => {
-  const files = htmlFiles();
+const files = htmlFiles();
 
+describe('every page', () => {
   it.each(files.map((f) => [rel(f), f]))('%s follows layout rules', (_name, file) => {
     const html = readFileSync(file, 'utf8');
     expect(html).toMatch(/<html lang="en"/);
@@ -30,6 +30,13 @@ describe('home page', () => {
     for (const href of ['/shop/bags/', '/shop/coasters/', '/our-story/', '/shop/']) {
       expect(html).toContain(`href="${href}"`);
     }
+  });
+});
+
+describe('header', () => {
+  it.each(files.map((f) => [rel(f), f]))('%s header links to the bag', (_name, file) => {
+    const html = readFileSync(file, 'utf8');
+    expect(html).toContain('href="/bag/"');
   });
 });
 

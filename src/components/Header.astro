@@ -29,6 +29,7 @@ const items = links.map((l) => {
         ))}
       </ul>
     </nav>
+    <a class="bag-link" href="/bag/" aria-current={Astro.url.pathname === '/bag/' ? 'page' : undefined}>Bag</a>
     <details class="menu">
       <summary class="menu-btn"><span class="menu-icon" aria-hidden="true"></span>Menu</summary>
       <nav class="site-nav site-nav--mobile" aria-label="Main">

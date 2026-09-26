@@ -15,7 +15,8 @@ describe('product pages', () => {
     expect(product?.offers.url).toBe(`https://sunniedesigns.com/products/${slug}/`);
     expect(product).not.toHaveProperty('aggregateRating');
     expect(html).toMatch(/€\d+\.\d{2}/);
-    expect(html).toMatch(/class="btn btn-primary btn-block" href="https:\/\/www\.etsy\.com\/|class="btn btn-disabled btn-block"/);
+    expect(html).toMatch(/<form[^>]*method="post"[^>]*action="\/bag\/add\/"|class="btn btn-disabled btn-block"/);
+    expect(html).toContain('Free worldwide shipping on orders over €49');
     expect(html).toContain('Made by ');
     expect(html).toContain('property="og:type" content="product"');
   });
@@ -23,5 +24,11 @@ describe('product pages', () => {
   it('marks the first gallery image as high priority', () => {
     const html = page(`/products/${slugs[0]}/`);
     expect(html).toMatch(/<img[^>]*fetchpriority="high"/);
+  });
+
+  it('frog page offers its colour choices as required radios', () => {
+    const html = page('/products/frog-phone-crossbody/');
+    for (const c of ['Pink', 'Blue', 'Brown']) expect(html).toMatch(new RegExp(`type="radio"[^>]*name="option"[^>]*value="${c}"`));
+    expect(html).toMatch(/type="radio"[^>]*required/);
   });
 });

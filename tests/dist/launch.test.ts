@@ -9,7 +9,7 @@ describe('launch gate', () => {
       .filter((f) => rel(f).startsWith('products/'))
       .filter((f) => {
         const h = readFileSync(f, 'utf8');
-        return h.includes('btn btn-primary btn-block') && !/btn btn-primary btn-block" href="https:\/\/www\.etsy\.com\/listing\/\d+/.test(h);
+        return /class="etsy-link"/.test(h) && !/class="etsy-link" href="https:\/\/www\.etsy\.com\/listing\/\d+/.test(h);
       })
       .map(rel);
     expect(bad).toEqual([]);
