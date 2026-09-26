@@ -15,7 +15,7 @@
     // and answers with its own not_found_handling / 405 response before the Worker ever
     // runs. curl and fetch() don't send Sec-Fetch-Mode, so this only shows up for real
     // browser navigations and form submissions. See p2-task-5-report.md for repro.
-    "run_worker_first": ["/bag/*"]
+    "run_worker_first": ["/bag/*", "/checkout/*"]
   },
   "d1_databases": [
     // database_id is filled in by the owner in Task 12 (npx wrangler d1 create sunnie-orders).

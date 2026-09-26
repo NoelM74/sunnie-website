@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEnv } from '../../lib/env';
+import { loadCatalog } from '../../lib/catalog';
+import { BAG_COOKIE, decodeBag } from '../../lib/bag-cookie';
+import { priceBag } from '../../lib/pricing';
+import { COUNTRY_CODES, countryName, type CheckoutValues } from '../../lib/checkout-form';
+import { formatPrice } from '../../lib/products';
+import { pageTitle } from '../../lib/seo';
+
+export const prerender = false;
+
+const env = getEnv();
+const catalog = await loadCatalog((p) => env.ASSETS.fetch(new Request(new URL(p, Astro.request.url))));
+const priced = priceBag(await decodeBag(Astro.cookies.get(BAG_COOKIE)?.value, env.BAG_SECRET), catalog);
+if (priced.lines.length === 0) return Astro.redirect('/bag/', 303);
+
+const state = (Astro.locals as { checkout?: { values: CheckoutValues; errors: Record<string, string>; payError?: string } }).checkout;
+const v: CheckoutValues = state?.values ?? { email: '', name: '', line1: '', line2: '', city: '', region: '', postcode: '', country: 'IE' };
+const e = state?.errors ?? {};
+const euro = (c: number) => formatPrice(c / 100);
+const countries = COUNTRY_CODES.map((c) => ({ code: c, name: countryName(c) })).sort((a, b) => a.name.localeCompare(b.name));
+const field = (k: keyof CheckoutValues, label: string, opts: { type?: 'text' | 'email'; auto?: string; optional?: boolean } = {}) => ({ k, label, ...opts });
+const fields = [
+  field('email', 'Email', { type: 'email', auto: 'email' }),
+  field('name', 'Full name', { auto: 'name' }),
+  field('line1', 'Address line 1', { auto: 'address-line1' }),
+  field('line2', 'Address line 2', { auto: 'address-line2', optional: true }),
+  field('city', 'Town or city', { auto: 'address-level2' }),
+  field('region', 'County, state or region', { auto: 'address-level1', optional: true }),
+  field('postcode', 'Postcode or Eircode', { auto: 'postal-code', optional: true }),
+];
+---
+<BaseLayout title={pageTitle('Checkout')} description="Pay securely with PayPal or card." path="/checkout/" noindex>
+  <div class="container narrow-wide">
+    <header class="page-head"><h1>Checkout</h1></header>
+    {state?.payError && <p class="notice notice-warn" role="alert">{state.payError}</p>}
+    <div class="bag-grid">
+      <form class="checkout-form" method="post" action="/checkout/pay/" novalidate>
+        <fieldset>
+          <legend>Delivery details</legend>
+          {fields.map((f) => (
+            <div class="field">
+              <label for={f.k}>{f.label}{f.optional && <span class="muted"> (optional)</span>}</label>
+              <input id={f.k} name={f.k} type={f.type ?? 'text'} autocomplete={f.auto} value={v[f.k]} required={!f.optional} aria-invalid={e[f.k] ? 'true' : undefined} aria-describedby={e[f.k] ? `${f.k}-err` : undefined} />
+              {e[f.k] && <p class="field-error" id={`${f.k}-err`}>{e[f.k]}</p>}
+            </div>
+          ))}
+          <div class="field">
+            <label for="country">Country</label>
+            <select id="country" name="country" autocomplete="country" required aria-invalid={e.country ? 'true' : undefined}>
+              {countries.map((c) => <option value={c.code} selected={c.code === v.country}>{c.name}</option>)}
+            </select>
+            {e.country && <p class="field-error">{e.country}</p>}
+          </div>
+        </fieldset>
+        <p class="small">By paying you agree to our <a href="/terms/">terms of sale</a>. Ships within 3–5 days with tracking. Returns accepted within 30 days.</p>
+        <button class="btn btn-primary btn-block" type="submit">Pay with PayPal or card</button>
+        <p class="small muted">You'll pay on PayPal's secure page. You can pay by card without a PayPal account.</p>
+      </form>
+      <aside class="bag-summary" aria-label="Order summary">
+        <ul class="summary-lines" role="list">
+          {priced.lines.map((l) => <li><span>{l.qty} × {l.name}{l.option && ` (${l.option})`}</span><span>{euro(l.lineCents)}</span></li>)}
+        </ul>
+        <dl>
+          <div><dt>Subtotal</dt><dd>{euro(priced.subtotalCents)}</dd></div>
+          <div><dt>Shipping</dt><dd>{priced.shippingCents === 0 ? 'Free' : euro(priced.shippingCents)}</dd></div>
+          <div class="bag-total"><dt>Total</dt><dd>{euro(priced.totalCents)}</dd></div>
+        </dl>
+        <a class="btn-ghost" href="/bag/">Edit bag</a>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

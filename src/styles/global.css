@@ -324,3 +324,15 @@ main:focus { outline: none; }
 .bag-summary dd { margin: 0; font-weight: 700; }
 .bag-total { border-top: 1px solid var(--border-strong); padding-top: 0.5rem; font-size: var(--fs-body-lg); }
 .bag-summary a:not(.btn) { color: var(--terracotta-deep); }
+
+/* Checkout */
+.checkout-form fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.checkout-form legend { font-family: var(--font-heading); font-size: var(--fs-h3); color: var(--terracotta); margin-bottom: 0.5rem; }
+.field { display: grid; gap: 0.35rem; }
+.field label { font-weight: 700; }
+.field input, .field select { min-height: 48px; padding: 0 0.9rem; border: 2px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--white); color: var(--umber); font: inherit; }
+.field input:focus, .field select:focus { border-color: var(--terracotta-hover); outline: var(--focus-ring); outline-offset: 2px; }
+.field [aria-invalid='true'] { border-color: var(--terracotta); }
+.field-error { margin: 0; color: var(--terracotta-deep); font-weight: 700; font-size: var(--fs-small); }
+.summary-lines { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.summary-lines li { display: flex; justify-content: space-between; gap: 1rem; max-width: none; }
