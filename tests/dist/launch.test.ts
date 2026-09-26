@@ -27,7 +27,7 @@ describe('launch gate', () => {
       '7df22bde96c35f50f16eb0d941a5ab79bc7b55bc22e5373000292a448da9a0e1',
       'cedc30674aaf7154b9a5978e5dbda83f1b9febb69c73301f7a6c804d8c448772',
       'a5c1835f2f1f4d4d0db26a840ca90c1dc156e01cdc57b339bd11a4c68e9172f7',
-      '7ba84b57db28dcd3757ae13ee1c5ad77a194ae45575e72491bdcd8118babe0f4',
+      // 'springfield' removed: it is now the public company name (Springfield Tectop Limited).
       '27e47dae7bf675104f17a2d0149e3bd399f60e1ccae3bc91916cbfa782085c77',
     ]);
     for (const f of distTextFiles()) {
