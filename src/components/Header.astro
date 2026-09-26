@@ -14,24 +14,30 @@ const links = [
   { key: 'story', href: '/our-story/', label: 'Our story' },
   { key: 'shop', href: '/shop/', label: 'Shop all' },
 ];
+const items = links.map((l) => {
+  const exact = Astro.url.pathname === l.href;
+  return { ...l, exact, isSection: !exact && current === l.key };
+});
 ---
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="brand" aria-label="Sunnie Designs home"><Fragment set:html={logo} /></a>
-    <nav class="site-nav" aria-label="Main">
+    <nav class="site-nav site-nav--desktop" aria-label="Main">
       <ul>
-        {links.map((l) => {
-          const exact = Astro.url.pathname === l.href;
-          const isSection = !exact && current === l.key;
-          return (
-            <li>
-              <a href={l.href} aria-current={exact ? 'page' : undefined} class={isSection ? 'is-section' : undefined}>
-                {l.label}
-              </a>
-            </li>
-          );
-        })}
+        {items.map((l) => (
+          <li><a href={l.href} aria-current={l.exact ? 'page' : undefined} class={l.isSection ? 'is-section' : undefined}>{l.label}</a></li>
+        ))}
       </ul>
     </nav>
+    <details class="menu">
+      <summary class="menu-btn"><span class="menu-icon" aria-hidden="true"></span>Menu</summary>
+      <nav class="site-nav site-nav--mobile" aria-label="Main">
+        <ul>
+          {items.map((l) => (
+            <li><a href={l.href} aria-current={l.exact ? 'page' : undefined} class={l.isSection ? 'is-section' : undefined}>{l.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </details>
   </div>
 </header>
