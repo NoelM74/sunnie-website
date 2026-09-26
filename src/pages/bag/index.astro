@@ -53,11 +53,11 @@ const suggestions = Object.values(catalog)
                 <label><span class="visually-hidden">Quantity for {l.name}</span>
                   <select name="qty">{[1, 2, 3, 4, 5].map((n) => <option value={n} selected={n === l.qty}>{n}</option>)}</select>
                 </label>
-                <button type="submit" class="btn-ghost">Update</button>
+                <button type="submit" class="btn-ghost" aria-label={`Update quantity for ${l.name}`}>Update</button>
               </form>
               <form method="post" action="/bag/remove/">
                 <input type="hidden" name="index" value={i} />
-                <button type="submit" class="btn-ghost">Remove</button>
+                <button type="submit" class="btn-ghost" aria-label={`Remove ${l.name} from bag`}>Remove</button>
               </form>
               <span class="bag-line-total">{euro(l.lineCents)}</span>
             </li>
