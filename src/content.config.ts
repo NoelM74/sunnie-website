@@ -21,6 +21,7 @@ const products = defineCollection({
         images: z.array(z.object({ src: image(), alt: z.string().min(3) })).min(1),
         featured: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]).optional(),
         isNew: z.boolean().default(false),
+        faq: z.array(z.object({ q: z.string().min(5), a: z.string().min(5) })).default([]),
       })
       .refine((d) => d.category !== 'bags' || d.group !== undefined, {
         message: 'Bags need a group (characters, flowers or totes)',

@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import {
   absoluteUrl,
   breadcrumbJsonLd,
+  faqJsonLd,
+  itemListJsonLd,
   metaDescription,
   organizationJsonLd,
   pageTitle,
@@ -76,5 +78,78 @@ describe('JSON-LD', () => {
   });
   it('makes absolute URLs', () => {
     expect(absoluteUrl('/shop/')).toBe('https://sunniedesigns.com/shop/');
+  });
+
+  it('adds sku, material, color and category to a Product', () => {
+    const ld = productJsonLd({
+      name: 'Frog bag',
+      description: 'A frog.',
+      url: 'https://sunniedesigns.com/products/frog/',
+      images: ['https://sunniedesigns.com/a.jpg'],
+      price: 24.95,
+      inStock: true,
+      sku: 'frog-crossbody-phone-bag',
+      material: 'Polyester-acrylic yarn, Metal',
+      color: 'Rose, Sunflower',
+      category: 'bags',
+    });
+    expect(ld.sku).toBe('frog-crossbody-phone-bag');
+    expect(ld.material).toBe('Polyester-acrylic yarn, Metal');
+    expect(ld.color).toBe('Rose, Sunflower');
+    expect(ld.category).toBe('bags');
+  });
+
+  it('omits sku, material, color and category when not given', () => {
+    const ld = productJsonLd({
+      name: 'Frog bag',
+      description: 'A frog.',
+      url: 'https://sunniedesigns.com/products/frog/',
+      images: ['https://sunniedesigns.com/a.jpg'],
+      price: 24.95,
+      inStock: true,
+    });
+    expect(ld).not.toHaveProperty('sku');
+    expect(ld).not.toHaveProperty('material');
+    expect(ld).not.toHaveProperty('color');
+    expect(ld).not.toHaveProperty('category');
+  });
+});
+
+describe('faqJsonLd', () => {
+  it('returns null for an empty list', () => {
+    expect(faqJsonLd([])).toBeNull();
+  });
+
+  it('builds an FAQPage with Question/Answer pairs', () => {
+    const ld = faqJsonLd([
+      { q: 'Will my phone fit?', a: 'Yes, up to 6.5 inches.' },
+      { q: 'How do I wash it?', a: 'Hand wash in cool water.' },
+    ]);
+    expect(ld).not.toBeNull();
+    expect(ld!['@type']).toBe('FAQPage');
+    expect(ld!.mainEntity).toHaveLength(2);
+    expect(ld!.mainEntity[0]).toEqual({
+      '@type': 'Question',
+      name: 'Will my phone fit?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes, up to 6.5 inches.' },
+    });
+  });
+});
+
+describe('itemListJsonLd', () => {
+  it('builds a CollectionPage with a positioned ItemList', () => {
+    const ld = itemListJsonLd('Crochet bags', ['/products/frog/', '/products/bear/']);
+    expect(ld['@type']).toBe('CollectionPage');
+    expect(ld.name).toBe('Crochet bags');
+    expect(ld.mainEntity['@type']).toBe('ItemList');
+    expect(ld.mainEntity.itemListElement).toEqual([
+      { '@type': 'ListItem', position: 1, url: 'https://sunniedesigns.com/products/frog/' },
+      { '@type': 'ListItem', position: 2, url: 'https://sunniedesigns.com/products/bear/' },
+    ]);
+  });
+
+  it('handles an empty list', () => {
+    const ld = itemListJsonLd('Empty', []);
+    expect(ld.mainEntity.itemListElement).toEqual([]);
   });
 });

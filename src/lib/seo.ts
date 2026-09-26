@@ -39,6 +39,10 @@ export interface ProductLdInput {
   images: string[];
   price: number;
   inStock: boolean;
+  sku?: string;
+  material?: string;
+  color?: string;
+  category?: string;
 }
 
 export function productJsonLd(p: ProductLdInput) {
@@ -50,6 +54,10 @@ export function productJsonLd(p: ProductLdInput) {
     image: p.images,
     url: p.url,
     brand: { '@type': 'Brand', name: site.name },
+    ...(p.sku ? { sku: p.sku } : {}),
+    ...(p.material ? { material: p.material } : {}),
+    ...(p.color ? { color: p.color } : {}),
+    ...(p.category ? { category: p.category } : {}),
     offers: {
       '@type': 'Offer',
       url: p.url,
@@ -57,6 +65,35 @@ export function productJsonLd(p: ProductLdInput) {
       price: p.price.toFixed(2),
       availability: p.inStock ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut',
       itemCondition: 'https://schema.org/NewCondition',
+    },
+  };
+}
+
+export function faqJsonLd(items: { q: string; a: string }[]) {
+  if (items.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((it) => ({
+      '@type': 'Question',
+      name: it.q,
+      acceptedAnswer: { '@type': 'Answer', text: it.a },
+    })),
+  };
+}
+
+export function itemListJsonLd(name: string, urls: string[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: urls.map((url, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: absoluteUrl(url),
+      })),
     },
   };
 }
