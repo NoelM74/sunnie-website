@@ -6,7 +6,7 @@ const translated = review.lang === 'de' && review.en;
 const month = new Date(`${review.date}T00:00:00Z`).toLocaleDateString('en-IE', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 ---
 <figure class="quote">
-  <p class="quote-stars" aria-label={`${review.rating} out of 5 stars`}><span aria-hidden="true">{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</span></p>
+  <p class="quote-stars" role="img" aria-label={`${review.rating} out of 5 stars`}><span aria-hidden="true">{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</span></p>
   <blockquote>
     <p>{translated ? review.en : review.text}</p>
     {translated && showOriginal && <p class="small muted" lang="de">{review.text}</p>}

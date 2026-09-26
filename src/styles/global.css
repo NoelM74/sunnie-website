@@ -114,7 +114,7 @@ main:focus { outline: none; }
 .footer-grid ul { list-style: none; margin: 0; padding: 0; }
 .footer-grid li a { display: inline-flex; min-height: 44px; align-items: center; }
 .footer-brand { font-family: var(--font-heading); font-size: var(--fs-h3); margin-bottom: 0.5rem; }
-.footer-legal { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-strong); font-size: var(--fs-small); color: var(--umber-muted); }
+.footer-legal { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-strong); font-size: var(--fs-small); color: var(--umber); }
 
 /* Page heading block */
 .page-head { padding-block: 2rem 1rem; }
