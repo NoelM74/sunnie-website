@@ -4,7 +4,7 @@ export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: str
   bags: [
     {
       q: 'What phone sizes fit in a crossbody bag?',
-      a: 'Each product page lists its exact width and what fits. The frog phone crossbody, for example, fits phones up to 6.7 inches, and most other phone bags in the shop fit a similar range.',
+      a: 'Each product page lists its exact width and what fits. The frog phone crossbody, for example, fits phones up to 6.7 inches.',
     },
     {
       q: 'Can I adjust the strap length?',
