@@ -3,7 +3,9 @@ import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { extname, join, relative } from 'node:path';
 
-export const DIST = join(process.cwd(), 'dist');
+export const DIST = existsSync(join(process.cwd(), 'dist', 'client', 'index.html'))
+  ? join(process.cwd(), 'dist', 'client')
+  : join(process.cwd(), 'dist');
 const PRODUCTS_DIR = join(process.cwd(), 'src/content/products');
 
 /** Counts products per category by parsing the `category:` frontmatter line

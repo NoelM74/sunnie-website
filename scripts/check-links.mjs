@@ -2,7 +2,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { extractHrefs, internalTarget } from './lib/links.mjs';
 
-const DIST = 'dist';
+const DIST = existsSync(join('dist', 'client', 'index.html')) ? join('dist', 'client') : 'dist';
 const walk = (dir) =>
   readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
     e.isDirectory() ? walk(join(dir, e.name)) : e.name.endsWith('.html') ? [join(dir, e.name)] : [],
