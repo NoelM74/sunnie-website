@@ -122,11 +122,11 @@ const tiles = [
     <div class="container">
       <h2 id="cats-h">Shop by type</h2>
       <p class="lead">Bags for every day, coasters for the table, <a href="/shop/hats/">hats</a> for cold snaps.</p>
-      <ul class="tiles" role="list">
+      <ul class="tiles" role="list" style={`--tile-cols: ${tiles.length}`}>
         {tiles.map((t) => (
           <li>
             <a class="tile" href={t.href}>
-              <Picture src={t.img} alt="" formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 40rem) 33vw, 100vw" loading="lazy" />
+              <Picture src={t.img} alt="" formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 56rem) 50vw, (min-width: 40rem) 50vw, 100vw" loading="lazy" />
               <span class="tile-label">{t.label}</span>
             </a>
           </li>
