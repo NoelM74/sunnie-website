@@ -27,6 +27,10 @@ describe('bag cookie', () => {
     const forged = Buffer.from(JSON.stringify([{ slug: 'frog', qty: 1 }])).toString('base64url') + '.AAAA';
     expect(await decodeBag(forged, S)).toEqual([]);
   });
+  it('clamps quantities from a validly signed cookie to 1..5', async () => {
+    const signed = await signValue(Buffer.from(JSON.stringify([{ slug: 'a', qty: 99 }, { slug: 'b', qty: -3 }, { slug: 'c', qty: 2.7 }])).toString('base64url'), S);
+    expect((await decodeBag(signed, S)).map((l) => l.qty)).toEqual([5, 1, 2]);
+  });
   it('drops malformed lines from a validly signed cookie', async () => {
     const signed = await signValue(Buffer.from(JSON.stringify([{ slug: 'ok', qty: 1 }, { slug: 5 }, { qty: 2 }])).toString('base64url'), S);
     expect(await decodeBag(signed, S)).toEqual([{ slug: 'ok', qty: 1 }]);

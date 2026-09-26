@@ -44,7 +44,10 @@ export async function decodeBag(cookie: string | undefined, secret: string): Pro
     return raw
       .filter((l) => l && typeof l.slug === 'string' && Number.isFinite(l.qty))
       .slice(0, 20)
-      .map((l) => (typeof l.option === 'string' ? { slug: l.slug, option: l.option, qty: l.qty } : { slug: l.slug, qty: l.qty }));
+      .map((l) => {
+        const qty = Math.min(5, Math.max(1, Math.trunc(l.qty) || 1));
+        return typeof l.option === 'string' ? { slug: l.slug, option: l.option, qty } : { slug: l.slug, qty };
+      });
   } catch {
     return [];
   }
