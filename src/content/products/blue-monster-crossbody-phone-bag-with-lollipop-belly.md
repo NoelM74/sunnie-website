@@ -1,5 +1,5 @@
 ---
-name: "Blue monster crossbody phone bag with lollipop belly"
+name: "Blue monster phone bag with lollipop belly"
 seoTitle: "Crochet blue monster crossbody phone bag with lollipop belly, handmade"
 category: "bags"
 group: "characters"

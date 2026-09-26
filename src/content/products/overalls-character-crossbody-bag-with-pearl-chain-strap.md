@@ -1,5 +1,5 @@
 ---
-name: "Overalls character crossbody bag with pearl chain strap"
+name: "Overalls character bag with pearl chain strap"
 seoTitle: "Crochet Overalls Character Crossbody Bag with Pearl Chain Strap"
 category: "bags"
 group: "characters"

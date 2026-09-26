@@ -1,5 +1,5 @@
 ---
-name: "Daisy granny square tote bag with matching coin"
+name: "Daisy granny square tote with coin purse"
 seoTitle: "Crochet daisy granny square tote bag with matching coin purse"
 category: "bags"
 group: "totes"

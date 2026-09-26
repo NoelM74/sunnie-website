@@ -1,5 +1,5 @@
 ---
-name: "Carnation mug rug that folds into a mini"
+name: "Carnation mug rug that folds into a bouquet"
 seoTitle: "Crochet carnation mug rug that folds into a mini bouquet, handmade coaster"
 category: "coasters"
 price: 19.95
