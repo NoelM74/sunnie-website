@@ -58,7 +58,7 @@ const faq = faqJsonLd(d.faq);
       sku: product.id,
       material,
       color,
-      category: d.category,
+      category: CATEGORY_LABELS[d.category],
     }),
     breadcrumbJsonLd(crumbs),
     ...(faq ? [faq] : []),
@@ -84,7 +84,7 @@ const faq = faqJsonLd(d.faq);
             </p>
           </>
         ) : (
-          <span class="btn btn-disabled btn-block" aria-disabled="true">Sold out</span>
+          <span class="btn btn-disabled btn-block">Sold out</span>
         )}
         <ul class="product-facts">
           {d.size && <li><strong>Size:</strong> {d.size}</li>}

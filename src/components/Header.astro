@@ -20,9 +20,17 @@ const links = [
     <a href="/" class="brand" aria-label="Sunnie Designs home"><Fragment set:html={logo} /></a>
     <nav class="site-nav" aria-label="Main">
       <ul>
-        {links.map((l) => (
-          <li><a href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a></li>
-        ))}
+        {links.map((l) => {
+          const exact = Astro.url.pathname === l.href;
+          const isSection = !exact && current === l.key;
+          return (
+            <li>
+              <a href={l.href} aria-current={exact ? 'page' : undefined} class={isSection ? 'is-section' : undefined}>
+                {l.label}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   </div>

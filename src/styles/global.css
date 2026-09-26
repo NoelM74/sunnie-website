@@ -39,10 +39,6 @@ a:hover { color: var(--terracotta-hover); }
 .small { font-size: var(--fs-small); line-height: 1.55; }
 .muted { color: var(--umber-muted); }
 .lead { font-size: var(--fs-body-lg); }
-.sr-only {
-  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
-}
 .skip-link {
   position: absolute; left: 1rem; top: -10rem; z-index: 100;
   background: var(--umber); color: var(--white); padding: 0.75rem 1rem; border-radius: var(--radius-sm);
@@ -69,9 +65,6 @@ main:focus { outline: none; }
 .btn-primary { background: var(--terracotta); border-color: var(--terracotta); color: var(--white); }
 .btn-primary:hover { background: var(--terracotta-hover); border-color: var(--terracotta-hover); color: var(--white); }
 .btn-primary:active { background: var(--terracotta-active); border-color: var(--terracotta-active); }
-.btn-secondary { background: var(--sand); border-color: var(--terracotta); color: var(--terracotta-deep); }
-.btn-secondary:hover { background: var(--sand-hover); color: var(--terracotta-deep); }
-.btn-secondary:active { background: var(--butter); }
 .btn-disabled { background: var(--border); border-color: var(--border); color: var(--umber-muted); cursor: not-allowed; }
 .btn-block { width: 100%; }
 .btn-ghost {
@@ -79,13 +72,12 @@ main:focus { outline: none; }
   color: var(--terracotta); font-weight: 700; text-decoration: underline; text-underline-offset: 0.2em;
 }
 
-/* Badges and tags */
+/* Badges */
 .badge {
   display: inline-block; background: var(--butter); color: var(--umber);
   font-size: var(--fs-small); font-weight: 700; line-height: 1.3;
   padding: 0.25rem 0.7rem; border-radius: 999px;
 }
-.tag { display: inline-block; border: 1.5px solid var(--olive); color: var(--olive-deep); font-size: var(--fs-small); padding: 0.15rem 0.6rem; border-radius: 999px; }
 
 /* Header */
 .site-header { position: sticky; top: 0; z-index: 50; background: var(--linen); border-bottom: 1px solid var(--border); }
@@ -99,7 +91,7 @@ main:focus { outline: none; }
   border-bottom: 3px solid transparent; transition: border-color var(--transition);
 }
 .site-nav a:hover { color: var(--umber); border-bottom-color: var(--border-strong); }
-.site-nav a[aria-current='page'] { color: var(--terracotta); border-bottom-color: var(--terracotta); }
+.site-nav a[aria-current='page'], .site-nav a.is-section { color: var(--terracotta); border-bottom-color: var(--terracotta); }
 @media (max-width: 40rem) {
   :root { --header-h: 7.5rem; }
   .brand svg { height: 30px; }
