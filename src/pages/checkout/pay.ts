@@ -25,8 +25,18 @@ export const POST: APIRoute = async ({ request, cookies, redirect, rewrite, loca
     origin,
     newRef,
   });
-  if (r.kind === 'redirect') return redirect(r.location, 303);
-  if (r.kind === 'empty') return redirect('/bag/', 303);
+  if (r.kind === 'redirect') {
+    const res = redirect(r.location, 303);
+    res.headers.set('Cache-Control', 'no-store');
+    return res;
+  }
+  if (r.kind === 'empty') {
+    const res = redirect('/bag/', 303);
+    res.headers.set('Cache-Control', 'no-store');
+    return res;
+  }
   (locals as unknown as Record<string, unknown>).checkout = r.kind === 'invalid' ? { values: r.values, errors: r.errors } : { values: r.values, errors: {}, payError: r.message };
-  return rewrite('/checkout/');
+  const res = await rewrite('/checkout/');
+  res.headers.set('Cache-Control', 'no-store');
+  return res;
 };

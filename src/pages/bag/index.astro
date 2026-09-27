@@ -9,6 +9,7 @@ import { pageTitle } from '../../lib/seo';
 
 export const prerender = false;
 
+Astro.response.headers.set('Cache-Control', 'no-store');
 const env = getEnv();
 const catalog = await loadCatalog((p) => env.ASSETS.fetch(new Request(new URL(p, Astro.request.url))));
 const bag = await decodeBag(Astro.cookies.get(BAG_COOKIE)?.value, env.BAG_SECRET);

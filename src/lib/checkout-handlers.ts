@@ -28,11 +28,15 @@ export async function handlePay(form: FormData, bag: BagLine[], deps: PayDeps): 
 
   try {
     await deps.orders.insertPending(input);
-  } catch {
+  } catch (err) {
+    const e = err as Error;
+    console.error('insertPending failed, retrying with a new ref', e.name, e.message, input.ref);
     input.ref = deps.newRef();
     try {
       await deps.orders.insertPending(input);
-    } catch {
+    } catch (err2) {
+      const e2 = err2 as Error;
+      console.error('insertPending failed twice, giving up', e2.name, e2.message, input.ref);
       return { kind: 'payError', values: v.values, message: GENERIC_PAY_ERROR };
     }
   }
@@ -42,7 +46,8 @@ export async function handlePay(form: FormData, bag: BagLine[], deps: PayDeps): 
     await deps.orders.setPaypalId(input.ref, created.id);
     return { kind: 'redirect', location: created.approveUrl };
   } catch (err) {
-    if (err instanceof PayPalError) console.error('paypal create failed', err.status, err.issue);
+    const e = err as Error;
+    console.error('paypal create failed', e.name, e.message, input.ref);
     const issue = err instanceof PayPalError ? err.issue ?? '' : '';
     const message = ADDRESS_ISSUE.test(issue)
       ? 'PayPal could not accept this delivery address. Please check the postcode and county or state, then try again.'
@@ -95,8 +100,9 @@ async function reportCaptureNotSaved(
         `PAYMENT CAPTURED BUT NOT SAVED: PayPal capture ${captureId} for PayPal order ${paypalOrderId} succeeded. The website could not record it. Record this order by hand and do not refund unless asked.`,
       ),
     );
-  } catch {
-    /* best effort: never let an email failure hide a payment-safety issue */
+  } catch (err) {
+    const e = err as Error;
+    console.error('shop alert mail failed (capture not saved)', e.name, e.message, order.ref);
   }
   return { kind: 'error', message: RETURN_MESSAGES.unconfirmed, code: 'unconfirmed' };
 }
@@ -136,12 +142,15 @@ export async function handleReturn(paypalOrderId: string | null, deps: ReturnDep
       );
       shop = true;
     } catch (e) {
-      mailErrors.push(`shop: ${(e as Error).message}`);
+      const me = e as Error;
+      console.error('shop alert mail failed (payment unconfirmed)', me.name, me.message, order.ref);
+      mailErrors.push(`shop: ${me.message}`);
     }
     try {
       await deps.orders.recordEmail(order.ref, { customer: false, shop, error: [`PAYPAL_UNCONFIRMED: ${issue}`, ...mailErrors].join('; ') });
-    } catch {
-      /* best effort */
+    } catch (err2) {
+      const e2 = err2 as Error;
+      console.error('recordEmail failed (payment unconfirmed)', e2.name, e2.message, order.ref);
     }
     return { kind: 'error', message: RETURN_MESSAGES.unconfirmed, code: 'unconfirmed' };
   }
@@ -164,18 +173,21 @@ export async function handleReturn(paypalOrderId: string | null, deps: ReturnDep
       try {
         await deps.mailer.send(
           deps.notifyEmail,
-          buildShopEmail(reviewOrder, `PAYMENT PENDING AT PAYPAL (${cap.reason}). Do not ship until PayPal shows this payment as Completed.`),
+          buildShopEmail(reviewOrder, `PAYMENT PENDING AT PAYPAL (${cap.reason}). Do not ship until PayPal shows this payment as Completed, then email the buyer to confirm.`),
         );
         shop = true;
       } catch (e) {
-        mailErrors.push(`shop: ${(e as Error).message}`);
+        const me = e as Error;
+        console.error('shop alert mail failed (payment pending)', me.name, me.message, order.ref);
+        mailErrors.push(`shop: ${me.message}`);
       }
       try {
         // recordEmail overwrites email_error, so re-assert the PAYPAL_PENDING reason
         // markReview just stored (plus any mail error) rather than losing it.
         await deps.orders.recordEmail(order.ref, { customer: false, shop, error: [`PAYPAL_PENDING: ${cap.reason}`, ...mailErrors].join('; ') });
-      } catch {
-        /* best effort */
+      } catch (err2) {
+        const e2 = err2 as Error;
+        console.error('recordEmail failed (payment pending)', e2.name, e2.message, order.ref);
       }
       return { kind: 'review', ref: order.ref };
     } catch {
@@ -199,18 +211,23 @@ export async function handleReturn(paypalOrderId: string | null, deps: ReturnDep
       await deps.mailer.send(paid.email, buildCustomerEmail(paid));
       customer = true;
     } catch (e) {
-      errors.push(`customer: ${(e as Error).message}`);
+      const ce = e as Error;
+      console.error('customer email failed (order paid)', ce.name, ce.message, order.ref);
+      errors.push(`customer: ${ce.message}`);
     }
     try {
       await deps.mailer.send(deps.notifyEmail, buildShopEmail(paid));
       shop = true;
     } catch (e) {
-      errors.push(`shop: ${(e as Error).message}`);
+      const se = e as Error;
+      console.error('shop email failed (order paid)', se.name, se.message, order.ref);
+      errors.push(`shop: ${se.message}`);
     }
     try {
       await deps.orders.recordEmail(order.ref, { customer, shop, error: errors.join('; ') || undefined });
-    } catch {
-      /* never block the buyer on an accounting write */
+    } catch (err2) {
+      const e2 = err2 as Error;
+      console.error('recordEmail failed (order paid)', e2.name, e2.message, order.ref);
     }
     return { kind: 'complete', ref: order.ref };
   } catch {

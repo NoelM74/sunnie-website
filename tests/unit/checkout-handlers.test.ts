@@ -72,7 +72,7 @@ describe('handlePay', () => {
     expect(r.kind).toBe('payError');
     if (r.kind === 'payError') expect(r.message).toMatch(/could not reach PayPal/i);
   });
-  it('logs only the status and issue for a PayPalError on create, never the body', async () => {
+  it('logs the error name, message and order ref for a create-order failure, never the body', async () => {
     const errSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     const pp: PayPalClient = {
       async createOrder() { throw new PayPalError(422, 'SHIPPING_ADDRESS_INVALID'); },
@@ -80,7 +80,28 @@ describe('handlePay', () => {
       async getOrder() { throw new Error('not used'); },
     };
     await handlePay(fd(address), bag, { catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-LOG01' });
-    expect(errSpy).toHaveBeenCalledWith('paypal create failed', 422, 'SHIPPING_ADDRESS_INVALID');
+    expect(errSpy).toHaveBeenCalledWith('paypal create failed', 'PayPalError', 'PayPal 422 SHIPPING_ADDRESS_INVALID', 'SUN-LOG01');
+    errSpy.mockRestore();
+  });
+
+  it('logs an insertPending failure with its error name, message and ref', async () => {
+    const errSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const orders = memoryOrders();
+    let call = 0;
+    const brokenOrders: OrdersRepo = {
+      ...orders,
+      async insertPending(o) {
+        call++;
+        if (call === 1) throw new Error('D1 write failed');
+        return orders.insertPending(o);
+      },
+    };
+    const { pp } = fakePaypal();
+    const refs = ['SUN-INS01', 'SUN-INS02'];
+    let refCall = 0;
+    const r = await handlePay(fd(address), bag, { catalog, orders: brokenOrders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => refs[refCall++] });
+    expect(r.kind).toBe('redirect');
+    expect(errSpy).toHaveBeenCalledWith('insertPending failed, retrying with a new ref', 'Error', 'D1 write failed', 'SUN-INS01');
     errSpy.mockRestore();
   });
   it('leaves the pending row in place when createOrder fails', async () => {
@@ -152,6 +173,15 @@ describe('handleReturn', () => {
     const { m } = mailer(true);
     expect((await handleReturn('PP-1', { orders, paypal: fakePaypal().pp, mailer: m, notifyEmail: 'n@x' })).kind).toBe('complete');
     expect(await orders.findByRef('SUN-TEST01')).toMatchObject({ status: 'paid', customerEmailed: false, emailError: expect.stringContaining('down') });
+  });
+
+  it('logs a mail failure with its error name, message and ref, never the order contents', async () => {
+    const errSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const orders = await pending();
+    const { m } = mailer(true);
+    await handleReturn('PP-1', { orders, paypal: fakePaypal().pp, mailer: m, notifyEmail: 'n@x' });
+    expect(errSpy).toHaveBeenCalledWith('customer email failed (order paid)', 'Error', 'down', 'SUN-TEST01');
+    errSpy.mockRestore();
   });
 
   it('treats PENDING as review: only the shop is emailed with an ACTION NEEDED subject, and stays idempotent', async () => {

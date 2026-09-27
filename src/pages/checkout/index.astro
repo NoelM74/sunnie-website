@@ -10,10 +10,15 @@ import { pageTitle } from '../../lib/seo';
 
 export const prerender = false;
 
+Astro.response.headers.set('Cache-Control', 'no-store');
 const env = getEnv();
 const catalog = await loadCatalog((p) => env.ASSETS.fetch(new Request(new URL(p, Astro.request.url))));
 const priced = priceBag(await decodeBag(Astro.cookies.get(BAG_COOKIE)?.value, env.BAG_SECRET), catalog);
-if (priced.lines.length === 0) return Astro.redirect('/bag/', 303);
+if (priced.lines.length === 0) {
+  const res = Astro.redirect('/bag/', 303);
+  res.headers.set('Cache-Control', 'no-store');
+  return res;
+}
 
 const state = (Astro.locals as { checkout?: { values: CheckoutValues; errors: Record<string, string>; payError?: string } }).checkout;
 const v: CheckoutValues = state?.values ?? { email: '', name: '', line1: '', line2: '', city: '', region: '', postcode: '', country: 'IE' };

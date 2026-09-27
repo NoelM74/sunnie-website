@@ -11,6 +11,7 @@ import { site } from '../../data/site';
 
 export const prerender = false;
 
+Astro.response.headers.set('Cache-Control', 'no-store');
 const env = getEnv();
 // Never render free text from the query string: `error` is a fixed code, and any
 // value we don't recognise falls back to the generic 'notfound' copy.

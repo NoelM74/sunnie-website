@@ -14,5 +14,7 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
   const bag = await decodeBag(cookies.get(BAG_COOKIE)?.value, env.BAG_SECRET);
   const { lines, notice } = handleBagPost('add', await request.formData(), bag, catalog);
   cookies.set(BAG_COOKIE, await encodeBag(lines, env.BAG_SECRET), { path: '/', httpOnly: true, secure: true, sameSite: 'lax', maxAge: 60 * 60 * 24 * 30 });
-  return redirect(`/bag/?n=${notice}`, 303);
+  const res = redirect(`/bag/?n=${notice}`, 303);
+  res.headers.set('Cache-Control', 'no-store');
+  return res;
 };

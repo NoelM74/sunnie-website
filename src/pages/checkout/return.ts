@@ -23,8 +23,16 @@ export const GET: APIRoute = async ({ url, cookies, redirect }) => {
   if (r.kind === 'complete' || r.kind === 'review') {
     cookies.delete(BAG_COOKIE, { path: '/' });
     cookies.set(ORDER_COOKIE, await signValue(r.ref, env.BAG_SECRET), { path: '/', httpOnly: true, secure: true, sameSite: 'lax', maxAge: 60 * 60 * 24 });
-    return redirect(r.kind === 'review' ? '/checkout/complete/?pending=1' : '/checkout/complete/', 303);
+    const res = redirect(r.kind === 'review' ? '/checkout/complete/?pending=1' : '/checkout/complete/', 303);
+    res.headers.set('Cache-Control', 'no-store');
+    return res;
   }
-  if (r.kind === 'declined') return redirect('/bag/?declined=1', 303);
-  return redirect(`/checkout/complete/?error=${r.code}`, 303);
+  if (r.kind === 'declined') {
+    const res = redirect('/bag/?declined=1', 303);
+    res.headers.set('Cache-Control', 'no-store');
+    return res;
+  }
+  const res = redirect(`/checkout/complete/?error=${r.code}`, 303);
+  res.headers.set('Cache-Control', 'no-store');
+  return res;
 };
