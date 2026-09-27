@@ -86,3 +86,10 @@ describe('newRef', () => {
     expect(newRef(() => 0)).toBe('SUN-000000');
   });
 });
+
+describe('d1Orders changed-row reporting', () => {
+  it('fails loudly when D1 returns no meta.changes', async () => {
+    const db = { prepare: () => ({ bind: () => ({ run: async () => ({}), first: async () => null }) }) };
+    await expect(d1Orders(db).markPaid('SUN-AAAAAA', 'CAP-1')).rejects.toThrow('meta.changes');
+  });
+});

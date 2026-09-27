@@ -15,7 +15,9 @@ const env = getEnv();
 // Never render free text from the query string: `error` is a fixed code, and any
 // value we don't recognise falls back to the generic 'notfound' copy.
 const errorCode = Astro.url.searchParams.get('error');
-const error = errorCode ? RETURN_MESSAGES[errorCode as keyof typeof RETURN_MESSAGES] ?? RETURN_MESSAGES.notfound : null;
+const error = errorCode
+  ? Object.hasOwn(RETURN_MESSAGES, errorCode) ? RETURN_MESSAGES[errorCode as keyof typeof RETURN_MESSAGES] : RETURN_MESSAGES.notfound
+  : null;
 const ref = error ? null : await verifyValue(Astro.cookies.get(ORDER_COOKIE)?.value, env.BAG_SECRET);
 const order = ref ? await d1Orders(env.ORDERS).findByRef(ref) : null;
 // The order's own status is the source of truth for "still pending"; ?pending=1 is only

@@ -75,6 +75,14 @@ function fromDb(r: Db): OrderRow {
   };
 }
 
+// D1's run() always reports meta.changes. If it ever doesn't, fail loudly: a silent 0
+// would look like "another request won" and suppress the order emails.
+function changedRows(result: unknown): number {
+  const changes = (result as { meta?: { changes?: unknown } } | null)?.meta?.changes;
+  if (typeof changes !== 'number') throw new Error('D1 run() returned no meta.changes');
+  return changes;
+}
+
 export function d1Orders(db: D1Like): OrdersRepo {
   return {
     async insertPending(o) {
@@ -88,12 +96,12 @@ export function d1Orders(db: D1Like): OrdersRepo {
     async markPaid(ref, captureId) {
       const result = await db.prepare("UPDATE orders SET status = 'paid', capture_id = ?, paid_at = ? WHERE ref = ? AND status = 'pending'")
         .bind(captureId, new Date().toISOString(), ref).run();
-      return (result?.meta?.changes ?? 0) > 0;
+      return changedRows(result) > 0;
     },
     async markReview(ref, captureId, reason) {
       const result = await db.prepare("UPDATE orders SET status = 'review', capture_id = ?, email_error = ? WHERE ref = ? AND status = 'pending'")
         .bind(captureId, `PAYPAL_PENDING: ${reason}`, ref).run();
-      return (result?.meta?.changes ?? 0) > 0;
+      return changedRows(result) > 0;
     },
     async recordEmail(ref, e) {
       await db.prepare('UPDATE orders SET customer_emailed = ?, shop_emailed = ?, email_error = ? WHERE ref = ?').bind(e.customer ? 1 : 0, e.shop ? 1 : 0, e.error ?? null, ref).run();
