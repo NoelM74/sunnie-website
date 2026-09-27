@@ -39,7 +39,7 @@
 
 **Seller details**
 - Seller identity, word for word: **Springfield Tectop Limited**, trading as **Sunnie Designs**, CRO **571256**, registered office **Clareview Car Sales, Ennis Road, Co. Limerick, V94 EA3A**, `hello@sunniedesigns.com`. Not VAT-registered, so show no VAT line.
-- Returns: within **30 days of delivery**, the buyer pays return postage, and we refund the item price plus the original shipping within 14 days of receiving the return.
+- Returns: within **30 days of delivery**, the buyer pays return postage, and we refund the item price plus the original shipping within 14 days of receiving the return or proof of postage, whichever comes first.
 - Dispatch: "Ships within 3–5 days with tracking" (`site.shipsIn` = `'3–5 days'`).
 
 **Copy**
