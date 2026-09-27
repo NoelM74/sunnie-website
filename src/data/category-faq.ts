@@ -58,7 +58,7 @@ export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: str
   shop: [
     {
       q: 'Where do I buy from Sunnie Designs?',
-      a: 'Every "Buy on Etsy" button leads to the same piece in our Etsy shop. You check out securely on Etsy, and eligible orders are covered by Etsy\'s Purchase Protection.',
+      a: 'Right here: add pieces to your bag and pay with PayPal or any card, no account needed. Shipping is free on orders over €49, and every order comes with 30-day returns. Every piece is also on our Etsy shop if you prefer Etsy.',
     },
     {
       q: 'Who makes everything in the shop?',

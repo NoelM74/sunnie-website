@@ -28,3 +28,17 @@ describe('info pages', () => {
     }
   });
 });
+
+describe('seller identity', () => {
+  it.each(['/terms/', '/contact/'])('%s shows the company details', (route) => {
+    const html = page(route);
+    for (const s of ['Springfield Tectop Limited', '571256', 'Clareview Car Sales, Ennis Road, Co. Limerick, V94 EA3A']) expect(html).toContain(s);
+  });
+  it('footer carries the company line on every page', () => {
+    expect(page('/')).toMatch(/Springfield Tectop Limited[^<]*CRO 571256/);
+  });
+  it('terms cover cancellation and the model form', () => {
+    const html = page('/terms/');
+    for (const s of ['30 days', 'model cancellation form', 'return postage', '14 days', 'not registered for VAT']) expect(html).toContain(s);
+  });
+});

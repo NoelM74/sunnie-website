@@ -3,21 +3,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
 ---
-<BaseLayout title={pageTitle('Privacy')} description="How Sunnie Designs handles your data: no cookies, no tracking, cookie-free visitor counts.">
+<BaseLayout title={pageTitle('Privacy')} description="How Sunnie Designs handles your data: what we collect when you order, who processes it, and the two strictly necessary cookies we use.">
   <article class="container narrow prose">
     <header class="page-head"><h1>Privacy notice</h1></header>
-    <p>Last updated: September 2026.</p>
+    <p>Last updated: October 2026.</p>
     <h2>Who we are</h2>
     <p>Sunnie Designs sells handmade crochet pieces. Contact us about privacy at <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.</p>
     <h2>What this website collects</h2>
     <p>
-      This site sets no cookies and runs no tracking or advertising scripts. Cloudflare, our host, keeps standard
-      server logs and aggregate visit counts. Nothing in these identifies you.
+      This site runs no tracking or advertising scripts. Cloudflare, our host, keeps standard server logs and
+      aggregate visit counts. Nothing in these identifies you.
+    </p>
+    <h2>When you order</h2>
+    <p>
+      When you buy on sunniedesigns.com, we collect your name, email address, delivery address and what you
+      bought, to fulfil your order and send you order updates.
+    </p>
+    <h2>Who processes your data</h2>
+    <p>
+      We share order data with the processors that run the shop: PayPal handles payment, Resend sends order
+      emails, and Cloudflare hosts the site and stores the order database.
+    </p>
+    <h2>How long we keep order records</h2>
+    <p>We keep order records for 6 years, to meet Irish tax rules.</p>
+    <h2>Cookies</h2>
+    <p>
+      We use two strictly necessary cookies: one to remember what's in your bag, and one to show your order
+      confirmation. We set no tracking or advertising cookies.
     </p>
     <h2>Emails you send us</h2>
     <p>If you email us, we use your address and message only to reply, and we delete them when we no longer need them.</p>
-    <h2>Orders</h2>
-    <p>Purchases happen on Etsy, which handles your payment and delivery details under the Etsy privacy policy.</p>
+    <h2>Orders on Etsy</h2>
+    <p>Purchases placed on our Etsy shop are handled by Etsy, under Etsy's privacy policy.</p>
     <h2>Your rights</h2>
     <p>
       Under the GDPR you can ask to see, correct or delete data we hold about you. Email us and we'll respond within a

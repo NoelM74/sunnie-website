@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+import { pageTitle } from '../lib/seo';
+const c = site.company;
+---
+<BaseLayout title={pageTitle('Terms of sale')} description="Terms of sale for orders placed on sunniedesigns.com: prices, delivery, 30-day returns and your right to cancel.">
+  <article class="container narrow prose">
+    <header class="page-head"><h1>Terms of sale</h1><p>Last updated: October 2026.</p></header>
+
+    <h2>Who you're buying from</h2>
+    <p>This website is run by {c.legalName}, trading as {c.tradingAs}. Company registration number (CRO) {c.cro}. Registered office: {c.registeredOffice}. Email: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.</p>
+
+    <h2>Prices and payment</h2>
+    <p>Prices are in euro. {c.legalName} is not registered for VAT, so no VAT is added. You pay through PayPal, by PayPal account or by debit or credit card. We never see your card details.</p>
+    <p>Your contract with us starts when your payment goes through and we show your order number.</p>
+
+    <h2>Delivery</h2>
+    <p>Each piece is made by hand to order and ships within {site.shipsIn} with tracking. Shipping costs €5.00 per order, and it's free on orders of €49.00 or more. We ship worldwide. Buyers outside the EU may have to pay import charges set by their country.</p>
+
+    <h2>Returns and your right to cancel</h2>
+    <p>You can cancel and return any item within 30 days of delivery, for any reason. This is longer than the 14 days the law requires.</p>
+    <ol>
+      <li>Email <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a> with your order number, or send us the model cancellation form below.</li>
+      <li>Send the item back unused within 14 days of telling us. You pay the return postage.</li>
+      <li>We refund the item price and the original standard shipping within 14 days of receiving the item, to the payment method you used.</li>
+    </ol>
+
+    <h2>Faulty or wrong items</h2>
+    <p>If something arrives damaged, faulty or not as described, email us with a photo. We'll cover the return and send a replacement or a full refund. This doesn't affect your legal rights as a consumer.</p>
+
+    <h2>Model cancellation form</h2>
+    <p>(Complete and return this form only if you wish to cancel the contract.)</p>
+    <p>To {c.legalName}, {c.registeredOffice}, {site.email.hello}:<br />
+    I/We hereby give notice that I/We cancel my/our contract of sale of the following goods: ____<br />
+    Ordered on / received on: ____<br />
+    Order number: ____<br />
+    Name of consumer(s): ____<br />
+    Address of consumer(s): ____<br />
+    Signature of consumer(s) (only if this form is notified on paper): ____<br />
+    Date: ____</p>
+
+    <h2>Complaints and governing law</h2>
+    <p>If you're unhappy, email {site.email.hello} and we'll reply within 24 hours on working days. These terms are governed by Irish law, and nothing in them removes the rights you have as a consumer in your own country.</p>
+
+    <h2>Orders on Etsy</h2>
+    <p>Orders placed on our Etsy shop follow Etsy's checkout and the policies shown on each Etsy listing.</p>
+  </article>
+</BaseLayout>

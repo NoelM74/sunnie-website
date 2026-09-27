@@ -9,5 +9,7 @@ import { pageTitle } from '../lib/seo';
     <p>Question about an order, a custom colour or anything else: email us and a real person replies, usually {site.replyTime}.</p>
     <p><a class="btn btn-primary" href={`mailto:${site.email.hello}`}>Email {site.email.hello}</a></p>
     <p>Already ordered on Etsy? You can also message us through your Etsy order page.</p>
+    <h2>Company details</h2>
+    <p>{site.company.legalName}, trading as {site.company.tradingAs}. CRO {site.company.cro}. Registered office: {site.company.registeredOffice}.</p>
   </article>
 </BaseLayout>

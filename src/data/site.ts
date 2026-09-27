@@ -13,6 +13,13 @@ export const site = {
   etsyShopUrl: 'https://www.etsy.com/shop/SunnieDesignCo',
   shipsIn: '3–5 days',
   replyTime: 'within 24 hours',
+  company: {
+    legalName: 'Springfield Tectop Limited',
+    tradingAs: 'Sunnie Designs',
+    cro: '571256',
+    registeredOffice: 'Clareview Car Sales, Ennis Road, Co. Limerick, V94 EA3A',
+  },
+  freeShippingFrom: '€49',
   proof: {
     etsyRating: '4.9',
     ebayCount: '287',

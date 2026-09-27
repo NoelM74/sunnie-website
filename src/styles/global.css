@@ -151,7 +151,7 @@ main:focus { outline: none; }
 
 /* Prose (markdown bodies and info pages) */
 .prose > * + * { margin-top: 1em; }
-.prose ul { padding-left: 1.25rem; }
+.prose ul, .prose ol { padding-left: 1.25rem; }
 .prose li + li { margin-top: 0.35em; }
 .prose h2 { margin-top: 1.5em; }
 

@@ -3,23 +3,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
 ---
-<BaseLayout title={pageTitle('Shipping and returns')} description={`Orders ship in ${site.shipsIn} with tracking. Checkout, shipping costs and returns run through our Etsy shop.`}>
+<BaseLayout title={pageTitle('Shipping and returns')} description={`Shipping costs €5, free on orders of ${site.freeShippingFrom} or more. Ships in ${site.shipsIn} with tracking, worldwide. 30-day returns.`}>
   <article class="container narrow prose">
     <header class="page-head"><h1>Shipping and returns</h1></header>
-    <h2>How ordering works</h2>
+
+    <h2>Buying on this website</h2>
     <p>
-      Every "Buy on Etsy" button takes you to the same piece in our Etsy shop. You pay there, and Etsy shows the
-      shipping cost for your country before you pay.
+      Shipping costs €5.00 per order, and it's free on orders of {site.freeShippingFrom} or more. We ship
+      worldwide. Orders go out in {site.shipsIn} with tracking, and we email you the tracking number once your
+      parcel is on its way.
     </p>
-    <h2>When your order ships</h2>
-    <p>
-      Nollaig packs and ships orders in {site.shipsIn}, with tracking. Etsy emails you the tracking number once
-      your parcel is on its way.
-    </p>
+
     <h2>Returns</h2>
     <p>
-      Returns follow the policy shown on each Etsy listing. If something isn't right with your order, email
-      <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a> or message us on Etsy and we'll sort it out.
+      You can return any item within 30 days of delivery. You pay the return postage, and we refund the item
+      price plus the original shipping within 14 days of receiving it back. Full details, including how to
+      cancel, are on our <a href="/terms/">terms of sale</a> page.
+    </p>
+
+    <h2>Buying on Etsy</h2>
+    <p>
+      Every "Buy on Etsy" button takes you to the same piece in our Etsy shop. You pay there, and Etsy shows the
+      shipping cost for your country before you pay. Returns on Etsy orders follow the policy shown on each Etsy
+      listing. If something isn't right, email <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a> or
+      message us on Etsy and we'll sort it out.
     </p>
   </article>
 </BaseLayout>

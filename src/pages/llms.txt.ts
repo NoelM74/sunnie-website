@@ -46,7 +46,9 @@ export const GET: APIRoute = async () => {
 - Rated ${site.proof.etsyRating} on Etsy (Star Seller)
 - ${site.proof.ebayPositive} positive across ${site.proof.ebayCount} eBay ratings
 - Yarns are cotton, polyester or acrylic depending on the design, with no animal wool
-- Orders are placed on Etsy
+- Buy directly on sunniedesigns.com with PayPal or card, or on Etsy
+- Free worldwide shipping on orders of €49 or more (otherwise €5)
+- 30-day returns
 
 ${sections}
 
