@@ -19,6 +19,7 @@ if (priced.dropped.length) {
 }
 const notice = Astro.url.searchParams.get('n');
 const cancelled = Astro.url.searchParams.get('cancelled') === '1';
+const declined = Astro.url.searchParams.get('declined') === '1';
 const euro = (c: number) => formatPrice(c / 100);
 const suggestions = Object.values(catalog)
   .filter((i) => i.featured !== null && i.inStock && !priced.lines.some((l) => l.slug === i.slug))
@@ -31,6 +32,7 @@ const suggestions = Object.values(catalog)
     {notice === 'added' && <p class="notice" role="status">Added to your bag.</p>}
     {notice === 'invalid' && <p class="notice notice-warn" role="status">That piece couldn't be added. Please choose an option and try again.</p>}
     {cancelled && <p class="notice" role="status">Payment cancelled. Your bag is just as you left it.</p>}
+    {declined && <p class="notice notice-warn" role="alert">Your payment did not go through, so nothing was charged. Please try again or choose another card.</p>}
     {priced.dropped.length > 0 && <p class="notice notice-warn" role="status">Some items are no longer available and were removed: {priced.dropped.join(', ')}.</p>}
     {priced.lines.length === 0 ? (
       <div class="bag-empty">

@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEnv } from '../../lib/env';
+import { ORDER_COOKIE, verifyValue } from '../../lib/bag-cookie';
+import { d1Orders } from '../../lib/orders';
+import { countryName } from '../../lib/checkout-form';
+import { formatPrice } from '../../lib/products';
+import { pageTitle } from '../../lib/seo';
+import { site } from '../../data/site';
+
+export const prerender = false;
+
+const env = getEnv();
+const error = Astro.url.searchParams.get('error');
+const pending = Astro.url.searchParams.get('pending') === '1';
+const ref = error ? null : await verifyValue(Astro.cookies.get(ORDER_COOKIE)?.value, env.BAG_SECRET);
+const order = ref ? await d1Orders(env.ORDERS).findByRef(ref) : null;
+const euro = (c: number) => formatPrice(c / 100);
+const heading = error ? 'Payment problem' : pending ? 'Order received' : 'Thank you for your order';
+---
+<BaseLayout title={pageTitle(error ? 'Payment problem' : 'Thank you')} description="Your Sunnie Designs order." path="/checkout/complete/" noindex>
+  <div class="container narrow">
+    {error ? (
+      <header class="page-head"><h1>Payment problem</h1><p>{error}</p><p><a class="btn btn-primary" href="/bag/">Back to your bag</a></p></header>
+    ) : (
+      <>
+        <header class="page-head">
+          <h1>{heading}</h1>
+          {order && pending && <p class="lead">Thank you. PayPal is still confirming your payment. We will email you as soon as it clears, and your order ships once it does.</p>}
+          {order && !pending && <p class="lead">Order <strong>{order.ref}</strong>. A confirmation is on its way to {order.email}.</p>}
+          {!pending && <p>Your pieces ship within {site.shipsIn} with tracking.</p>}
+        </header>
+        {order && (
+          <section class="bag-summary" aria-label="Order details">
+            <ul class="summary-lines" role="list">
+              {order.lines.map((l) => <li><span>{l.qty} × {l.name}{l.option && ` (${l.option})`}</span><span>{euro(l.lineCents)}</span></li>)}
+            </ul>
+            <dl>
+              <div><dt>Shipping</dt><dd>{order.shippingCents === 0 ? 'Free' : euro(order.shippingCents)}</dd></div>
+              <div class="bag-total"><dt>Total paid</dt><dd>{euro(order.totalCents)}</dd></div>
+            </dl>
+            <p class="small"><strong>Delivering to</strong><br />{[order.address.name, order.address.line1, order.address.line2, order.address.city, order.address.region, order.address.postcode, countryName(order.address.country)].filter(Boolean).join(', ')}</p>
+          </section>
+        )}
+        <p>Questions about your order? Email <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>. See our <a href="/terms/">terms of sale</a> for returns.</p>
+        <p><a class="btn-ghost" href="/shop/">Keep shopping</a></p>
+      </>
+    )}
+  </div>
+</BaseLayout>
