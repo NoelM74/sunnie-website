@@ -17,7 +17,9 @@ for (const file of walk(DIST)) {
   for (const href of extractHrefs(readFileSync(file, 'utf8'))) {
     const target = internalTarget(href);
     if (target !== null) {
-      if (!existsSync(join(DIST, target))) errors.push(`${from}: broken internal link ${href}`);
+      // /bag/ and /checkout/* are on-demand Worker routes, so they have no file in the static build.
+      const onDemand = /^\/(bag|checkout)\//.test(href.split(/[?#]/)[0]);
+      if (!onDemand && !existsSync(join(DIST, target))) errors.push(`${from}: broken internal link ${href}`);
     } else if (/^https?:\/\//.test(href)) {
       if (!external.has(href)) external.set(href, from);
     }
