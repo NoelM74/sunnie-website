@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { optionPricesKeysValid } from './lib/product-schema';
 
 const products = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/products' }),
@@ -16,6 +17,8 @@ const products = defineCollection({
         etsyUrl: z.url().optional(),
         maker: z.string().min(1),
         options: z.array(z.object({ name: z.string(), values: z.array(z.string()).min(1) })).max(1, 'Only one option group per product is supported by the bag').default([]),
+        optionPrices: z.record(z.string(), z.number().positive()).optional(),
+        siteCheckout: z.boolean().default(true),
         materials: z.array(z.string()).default([]),
         size: z.string().optional(),
         images: z.array(z.object({ src: image(), alt: z.string().min(3) })).min(1),
@@ -26,6 +29,10 @@ const products = defineCollection({
       .refine((d) => d.category !== 'bags' || d.group !== undefined, {
         message: 'Bags need a group (characters, flowers or totes)',
         path: ['group'],
+      })
+      .refine((d) => optionPricesKeysValid(d.options[0]?.values ?? [], d.optionPrices), {
+        message: 'optionPrices keys must each match a value in options[0].values',
+        path: ['optionPrices'],
       }),
 });
 

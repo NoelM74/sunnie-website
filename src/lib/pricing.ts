@@ -14,9 +14,10 @@ export function priceBag(lines: BagLine[], catalog: Catalog): PricedBag {
     const item = catalog[line.slug];
     if (!item) { dropped.push(line.slug); continue; }
     const optionOk = item.option ? !!line.option && item.option.values.includes(line.option) : !line.option;
-    if (!item.inStock || !optionOk) { dropped.push(item.name); continue; }
+    if (!item.inStock || !item.siteCheckout || !optionOk) { dropped.push(item.name); continue; }
     const qty = clampQty(line.qty);
-    priced.push({ slug: item.slug, name: item.name, option: item.option ? line.option : undefined, qty, unitCents: item.priceCents, lineCents: item.priceCents * qty, thumb: item.thumb });
+    const unitCents = (line.option ? item.optionPriceCents?.[line.option] : undefined) ?? item.priceCents;
+    priced.push({ slug: item.slug, name: item.name, option: item.option ? line.option : undefined, qty, unitCents, lineCents: unitCents * qty, thumb: item.thumb });
   }
   const subtotalCents = priced.reduce((s, l) => s + l.lineCents, 0);
   const shippingCents = shippingFor(subtotalCents);

@@ -6,6 +6,7 @@ price: 19.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4511442184/crochet-carnation-mug-rug-that-folds"
 maker: "Hui"
+siteCheckout: false
 options: [{"name":"Set","values":["Set Of Two","Set Of Four"]}]
 materials: ["Acrylic"]
 size: "Ø 14.5 cm"

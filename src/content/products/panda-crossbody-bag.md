@@ -7,6 +7,7 @@ price: 23.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4507112918/crochet-panda-crossbody-bag-handmade"
 maker: "Hui"
+siteCheckout: false
 options: [{"name":"Style","values":["Mini Tote Bag","Crossbody Sling Bag"]}]
 materials: ["Polyester"]
 size: "Mini Tote W 18 × H 14 × D 2 cm, strap 112 cm / Sling W 12 × H 26 × D 3 cm, strap 120 cm"

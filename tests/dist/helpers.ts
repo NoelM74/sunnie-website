@@ -27,6 +27,36 @@ export function productCount(): number {
   return Object.values(productCategoryCounts()).reduce((a, b) => a + b, 0);
 }
 
+export function readCatalog(): Record<string, Record<string, unknown>> {
+  return JSON.parse(readFileSync(join(DIST, 'catalog.json'), 'utf8'));
+}
+
+export interface ProductFrontmatter {
+  slug: string;
+  options: { name: string; values: string[] }[];
+  optionPrices: Record<string, number> | null;
+  siteCheckout: boolean;
+}
+
+/** Reads options/optionPrices/siteCheckout straight from each product's source
+ * frontmatter (not the build), the same way `productCategoryCounts` reads
+ * `category:`, so this guard runs against every product regardless of build state. */
+export function productFrontmatters(): ProductFrontmatter[] {
+  const out: ProductFrontmatter[] = [];
+  for (const f of readdirSync(PRODUCTS_DIR)) {
+    if (!f.endsWith('.md')) continue;
+    const text = readFileSync(join(PRODUCTS_DIR, f), 'utf8');
+    const optionsMatch = text.match(/^options:\s*(.+)$/m);
+    const options = optionsMatch ? JSON.parse(optionsMatch[1]) : [];
+    const pricesMatch = text.match(/^optionPrices:\s*(.+)$/m);
+    const optionPrices = pricesMatch ? JSON.parse(pricesMatch[1]) : null;
+    const siteCheckoutMatch = text.match(/^siteCheckout:\s*(true|false)/m);
+    const siteCheckout = siteCheckoutMatch ? siteCheckoutMatch[1] === 'true' : true;
+    out.push({ slug: f.replace(/\.md$/, ''), options, optionPrices, siteCheckout });
+  }
+  return out;
+}
+
 export function htmlFiles(dir = DIST): string[] {
   const out: string[] = [];
   for (const e of readdirSync(dir, { withFileTypes: true })) {

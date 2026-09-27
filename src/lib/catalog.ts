@@ -4,6 +4,8 @@ export interface CatalogItem {
   priceCents: number;
   inStock: boolean;
   option: { name: string; values: string[] } | null;
+  optionPriceCents: Record<string, number> | null;
+  siteCheckout: boolean;
   thumb: string;
   maker: string;
   featured: number | null;

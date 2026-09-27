@@ -39,6 +39,9 @@ const colourOption = d.options.find((o) => o.name === 'Colour');
 const color = colourOption ? colourOption.values.join(', ') : undefined;
 const material = d.materials.length > 0 ? d.materials.join(', ') : undefined;
 const faq = faqJsonLd(d.faq);
+const optionPriceValues = d.optionPrices ? Object.values(d.optionPrices) : undefined;
+const lowestOptionPrice = optionPriceValues ? Math.min(...optionPriceValues) : undefined;
+const displayPrice = lowestOptionPrice !== undefined ? `From ${formatPrice(lowestOptionPrice)}` : formatPrice(d.price);
 ---
 <BaseLayout
   title={productTitle(d.name)}
@@ -59,6 +62,7 @@ const faq = faqJsonLd(d.faq);
       material,
       color,
       category: CATEGORY_LABELS[d.category],
+      optionPrices: optionPriceValues,
     }),
     breadcrumbJsonLd(crumbs),
     ...(faq ? [faq] : []),
@@ -71,9 +75,9 @@ const faq = faqJsonLd(d.faq);
       <div class="product-info">
         {d.isNew && d.inStock && <span class="badge">New</span>}
         <h1>{d.name}</h1>
-        <p class="product-price">{formatPrice(d.price)}</p>
+        <p class="product-price">{displayPrice}</p>
         <p class="product-maker">Made by {d.maker}</p>
-        <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} etsyUrl={d.etsyUrl} />
+        <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} etsyUrl={d.etsyUrl} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} />
         <ul class="product-facts">
           {d.size && <li><strong>Size:</strong> {d.size}</li>}
           {d.materials.length > 0 && <li><strong>Materials:</strong> {d.materials.join(', ')}</li>}

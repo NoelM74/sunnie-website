@@ -6,6 +6,7 @@ price: 19.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4506497053/crochet-rose-flower-coaster-with-mini"
 maker: "Hui"
+siteCheckout: false
 options: [{"name":"Size","values":["2 Coasters and Pots","4 Coasters and Pots","6 coasters and Pots"]}]
 materials: ["Acrylic"]
 size: "Ø 16 cm"

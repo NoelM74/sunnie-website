@@ -10,7 +10,7 @@ export function handleBagPost(action: 'add' | 'update' | 'remove', form: FormDat
     const slug = String(form.get('slug') ?? '');
     const option = form.get('option');
     const item = catalog[slug];
-    if (!item || !item.inStock) return { lines: bag, notice: 'invalid' };
+    if (!item || !item.inStock || !item.siteCheckout) return { lines: bag, notice: 'invalid' };
     const opt = typeof option === 'string' && option !== '' ? option : undefined;
     const optionOk = item.option ? !!opt && item.option.values.includes(opt) : !opt;
     if (!optionOk) return { lines: bag, notice: 'invalid' };

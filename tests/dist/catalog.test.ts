@@ -11,7 +11,14 @@ describe('catalog.json', () => {
     for (const i of items) {
       expect(Number.isInteger(i.priceCents)).toBe(true);
       expect(String(i.thumb)).toMatch(/^\/_astro\/.+\.webp$/);
+      expect(typeof i.siteCheckout).toBe('boolean');
+      expect(i.optionPriceCents === null || typeof i.optionPriceCents === 'object').toBe(true);
     }
+  });
+  it('marks a pending-price product as siteCheckout: false with no optionPriceCents', () => {
+    const mandala = cat['flower-mandala-coaster'] as Record<string, unknown>;
+    expect(mandala.siteCheckout).toBe(false);
+    expect(mandala.optionPriceCents).toBeNull();
   });
   it('carries the frog colour option', () => {
     expect(cat['frog-phone-crossbody'].option).toEqual({ name: 'Colour', values: ['Pink', 'Blue', 'Brown'] });

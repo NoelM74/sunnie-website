@@ -7,7 +7,7 @@ import type { PayPalClient, CaptureResult } from '../../src/lib/paypal';
 import { PayPalError } from '../../src/lib/paypal';
 import type { Mailer, Email } from '../../src/lib/email';
 
-const catalog: Catalog = { frog: { slug: 'frog', name: 'Frog', priceCents: 2995, inStock: true, option: { name: 'Colour', values: ['Pink'] }, thumb: '', maker: 'Hui', featured: 1 } };
+const catalog: Catalog = { frog: { slug: 'frog', name: 'Frog', priceCents: 2995, inStock: true, option: { name: 'Colour', values: ['Pink'] }, optionPriceCents: null, siteCheckout: true, thumb: '', maker: 'Hui', featured: 1 } };
 const fd = (o: Record<string, string>) => { const f = new FormData(); for (const [k, v] of Object.entries(o)) f.set(k, v); return f; };
 const address = { email: 'a@b.ie', name: 'Aoife', line1: '1 Main St', line2: '', city: 'Ennis', region: '', postcode: '', country: 'IE' };
 const bag = [{ slug: 'frog', option: 'Pink', qty: 1 }];

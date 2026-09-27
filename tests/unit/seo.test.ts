@@ -114,6 +114,41 @@ describe('JSON-LD', () => {
     expect(ld.category).toBe('bags');
   });
 
+  it('uses an AggregateOffer with lowPrice/highPrice when option prices differ', () => {
+    const ld = productJsonLd({
+      name: 'Coaster pack',
+      description: 'A pack of coasters.',
+      url: 'https://sunniedesigns.com/products/pack/',
+      images: ['https://sunniedesigns.com/a.jpg'],
+      price: 16.95,
+      inStock: true,
+      optionPrices: [16.95, 21.95, 27.95],
+    });
+    expect(ld.offers).toMatchObject({
+      '@type': 'AggregateOffer',
+      priceCurrency: 'EUR',
+      lowPrice: '16.95',
+      highPrice: '27.95',
+      offerCount: 3,
+      availability: 'https://schema.org/InStock',
+    });
+    expect(ld.offers).not.toHaveProperty('price');
+  });
+
+  it('stays a plain Offer when every option price is the same', () => {
+    const ld = productJsonLd({
+      name: 'Frog bag',
+      description: 'A frog.',
+      url: 'https://sunniedesigns.com/products/frog/',
+      images: ['https://sunniedesigns.com/a.jpg'],
+      price: 24.95,
+      inStock: true,
+      optionPrices: [24.95, 24.95],
+    });
+    expect(ld.offers['@type']).toBe('Offer');
+    expect(ld.offers.price).toBe('24.95');
+  });
+
   it('omits sku, material, color and category when not given', () => {
     const ld = productJsonLd({
       name: 'Frog bag',

@@ -1,13 +1,23 @@
 ---
+import { formatPrice } from '../lib/products';
+
 interface Props {
   slug: string;
   option?: { name: string; values: string[] };
   inStock: boolean;
   etsyUrl?: string;
+  siteCheckout?: boolean;
+  optionPrices?: Record<string, number>;
 }
-const { slug, option, inStock, etsyUrl } = Astro.props;
+const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices } = Astro.props;
 ---
-{inStock ? (
+{siteCheckout === false ? (
+  etsyUrl ? (
+    <a class="btn btn-primary btn-block etsy-link" href={etsyUrl} rel="noopener">Buy on Etsy</a>
+  ) : (
+    <span class="btn btn-disabled btn-block">Not available online</span>
+  )
+) : inStock ? (
   <form class="buy-form" method="post" action="/bag/add/">
     <input type="hidden" name="slug" value={slug} />
     {option && (
@@ -17,7 +27,7 @@ const { slug, option, inStock, etsyUrl } = Astro.props;
           {option.values.map((v) => (
             <label class="choice-opt">
               <input type="radio" name="option" value={v} required checked={option.values.length === 1} />
-              <span>{v}</span>
+              <span>{v}{optionPrices && ` · ${formatPrice(optionPrices[v])}`}</span>
             </label>
           ))}
         </div>
@@ -30,11 +40,11 @@ const { slug, option, inStock, etsyUrl } = Astro.props;
       </select>
     </label>
     <button class="btn btn-primary btn-block" type="submit">Add to bag</button>
-    <p class="small buy-note">Free worldwide shipping on orders over €49 · 30-day returns</p>
+    <p class="small buy-note">Free worldwide shipping on orders of €49 or more · 30-day returns</p>
   </form>
 ) : (
   <span class="btn btn-disabled btn-block">Sold out</span>
 )}
-{etsyUrl && (
+{siteCheckout !== false && etsyUrl && (
   <p class="small"><a class="etsy-link" href={etsyUrl} rel="noopener">Also available on our Etsy shop</a></p>
 )}

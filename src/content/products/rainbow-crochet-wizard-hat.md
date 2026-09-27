@@ -6,6 +6,7 @@ price: 22.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467377580/rainbow-crochet-wizard-hat-pointed-kids"
 maker: "Hui"
+siteCheckout: false
 options: [{"name":"Size","values":["2–5 years -48cm brim","5–9 years -58cm brim"]}]
 materials: ["Acrylic"]
 size: "2–5 yrs brim 48 cm / 5–9 yrs brim 58 cm"

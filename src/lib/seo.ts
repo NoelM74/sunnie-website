@@ -58,9 +58,33 @@ export interface ProductLdInput {
   material?: string;
   color?: string;
   category?: string;
+  /** Per-option prices (euros), when they differ. Present and with 2+ distinct
+   * values, the offer becomes an AggregateOffer with a low/high price range. */
+  optionPrices?: number[];
 }
 
 export function productJsonLd(p: ProductLdInput) {
+  const distinctPrices = p.optionPrices ? [...new Set(p.optionPrices)] : [];
+  const availability = p.inStock ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut';
+  const offers =
+    distinctPrices.length > 1
+      ? {
+          '@type': 'AggregateOffer',
+          url: p.url,
+          priceCurrency: 'EUR',
+          lowPrice: Math.min(...distinctPrices).toFixed(2),
+          highPrice: Math.max(...distinctPrices).toFixed(2),
+          offerCount: distinctPrices.length,
+          availability,
+        }
+      : {
+          '@type': 'Offer',
+          url: p.url,
+          priceCurrency: 'EUR',
+          price: p.price.toFixed(2),
+          availability,
+          itemCondition: 'https://schema.org/NewCondition',
+        };
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -73,14 +97,7 @@ export function productJsonLd(p: ProductLdInput) {
     ...(p.material ? { material: p.material } : {}),
     ...(p.color ? { color: p.color } : {}),
     ...(p.category ? { category: p.category } : {}),
-    offers: {
-      '@type': 'Offer',
-      url: p.url,
-      priceCurrency: 'EUR',
-      price: p.price.toFixed(2),
-      availability: p.inStock ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut',
-      itemCondition: 'https://schema.org/NewCondition',
-    },
+    offers,
   };
 }
 

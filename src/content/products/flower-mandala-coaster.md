@@ -6,6 +6,7 @@ price: 16.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4506465591/crochet-flower-mandala-coaster"
 maker: "Hui"
+siteCheckout: false
 options: [{"name":"Pack","values":["4 coasters + free basket","6 coasters + free basket","8 coasters + 2 free baskets"]}]
 materials: ["Polyester"]
 images: [{"src":"../../assets/products/flower-mandala-coaster/01.jpg","alt":"Eight crochet flower mandala coasters in assorted colours with a pot"},{"src":"../../assets/products/flower-mandala-coaster/02.jpg","alt":"Pink, red, purple and yellow crochet flower mandala coasters on a black tray"},{"src":"../../assets/products/flower-mandala-coaster/03.jpg","alt":"Purple, blue, yellow and pink crochet flower mandala coasters on a black tray"},{"src":"../../assets/products/flower-mandala-coaster/04.jpg","alt":"Flower mandala coaster, photo 4 of 10"},{"src":"../../assets/products/flower-mandala-coaster/05.jpg","alt":"Flower mandala coaster, photo 5 of 10"},{"src":"../../assets/products/flower-mandala-coaster/06.jpg","alt":"Flower mandala coaster, photo 6 of 10"},{"src":"../../assets/products/flower-mandala-coaster/07.jpg","alt":"Flower mandala coaster, photo 7 of 10"},{"src":"../../assets/products/flower-mandala-coaster/08.jpg","alt":"Flower mandala coaster, photo 8 of 10"},{"src":"../../assets/products/flower-mandala-coaster/09.jpg","alt":"Flower mandala coaster, photo 9 of 10"},{"src":"../../assets/products/flower-mandala-coaster/10.jpg","alt":"Flower mandala coaster, photo 10 of 10"}]

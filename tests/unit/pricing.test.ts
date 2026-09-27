@@ -4,9 +4,11 @@ import { priceBag, type BagLine } from '../../src/lib/pricing';
 import type { Catalog } from '../../src/lib/catalog';
 
 const catalog: Catalog = {
-  frog: { slug: 'frog', name: 'Frog phone crossbody', priceCents: 2995, inStock: true, option: { name: 'Colour', values: ['Pink', 'Blue'] }, thumb: '/t/frog.webp', maker: 'Hui', featured: 1 },
-  coaster: { slug: 'coaster', name: 'Flower coaster', priceCents: 1695, inStock: true, option: null, thumb: '/t/c.webp', maker: 'Hui', featured: null },
-  gone: { slug: 'gone', name: 'Old bag', priceCents: 2000, inStock: false, option: null, thumb: '/t/g.webp', maker: 'Hui', featured: null },
+  frog: { slug: 'frog', name: 'Frog phone crossbody', priceCents: 2995, inStock: true, option: { name: 'Colour', values: ['Pink', 'Blue'] }, optionPriceCents: null, siteCheckout: true, thumb: '/t/frog.webp', maker: 'Hui', featured: 1 },
+  coaster: { slug: 'coaster', name: 'Flower coaster', priceCents: 1695, inStock: true, option: null, optionPriceCents: null, siteCheckout: true, thumb: '/t/c.webp', maker: 'Hui', featured: null },
+  gone: { slug: 'gone', name: 'Old bag', priceCents: 2000, inStock: false, option: null, optionPriceCents: null, siteCheckout: true, thumb: '/t/g.webp', maker: 'Hui', featured: null },
+  pack: { slug: 'pack', name: 'Coaster pack', priceCents: 1000, inStock: true, option: { name: 'Pack', values: ['Set Of 4', 'Set Of 8'] }, optionPriceCents: { 'Set Of 4': 1000, 'Set Of 8': 1800 }, siteCheckout: true, thumb: '/t/p.webp', maker: 'Hui', featured: null },
+  etsyOnly: { slug: 'etsyOnly', name: 'Etsy only piece', priceCents: 1500, inStock: true, option: null, optionPriceCents: null, siteCheckout: false, thumb: '/t/e.webp', maker: 'Hui', featured: null },
 };
 
 describe('money', () => {
@@ -50,5 +52,18 @@ describe('priceBag', () => {
   it('clamps quantity to 1..5', () => {
     const p = priceBag([{ slug: 'coaster', qty: 9 }, { slug: 'coaster', qty: 0 }], catalog);
     expect(p.lines.map((l) => l.qty)).toEqual([5, 1]);
+  });
+  it('prices a line at its per-option price when the catalog has one', () => {
+    const p = priceBag([{ slug: 'pack', option: 'Set Of 8', qty: 1 }], catalog);
+    expect(p.lines[0]).toMatchObject({ unitCents: 1800, lineCents: 1800 });
+  });
+  it('falls back to the base price for an option with no listed price', () => {
+    const p = priceBag([{ slug: 'pack', option: 'Set Of 4', qty: 2 }], catalog);
+    expect(p.lines[0]).toMatchObject({ unitCents: 1000, lineCents: 2000 });
+  });
+  it('drops a siteCheckout: false line like a sold-out one', () => {
+    const p = priceBag([{ slug: 'etsyOnly', qty: 1 }], catalog);
+    expect(p.lines).toHaveLength(0);
+    expect(p.dropped).toEqual(['Etsy only piece']);
   });
 });

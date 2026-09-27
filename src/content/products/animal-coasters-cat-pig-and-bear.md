@@ -6,6 +6,7 @@ price: 17.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4500120022/crochet-animal-coasters-set-of-3-pig"
 maker: "Hui"
+siteCheckout: false
 options: [{"name":"Design","values":["Cat","Pig","Bear","Set Of 3"]}]
 materials: ["Polyester-acrylic yarn"]
 size: "Ø 15 × H 3.5 cm"

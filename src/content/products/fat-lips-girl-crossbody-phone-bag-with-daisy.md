@@ -7,6 +7,7 @@ price: 19.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4506953013/crochet-fat-lips-girl-crossbody-phone"
 maker: "Hui"
+siteCheckout: false
 options: [{"name":"Size","values":["Large 28 x 11 cm","Small 20 x 10 cm"]}]
 materials: ["Polyester","Faux pearls"]
 size: "W 11 × H 28 × D 1 cm, strap 105 cm"
