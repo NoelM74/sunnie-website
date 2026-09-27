@@ -26,5 +26,5 @@ export const GET: APIRoute = async ({ url, cookies, redirect }) => {
     return redirect(r.kind === 'review' ? '/checkout/complete/?pending=1' : '/checkout/complete/', 303);
   }
   if (r.kind === 'declined') return redirect('/bag/?declined=1', 303);
-  return redirect(`/checkout/complete/?error=${encodeURIComponent(r.message)}`, 303);
+  return redirect(`/checkout/complete/?error=${r.code}`, 303);
 };

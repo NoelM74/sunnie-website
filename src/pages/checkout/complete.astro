@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEnv } from '../../lib/env';
 import { ORDER_COOKIE, verifyValue } from '../../lib/bag-cookie';
 import { d1Orders } from '../../lib/orders';
+import { RETURN_MESSAGES } from '../../lib/checkout-handlers';
 import { countryName } from '../../lib/checkout-form';
 import { formatPrice } from '../../lib/products';
 import { pageTitle } from '../../lib/seo';
@@ -11,10 +12,15 @@ import { site } from '../../data/site';
 export const prerender = false;
 
 const env = getEnv();
-const error = Astro.url.searchParams.get('error');
-const pending = Astro.url.searchParams.get('pending') === '1';
+// Never render free text from the query string: `error` is a fixed code, and any
+// value we don't recognise falls back to the generic 'notfound' copy.
+const errorCode = Astro.url.searchParams.get('error');
+const error = errorCode ? RETURN_MESSAGES[errorCode as keyof typeof RETURN_MESSAGES] ?? RETURN_MESSAGES.notfound : null;
 const ref = error ? null : await verifyValue(Astro.cookies.get(ORDER_COOKIE)?.value, env.BAG_SECRET);
 const order = ref ? await d1Orders(env.ORDERS).findByRef(ref) : null;
+// The order's own status is the source of truth for "still pending"; ?pending=1 is only
+// a hint for when we don't yet have the order (e.g. it hasn't replicated to this read).
+const pending = order ? order.status === 'review' : Astro.url.searchParams.get('pending') === '1';
 const euro = (c: number) => formatPrice(c / 100);
 const heading = error ? 'Payment problem' : pending ? 'Order received' : 'Thank you for your order';
 ---
@@ -26,7 +32,7 @@ const heading = error ? 'Payment problem' : pending ? 'Order received' : 'Thank 
       <>
         <header class="page-head">
           <h1>{heading}</h1>
-          {order && pending && <p class="lead">Thank you. PayPal is still confirming your payment. We will email you as soon as it clears, and your order ships once it does.</p>}
+          {order && pending && <p class="lead">Thank you. PayPal is still confirming your payment. We will email {order.email} as soon as PayPal confirms your payment.</p>}
           {order && !pending && <p class="lead">Order <strong>{order.ref}</strong>. A confirmation is on its way to {order.email}.</p>}
           {!pending && <p>Your pieces ship within {site.shipsIn} with tracking.</p>}
         </header>
@@ -37,7 +43,7 @@ const heading = error ? 'Payment problem' : pending ? 'Order received' : 'Thank 
             </ul>
             <dl>
               <div><dt>Shipping</dt><dd>{order.shippingCents === 0 ? 'Free' : euro(order.shippingCents)}</dd></div>
-              <div class="bag-total"><dt>Total paid</dt><dd>{euro(order.totalCents)}</dd></div>
+              <div class="bag-total"><dt>{order.status === 'paid' ? 'Total paid' : 'Total'}</dt><dd>{euro(order.totalCents)}</dd></div>
             </dl>
             <p class="small"><strong>Delivering to</strong><br />{[order.address.name, order.address.line1, order.address.line2, order.address.city, order.address.region, order.address.postcode, countryName(order.address.country)].filter(Boolean).join(', ')}</p>
           </section>

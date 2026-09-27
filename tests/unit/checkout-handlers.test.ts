@@ -1,6 +1,7 @@
-import { describe, expect, it } from 'vitest';
-import { handlePay, handleReturn } from '../../src/lib/checkout-handlers';
+import { describe, expect, it, vi } from 'vitest';
+import { handlePay, handleReturn, RETURN_MESSAGES } from '../../src/lib/checkout-handlers';
 import { memoryOrders } from '../../src/lib/orders';
+import type { OrdersRepo } from '../../src/lib/orders';
 import type { Catalog } from '../../src/lib/catalog';
 import type { PayPalClient, CaptureResult } from '../../src/lib/paypal';
 import { PayPalError } from '../../src/lib/paypal';
@@ -61,6 +62,60 @@ describe('handlePay', () => {
     expect(r.kind).toBe('payError');
     if (r.kind === 'payError') expect(r.message).toMatch(/address/i);
   });
+  it('does not misclassify an unrelated issue that merely contains "STATE" as an address problem', async () => {
+    const pp: PayPalClient = {
+      async createOrder() { throw new PayPalError(500, 'RANDOM_STATE_ERROR'); },
+      async captureOrder() { return { status: 'DECLINED', detail: '' }; },
+      async getOrder() { throw new Error('not used'); },
+    };
+    const r = await handlePay(fd(address), bag, { catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X2' });
+    expect(r.kind).toBe('payError');
+    if (r.kind === 'payError') expect(r.message).toMatch(/could not reach PayPal/i);
+  });
+  it('logs only the status and issue for a PayPalError on create, never the body', async () => {
+    const errSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const pp: PayPalClient = {
+      async createOrder() { throw new PayPalError(422, 'SHIPPING_ADDRESS_INVALID'); },
+      async captureOrder() { return { status: 'DECLINED', detail: '' }; },
+      async getOrder() { throw new Error('not used'); },
+    };
+    await handlePay(fd(address), bag, { catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-LOG01' });
+    expect(errSpy).toHaveBeenCalledWith('paypal create failed', 422, 'SHIPPING_ADDRESS_INVALID');
+    errSpy.mockRestore();
+  });
+  it('leaves the pending row in place when createOrder fails', async () => {
+    const orders = memoryOrders();
+    const pp: PayPalClient = {
+      async createOrder() { throw new PayPalError(500, 'SERVER_ERROR'); },
+      async captureOrder() { return { status: 'DECLINED', detail: '' }; },
+      async getOrder() { throw new Error('not used'); },
+    };
+    const r = await handlePay(fd(address), bag, { catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-SURVIVE' });
+    expect(r.kind).toBe('payError');
+    expect(await orders.findByRef('SUN-SURVIVE')).toMatchObject({ status: 'pending' });
+  });
+  it('retries the pending insert once on a ref collision, then succeeds', async () => {
+    const orders = memoryOrders();
+    await orders.insertPending({ ref: 'SUN-DUP01', email: 'x@y.ie', address: { ...address }, lines: [], subtotalCents: 0, shippingCents: 500, totalCents: 500, paypalEnv: 'sandbox' });
+    const refs = ['SUN-DUP01', 'SUN-OK002'];
+    let call = 0;
+    const { pp } = fakePaypal();
+    const r = await handlePay(fd(address), bag, { catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => refs[call++] });
+    expect(r.kind).toBe('redirect');
+    expect(await orders.findByRef('SUN-OK002')).toMatchObject({ status: 'pending' });
+  });
+  it('returns a generic payError when both the original and retried ref collide', async () => {
+    const orders = memoryOrders();
+    await orders.insertPending({ ref: 'SUN-DUP01', email: 'x@y.ie', address: { ...address }, lines: [], subtotalCents: 0, shippingCents: 500, totalCents: 500, paypalEnv: 'sandbox' });
+    await orders.insertPending({ ref: 'SUN-DUP02', email: 'x@y.ie', address: { ...address }, lines: [], subtotalCents: 0, shippingCents: 500, totalCents: 500, paypalEnv: 'sandbox' });
+    const refs = ['SUN-DUP01', 'SUN-DUP02'];
+    let call = 0;
+    const { pp, created } = fakePaypal();
+    const r = await handlePay(fd(address), bag, { catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => refs[call++] });
+    expect(r.kind).toBe('payError');
+    if (r.kind === 'payError') expect(r.message).toMatch(/could not reach PayPal|try again/i);
+    expect(created).toHaveLength(0);
+  });
 });
 
 describe('handleReturn', () => {
@@ -119,6 +174,17 @@ describe('handleReturn', () => {
     expect(sent).toHaveLength(1);
   });
 
+  it('records a truthful shopEmailed:false (with the mail error) when the PENDING alert mail fails', async () => {
+    const orders = await pending();
+    const { m } = mailer(true);
+    const r = await handleReturn('PP-1', { orders, paypal: fakePaypal({ status: 'PENDING', captureId: 'CAP-2', reason: 'ECHECK' }).pp, mailer: m, notifyEmail: 'hello@sunniedesigns.com' });
+    expect(r).toEqual({ kind: 'review', ref: 'SUN-TEST01' });
+    const row = await orders.findByRef('SUN-TEST01');
+    expect(row).toMatchObject({ status: 'review', shopEmailed: false });
+    expect(row?.emailError).toMatch(/^PAYPAL_PENDING:/);
+    expect(row?.emailError).toMatch(/down/);
+  });
+
   it('reports a decline and leaves the order pending with no emails sent', async () => {
     const orders = await pending();
     const { m, sent } = mailer();
@@ -129,21 +195,102 @@ describe('handleReturn', () => {
     expect(sent).toHaveLength(0);
   });
 
-  it('on an unclear PayPal outcome, tells the buyer not to pay again, alerts the shop, and leaves the order pending', async () => {
+  it('on an unclear PayPal outcome, tells the buyer not to pay again, alerts the shop, leaves the order pending, and records the stored error', async () => {
     const orders = await pending();
     const { m, sent } = mailer();
     const r = await handleReturn('PP-1', { orders, paypal: fakePaypal(new PayPalError(503, 'NETWORK')).pp, mailer: m, notifyEmail: 'hello@sunniedesigns.com' });
     expect(r.kind).toBe('error');
-    if (r.kind === 'error') expect(r.message).toMatch(/do not pay again/i);
+    if (r.kind === 'error') { expect(r.message).toMatch(/do not pay again/i); expect(r.code).toBe('unconfirmed'); }
     expect(sent).toHaveLength(1);
     expect(sent[0].to).toBe('hello@sunniedesigns.com');
     expect(sent[0].email.subject).toMatch(/^ACTION NEEDED:/);
-    expect((await orders.findByRef('SUN-TEST01'))?.status).toBe('pending');
+    const row = await orders.findByRef('SUN-TEST01');
+    expect(row?.status).toBe('pending');
+    expect(row?.emailError).toMatch(/^PAYPAL_UNCONFIRMED:/);
   });
 
-  it('rejects unknown or missing tokens', async () => {
+  it('records a truthful shopEmailed:false (with the mail error) when the unconfirmed alert mail fails', async () => {
     const orders = await pending();
-    expect((await handleReturn(null, { orders, paypal: fakePaypal().pp, mailer: mailer().m, notifyEmail: 'n@x' })).kind).toBe('error');
-    expect((await handleReturn('PP-404', { orders, paypal: fakePaypal().pp, mailer: mailer().m, notifyEmail: 'n@x' })).kind).toBe('error');
+    const { m } = mailer(true);
+    const r = await handleReturn('PP-1', { orders, paypal: fakePaypal(new PayPalError(503, 'NETWORK')).pp, mailer: m, notifyEmail: 'hello@sunniedesigns.com' });
+    expect(r.kind).toBe('error');
+    const row = await orders.findByRef('SUN-TEST01');
+    expect(row).toMatchObject({ status: 'pending', shopEmailed: false });
+    expect(row?.emailError).toMatch(/^PAYPAL_UNCONFIRMED:/);
+    expect(row?.emailError).toMatch(/down/);
+  });
+
+  it('rejects unknown or missing tokens with a notfound code', async () => {
+    const orders = await pending();
+    const missing = await handleReturn(null, { orders, paypal: fakePaypal().pp, mailer: mailer().m, notifyEmail: 'n@x' });
+    expect(missing).toMatchObject({ kind: 'error', code: 'notfound' });
+    const unknown = await handleReturn('PP-404', { orders, paypal: fakePaypal().pp, mailer: mailer().m, notifyEmail: 'n@x' });
+    expect(unknown).toMatchObject({ kind: 'error', code: 'notfound' });
+  });
+
+  it('RETURN_MESSAGES has fixed copy for both error codes', () => {
+    expect(Object.keys(RETURN_MESSAGES).sort()).toEqual(['notfound', 'unconfirmed']);
+    expect(RETURN_MESSAGES.notfound.length).toBeGreaterThan(0);
+    expect(RETURN_MESSAGES.unconfirmed).toMatch(/do not pay again/i);
+  });
+
+  it('a concurrent return that loses the capture race does not email or capture again', async () => {
+    const orders = await pending();
+    const staleSnapshot = (await orders.findByPaypalId('PP-1'))!;
+    const { m, sent } = mailer();
+    // First request wins: captures and emails normally.
+    await handleReturn('PP-1', { orders, paypal: fakePaypal().pp, mailer: m, notifyEmail: 'hello@sunniedesigns.com' });
+    expect(sent).toHaveLength(2);
+    // Second request "sees" a stale pending snapshot (as a racing read might), but all
+    // writes still land on the real repo, so markPaid must report it lost the race.
+    const racedOrders: OrdersRepo = { ...orders, findByPaypalId: async () => staleSnapshot };
+    const second = fakePaypal();
+    const r = await handleReturn('PP-1', { orders: racedOrders, paypal: second.pp, mailer: m, notifyEmail: 'hello@sunniedesigns.com' });
+    expect(r).toEqual({ kind: 'complete', ref: 'SUN-TEST01' });
+    expect(sent).toHaveLength(2);
+  });
+
+  it('a thrown capture error on an order already moved to paid (raced) returns complete with no alert email', async () => {
+    const orders = await pending();
+    const staleSnapshot = (await orders.findByPaypalId('PP-1'))!;
+    await handleReturn('PP-1', { orders, paypal: fakePaypal().pp, mailer: mailer().m, notifyEmail: 'hello@sunniedesigns.com' });
+    expect((await orders.findByRef('SUN-TEST01'))?.status).toBe('paid');
+    const racedOrders: OrdersRepo = { ...orders, findByPaypalId: async () => staleSnapshot };
+    const { m, sent } = mailer();
+    const r = await handleReturn('PP-1', { orders: racedOrders, paypal: fakePaypal(new PayPalError(503, 'NETWORK')).pp, mailer: m, notifyEmail: 'hello@sunniedesigns.com' });
+    expect(r).toEqual({ kind: 'complete', ref: 'SUN-TEST01' });
+    expect(sent).toHaveLength(0);
+  });
+
+  it('reports a storage failure after a successful capture instead of silently losing the order', async () => {
+    const orders = await pending();
+    const brokenOrders: OrdersRepo = {
+      ...orders,
+      async markPaid() { throw new Error('D1 down'); },
+    };
+    const { m, sent } = mailer();
+    const r = await handleReturn('PP-1', { orders: brokenOrders, paypal: fakePaypal().pp, mailer: m, notifyEmail: 'hello@sunniedesigns.com' });
+    expect(r.kind).toBe('error');
+    if (r.kind === 'error') { expect(r.message).toMatch(/do not pay again/i); expect(r.code).toBe('unconfirmed'); }
+    expect(sent).toHaveLength(1);
+    expect(sent[0].to).toBe('hello@sunniedesigns.com');
+    expect(sent[0].email.subject).toMatch(/^ACTION NEEDED:/);
+    expect(sent[0].email.text).toMatch(/CAPTURED BUT NOT SAVED/);
+    expect(sent[0].email.text).toMatch(/CAP-1/);
+  });
+
+  it('reports a storage failure after a PENDING capture too', async () => {
+    const orders = await pending();
+    const brokenOrders: OrdersRepo = {
+      ...orders,
+      async markReview() { throw new Error('D1 down'); },
+    };
+    const { m, sent } = mailer();
+    const r = await handleReturn('PP-1', { orders: brokenOrders, paypal: fakePaypal({ status: 'PENDING', captureId: 'CAP-2', reason: 'ECHECK' }).pp, mailer: m, notifyEmail: 'hello@sunniedesigns.com' });
+    expect(r.kind).toBe('error');
+    if (r.kind === 'error') expect(r.message).toMatch(/do not pay again/i);
+    expect(sent).toHaveLength(1);
+    expect(sent[0].email.subject).toMatch(/^ACTION NEEDED:/);
+    expect(sent[0].email.text).toMatch(/CAPTURED BUT NOT SAVED/);
   });
 });

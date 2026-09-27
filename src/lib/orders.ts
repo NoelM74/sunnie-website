@@ -4,7 +4,7 @@ import type { PricedLine } from './pricing';
 export interface D1Like {
   prepare(sql: string): {
     bind(...v: unknown[]): {
-      run(): Promise<unknown>;
+      run(): Promise<{ meta?: { changes?: number } }>;
       first<T = Record<string, unknown>>(): Promise<T | null>;
     };
   };
@@ -23,8 +23,8 @@ export interface OrdersRepo {
   setPaypalId(ref: string, id: string): Promise<void>;
   findByPaypalId(id: string): Promise<OrderRow | null>;
   findByRef(ref: string): Promise<OrderRow | null>;
-  markPaid(ref: string, captureId: string, payerEmail?: string): Promise<void>;
-  markReview(ref: string, captureId: string, reason: string): Promise<void>;
+  markPaid(ref: string, captureId: string, payerEmail?: string): Promise<boolean>;
+  markReview(ref: string, captureId: string, reason: string): Promise<boolean>;
   recordEmail(ref: string, r: { customer: boolean; shop: boolean; error?: string }): Promise<void>;
 }
 
@@ -47,12 +47,17 @@ export function memoryOrders(): OrdersRepo {
     async findByPaypalId(id) { return [...rows.values()].find((r) => r.paypalOrderId === id) ?? null; },
     async findByRef(ref) { return rows.get(ref) ?? null; },
     async markPaid(ref, captureId, payerEmail) {
-      const r = byRef(ref);
+      const r = rows.get(ref);
+      if (!r || r.status !== 'pending') return false;
       Object.assign(r, { status: 'paid', captureId, paidAt: new Date().toISOString() });
       if (payerEmail && !r.email) r.email = payerEmail;
+      return true;
     },
     async markReview(ref, captureId, reason) {
-      Object.assign(byRef(ref), { status: 'review', captureId, emailError: `PAYPAL_PENDING:${reason}` });
+      const r = rows.get(ref);
+      if (!r || r.status !== 'pending') return false;
+      Object.assign(r, { status: 'review', captureId, emailError: `PAYPAL_PENDING: ${reason}` });
+      return true;
     },
     async recordEmail(ref, e) { Object.assign(byRef(ref), { customerEmailed: e.customer, shopEmailed: e.shop, emailError: e.error ?? null }); },
   };
@@ -81,10 +86,14 @@ export function d1Orders(db: D1Like): OrdersRepo {
     async findByPaypalId(id) { const r = await db.prepare('SELECT * FROM orders WHERE paypal_order_id = ?').bind(id).first<Db>(); return r ? fromDb(r) : null; },
     async findByRef(ref) { const r = await db.prepare('SELECT * FROM orders WHERE ref = ?').bind(ref).first<Db>(); return r ? fromDb(r) : null; },
     async markPaid(ref, captureId) {
-      await db.prepare("UPDATE orders SET status = 'paid', capture_id = ?, paid_at = ? WHERE ref = ?").bind(captureId, new Date().toISOString(), ref).run();
+      const result = await db.prepare("UPDATE orders SET status = 'paid', capture_id = ?, paid_at = ? WHERE ref = ? AND status = 'pending'")
+        .bind(captureId, new Date().toISOString(), ref).run();
+      return (result?.meta?.changes ?? 0) > 0;
     },
     async markReview(ref, captureId, reason) {
-      await db.prepare("UPDATE orders SET status = 'review', capture_id = ?, email_error = ? WHERE ref = ?").bind(captureId, `PAYPAL_PENDING:${reason}`, ref).run();
+      const result = await db.prepare("UPDATE orders SET status = 'review', capture_id = ?, email_error = ? WHERE ref = ? AND status = 'pending'")
+        .bind(captureId, `PAYPAL_PENDING: ${reason}`, ref).run();
+      return (result?.meta?.changes ?? 0) > 0;
     },
     async recordEmail(ref, e) {
       await db.prepare('UPDATE orders SET customer_emailed = ?, shop_emailed = ?, email_error = ? WHERE ref = ?').bind(e.customer ? 1 : 0, e.shop ? 1 : 0, e.error ?? null, ref).run();
