@@ -48,6 +48,7 @@ export const GET: APIRoute = async () => {
 - Yarns are cotton, polyester or acrylic depending on the design, with no animal wool
 - Buy directly on sunniedesigns.com with PayPal or card, or on Etsy
 - Free worldwide shipping on orders of €49 or more (otherwise €5)
+- No import charges on delivery to the EU, UK or US
 - 30-day returns
 
 ${sections}
