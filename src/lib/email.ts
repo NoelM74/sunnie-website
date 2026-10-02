@@ -15,8 +15,7 @@ const addressLines = (o: OrderRow) =>
   [o.address.name, o.address.line1, o.address.line2, o.address.city, o.address.region, o.address.postcode, countryName(o.address.country)].filter(
     Boolean,
   );
-const COMPANY =
-  'Springfield Tectop Limited, trading as Sunnie Designs. CRO 571256. Registered office: Clareview Car Sales, Ennis Road, Co. Limerick, V94 EA3A.';
+const COMPANY = `${site.company.legalName}, trading as ${site.company.tradingAs}. CRO ${site.company.cro}. Registered office: ${site.company.registeredOffice}.`;
 const totals = (o: OrderRow) => [
   `Subtotal: ${euro(o.subtotalCents)}`,
   `Shipping: ${o.shippingCents === 0 ? 'Free' : euro(o.shippingCents)}`,

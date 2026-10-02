@@ -7,6 +7,7 @@ import { priceBag } from '../../lib/pricing';
 import { COUNTRY_CODES, countryName, type CheckoutValues } from '../../lib/checkout-form';
 import { formatPrice } from '../../lib/products';
 import { pageTitle } from '../../lib/seo';
+import { site } from '../../data/site';
 
 export const prerender = false;
 
@@ -44,13 +45,19 @@ const fields = [
       <form class="checkout-form" method="post" action="/checkout/pay/" novalidate>
         <fieldset>
           <legend>Delivery details</legend>
-          {fields.map((f) => (
-            <div class="field">
-              <label for={f.k}>{f.label}{f.optional && <span class="muted"> (optional)</span>}</label>
-              <input id={f.k} name={f.k} type={f.type ?? 'text'} autocomplete={f.auto} value={v[f.k]} required={!f.optional} aria-invalid={e[f.k] ? 'true' : undefined} aria-describedby={e[f.k] ? `${f.k}-err` : undefined} />
-              {e[f.k] && <p class="field-error" id={`${f.k}-err`}>{e[f.k]}</p>}
-            </div>
-          ))}
+          {fields.map((f) => {
+            const hintId = f.k === 'region' ? `${f.k}-hint` : undefined;
+            const errId = e[f.k] ? `${f.k}-err` : undefined;
+            const describedBy = [hintId, errId].filter(Boolean).join(' ') || undefined;
+            return (
+              <div class="field">
+                <label for={f.k}>{f.label}{f.optional && <span class="muted"> (optional)</span>}</label>
+                <input id={f.k} name={f.k} type={f.type ?? 'text'} autocomplete={f.auto} value={v[f.k]} required={!f.optional} aria-invalid={e[f.k] ? 'true' : undefined} aria-describedby={describedBy} />
+                {hintId && <p class="small muted" id={hintId}>US and Canada: use the 2-letter state or province code, for example CA or ON.</p>}
+                {e[f.k] && <p class="field-error" id={errId}>{e[f.k]}</p>}
+              </div>
+            );
+          })}
           <div class="field">
             <label for="country">Country</label>
             <select id="country" name="country" autocomplete="country" required aria-invalid={e.country ? 'true' : undefined} aria-describedby={e.country ? 'country-err' : undefined}>
@@ -59,7 +66,7 @@ const fields = [
             {e.country && <p class="field-error" id="country-err">{e.country}</p>}
           </div>
         </fieldset>
-        <p class="small">By paying you agree to our <a href="/terms/">terms of sale</a>. Ships within 3–5 days with tracking. Returns accepted within 30 days.</p>
+        <p class="small">By paying you agree to our <a href="/terms/">terms of sale</a>. Ships within {site.shipsIn} with tracking. Returns accepted within 30 days.</p>
         <button class="btn btn-primary btn-block" type="submit">Pay with PayPal or card</button>
         <p class="small muted">You'll pay on PayPal's secure page. You can pay by card without a PayPal account.</p>
       </form>

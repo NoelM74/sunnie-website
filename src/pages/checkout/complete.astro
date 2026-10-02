@@ -35,7 +35,7 @@ const heading = error ? 'Payment problem' : pending ? 'Order received' : 'Thank 
       <>
         <header class="page-head">
           <h1>{heading}</h1>
-          {order && pending && <p class="lead">Thank you. PayPal is still confirming your payment. We will email {order.email} as soon as PayPal confirms your payment.</p>}
+          {order && pending && <p class="lead">Thank you. Order <strong>{order.ref}</strong>. PayPal is still confirming your payment. We will email {order.email} as soon as PayPal confirms your payment.</p>}
           {order && !pending && <p class="lead">Order <strong>{order.ref}</strong>. A confirmation is on its way to {order.email}.</p>}
           {!pending && <p>Your pieces ship within {site.shipsIn} with tracking.</p>}
         </header>

@@ -9,6 +9,11 @@ import { pageTitle } from '../lib/seo';
     <p>Last updated: September 2026.</p>
     <h2>Who we are</h2>
     <p>Sunnie Designs sells handmade crochet pieces. Contact us about privacy at <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.</p>
+    <p>
+      The data controller for this website is {site.company.legalName}, trading as {site.company.tradingAs}. CRO
+      {' '}{site.company.cro}. Registered office: {site.company.registeredOffice}. Email:{' '}
+      <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.
+    </p>
     <h2>What this website collects</h2>
     <p>
       This site runs no tracking or advertising scripts. Cloudflare, our host, keeps standard server logs and
@@ -19,10 +24,26 @@ import { pageTitle } from '../lib/seo';
       When you buy on sunniedesigns.com, we collect your name, email address, delivery address and what you
       bought, to fulfil your order and send you order updates.
     </p>
+    <p>
+      If you start a checkout but don't complete payment, the details you entered are stored with the unpaid
+      order record. We delete unpaid order records after 90 days.
+    </p>
+    <h2>Our lawful basis</h2>
+    <p>
+      We process your order data because it's necessary to perform the contract between us: taking your order,
+      charging you and delivering your pieces. We keep order records afterwards to meet our legal obligations,
+      including Irish tax record-keeping rules, which require us to keep them for 6 years.
+    </p>
     <h2>Who processes your data</h2>
     <p>
-      We share order data with the processors that run the shop: PayPal handles payment, Resend sends order
-      emails, and Cloudflare hosts the site and stores the order database.
+      PayPal processes your payment details as an independent controller, under its own privacy statement, not on
+      our instructions. Resend, which sends our order emails, and Cloudflare, which hosts the site and stores the
+      order database, act as processors on our behalf.
+    </p>
+    <h2>International transfers</h2>
+    <p>
+      Some of these providers may process your data outside the European Economic Area. Where that happens, they
+      do so under the European Commission's standard contractual clauses or an adequacy decision.
     </p>
     <h2>How long we keep order records</h2>
     <p>We keep order records for 6 years, to meet Irish tax rules.</p>

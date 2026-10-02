@@ -21,3 +21,19 @@ The "wool" materials question is resolved: the shop uses no animal wool. Product
 ## Photos
 
 Replace src/assets/story/hands.jpg with a photo of Hui crocheting (currently a product photo placeholder).
+
+## Before going live
+
+1. **Option prices for 8 products.** These are marked `siteCheckout: false` (Etsy-only) until you send us the
+   per-option price for each pack or size. Once we have real prices, we add `optionPrices` to the product file and
+   switch `siteCheckout` back to true:
+   - animal-coasters-cat-pig-and-bear
+   - carnation-mug-rug-that-folds-into-a-mini
+   - fat-lips-girl-crossbody-phone-bag-with-daisy
+   - flower-mandala-coaster
+   - flower-shoulder-bag-with-flower-charm
+   - panda-crossbody-bag
+   - rainbow-crochet-wizard-hat
+   - rose-flower-coaster-with-mini-basket
+2. **UK: settled.** The owner prepays UK VAT and ships DDP, so UK shipping stays open. **EU OSS:** keep an eye on the €10,000 cross-border EU sales threshold with the accountant.
+3. **Legal review.** Have a solicitor or accountant review `/terms/` and `/privacy/` before go-live.
