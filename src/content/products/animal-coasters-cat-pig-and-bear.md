@@ -6,8 +6,8 @@ price: 17.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4500120022/crochet-animal-coasters-set-of-3-pig"
 maker: "Hui"
-siteCheckout: false
 options: [{"name":"Design","values":["Cat","Pig","Bear","Set Of 3"]}]
+optionPrices: {"Cat":17.95,"Pig":17.95,"Bear":17.95,"Set Of 3":39.95}
 materials: ["Polyester-acrylic yarn"]
 size: "Ø 15 × H 3.5 cm"
 images: [{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/01.jpg","alt":"Cat, bear and pig crochet coasters with kiwi, orange and watermelon centres"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/02.jpg","alt":"Stack of pig, bear and cat crochet coasters with fruit centres"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/03.jpg","alt":"Cat-shaped crochet coaster with a green kiwi centre and stitched whiskers"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/04.jpg","alt":"Animal coasters, cat, pig and bear, photo 4 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/05.jpg","alt":"Animal coasters, cat, pig and bear, photo 5 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/06.jpg","alt":"Animal coasters, cat, pig and bear, photo 6 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/07.jpg","alt":"Animal coasters, cat, pig and bear, photo 7 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/08.jpg","alt":"Animal coasters, cat, pig and bear, photo 8 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/09.jpg","alt":"Animal coasters, cat, pig and bear, photo 9 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/10.jpg","alt":"Animal coasters, cat, pig and bear, photo 10 of 10"}]

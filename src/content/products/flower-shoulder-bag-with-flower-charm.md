@@ -3,12 +3,12 @@ name: "Flower shoulder bag with flower charm"
 seoTitle: "Crochet flower shoulder bag with flower charm, handmade in two sizes"
 category: "bags"
 group: "flowers"
-price: 23.95
+price: 24.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4508210534/crochet-flower-shoulder-bag-with-flower"
 maker: "Hui"
-siteCheckout: false
 options: [{"name":"Style","values":["Pink Large","Yellow Large","Blue Large","Pink Small","Yellow Small","Blue Small"]}]
+optionPrices: {"Pink Large":29.95,"Yellow Large":29.95,"Blue Large":29.95,"Pink Small":24.95,"Yellow Small":24.95,"Blue Small":24.95}
 materials: ["Polyester","Faux pearls"]
 size: "W 23 × H 18 × D 6.5 cm, strap 120 cm"
 images: [{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/01.jpg","alt":"Cream crochet flower bag with yellow buds and a sunflower charm, worn crossbody"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/02.jpg","alt":"Two blue crochet flower bags with pastel buds and a daisy charm, large and small"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/03.jpg","alt":"Large and small cream crochet flower bags with yellow buds and sunflower charms"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/04.jpg","alt":"Flower shoulder bag with flower charm, photo 4 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/05.jpg","alt":"Flower shoulder bag with flower charm, photo 5 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/06.jpg","alt":"Flower shoulder bag with flower charm, photo 6 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/07.jpg","alt":"Flower shoulder bag with flower charm, photo 7 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/08.jpg","alt":"Flower shoulder bag with flower charm, photo 8 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/09.jpg","alt":"Flower shoulder bag with flower charm, photo 9 of 10"},{"src":"../../assets/products/flower-shoulder-bag-with-flower-charm/10.jpg","alt":"Flower shoulder bag with flower charm, photo 10 of 10"}]

@@ -15,10 +15,15 @@ describe('catalog.json', () => {
       expect(i.optionPriceCents === null || typeof i.optionPriceCents === 'object').toBe(true);
     }
   });
-  it('marks a pending-price product as siteCheckout: false with no optionPriceCents', () => {
+  it('carries per-option prices in cents', () => {
     const mandala = cat['flower-mandala-coaster'] as Record<string, unknown>;
-    expect(mandala.siteCheckout).toBe(false);
-    expect(mandala.optionPriceCents).toBeNull();
+    expect(mandala.siteCheckout).toBe(true);
+    expect(mandala.priceCents).toBe(1695);
+    expect(mandala.optionPriceCents).toEqual({
+      '4 coasters + free basket': 1695,
+      '6 coasters + free basket': 2295,
+      '8 coasters + 2 free baskets': 2795,
+    });
   });
   it('carries the frog colour option', () => {
     expect(cat['frog-phone-crossbody'].option).toEqual({ name: 'Colour', values: ['Pink', 'Blue', 'Brown'] });

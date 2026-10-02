@@ -6,8 +6,8 @@ price: 19.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4506497053/crochet-rose-flower-coaster-with-mini"
 maker: "Hui"
-siteCheckout: false
 options: [{"name":"Size","values":["2 Coasters and Pots","4 Coasters and Pots","6 coasters and Pots"]}]
+optionPrices: {"2 Coasters and Pots":19.95,"4 Coasters and Pots":29.95,"6 coasters and Pots":39.95}
 materials: ["Acrylic"]
 size: "Ø 16 cm"
 images: [{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/01.jpg","alt":"Six crochet rose coasters in yellow, white, purple, blue, red and pink"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/02.jpg","alt":"Yellow crochet rose coaster with a mug set on top"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/03.jpg","alt":"Six crochet rose coasters folded into their mini baskets like flower pots"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/04.jpg","alt":"Rose flower coaster with mini basket, photo 4 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/05.jpg","alt":"Rose flower coaster with mini basket, photo 5 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/06.jpg","alt":"Rose flower coaster with mini basket, photo 6 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/07.jpg","alt":"Rose flower coaster with mini basket, photo 7 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/08.jpg","alt":"Rose flower coaster with mini basket, photo 8 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/09.jpg","alt":"Rose flower coaster with mini basket, photo 9 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/10.jpg","alt":"Rose flower coaster with mini basket, photo 10 of 10"}]

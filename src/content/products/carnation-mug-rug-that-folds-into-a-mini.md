@@ -6,8 +6,8 @@ price: 19.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4511442184/crochet-carnation-mug-rug-that-folds"
 maker: "Hui"
-siteCheckout: false
 options: [{"name":"Set","values":["Set Of Two","Set Of Four"]}]
+optionPrices: {"Set Of Two":19.95,"Set Of Four":29.95}
 materials: ["Acrylic"]
 size: "Ø 14.5 cm"
 images: [{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/01.jpg","alt":"Four crochet carnation bouquets folded into cones, two purple and two pink"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/02.jpg","alt":"Purple and pink crochet carnation bouquets folded into cones with leaf ties"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/03.jpg","alt":"Round cream crochet coaster unfolded, showing a purple carnation and stem"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/04.jpg","alt":"Carnation mug rug that folds into a mini, photo 4 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/05.jpg","alt":"Carnation mug rug that folds into a mini, photo 5 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/06.jpg","alt":"Carnation mug rug that folds into a mini, photo 6 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/07.jpg","alt":"Carnation mug rug that folds into a mini, photo 7 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/08.jpg","alt":"Carnation mug rug that folds into a mini, photo 8 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/09.jpg","alt":"Carnation mug rug that folds into a mini, photo 9 of 10"},{"src":"../../assets/products/carnation-mug-rug-that-folds-into-a-mini/10.jpg","alt":"Carnation mug rug that folds into a mini, photo 10 of 10"}]

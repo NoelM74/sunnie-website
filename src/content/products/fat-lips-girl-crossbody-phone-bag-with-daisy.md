@@ -7,8 +7,8 @@ price: 19.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4506953013/crochet-fat-lips-girl-crossbody-phone"
 maker: "Hui"
-siteCheckout: false
 options: [{"name":"Size","values":["Large 28 x 11 cm","Small 20 x 10 cm"]}]
+optionPrices: {"Large 28 x 11 cm":24.95,"Small 20 x 10 cm":19.95}
 materials: ["Polyester","Faux pearls"]
 size: "W 11 × H 28 × D 1 cm, strap 105 cm"
 images: [{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/01.jpg","alt":"Crochet doll bag with big red lips, pearl hair and a daisy, held in a hand"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/02.jpg","alt":"Crochet doll bag with red lips and pearls worn crossbody over a sweatshirt"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/03.jpg","alt":"Large and small crochet doll bags with red lips shown side by side"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/04.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 4 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/05.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 5 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/06.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 6 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/07.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 7 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/08.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 8 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/09.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 9 of 10"},{"src":"../../assets/products/fat-lips-girl-crossbody-phone-bag-with-daisy/10.jpg","alt":"Fat lips girl crossbody phone bag with daisy, photo 10 of 10"}]

@@ -6,8 +6,8 @@ price: 22.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467377580/rainbow-crochet-wizard-hat-pointed-kids"
 maker: "Hui"
-siteCheckout: false
 options: [{"name":"Size","values":["2–5 years -48cm brim","5–9 years -58cm brim"]}]
+optionPrices: {"2–5 years -48cm brim":22.95,"5–9 years -58cm brim":24.95}
 materials: ["Acrylic"]
 size: "2–5 yrs brim 48 cm / 5–9 yrs brim 58 cm"
 images: [{"src":"../../assets/products/rainbow-crochet-wizard-hat/01.jpg","alt":"Child wearing a rainbow striped crochet wizard hat with a star charm, front view"},{"src":"../../assets/products/rainbow-crochet-wizard-hat/02.jpg","alt":"Child in a school jumper wearing a rainbow crochet wizard hat, side view"},{"src":"../../assets/products/rainbow-crochet-wizard-hat/03.jpg","alt":"Close-up of a child wearing a rainbow crochet wizard hat with a star charm"},{"src":"../../assets/products/rainbow-crochet-wizard-hat/04.jpg","alt":"Rainbow crochet wizard hat, photo 4 of 10"},{"src":"../../assets/products/rainbow-crochet-wizard-hat/05.jpg","alt":"Rainbow crochet wizard hat, photo 5 of 10"},{"src":"../../assets/products/rainbow-crochet-wizard-hat/06.jpg","alt":"Rainbow crochet wizard hat, photo 6 of 10"},{"src":"../../assets/products/rainbow-crochet-wizard-hat/07.jpg","alt":"Rainbow crochet wizard hat, photo 7 of 10"},{"src":"../../assets/products/rainbow-crochet-wizard-hat/08.jpg","alt":"Rainbow crochet wizard hat, photo 8 of 10"},{"src":"../../assets/products/rainbow-crochet-wizard-hat/09.jpg","alt":"Rainbow crochet wizard hat, photo 9 of 10"},{"src":"../../assets/products/rainbow-crochet-wizard-hat/10.jpg","alt":"Rainbow crochet wizard hat, photo 10 of 10"}]
