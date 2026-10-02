@@ -15,3 +15,6 @@ shop_settings.json
 # Etsy raw exports stay outside the repo
 EtsyListingsDownload.csv
 .playwright-mcp/
+
+# Local knowledge graph output
+graphify-out/

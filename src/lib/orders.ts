@@ -26,7 +26,11 @@ export interface OrdersRepo {
   markPaid(ref: string, captureId: string, payerEmail?: string): Promise<boolean>;
   markReview(ref: string, captureId: string, reason: string): Promise<boolean>;
   recordEmail(ref: string, r: { customer: boolean; shop: boolean; error?: string }): Promise<void>;
+  /** Deletes unpaid ('pending') orders created more than olderThanDays ago; returns how many. */
+  deleteStalePending(olderThanDays: number): Promise<number>;
 }
+
+const staleCutoff = (days: number) => new Date(Date.now() - days * 86_400_000).toISOString();
 
 const ALPHABET = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 export function newRef(random: () => number = () => crypto.getRandomValues(new Uint32Array(1))[0] / 2 ** 32): string {
@@ -60,6 +64,12 @@ export function memoryOrders(): OrdersRepo {
       return true;
     },
     async recordEmail(ref, e) { Object.assign(byRef(ref), { customerEmailed: e.customer, shopEmailed: e.shop, emailError: e.error ?? null }); },
+    async deleteStalePending(days) {
+      const cutoff = staleCutoff(days);
+      let n = 0;
+      for (const [ref, r] of rows) if (r.status === 'pending' && r.createdAt < cutoff) { rows.delete(ref); n++; }
+      return n;
+    },
   };
 }
 
@@ -105,6 +115,10 @@ export function d1Orders(db: D1Like): OrdersRepo {
     },
     async recordEmail(ref, e) {
       await db.prepare('UPDATE orders SET customer_emailed = ?, shop_emailed = ?, email_error = ? WHERE ref = ?').bind(e.customer ? 1 : 0, e.shop ? 1 : 0, e.error ?? null, ref).run();
+    },
+    async deleteStalePending(days) {
+      const result = await db.prepare("DELETE FROM orders WHERE status = 'pending' AND created_at < ?").bind(staleCutoff(days)).run();
+      return changedRows(result);
     },
   };
 }

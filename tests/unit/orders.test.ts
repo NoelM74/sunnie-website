@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { d1Orders, memoryOrders, newRef, type OrderInput } from '../../src/lib/orders';
 
 const input = (ref = 'SUN-AAAAAA'): OrderInput => ({
@@ -91,5 +91,43 @@ describe('d1Orders changed-row reporting', () => {
   it('fails loudly when D1 returns no meta.changes', async () => {
     const db = { prepare: () => ({ bind: () => ({ run: async () => ({}), first: async () => null }) }) };
     await expect(d1Orders(db).markPaid('SUN-AAAAAA', 'CAP-1')).rejects.toThrow('meta.changes');
+  });
+});
+
+describe('deleteStalePending', () => {
+  it('memory: deletes only pending orders older than the cutoff and returns the count', async () => {
+    const repo = memoryOrders();
+    vi.useFakeTimers();
+    try {
+      vi.setSystemTime(new Date('2026-01-01T00:00:00Z'));
+      await repo.insertPending(input('SUN-OLDPND'));
+      await repo.insertPending(input('SUN-OLDPAD'));
+      await repo.markPaid('SUN-OLDPAD', 'CAP-1');
+      vi.setSystemTime(new Date('2026-05-01T00:00:00Z'));
+      await repo.insertPending(input('SUN-NEWPND'));
+      expect(await repo.deleteStalePending(90)).toBe(1);
+      expect(await repo.findByRef('SUN-OLDPND')).toBeNull();
+      expect(await repo.findByRef('SUN-OLDPAD')).not.toBeNull();
+      expect(await repo.findByRef('SUN-NEWPND')).not.toBeNull();
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+  it('d1: runs a parameterised DELETE of pending rows and returns meta.changes', async () => {
+    const calls: { sql: string; args: unknown[] }[] = [];
+    const db = {
+      prepare: (sql: string) => ({
+        bind: (...args: unknown[]) => { calls.push({ sql, args }); return { run: async () => ({ meta: { changes: 3 } }), first: async () => null }; },
+      }),
+    };
+    vi.useFakeTimers();
+    try {
+      vi.setSystemTime(new Date('2026-06-01T00:00:00Z'));
+      expect(await d1Orders(db).deleteStalePending(90)).toBe(3);
+    } finally {
+      vi.useRealTimers();
+    }
+    expect(calls[0].sql).toBe("DELETE FROM orders WHERE status = 'pending' AND created_at < ?");
+    expect(calls[0].args).toEqual(['2026-03-03T00:00:00.000Z']);
   });
 });

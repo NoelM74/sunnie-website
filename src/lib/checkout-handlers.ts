@@ -107,6 +107,16 @@ async function reportCaptureNotSaved(
   return { kind: 'error', message: RETURN_MESSAGES.unconfirmed, code: 'unconfirmed' };
 }
 
+/** Opportunistic, best-effort cleanup of unpaid orders older than 90 days. Never blocks the buyer. */
+async function cleanupStalePending(deps: ReturnDeps): Promise<void> {
+  try {
+    await deps.orders.deleteStalePending(90);
+  } catch (err) {
+    const e = err as Error;
+    console.error('deleteStalePending failed', e.name, e.message);
+  }
+}
+
 export async function handleReturn(paypalOrderId: string | null, deps: ReturnDeps): Promise<ReturnResult> {
   if (!paypalOrderId) return { kind: 'error', message: RETURN_MESSAGES.notfound, code: 'notfound' };
   const order = await deps.orders.findByPaypalId(paypalOrderId);
@@ -229,6 +239,7 @@ export async function handleReturn(paypalOrderId: string | null, deps: ReturnDep
       const e2 = err2 as Error;
       console.error('recordEmail failed (order paid)', e2.name, e2.message, order.ref);
     }
+    await cleanupStalePending(deps);
     return { kind: 'complete', ref: order.ref };
   } catch {
     return reportCaptureNotSaved(deps, order, cap.captureId, 'paid', paypalOrderId);

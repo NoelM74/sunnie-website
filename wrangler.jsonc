@@ -21,5 +21,6 @@
     // database_id is filled in by the owner in Task 12 (npx wrangler d1 create sunnie-orders).
     { "binding": "ORDERS", "database_name": "sunnie-orders", "database_id": "00000000-0000-0000-0000-000000000000", "migrations_dir": "migrations" }
   ],
+  "keep_vars": true,
   "observability": { "enabled": true }
 }

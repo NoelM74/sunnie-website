@@ -324,3 +324,27 @@ describe('handleReturn', () => {
     expect(sent[0].email.text).toMatch(/CAPTURED BUT NOT SAVED/);
   });
 });
+
+describe('handleReturn stale-pending cleanup', () => {
+  async function pendingOrders() {
+    const orders = memoryOrders();
+    await orders.insertPending({ ref: 'SUN-TEST01', email: 'a@b.ie', address: { ...address }, lines: [{ slug: 'frog', name: 'Frog', option: 'Pink', qty: 1, unitCents: 2995, lineCents: 2995, thumb: '' }], subtotalCents: 2995, shippingCents: 500, totalCents: 3495, paypalEnv: 'sandbox' });
+    await orders.setPaypalId('SUN-TEST01', 'PP-1');
+    return orders;
+  }
+  it('calls deleteStalePending(90) after a completed payment', async () => {
+    const orders = await pendingOrders();
+    const spy = vi.fn(async () => 0);
+    const r = await handleReturn('PP-1', { orders: { ...orders, deleteStalePending: spy }, paypal: fakePaypal().pp, mailer: mailer().m, notifyEmail: 'n@x' });
+    expect(r.kind).toBe('complete');
+    expect(spy).toHaveBeenCalledWith(90);
+  });
+  it('never blocks or fails the buyer when the cleanup throws', async () => {
+    const errSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const orders = await pendingOrders();
+    const r = await handleReturn('PP-1', { orders: { ...orders, deleteStalePending: async () => { throw new Error('D1 down'); } }, paypal: fakePaypal().pp, mailer: mailer().m, notifyEmail: 'n@x' });
+    expect(r).toEqual({ kind: 'complete', ref: 'SUN-TEST01' });
+    expect(errSpy).toHaveBeenCalledWith('deleteStalePending failed', 'Error', 'D1 down');
+    errSpy.mockRestore();
+  });
+});
