@@ -2,6 +2,12 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sunnie-website",
   "compatibility_date": "2026-09-01",
+  // Live on sunniedesigns.com only. No workers.dev copy, and no preview URLs: every
+  // preview version would share the live order database (and old ones keep sandbox keys).
+  // Test changes locally with `npx wrangler dev` and sandbox values in .dev.vars.
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "sunniedesigns.com", "custom_domain": true }],
   "compatibility_flags": ["nodejs_compat"],
   "main": "@astrojs/cloudflare/entrypoints/server",
   "assets": {
