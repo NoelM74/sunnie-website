@@ -1,6 +1,6 @@
 import { env } from 'cloudflare:workers';
 import type { D1Like } from './orders';
-import { validateEnv } from './env-validate';
+import { normalizeEnv, validateEnv } from './env-validate';
 
 export interface SunnieEnv {
   ORDERS: D1Like;
@@ -17,6 +17,7 @@ export interface SunnieEnv {
 export { validateEnv };
 
 export function getEnv(): SunnieEnv {
-  validateEnv(env as unknown as Record<string, unknown>);
-  return env as unknown as SunnieEnv;
+  const clean = normalizeEnv(env as unknown as Record<string, unknown>);
+  validateEnv(clean);
+  return clean as unknown as SunnieEnv;
 }
