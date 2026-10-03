@@ -26,49 +26,9 @@ One-off owner steps to switch on checkout on sunniedesigns.com. Deploy settings 
    - `ORDER_FROM_EMAIL` = `Sunnie Designs <orders@sunniedesigns.com>`
 
    **How to enter them (learned 2026-10-03):**
-   - While production is still the static-only Phase 1 Worker, the dashboard refuses variables ("cannot be added to a Worker that only has static assets"). Upload a code version first (
-╭──────────────────────────────────────────╮
-│ Did you mean "wrangler versions upload"? │
-╰──────────────────────────────────────────╯
-
-wrangler versions
-
-🫧 List, view, upload and deploy Versions of your Worker to Cloudflare
-
-COMMANDS
-  wrangler versions view <version-id>         View the details of a specific version of your Worker
-  wrangler versions list                      List the 10 most recent Versions of your Worker
-  wrangler versions upload [path]             Uploads your Worker code and config as a new Version
-  wrangler versions deploy [version-specs..]  Safely roll out new Versions of your Worker by splitting traffic between multiple Versions
-  wrangler versions secret                    Generate a secret that can be referenced in a Worker
-
-GLOBAL FLAGS
-  -c, --config          Path to Wrangler configuration file  [string]
-      --cwd             Run as if Wrangler was started in the specified directory instead of the current working directory  [string]
-  -e, --env             Environment to use for operations, and for selecting .env and .dev.vars files  [string]
-      --env-file        Path to an .env file to load - can be specified multiple times - values from earlier files are overridden by values in later files  [array]
-  -h, --help            Show help  [boolean]
-      --install-skills  Install Cloudflare skills for detected AI coding agents before running the command  [boolean] [default: false]
-      --profile         Use a specific auth profile  [string]
-  -v, --version         Show version number  [boolean]), then add secrets with . Each secret change creates a new preview version that inherits the code and the other secrets.
-   - Don't paste values into the hidden wrangler secret
-
-🤫 Generate a secret that can be referenced in a Worker
-
-COMMANDS
-  wrangler secret put <key>     Create or update a secret for a Worker
-  wrangler secret delete <key>  Delete a secret from a Worker
-  wrangler secret list          List all secrets for a Worker
-  wrangler secret bulk [file]   Upload multiple secrets for a Worker at once
-
-GLOBAL FLAGS
-  -c, --config    Path to Wrangler configuration file  [string]
-      --cwd       Run as if Wrangler was started in the specified directory instead of the current working directory  [string]
-  -e, --env       Environment to use for operations, and for selecting .env and .dev.vars files  [string]
-      --env-file  Path to an .env file to load - can be specified multiple times - values from earlier files are overridden by values in later files  [array]
-  -h, --help      Show help  [boolean]
-  -v, --version   Show version number  [boolean] prompt in PowerShell: pastes arrived truncated (BAG_SECRET too short, PayPal 401 AUTH_FAILED, Resend 422). Put  lines in a file under  (quote values with spaces), check names and lengths, run , then delete the file.
-   - If a key is wrong, bag and checkout pages return 503 with an  header naming the key (never its value). A failed PayPal create is saved on the unpaid order as .
+   - While production is still the static-only Phase 1 Worker, the dashboard refuses variables ("cannot be added to a Worker that only has static assets"). Upload a code version first (`npx wrangler versions upload`), then add secrets with `npx wrangler versions secret bulk <file>`. Each secret change creates a new preview version that inherits the code and the other secrets.
+   - Don't paste values into the hidden `wrangler secret put` prompt in PowerShell: pastes arrived truncated (BAG_SECRET too short, PayPal 401 AUTH_FAILED, Resend 422). Put `NAME=value` lines in a file under `%TEMP%` (quote values that contain spaces), check names and lengths, run `versions secret bulk`, then delete the file.
+   - If a key is wrong, bag and checkout pages return 503 with an `x-sunnie-config` header naming the key (never its value). A failed PayPal create is saved on the unpaid order as `PAYPAL_CREATE_FAILED: <status> <issue>`.
 
    The site refuses to run checkout if `PAYPAL_ENV` is not `sandbox` or `live`, `BAG_SECRET` is shorter than 32 characters, or the database binding is missing.
 6. **PayPal guest checkout.** In the live PayPal Business account settings, check that "PayPal account optional" (guest checkout) is on, so buyers can pay by card without a PayPal account.
