@@ -36,4 +36,4 @@ Replace src/assets/story/hands.jpg with a photo of Hui crocheting (currently a p
    - rainbow-crochet-wizard-hat
    - rose-flower-coaster-with-mini-basket
 2. **UK: settled.** The owner prepays UK VAT and ships DDP, so UK shipping stays open. **EU OSS:** keep an eye on the €10,000 cross-border EU sales threshold with the accountant.
-3. **Legal review.** Have a solicitor or accountant review `/terms/` and `/privacy/` before go-live.
+3. **Legal review.** Done 2026-10-03: the owner's solicitor/accountant reviewed `/terms/` and `/privacy/`, no changes needed.
