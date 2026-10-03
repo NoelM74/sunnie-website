@@ -49,6 +49,14 @@ export async function handlePay(form: FormData, bag: BagLine[], deps: PayDeps): 
     const e = err as Error;
     console.error('paypal create failed', e.name, e.message, input.ref);
     const issue = err instanceof PayPalError ? err.issue ?? '' : '';
+    // Keep the reason on the unpaid row (status and issue code only, no buyer data) so a
+    // failed checkout can be diagnosed from the database without access to the logs.
+    const reason = err instanceof PayPalError ? `${err.status} ${issue}`.trim() : e.name;
+    try {
+      await deps.orders.recordEmail(input.ref, { customer: false, shop: false, error: `PAYPAL_CREATE_FAILED: ${reason}` });
+    } catch (e2) {
+      console.error('recordEmail failed (paypal create)', (e2 as Error).name, (e2 as Error).message, input.ref);
+    }
     const message = ADDRESS_ISSUE.test(issue)
       ? 'PayPal could not accept this delivery address. Please check the postcode and county or state, then try again.'
       : GENERIC_PAY_ERROR;

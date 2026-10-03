@@ -113,7 +113,7 @@ describe('handlePay', () => {
     };
     const r = await handlePay(fd(address), bag, { catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-SURVIVE' });
     expect(r.kind).toBe('payError');
-    expect(await orders.findByRef('SUN-SURVIVE')).toMatchObject({ status: 'pending' });
+    expect(await orders.findByRef('SUN-SURVIVE')).toMatchObject({ status: 'pending', emailError: 'PAYPAL_CREATE_FAILED: 500 SERVER_ERROR' });
   });
   it('retries the pending insert once on a ref collision, then succeeds', async () => {
     const orders = memoryOrders();
