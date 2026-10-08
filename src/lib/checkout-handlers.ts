@@ -51,7 +51,9 @@ export async function handlePay(form: FormData, bag: BagLine[], deps: PayDeps): 
     const issue = err instanceof PayPalError ? err.issue ?? '' : '';
     // Keep the reason on the unpaid row (status and issue code only, no buyer data) so a
     // failed checkout can be diagnosed from the database without access to the logs.
-    const reason = err instanceof PayPalError ? `${err.status} ${issue}`.trim() : e.name;
+    const reason = err instanceof PayPalError
+      ? `${err.status} ${issue}`.trim() + (err.debugId ? ` (debug id ${err.debugId})` : '')
+      : e.name;
     try {
       await deps.orders.recordEmail(input.ref, { customer: false, shop: false, error: `PAYPAL_CREATE_FAILED: ${reason}` });
     } catch (e2) {

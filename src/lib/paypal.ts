@@ -5,7 +5,7 @@ const API = { sandbox: 'https://api-m.sandbox.paypal.com', live: 'https://api-m.
 const eur = (cents: number) => ({ currency_code: 'EUR', value: centsToAmount(cents) });
 
 export class PayPalError extends Error {
-  constructor(public status: number, public issue?: string) { super(`PayPal ${status}${issue ? ` ${issue}` : ''}`); this.name = 'PayPalError'; }
+  constructor(public status: number, public issue?: string, public debugId?: string) { super(`PayPal ${status}${issue ? ` ${issue}` : ''}`); this.name = 'PayPalError'; }
 }
 
 export type CaptureResult =
@@ -107,7 +107,7 @@ export function paypalClient(cfg: { clientId: string; secret: string; env: 'sand
         body: JSON.stringify(buildOrderPayload(o, urls)),
       });
       const body: any = await res.json().catch(() => ({}));
-      if (!res.ok) throw new PayPalError(res.status, issueOf(body));
+      if (!res.ok) throw new PayPalError(res.status, issueOf(body), res.headers.get('paypal-debug-id') ?? body.debug_id ?? undefined);
       const link = (body.links ?? []).find((l: any) => l.rel === 'payer-action' || l.rel === 'approve');
       if (!body.id || !link) throw new PayPalError(502, 'NO_APPROVE_LINK');
       return { id: body.id, approveUrl: link.href };

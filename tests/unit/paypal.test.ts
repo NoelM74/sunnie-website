@@ -52,6 +52,10 @@ describe('paypalClient', () => {
     expect(calls[1].url).toBe('https://api-m.sandbox.paypal.com/v2/checkout/orders');
     expect((calls[1].init.headers as Record<string, string>)['PayPal-Request-Id']).toBe('create-SUN-ABC123');
   });
+  it('keeps PayPal\'s debug id on a create failure, for PayPal support', async () => {
+    const { client } = mk([[200, token], [422, { debug_id: 'f00dcafe1234', details: [{ issue: 'PAYEE_ACCOUNT_RESTRICTED' }] }]]);
+    await expect(client.createOrder(order, urls)).rejects.toMatchObject({ status: 422, issue: 'PAYEE_ACCOUNT_RESTRICTED', debugId: 'f00dcafe1234' });
+  });
   it('throws PayPalError with the issue on create failure', async () => {
     const { client } = mk([[200, token], [422, { details: [{ issue: 'SHIPPING_ADDRESS_INVALID' }] }]]);
     await expect(client.createOrder(order, urls)).rejects.toMatchObject({ name: 'PayPalError', status: 422, issue: 'SHIPPING_ADDRESS_INVALID' });

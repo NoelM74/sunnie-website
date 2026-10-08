@@ -115,6 +115,16 @@ describe('handlePay', () => {
     expect(r.kind).toBe('payError');
     expect(await orders.findByRef('SUN-SURVIVE')).toMatchObject({ status: 'pending', emailError: 'PAYPAL_CREATE_FAILED: 500 SERVER_ERROR' });
   });
+  it('stores the PayPal debug id with a create failure', async () => {
+    const orders = memoryOrders();
+    const pp: PayPalClient = {
+      async createOrder() { throw new PayPalError(422, 'PAYEE_ACCOUNT_RESTRICTED', 'f00dcafe1234'); },
+      async captureOrder() { return { status: 'DECLINED', detail: '' }; },
+      async getOrder() { throw new Error('not used'); },
+    };
+    await handlePay(fd(address), bag, { catalog, orders, paypal: pp, paypalEnv: 'live', origin: 'https://x', newRef: () => 'SUN-DEBUG1' });
+    expect((await orders.findByRef('SUN-DEBUG1'))?.emailError).toBe('PAYPAL_CREATE_FAILED: 422 PAYEE_ACCOUNT_RESTRICTED (debug id f00dcafe1234)');
+  });
   it('retries the pending insert once on a ref collision, then succeeds', async () => {
     const orders = memoryOrders();
     await orders.insertPending({ ref: 'SUN-DUP01', email: 'x@y.ie', address: { ...address }, lines: [], subtotalCents: 0, shippingCents: 500, totalCents: 500, paypalEnv: 'sandbox' });
