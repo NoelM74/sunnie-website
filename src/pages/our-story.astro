@@ -1,7 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import storyPhoto from '../assets/story/hands.jpg';
+import storyPhoto from '../assets/story/hui-and-nollaig.jpg';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
 ---
@@ -15,7 +15,7 @@ import { pageTitle } from '../lib/seo';
       <h1>Meet Hui, who makes every piece</h1>
       <p>Sunnie Designs is two people: Hui, who designs and crochets each piece, and Nollaig, who runs the shop.</p>
     </header>
-    <Picture src={storyPhoto} alt="A handmade crochet bag by Hui" formats={['avif', 'webp']} widths={[600, 1000]} sizes="(min-width: 48rem) 44rem, 100vw" class="story-img" loading="eager" />
+    <Picture src={storyPhoto} alt="Hui and Nollaig, the two people behind Sunnie Designs, on a rocky coastline by the sea" formats={['avif', 'webp']} widths={[600, 1000]} sizes="(min-width: 48rem) 44rem, 100vw" class="story-img" style="object-position: 50% 45%" loading="eager" />
     <div class="prose">
       <h2>Made by hand, one piece at a time</h2>
       <p>

@@ -42,7 +42,7 @@ export const GET: APIRoute = async () => {
 ## Key facts
 
 - ${site.makerLine}
-- Ships in ${site.shipsIn} with tracking
+- Ships in ${site.shipsIn} with tracking; delivery after dispatch: ${site.delivery.map((d) => `${d.region} ${d.days} working days`).join(', ')}
 - Rated ${site.proof.etsyRating} on Etsy (Star Seller)
 - ${site.proof.ebayPositive} positive across ${site.proof.ebayCount} eBay ratings
 - Yarns are cotton, polyester or acrylic depending on the design, with no animal wool

@@ -7,7 +7,7 @@ import ProductGrid from '../components/ProductGrid.astro';
 import TrustBar from '../components/TrustBar.astro';
 import ReviewQuote from '../components/ReviewQuote.astro';
 import reviews from '../data/reviews.json';
-import storyPhoto from '../assets/story/hands.jpg';
+import storyPhoto from '../assets/story/hui.jpg';
 import { site } from '../data/site';
 import { featured, formatPrice, newest, showHatsInNav } from '../lib/products';
 import { faqJsonLd, organizationJsonLd, websiteJsonLd } from '../lib/seo';
@@ -101,7 +101,7 @@ const tiles = [
 
   <section class="section section-sand" aria-labelledby="story-h">
     <div class="container story">
-      <Picture src={storyPhoto} alt="A handmade crochet bag by Hui" formats={['avif', 'webp']} widths={[480, 800]} sizes="(min-width: 56rem) 40vw, 100vw" loading="lazy" class="story-img" />
+      <Picture src={storyPhoto} alt="Hui, who designs and crochets every Sunnie Designs piece, at a café window beside a vase of orange flowers" formats={['avif', 'webp']} widths={[480, 800]} sizes="(min-width: 56rem) 40vw, 100vw" loading="lazy" class="story-img" style="object-position: 50% 20%" />
       <div>
         <h2 id="story-h">{site.makerLine}, one stitch at a time</h2>
         <p class="lead">

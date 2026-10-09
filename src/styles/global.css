@@ -336,3 +336,10 @@ main:focus { outline: none; }
 .field-error { margin: 0; color: var(--terracotta-deep); font-weight: 700; font-size: var(--fs-small); }
 .summary-lines { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
 .summary-lines li { display: flex; justify-content: space-between; gap: 1rem; max-width: none; }
+
+/* Shipping table */
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+.ship-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.ship-table th, .ship-table td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.ship-table thead th { font-weight: 700; }
+.ship-table tbody th { font-weight: 600; }

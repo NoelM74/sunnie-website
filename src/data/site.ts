@@ -12,6 +12,14 @@ export const site = {
   },
   etsyShopUrl: 'https://www.etsy.com/shop/SunnieDesignCo',
   shipsIn: '3–5 days',
+  /** Owner-supplied, 2026-10-09. Working days after dispatch. */
+  delivery: [
+    { region: 'Ireland', carrier: 'An Post', days: '7–12' },
+    { region: 'United Kingdom', carrier: 'Evri', days: '5–8' },
+    { region: 'Rest of the EU', carrier: 'DHL Mail or La Poste', days: '6–14' },
+    { region: 'United States and Canada', carrier: 'USPS (via Dragonfly)', days: '6–12' },
+    { region: 'Rest of the world', carrier: 'YunExpress', days: '8–30' },
+  ],
   replyTime: 'within 24 hours',
   company: {
     legalName: 'Springfield Tectop Limited',

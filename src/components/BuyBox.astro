@@ -1,5 +1,6 @@
 ---
 import { formatPrice } from '../lib/products';
+import { site } from '../data/site';
 
 interface Props {
   slug: string;
@@ -41,6 +42,7 @@ const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices } = As
     </label>
     <button class="btn btn-primary btn-block" type="submit">Add to bag</button>
     <p class="small buy-note">Free worldwide shipping on orders of €49 or more · 30-day returns</p>
+    <p class="small buy-note">Made to order, ships in {site.shipsIn} with tracking. <a href="/shipping/">Delivery times</a></p>
   </form>
 ) : (
   <span class="btn btn-disabled btn-block">Sold out</span>

@@ -3,16 +3,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
 ---
-<BaseLayout title={pageTitle('Shipping and returns')} description={`Shipping costs €5, free on orders of ${site.freeShippingFrom} or more. Ships in ${site.shipsIn} with tracking, worldwide. 30-day returns.`}>
+<BaseLayout title={pageTitle('Shipping and returns')} description={`Shipping costs €5, free on orders of ${site.freeShippingFrom} or more. Made to order, ships in ${site.shipsIn} with tracking. Delivery times by country, worldwide. 30-day returns.`}>
   <article class="container narrow prose">
     <header class="page-head"><h1>Shipping and returns</h1></header>
 
     <h2>Buying on this website</h2>
-    <p>
-      Shipping costs €5.00 per order, and it's free on orders of {site.freeShippingFrom} or more. We ship
-      worldwide. Orders go out in {site.shipsIn} with tracking, and we email you the tracking number once your
-      parcel is on its way.
-    </p>
+    <ul>
+      <li><strong>Cost:</strong> €5.00 per order, worldwide. Free on orders of {site.freeShippingFrom} or more.</li>
+      <li><strong>Processing:</strong> every piece is made to order and ships within {site.shipsIn}.</li>
+      <li><strong>Tracking:</strong> every parcel is tracked, and we email you the tracking number when it ships.</li>
+    </ul>
+
+    <h3>Delivery times</h3>
+    <div class="table-wrap">
+      <table class="ship-table">
+        <thead><tr><th scope="col">Destination</th><th scope="col">Carrier</th><th scope="col">Delivery after dispatch</th></tr></thead>
+        <tbody>
+          {site.delivery.map((d) => <tr><th scope="row">{d.region}</th><td>{d.carrier}</td><td>{d.days} working days</td></tr>)}
+        </tbody>
+      </table>
+    </div>
+    <p>Delivery times count from the day your parcel ships, so add {site.shipsIn} for making and packing.</p>
     <p>
       There are no import charges to pay on delivery to the EU, the UK or the US. The price you see at checkout is
       the full price. Other countries may charge their own import fees on arrival.
