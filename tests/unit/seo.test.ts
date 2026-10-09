@@ -47,6 +47,9 @@ describe('metaDescription', () => {
 });
 
 describe('firstSentences', () => {
+  it('does not split on a decimal point', () => {
+    expect(firstSentences('Fits phones up to 6.5 inches. Hui makes it by hand. Third.', 2)).toBe('Fits phones up to 6.5 inches. Hui makes it by hand.');
+  });
   it('takes the first two sentences and drops the rest', () => {
     expect(firstSentences('Is your bag too small? This one is not. Hui makes it by hand.', 2)).toBe(
       'Is your bag too small? This one is not.',

@@ -22,7 +22,8 @@ export function firstSentences(text: string, count: number): string {
     .replace(/[*_#>`]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
-  const matches = plain.match(/[^.!?]+[.!?]+(?=\s|$)/g);
+  // A sentence ends at . ! or ? followed by a space or the end, so "6.5" stays whole.
+  const matches = plain.match(/\S[\s\S]*?[.!?]+(?=\s|$)/g);
   if (!matches || matches.length === 0) return plain;
   return matches
     .slice(0, count)
