@@ -14,7 +14,9 @@ import { faqJsonLd, organizationJsonLd, websiteJsonLd } from '../lib/seo';
 
 const all = await getCollection('products');
 const best = featured(all);
-const hero = newest(all) ?? best[0];
+// site.heroProduct pins the homepage hero; without it the newest in-stock piece shows.
+const pinned = all.find((p) => p.id === site.heroProduct && p.data.inStock);
+const hero = pinned ?? newest(all) ?? best[0];
 const coaster = best.find((p) => p.data.category === 'coasters') ?? best[2];
 
 const homeFaq = [
