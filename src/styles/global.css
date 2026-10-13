@@ -231,7 +231,7 @@ main:focus { outline: none; }
 .hero-eyebrow { font-size: var(--fs-small); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta-deep); margin-bottom: 0.75rem; }
 .hero-title { font-size: clamp(2.75rem, 1.5rem + 5.2vw, 4.75rem); line-height: 1.02; letter-spacing: -0.02em; margin-bottom: 0.45em; }
 .hero-joy { position: relative; display: inline-block; isolation: isolate; color: var(--terracotta); }
-.hero-joy svg { position: absolute; z-index: -1; left: -3%; bottom: -0.2em; width: 106%; height: 0.2em; overflow: visible; }
+.hero-joy svg { position: absolute; z-index: -1; left: -3%; bottom: -0.26em; width: 106%; height: 0.2em; overflow: visible; }
 .hero-joy path { fill: none; stroke: var(--olive); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 1; vector-effect: non-scaling-stroke; }
 .hero-trust { font-size: var(--fs-small); color: var(--umber-muted); margin-top: 1.25rem; }
 .hero-trust + .hero-trust { margin-top: 0.25rem; }
