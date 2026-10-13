@@ -4,12 +4,13 @@ import { describe, expect, it } from 'vitest';
 import { distTextFiles, findLeaks, gitTrackedTextFiles, htmlFiles, rel } from './helpers';
 
 describe('launch gate', () => {
-  it('every in-stock product links to its own Etsy listing', () => {
+  // Site prices differ from Etsy, so product pages that sell here must not send buyers there.
+  it('no product page that sells on site links out to Etsy', () => {
     const bad = htmlFiles()
       .filter((f) => rel(f).startsWith('products/'))
       .filter((f) => {
         const h = readFileSync(f, 'utf8');
-        return /class="etsy-link"/.test(h) && !/class="etsy-link" href="https:\/\/www\.etsy\.com\/listing\/\d+/.test(h);
+        return h.includes('action="/bag/add/"') && h.includes('etsy.com/listing');
       })
       .map(rel);
     expect(bad).toEqual([]);

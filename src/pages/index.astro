@@ -63,17 +63,28 @@ const tiles = [
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-copy">
-        <h1 class="hero-title">So cute you'll grin. Sturdy enough to carry every day.</h1>
+        <p class="hero-eyebrow">Handmade crochet bags, made to order</p>
+        <h1 class="hero-title">
+          Carry a little
+          <span class="hero-joy">joy<svg viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 22 2, 38 13, 58 7 S 96 3, 117 8" pathLength="1" /></svg></span>.
+        </h1>
         <p class="hero-sub">
-          Crochet phone bags, totes and coasters, {site.heroMakerClause}. Rated {site.proof.etsyRating} on Etsy and
-          {site.proof.ebayPositive} positive across {site.proof.ebayCount} eBay ratings.
+          Soft crochet bags with a face, a flower or a floppy ear, {site.heroMakerClause}. Room for your phone, your
+          keys and your lipstick. Made for you, or for someone you love.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="/shop/bags/">Find your bag</a>
           <a class="btn-ghost" href="/our-story/">Meet Hui</a>
         </div>
+        <p class="hero-trust">
+          <span class="hero-stars" aria-hidden="true">★★★★★</span>
+          Rated {site.proof.etsyRating} on Etsy · {site.proof.ebayPositive} positive across {site.proof.ebayCount} eBay ratings
+        </p>
+        <p class="hero-trust">Free shipping from {site.freeShippingFrom} · 30-day returns</p>
       </div>
       <a class="hero-media" href={`/products/${hero.id}/`}>
+        <span class="hero-sun" aria-hidden="true"></span>
+        <span class="hero-sticker" aria-hidden="true">made<br />by hand</span>
         <Picture
           src={hero.data.images[0].src}
           alt={hero.data.images[0].alt}

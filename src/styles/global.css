@@ -227,13 +227,50 @@ main:focus { outline: none; }
   .hero-inner { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
   .hero-copy { padding-top: clamp(1rem, 4vw, 4.5rem); }
 }
-.hero-title { font-size: var(--fs-hero); line-height: 1.15; margin-bottom: 0.6em; }
+.hero { overflow-x: clip; }
+.hero-eyebrow { font-size: var(--fs-small); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta-deep); margin-bottom: 0.75rem; }
+.hero-title { font-size: clamp(2.75rem, 1.5rem + 5.2vw, 4.75rem); line-height: 1.02; letter-spacing: -0.02em; margin-bottom: 0.45em; }
+.hero-joy { position: relative; display: inline-block; font-style: italic; color: var(--terracotta); }
+.hero-joy svg { position: absolute; left: -4%; right: -4%; bottom: -0.16em; width: 108%; height: 0.24em; overflow: visible; }
+.hero-joy path { fill: none; stroke: var(--olive); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 1; vector-effect: non-scaling-stroke; }
+.hero-trust { font-size: var(--fs-small); color: var(--umber-muted); margin-top: 1.25rem; }
+.hero-trust + .hero-trust { margin-top: 0.25rem; }
+.hero-stars { color: var(--terracotta); letter-spacing: 0.1em; margin-right: 0.35rem; }
+.hero-sun {
+  position: absolute; inset: -9%; z-index: 0; border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, var(--butter) 0deg 9deg, transparent 9deg 18deg);
+  -webkit-mask: radial-gradient(circle, #000 0 66%, transparent 71%); mask: radial-gradient(circle, #000 0 66%, transparent 71%);
+}
+.hero-sticker {
+  position: absolute; z-index: 2; top: 4%; left: -2%; width: 5.25rem; height: 5.25rem; border-radius: 50%;
+  display: grid; place-items: center; text-align: center; line-height: 1.1; rotate: -12deg;
+  background: var(--terracotta); color: var(--white); font-family: var(--font-heading); font-style: italic; font-size: 1.05rem;
+  box-shadow: 0 6px 18px rgb(74 50 34 / 0.18);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > * { animation: hero-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .hero-copy > :nth-child(2) { animation-delay: 0.08s; }
+  .hero-copy > :nth-child(3) { animation-delay: 0.16s; }
+  .hero-copy > :nth-child(4) { animation-delay: 0.24s; }
+  .hero-copy > :nth-child(n + 5) { animation-delay: 0.32s; }
+  .hero-joy path { animation: hero-draw 0.9s 0.55s ease-out both; }
+  .hero-sun { animation: hero-spin 90s linear infinite; }
+  .hero-media picture { animation: hero-float 7s ease-in-out infinite; }
+  .hero-sticker { animation: hero-wobble 5s ease-in-out infinite; }
+  .hero-media:hover .hero-sun { animation-duration: 24s; }
+}
+@keyframes hero-rise { from { opacity: 0; transform: translateY(14px); } }
+@keyframes hero-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes hero-spin { to { transform: rotate(360deg); } }
+@keyframes hero-float { 50% { transform: translateY(-8px); } }
+@keyframes hero-wobble { 50% { rotate: -5deg; } }
 .hero-sub { font-size: var(--fs-body-lg); }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; margin-top: 1.5rem; }
-.hero-media { position: relative; display: block; border-radius: var(--radius); overflow: hidden; background: var(--sand); aspect-ratio: 1 / 1; }
+.hero-media { position: relative; display: block; aspect-ratio: 1 / 1; margin: 6% 4% 0; }
+.hero-media picture { position: relative; z-index: 1; display: block; height: 100%; overflow: hidden; background: var(--sand); border-radius: 46% 46% var(--radius) var(--radius) / 34% 34% var(--radius) var(--radius); box-shadow: 0 18px 40px rgb(74 50 34 / 0.14); }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; }
 .hero-caption {
-  position: absolute; left: 0.75rem; bottom: 0.75rem; right: 0.75rem; width: fit-content;
+  position: absolute; z-index: 2; left: 0.75rem; bottom: 0.75rem; right: 0.75rem; width: fit-content;
   background: var(--sand); color: var(--terracotta-deep); font-weight: 700;
   padding: 0.4rem 0.8rem; border-radius: 999px; font-size: var(--fs-small);
 }

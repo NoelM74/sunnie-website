@@ -6,7 +6,7 @@ describe('homepage', () => {
   const html = page('/');
 
   it('has the approved hero', () => {
-    expect(html).toMatch(/<h1[^>]*>So cute you'll grin\. Sturdy enough to carry every day\.<\/h1>/);
+    expect(html).toMatch(/<h1[^>]*>\s*Carry a little\s*<span class="hero-joy">joy/);
     expect(html).toContain('Find your bag');
     expect(html).toContain('Meet Hui');
     expect(html).toMatch(/<img[^>]*fetchpriority="high"/);

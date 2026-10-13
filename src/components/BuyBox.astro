@@ -47,6 +47,3 @@ const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices } = As
 ) : (
   <span class="btn btn-disabled btn-block">Sold out</span>
 )}
-{siteCheckout !== false && etsyUrl && (
-  <p class="small"><a class="etsy-link" href={etsyUrl} rel="noopener">Also available on our Etsy shop</a></p>
-)}
