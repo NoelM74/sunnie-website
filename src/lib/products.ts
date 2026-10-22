@@ -69,6 +69,7 @@ export function showHatsInNav(items: readonly ProductLike[]): boolean {
 import { site } from '../data/site';
 
 const LOCAL_RATES = site.localRates;
+export const LOCAL_RATES_DATE = site.localRates.asOf;
 
 const EUR = new Intl.NumberFormat('en-IE', { style: 'currency', currency: 'EUR' });
 export function formatPrice(eur: number): string {

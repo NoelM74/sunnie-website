@@ -8,7 +8,7 @@ import FaqList from '../../components/FaqList.astro';
 import Gallery from '../../components/Gallery.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 import { site } from '../../data/site';
-import { CATEGORY_LABELS, formatLocalEstimate, formatPrice, related } from '../../lib/products';
+import { CATEGORY_LABELS, formatLocalEstimate, formatPrice, LOCAL_RATES_DATE, related } from '../../lib/products';
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, firstSentences, metaDescription, productJsonLd, productTitle } from '../../lib/seo';
 
 export async function getStaticPaths() {
@@ -76,7 +76,7 @@ const displayPrice = lowestOptionPrice !== undefined ? `From ${formatPrice(lowes
         {d.isNew && d.inStock && <span class="badge">New</span>}
         <h1>{d.name}</h1>
         <p class="product-price">{displayPrice}</p>
-        <p class="price-note">{lowestOptionPrice === undefined ? formatLocalEstimate(d.price) : `From ${formatLocalEstimate(lowestOptionPrice)}`}. Rough estimates. You pay in euro (€).</p>
+        <p class="price-note">{lowestOptionPrice === undefined ? formatLocalEstimate(d.price) : `From ${formatLocalEstimate(lowestOptionPrice)}`}. Rough estimates at the ECB rate of {LOCAL_RATES_DATE}. You pay in euro (€).</p>
         <p class="product-maker">Made by {d.maker}</p>
         <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} etsyUrl={d.etsyUrl} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} />
         <ul class="product-facts">

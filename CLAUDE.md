@@ -14,3 +14,7 @@ When summarising this conversation, keep these and drop the rest:
 - **Hard rules:** never commit `brand/`, `.superpowers/`, `.playwright-mcp/`, `.dev.vars`, `.wrangler/`, `graphify-out/` or `shop_settings.json`; never log secrets or PII; secrets go in only with `wrangler versions secret bulk` from a file under `%TEMP%`; no invented claims in copy; kill only process ids Claude started.
 
 Drop: full file contents, long tool output, test logs that passed, and the step-by-step narration of finished work. Point to file paths and commit hashes instead.
+
+## Exchange rates (weekly)
+
+Product pages show rough GBP and USD estimates. Once a week, read the ECB daily file at https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml, then set GBP, USD and asOf in `localRates` in `src/data/site.ts`. Checkout always charges in euro. Do not change checkout currency.
