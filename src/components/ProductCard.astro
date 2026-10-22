@@ -1,7 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import { formatPrice } from '../lib/products';
+import { formatLocalEstimate, formatPrice } from '../lib/products';
 
 interface Props {
   product: CollectionEntry<'products'>;
@@ -28,5 +28,5 @@ const badge = !inStock ? 'Sold out' : isNew ? 'New' : null;
     </div>
     <Heading class="card-title">{name}</Heading>
   </a>
-  <p class="card-price">{formatPrice(price)}</p>
+  <p class="card-price">{formatPrice(price)} <span class="card-price-local">{formatLocalEstimate(price)}</span></p>
 </article>

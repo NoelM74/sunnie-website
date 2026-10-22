@@ -66,7 +66,18 @@ export function showHatsInNav(items: readonly ProductLike[]): boolean {
   return items.filter((p) => p.data.category === 'hats' && p.data.inStock).length >= HATS_NAV_MIN;
 }
 
+import { site } from '../data/site';
+
+const LOCAL_RATES = site.localRates;
+
 const EUR = new Intl.NumberFormat('en-IE', { style: 'currency', currency: 'EUR' });
 export function formatPrice(eur: number): string {
   return EUR.format(eur);
+}
+
+// Rough GBP and USD estimate for display only. Rounded to whole units.
+export function formatLocalEstimate(eur: number): string {
+  const gbp = Math.round(eur * LOCAL_RATES.GBP);
+  const usd = Math.round(eur * LOCAL_RATES.USD);
+  return `≈ £${gbp} · ≈ $${usd}`;
 }

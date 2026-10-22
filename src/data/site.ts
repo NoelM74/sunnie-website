@@ -30,6 +30,8 @@ export const site = {
     registeredOffice: 'Clareview Car Sales, Ennis Road, Co. Limerick, V94 EA3A',
   },
   freeShippingFrom: '€49',
+  // Rough display rates only (ECB, 21 Oct 2026). Checkout always charges in euro.
+  localRates: { GBP: 0.84, USD: 1.12 },
   proof: {
     etsyRating: '4.9',
     ebayCount: '287',
