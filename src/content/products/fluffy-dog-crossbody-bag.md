@@ -26,4 +26,6 @@ Hui crochets the body in a dense loop stitch for a soft, plush surface that hold
 
 A cozy, hands-free everyday bag for anyone who wants a dog-lover's accessory without the fuss of a novelty piece.
 
+**Buyer tip:** Set the strap length once with the knot. Wear it short on one shoulder, or long across the body.
+
 *W 13 × H 18 × D 3 cm, strap 120 cm. Each bag is crocheted by hand, so allow 1 to 3 cm either way.*

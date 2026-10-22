@@ -25,4 +25,6 @@ Hui crochets the round black-and-white bear body first, then finishes the face w
 
 A cheerful everyday coin purse for panda lovers, or a fun gift for anyone who likes their accessories with a bit of personality.
 
+**Buyer tip:** Take the strap off and the bag stands upright on its flat base, so it works as a stand-alone purse.
+
 *Top W 10 cm, bottom W 15 cm, H 20 cm, D 10 cm, strap 120 cm. Each purse is crocheted by hand, so allow 1 to 3 cm either way.*

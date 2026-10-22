@@ -26,4 +26,6 @@ Hui crochets the body from soft chenille, gives it white crocheted eyes with bla
 
 It works for concert tees, festival looks and casual errand days where the character design does the talking on its own.
 
+**Buyer tip:** The pearl button opens quickly, so your cash and cards are easy to reach on a busy day.
+
 *W 12 cm, H 17.5 cm, D 1.5 cm, strap 80 cm. Hand crocheted, so allow 1 to 3 cm either way.*
