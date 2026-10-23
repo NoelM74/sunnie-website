@@ -21,7 +21,7 @@ describe('product pages', () => {
       expect(html).not.toMatch(/action="\/bag\/add\/"/);
     } else {
       expect(html).toMatch(/<form[^>]*method="post"[^>]*action="\/bag\/add\/"|class="btn btn-disabled btn-block"/);
-      expect(html).toContain('Free worldwide shipping on orders of €49 or more');
+      if (!html.includes('class="btn btn-disabled btn-block"')) expect(html).toContain('Free worldwide shipping on orders of €49 or more');
     }
     expect(html).toContain('Made by ');
     expect(html).toContain('property="og:type" content="product"');

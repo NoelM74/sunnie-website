@@ -4,7 +4,7 @@ seoTitle: "Crochet blue stripe tote bag with removable flower charm, nautical sh
 category: "bags"
 group: "totes"
 price: 29.95
-inStock: true
+inStock: false
 etsyUrl: "https://www.etsy.com/listing/4518794316/crochet-blue-stripe-tote-bag-with"
 maker: "Hui"
 options: []
