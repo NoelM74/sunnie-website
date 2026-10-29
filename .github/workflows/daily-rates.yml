@@ -1,9 +1,12 @@
-# Rebuilds the site each weekday after the ECB publishes its reference rates, so pound and
-# dollar prices follow the euro. Deploys only when the rates changed (or when run by hand), and only if every test passes.
+# Deploys the site on every push to main, and rebuilds it each weekday after the ECB publishes
+# its reference rates so pound and dollar prices follow the euro. The daily run deploys only when
+# the rates changed. Every deploy needs every test to pass first.
 # Needs two repository secrets: CLOUDFLARE_API_TOKEN (template "Edit Cloudflare Workers") and CLOUDFLARE_ACCOUNT_ID.
-name: Daily exchange rates
+name: Deploy and daily exchange rates
 
 on:
+  push:
+    branches: [main]
   schedule:
     - cron: '0 16 * * 1-5' # 16:00 UTC, after the ECB's ~16:00 CET publication in summer and winter
   workflow_dispatch:
@@ -25,10 +28,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - name: Stop if the rates did not change
+      - name: Daily run stops if the rates did not change
         id: changed
         run: |
-          if [ "${{ github.event_name }}" != "workflow_dispatch" ] && git diff --quiet src/data/rates.json; then echo "deploy=no" >> "$GITHUB_OUTPUT"; else echo "deploy=yes" >> "$GITHUB_OUTPUT"; cat src/data/rates.json; fi
+          if [ "${{ github.event_name }}" = "schedule" ] && git diff --quiet src/data/rates.json; then echo "deploy=no" >> "$GITHUB_OUTPUT"; else echo "deploy=yes" >> "$GITHUB_OUTPUT"; cat src/data/rates.json; fi
       - if: steps.changed.outputs.deploy == 'yes'
         run: npm test && npm run test:dist
       - if: steps.changed.outputs.deploy == 'yes'
