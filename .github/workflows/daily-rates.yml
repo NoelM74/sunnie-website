@@ -1,0 +1,38 @@
+# Rebuilds the site each weekday after the ECB publishes its reference rates, so pound and
+# dollar prices follow the euro. Deploys only when the rates changed, and only if every test passes.
+# Needs two repository secrets: CLOUDFLARE_API_TOKEN (template "Edit Cloudflare Workers") and CLOUDFLARE_ACCOUNT_ID.
+name: Daily exchange rates
+
+on:
+  schedule:
+    - cron: '0 16 * * 1-5' # 16:00 UTC, after the ECB's ~16:00 CET publication in summer and winter
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  rates:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Stop if the rates did not change
+        id: changed
+        run: |
+          if git diff --quiet src/data/rates.json; then echo "deploy=no" >> "$GITHUB_OUTPUT"; else echo "deploy=yes" >> "$GITHUB_OUTPUT"; cat src/data/rates.json; fi
+      - if: steps.changed.outputs.deploy == 'yes'
+        run: npm test && npm run test:dist
+      - if: steps.changed.outputs.deploy == 'yes'
+        run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
