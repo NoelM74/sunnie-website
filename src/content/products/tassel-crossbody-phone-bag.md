@@ -1,5 +1,5 @@
 ---
-name: "Tassel crossbody phone bag"
+name: "Lined tassel phone bag with two straps"
 seoTitle: "Crochet Crossbody Phone Bag with Tassel, Boho Hollow Knit Shoulder Bag, 2 Straps"
 category: "bags"
 group: "totes"

@@ -1,5 +1,5 @@
 ---
-name: "Rose flower coaster with mini basket"
+name: "Rose coasters with mini baskets"
 seoTitle: "Crochet rose flower coaster with mini basket, 12 roses handmade mug rug"
 category: "coasters"
 price: 29.95

@@ -1,5 +1,5 @@
 ---
-name: "Plush dog crossbody phone bag"
+name: "Plush schnauzer, puppy or terrier phone bag"
 seoTitle: "Crochet Plush Dog Crossbody Phone Bag, Grey, Beige, White, Adjustable Brown Strap"
 category: "bags"
 group: "characters"

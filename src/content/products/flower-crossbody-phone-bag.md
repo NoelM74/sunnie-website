@@ -1,5 +1,5 @@
 ---
-name: "Flower crossbody phone bag"
+name: "Tiny flowers phone bag"
 seoTitle: "Crochet flower crossbody phone bag, rainbow floral mini purse, festival bag"
 category: "bags"
 group: "flowers"

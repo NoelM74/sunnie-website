@@ -1,5 +1,5 @@
 ---
-name: "Sheep crossbody bag"
+name: "Curly lamb bag with dangling legs"
 seoTitle: "Crochet sheep crossbody bag, 3D lamb character phone purse"
 category: "bags"
 group: "characters"

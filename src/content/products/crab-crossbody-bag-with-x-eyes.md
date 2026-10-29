@@ -1,5 +1,5 @@
 ---
-name: "Crab crossbody bag with x-eyes"
+name: "X-eyed crab crossbody bag"
 seoTitle: "Crochet crab crossbody bag with x-eyes, handmade acrylic mini purse"
 category: "bags"
 group: "characters"

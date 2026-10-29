@@ -10,7 +10,7 @@ const OPTION_PRICES: Record<string, Record<string, number>> = {
   'flower-mandala-coaster': { '4 coasters + free basket': 2495, '6 coasters + free basket': 3495, '8 coasters + 2 free baskets': 4495 },
   'flower-shoulder-bag-with-flower-charm': { 'Pink Large': 3995, 'Yellow Large': 3995, 'Blue Large': 3995, 'Pink Small': 3495, 'Yellow Small': 3495, 'Blue Small': 3495 },
   'panda-crossbody-bag': { 'Mini Tote Bag': 3495, 'Crossbody Sling Bag': 3795 },
-  'rainbow-crochet-wizard-hat': { '2–5 years -48cm brim': 2295, '5–9 years -58cm brim': 2495 },
+  'rainbow-crochet-wizard-hat': { '2–5 years -48cm brim': 2995, '5–9 years -58cm brim': 3195 },
   'rose-flower-coaster-with-mini-basket': { '2 Coasters and Pots': 2995, '4 Coasters and Pots': 5495, '6 coasters and Pots': 7495 },
 };
 const SLUGS = Object.keys(OPTION_PRICES);

@@ -1,5 +1,5 @@
 ---
-name: "Mandala coaster set of 5"
+name: "Large mandala coasters, set of 5"
 seoTitle: "Crochet mandala coaster set of 5, handmade scalloped mug rugs 19 cm"
 category: "coasters"
 price: 34.95

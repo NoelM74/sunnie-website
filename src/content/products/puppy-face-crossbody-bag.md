@@ -1,5 +1,5 @@
 ---
-name: "Puppy face crossbody bag"
+name: "Odd-eyed puppy face bag"
 seoTitle: "Crochet puppy face crossbody bag, floppy ear dog handmade phone purse"
 category: "bags"
 group: "characters"

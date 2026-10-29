@@ -1,5 +1,5 @@
 ---
-name: "Clown crossbody phone bag"
+name: "Clown phone bag with pointed hat"
 seoTitle: "Crochet clown crossbody phone bag, handmade character mini purse"
 category: "bags"
 group: "characters"

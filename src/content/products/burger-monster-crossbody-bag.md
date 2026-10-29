@@ -1,5 +1,5 @@
 ---
-name: "Burger monster crossbody bag"
+name: "Curly-haired monster crossbody bag"
 seoTitle: "Crochet burger monster crossbody bag, striped character phone purse handmade"
 category: "bags"
 group: "characters"

@@ -15,6 +15,10 @@ describe('catalog.json', () => {
       expect(i.optionPriceCents === null || typeof i.optionPriceCents === 'object').toBe(true);
     }
   });
+  it('gives every product its own name (docs/naming.md)', () => {
+    const names = Object.values(cat).map((p) => String((p as { name: string }).name).toLowerCase());
+    expect(new Set(names).size).toBe(names.length);
+  });
   it('carries per-option prices in cents', () => {
     const mandala = cat['flower-mandala-coaster'] as Record<string, unknown>;
     expect(mandala.siteCheckout).toBe(true);

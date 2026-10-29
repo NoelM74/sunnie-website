@@ -1,5 +1,5 @@
 ---
-name: "Smiley crochet crossbody bag"
+name: "Smiley face crossbody bag"
 seoTitle: "Crochet Smiley Face Crossbody Bag, Chunky Phone Purse, Pink, Blue, Yellow"
 category: "bags"
 group: "characters"

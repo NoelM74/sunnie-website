@@ -1,5 +1,5 @@
 ---
-name: "Plush crossbody bag, puppy, bear or cat"
+name: "Plush puppy, bear or cat bag"
 seoTitle: "Crochet Plush Crossbody Bag, Puppy Bear Cat Phone Purse, Coin Pouch"
 category: "bags"
 group: "characters"

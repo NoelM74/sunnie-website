@@ -1,5 +1,5 @@
 ---
-name: "Poodle crossbody bag"
+name: "Fluffy poodle bag with comb"
 seoTitle: "Crochet Poodle Crossbody Bag, Fluffy Plush Phone Purse, Kids Coin Pouch"
 category: "bags"
 group: "characters"

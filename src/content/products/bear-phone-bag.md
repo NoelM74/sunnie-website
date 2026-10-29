@@ -1,5 +1,5 @@
 ---
-name: "Bear phone bag"
+name: "Bear in a scarf phone bag"
 seoTitle: "Crochet Bear Phone Bag, Striped Scarf Crossbody Purse in Two Colors"
 category: "bags"
 group: "characters"

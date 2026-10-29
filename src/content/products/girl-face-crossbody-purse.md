@@ -1,5 +1,5 @@
 ---
-name: "Girl face crossbody purse"
+name: "Doll face purse with charm"
 seoTitle: "Crochet Girl Face Crossbody Purse, Handmade Phone Pouch Coin Bag"
 category: "bags"
 group: "characters"

@@ -1,5 +1,5 @@
 ---
-name: "Girl character phone bag"
+name: "Gingham bow girl bag"
 seoTitle: "Crochet Girl Character Phone Bag, Red Striped Crossbody Purse"
 category: "bags"
 group: "characters"

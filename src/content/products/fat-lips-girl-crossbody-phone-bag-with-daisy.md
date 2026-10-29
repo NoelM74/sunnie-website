@@ -1,5 +1,5 @@
 ---
-name: "Fat lips girl bag with daisy and pearl"
+name: "Pouty lips girl bag with daisy"
 seoTitle: "Crochet fat lips girl crossbody phone bag with daisy and pearl details"
 category: "bags"
 group: "characters"

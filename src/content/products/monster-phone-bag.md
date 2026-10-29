@@ -1,5 +1,5 @@
 ---
-name: "Monster phone bag"
+name: "Smiling blue monster phone bag"
 seoTitle: "Crochet Monster Phone Bag, Chenille Crossbody with Pearl Button"
 category: "bags"
 group: "characters"

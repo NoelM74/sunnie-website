@@ -1,9 +1,9 @@
 ---
-name: "Cable knit tote bag"
+name: "Cable knit laptop tote"
 seoTitle: "Cable knit tote bag, Aran pattern shoulder bag, 3 colours"
 category: "bags"
 group: "totes"
-price: 44.95
+price: 29.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4501259489/cable-knit-tote-bag-aran-pattern"
 maker: "Hui"

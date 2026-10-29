@@ -1,5 +1,5 @@
 ---
-name: "Rainbow tote bag"
+name: "Rainbow mesh tote with heart purse"
 seoTitle: "Crochet rainbow tote bag, open mesh shoulder bag with heart coin purse"
 category: "bags"
 group: "totes"

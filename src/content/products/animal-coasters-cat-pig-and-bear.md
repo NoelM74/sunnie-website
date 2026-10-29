@@ -1,5 +1,5 @@
 ---
-name: "Animal coasters, cat, pig and bear"
+name: "Cat, pig and bear animal coasters"
 seoTitle: "Crochet Animal Coasters Set of 3 Pig Bear Cat Fruit Design Handmade Drink Mats"
 category: "coasters"
 price: 19.95

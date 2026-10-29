@@ -1,5 +1,5 @@
 ---
-name: "Frog crossbody purse"
+name: "Big-mouth frog in a hooded jacket"
 seoTitle: "Crochet Frog Crossbody Purse, Handmade Big Mouth Hooded Phone Pouch"
 category: "bags"
 group: "characters"

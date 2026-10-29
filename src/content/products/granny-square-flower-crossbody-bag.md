@@ -1,5 +1,5 @@
 ---
-name: "Granny square flower crossbody bag"
+name: "Ruffled granny square flower bag"
 seoTitle: "Crochet granny square flower crossbody bag, small ruffled handmade purse"
 category: "bags"
 group: "flowers"

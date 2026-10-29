@@ -1,5 +1,5 @@
 ---
-name: "Camellia granny square bag"
+name: "Camellia flower granny square purse"
 seoTitle: "Crochet Camellia Granny Square Bag, 3D Flower Drawstring Crossbody"
 category: "bags"
 group: "flowers"

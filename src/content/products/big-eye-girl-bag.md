@@ -1,5 +1,5 @@
 ---
-name: "Big eye girl bag"
+name: "Big-eye fuzzy-hair girl bag"
 seoTitle: "Crochet Big Eye Girl Bag, Fuzzy Hair Crossbody Purse in Four Colors"
 category: "bags"
 group: "characters"

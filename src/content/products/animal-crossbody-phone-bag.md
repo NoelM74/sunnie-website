@@ -1,5 +1,5 @@
 ---
-name: "Animal crossbody phone bag"
+name: "Dangling-leg animal phone bag: sloth, cat, duck or frog"
 seoTitle: "Crochet animal crossbody phone bag, kawaii character purse handmade"
 category: "bags"
 group: "characters"

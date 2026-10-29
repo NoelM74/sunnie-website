@@ -1,5 +1,5 @@
 ---
-name: "Ostrich crossbody bag with loop yarn body"
+name: "Crowned ostrich loop-yarn bag"
 seoTitle: "Crochet ostrich crossbody bag with loop yarn body, handmade character purse"
 category: "bags"
 group: "characters"

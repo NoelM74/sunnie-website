@@ -1,5 +1,5 @@
 ---
-name: "Sunflower coasters set of 4"
+name: "Sunflower coasters with stems, set of 4"
 seoTitle: "Crochet sunflower coasters set of 4, handmade flower mug rugs with stems"
 category: "coasters"
 price: 34.95

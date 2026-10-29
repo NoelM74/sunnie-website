@@ -1,5 +1,5 @@
 ---
-name: "Blue stripe tote, removable flower charm"
+name: "Blue stripe tote with flower and heart charms"
 seoTitle: "Crochet blue stripe tote bag with removable flower charm, nautical shoulder bag"
 category: "bags"
 group: "totes"

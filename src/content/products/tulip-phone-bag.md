@@ -1,5 +1,5 @@
 ---
-name: "Tulip phone bag"
+name: "Tulip or sunflower phone bag with pearl charm"
 seoTitle: "Crochet Tulip Phone Bag, Sunflower Crossbody Purse with Pearl Charm"
 category: "bags"
 group: "flowers"

@@ -1,5 +1,5 @@
 ---
-name: "Flower shoulder bag with flower charm"
+name: "Puffy flower bud shoulder bag"
 seoTitle: "Crochet flower shoulder bag with flower charm, handmade in two sizes"
 category: "bags"
 group: "flowers"

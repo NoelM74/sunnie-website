@@ -1,5 +1,5 @@
 ---
-name: "Hot air balloon crossbody bag"
+name: "Rainbow hot air balloon bag"
 seoTitle: "Crochet hot air balloon crossbody bag, rainbow phone purse with braided strap"
 category: "bags"
 group: "characters"

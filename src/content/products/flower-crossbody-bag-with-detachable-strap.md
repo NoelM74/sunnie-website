@@ -1,5 +1,5 @@
 ---
-name: "Flower crossbody bag with detachable strap"
+name: "Two-way flower bag with handle and strap"
 seoTitle: "Crochet Flower Crossbody Bag, Floral Phone Purse, Detachable Strap"
 category: "bags"
 group: "flowers"

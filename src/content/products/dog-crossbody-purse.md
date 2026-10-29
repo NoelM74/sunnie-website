@@ -1,5 +1,5 @@
 ---
-name: "Dog crossbody purse"
+name: "Squishy long dog crossbody purse"
 seoTitle: "Crochet Dog Crossbody Purse, Handmade Puppy Phone Pouch Coin Bag"
 category: "bags"
 group: "characters"

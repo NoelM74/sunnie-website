@@ -1,5 +1,5 @@
 ---
-name: "Panda coin purse"
+name: "Panda kiss-lock bag"
 seoTitle: "Crochet Panda Coin Purse, Kiss-Lock Crossbody with Bamboo Detail"
 category: "bags"
 group: "characters"

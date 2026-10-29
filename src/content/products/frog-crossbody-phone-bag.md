@@ -1,5 +1,5 @@
 ---
-name: "Frog crossbody phone bag"
+name: "Flip-mouth frog phone bag"
 seoTitle: "Crochet frog crossbody phone bag, big mouth character purse handmade"
 category: "bags"
 group: "characters"

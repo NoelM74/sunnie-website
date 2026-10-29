@@ -1,5 +1,5 @@
 ---
-name: "Fluffy dog crossbody bag"
+name: "Fluffy puppy crossbody bag"
 seoTitle: "Crochet Fluffy Dog Crossbody Bag, Kawaii Puppy Purse Beige Brown Blue"
 category: "bags"
 group: "characters"

@@ -1,5 +1,5 @@
 ---
-name: "Cat crossbody bag with dangling legs"
+name: "Cat in a sweater bag with dangling legs"
 seoTitle: "Crochet Cat Crossbody Bag, Dangling Legs, Big Mouth, Black, Brown, Yellow"
 category: "bags"
 group: "characters"

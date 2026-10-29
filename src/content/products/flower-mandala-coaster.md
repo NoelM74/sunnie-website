@@ -1,5 +1,5 @@
 ---
-name: "Flower mandala coaster"
+name: "Flower mandala coasters with mini basket"
 seoTitle: "Crochet Flower Mandala Coaster Cottagecore Kitchen Decor Granny Chic Mug Rug 8 Colors"
 category: "coasters"
 price: 24.95

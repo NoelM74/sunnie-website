@@ -1,5 +1,5 @@
 ---
-name: "Mushroom house mini crossbody bag"
+name: "Mushroom house mini bag"
 seoTitle: "Crochet mushroom house mini crossbody bag, handmade cottagecore purse"
 category: "bags"
 group: "characters"

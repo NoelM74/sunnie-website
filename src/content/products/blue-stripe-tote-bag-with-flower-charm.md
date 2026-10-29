@@ -1,5 +1,5 @@
 ---
-name: "Blue stripe tote bag with flower charm"
+name: "Blue stripe tote with flower charm"
 seoTitle: "Crochet blue stripe tote bag with flower charm, handmade shoulder bag"
 category: "bags"
 group: "totes"

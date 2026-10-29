@@ -1,5 +1,5 @@
 ---
-name: "Fuzzy monster phone bag"
+name: "Fuzzy winged monster phone bag"
 seoTitle: "Crochet Fuzzy Monster Phone Bag, Kawaii Crossbody Pink or Yellow"
 category: "bags"
 group: "characters"

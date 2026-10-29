@@ -1,5 +1,5 @@
 ---
-name: "Mushroom crossbody bag"
+name: "Mushroom drawstring bag"
 seoTitle: "Crochet mushroom crossbody bag, red drawstring purse handmade cotton"
 category: "bags"
 group: "characters"

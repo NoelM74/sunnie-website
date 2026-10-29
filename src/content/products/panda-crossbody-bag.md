@@ -1,5 +1,5 @@
 ---
-name: "Panda crossbody bag"
+name: "Grumpy panda mini tote or sling"
 seoTitle: "Crochet panda crossbody bag, handmade kawaii phone purse in two styles"
 category: "bags"
 group: "characters"

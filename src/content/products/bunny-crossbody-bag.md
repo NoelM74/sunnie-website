@@ -1,5 +1,5 @@
 ---
-name: "Bunny crossbody bag"
+name: "Rainbow bunny bag with carrot"
 seoTitle: "Crochet Bunny Crossbody Bag, Pink Rainbow Yarn Character Purse"
 category: "bags"
 group: "characters"

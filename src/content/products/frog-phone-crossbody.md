@@ -1,5 +1,5 @@
 ---
-name: "Frog phone crossbody"
+name: "Frog in overalls phone bag"
 seoTitle: "Crochet frog phone crossbody, kawaii green character bag"
 category: "bags"
 group: "characters"
