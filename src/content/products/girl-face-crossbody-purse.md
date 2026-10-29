@@ -3,7 +3,7 @@ name: "Girl face crossbody purse"
 seoTitle: "Crochet Girl Face Crossbody Purse, Handmade Phone Pouch Coin Bag"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4571000902/crochet-girl-face-crossbody-purse"
 maker: "Hui"

@@ -3,7 +3,7 @@ name: "Rainbow tote bag"
 seoTitle: "Crochet rainbow tote bag, open mesh shoulder bag with heart coin purse"
 category: "bags"
 group: "totes"
-price: 24.95
+price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4501233499/crochet-rainbow-tote-bag-open-mesh"
 maker: "Hui"

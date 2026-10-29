@@ -3,7 +3,7 @@ name: "Ostrich crossbody bag with loop yarn body"
 seoTitle: "Crochet ostrich crossbody bag with loop yarn body, handmade character purse"
 category: "bags"
 group: "characters"
-price: 26.95
+price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4507539740/crochet-ostrich-crossbody-bag-with-loop"
 maker: "Hui"

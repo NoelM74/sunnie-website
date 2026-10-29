@@ -3,7 +3,7 @@ name: "Fuzzy monster phone bag"
 seoTitle: "Crochet Fuzzy Monster Phone Bag, Kawaii Crossbody Pink or Yellow"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467419069/crochet-fuzzy-monster-phone-bag-kawaii"
 maker: "Hui"

@@ -3,7 +3,7 @@ name: "Palm tree phone bag"
 seoTitle: "Crochet Palm Tree Phone Bag, Yellow Striped Crossbody Purse for Beach Days"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4541798520/crochet-palm-tree-phone-bag-yellow"
 maker: "Hui"

@@ -3,7 +3,7 @@ name: "Blue stripe tote bag with flower charm"
 seoTitle: "Crochet blue stripe tote bag with flower charm, handmade shoulder bag"
 category: "bags"
 group: "totes"
-price: 26.95
+price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4511341114/crochet-blue-stripe-tote-bag-with-flower"
 maker: "Hui"

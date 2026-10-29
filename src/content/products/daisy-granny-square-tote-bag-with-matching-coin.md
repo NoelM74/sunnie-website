@@ -3,7 +3,7 @@ name: "Daisy granny square tote with coin purse"
 seoTitle: "Crochet daisy granny square tote bag with matching coin purse"
 category: "bags"
 group: "totes"
-price: 29.95
+price: 49.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4464774236/crochet-daisy-granny-square-tote-bag"
 maker: "Hui"

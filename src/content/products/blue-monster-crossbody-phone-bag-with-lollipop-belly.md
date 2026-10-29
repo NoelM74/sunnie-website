@@ -3,7 +3,7 @@ name: "Blue monster phone bag with lollipop belly"
 seoTitle: "Crochet blue monster crossbody phone bag with lollipop belly, handmade"
 category: "bags"
 group: "characters"
-price: 23.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4508140294/crochet-blue-monster-crossbody-phone-bag"
 maker: "Hui"

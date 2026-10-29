@@ -139,7 +139,7 @@ export function organizationJsonLd() {
     url: site.url,
     logo: absoluteUrl('/apple-touch-icon.png'),
     email: site.email.hello,
-    sameAs: [site.etsyShopUrl],
+    sameAs: [site.etsyShopUrl, site.pinterestUrl],
   };
 }
 

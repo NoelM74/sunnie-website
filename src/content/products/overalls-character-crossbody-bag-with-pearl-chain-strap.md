@@ -3,7 +3,7 @@ name: "Overalls character bag with pearl chain strap"
 seoTitle: "Crochet Overalls Character Crossbody Bag with Pearl Chain Strap"
 category: "bags"
 group: "characters"
-price: 27.95
+price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4507646259/crochet-overalls-character-crossbody-bag"
 maker: "Hui"

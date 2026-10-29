@@ -3,7 +3,7 @@ name: "Tulip phone bag"
 seoTitle: "Crochet Tulip Phone Bag, Sunflower Crossbody Purse with Pearl Charm"
 category: "bags"
 group: "flowers"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467416734/crochet-tulip-phone-bag-sunflower"
 maker: "Hui"

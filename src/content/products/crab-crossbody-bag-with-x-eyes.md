@@ -3,7 +3,7 @@ name: "Crab crossbody bag with x-eyes"
 seoTitle: "Crochet crab crossbody bag with x-eyes, handmade acrylic mini purse"
 category: "bags"
 group: "characters"
-price: 23.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4509927120/crochet-crab-crossbody-bag-with-x-eyes"
 maker: "Hui"

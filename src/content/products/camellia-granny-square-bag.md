@@ -3,7 +3,7 @@ name: "Camellia granny square bag"
 seoTitle: "Crochet Camellia Granny Square Bag, 3D Flower Drawstring Crossbody"
 category: "bags"
 group: "flowers"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467432960/crochet-camellia-granny-square-bag-3d"
 maker: "Hui"

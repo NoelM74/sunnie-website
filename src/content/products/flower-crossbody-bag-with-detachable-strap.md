@@ -3,7 +3,7 @@ name: "Flower crossbody bag with detachable strap"
 seoTitle: "Crochet Flower Crossbody Bag, Floral Phone Purse, Detachable Strap"
 category: "bags"
 group: "flowers"
-price: 27.95
+price: 44.95
 inStock: true
 maker: "Hui"
 isNew: true

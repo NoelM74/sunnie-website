@@ -3,7 +3,7 @@ name: "Mushroom crossbody bag"
 seoTitle: "Crochet mushroom crossbody bag, red drawstring purse handmade cotton"
 category: "bags"
 group: "characters"
-price: 23.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4506963387/crochet-mushroom-crossbody-bag-red"
 maker: "Hui"

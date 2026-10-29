@@ -3,7 +3,7 @@ name: "Panda coin purse"
 seoTitle: "Crochet Panda Coin Purse, Kiss-Lock Crossbody with Bamboo Detail"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467385598/crochet-panda-coin-purse-kiss-lock"
 maker: "Hui"

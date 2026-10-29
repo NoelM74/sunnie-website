@@ -3,7 +3,7 @@ name: "Plush dog crossbody phone bag"
 seoTitle: "Crochet Plush Dog Crossbody Phone Bag, Grey, Beige, White, Adjustable Brown Strap"
 category: "bags"
 group: "characters"
-price: 27.95
+price: 44.95
 inStock: true
 maker: "Hui"
 isNew: true

@@ -3,7 +3,7 @@ name: "Granny square flower crossbody bag"
 seoTitle: "Crochet granny square flower crossbody bag, small ruffled handmade purse"
 category: "bags"
 group: "flowers"
-price: 26.95
+price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4509960719/crochet-granny-square-flower-crossbody"
 maker: "Hui"

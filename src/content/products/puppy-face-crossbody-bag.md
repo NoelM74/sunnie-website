@@ -3,7 +3,7 @@ name: "Puppy face crossbody bag"
 seoTitle: "Crochet puppy face crossbody bag, floppy ear dog handmade phone purse"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4508117727/crochet-puppy-face-crossbody-bag-floppy"
 maker: "Hui"

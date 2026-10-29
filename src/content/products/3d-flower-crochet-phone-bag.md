@@ -3,7 +3,7 @@ name: "3D flower crochet phone bag"
 seoTitle: "3D Flower Crochet Phone Bag, Sunflower Rose Cottagecore Crossbody"
 category: "bags"
 group: "flowers"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467412712/3d-flower-crochet-phone-bag-sunflower"
 maker: "Hui"

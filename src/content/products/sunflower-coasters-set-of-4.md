@@ -2,7 +2,7 @@
 name: "Sunflower coasters set of 4"
 seoTitle: "Crochet sunflower coasters set of 4, handmade flower mug rugs with stems"
 category: "coasters"
-price: 26.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4511421082/crochet-sunflower-coasters-set-of-4"
 maker: "Hui"

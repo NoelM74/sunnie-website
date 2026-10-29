@@ -3,7 +3,7 @@ name: "Frog phone crossbody"
 seoTitle: "Crochet frog phone crossbody, kawaii green character bag"
 category: "bags"
 group: "characters"
-price: 29.95
+price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4464749739/crochet-frog-phone-crossbody-kawaii"
 maker: "Hui"

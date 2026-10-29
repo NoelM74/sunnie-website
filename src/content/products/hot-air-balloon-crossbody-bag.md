@@ -3,7 +3,7 @@ name: "Hot air balloon crossbody bag"
 seoTitle: "Crochet hot air balloon crossbody bag, rainbow phone purse with braided strap"
 category: "bags"
 group: "characters"
-price: 18.95
+price: 27.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4501304176/crochet-hot-air-balloon-crossbody-bag"
 maker: "Hui"

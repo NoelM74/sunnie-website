@@ -3,7 +3,7 @@ name: "Flower crossbody phone bag"
 seoTitle: "Crochet flower crossbody phone bag, rainbow floral mini purse, festival bag"
 category: "bags"
 group: "flowers"
-price: 23.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4518751146/crochet-flower-crossbody-phone-bag"
 maker: "Hui"

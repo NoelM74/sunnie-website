@@ -3,7 +3,7 @@ name: "Sunflower drawstring backpack"
 seoTitle: "Crochet sunflower drawstring backpack, green handmade bucket bag with flowers"
 category: "bags"
 group: "totes"
-price: 29.95
+price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4517279965/crochet-sunflower-drawstring-backpack"
 maker: "Hui"

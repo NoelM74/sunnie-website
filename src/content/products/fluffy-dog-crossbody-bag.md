@@ -3,7 +3,7 @@ name: "Fluffy dog crossbody bag"
 seoTitle: "Crochet Fluffy Dog Crossbody Bag, Kawaii Puppy Purse Beige Brown Blue"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467429871/crochet-fluffy-dog-crossbody-bag-kawaii"
 maker: "Hui"

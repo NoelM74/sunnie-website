@@ -3,7 +3,7 @@ name: "Bear phone bag"
 seoTitle: "Crochet Bear Phone Bag, Striped Scarf Crossbody Purse in Two Colors"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4541827924/crochet-bear-phone-bag-striped-scarf"
 maker: "Hui"

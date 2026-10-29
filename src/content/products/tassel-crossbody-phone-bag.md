@@ -3,7 +3,7 @@ name: "Tassel crossbody phone bag"
 seoTitle: "Crochet Crossbody Phone Bag with Tassel, Boho Hollow Knit Shoulder Bag, 2 Straps"
 category: "bags"
 group: "totes"
-price: 23.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4518728952/crochet-crossbody-phone-bag-with-tassel"
 maker: "Hui"

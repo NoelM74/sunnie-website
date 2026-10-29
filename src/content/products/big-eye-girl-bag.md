@@ -3,7 +3,7 @@ name: "Big eye girl bag"
 seoTitle: "Crochet Big Eye Girl Bag, Fuzzy Hair Crossbody Purse in Four Colors"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4541834507/crochet-big-eye-girl-bag-fuzzy-hair"
 maker: "Hui"

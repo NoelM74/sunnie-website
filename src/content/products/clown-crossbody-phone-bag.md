@@ -3,7 +3,7 @@ name: "Clown crossbody phone bag"
 seoTitle: "Crochet clown crossbody phone bag, handmade character mini purse"
 category: "bags"
 group: "characters"
-price: 23.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4517236001/crochet-clown-crossbody-phone-bag"
 maker: "Hui"

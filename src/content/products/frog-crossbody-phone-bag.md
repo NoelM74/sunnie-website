@@ -3,7 +3,7 @@ name: "Frog crossbody phone bag"
 seoTitle: "Crochet frog crossbody phone bag, big mouth character purse handmade"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4507455260/crochet-frog-crossbody-phone-bag-big"
 maker: "Hui"

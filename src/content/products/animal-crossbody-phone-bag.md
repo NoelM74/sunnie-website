@@ -3,7 +3,7 @@ name: "Animal crossbody phone bag"
 seoTitle: "Crochet animal crossbody phone bag, kawaii character purse handmade"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4506899315/crochet-animal-crossbody-phone-bag"
 maker: "Hui"

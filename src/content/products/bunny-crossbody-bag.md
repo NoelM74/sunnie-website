@@ -3,7 +3,7 @@ name: "Bunny crossbody bag"
 seoTitle: "Crochet Bunny Crossbody Bag, Pink Rainbow Yarn Character Purse"
 category: "bags"
 group: "characters"
-price: 22.95
+price: 27.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467407026/crochet-bunny-crossbody-bag-pink-rainbow"
 maker: "Hui"

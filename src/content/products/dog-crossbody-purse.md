@@ -3,7 +3,7 @@ name: "Dog crossbody purse"
 seoTitle: "Crochet Dog Crossbody Purse, Handmade Puppy Phone Pouch Coin Bag"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4568779203/crochet-dog-crossbody-purse-handmade"
 maker: "Hui"

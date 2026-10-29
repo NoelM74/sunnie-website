@@ -1,7 +1,7 @@
 import { toLocalCents, toLocalWholeCents, type Currency } from './currency';
 
 export const SHIPPING_FLAT_CENTS = 500;
-export const FREE_SHIPPING_THRESHOLD_CENTS = 4500;
+export const FREE_SHIPPING_THRESHOLD_CENTS = 4000;
 export const FREE_SHIPPING_EUR = FREE_SHIPPING_THRESHOLD_CENTS / 100;
 
 export const shippingFlatCents = (cur: Currency = 'EUR') => toLocalCents(SHIPPING_FLAT_CENTS, cur);

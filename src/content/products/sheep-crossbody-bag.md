@@ -3,7 +3,7 @@ name: "Sheep crossbody bag"
 seoTitle: "Crochet sheep crossbody bag, 3D lamb character phone purse"
 category: "bags"
 group: "characters"
-price: 22.95
+price: 27.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4464797368/crochet-sheep-crossbody-bag-3d-lamb"
 maker: "Hui"

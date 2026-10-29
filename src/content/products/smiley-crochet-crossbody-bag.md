@@ -3,7 +3,7 @@ name: "Smiley crochet crossbody bag"
 seoTitle: "Crochet Smiley Face Crossbody Bag, Chunky Phone Purse, Pink, Blue, Yellow"
 category: "bags"
 group: "characters"
-price: 25.95
+price: 34.95
 inStock: true
 maker: "Hui"
 isNew: true

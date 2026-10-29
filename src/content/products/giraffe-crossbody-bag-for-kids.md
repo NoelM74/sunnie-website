@@ -3,7 +3,7 @@ name: "Giraffe crossbody bag for kids"
 seoTitle: "Crochet giraffe crossbody bag for kids, handmade yellow animal purse"
 category: "bags"
 group: "characters"
-price: 24.95
+price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4517246912/crochet-giraffe-crossbody-bag-for-kids"
 maker: "Hui"

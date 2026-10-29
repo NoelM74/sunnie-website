@@ -3,7 +3,7 @@ name: "Poodle crossbody bag"
 seoTitle: "Crochet Poodle Crossbody Bag, Fluffy Plush Phone Purse, Kids Coin Pouch"
 category: "bags"
 group: "characters"
-price: 26.95
+price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4581502292/crochet-poodle-crossbody-bag-fluffy"
 maker: "Hui"

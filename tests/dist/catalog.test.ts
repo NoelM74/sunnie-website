@@ -18,11 +18,11 @@ describe('catalog.json', () => {
   it('carries per-option prices in cents', () => {
     const mandala = cat['flower-mandala-coaster'] as Record<string, unknown>;
     expect(mandala.siteCheckout).toBe(true);
-    expect(mandala.priceCents).toBe(1695);
+    expect(mandala.priceCents).toBe(2495);
     expect(mandala.optionPriceCents).toEqual({
-      '4 coasters + free basket': 1695,
-      '6 coasters + free basket': 2295,
-      '8 coasters + 2 free baskets': 2795,
+      '4 coasters + free basket': 2495,
+      '6 coasters + free basket': 3495,
+      '8 coasters + 2 free baskets': 4495,
     });
   });
   it('carries the frog colour option', () => {

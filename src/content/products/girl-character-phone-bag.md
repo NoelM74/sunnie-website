@@ -3,7 +3,7 @@ name: "Girl character phone bag"
 seoTitle: "Crochet Girl Character Phone Bag, Red Striped Crossbody Purse"
 category: "bags"
 group: "characters"
-price: 26.95
+price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467411601/crochet-girl-character-phone-bag-red"
 maker: "Hui"

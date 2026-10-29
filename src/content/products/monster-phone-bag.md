@@ -3,7 +3,7 @@ name: "Monster phone bag"
 seoTitle: "Crochet Monster Phone Bag, Chenille Crossbody with Pearl Button"
 category: "bags"
 group: "characters"
-price: 16.95
+price: 27.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467396559/crochet-monster-phone-bag-chenille"
 maker: "Hui"
