@@ -4,7 +4,7 @@ import { d1Orders } from '../../lib/orders';
 import { paypalClient } from '../../lib/paypal';
 import { resendMailer } from '../../lib/email';
 import { handleReturn } from '../../lib/checkout-handlers';
-import { BAG_COOKIE, ORDER_COOKIE, signValue } from '../../lib/bag-cookie';
+import { BAG_COOKIE, COUNT_COOKIE, ORDER_COOKIE, signValue } from '../../lib/bag-cookie';
 
 export const prerender = false;
 
@@ -22,6 +22,7 @@ export const GET: APIRoute = async ({ url, cookies, redirect }) => {
   });
   if (r.kind === 'complete' || r.kind === 'review') {
     cookies.delete(BAG_COOKIE, { path: '/' });
+    cookies.delete(COUNT_COOKIE, { path: '/' });
     cookies.set(ORDER_COOKIE, await signValue(r.ref, env.BAG_SECRET), { path: '/', httpOnly: true, secure: true, sameSite: 'lax', maxAge: 60 * 60 * 24 });
     const res = redirect(r.kind === 'review' ? '/checkout/complete/?pending=1' : '/checkout/complete/', 303);
     res.headers.set('Cache-Control', 'no-store');

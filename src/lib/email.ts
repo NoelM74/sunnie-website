@@ -1,25 +1,24 @@
 import type { OrderRow } from './orders';
-import { formatPrice } from './products';
+import { formatMoney } from './currency';
 import { countryName } from './checkout-form';
 import { site } from '../data/site';
 
 export interface Email { subject: string; html: string; text: string }
 export interface Mailer { send(to: string, email: Email): Promise<void> }
 
-const euro = (c: number) => formatPrice(c / 100);
 const esc = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 const lineText = (o: OrderRow) =>
-  o.lines.map((l) => `${l.qty} × ${l.name}${l.option ? ` (${l.option})` : ''}  ${euro(l.lineCents)}`);
+  o.lines.map((l) => `${l.qty} × ${l.name}${l.option ? ` (${l.option})` : ''}  ${formatMoney(l.lineCents, o.currency)}`);
 const addressLines = (o: OrderRow) =>
   [o.address.name, o.address.line1, o.address.line2, o.address.city, o.address.region, o.address.postcode, countryName(o.address.country)].filter(
     Boolean,
   );
 const COMPANY = `${site.company.legalName}, trading as ${site.company.tradingAs}. CRO ${site.company.cro}. Registered office: ${site.company.registeredOffice}.`;
 const totals = (o: OrderRow) => [
-  `Subtotal: ${euro(o.subtotalCents)}`,
-  `Shipping: ${o.shippingCents === 0 ? 'Free' : euro(o.shippingCents)}`,
-  `Total paid: ${euro(o.totalCents)}`,
+  `Subtotal: ${formatMoney(o.subtotalCents, o.currency)}`,
+  `Shipping: ${o.shippingCents === 0 ? 'Free' : formatMoney(o.shippingCents, o.currency)}`,
+  `Total paid: ${formatMoney(o.totalCents, o.currency)}`,
 ];
 
 const wrap = (inner: string) =>
@@ -62,7 +61,7 @@ export function buildCustomerEmail(o: OrderRow): Email {
 }
 
 export function buildShopEmail(o: OrderRow, notice?: string): Email {
-  const subject = `${notice ? 'ACTION NEEDED: ' : ''}New order ${o.ref} · ${euro(o.totalCents)}`;
+  const subject = `${notice ? 'ACTION NEEDED: ' : ''}New order ${o.ref} · ${formatMoney(o.totalCents, o.currency)}`;
   const body = [
     'MAKE:',
     ...lineText(o),

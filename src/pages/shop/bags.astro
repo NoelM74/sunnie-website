@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqList from '../../components/FaqList.astro';
-import ProductGrid from '../../components/ProductGrid.astro';
+import ProductBrowser from '../../components/ProductBrowser.astro';
 import { categoryFaq } from '../../data/category-faq';
 import { site } from '../../data/site';
 import { GROUP_LABELS, GROUP_ORDER, inGroup } from '../../lib/products';
@@ -12,7 +12,8 @@ import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageTitle } from '../../li
 const all = await getCollection('products');
 const groups = GROUP_ORDER.map((g) => ({ key: g, label: GROUP_LABELS[g], items: inGroup(all, g) })).filter((g) => g.items.length > 0);
 const crumbs = [{ name: 'Home', path: '/' }, { name: 'Bags', path: '/shop/bags/' }];
-const productUrls = groups.flatMap((g) => g.items.map((p) => `/products/${p.id}/`));
+const bags = groups.flatMap((g) => g.items);
+const productUrls = bags.map((p) => `/products/${p.id}/`);
 const faqItems = categoryFaq.bags;
 const faq = faqJsonLd(faqItems);
 ---
@@ -31,16 +32,8 @@ const faq = faqJsonLd(faqItems);
         crocheted by hand and built to hold your phone, cards and keys, so tap any bag for its size, colours and
         more photos.
       </p>
-      <ul class="jump" role="list">
-        {groups.map((g) => <li><a href={`#${g.key}`}>{g.label}</a></li>)}
-      </ul>
     </header>
-    {groups.map((g, i) => (
-      <section class="group" id={g.key} aria-labelledby={`${g.key}-h`}>
-        <h2 id={`${g.key}-h`}>{g.label}</h2>
-        <ProductGrid products={g.items} eagerFirst={i === 0 ? 4 : 0} />
-      </section>
-    ))}
+    <ProductBrowser products={bags} by="group" />
     <section class="guide prose" aria-labelledby="guide-h">
       <h2 id="guide-h">How to choose a crochet bag</h2>
       <p>

@@ -16,7 +16,8 @@ describe('every page', () => {
       expect(html).toMatch(/<link rel="canonical" href="https:\/\/sunniedesigns\.com\//);
     }
     const scripts = html.match(/<script\b[^>]*>/g) ?? [];
-    expect(scripts.every((s) => s.includes('application/ld+json'))).toBe(true);
+    // Only small inline scripts (currency, basket count, shop filters, buy bar) and JSON-LD: no script files.
+    expect(scripts.filter((s) => /\ssrc=/.test(s))).toEqual([]);
     // Astro's build-time HTML compressor serializes alt="" as a bare `alt` attribute
     // (semantically identical, valid HTML) — accept both forms.
     for (const img of html.match(/<img\b[^>]*>/g) ?? []) expect(img).toMatch(/\salt(=|[\s>])/);

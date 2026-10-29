@@ -1,4 +1,8 @@
 import { site } from './site';
+import { formatAll } from '../lib/currency';
+import { FREE_SHIPPING_THRESHOLD_CENTS } from '../lib/money';
+
+const FREE_SHIPPING = formatAll(FREE_SHIPPING_THRESHOLD_CENTS, { whole: true });
 
 export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: string; a: string }[]> = {
   bags: [
@@ -58,7 +62,7 @@ export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: str
   shop: [
     {
       q: 'Where do I buy from Sunnie Designs?',
-      a: 'Right here: add pieces to your bag and pay with PayPal or any card, no account needed. Shipping is free on orders of €49 or more, and every order comes with 30-day returns. There are no import charges on delivery to the EU, UK or US. Every piece is also on our Etsy shop if you prefer Etsy.',
+      a: `Right here: add pieces to your basket and pay in euro, pounds or dollars with PayPal or any card, no account needed. Shipping is free on orders of ${FREE_SHIPPING} or more, and every order comes with 30-day returns. There are no import charges on delivery to the EU, UK or US. Every piece is also on our Etsy shop if you prefer Etsy.`,
     },
     {
       q: 'Who makes everything in the shop?',

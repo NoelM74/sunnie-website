@@ -1,5 +1,5 @@
 ---
-import { formatPrice } from '../lib/products';
+import Money from './Money.astro';
 import { site } from '../data/site';
 
 interface Props {
@@ -9,8 +9,9 @@ interface Props {
   etsyUrl?: string;
   siteCheckout?: boolean;
   optionPrices?: Record<string, number>;
+  maker: string;
 }
-const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices } = Astro.props;
+const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices, maker } = Astro.props;
 ---
 {siteCheckout === false ? (
   etsyUrl ? (
@@ -19,30 +20,36 @@ const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices } = As
     <span class="btn btn-disabled btn-block">Not available online</span>
   )
 ) : inStock ? (
-  <form class="buy-form" method="post" action="/bag/add/">
+  <form class="buy-form" id="buy-form" method="post" action="/bag/add/">
     <input type="hidden" name="slug" value={slug} />
     {option && (
       <fieldset class="choice">
         <legend>{option.name}</legend>
         <div class="choice-list">
-          {option.values.map((v) => (
+          {option.values.map((v, i) => (
             <label class="choice-opt">
-              <input type="radio" name="option" value={v} required checked={option.values.length === 1} />
-              <span>{v}{optionPrices && ` · ${formatPrice(optionPrices[v])}`}</span>
+              <input type="radio" name="option" value={v} required checked={i === 0} />
+              <span>{v}{optionPrices && <> · <Money eur={optionPrices[v]} /></>}</span>
             </label>
           ))}
         </div>
       </fieldset>
     )}
-    <label class="qty">
-      <span>Quantity</span>
-      <select name="qty">
-        {[1, 2, 3, 4, 5].map((n) => <option value={n}>{n}</option>)}
-      </select>
-    </label>
-    <button class="btn btn-primary btn-block" type="submit">Add to bag</button>
-    <p class="small buy-note">Free worldwide shipping on orders of €49 or more · 30-day returns</p>
-    <p class="small buy-note">Made to order, ships in {site.shipsIn} with tracking. <a href="/shipping/">Delivery times</a></p>
+    <div class="buy-row">
+      <label class="qty">
+        <span>Qty</span>
+        <select name="qty">
+          {[1, 2, 3, 4, 5].map((n) => <option value={n}>{n}</option>)}
+        </select>
+      </label>
+      <button class="btn btn-primary buy-btn" type="submit" data-buy-btn>Add to basket</button>
+    </div>
+    <ul class="buy-ticks" role="list">
+      <li><span>Made to order by {maker}, ships in {site.shipsIn} with tracking</span></li>
+      <li><span>Free shipping from <Money eur={49} whole /> · 30-day returns</span></li>
+      <li><span>No import charges to the EU, UK or US</span></li>
+      <li><span>Pay in euro, pounds or dollars with PayPal or card</span></li>
+    </ul>
   </form>
 ) : (
   <span class="btn btn-disabled btn-block">Sold out</span>

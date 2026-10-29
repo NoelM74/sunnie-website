@@ -5,7 +5,7 @@ import { ORDER_COOKIE, verifyValue } from '../../lib/bag-cookie';
 import { d1Orders } from '../../lib/orders';
 import { RETURN_MESSAGES } from '../../lib/checkout-handlers';
 import { countryName } from '../../lib/checkout-form';
-import { formatPrice } from '../../lib/products';
+import { formatMoney } from '../../lib/currency';
 import { pageTitle } from '../../lib/seo';
 import { site } from '../../data/site';
 
@@ -24,13 +24,13 @@ const order = ref ? await d1Orders(env.ORDERS).findByRef(ref) : null;
 // The order's own status is the source of truth for "still pending"; ?pending=1 is only
 // a hint for when we don't yet have the order (e.g. it hasn't replicated to this read).
 const pending = order ? order.status === 'review' : Astro.url.searchParams.get('pending') === '1';
-const euro = (c: number) => formatPrice(c / 100);
+const euro = (c: number) => formatMoney(c, order?.currency ?? 'EUR');
 const heading = error ? 'Payment problem' : pending ? 'Order received' : 'Thank you for your order';
 ---
 <BaseLayout title={pageTitle(error ? 'Payment problem' : 'Thank you')} description="Your Sunnie Designs order." path="/checkout/complete/" noindex>
   <div class="container narrow">
     {error ? (
-      <header class="page-head"><h1>Payment problem</h1><p>{error}</p><p><a class="btn btn-primary" href="/bag/">Back to your bag</a></p></header>
+      <header class="page-head"><h1>Payment problem</h1><p>{error}</p><p><a class="btn btn-primary" href="/bag/">Back to your basket</a></p></header>
     ) : (
       <>
         <header class="page-head">

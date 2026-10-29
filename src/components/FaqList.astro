@@ -3,17 +3,28 @@ interface Props {
   items: { q: string; a: string }[];
   heading?: string;
   id?: string;
+  /** Fold-open answers (product pages), instead of an open list. */
+  accordion?: boolean;
 }
-const { items, heading = 'Good to know', id = 'faq' } = Astro.props;
+const { items, heading = 'Good to know', id = 'faq', accordion = false } = Astro.props;
 ---
-<section class="faq" aria-labelledby={`${id}-h`}>
+<section class:list={['faq', { 'faq--accordion': accordion }]} aria-labelledby={`${id}-h`}>
   <h2 id={`${id}-h`}>{heading}</h2>
-  <dl>
-    {items.map((it) => (
-      <>
-        <dt>{it.q}</dt>
-        <dd>{it.a}</dd>
-      </>
-    ))}
-  </dl>
+  {accordion ? (
+    items.map((it) => (
+      <details class="fold">
+        <summary>{it.q}</summary>
+        <p>{it.a}</p>
+      </details>
+    ))
+  ) : (
+    <dl>
+      {items.map((it) => (
+        <>
+          <dt>{it.q}</dt>
+          <dd>{it.a}</dd>
+        </>
+      ))}
+    </dl>
+  )}
 </section>

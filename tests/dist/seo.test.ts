@@ -12,10 +12,12 @@ describe('product page structured data', () => {
     expect(product?.sku).toBe(slug);
   });
 
-  it.each(productSlugs)('%s FAQPage question count matches its <dt> count, when it has FAQs', (slug) => {
+  it.each(productSlugs)('%s FAQPage question count matches its visible questions, when it has FAQs', (slug) => {
     const html = page(`/products/${slug}/`);
     const faq = jsonLd(html).find((d) => d['@type'] === 'FAQPage');
-    const dtCount = (html.match(/<dt[ >]/g) ?? []).length;
+    // Product FAQs fold open: count the questions inside the FAQ section only.
+    const faqHtml = html.split('<section class="faq')[1] ?? '';
+    const dtCount = (faqHtml.match(/<dt[ >]|<summary[ >]/g) ?? []).length;
     if (faq) {
       expect(faq.mainEntity).toHaveLength(dtCount);
     } else {

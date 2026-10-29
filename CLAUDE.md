@@ -15,6 +15,6 @@ When summarising this conversation, keep these and drop the rest:
 
 Drop: full file contents, long tool output, test logs that passed, and the step-by-step narration of finished work. Point to file paths and commit hashes instead.
 
-## Exchange rates (weekly)
+## Prices in euro, pounds and dollars
 
-Product pages show rough GBP and USD estimates. Once a week, read the ECB daily file at https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml, then set GBP, USD and asOf in `localRates` in `src/data/site.ts`. Checkout always charges in euro. Do not change checkout currency.
+Prices are set in euro in the product files. Pound and dollar prices are worked out at build time from the ECB rate in `src/data/rates.json` (`src/lib/currency.ts`: rounded up to the next .95; free-shipping threshold rounded up to a whole number). `npm run build` runs `scripts/fetch-rates.mjs` first, so every build uses the latest ECB rate, and the pages and the checkout in one build always agree. The buyer's currency is the `sunnie_cur` cookie (set by the header switch, or guessed from the time zone), else Cloudflare's country header. PayPal is charged in that currency. `.github/workflows/daily-rates.yml` rebuilds and deploys each weekday at 16:00 UTC when the rate changed (needs the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repo secrets). Product structured data stays in euro.

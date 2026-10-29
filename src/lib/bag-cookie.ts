@@ -2,6 +2,15 @@ import type { BagLine } from './pricing';
 
 export const BAG_COOKIE = 'sunnie_bag';
 export const ORDER_COOKIE = 'sunnie_order';
+/** Item count only, readable by the header script. The signed bag cookie stays the source of truth. */
+export const COUNT_COOKIE = 'sunnie_n';
+const MONTH = 60 * 60 * 24 * 30;
+
+interface CookieJar { set(name: string, value: string, opts: Record<string, unknown>): void }
+export async function saveBag(cookies: CookieJar, lines: BagLine[], secret: string): Promise<void> {
+  cookies.set(BAG_COOKIE, await encodeBag(lines, secret), { path: '/', httpOnly: true, secure: true, sameSite: 'lax', maxAge: MONTH });
+  cookies.set(COUNT_COOKIE, String(lines.reduce((n, l) => n + l.qty, 0)), { path: '/', secure: true, sameSite: 'lax', maxAge: MONTH });
+}
 
 const enc = new TextEncoder();
 const b64url = (bytes: ArrayBuffer) =>

@@ -6,7 +6,7 @@ const row: OrderRow = {
   ref: 'SUN-ABC123', email: 'a@b.ie', paypalEnv: 'live',
   address: { name: 'Aoife <script>', line1: '1 Main St', line2: '', city: 'Ennis', region: 'Clare', postcode: 'V95 X1Y2', country: 'IE' },
   lines: [{ slug: 'frog', name: 'Frog phone crossbody', option: 'Pink', qty: 2, unitCents: 2995, lineCents: 5990, thumb: '' }],
-  subtotalCents: 5990, shippingCents: 0, totalCents: 5990,
+  subtotalCents: 5990, shippingCents: 0, totalCents: 5990, currency: 'EUR',
   status: 'paid', paypalOrderId: 'PP-1', captureId: 'CAP-1', createdAt: '2026-10-01T10:00:00Z', paidAt: '2026-10-01T10:01:00Z',
   customerEmailed: false, shopEmailed: false, emailError: null,
 };

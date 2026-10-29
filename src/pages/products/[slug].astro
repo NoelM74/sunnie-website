@@ -6,9 +6,13 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BuyBox from '../../components/BuyBox.astro';
 import FaqList from '../../components/FaqList.astro';
 import Gallery from '../../components/Gallery.astro';
+import Money from '../../components/Money.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 import { site } from '../../data/site';
-import { CATEGORY_LABELS, formatLocalEstimate, formatPrice, LOCAL_RATES_DATE, related } from '../../lib/products';
+import { CATEGORY_LABELS, related } from '../../lib/products';
+import { FREE_SHIPPING_THRESHOLD_CENTS, SHIPPING_FLAT_CENTS } from '../../lib/money';
+import { Picture } from 'astro:assets';
+import huiPhoto from '../../assets/story/hui.jpg';
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, firstSentences, metaDescription, productJsonLd, productTitle } from '../../lib/seo';
 
 export async function getStaticPaths() {
@@ -41,7 +45,9 @@ const material = d.materials.length > 0 ? d.materials.join(', ') : undefined;
 const faq = faqJsonLd(d.faq);
 const optionPriceValues = d.optionPrices ? Object.values(d.optionPrices) : undefined;
 const lowestOptionPrice = optionPriceValues ? Math.min(...optionPriceValues) : undefined;
-const displayPrice = lowestOptionPrice !== undefined ? `From ${formatPrice(lowestOptionPrice)}` : formatPrice(d.price);
+const fromPrefix = lowestOptionPrice !== undefined ? 'From ' : '';
+const shownPrice = lowestOptionPrice ?? d.price;
+const canBuy = d.inStock && d.siteCheckout;
 ---
 <BaseLayout
   title={productTitle(d.name)}
@@ -75,22 +81,49 @@ const displayPrice = lowestOptionPrice !== undefined ? `From ${formatPrice(lowes
       <div class="product-info">
         {d.isNew && d.inStock && <span class="badge">New</span>}
         <h1>{d.name}</h1>
-        <p class="product-price">{displayPrice}</p>
-        <p class="price-note">{lowestOptionPrice === undefined ? formatLocalEstimate(d.price) : `From ${formatLocalEstimate(lowestOptionPrice)}`}. Rough estimates at the ECB rate of {LOCAL_RATES_DATE}. You pay in euro (€).</p>
-        <p class="product-maker">Made by {d.maker}</p>
-        <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} etsyUrl={d.etsyUrl} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} />
-        <ul class="product-facts">
-          {d.size && <li><strong>Size:</strong> {d.size}</li>}
-          {d.materials.length > 0 && <li><strong>Materials:</strong> {d.materials.join(', ')}</li>}
-          <li><strong>Ships in:</strong> {site.shipsIn}</li>
-        </ul>
-        <div class="prose product-body"><Content /></div>
-        {d.faq.length > 0 && <FaqList items={d.faq} />}
+        <p class="product-price">{fromPrefix}<Money eur={shownPrice} /></p>
+        <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} etsyUrl={d.etsyUrl} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} maker={d.maker} />
+        {d.maker === 'Hui' && (
+          <a class="maker-strip" href="/our-story/">
+            <Picture src={huiPhoto} alt="" widths={[96, 192]} sizes="48px" formats={['webp']} class="maker-photo" />
+            <span><strong>Made by Hui</strong>, stitch by stitch, from the first row to the last knot. <span class="maker-more">Meet Hui</span></span>
+          </a>
+        )}
       </div>
     </div>
+    <div class="product-details">
+      <div class="prose product-body"><Content /></div>
+      <div class="product-more">
+        <details class="fold" open>
+          <summary>Size and materials</summary>
+          <ul class="product-facts" role="list">
+            {d.size && <li><strong>Size:</strong> {d.size}</li>}
+            {d.materials.length > 0 && <li><strong>Materials:</strong> {d.materials.join(', ')}</li>}
+            <li><strong>Ships in:</strong> {site.shipsIn}</li>
+          </ul>
+        </details>
+        <details class="fold">
+          <summary>Delivery and returns</summary>
+          <p>Made to order and shipped in {site.shipsIn} with tracking. Shipping costs <Money eur={SHIPPING_FLAT_CENTS / 100} />, and it's free on orders of <Money eur={FREE_SHIPPING_THRESHOLD_CENTS / 100} whole /> or more. No import charges to the EU, UK or US.</p>
+          <ul class="product-facts" role="list">
+            {site.delivery.map((r) => <li><strong>{r.region}:</strong> {r.days} working days</li>)}
+          </ul>
+          <p>Returns within 30 days. <a href="/shipping/">Shipping and returns</a></p>
+        </details>
+        {d.faq.length > 0 && <FaqList items={d.faq} heading="Questions" id="product-faq" accordion />}
+      </div>
+    </div>
+    {canBuy && (
+      <div class="buy-bar" data-buy-bar hidden>
+        <span class="buy-bar-price">{fromPrefix}<Money eur={shownPrice} /></span>
+        <button class="btn btn-primary" type="submit" form="buy-form">Add to basket</button>
+      </div>
+    )}
     <section class="section related" aria-labelledby="related-h">
       <h2 id="related-h">You might also like</h2>
       <ProductGrid products={related(all, product)} />
     </section>
   </div>
+  {/* Phone-width buy bar: shows once the main Add to basket button scrolls out of view. */}
+  <script is:inline>(function(){var bar=document.querySelector('[data-buy-bar]'),btn=document.querySelector('[data-buy-btn]');if(!bar||!btn||!('IntersectionObserver' in window))return;new IntersectionObserver(function(e){bar.hidden=e[0].isIntersecting||e[0].boundingClientRect.top>0}).observe(btn)})();</script>
 </BaseLayout>

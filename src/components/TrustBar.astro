@@ -1,9 +1,10 @@
 ---
 import { site } from '../data/site';
+import Money from './Money.astro';
 ---
 <section class="trust" aria-label="Why buy from us">
   <ul class="container trust-list" role="list">
-    <li><strong>Free shipping from {site.freeShippingFrom}</strong><span>Ships in {site.shipsIn}</span></li>
+    <li><strong>Free shipping from <Money eur={49} whole /></strong><span>Ships in {site.shipsIn}</span></li>
     <li><strong><span class="trust-star" aria-hidden="true">★ </span>{site.proof.etsyRating} on Etsy</strong><span>Star Seller</span></li>
     <li><strong>{site.proof.ebayPositive} positive</strong><span>from {site.proof.ebayCount} eBay ratings</span></li>
     <li><strong>{site.makerLine}</strong><span>Made to order</span></li>

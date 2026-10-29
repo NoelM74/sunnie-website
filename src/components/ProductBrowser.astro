@@ -1,0 +1,83 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Money from './Money.astro';
+import ProductGrid from './ProductGrid.astro';
+import { CATEGORY_LABELS, GROUP_LABELS, GROUP_ORDER, UNDER_PRICE, tagsFor, type Category } from '../lib/products';
+
+// A product grid with filter chips and a sort. Without script, the full grid shows.
+interface Props {
+  products: CollectionEntry<'products'>[];
+  /** 'category' for Shop all, 'group' for Bags, 'none' for small categories. */
+  by: 'category' | 'group' | 'none';
+  headingLevel?: 'h2' | 'h3';
+  eagerFirst?: number;
+}
+const { products, by, headingLevel = 'h2', eagerFirst = 4 } = Astro.props;
+const present = new Set(products.flatMap((p) => tagsFor(p)));
+const main =
+  by === 'category'
+    ? (Object.keys(CATEGORY_LABELS) as Category[]).map((k) => ({ key: k, label: CATEGORY_LABELS[k] }))
+    : by === 'group'
+      ? GROUP_ORDER.map((k) => ({ key: k, label: GROUP_LABELS[k] }))
+      : [];
+const chips = main.filter((c) => present.has(c.key));
+const showUnder = present.has('under') && products.some((p) => !tagsFor(p).includes('under'));
+const showNew = present.has('new');
+---
+<div class="browse" data-browse>
+  <div class="browse-bar" data-browse-bar hidden>
+    <div class="chips" role="group" aria-label="Show">
+      <button type="button" class="chip" data-chip="all" aria-pressed="true">All</button>
+      {chips.map((c) => <button type="button" class="chip" data-chip={c.key} aria-pressed="false">{c.label}</button>)}
+      {showUnder && <button type="button" class="chip" data-chip="under" aria-pressed="false">Under <Money eur={UNDER_PRICE} whole /></button>}
+      {showNew && <button type="button" class="chip" data-chip="new" aria-pressed="false">New</button>}
+    </div>
+    <div class="browse-meta">
+      <p class="browse-count" aria-live="polite"><span data-count>{products.length}</span> pieces</p>
+      <label class="sort">
+        <span>Sort</span>
+        <select data-sort>
+          <option value="">Our picks</option>
+          <option value="new">Newest</option>
+          <option value="low">Price, low to high</option>
+          <option value="high">Price, high to low</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <ProductGrid products={products} headingLevel={headingLevel} eagerFirst={eagerFirst} />
+</div>
+{/* Plain script: the Workers types in this project redefine Element, so a typed client script won't check. */}
+<script is:inline>
+  document.querySelectorAll('[data-browse]').forEach(function (root) {
+    var grid = root.querySelector('ul.grid');
+    var count = root.querySelector('[data-count]');
+    var sort = root.querySelector('[data-sort]');
+    var chips = Array.prototype.slice.call(root.querySelectorAll('[data-chip]'));
+    var items = Array.prototype.slice.call(grid.children);
+    var num = function (el, k) { return Number(el.dataset[k]); };
+    root.querySelector('[data-browse-bar]').hidden = false;
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var tag = chip.dataset.chip, shown = 0;
+        items.forEach(function (li) {
+          li.hidden = tag !== 'all' && li.dataset.tags.split(' ').indexOf(tag) < 0;
+          if (!li.hidden) shown++;
+        });
+        count.textContent = String(shown);
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+      });
+    });
+
+    sort.addEventListener('change', function () {
+      var by = sort.value;
+      items.slice().sort(function (a, b) {
+        return by === 'low' ? num(a, 'price') - num(b, 'price')
+          : by === 'high' ? num(b, 'price') - num(a, 'price')
+          : by === 'new' ? num(b, 'new') - num(a, 'new') || num(a, 'i') - num(b, 'i')
+          : num(a, 'i') - num(b, 'i');
+      }).forEach(function (li) { grid.appendChild(li); });
+    });
+  });
+</script>

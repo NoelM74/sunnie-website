@@ -6,6 +6,7 @@ import { d1Orders, newRef } from '../../lib/orders';
 import { paypalClient } from '../../lib/paypal';
 import { handlePay } from '../../lib/checkout-handlers';
 import { isSameOrigin } from '../../lib/request';
+import { CURRENCY_COOKIE, currencyFromRequest } from '../../lib/currency';
 
 export const prerender = false;
 
@@ -18,6 +19,7 @@ export const POST: APIRoute = async ({ request, cookies, redirect, rewrite, loca
   // Read the form data from a clone: Astro.rewrite() re-sends the original request, and it
   // throws RewriteWithBodyUsed if that request's body has already been consumed here.
   const r = await handlePay(await request.clone().formData(), bag, {
+    currency: currencyFromRequest(cookies.get(CURRENCY_COOKIE)?.value, request),
     catalog,
     orders: d1Orders(env.ORDERS),
     paypal: paypalClient({ clientId: env.PAYPAL_CLIENT_ID, secret: env.PAYPAL_CLIENT_SECRET, env: env.PAYPAL_ENV }),

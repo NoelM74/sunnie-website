@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/fetch-rates.mjs && astro build",
     "check": "wrangler types && astro check",
     "test": "vitest run tests/unit",
     "test:dist": "vitest run tests/dist",
@@ -17,14 +17,15 @@
     "import:etsy": "node scripts/import-etsy.mjs",
     "etsy:urls": "node scripts/apply-etsy-urls.mjs",
     "links": "node scripts/check-links.mjs",
-    "preview": "astro build && wrangler dev",
-    "deploy": "astro build && wrangler deploy"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "rates": "node scripts/fetch-rates.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.7.0",
     "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/source-sans-3": "^5.3.1",
     "@fontsource-variable/source-serif-4": "^5.3.1",
-    "@fontsource/atkinson-hyperlegible": "^5.3.0",
     "astro": "^6.4.8"
   },
   "devDependencies": {

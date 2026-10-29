@@ -2,7 +2,6 @@ import { centsToAmount } from './money';
 import type { OrderInput } from './orders';
 
 const API = { sandbox: 'https://api-m.sandbox.paypal.com', live: 'https://api-m.paypal.com' } as const;
-const eur = (cents: number) => ({ currency_code: 'EUR', value: centsToAmount(cents) });
 
 export class PayPalError extends Error {
   constructor(public status: number, public issue?: string, public debugId?: string) { super(`PayPal ${status}${issue ? ` ${issue}` : ''}`); this.name = 'PayPalError'; }
@@ -32,6 +31,7 @@ function assertConsistentTotals(o: OrderInput) {
 
 export function buildOrderPayload(o: OrderInput, urls: { returnUrl: string; cancelUrl: string }) {
   assertConsistentTotals(o);
+  const money = (cents: number) => ({ currency_code: o.currency, value: centsToAmount(cents) });
   const a = o.address;
   const address: Record<string, string> = { address_line_1: a.line1.slice(0, 300) };
   if (a.line2) address.address_line_2 = a.line2.slice(0, 300);
@@ -46,11 +46,11 @@ export function buildOrderPayload(o: OrderInput, urls: { returnUrl: string; canc
       custom_id: o.ref,
       invoice_id: o.ref,
       description: `Sunnie Designs order ${o.ref}`,
-      amount: { ...eur(o.totalCents), breakdown: { item_total: eur(o.subtotalCents), shipping: eur(o.shippingCents) } },
+      amount: { ...money(o.totalCents), breakdown: { item_total: money(o.subtotalCents), shipping: money(o.shippingCents) } },
       items: o.lines.map((l) => ({
         name: `${l.name}${l.option ? ` (${l.option})` : ''}`.slice(0, 127),
         quantity: String(l.qty),
-        unit_amount: eur(l.unitCents),
+        unit_amount: money(l.unitCents),
         category: 'PHYSICAL_GOODS',
         sku: l.slug.slice(0, 127),
       })),

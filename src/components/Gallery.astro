@@ -21,6 +21,7 @@ const { images, name } = Astro.props;
           loading={i === 0 ? 'eager' : 'lazy'}
           {...(i === 0 ? { fetchpriority: 'high' } : {})}
         />
+        {images.length > 1 && <span class="gallery-count" aria-hidden="true">{i + 1} / {images.length}</span>}
       </li>
     ))}
   </ul>
@@ -29,7 +30,7 @@ const { images, name } = Astro.props;
       {images.map((img, i) => (
         <li>
           <a href={`#photo-${i + 1}`} aria-label={`Show photo ${i + 1} of ${images.length}`}>
-            <Picture src={img.src} alt="" formats={['webp']} fallbackFormat="webp" widths={[96, 192]} sizes="96px" loading="eager" decoding="async" />
+            <Picture src={img.src} alt="" formats={['webp']} fallbackFormat="webp" widths={[96, 192]} sizes="96px" loading="lazy" decoding="async" />
           </a>
         </li>
       ))}

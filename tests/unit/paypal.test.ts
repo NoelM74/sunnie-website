@@ -9,7 +9,7 @@ const order: OrderInput = {
     { slug: 'frog', name: 'Frog phone crossbody', option: 'Pink', qty: 2, unitCents: 2995, lineCents: 5990, thumb: '' },
     { slug: 'coaster', name: 'Flower coaster', qty: 1, unitCents: 1695, lineCents: 1695, thumb: '' },
   ],
-  subtotalCents: 7685, shippingCents: 0, totalCents: 7685,
+  subtotalCents: 7685, shippingCents: 0, totalCents: 7685, currency: 'EUR',
 };
 const urls = { returnUrl: 'https://sunniedesigns.com/checkout/return/', cancelUrl: 'https://sunniedesigns.com/checkout/cancel/' };
 

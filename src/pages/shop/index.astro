@@ -3,16 +3,17 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqList from '../../components/FaqList.astro';
-import ProductGrid from '../../components/ProductGrid.astro';
+import ProductBrowser from '../../components/ProductBrowser.astro';
 import { categoryFaq } from '../../data/category-faq';
 import { site } from '../../data/site';
-import { formatPrice, sortForGrid } from '../../lib/products';
+import { sortForGrid } from '../../lib/products';
+import Money from '../../components/Money.astro';
 import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageTitle } from '../../lib/seo';
 
 const products = sortForGrid(await getCollection('products'));
 const prices = products.map((p) => p.data.price);
-const minPrice = formatPrice(Math.min(...prices));
-const maxPrice = formatPrice(Math.max(...prices));
+const minPrice = Math.min(...prices);
+const maxPrice = Math.max(...prices);
 const crumbs = [{ name: 'Home', path: '/' }, { name: 'Shop all', path: '/shop/' }];
 const faqItems = categoryFaq.shop;
 const faq = faqJsonLd(faqItems);
@@ -32,16 +33,16 @@ const faq = faqJsonLd(faqItems);
     <header class="page-head">
       <h1>Shop all</h1>
       <p>
-        Every bag, coaster and hat we make lives on this one page. In-stock pieces show first, so tap through for
-        sizes, colours and more photos.
+        Every bag, coaster and hat we make lives on this one page. Pick a type or a price to narrow it down, then tap
+        through for sizes, colours and more photos.
       </p>
     </header>
-    <ProductGrid products={products} headingLevel="h2" eagerFirst={4} />
+    <ProductBrowser products={products} by="category" />
     <section class="guide prose" aria-labelledby="guide-h">
       <h2 id="guide-h">How to choose what to buy</h2>
       <p>
         Phone bags and totes cover the day to day, coasters dress up a table or travel well as a gift, and the
-        rainbow wizard hat covers cold-weather kids' gifts. Prices run from {minPrice} to {maxPrice}, and every
+        rainbow wizard hat covers cold-weather kids' gifts. Prices run from <Money eur={minPrice} /> to <Money eur={maxPrice} />, and every
         piece ships in {site.shipsIn} with tracking, whatever the category.
       </p>
       <p>
@@ -55,9 +56,9 @@ const faq = faqJsonLd(faqItems);
       </p>
       <p>
         Every piece is crocheted by hand, so allow a centimetre or two of size variation from the photos, and check
-        the size and materials listed on each product page before you buy. Add pieces to your bag and pay here with
+        the size and materials listed on each product page before you buy. Add pieces to your basket and pay here with
         PayPal or any card, or buy the same piece on our Etsy shop if you prefer. Nollaig packs and ships every order
-        in {site.shipsIn} with tracking, free worldwide on orders of {site.freeShippingFrom} or more.
+        in {site.shipsIn} with tracking, free worldwide on orders of <Money eur={49} whole /> or more.
       </p>
     </section>
     {faqItems.length > 0 && <FaqList items={faqItems} />}

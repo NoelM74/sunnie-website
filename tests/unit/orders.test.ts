@@ -5,7 +5,7 @@ const input = (ref = 'SUN-AAAAAA'): OrderInput => ({
   ref, email: 'a@b.ie',
   address: { name: 'Aoife', line1: '1 Main St', line2: '', city: 'Ennis', region: '', postcode: '', country: 'IE' },
   lines: [{ slug: 'frog', name: 'Frog', option: 'Pink', qty: 1, unitCents: 2995, lineCents: 2995, thumb: '' }],
-  subtotalCents: 2995, shippingCents: 500, totalCents: 3495, paypalEnv: 'sandbox',
+  subtotalCents: 2995, shippingCents: 500, totalCents: 3495, currency: 'EUR', paypalEnv: 'sandbox',
 });
 
 describe('memoryOrders', () => {

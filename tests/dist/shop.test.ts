@@ -7,10 +7,10 @@ describe('shop pages', () => {
   it('shop all lists every product', () => {
     expect(cards(page('/shop/'))).toBe(productCount());
   });
-  it('bags page has three group sections', () => {
+  it('bags page filters by its three groups', () => {
     const html = page('/shop/bags/');
-    for (const label of ['Characters and animals', 'Flowers', 'Totes and shoulder bags']) {
-      expect(html).toContain(`>${label}</h2>`);
+    for (const [key, label] of [['characters', 'Characters and animals'], ['flowers', 'Flowers'], ['totes', 'Totes and shoulder bags']]) {
+      expect(html).toContain(`data-chip="${key}" aria-pressed="false">${label}</button>`);
     }
     expect(cards(html)).toBeGreaterThan(40);
   });

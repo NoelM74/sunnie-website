@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqList from '../../components/FaqList.astro';
-import ProductGrid from '../../components/ProductGrid.astro';
+import ProductBrowser from '../../components/ProductBrowser.astro';
 import { categoryFaq } from '../../data/category-faq';
 import { site } from '../../data/site';
 import { CATEGORY_LABELS, inCategory } from '../../lib/products';
@@ -54,7 +54,7 @@ const faq = faqJsonLd(faqItems);
       <h1>{copy.h1}</h1>
       <p>{copy.intro}</p>
     </header>
-    <ProductGrid products={products} headingLevel="h2" eagerFirst={4} />
+    <ProductBrowser products={products} by="none" />
     {category === 'coasters' ? (
       <section class="guide prose" aria-labelledby="guide-h">
         <h2 id="guide-h">How to choose crochet coasters</h2>

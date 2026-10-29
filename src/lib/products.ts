@@ -21,6 +21,16 @@ export const GROUP_LABELS: Record<Group, string> = {
 };
 export const GROUP_ORDER: Group[] = ['characters', 'flowers', 'totes'];
 export const HATS_NAV_MIN = 4;
+/** "Under €25" filter chip, in euro. */
+export const UNDER_PRICE = 25;
+
+/** Filter tags for the shop grids: category, bag group, 'new', 'under'. */
+export function tagsFor(p: ProductLike & { data: { price: number } }): string[] {
+  const d = p.data;
+  return [d.category, d.group, d.isNew && d.inStock ? 'new' : undefined, d.price < UNDER_PRICE ? 'under' : undefined].filter(
+    (t): t is string => !!t,
+  );
+}
 
 export function sortForGrid<T extends ProductLike>(items: readonly T[]): T[] {
   return [...items].sort(
@@ -66,19 +76,7 @@ export function showHatsInNav(items: readonly ProductLike[]): boolean {
   return items.filter((p) => p.data.category === 'hats' && p.data.inStock).length >= HATS_NAV_MIN;
 }
 
-import { site } from '../data/site';
-
-const LOCAL_RATES = site.localRates;
-export const LOCAL_RATES_DATE = site.localRates.asOf;
-
 const EUR = new Intl.NumberFormat('en-IE', { style: 'currency', currency: 'EUR' });
 export function formatPrice(eur: number): string {
   return EUR.format(eur);
-}
-
-// Rough GBP and USD estimate for display only. Rounded to whole units.
-export function formatLocalEstimate(eur: number): string {
-  const gbp = Math.round(eur * LOCAL_RATES.GBP);
-  const usd = Math.round(eur * LOCAL_RATES.USD);
-  return `≈ £${gbp} · ≈ $${usd}`;
 }

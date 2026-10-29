@@ -3,21 +3,23 @@ import { getCollection } from 'astro:content';
 import logo from '../assets/brand/logo-wordmark.svg?raw';
 import { showHatsInNav } from '../lib/products';
 
-interface Props { current?: 'bags' | 'coasters' | 'hats' | 'story' | 'shop' }
+interface Props { current?: 'bags' | 'coasters' | 'hats' | 'story' | 'shop' | 'reviews' }
 const { current } = Astro.props;
 
 const products = await getCollection('products');
 const links = [
+  { key: 'shop', href: '/shop/', label: 'Shop all' },
   { key: 'bags', href: '/shop/bags/', label: 'Bags' },
   { key: 'coasters', href: '/shop/coasters/', label: 'Coasters' },
   ...(showHatsInNav(products) ? [{ key: 'hats', href: '/shop/hats/', label: 'Hats' }] : []),
   { key: 'story', href: '/our-story/', label: 'Our story' },
-  { key: 'shop', href: '/shop/', label: 'Shop all' },
+  { key: 'reviews', href: '/reviews/', label: 'Reviews' },
 ];
 const items = links.map((l) => {
   const exact = Astro.url.pathname === l.href;
   return { ...l, exact, isSection: !exact && current === l.key };
 });
+const CUR_OPTIONS = [['EUR', '€ EUR'], ['GBP', '£ GBP'], ['USD', '$ USD']];
 ---
 <header class="site-header">
   <div class="container header-inner">
@@ -29,16 +31,28 @@ const items = links.map((l) => {
         ))}
       </ul>
     </nav>
-    <a class="bag-link" href="/bag/" aria-current={Astro.url.pathname === '/bag/' ? 'page' : undefined}>Bag</a>
+    <label class="cur-switch cur-switch--desktop" hidden>
+      <span class="visually-hidden">Currency</span>
+      <select class="cur-select" id="cur-desktop">{CUR_OPTIONS.map(([v, t]) => <option value={v}>{t}</option>)}</select>
+    </label>
+    <a class="bag-link" href="/bag/" aria-current={Astro.url.pathname === '/bag/' ? 'page' : undefined}>Basket<span class="bag-count" data-bag-count hidden></span></a>
     <details class="menu">
       <summary class="menu-btn"><span class="menu-icon" aria-hidden="true"></span>Menu</summary>
-      <nav class="site-nav site-nav--mobile" aria-label="Main">
-        <ul>
-          {items.map((l) => (
-            <li><a href={l.href} aria-current={l.exact ? 'page' : undefined} class={l.isSection ? 'is-section' : undefined}>{l.label}</a></li>
-          ))}
-        </ul>
-      </nav>
+      <div class="menu-panel">
+        <nav class="site-nav site-nav--mobile" aria-label="Main">
+          <ul>
+            {items.map((l) => (
+              <li><a href={l.href} aria-current={l.exact ? 'page' : undefined} class={l.isSection ? 'is-section' : undefined}>{l.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+        <label class="cur-switch cur-switch--mobile" hidden>
+          <span>Prices in</span>
+          <select class="cur-select" id="cur-mobile">{CUR_OPTIONS.map(([v, t]) => <option value={v}>{t}</option>)}</select>
+        </label>
+      </div>
     </details>
   </div>
+  {/* Currency switch and basket count. Without script, prices stay in euro and the count is hidden. */}
+  <script is:inline>(function(){var d=document.documentElement,ss=document.querySelectorAll('.cur-select');ss.forEach(function(s){s.value=d.dataset.cur||'EUR';s.parentNode.hidden=false;s.addEventListener('change',function(){var c=s.value;document.cookie='sunnie_cur='+c+';path=/;max-age=31536000;samesite=lax;secure';d.dataset.cur=c;ss.forEach(function(o){o.value=c});if(/^\/(bag|checkout)\//.test(location.pathname))location.reload()})});var m=/(?:^|; )sunnie_n=(\d+)/.exec(document.cookie),n=m?+m[1]:0,b=document.querySelector('[data-bag-count]');if(b&&n>0){b.innerHTML=n+'<span class="visually-hidden"> items</span>';b.hidden=false}})();</script>
 </header>

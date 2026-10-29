@@ -1,8 +1,8 @@
 ---
 import '@fontsource-variable/source-serif-4';
-import '@fontsource/atkinson-hyperlegible/400.css';
-import '@fontsource/atkinson-hyperlegible/700.css';
+import '@fontsource-variable/source-sans-3';
 import headingWoff2 from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url';
+import bodyWoff2 from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2?url';
 import '../styles/tokens.css';
 import '../styles/global.css';
 import Seo from '../components/Seo.astro';
@@ -19,7 +19,7 @@ interface Props {
   noindex?: boolean;
   canonical?: boolean;
   jsonLd?: object[];
-  current?: 'bags' | 'coasters' | 'hats' | 'story' | 'shop';
+  current?: 'bags' | 'coasters' | 'hats' | 'story' | 'shop' | 'reviews';
 }
 const { jsonLd = [], current, path = Astro.url.pathname, ...seo } = Astro.props;
 ---
@@ -29,6 +29,9 @@ const { jsonLd = [], current, path = Astro.url.pathname, ...seo } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preload" href={headingWoff2} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={bodyWoff2} as="font" type="font/woff2" crossorigin />
+    {/* Pick the price currency before first paint: saved choice, else a guess from the time zone (UK: pounds, US: dollars, rest: euro). Crawlers get euro, to match the product structured data. The bag and checkout read the same cookie. */}
+    <script is:inline>(function(){try{var d=document.documentElement,m=/(?:^|; )sunnie_cur=(EUR|GBP|USD)(?:;|$)/.exec(document.cookie),c=m&&m[1];if(!c&&/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)){d.dataset.cur='EUR';return}if(!c){var z=Intl.DateTimeFormat().resolvedOptions().timeZone||'';c=/^Europe\/(London|Belfast|Isle_of_Man|Jersey|Guernsey)$/.test(z)?'GBP':/^(America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Juneau|Sitka|Nome|Yakutat|Metlakatla|Adak|Boise|Detroit|Menominee|Puerto_Rico|Indiana\/\w+|Kentucky\/\w+|North_Dakota\/\w+)|Pacific\/Honolulu)$/.test(z)?'USD':'EUR';document.cookie='sunnie_cur='+c+';path=/;max-age=31536000;samesite=lax;secure'}d.dataset.cur=c}catch(e){}})();</script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

@@ -1,12 +1,13 @@
 import type { Catalog } from './catalog';
 import type { BagLine } from './pricing';
 import { priceBag } from './pricing';
+import type { Currency } from './currency';
 import { validateCheckout, type CheckoutValues } from './checkout-form';
 import type { OrderRow, OrdersRepo } from './orders';
 import { PayPalError, type PayPalClient } from './paypal';
 import { buildCustomerEmail, buildShopEmail, type Mailer } from './email';
 
-export interface PayDeps { catalog: Catalog; orders: OrdersRepo; paypal: PayPalClient; paypalEnv: 'sandbox' | 'live'; origin: string; newRef: () => string }
+export interface PayDeps { currency: Currency; catalog: Catalog; orders: OrdersRepo; paypal: PayPalClient; paypalEnv: 'sandbox' | 'live'; origin: string; newRef: () => string }
 export interface ReturnDeps { orders: OrdersRepo; paypal: PayPalClient; mailer: Mailer; notifyEmail: string }
 
 type PayResult =
@@ -15,16 +16,16 @@ type PayResult =
   | { kind: 'empty' }
   | { kind: 'payError'; values: CheckoutValues; message: string };
 
-const GENERIC_PAY_ERROR = 'We could not reach PayPal just now. Your bag is saved, please try again in a minute.';
+const GENERIC_PAY_ERROR = 'We could not reach PayPal just now. Your basket is saved, please try again in a minute.';
 const ADDRESS_ISSUE = /^(SHIPPING_ADDRESS_INVALID|POSTAL_CODE_REQUIRED|CITY_REQUIRED|INVALID_POSTAL_CODE|INVALID_COUNTRY_CODE|STATE_REQUIRED|INVALID_STATE)$|ADDRESS/;
 
 export async function handlePay(form: FormData, bag: BagLine[], deps: PayDeps): Promise<PayResult> {
-  const priced = priceBag(bag, deps.catalog);
+  const priced = priceBag(bag, deps.catalog, deps.currency);
   if (priced.lines.length === 0) return { kind: 'empty' };
   const v = validateCheckout(form);
   if (!v.ok) return { kind: 'invalid', values: v.values, errors: v.errors as Record<string, string> };
   const { email, ...address } = v.values;
-  const input = { ref: deps.newRef(), email, address, lines: priced.lines, subtotalCents: priced.subtotalCents, shippingCents: priced.shippingCents, totalCents: priced.totalCents, paypalEnv: deps.paypalEnv };
+  const input = { ref: deps.newRef(), email, address, lines: priced.lines, subtotalCents: priced.subtotalCents, shippingCents: priced.shippingCents, totalCents: priced.totalCents, currency: priced.currency, paypalEnv: deps.paypalEnv };
 
   try {
     await deps.orders.insertPending(input);
@@ -88,7 +89,7 @@ export const RETURN_MESSAGES: Record<'notfound' | 'unconfirmed', string> = {
   unconfirmed: 'We could not confirm your payment with PayPal just now. Please do not pay again. We will check your payment and email you within 24 hours.',
 };
 const DECLINED_MESSAGE =
-  'Your payment did not go through, so nothing was charged. Your bag is saved: please try again or choose another card.';
+  'Your payment did not go through, so nothing was charged. Your basket is saved: please try again or choose another card.';
 
 /** Best-effort shop alert + recordEmail for a captured payment that PayPal confirmed but
  *  this handler could not save (markPaid/markReview or the read after it threw). Built

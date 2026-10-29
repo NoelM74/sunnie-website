@@ -36,7 +36,7 @@ describe('handlePay', () => {
   it('stores a pending order priced on the server and redirects to PayPal', async () => {
     const orders = memoryOrders();
     const { pp, created } = fakePaypal();
-    const r = await handlePay(fd(address), bag, { catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://sunniedesigns.com', newRef: () => 'SUN-TEST01' });
+    const r = await handlePay(fd(address), bag, { currency: 'EUR', catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://sunniedesigns.com', newRef: () => 'SUN-TEST01' });
     expect(r).toEqual({ kind: 'redirect', location: 'https://paypal.test/approve?token=PP-1' });
     expect(created[0].o).toMatchObject({ ref: 'SUN-TEST01', subtotalCents: 2995, shippingCents: 500, totalCents: 3495 });
     expect(created[0].urls).toEqual({ returnUrl: 'https://sunniedesigns.com/checkout/return/', cancelUrl: 'https://sunniedesigns.com/checkout/cancel/' });
@@ -44,12 +44,12 @@ describe('handlePay', () => {
   });
   it('returns field errors without calling PayPal', async () => {
     const { pp, created } = fakePaypal();
-    const r = await handlePay(fd({ ...address, email: 'bad' }), bag, { catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X' });
+    const r = await handlePay(fd({ ...address, email: 'bad' }), bag, { currency: 'EUR', catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X' });
     expect(r.kind).toBe('invalid');
     expect(created).toHaveLength(0);
   });
   it('refuses an empty bag', async () => {
-    const r = await handlePay(fd(address), [], { catalog, orders: memoryOrders(), paypal: fakePaypal().pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X' });
+    const r = await handlePay(fd(address), [], { currency: 'EUR', catalog, orders: memoryOrders(), paypal: fakePaypal().pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X' });
     expect(r).toEqual({ kind: 'empty' });
   });
   it('turns an address rejection into a friendly message', async () => {
@@ -58,7 +58,7 @@ describe('handlePay', () => {
       async captureOrder() { return { status: 'DECLINED', detail: '' }; },
       async getOrder() { throw new Error('not used'); },
     };
-    const r = await handlePay(fd(address), bag, { catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X' });
+    const r = await handlePay(fd(address), bag, { currency: 'EUR', catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X' });
     expect(r.kind).toBe('payError');
     if (r.kind === 'payError') expect(r.message).toMatch(/address/i);
   });
@@ -68,7 +68,7 @@ describe('handlePay', () => {
       async captureOrder() { return { status: 'DECLINED', detail: '' }; },
       async getOrder() { throw new Error('not used'); },
     };
-    const r = await handlePay(fd(address), bag, { catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X2' });
+    const r = await handlePay(fd(address), bag, { currency: 'EUR', catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X2' });
     expect(r.kind).toBe('payError');
     if (r.kind === 'payError') expect(r.message).toMatch(/could not reach PayPal/i);
   });
@@ -79,7 +79,7 @@ describe('handlePay', () => {
       async captureOrder() { return { status: 'DECLINED', detail: '' }; },
       async getOrder() { throw new Error('not used'); },
     };
-    await handlePay(fd(address), bag, { catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-LOG01' });
+    await handlePay(fd(address), bag, { currency: 'EUR', catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-LOG01' });
     expect(errSpy).toHaveBeenCalledWith('paypal create failed', 'PayPalError', 'PayPal 422 SHIPPING_ADDRESS_INVALID', 'SUN-LOG01');
     errSpy.mockRestore();
   });
@@ -99,7 +99,7 @@ describe('handlePay', () => {
     const { pp } = fakePaypal();
     const refs = ['SUN-INS01', 'SUN-INS02'];
     let refCall = 0;
-    const r = await handlePay(fd(address), bag, { catalog, orders: brokenOrders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => refs[refCall++] });
+    const r = await handlePay(fd(address), bag, { currency: 'EUR', catalog, orders: brokenOrders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => refs[refCall++] });
     expect(r.kind).toBe('redirect');
     expect(errSpy).toHaveBeenCalledWith('insertPending failed, retrying with a new ref', 'Error', 'D1 write failed', 'SUN-INS01');
     errSpy.mockRestore();
@@ -111,7 +111,7 @@ describe('handlePay', () => {
       async captureOrder() { return { status: 'DECLINED', detail: '' }; },
       async getOrder() { throw new Error('not used'); },
     };
-    const r = await handlePay(fd(address), bag, { catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-SURVIVE' });
+    const r = await handlePay(fd(address), bag, { currency: 'EUR', catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-SURVIVE' });
     expect(r.kind).toBe('payError');
     expect(await orders.findByRef('SUN-SURVIVE')).toMatchObject({ status: 'pending', emailError: 'PAYPAL_CREATE_FAILED: 500 SERVER_ERROR' });
   });
@@ -122,27 +122,27 @@ describe('handlePay', () => {
       async captureOrder() { return { status: 'DECLINED', detail: '' }; },
       async getOrder() { throw new Error('not used'); },
     };
-    await handlePay(fd(address), bag, { catalog, orders, paypal: pp, paypalEnv: 'live', origin: 'https://x', newRef: () => 'SUN-DEBUG1' });
+    await handlePay(fd(address), bag, { currency: 'EUR', catalog, orders, paypal: pp, paypalEnv: 'live', origin: 'https://x', newRef: () => 'SUN-DEBUG1' });
     expect((await orders.findByRef('SUN-DEBUG1'))?.emailError).toBe('PAYPAL_CREATE_FAILED: 422 PAYEE_ACCOUNT_RESTRICTED (debug id f00dcafe1234)');
   });
   it('retries the pending insert once on a ref collision, then succeeds', async () => {
     const orders = memoryOrders();
-    await orders.insertPending({ ref: 'SUN-DUP01', email: 'x@y.ie', address: { ...address }, lines: [], subtotalCents: 0, shippingCents: 500, totalCents: 500, paypalEnv: 'sandbox' });
+    await orders.insertPending({ ref: 'SUN-DUP01', email: 'x@y.ie', address: { ...address }, lines: [], subtotalCents: 0, shippingCents: 500, totalCents: 500, currency: 'EUR', paypalEnv: 'sandbox' });
     const refs = ['SUN-DUP01', 'SUN-OK002'];
     let call = 0;
     const { pp } = fakePaypal();
-    const r = await handlePay(fd(address), bag, { catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => refs[call++] });
+    const r = await handlePay(fd(address), bag, { currency: 'EUR', catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => refs[call++] });
     expect(r.kind).toBe('redirect');
     expect(await orders.findByRef('SUN-OK002')).toMatchObject({ status: 'pending' });
   });
   it('returns a generic payError when both the original and retried ref collide', async () => {
     const orders = memoryOrders();
-    await orders.insertPending({ ref: 'SUN-DUP01', email: 'x@y.ie', address: { ...address }, lines: [], subtotalCents: 0, shippingCents: 500, totalCents: 500, paypalEnv: 'sandbox' });
-    await orders.insertPending({ ref: 'SUN-DUP02', email: 'x@y.ie', address: { ...address }, lines: [], subtotalCents: 0, shippingCents: 500, totalCents: 500, paypalEnv: 'sandbox' });
+    await orders.insertPending({ ref: 'SUN-DUP01', email: 'x@y.ie', address: { ...address }, lines: [], subtotalCents: 0, shippingCents: 500, totalCents: 500, currency: 'EUR', paypalEnv: 'sandbox' });
+    await orders.insertPending({ ref: 'SUN-DUP02', email: 'x@y.ie', address: { ...address }, lines: [], subtotalCents: 0, shippingCents: 500, totalCents: 500, currency: 'EUR', paypalEnv: 'sandbox' });
     const refs = ['SUN-DUP01', 'SUN-DUP02'];
     let call = 0;
     const { pp, created } = fakePaypal();
-    const r = await handlePay(fd(address), bag, { catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => refs[call++] });
+    const r = await handlePay(fd(address), bag, { currency: 'EUR', catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => refs[call++] });
     expect(r.kind).toBe('payError');
     if (r.kind === 'payError') expect(r.message).toMatch(/could not reach PayPal|try again/i);
     expect(created).toHaveLength(0);
@@ -152,7 +152,7 @@ describe('handlePay', () => {
 describe('handleReturn', () => {
   async function pending() {
     const orders = memoryOrders();
-    await orders.insertPending({ ref: 'SUN-TEST01', email: 'a@b.ie', address: { ...address }, lines: [{ slug: 'frog', name: 'Frog', option: 'Pink', qty: 1, unitCents: 2995, lineCents: 2995, thumb: '' }], subtotalCents: 2995, shippingCents: 500, totalCents: 3495, paypalEnv: 'sandbox' });
+    await orders.insertPending({ ref: 'SUN-TEST01', email: 'a@b.ie', address: { ...address }, lines: [{ slug: 'frog', name: 'Frog', option: 'Pink', qty: 1, unitCents: 2995, lineCents: 2995, thumb: '' }], subtotalCents: 2995, shippingCents: 500, totalCents: 3495, currency: 'EUR', paypalEnv: 'sandbox' });
     await orders.setPaypalId('SUN-TEST01', 'PP-1');
     return orders;
   }
@@ -338,7 +338,7 @@ describe('handleReturn', () => {
 describe('handleReturn stale-pending cleanup', () => {
   async function pendingOrders() {
     const orders = memoryOrders();
-    await orders.insertPending({ ref: 'SUN-TEST01', email: 'a@b.ie', address: { ...address }, lines: [{ slug: 'frog', name: 'Frog', option: 'Pink', qty: 1, unitCents: 2995, lineCents: 2995, thumb: '' }], subtotalCents: 2995, shippingCents: 500, totalCents: 3495, paypalEnv: 'sandbox' });
+    await orders.insertPending({ ref: 'SUN-TEST01', email: 'a@b.ie', address: { ...address }, lines: [{ slug: 'frog', name: 'Frog', option: 'Pink', qty: 1, unitCents: 2995, lineCents: 2995, thumb: '' }], subtotalCents: 2995, shippingCents: 500, totalCents: 3495, currency: 'EUR', paypalEnv: 'sandbox' });
     await orders.setPaypalId('SUN-TEST01', 'PP-1');
     return orders;
   }

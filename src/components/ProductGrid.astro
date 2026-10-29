@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import ProductCard from './ProductCard.astro';
+import { tagsFor } from '../lib/products';
 
 interface Props {
   products: CollectionEntry<'products'>[];
@@ -11,6 +12,8 @@ const { products, headingLevel = 'h3', eagerFirst = 0 } = Astro.props;
 ---
 <ul class="grid" role="list">
   {products.map((p, i) => (
-    <li><ProductCard product={p} headingLevel={headingLevel} eager={i < eagerFirst} /></li>
+    <li data-tags={tagsFor(p).join(' ')} data-price={Math.round(p.data.price * 100)} data-new={p.data.isNew ? 1 : 0} data-i={i}>
+      <ProductCard product={p} headingLevel={headingLevel} eager={i < eagerFirst} />
+    </li>
   ))}
 </ul>

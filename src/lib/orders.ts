@@ -1,5 +1,6 @@
 import type { Address } from './checkout-form';
 import type { PricedLine } from './pricing';
+import { parseCurrency, type Currency } from './currency';
 
 export interface D1Like {
   prepare(sql: string): {
@@ -12,7 +13,7 @@ export interface D1Like {
 
 export interface OrderInput {
   ref: string; email: string; address: Address; lines: PricedLine[];
-  subtotalCents: number; shippingCents: number; totalCents: number; paypalEnv: 'sandbox' | 'live';
+  subtotalCents: number; shippingCents: number; totalCents: number; currency: Currency; paypalEnv: 'sandbox' | 'live';
 }
 export interface OrderRow extends OrderInput {
   status: 'pending' | 'paid' | 'review'; paypalOrderId: string | null; captureId: string | null;
@@ -77,7 +78,7 @@ type Db = Record<string, unknown>;
 function fromDb(r: Db): OrderRow {
   return {
     ref: String(r.ref), email: String(r.email), address: JSON.parse(String(r.address_json)), lines: JSON.parse(String(r.lines_json)),
-    subtotalCents: Number(r.subtotal_cents), shippingCents: Number(r.shipping_cents), totalCents: Number(r.total_cents),
+    subtotalCents: Number(r.subtotal_cents), shippingCents: Number(r.shipping_cents), totalCents: Number(r.total_cents), currency: parseCurrency(r.currency as string) ?? 'EUR',
     paypalEnv: r.paypal_env as 'sandbox' | 'live', status: r.status as 'pending' | 'paid' | 'review',
     paypalOrderId: (r.paypal_order_id as string) ?? null, captureId: (r.capture_id as string) ?? null,
     createdAt: String(r.created_at), paidAt: (r.paid_at as string) ?? null,
@@ -97,8 +98,8 @@ export function d1Orders(db: D1Like): OrdersRepo {
   return {
     async insertPending(o) {
       await db.prepare(`INSERT INTO orders (ref, status, paypal_env, email, address_json, lines_json, subtotal_cents, shipping_cents, total_cents, currency, created_at)
-        VALUES (?, 'pending', ?, ?, ?, ?, ?, ?, ?, 'EUR', ?)`)
-        .bind(o.ref, o.paypalEnv, o.email, JSON.stringify(o.address), JSON.stringify(o.lines), o.subtotalCents, o.shippingCents, o.totalCents, new Date().toISOString()).run();
+        VALUES (?, 'pending', ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+        .bind(o.ref, o.paypalEnv, o.email, JSON.stringify(o.address), JSON.stringify(o.lines), o.subtotalCents, o.shippingCents, o.totalCents, o.currency, new Date().toISOString()).run();
     },
     async setPaypalId(ref, id) { await db.prepare('UPDATE orders SET paypal_order_id = ? WHERE ref = ?').bind(id, ref).run(); },
     async findByPaypalId(id) { const r = await db.prepare('SELECT * FROM orders WHERE paypal_order_id = ?').bind(id).first<Db>(); return r ? fromDb(r) : null; },

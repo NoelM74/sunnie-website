@@ -2,9 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEnv } from '../../lib/env';
 import { loadCatalog } from '../../lib/catalog';
-import { BAG_COOKIE, decodeBag, encodeBag } from '../../lib/bag-cookie';
+import { BAG_COOKIE, decodeBag, saveBag } from '../../lib/bag-cookie';
 import { priceBag } from '../../lib/pricing';
-import { formatPrice } from '../../lib/products';
+import { CURRENCY_COOKIE, CURRENCY_NAMES, currencyFromRequest, formatMoney, toLocalCents } from '../../lib/currency';
 import { pageTitle } from '../../lib/seo';
 
 export const prerender = false;
@@ -13,32 +13,33 @@ Astro.response.headers.set('Cache-Control', 'no-store');
 const env = getEnv();
 const catalog = await loadCatalog((p) => env.ASSETS.fetch(new Request(new URL(p, Astro.request.url))));
 const bag = await decodeBag(Astro.cookies.get(BAG_COOKIE)?.value, env.BAG_SECRET);
-const priced = priceBag(bag, catalog);
+const currency = currencyFromRequest(Astro.cookies.get(CURRENCY_COOKIE)?.value, Astro.request);
+const priced = priceBag(bag, catalog, currency);
 if (priced.dropped.length) {
   const kept = priced.lines.map((l) => (l.option ? { slug: l.slug, option: l.option, qty: l.qty } : { slug: l.slug, qty: l.qty }));
-  Astro.cookies.set(BAG_COOKIE, await encodeBag(kept, env.BAG_SECRET), { path: '/', httpOnly: true, secure: true, sameSite: 'lax', maxAge: 60 * 60 * 24 * 30 });
+  await saveBag(Astro.cookies, kept, env.BAG_SECRET);
 }
 const notice = Astro.url.searchParams.get('n');
 const cancelled = Astro.url.searchParams.get('cancelled') === '1';
 const declined = Astro.url.searchParams.get('declined') === '1';
-const euro = (c: number) => formatPrice(c / 100);
+const euro = (c: number) => formatMoney(c, currency);
 const suggestions = Object.values(catalog)
   .filter((i) => i.featured !== null && i.inStock && !priced.lines.some((l) => l.slug === i.slug))
   .sort((a, b) => (a.featured ?? 9) - (b.featured ?? 9))
   .slice(0, 4);
 ---
-<BaseLayout title={pageTitle('Your bag')} description="Your Sunnie Designs bag." path="/bag/" noindex>
+<BaseLayout title={pageTitle('Your basket')} description="Your Sunnie Designs basket." path="/bag/" noindex>
   <div class="container narrow-wide">
-    <header class="page-head"><h1>Your bag</h1></header>
-    {notice === 'added' && <p class="notice" role="status">Added to your bag.</p>}
+    <header class="page-head"><h1>Your basket</h1></header>
+    {notice === 'added' && <p class="notice" role="status">Added to your basket.</p>}
     {notice === 'invalid' && <p class="notice notice-warn" role="status">That piece couldn't be added. Please choose an option and try again.</p>}
-    {cancelled && <p class="notice" role="status">Payment cancelled. Your bag is just as you left it.</p>}
+    {cancelled && <p class="notice" role="status">Payment cancelled. Your basket is just as you left it.</p>}
     {declined && <p class="notice notice-warn" role="alert">Your payment did not go through, so nothing was charged. Please try again or choose another card.</p>}
     {priced.dropped.length > 0 && <p class="notice notice-warn" role="status">Some items are no longer available and were removed: {priced.dropped.join(', ')}.</p>}
     {priced.lines.length === 0 ? (
       <div class="bag-empty">
-        <p>Your bag is empty.</p>
-        <p><a class="btn btn-primary" href="/shop/bags/">Find your bag</a> <a class="btn-ghost" href="/shop/">Shop all</a></p>
+        <p>Your basket is empty.</p>
+        <p><a class="btn btn-primary" href="/shop/bags/">Browse bags</a> <a class="btn-ghost" href="/shop/">Shop all</a></p>
       </div>
     ) : (
       <div class="bag-grid">
@@ -60,7 +61,7 @@ const suggestions = Object.values(catalog)
               </form>
               <form method="post" action="/bag/remove/">
                 <input type="hidden" name="index" value={i} />
-                <button type="submit" class="btn-ghost" aria-label={`Remove ${l.name} from bag`}>Remove</button>
+                <button type="submit" class="btn-ghost" aria-label={`Remove ${l.name} from basket`}>Remove</button>
               </form>
               <span class="bag-line-total">{euro(l.lineCents)}</span>
             </li>
@@ -73,17 +74,18 @@ const suggestions = Object.values(catalog)
             <div class="bag-total"><dt>Total</dt><dd>{euro(priced.totalCents)}</dd></div>
           </dl>
           {priced.freeShippingGapCents > 0 && <p class="small">Add {euro(priced.freeShippingGapCents)} more for free worldwide shipping.</p>}
+          <p class="small muted">Prices in {CURRENCY_NAMES[currency]}. You pay in {CURRENCY_NAMES[currency]}.</p>
           <a class="btn btn-primary btn-block" href="/checkout/">Checkout</a>
           <a class="btn-ghost" href="/shop/">Continue shopping</a>
         </aside>
       </div>
     )}
-    {priced.freeShippingGapCents > 0 && suggestions.length > 0 && (
+    {(priced.lines.length === 0 || priced.freeShippingGapCents > 0) && suggestions.length > 0 && (
       <section class="section" aria-labelledby="suggest-h">
         <h2 id="suggest-h">Popular pieces</h2>
         <ul class="grid" role="list">
           {suggestions.map((s) => (
-            <li><a class="card card-link" href={`/products/${s.slug}/`}><img src={s.thumb} alt="" width="160" height="160" loading="lazy" /><span class="card-title">{s.name}</span><span class="card-price">{euro(s.priceCents)}</span></a></li>
+            <li><a class="card card-link" href={`/products/${s.slug}/`}><img src={s.thumb} alt="" width="160" height="160" loading="lazy" /><span class="card-title">{s.name}</span><span class="card-price">{euro(toLocalCents(s.priceCents, currency))}</span></a></li>
           ))}
         </ul>
       </section>
