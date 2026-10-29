@@ -2,6 +2,7 @@
 import Money from './Money.astro';
 import { FREE_SHIPPING_EUR } from '../lib/money';
 import { site } from '../data/site';
+import { optionPhoto } from '../lib/product-schema';
 
 interface Props {
   slug: string;
@@ -11,8 +12,12 @@ interface Props {
   siteCheckout?: boolean;
   optionPrices?: Record<string, number>;
   maker: string;
+  /** Gallery alt texts, so each option can point at its photo. */
+  alts?: string[];
+  optionPhotos?: Record<string, number>;
 }
-const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices, maker } = Astro.props;
+const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices, maker, alts = [], optionPhotos } = Astro.props;
+const photoFor = (v: string) => (option ? optionPhoto(v, option.values, alts, optionPhotos) : null);
 ---
 {siteCheckout === false ? (
   etsyUrl ? (
@@ -29,7 +34,7 @@ const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices, maker
         <div class="choice-list">
           {option.values.map((v, i) => (
             <label class="choice-opt">
-              <input type="radio" name="option" value={v} required checked={i === 0} />
+              <input type="radio" name="option" value={v} required checked={i === 0} data-photo={photoFor(v) ?? undefined} />
               <span>{v}{optionPrices && <> · <Money eur={optionPrices[v]} /></>}</span>
             </label>
           ))}

@@ -7,7 +7,8 @@ price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4508117727/crochet-puppy-face-crossbody-bag-floppy"
 maker: "Hui"
-options: [{"name":"Colour","values":["Cream with Black","Tan with dark brown"]}]
+options: [{"name":"Colour","values":["Cream with Black","Tan with dark brown"]}]
+optionPhotos: {"Cream with Black":4,"Tan with dark brown":1}
 materials: ["Polyester"]
 size: "W 17 × H 15 × D 2 cm, strap 100 cm"
 images: [{"src":"../../assets/products/puppy-face-crossbody-bag/01.jpg","alt":"Tan crochet puppy face bag with brown floppy ears held by its handle"},{"src":"../../assets/products/puppy-face-crossbody-bag/02.jpg","alt":"Cream and brown crochet puppy face bags with black and dark brown ears, side by side"},{"src":"../../assets/products/puppy-face-crossbody-bag/03.jpg","alt":"Tan crochet puppy face bag with brown ears worn crossbody over black clothing"},{"src":"../../assets/products/puppy-face-crossbody-bag/04.jpg","alt":"Puppy face crossbody bag, photo 4 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/05.jpg","alt":"Puppy face crossbody bag, photo 5 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/06.jpg","alt":"Puppy face crossbody bag, photo 6 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/07.jpg","alt":"Puppy face crossbody bag, photo 7 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/08.jpg","alt":"Puppy face crossbody bag, photo 8 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/09.jpg","alt":"Puppy face crossbody bag, photo 9 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/10.jpg","alt":"Puppy face crossbody bag, photo 10 of 10"}]

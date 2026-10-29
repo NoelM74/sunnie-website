@@ -18,6 +18,8 @@ const products = defineCollection({
         maker: z.string().min(1),
         options: z.array(z.object({ name: z.string(), values: z.array(z.string()).min(1) })).max(1, 'Only one option group per product is supported by the bag').default([]),
         optionPrices: z.record(z.string(), z.number().positive()).optional(),
+        /** Photo number (1 = first) to show for an option value, when the alt text can't tell. */
+        optionPhotos: z.record(z.string(), z.number().int().positive()).optional(),
         siteCheckout: z.boolean().default(true),
         materials: z.array(z.string()).default([]),
         size: z.string().optional(),
@@ -33,6 +35,10 @@ const products = defineCollection({
       .refine((d) => optionPricesKeysValid(d.options[0]?.values ?? [], d.optionPrices), {
         message: 'optionPrices keys must each match a value in options[0].values',
         path: ['optionPrices'],
+      })
+      .refine((d) => optionPricesKeysValid(d.options[0]?.values ?? [], d.optionPhotos), {
+        message: 'optionPhotos keys must each match a value in options[0].values',
+        path: ['optionPhotos'],
       }),
 });
 

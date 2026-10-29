@@ -7,7 +7,8 @@ price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4467429871/crochet-fluffy-dog-crossbody-bag-kawaii"
 maker: "Hui"
-options: [{"name":"Colour","values":["Brown","Beige","Blue"]}]
+options: [{"name":"Colour","values":["Brown","Beige","Blue"]}]
+optionPhotos: {"Brown":3,"Beige":5,"Blue":4}
 materials: ["Polyester"]
 size: "W 13 × H 18 × D 3 cm, strap 120 cm"
 images: [{"src":"../../assets/products/fluffy-dog-crossbody-bag/01.jpg","alt":"Cream fluffy crochet dog bag with floppy ears, worn crossbody"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/02.jpg","alt":"Cream, brown and blue fluffy crochet dog bags laid out side by side"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/03.jpg","alt":"Brown fluffy crochet dog bag with floppy ears and leather strap"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/04.jpg","alt":"Fluffy dog crossbody bag, photo 4 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/05.jpg","alt":"Fluffy dog crossbody bag, photo 5 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/06.jpg","alt":"Fluffy dog crossbody bag, photo 6 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/07.jpg","alt":"Fluffy dog crossbody bag, photo 7 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/08.jpg","alt":"Fluffy dog crossbody bag, photo 8 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/09.jpg","alt":"Fluffy dog crossbody bag, photo 9 of 10"},{"src":"../../assets/products/fluffy-dog-crossbody-bag/10.jpg","alt":"Fluffy dog crossbody bag, photo 10 of 10"}]

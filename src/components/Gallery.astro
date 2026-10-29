@@ -37,3 +37,5 @@ const { images, name } = Astro.props;
     </ul>
   )}
 </div>
+{/* Picking a colour, design or size shows its photo (radio inputs carry data-photo, see BuyBox). */}
+<script is:inline>(function(){var m=document.querySelector('.gallery-main');if(!m)return;document.addEventListener('change',function(e){var t=e.target;if(!t||t.name!=='option'||t.dataset.photo===undefined)return;var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;m.scrollTo({left:Number(t.dataset.photo)*m.clientWidth,behavior:reduce?'auto':'smooth'})})})();</script>

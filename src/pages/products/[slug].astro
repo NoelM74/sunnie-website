@@ -83,7 +83,7 @@ const canBuy = d.inStock && d.siteCheckout;
         <h1>{d.name}</h1>
         <p class="product-price">{fromPrefix}<Money eur={shownPrice} /></p>
         <p class="product-proof"><span class="hero-stars" aria-hidden="true">★★★★★</span> {site.proof.etsyRating} on Etsy · {site.proof.ebayPositive} positive from {site.proof.ebayCount} eBay ratings</p>
-        <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} etsyUrl={d.etsyUrl} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} maker={d.maker} />
+        <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} etsyUrl={d.etsyUrl} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} maker={d.maker} alts={d.images.map((i) => i.alt)} optionPhotos={d.optionPhotos} />
         {d.maker === 'Hui' && (
           <a class="maker-strip" href="/our-story/">
             <Picture src={huiPhoto} alt="" widths={[96, 192]} sizes="48px" formats={['webp']} class="maker-photo" />

@@ -7,7 +7,8 @@ price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4508210534/crochet-flower-shoulder-bag-with-flower"
 maker: "Hui"
-options: [{"name":"Style","values":["Pink Large","Yellow Large","Blue Large","Pink Small","Yellow Small","Blue Small"]}]
+options: [{"name":"Style","values":["Pink Large","Yellow Large","Blue Large","Pink Small","Yellow Small","Blue Small"]}]
+optionPhotos: {"Pink Large":10,"Pink Small":10}
 optionPrices: {"Pink Large":39.95,"Yellow Large":39.95,"Blue Large":39.95,"Pink Small":34.95,"Yellow Small":34.95,"Blue Small":34.95}
 materials: ["Polyester","Faux pearls"]
 size: "W 23 × H 18 × D 6.5 cm, strap 120 cm"

@@ -7,7 +7,8 @@ price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4541827924/crochet-bear-phone-bag-striped-scarf"
 maker: "Hui"
-options: [{"name":"Colour","values":["Light Brown","Dark Brown"]}]
+options: [{"name":"Colour","values":["Light Brown","Dark Brown"]}]
+optionPhotos: {"Light Brown":1,"Dark Brown":4}
 materials: ["Polyester"]
 size: "W 11 × H 20 × D 2 cm, strap 104 cm"
 images: [{"src":"../../assets/products/bear-phone-bag/01.jpg","alt":"Brown crochet bear phone bag with striped scarf, worn crossbody from behind"},{"src":"../../assets/products/bear-phone-bag/02.jpg","alt":"Brown crochet bear phone bag with teal satchel pocket, close up worn crossbody"},{"src":"../../assets/products/bear-phone-bag/03.jpg","alt":"Brown crochet bear phone bag worn crossbody, side view"},{"src":"../../assets/products/bear-phone-bag/04.jpg","alt":"Bear phone bag, photo 4 of 10"},{"src":"../../assets/products/bear-phone-bag/05.jpg","alt":"Bear phone bag, photo 5 of 10"},{"src":"../../assets/products/bear-phone-bag/06.jpg","alt":"Bear phone bag, photo 6 of 10"},{"src":"../../assets/products/bear-phone-bag/07.jpg","alt":"Bear phone bag, photo 7 of 10"},{"src":"../../assets/products/bear-phone-bag/08.jpg","alt":"Bear phone bag, photo 8 of 10"},{"src":"../../assets/products/bear-phone-bag/09.jpg","alt":"Bear phone bag, photo 9 of 10"},{"src":"../../assets/products/bear-phone-bag/10.jpg","alt":"Bear phone bag, photo 10 of 10"}]

@@ -7,7 +7,8 @@ price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4581502292/crochet-poodle-crossbody-bag-fluffy"
 maker: "Hui"
-options: [{"name":"Colour","values":["Honey Yellow","Cream White","Caramel"]}]
+options: [{"name":"Colour","values":["Honey Yellow","Cream White","Caramel"]}]
+optionPhotos: {"Honey Yellow":1,"Cream White":5,"Caramel":8}
 materials: ["Polyester"]
 size: "Bottom W 17 × Top W 14 × H 15 × D 1 cm, strap 110 cm"
 images: [{"src":"../../assets/products/poodle-crossbody-bag/01.jpg","alt":"Fluffy yellow crochet poodle bag with pastel hair clips, close-up"},{"src":"../../assets/products/poodle-crossbody-bag/02.jpg","alt":"Three fluffy crochet poodle bags in tan, white and yellow on a shelf"},{"src":"../../assets/products/poodle-crossbody-bag/03.jpg","alt":"Yellow fluffy crochet poodle bag worn crossbody over a brown sweater"},{"src":"../../assets/products/poodle-crossbody-bag/04.jpg","alt":"Poodle crossbody bag, photo 4 of 10"},{"src":"../../assets/products/poodle-crossbody-bag/05.jpg","alt":"Poodle crossbody bag, photo 5 of 10"},{"src":"../../assets/products/poodle-crossbody-bag/06.jpg","alt":"Poodle crossbody bag, photo 6 of 10"},{"src":"../../assets/products/poodle-crossbody-bag/07.jpg","alt":"Poodle crossbody bag, photo 7 of 10"},{"src":"../../assets/products/poodle-crossbody-bag/08.jpg","alt":"Poodle crossbody bag, photo 8 of 10"},{"src":"../../assets/products/poodle-crossbody-bag/09.jpg","alt":"Poodle crossbody bag, photo 9 of 10"},{"src":"../../assets/products/poodle-crossbody-bag/10.jpg","alt":"Poodle crossbody bag, photo 10 of 10"}]

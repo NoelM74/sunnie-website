@@ -7,7 +7,8 @@ price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4501233499/crochet-rainbow-tote-bag-open-mesh"
 maker: "Hui"
-options: [{"name":"Colour","values":["warm rainbow","cool rainbow"]}]
+options: [{"name":"Colour","values":["warm rainbow","cool rainbow"]}]
+optionPhotos: {"warm rainbow":2,"cool rainbow":1}
 materials: ["Polyester"]
 size: "W 31 × H 27 × D 6 cm, strap 48 cm"
 images: [{"src":"../../assets/products/rainbow-tote-bag/01.jpg","alt":"Open mesh crochet tote bag in warm rainbow stripes with a heart coin purse charm"},{"src":"../../assets/products/rainbow-tote-bag/02.jpg","alt":"Open mesh crochet tote bag in pink and yellow tones with a heart coin purse"},{"src":"../../assets/products/rainbow-tote-bag/03.jpg","alt":"Open mesh crochet tote bag in pastel rainbow stripes hanging by its straps"},{"src":"../../assets/products/rainbow-tote-bag/04.jpg","alt":"Rainbow tote bag, photo 4 of 10"},{"src":"../../assets/products/rainbow-tote-bag/05.jpg","alt":"Rainbow tote bag, photo 5 of 10"},{"src":"../../assets/products/rainbow-tote-bag/06.jpg","alt":"Rainbow tote bag, photo 6 of 10"},{"src":"../../assets/products/rainbow-tote-bag/07.jpg","alt":"Rainbow tote bag, photo 7 of 10"},{"src":"../../assets/products/rainbow-tote-bag/08.jpg","alt":"Rainbow tote bag, photo 8 of 10"},{"src":"../../assets/products/rainbow-tote-bag/09.jpg","alt":"Rainbow tote bag, photo 9 of 10"},{"src":"../../assets/products/rainbow-tote-bag/10.jpg","alt":"Rainbow tote bag, photo 10 of 10"}]

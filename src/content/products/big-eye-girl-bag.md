@@ -7,7 +7,8 @@ price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4541834507/crochet-big-eye-girl-bag-fuzzy-hair"
 maker: "Hui"
-options: [{"name":"Colour","values":["Pink","Purple","Blue","Green"]}]
+options: [{"name":"Colour","values":["Pink","Purple","Blue","Green"]}]
+optionPhotos: {"Blue":4}
 materials: ["Fabric","Polyester"]
 size: "W 13 × H 25 × D 1 cm, strap 110 cm"
 images: [{"src":"../../assets/products/big-eye-girl-bag/01.jpg","alt":"Pink tweed big eye girl bag with fuzzy brown hair, worn crossbody"},{"src":"../../assets/products/big-eye-girl-bag/02.jpg","alt":"Purple tweed big eye girl bag with fuzzy brown hair and flower, worn crossbody"},{"src":"../../assets/products/big-eye-girl-bag/03.jpg","alt":"Green tweed big eye girl bag with fuzzy brown hair, worn crossbody"},{"src":"../../assets/products/big-eye-girl-bag/04.jpg","alt":"Big eye girl bag, photo 4 of 10"},{"src":"../../assets/products/big-eye-girl-bag/05.jpg","alt":"Big eye girl bag, photo 5 of 10"},{"src":"../../assets/products/big-eye-girl-bag/06.jpg","alt":"Big eye girl bag, photo 6 of 10"},{"src":"../../assets/products/big-eye-girl-bag/07.jpg","alt":"Big eye girl bag, photo 7 of 10"},{"src":"../../assets/products/big-eye-girl-bag/08.jpg","alt":"Big eye girl bag, photo 8 of 10"},{"src":"../../assets/products/big-eye-girl-bag/09.jpg","alt":"Big eye girl bag, photo 9 of 10"},{"src":"../../assets/products/big-eye-girl-bag/10.jpg","alt":"Big eye girl bag, photo 10 of 10"}]

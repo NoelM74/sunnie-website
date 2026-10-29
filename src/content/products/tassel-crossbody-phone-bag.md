@@ -7,7 +7,8 @@ price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4518728952/crochet-crossbody-phone-bag-with-tassel"
 maker: "Hui"
-options: [{"name":"Colour","values":["Off White/Cream","Khaki/Beige"]}]
+options: [{"name":"Colour","values":["Off White/Cream","Khaki/Beige"]}]
+optionPhotos: {"Off White/Cream":2,"Khaki/Beige":1}
 materials: ["Canvas","Polyester-acrylic yarn","Metal","Faux leather"]
 size: "W 14.5 × H 20 × D 1.5 cm, strap 120 cm"
 images: [{"src":"../../assets/products/tassel-crossbody-phone-bag/01.jpg","alt":"Tan crochet crossbody bag with tassel and wood beads, worn over a belt"},{"src":"../../assets/products/tassel-crossbody-phone-bag/02.jpg","alt":"Cream crochet crossbody bag with tassel charm worn across the body"},{"src":"../../assets/products/tassel-crossbody-phone-bag/03.jpg","alt":"Cream crochet tassel bag worn crossbody, seen from behind"},{"src":"../../assets/products/tassel-crossbody-phone-bag/04.jpg","alt":"Tassel crossbody phone bag, photo 4 of 10"},{"src":"../../assets/products/tassel-crossbody-phone-bag/05.jpg","alt":"Tassel crossbody phone bag, photo 5 of 10"},{"src":"../../assets/products/tassel-crossbody-phone-bag/06.jpg","alt":"Tassel crossbody phone bag, photo 6 of 10"},{"src":"../../assets/products/tassel-crossbody-phone-bag/07.jpg","alt":"Tassel crossbody phone bag, photo 7 of 10"},{"src":"../../assets/products/tassel-crossbody-phone-bag/08.jpg","alt":"Tassel crossbody phone bag, photo 8 of 10"},{"src":"../../assets/products/tassel-crossbody-phone-bag/09.jpg","alt":"Tassel crossbody phone bag, photo 9 of 10"},{"src":"../../assets/products/tassel-crossbody-phone-bag/10.jpg","alt":"Tassel crossbody phone bag, photo 10 of 10"}]

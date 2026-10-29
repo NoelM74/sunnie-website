@@ -12,6 +12,7 @@ export const site = {
   },
   etsyShopUrl: 'https://www.etsy.com/shop/SunnieDesignCo',
   pinterestUrl: 'https://www.pinterest.com/Sunnie_Designs/',
+  facebookUrl: 'https://www.facebook.com/sunniedesigns',
   /** Owner's pick for the homepage hero (2026-10-13). Remove to show the newest piece. */
   heroProduct: 'plush-dog-crossbody-phone-bag',
   shipsIn: '3–5 days',

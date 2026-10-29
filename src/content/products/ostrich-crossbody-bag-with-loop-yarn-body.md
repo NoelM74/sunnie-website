@@ -7,7 +7,8 @@ price: 44.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4507539740/crochet-ostrich-crossbody-bag-with-loop"
 maker: "Hui"
-options: [{"name":"Colour","values":["Pink","Black","Brown"]}]
+options: [{"name":"Colour","values":["Pink","Black","Brown"]}]
+optionPhotos: {"Pink":1,"Black":3,"Brown":4}
 materials: ["Polyester","Faux pearls"]
 size: "W 14 × H 11 × D 14 cm, strap 108 cm"
 images: [{"src":"../../assets/products/ostrich-crossbody-bag-with-loop-yarn-body/01.jpg","alt":"Pink shaggy loop-yarn crochet ostrich bag with a white head worn crossbody"},{"src":"../../assets/products/ostrich-crossbody-bag-with-loop-yarn-body/02.jpg","alt":"Girl in a pale blue outfit with a pink loop-yarn crochet ostrich bag"},{"src":"../../assets/products/ostrich-crossbody-bag-with-loop-yarn-body/03.jpg","alt":"Girl at a cafe table with a black loop-yarn crochet ostrich bag crossbody"},{"src":"../../assets/products/ostrich-crossbody-bag-with-loop-yarn-body/04.jpg","alt":"Ostrich crossbody bag with loop yarn body, photo 4 of 10"},{"src":"../../assets/products/ostrich-crossbody-bag-with-loop-yarn-body/05.jpg","alt":"Ostrich crossbody bag with loop yarn body, photo 5 of 10"},{"src":"../../assets/products/ostrich-crossbody-bag-with-loop-yarn-body/06.jpg","alt":"Ostrich crossbody bag with loop yarn body, photo 6 of 10"},{"src":"../../assets/products/ostrich-crossbody-bag-with-loop-yarn-body/07.jpg","alt":"Ostrich crossbody bag with loop yarn body, photo 7 of 10"},{"src":"../../assets/products/ostrich-crossbody-bag-with-loop-yarn-body/08.jpg","alt":"Ostrich crossbody bag with loop yarn body, photo 8 of 10"},{"src":"../../assets/products/ostrich-crossbody-bag-with-loop-yarn-body/09.jpg","alt":"Ostrich crossbody bag with loop yarn body, photo 9 of 10"},{"src":"../../assets/products/ostrich-crossbody-bag-with-loop-yarn-body/10.jpg","alt":"Ostrich crossbody bag with loop yarn body, photo 10 of 10"}]
