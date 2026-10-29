@@ -12,9 +12,9 @@ const catalog: Catalog = {
 };
 
 describe('money', () => {
-  it('charges €5 below €49', () => expect(shippingFor(4899)).toBe(500));
-  it('ships free at exactly €49', () => expect(shippingFor(4900)).toBe(0));
-  it('ships free above €49', () => expect(shippingFor(4901)).toBe(0));
+  it('charges €5 below €45', () => expect(shippingFor(4499)).toBe(500));
+  it('ships free at exactly €45', () => expect(shippingFor(4500)).toBe(0));
+  it('ships free above €45', () => expect(shippingFor(4501)).toBe(0));
   it('charges nothing for an empty bag', () => expect(shippingFor(0)).toBe(0));
   it('formats cents for PayPal', () => {
     expect(centsToAmount(2495)).toBe('24.95');
@@ -28,9 +28,9 @@ describe('priceBag', () => {
     const lines: BagLine[] = [{ slug: 'frog', option: 'Pink', qty: 1 }];
     const p = priceBag(lines, catalog);
     expect(p.lines[0]).toMatchObject({ unitCents: 2995, lineCents: 2995, name: 'Frog phone crossbody', option: 'Pink' });
-    expect(p).toMatchObject({ subtotalCents: 2995, shippingCents: 500, totalCents: 3495, freeShippingGapCents: 1905 });
+    expect(p).toMatchObject({ subtotalCents: 2995, shippingCents: 500, totalCents: 3495, freeShippingGapCents: 1505 });
   });
-  it('ships free once the subtotal reaches €49', () => {
+  it('ships free once the subtotal reaches €45', () => {
     const p = priceBag([{ slug: 'frog', option: 'Blue', qty: 1 }, { slug: 'coaster', qty: 2 }], catalog);
     expect(p).toMatchObject({ subtotalCents: 6385, shippingCents: 0, totalCents: 6385, freeShippingGapCents: 0 });
   });

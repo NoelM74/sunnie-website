@@ -22,7 +22,7 @@ describe('product pages', () => {
       expect(html).not.toMatch(/action="\/bag\/add\/"/);
     } else {
       expect(html).toMatch(/<form[^>]*method="post"[^>]*action="\/bag\/add\/"|class="btn btn-disabled btn-block"/);
-      if (!html.includes('class="btn btn-disabled btn-block"')) expect(html).toContain('Free shipping from <span class="money"><span data-c="EUR">€49</span>');
+      if (!html.includes('class="btn btn-disabled btn-block"')) expect(html).toContain('Free shipping from <span class="money" data-gbp="£');
     }
     expect(html).toContain('Made by ');
     expect(html).toContain('property="og:type" content="product"');
@@ -33,9 +33,7 @@ describe('product pages', () => {
     const item = catalog[slug] as { priceCents: number; optionPriceCents: Record<string, number> | null };
     const eurCents = item.optionPriceCents ? Math.min(...Object.values(item.optionPriceCents)) : item.priceCents;
     const price = html.split('class="product-price"')[1].split('</p>')[0];
-    for (const cur of ['EUR', 'GBP', 'USD'] as const) {
-      expect(price, cur).toContain(`<span data-c="${cur}">${formatMoney(toLocalCents(eurCents, cur), cur)}</span>`);
-    }
+    expect(price).toContain(`data-gbp="${formatMoney(toLocalCents(eurCents, 'GBP'), 'GBP')}" data-usd="${formatMoney(toLocalCents(eurCents, 'USD'), 'USD')}">${formatMoney(eurCents, 'EUR')}</span>`);
   });
 
   it('marks the first gallery image as high priority', () => {

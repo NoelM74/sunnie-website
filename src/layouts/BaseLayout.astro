@@ -46,5 +46,7 @@ const { jsonLd = [], current, path = Astro.url.pathname, ...seo } = Astro.props;
       <slot />
     </main>
     <Footer />
+    {/* Swap euro prices for pounds or dollars (data attributes on .money, see Money.astro). */}
+    <script is:inline>(function(){var d=document.documentElement;window.sunnieMoney=function(){var k=d.dataset.cur==='GBP'?'gbp':d.dataset.cur==='USD'?'usd':'';document.querySelectorAll('.money').forEach(function(m){if(!m.dataset.eur)m.dataset.eur=m.textContent;m.textContent=k?m.dataset[k]:m.dataset.eur})};window.sunnieMoney()})();</script>
   </body>
 </html>

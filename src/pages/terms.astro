@@ -1,5 +1,6 @@
 ---
 import Money from '../components/Money.astro';
+import { FREE_SHIPPING_EUR } from '../lib/money';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
@@ -13,11 +14,11 @@ const c = site.company;
     <p>This website is run by {c.legalName}, trading as {c.tradingAs}. Company registration number (CRO) {c.cro}. Registered office: {c.registeredOffice}. Email: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.</p>
 
     <h2>Prices and payment</h2>
-    <p>Prices show in euro, pounds or US dollars. You pay in the currency shown in your basket at checkout. Pound and dollar prices follow the European Central Bank rate and can change from day to day; the price in your basket when you pay is the price you pay. {c.legalName} is not registered for VAT, so no VAT is added. You pay through PayPal, by PayPal account or by debit or credit card. We never see your card details.</p>
+    <p>Prices show in euro, pounds or US dollars. You pay in the currency shown in your basket at checkout. Pound and dollar prices are worked out from the European Central Bank rate and rounded up to the next .95, so they can change from day to day. The price in your basket when you pay is the price you pay. {c.legalName} is not registered for VAT, so no VAT is added. You pay through PayPal, by PayPal account or by debit or credit card. We never see your card details.</p>
     <p>Your contract with us starts when your payment goes through and we show your order number.</p>
 
     <h2>Delivery</h2>
-    <p>Each piece is made by hand to order and ships within {site.shipsIn} with tracking. Shipping costs <Money eur={5} /> per order, and it's free on orders of <Money eur={49} whole /> or more. We ship worldwide. There are no import charges to pay on delivery to the EU, the UK or the US. Buyers in other countries may have to pay import charges set by their country.</p>
+    <p>Each piece is made by hand to order and ships within {site.shipsIn} with tracking. Shipping costs <Money eur={5} /> per order, and it's free on orders of <Money eur={FREE_SHIPPING_EUR} whole /> or more. We ship worldwide. There are no import charges to pay on delivery to the EU, the UK or the US. Buyers in other countries may have to pay import charges set by their country.</p>
 
     <h2>Returns and your right to cancel</h2>
     <p>You can cancel and return any item within 30 days of delivery, for any reason. This is longer than the 14 days the law requires.</p>

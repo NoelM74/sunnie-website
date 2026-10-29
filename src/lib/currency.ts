@@ -34,7 +34,7 @@ export function formatMoney(cents: number, cur: Currency): string {
   }).format(cents / 100);
 }
 
-/** "€49 (£42 or $56)": for sentences, where one price can't switch. */
+/** "€45 (£38 or $51)": for sentences, where one price can't switch. */
 export function formatAll(eurCents: number, opts: { whole?: boolean } = {}): string {
   const local = (c: Currency) => formatMoney(opts.whole ? toLocalWholeCents(eurCents, c) : toLocalCents(eurCents, c), c);
   return `${local('EUR')} (${local('GBP')} or ${local('USD')})`;

@@ -3,14 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
 import Money from '../components/Money.astro';
+import { FREE_SHIPPING_EUR } from '../lib/money';
 ---
-<BaseLayout title={pageTitle('Shipping and returns')} description={`Shipping costs €5, free on orders of €49 or more. Made to order, ships in ${site.shipsIn} with tracking. Delivery times by country, worldwide. 30-day returns.`}>
+<BaseLayout title={pageTitle('Shipping and returns')} description={`Shipping costs €5, free on orders of €45 or more. Made to order, ships in ${site.shipsIn} with tracking. Delivery times by country, worldwide. 30-day returns.`}>
   <article class="container narrow prose">
     <header class="page-head"><h1>Shipping and returns</h1></header>
 
     <h2>Buying on this website</h2>
     <ul>
-      <li><strong>Cost:</strong> <Money eur={5} /> per order, worldwide. Free on orders of <Money eur={49} whole /> or more.</li>
+      <li><strong>Cost:</strong> <Money eur={5} /> per order, worldwide. Free on orders of <Money eur={FREE_SHIPPING_EUR} whole /> or more.</li>
       <li><strong>Processing:</strong> every piece is made to order and ships within {site.shipsIn}.</li>
       <li><strong>Tracking:</strong> every parcel is tracked, and we email you the tracking number when it ships.</li>
     </ul>

@@ -1,10 +1,11 @@
 ---
-import { CURRENCIES, formatMoney, toLocalCents, toLocalWholeCents } from '../lib/currency';
+import { formatMoney, toLocalCents, toLocalWholeCents } from '../lib/currency';
 
-// One price in all three currencies. CSS shows the one in <html data-cur> (set by the
-// script in BaseLayout), and euro when there is no script.
+// One price. The HTML text is euro, so search engines and text-only readers see one clean
+// price; the script at the end of BaseLayout swaps in pounds or dollars from the data attributes.
 interface Props { eur: number; whole?: boolean }
 const { eur, whole = false } = Astro.props;
 const cents = Math.round(eur * 100);
+const local = (c: 'GBP' | 'USD') => formatMoney(whole ? toLocalWholeCents(cents, c) : toLocalCents(cents, c), c);
 ---
-<span class="money">{CURRENCIES.map((c) => <span data-c={c}>{formatMoney(whole ? toLocalWholeCents(cents, c) : toLocalCents(cents, c), c)}</span>)}</span>
+<span class="money" data-gbp={local('GBP')} data-usd={local('USD')}>{formatMoney(cents, 'EUR')}</span>

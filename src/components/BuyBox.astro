@@ -1,5 +1,6 @@
 ---
 import Money from './Money.astro';
+import { FREE_SHIPPING_EUR } from '../lib/money';
 import { site } from '../data/site';
 
 interface Props {
@@ -46,7 +47,7 @@ const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices, maker
     </div>
     <ul class="buy-ticks" role="list">
       <li><span>Made to order by {maker}, ships in {site.shipsIn} with tracking</span></li>
-      <li><span>Free shipping from <Money eur={49} whole /> · 30-day returns</span></li>
+      <li><span>Free shipping from <Money eur={FREE_SHIPPING_EUR} whole /> · 30-day returns</span></li>
       <li><span>No import charges to the EU, UK or US</span></li>
       <li><span>Pay in euro, pounds or dollars with PayPal or card</span></li>
     </ul>

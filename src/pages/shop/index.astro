@@ -8,6 +8,7 @@ import { categoryFaq } from '../../data/category-faq';
 import { site } from '../../data/site';
 import { sortForGrid } from '../../lib/products';
 import Money from '../../components/Money.astro';
+import { FREE_SHIPPING_EUR } from '../../lib/money';
 import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageTitle } from '../../lib/seo';
 
 const products = sortForGrid(await getCollection('products'));
@@ -58,7 +59,7 @@ const faq = faqJsonLd(faqItems);
         Every piece is crocheted by hand, so allow a centimetre or two of size variation from the photos, and check
         the size and materials listed on each product page before you buy. Add pieces to your basket and pay here with
         PayPal or any card, or buy the same piece on our Etsy shop if you prefer. Nollaig packs and ships every order
-        in {site.shipsIn} with tracking, free worldwide on orders of <Money eur={49} whole /> or more.
+        in {site.shipsIn} with tracking, free worldwide on orders of <Money eur={FREE_SHIPPING_EUR} whole /> or more.
       </p>
     </section>
     {faqItems.length > 0 && <FaqList items={faqItems} />}

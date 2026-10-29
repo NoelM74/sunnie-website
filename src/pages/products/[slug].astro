@@ -82,11 +82,12 @@ const canBuy = d.inStock && d.siteCheckout;
         {d.isNew && d.inStock && <span class="badge">New</span>}
         <h1>{d.name}</h1>
         <p class="product-price">{fromPrefix}<Money eur={shownPrice} /></p>
+        <p class="product-proof"><span class="hero-stars" aria-hidden="true">★★★★★</span> {site.proof.etsyRating} on Etsy · {site.proof.ebayPositive} positive from {site.proof.ebayCount} eBay ratings</p>
         <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} etsyUrl={d.etsyUrl} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} maker={d.maker} />
         {d.maker === 'Hui' && (
           <a class="maker-strip" href="/our-story/">
             <Picture src={huiPhoto} alt="" widths={[96, 192]} sizes="48px" formats={['webp']} class="maker-photo" />
-            <span><strong>Made by Hui</strong>, stitch by stitch, from the first row to the last knot. <span class="maker-more">Meet Hui</span></span>
+            <span><strong>Made by Hui</strong>, stitch by stitch. Every piece is a little different, because each one is made by hand. Yours will be the only one exactly like it. <span class="maker-more">Meet Hui</span></span>
           </a>
         )}
       </div>
