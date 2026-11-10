@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEnv } from '../../lib/env';
 import { loadCatalog } from '../../lib/catalog';
 import { BAG_COOKIE, decodeBag } from '../../lib/bag-cookie';
+import { FINN_SLUG } from '../../lib/finn';
 import { priceBag } from '../../lib/pricing';
 import { COUNTRY_CODES, countryName, type CheckoutValues } from '../../lib/checkout-form';
 import { CURRENCY_COOKIE, CURRENCY_NAMES, currencyFromRequest, formatMoney } from '../../lib/currency';
@@ -67,7 +68,7 @@ const fields = [
             {e.country && <p class="field-error" id="country-err">{e.country}</p>}
           </div>
         </fieldset>
-        <p class="small">By paying you agree to our <a href="/terms/">terms of sale</a>. Ships within {site.shipsIn} with tracking. Returns accepted within 30 days.</p>
+        <p class="small">By paying you agree to our <a href="/terms/">terms of sale</a>. Ships within {site.shipsIn} with tracking. Returns accepted within 30 days{priced.lines.some((l) => l.slug === FINN_SLUG) && ' (60 days for Finn & the Shamrock)'}.</p>
         <button class="btn btn-primary btn-block" type="submit">Pay with PayPal or card</button>
         <p class="small muted">You'll pay in {CURRENCY_NAMES[currency]} on PayPal's secure page. You can pay by card without a PayPal account.</p>
       </form>

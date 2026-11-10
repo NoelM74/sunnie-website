@@ -48,7 +48,7 @@ const suggestions = Object.values(catalog)
             <li class="bag-line">
               <img src={l.thumb} alt="" width="80" height="80" loading="lazy" />
               <div class="bag-line-info">
-                <a href={`/products/${l.slug}/`}>{l.name}</a>
+                <a href={catalog[l.slug]?.href ?? `/products/${l.slug}/`}>{l.name}</a>
                 {l.option && <span class="small muted">{l.option}</span>}
                 <span class="small">{euro(l.unitCents)} each</span>
               </div>

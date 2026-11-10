@@ -2,6 +2,8 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { getImage } from 'astro:assets';
 import type { Catalog } from '../lib/catalog';
+import { FINN_ITEM } from '../lib/finn';
+import finnThumb from '../assets/finn/finn-thumb.webp';
 
 export const prerender = true;
 
@@ -29,5 +31,7 @@ export const GET: APIRoute = async () => {
     }),
   );
   const catalog: Catalog = Object.fromEntries(entries);
+  const finn = await getImage({ src: finnThumb, width: 160, height: 160, fit: 'cover', format: 'webp' });
+  catalog[FINN_ITEM.slug] = { ...FINN_ITEM, thumb: finn.src };
   return new Response(JSON.stringify(catalog), { headers: { 'content-type': 'application/json' } });
 };

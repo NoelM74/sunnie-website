@@ -9,6 +9,8 @@ export interface CatalogItem {
   thumb: string;
   maker: string;
   featured: number | null;
+  /** Link for the bag line, when the item has no product page here. */
+  href?: string;
 }
 export type Catalog = Record<string, CatalogItem>;
 

@@ -1,4 +1,5 @@
 import type { OrderRow } from './orders';
+import { FINN_ORIGIN, FINN_SLUG } from './finn';
 import { formatMoney } from './currency';
 import { countryName } from './checkout-form';
 import { site } from '../data/site';
@@ -28,7 +29,8 @@ const list = (items: string[]) => `<p>${items.map(esc).join('<br>')}</p>`;
 export function buildCustomerEmail(o: OrderRow): Email {
   const subject = `Your Sunnie Designs order ${o.ref}`;
   const intro = `Thank you for your order. We make each piece by hand, and your parcel ships within ${site.shipsIn} with tracking.`;
-  const returns = `You can return an item within 30 days of delivery. Email ${site.email.hello} to start a return. You pay the return postage, and we refund the item price and the original shipping within 14 days of receiving it back, or of you sending us proof of postage if that comes first.`;
+  const returns = `You can return an item within 30 days of delivery. Email ${site.email.hello} to start a return. You pay the return postage, and we refund the item price and the original shipping within 14 days of receiving it back, or of you sending us proof of postage if that comes first.`
+    + (o.lines.some((l) => l.slug === FINN_SLUG) ? ` Finn & the Shamrock frog bags have 60 days instead, as set out at ${FINN_ORIGIN}/returns.` : '');
   const text = [
     subject,
     '',

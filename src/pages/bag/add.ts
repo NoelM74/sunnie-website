@@ -4,11 +4,12 @@ import { loadCatalog } from '../../lib/catalog';
 import { BAG_COOKIE, decodeBag, saveBag } from '../../lib/bag-cookie';
 import { handleBagPost } from '../../lib/bag-routes';
 import { isSameOrigin } from '../../lib/request';
+import { FINN_ORIGIN } from '../../lib/finn';
 
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request, cookies, redirect }) => {
-  if (!isSameOrigin(request)) return new Response('Forbidden', { status: 403 });
+  if (!isSameOrigin(request, [FINN_ORIGIN])) return new Response('Forbidden', { status: 403 });
   const env = getEnv();
   const catalog = await loadCatalog((p) => env.ASSETS.fetch(new Request(new URL(p, request.url))));
   const bag = await decodeBag(cookies.get(BAG_COOKIE)?.value, env.BAG_SECRET);

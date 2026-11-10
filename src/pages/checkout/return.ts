@@ -4,7 +4,8 @@ import { d1Orders } from '../../lib/orders';
 import { paypalClient } from '../../lib/paypal';
 import { resendMailer } from '../../lib/email';
 import { handleReturn } from '../../lib/checkout-handlers';
-import { BAG_COOKIE, COUNT_COOKIE, ORDER_COOKIE, signValue } from '../../lib/bag-cookie';
+import { BAG_COOKIE, COUNT_COOKIE, ORDER_COOKIE, decodeBag, signValue } from '../../lib/bag-cookie';
+import { FINN_ORIGIN, isFinnOnly } from '../../lib/finn';
 
 export const prerender = false;
 
@@ -21,10 +22,14 @@ export const GET: APIRoute = async ({ url, cookies, redirect }) => {
     notifyEmail: env.ORDER_NOTIFY_EMAIL || 'hello@sunniedesigns.com',
   });
   if (r.kind === 'complete' || r.kind === 'review') {
+    const finnOnly = isFinnOnly(await decodeBag(cookies.get(BAG_COOKIE)?.value, env.BAG_SECRET));
     cookies.delete(BAG_COOKIE, { path: '/' });
     cookies.delete(COUNT_COOKIE, { path: '/' });
     cookies.set(ORDER_COOKIE, await signValue(r.ref, env.BAG_SECRET), { path: '/', httpOnly: true, secure: true, sameSite: 'lax', maxAge: 60 * 60 * 24 });
-    const res = redirect(r.kind === 'review' ? '/checkout/complete/?pending=1' : '/checkout/complete/', 303);
+    const done = finnOnly
+      ? `${FINN_ORIGIN}/thanks?ref=${encodeURIComponent(r.ref)}${r.kind === 'review' ? '&pending=1' : ''}`
+      : r.kind === 'review' ? '/checkout/complete/?pending=1' : '/checkout/complete/';
+    const res = redirect(done, 303);
     res.headers.set('Cache-Control', 'no-store');
     return res;
   }
