@@ -1,13 +1,13 @@
 ---
-name: "Two-way flower bag with handle and strap"
+name: "Pocket Garden: crochet flower bag with handle and strap"
 seoTitle: "Crochet Flower Crossbody Bag, Floral Phone Purse, Detachable Strap"
 category: "bags"
 group: "flowers"
-price: 44.95
+price: 29.95
 inStock: true
 maker: "Hui"
 isNew: true
-options: [{"name":"Colour","values":["Green with Orange Flowers","Blue with Red Flowers","Purple with Pink Flowers"]}]
+options: [{"name":"Colour","values":["Purple","Green","Blue"]}]
 materials: ["Polyester yarn","Wooden button"]
 size: "W 16 × H 19 × D 1 cm, strap 120 cm"
 images: [{"src":"../../assets/products/flower-crossbody-bag-with-detachable-strap/01.webp","alt":"Three crochet flower crossbody bags: purple with pink flowers, blue with red flowers and green with orange flowers"},{"src":"../../assets/products/flower-crossbody-bag-with-detachable-strap/02.webp","alt":"Purple crochet flower bag with pink flowers, a crocheted top handle and a wooden button"},{"src":"../../assets/products/flower-crossbody-bag-with-detachable-strap/03.webp","alt":"Green crochet flower bag with orange flowers, a crocheted top handle and a cream strap"},{"src":"../../assets/products/flower-crossbody-bag-with-detachable-strap/04.webp","alt":"Blue crochet flower bag with red flowers, a red top handle and a cream strap"},{"src":"../../assets/products/flower-crossbody-bag-with-detachable-strap/05.webp","alt":"Purple and pink crochet flower bag worn crossbody over a cream t-shirt and white skirt"},{"src":"../../assets/products/flower-crossbody-bag-with-detachable-strap/06.webp","alt":"Green and orange crochet flower bag worn crossbody over a white dress"},{"src":"../../assets/products/flower-crossbody-bag-with-detachable-strap/07.webp","alt":"Blue and red crochet flower bag worn crossbody with white trousers"},{"src":"../../assets/products/flower-crossbody-bag-with-detachable-strap/08.webp","alt":"Purple flower bag laid flat with its long cream strap clipped on, showing the top handle"},{"src":"../../assets/products/flower-crossbody-bag-with-detachable-strap/09.webp","alt":"Purple flower bag holding a phone and a compact"},{"src":"../../assets/products/flower-crossbody-bag-with-detachable-strap/10.webp","alt":"Size chart for the flower crossbody bag: 16 cm wide, 19 cm high, 1 cm deep, with the three colours"}]

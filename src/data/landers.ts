@@ -1023,6 +1023,105 @@ export const LANDERS: Lander[] = [
       returnsFaq,
     ],
   },
+  {
+    slug: 'pocket-garden',
+    productSlug: 'flower-crossbody-bag-with-detachable-strap',
+    name: 'Pocket Garden flower bag',
+    noun: ['bag', 'bags'],
+    picks: ['Purple', 'Green', 'Blue'],
+    maker: 'Hui',
+    // Owner, 2026-11-12: the lighter price list.
+    prices: {
+      EUR: { 1: 2995, 2: 4995, 3: 6495 },
+      GBP: { 1: 2295, 2: 3995, 3: 4995 },
+      USD: { 1: 2995, 2: 4995, 3: 6495 },
+    },
+    title: 'Crochet Flower Crossbody Phone Bag with Handle | Pocket Garden',
+    description: 'A hand-crocheted flower bag you carry two ways: by its handle, or crossbody on a clip-on strap. A wooden button keeps your phone in. Free shipping on 2 or more.',
+    og: '/go/pocket-garden-og.jpg',
+    bar: 'Free shipping on 2 bags or more',
+    hero: {
+      h1: 'A pocket-sized garden',
+      h1em: 'that carries your phone two ways.',
+      sub: 'Rows of hand-crocheted flowers in purple and pink, green and orange, or blue and red. Carry it by its little handle, or clip on the long strap and wear it crossbody. A wooden button keeps your phone, keys and lip balm inside.',
+      image: { src: 'products/flower-crossbody-bag-with-detachable-strap/01.webp', alt: 'Three crochet flower bags: purple with pink flowers, blue with red flowers and green with orange flowers' },
+      proof: { reviewer: 'Caitlin', date: '2026-02-13' },
+    },
+    story: {
+      h: 'Two bags in one.',
+      paras: [
+        'Some days you want your hands free. Other days you want to carry something pretty.',
+        'This bag does both. Clip on the 120 cm strap and wear it across your body. Unclip it, and it’s a little top-handle bag for a dinner, a wedding or a day in town.',
+      ],
+      subH: 'Why a button?',
+      subParas: ['Because it keeps things in. A wooden button closes the top, so your phone stays put, with no zip to fight.'],
+    },
+    fits: {
+      h: 'Your phone fits, buttoned in.',
+      lede: 'It’s 19 cm tall and 16 cm wide. Your phone goes in, with room for keys, lip balm, tissues and a bus card.',
+      specs: [
+        ['Size', '19 cm tall, 16 cm wide, 1 cm deep. Measured by hand, so allow 1 to 3 cm.'],
+        ['Holds', 'A phone, keys, lip balm, tissues and a bus card'],
+        ['Closes', 'Wooden button'],
+        ['Carry', 'By the crocheted top handle, or crossbody on the 120 cm clip-on strap'],
+        ['Weight', 'About 90 g'],
+        ['Made from', 'Polyester yarn, wooden button'],
+        ['Care', 'Hand wash in cool or lukewarm water, below 40°C. Dry flat, out of strong sun.'],
+      ],
+      image: { src: 'products/flower-crossbody-bag-with-detachable-strap/09.webp', alt: 'Purple flower bag open, with a phone and a compact inside' },
+    },
+    colours: {
+      h: 'Pick your flowers',
+      lede: 'Same bag, three gardens. Every one is the same size and the same price.',
+      cards: [
+        { pick: 'Purple', title: 'Purple and pink', text: 'Lilac, with pink and violet flowers and a purple handle. The soft one.', image: { src: 'products/flower-crossbody-bag-with-detachable-strap/02.webp', alt: 'Purple crochet flower bag with pink flowers, a top handle and a wooden button' } },
+        { pick: 'Green', title: 'Green and orange', text: 'Grass green, with bright orange flowers. The sunny one.', image: { src: 'products/flower-crossbody-bag-with-detachable-strap/03.webp', alt: 'Green crochet flower bag with orange flowers and a top handle' } },
+        { pick: 'Blue', title: 'Blue and red', text: 'Sky blue, with red flowers and a red handle. The bold one.', image: { src: 'products/flower-crossbody-bag-with-detachable-strap/04.webp', alt: 'Blue crochet flower bag with red flowers and a red top handle' } },
+      ],
+      note: 'Can’t pick? Take three and get the whole garden.',
+    },
+    uses: {
+      h: 'Where it goes',
+      items: [
+        ['Weddings and dinners.', 'Carry it by the handle, like a little clutch.'],
+        ['Days out.', 'Strap on, hands free, phone in reach.'],
+        ['Summer markets.', 'Light, bright and just big enough for the basics.'],
+        ['Gifts.', 'For the friend whose home is full of plants.'],
+        ['A first “big kid” bag.', 'Coins, small toys and sweets, buttoned in.'],
+      ],
+      images: [
+        { src: 'products/flower-crossbody-bag-with-detachable-strap/05.webp', alt: 'Purple flower bag worn crossbody over a cream T-shirt and white skirt' },
+        { src: 'products/flower-crossbody-bag-with-detachable-strap/06.webp', alt: 'Green flower bag worn crossbody over a white dress' },
+        { src: 'products/flower-crossbody-bag-with-detachable-strap/07.webp', alt: 'Blue flower bag worn crossbody, with a phone in hand' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, flower by flower.',
+      paras: [
+        'Hui crochets each flower on its own, joins them into one little bag, then adds the handle and sews on the wooden button.',
+        'Because a person makes them, no two come out quite the same. The petals sit a little differently on every bag.',
+      ],
+      image: { src: 'products/flower-crossbody-bag-with-detachable-strap/08.webp', alt: 'Purple flower bag laid flat with its long cream strap clipped on' },
+    },
+    offer: {
+      h: 'Pick your garden',
+      lede: 'We suggest two: one for you, and one for a friend who loves flowers as much as you do. Two or more ship free, and each bag costs less.',
+      flag2: 'One for you, one for a friend',
+      notes: { 1: 'Just the one, for you.', 2: 'Any two colours.', 3: 'The whole garden, or any three.' },
+      defaults: ['Purple', 'Green', 'Blue'],
+      proof: friend,
+    },
+    reviews: [{ reviewer: 'Caitlin', date: '2026-02-13' }, maria, asPictured, sturdy],
+    faq: [
+      { q: 'Will my phone fit?', a: 'Yes. It’s 19 cm tall and 16 cm wide, with room for keys, lip balm and a bus card beside your phone.' },
+      { q: 'Does the strap come off?', a: 'Yes. The 120 cm strap clips on and off. Wear it crossbody, or take the strap off and carry the bag by its crocheted handle.' },
+      { q: 'How does it close?', a: 'With a wooden button at the top. No zip and no magnet.' },
+      kidsFaq('bag'),
+      { q: 'How do I wash it?', a: 'Hand wash in cool or lukewarm water, below 40°C, and lay it flat to dry. Keep it out of strong sun for long periods, as sun can fade the colours.' },
+      arriveFaq('bag'),
+      returnsFaq,
+    ],
+  },
 ];
 
 export const landerBySlug = (slug: string) => LANDERS.find((l) => l.slug === slug);

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Pocket Garden">
+  <path d="M24 2.5 42.6 13.2v21.6L24 45.5 5.4 34.8V13.2Z" fill="#C9B2E6" stroke="#4A3222" stroke-width="1.8" stroke-linejoin="round"/>
+  <g fill="#F28CB1" stroke="#4A3222" stroke-width="1.3">
+    <circle cx="24" cy="13.5" r="5.6"/><circle cx="33.1" cy="18.8" r="5.6"/><circle cx="33.1" cy="29.2" r="5.6"/>
+    <circle cx="24" cy="34.5" r="5.6"/><circle cx="14.9" cy="29.2" r="5.6"/><circle cx="14.9" cy="18.8" r="5.6"/>
+  </g>
+  <circle cx="24" cy="24" r="6.4" fill="#8E5CC4" stroke="#4A3222" stroke-width="1.3"/>
+  <circle cx="24" cy="24" r="2.6" fill="#F5C531"/>
+</svg>
