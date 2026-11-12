@@ -1,4 +1,5 @@
 ---
+import { productHref } from '../../lib/lander-products';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
@@ -44,7 +45,7 @@ const faq = faqJsonLd(faqItems);
   current={category}
   jsonLd={[
     breadcrumbJsonLd(crumbs),
-    itemListJsonLd(copy.h1, products.map((p) => `/products/${p.id}/`)),
+    itemListJsonLd(copy.h1, products.map((p) => productHref(p.id))),
     ...(faq ? [faq] : []),
   ]}
 >

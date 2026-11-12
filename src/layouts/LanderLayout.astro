@@ -8,13 +8,13 @@ import '../styles/tokens.css';
 import '../styles/global.css';
 import '../styles/lander.css';
 import Seo from '../components/Seo.astro';
+import JsonLd from '../components/JsonLd.astro';
 import { site } from '../data/site';
 
-// Ad landers (/go/<slug>/): the shop's look, fonts, currency and basket, without the shop
-// menu, so the only way forward is the offer. Kept out of search: the product page is the
-// page to rank, and this one exists for paid traffic.
-interface Props { title: string; description: string; image: string; bar: string; barRight?: string; nav: [string, string][]; mark?: string }
-const { title, description, image, bar, barRight = site.makerLine, nav, mark } = Astro.props;
+// Bundle landers (/go/<slug>/): the shop's look, fonts, currency and basket, with a slim
+// header so the offer stays the focus. Each is the product's only page, so it's indexed.
+interface Props { title: string; description: string; image: string; bar: string; barRight?: string; nav: [string, string][]; mark?: string; jsonLd?: object[] }
+const { title, description, image, bar, barRight = site.makerLine, nav, mark, jsonLd = [] } = Astro.props;
 const year = new Date().getFullYear();
 ---
 <!doctype html>
@@ -30,7 +30,8 @@ const year = new Date().getFullYear();
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#FBF6EE" />
-    <Seo title={title} description={description} path={Astro.url.pathname} image={image} type="product" noindex />
+    <Seo title={title} description={description} path={Astro.url.pathname} image={image} type="product" />
+    {jsonLd.length > 0 && <JsonLd data={jsonLd} />}
   </head>
   <body class="lander">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -41,6 +42,7 @@ const year = new Date().getFullYear();
         <nav class="l-nav" aria-label="On this page">
           {nav.map(([href, label]) => <a href={href}>{label}</a>)}
         </nav>
+        <a class="l-shop" href="/shop/bags/">All bags</a>
         <a class="l-bag" href="/bag/">Basket</a>
       </div>
     </header>

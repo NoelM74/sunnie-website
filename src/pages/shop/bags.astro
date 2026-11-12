@@ -1,4 +1,5 @@
 ---
+import { productHref } from '../../lib/lander-products';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
@@ -13,7 +14,7 @@ const all = await getCollection('products');
 const groups = GROUP_ORDER.map((g) => ({ key: g, label: GROUP_LABELS[g], items: inGroup(all, g) })).filter((g) => g.items.length > 0);
 const crumbs = [{ name: 'Home', path: '/' }, { name: 'Bags', path: '/shop/bags/' }];
 const bags = groups.flatMap((g) => g.items);
-const productUrls = bags.map((p) => `/products/${p.id}/`);
+const productUrls = bags.map((p) => productHref(p.id));
 const faqItems = categoryFaq.bags;
 const faq = faqJsonLd(faqItems);
 ---

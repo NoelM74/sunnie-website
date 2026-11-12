@@ -1,0 +1,7 @@
+# One product, one page: products with a bundle lander live at /go/<slug>/ (src/data/landers.ts).
+/products/frog-crossbody-purse/ /go/finn-in-the-hood/ 301
+/products/frog-crossbody-purse /go/finn-in-the-hood/ 301
+/products/cat-crossbody-bag-with-dangling-legs/ /go/miso-cat/ 301
+/products/cat-crossbody-bag-with-dangling-legs /go/miso-cat/ 301
+/products/plush-dog-crossbody-phone-bag/ /go/snout-and-about/ 301
+/products/plush-dog-crossbody-phone-bag /go/snout-and-about/ 301

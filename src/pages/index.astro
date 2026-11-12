@@ -9,18 +9,29 @@ import ReviewQuote from '../components/ReviewQuote.astro';
 import reviews from '../data/reviews.json';
 import storyPhoto from '../assets/story/hui.jpg';
 import { site } from '../data/site';
-import { featured, newest, showHatsInNav } from '../lib/products';
+import { featured, showHatsInNav } from '../lib/products';
 import Money from '../components/Money.astro';
 import { faqJsonLd, organizationJsonLd, websiteJsonLd } from '../lib/seo';
 import { freeShippingAll } from '../lib/money';
+import { BUNDLE_PRICES } from '../lib/bundles';
+import { landerImage } from '../lib/lander-images';
+import { LANDER_PRODUCT_SLUGS } from '../lib/lander-products';
 
 const FREE_SHIPPING = freeShippingAll();
 
 const all = await getCollection('products');
-const best = featured(all);
-// site.heroProduct pins the homepage hero; without it the newest in-stock piece shows.
-const pinned = all.find((p) => p.id === site.heroProduct && p.data.inStock);
-const hero = pinned ?? newest(all) ?? best[0];
+// Bestsellers are the four character bags, each with its own bundle page. "More to love"
+// keeps the shop's other favourites on the page.
+const characters = [
+  { href: '/go/finn-the-shamrock/', mark: '/go/finn-the-shamrock-mark.svg', name: 'Finn & the Shamrock', blurb: 'The frog that carries your phone, with a shamrock sewn on his chest.', img: 'landers/finn-the-shamrock/finn-frog-bag-phone-closeup-1400.webp' },
+  { href: '/go/miso-cat/', mark: '/go/miso-cat-mark.svg', name: 'Miso the cat', blurb: 'A cat in a sweater for your keys and lip balm. Black, brown or yellow.', img: 'products/cat-crossbody-bag-with-dangling-legs/01.webp' },
+  { href: '/go/snout-and-about/', mark: '/go/snout-and-about-mark.svg', name: 'Snout & About', blurb: 'A soft little dog that carries your phone. Schnauzer, puppy or terrier.', img: 'landers/snout-and-about/life-4.webp' },
+  { href: '/go/finn-in-the-hood/', mark: '/go/finn-in-the-hood-mark.svg', name: 'Finn in the Hood', blurb: 'A frog in a hoodie with a big red mouth. Yellow or blue.', img: 'landers/finn-in-the-hood/duo.jpg' },
+];
+const one = BUNDLE_PRICES.EUR.packs[1] / 100;
+const two = BUNDLE_PRICES.EUR.packs[2] / 100;
+const best = featured(all).filter((p) => !LANDER_PRODUCT_SLUGS.includes(p.id));
+const hero = { href: '/go/snout-and-about/', img: landerImage('landers/snout-and-about/trio.webp'), alt: 'Three soft crochet dog bags on a wooden shelf: a grey schnauzer, a beige puppy and a white terrier' };
 const coaster = best.find((p) => p.data.category === 'coasters') ?? best[2];
 
 const homeFaq = [
@@ -51,10 +62,10 @@ const quotes = HOME_REVIEWS.map((key) => {
 });
 
 // Tiles use pieces not already shown in Bestsellers, so the page never repeats a photo.
-const notShown = (test: (p: (typeof all)[number]) => boolean) => all.find((p) => test(p) && p.data.inStock && !best.includes(p) && p !== hero);
+const notShown = (test: (p: (typeof all)[number]) => boolean) => all.find((p) => test(p) && p.data.inStock && !best.includes(p) && !LANDER_PRODUCT_SLUGS.includes(p.id));
 const hasHats = showHatsInNav(all);
 const tiles = [
-  { label: 'Bags', href: '/shop/bags/', img: (notShown((p) => p.data.group === 'flowers') ?? best[0]).data.images[0].src },
+  { label: 'Bags', href: '/shop/bags/', img: landerImage('landers/finn-in-the-hood/life-3.webp') },
   { label: 'Coasters', href: '/shop/coasters/', img: (notShown((p) => p.data.category === 'coasters') ?? coaster).data.images[0].src },
   ...(hasHats
     ? [{ label: 'Hats', href: '/shop/hats/', img: all.find((p) => p.data.category === 'hats')!.data.images[0].src }]
@@ -70,37 +81,37 @@ const tiles = [
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-copy">
-        <p class="hero-eyebrow">Handmade crochet bags, made to order</p>
+        <p class="hero-eyebrow">Hand-crocheted character bags</p>
         <h1 class="hero-title">
           Carry a little
           <span class="hero-joy">joy<svg viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 22 2, 38 13, 58 7 S 96 3, 117 8" pathLength="1" /></svg></span>.
         </h1>
         <p class="hero-sub">
-          Soft crochet bags with a face, a flower or a floppy ear, {site.heroMakerClause}. Room for your phone, your
-          keys and your lipstick. Made for you, or for someone you love.
+          Frogs, cats and dogs, {site.heroMakerClause}. Room for your phone and your keys, and a face that makes
+          people ask where you got it. Pick any two bags and shipping is free.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/shop/bags/">Find your bag</a>
-          <a class="btn-ghost" href="/our-story/">Meet Hui</a>
+          <a class="btn btn-primary" href="#bestsellers">Meet the bestsellers</a>
+          <a class="btn-ghost" href="/shop/bags/">Shop all bags</a>
         </div>
         <p class="hero-trust">
           <span class="hero-stars" aria-hidden="true">★★★★★</span>
           Rated {site.proof.etsyRating} on Etsy · {site.proof.ebayPositive} positive across {site.proof.ebayCount} eBay ratings
         </p>
       </div>
-      <a class="hero-media" href={`/products/${hero.id}/`}>
+      <a class="hero-media" href={hero.href}>
         <span class="hero-sun" aria-hidden="true"></span>
         <span class="hero-sticker" aria-hidden="true">made<br />by hand</span>
         <Picture
-          src={hero.data.images[0].src}
-          alt={hero.data.images[0].alt}
+          src={hero.img}
+          alt={hero.alt}
           formats={['avif', 'webp']}
           widths={[480, 800, 1200]}
           sizes="(min-width: 56rem) 46vw, 100vw"
           loading="eager"
           fetchpriority="high"
         />
-        <span class="hero-caption">{hero.data.isNew ? 'New: ' : ''}{hero.data.name}, <Money eur={hero.data.price} /></span>
+        <span class="hero-caption">Snout &amp; About · 2 for <Money eur={two} gbpCents={BUNDLE_PRICES.GBP.packs[2]} usdCents={BUNDLE_PRICES.USD.packs[2]} /></span>
       </a>
     </div>
   </section>
@@ -111,9 +122,35 @@ const tiles = [
     <div class="container">
       <div class="section-head">
         <h2 id="best-h">Bestsellers</h2>
+        <a href="/shop/bags/">Shop all bags</a>
+      </div>
+      <p class="lead">Four characters, each crocheted by hand. Pick two and shipping is free.</p>
+      <ul class="chars" role="list">
+        {characters.map((c) => (
+          <li>
+            <a class="char" href={c.href}>
+              <span class="char-media">
+                <Picture src={landerImage(c.img)} alt="" formats={['avif', 'webp']} widths={[360, 600, 800]} sizes="(min-width: 64rem) 270px, (min-width: 40rem) 45vw, 92vw" loading="lazy" />
+                <img class="char-mark" src={c.mark} alt="" width="52" height="52" loading="lazy" />
+              </span>
+              <span class="char-name">{c.name}</span>
+              <span class="char-blurb">{c.blurb}</span>
+              <span class="char-price">
+                <Money eur={one} gbpCents={BUNDLE_PRICES.GBP.packs[1]} usdCents={BUNDLE_PRICES.USD.packs[1]} /> · 2 for <Money eur={two} gbpCents={BUNDLE_PRICES.GBP.packs[2]} usdCents={BUNDLE_PRICES.USD.packs[2]} />
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="more-h">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="more-h">More to love</h2>
         <a href="/shop/">Shop all</a>
       </div>
-      <p class="lead">The four pieces buyers pick most.</p>
       <ProductGrid products={best} />
     </div>
   </section>

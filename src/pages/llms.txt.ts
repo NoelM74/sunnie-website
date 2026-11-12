@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { productHref } from '../lib/lander-products';
 import { getCollection } from 'astro:content';
 import { site } from '../data/site';
 import { CATEGORY_LABELS, formatPrice, inCategory, type Category } from '../lib/products';
@@ -11,7 +12,7 @@ export const GET: APIRoute = async () => {
 
   const sections = CATEGORY_ORDER.map((category) => {
     const items = inCategory(products, category)
-      .map((p) => `- [${p.data.name}](${absoluteUrl(`/products/${p.id}/`)}): ${formatPrice(p.data.price)}. ${p.data.seoTitle}`)
+      .map((p) => `- [${p.data.name}](${absoluteUrl(productHref(p.id))}): ${formatPrice(p.data.price)}. ${p.data.seoTitle}`)
       .join('\n');
     return `## ${CATEGORY_LABELS[category]}\n\n${items}`;
   }).join('\n\n');

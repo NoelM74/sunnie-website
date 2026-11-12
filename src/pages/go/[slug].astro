@@ -10,7 +10,7 @@ import { FINN_ITEM } from '../../lib/finn';
 import { priceBag } from '../../lib/pricing';
 import { landerImage } from '../../lib/lander-images';
 import { CURRENCIES, formatMoney, type Currency } from '../../lib/currency';
-import { absoluteUrl } from '../../lib/seo';
+import { absoluteUrl, faqJsonLd, productJsonLd } from '../../lib/seo';
 
 export function getStaticPaths() {
   return LANDERS.map((lander) => ({ params: { slug: lander.slug }, props: { lander } }));
@@ -79,12 +79,30 @@ const thumbs = await Promise.all(
 );
 const stickyThumb = (await getImage({ src: pic(l.hero.image.src), width: 96, height: 96, fit: 'cover', format: 'webp' })).src;
 
+// Search: this is the product's only page, so it carries the Product data (prices in euro, like the shop).
+const heroAbs = absoluteUrl((await getImage({ src: pic(l.hero.image.src), width: 1200, format: 'jpg' })).src);
+const faqLd = faqJsonLd(l.faq.map((f) => ({ q: f.q, a: f.a.replace(/<[^>]+>/g, '') })));
+const jsonLd = [
+  productJsonLd({
+    name: l.name,
+    description: l.description,
+    url: absoluteUrl(`/go/${l.slug}/`),
+    images: [heroAbs],
+    price: prices.EUR[1] / 100,
+    inStock: true,
+    sku: cartSlug,
+    color: l.picks.length > 1 ? l.picks.join(', ') : undefined,
+    category: 'Bags',
+    optionPrices: BUNDLE_SIZES.map((n) => prices.EUR[n] / 100),
+  }),
+  ...(faqLd ? [faqLd] : []),
+];
 // The character's own little logo (public/go/<slug>-mark.svg): bundle cards, footer, tab icon.
 const mark = `/go/${l.slug}-mark.svg`;
 const nav: [string, string][] = [['#fits', 'What fits'], ...(l.colours ? [['#colours', 'Colours'] as [string, string]] : []), ['#craft', 'Made by hand'], ['#offer', 'Bundles'], ['#faq', 'Questions']];
 const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.defaults, start: DEFAULT, cartOptions: l.cart?.options ?? null };
 ---
-<LanderLayout title={l.title} description={l.description} image={absoluteUrl(l.og)} bar={l.bar} barRight={l.barRight} nav={nav} mark={mark}>
+<LanderLayout title={l.title} description={l.description} image={absoluteUrl(l.og)} jsonLd={jsonLd} bar={l.bar} barRight={l.barRight} nav={nav} mark={mark}>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="star" viewBox="0 0 16 16"><path d="M8 .9l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3l-4.5 2.3.9-5L.8 6.1l5-.7z" /></symbol>
   </svg>
@@ -279,7 +297,6 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
       <div class="l-center l-close">
         <p>Made by hand. {ships}. If it isn’t what you hoped for, you have {returnsDays} days to send it back.</p>
         <a class="btn btn-primary l-cta" href="#offer">Choose your bundle <small>· from <span class="money" data-gbp={from.gbp} data-usd={from.usd}>{from.text}</span></small></a>
-        {l.productSlug && <p class="small"><a href={`/products/${l.productSlug}/`}>See the full product page</a></p>}
       </div>
     </div>
   </section>

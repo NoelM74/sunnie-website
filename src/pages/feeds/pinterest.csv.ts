@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { productHref } from '../../lib/lander-products';
 import { getCollection } from 'astro:content';
 import { getImage } from 'astro:assets';
 import { site } from '../../data/site';
@@ -36,7 +37,7 @@ export const GET: APIRoute = async () => {
         `SD-${p.id.toUpperCase()}`,
         p.data.seoTitle ?? p.data.name,
         firstSentences(p.body ?? '', 4),
-        absoluteUrl(`/products/${p.id}/`),
+        absoluteUrl(productHref(p.id)),
         await photo(main.src),
         `${p.data.price.toFixed(2)} EUR`,
         p.data.inStock ? 'in stock' : 'out of stock',

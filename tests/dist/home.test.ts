@@ -7,8 +7,8 @@ describe('homepage', () => {
 
   it('has the approved hero', () => {
     expect(html).toMatch(/<h1[^>]*>\s*Carry a little\s*<span class="hero-joy">joy/);
-    expect(html).toContain('Find your bag');
-    expect(html).toContain('Meet Hui');
+    expect(html).toContain('Meet the bestsellers');
+    expect(html).toContain('Shop all bags');
     expect(html).toMatch(/<img[^>]*fetchpriority="high"/);
   });
 
@@ -18,9 +18,15 @@ describe('homepage', () => {
     }
   });
 
-  it('shows exactly four bestsellers', () => {
+  it('shows the four character bags as bestsellers, each linking to its bundle page', () => {
     const section = html.split('id="bestsellers"')[1].split('</section>')[0];
+    expect((section.match(/class="char"/g) ?? []).length).toBe(4);
+    for (const slug of ['finn-the-shamrock', 'miso-cat', 'snout-and-about', 'finn-in-the-hood']) expect(section).toContain(`href="/go/${slug}/"`);
+  });
+  it('keeps four more favourites, none of them a character bag', () => {
+    const section = html.split('id="more-h"')[1].split('</section>')[0];
     expect((section.match(/class="card"/g) ?? []).length).toBe(4);
+    expect(section).not.toContain('/go/');
   });
 
   it('shows three review quotes including the translated repeat buyer', () => {

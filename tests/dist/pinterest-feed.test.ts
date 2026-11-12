@@ -22,7 +22,7 @@ describe('Pinterest feed', () => {
       expect(id).toMatch(/^SD-[A-Z0-9-]+$/);
       expect(title.length).toBeGreaterThan(3);
       expect(description.length).toBeGreaterThan(40);
-      expect(link).toMatch(/^https:\/\/sunniedesigns\.com\/products\/[a-z0-9-]+\/$/);
+      expect(link).toMatch(/^https:\/\/sunniedesigns\.com\/(products|go)\/[a-z0-9-]+\/$/);
       expect(image).toMatch(/^https:\/\/sunniedesigns\.com\/.+\.jpg$/);
       expect(price).toMatch(/^\d+\.\d{2} EUR$/);
       expect(availability).toMatch(/^(in stock|out of stock)$/);

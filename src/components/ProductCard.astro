@@ -2,7 +2,7 @@
 import { Picture } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Money from './Money.astro';
-import { packFor } from '../lib/lander-products';
+import { packFor, productHref } from '../lib/lander-products';
 
 interface Props {
   product: CollectionEntry<'products'>;
@@ -16,7 +16,7 @@ const pack = packFor(product.id);
 const badge = !inStock ? 'Sold out' : isNew ? 'New' : null;
 ---
 <article class="card">
-  <a class="card-link" href={`/products/${product.id}/`}>
+  <a class="card-link" href={productHref(product.id)}>
     <div class="card-media">
       <Picture
         src={images[0].src}

@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import { getImage } from 'astro:assets';
 import { LANDERS } from '../data/landers';
 import { formatMoney, toLocalCents, type Currency } from '../lib/currency';
-import { packFor } from '../lib/lander-products';
+import { packFor, productHref } from '../lib/lander-products';
 import { landerImage } from '../lib/lander-images';
 import { FINN_ITEM } from '../lib/finn';
 import type { RecCard } from '../lib/recommend';
@@ -21,7 +21,7 @@ export const GET: APIRoute = async () => {
     return {
       slug: p.id,
       name: p.data.name,
-      href: `/products/${p.id}/`,
+      href: productHref(p.id),
       img: img.src,
       category: p.data.category,
       group: p.data.group ?? null,

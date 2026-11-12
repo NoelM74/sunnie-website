@@ -121,3 +121,12 @@ describe('lander marks', () => {
     for (const l of LANDERS) expect(() => readFileSync(join(process.cwd(), 'public/go', `${l.slug}-mark.svg`)), l.slug).not.toThrow();
   });
 });
+
+describe('one page per product', () => {
+  it('redirects the old product page of every lander product to its lander', () => {
+    const redirects = readFileSync(join(process.cwd(), 'public/_redirects'), 'utf8');
+    for (const l of LANDERS.filter((x) => x.productSlug)) {
+      expect(redirects, l.slug).toContain(`/products/${l.productSlug}/ /go/${l.slug}/ 301`);
+    }
+  });
+});

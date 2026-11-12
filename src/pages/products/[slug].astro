@@ -9,7 +9,7 @@ import Gallery from '../../components/Gallery.astro';
 import Money from '../../components/Money.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 import { site } from '../../data/site';
-import { packFor } from '../../lib/lander-products';
+import { LANDER_PRODUCT_SLUGS, packFor } from '../../lib/lander-products';
 import { CATEGORY_LABELS, related } from '../../lib/products';
 import { SHIPPING_FLAT_CENTS } from '../../lib/money';
 import FreeShippingFrom from '../../components/FreeShippingFrom.astro';
@@ -19,7 +19,8 @@ import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, firstSentences, metaDescripti
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
-  return products.map((product) => ({ params: { slug: product.id }, props: { product, all: products } }));
+  // Products with a bundle lander live at /go/<slug>/ (public/_redirects sends the old URL there).
+  return products.filter((p) => !LANDER_PRODUCT_SLUGS.includes(p.id)).map((product) => ({ params: { slug: product.id }, props: { product, all: products } }));
 }
 
 interface Props {

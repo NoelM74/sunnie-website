@@ -1,3 +1,4 @@
+import { LANDER_PRODUCT_SLUGS } from '../../src/lib/lander-products';
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
@@ -8,7 +9,8 @@ const slugs = readdirSync(join(DIST, 'products'));
 const catalog = readCatalog();
 
 describe('product pages', () => {
-  it('builds every product', () => expect(slugs).toHaveLength(productCount()));
+  // Products with a bundle lander live at /go/<slug>/ instead (public/_redirects).
+  it('builds every product', () => expect(slugs).toHaveLength(productCount() - LANDER_PRODUCT_SLUGS.length));
 
   it.each(slugs)('%s has Product data, a price and a buy action', (slug) => {
     const html = page(`/products/${slug}/`);

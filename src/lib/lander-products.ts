@@ -17,3 +17,13 @@ export function packFor(productSlug: string) {
     shipping: { eur: BUNDLE_PRICES.EUR.shipping, gbp: BUNDLE_PRICES.GBP.shipping, usd: BUNDLE_PRICES.USD.shipping },
   };
 }
+
+/**
+ * A product with a bundle lander has one page: the lander. Its old /products/ page
+ * 301-redirects there (public/_redirects), and every link goes straight to it.
+ */
+export const productHref = (productSlug: string) => {
+  const l = LANDERS.find((x) => x.productSlug === productSlug);
+  return l ? `/go/${l.slug}/` : `/products/${productSlug}/`;
+};
+export const LANDER_PRODUCT_SLUGS = LANDERS.flatMap((l) => (l.productSlug ? [l.productSlug] : []));
