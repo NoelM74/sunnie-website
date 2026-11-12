@@ -19,7 +19,7 @@ export function getStaticPaths() {
 interface Props { lander: Lander }
 const { lander: l } = Astro.props;
 
-type Review = (typeof reviews)[number] & { lang: 'en' | 'de'; en?: string };
+type Review = (typeof reviews)[number] & { lang: 'en' | 'de'; en?: string; about?: string };
 const findReview = (k: ReviewKey): Review => {
   const r = (reviews as Review[]).find((x) => x.reviewer === k.reviewer && x.date === k.date);
   if (!r) throw new Error(`Lander ${l.slug}: no review from ${k.reviewer} on ${k.date} in reviews.json`);
@@ -250,7 +250,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
 
         <div class="l-proofbar">
           <span class="l-stars" role="img" aria-label="Rated 5 out of 5">{[1, 2, 3, 4, 5].map(() => <svg><use href="#star" /></svg>)}</span>
-          <p>“{quoteText(offerQuote)}” <span class="muted">{offerQuote.reviewer}, Etsy</span></p>
+          <p>“{quoteText(offerQuote)}” <span class="muted">{offerQuote.reviewer}, Etsy{offerQuote.about && ` · on our ${offerQuote.about}`}</span></p>
         </div>
 
         <p class="l-nudge" id="nudge" aria-live="polite">{nudge(DEFAULT, 'EUR')}</p>

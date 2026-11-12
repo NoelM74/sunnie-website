@@ -67,6 +67,8 @@ const mouthFaq = {
 const friend: ReviewKey = { reviewer: 'wendyjamesstudio', date: '2026-08-22' };
 const sturdy: ReviewKey = { reviewer: 'hexfeather', date: '2026-09-25' };
 const secondBuy: ReviewKey = { reviewer: 'Antje-Susan', date: '2026-06-02' };
+const maria: ReviewKey = { reviewer: 'Maria', date: '2026-02-09' };
+const asPictured: ReviewKey = { reviewer: 'Kasie', date: '2026-02-15' };
 
 export const LANDERS: Lander[] = [
   {
@@ -152,12 +154,14 @@ export const LANDERS: Lander[] = [
       flag2: 'Keep one, gift one',
       notes: { 1: 'Just the one, for you.', 2: 'One to keep, one to give.', 3: 'Three gifts sorted in one order.' },
       defaults: ['Green', 'Green', 'Green'],
-      proof: { reviewer: 'Hannah', date: '2026-06-04' },
+      proof: { reviewer: 'Nikki', date: '2026-01-16' },
     },
     reviews: [
-      { reviewer: 'hexfeather', date: '2026-09-25' },
+      { reviewer: 'Daniel', date: '2026-01-20' },
+      { reviewer: 'Etsy buyer', date: '2026-01-01' },
       { reviewer: 'Hannah', date: '2026-06-04' },
-      { reviewer: 'Sandra', date: '2026-05-21' },
+      { reviewer: 'Elijha', date: '2025-12-20' },
+      { reviewer: 'Scott', date: '2025-12-19' },
       { reviewer: 'Nelly', date: '2026-04-17' },
     ],
     faq: [
@@ -250,9 +254,9 @@ export const LANDERS: Lander[] = [
       flag2: 'Keep one, gift one',
       notes: { 1: 'Just the one, for you.', 2: 'One of each, or a matching pair.', 3: 'Three gifts sorted in one order.' },
       defaults: ['Yellow', 'Blue', 'Yellow'],
-      proof: friend,
+      proof: { reviewer: 'Josie', date: '2026-01-03' },
     },
-    reviews: [sturdy, { reviewer: 'Nicola', date: '2026-07-22' }, friend],
+    reviews: [{ reviewer: 'Etsy buyer', date: '2026-01-01' }, { reviewer: 'Nikki', date: '2026-01-16' }, { reviewer: 'Nicola', date: '2026-07-22' }, maria],
     faq: [
       { q: 'Will my phone fit?', a: 'Yes. Pretty much any phone fits, and so does a 6-inch Kindle without its case. Keys, lip balm and a bus card go in beside it.' },
       mouthFaq,
@@ -343,7 +347,7 @@ export const LANDERS: Lander[] = [
       defaults: ['Black Cat', 'Brown Cat', 'Yellow Cat'],
       proof: friend,
     },
-    reviews: [sturdy, secondBuy, friend],
+    reviews: [sturdy, secondBuy, maria, asPictured],
     faq: [
       { q: 'What fits inside?', a: 'Keys, lip balm, tissues, earbuds, a compact or a bus card. Want a bag for your phone? Meet <a href="/go/snout-and-about/">Snout &amp; About</a>.' },
       mouthFaq,
@@ -434,7 +438,7 @@ export const LANDERS: Lander[] = [
       defaults: ['Grey Schnauzer', 'Beige Puppy', 'White Terrier'],
       proof: friend,
     },
-    reviews: [sturdy, secondBuy, friend],
+    reviews: [sturdy, secondBuy, maria, asPictured],
     faq: [
       { q: 'Will my phone fit?', a: 'Yes. He’s made for a phone, with room beside it for keys and lip balm.' },
       { q: 'Which strap does it come with?', a: 'A 120 cm brown PU strap. It adjusts, so you can wear him crossbody, on the shoulder or carry him in your hand.' },
@@ -525,7 +529,7 @@ export const LANDERS: Lander[] = [
       defaults: ['White Puppy', 'Yellow Bear', 'Brown Cat'],
       proof: friend,
     },
-    reviews: [sturdy, secondBuy, friend],
+    reviews: [sturdy, secondBuy, maria, asPictured],
     faq: [
       { q: 'Will my phone fit?', a: 'Yes. A phone goes in with room for a wallet and keys beside it.' },
       { q: 'Which strap does it come with?', a: 'A 120 cm brown PU leather strap. It adjusts, so you can wear it crossbody, on the shoulder or carry it in your hand.' },
@@ -624,7 +628,7 @@ export const LANDERS: Lander[] = [
       defaults: ['Pink Cat', 'Green Frog', 'Sloth'],
       proof: friend,
     },
-    reviews: [sturdy, friend, { reviewer: 'Jacqueline', date: '2026-05-31' }],
+    reviews: [sturdy, maria, asPictured, { reviewer: 'Jacqueline', date: '2026-05-31' }],
     faq: [
       { q: 'Will my phone fit?', a: 'Yes. The bag is 19 cm tall and 12 cm wide, so your phone goes in with room for a card and keys.' },
       { q: 'Does it close?', a: 'Yes, with a magnetic snap. It clicks shut on its own, so there’s no zip to open.' },
