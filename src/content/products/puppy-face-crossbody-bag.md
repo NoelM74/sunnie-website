@@ -1,5 +1,5 @@
 ---
-name: "Odd-eyed puppy face bag"
+name: "Puppy Pockets: crochet puppy face bag with top handle"
 seoTitle: "Crochet puppy face crossbody bag, floppy ear dog handmade phone purse"
 category: "bags"
 group: "characters"
@@ -7,11 +7,11 @@ price: 34.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4508117727/crochet-puppy-face-crossbody-bag-floppy"
 maker: "Hui"
-options: [{"name":"Colour","values":["Cream with Black","Tan with dark brown"]}]
-optionPhotos: {"Cream with Black":4,"Tan with dark brown":1}
+options: [{"name":"Colour","values":["Cream","Tan"]}]
+optionPhotos: {"Cream":4,"Tan":1}
 materials: ["Polyester"]
 size: "W 17 × H 15 × D 2 cm, strap 100 cm"
-images: [{"src":"../../assets/products/puppy-face-crossbody-bag/01.jpg","alt":"Tan crochet puppy face bag with brown floppy ears held by its handle"},{"src":"../../assets/products/puppy-face-crossbody-bag/02.jpg","alt":"Cream and brown crochet puppy face bags with black and dark brown ears, side by side"},{"src":"../../assets/products/puppy-face-crossbody-bag/03.jpg","alt":"Tan crochet puppy face bag with brown ears worn crossbody over black clothing"},{"src":"../../assets/products/puppy-face-crossbody-bag/04.jpg","alt":"Puppy face crossbody bag, photo 4 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/05.jpg","alt":"Puppy face crossbody bag, photo 5 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/06.jpg","alt":"Puppy face crossbody bag, photo 6 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/07.jpg","alt":"Puppy face crossbody bag, photo 7 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/08.jpg","alt":"Puppy face crossbody bag, photo 8 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/09.jpg","alt":"Puppy face crossbody bag, photo 9 of 10"},{"src":"../../assets/products/puppy-face-crossbody-bag/10.jpg","alt":"Puppy face crossbody bag, photo 10 of 10"}]
+images: [{"src":"../../assets/products/puppy-face-crossbody-bag/01.jpg","alt":"Tan crochet puppy face bag with brown floppy ears held by its handle"},{"src":"../../assets/products/puppy-face-crossbody-bag/02.jpg","alt":"Cream and brown crochet puppy face bags with black and dark brown ears, side by side"},{"src":"../../assets/products/puppy-face-crossbody-bag/03.jpg","alt":"Tan crochet puppy face bag with brown ears worn crossbody over black clothing"},{"src":"../../assets/products/puppy-face-crossbody-bag/04.jpg","alt":"The cream puppy bag with black ears, worn crossbody over a grey sweatshirt"},{"src":"../../assets/products/puppy-face-crossbody-bag/05.jpg","alt":"The tan puppy bag lying beside a phone, with its long cream strap"},{"src":"../../assets/products/puppy-face-crossbody-bag/06.jpg","alt":"The back of the tan puppy bag, with its drawstring top and brown handle"},{"src":"../../assets/products/puppy-face-crossbody-bag/07.jpg","alt":"The tan puppy bag held open, with a phone and a compact inside"},{"src":"../../assets/products/puppy-face-crossbody-bag/08.jpg","alt":"The tan puppy bag held open, showing the crochet inside"},{"src":"../../assets/products/puppy-face-crossbody-bag/09.jpg","alt":"The tan puppy bag held up by its brown handle"},{"src":"../../assets/products/puppy-face-crossbody-bag/10.jpg","alt":"Close-up of the tan puppy’s odd eyes, round nose and brown ear"}]
 faq: [{"q":"Is it suitable for kids?","a":"Yes. The short top handle suits little hands, and the 100 cm strap gives grown-ups crossbody wear too."},{"q":"What fits inside?","a":"Phone, keys, lip balm, cards, tissues and coins, plus room for a kid's small toy or sweets."},{"q":"How do I wash it?","a":"Hand wash in cool or lukewarm water at 40°C or below, lay flat to dry and reshape while damp, away from direct sun."}]
 ---
 

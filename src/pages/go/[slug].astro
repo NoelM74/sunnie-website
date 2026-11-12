@@ -67,7 +67,7 @@ const FLAG: BundleSize = l.sizes ? 3 : 2;
 // The step-up line above the button. Must match nudge() in the page script.
 const nudge = (n: BundleSize, cur: Currency) => {
   const p = prices[cur]; const f = (c: number) => formatMoney(c, cur);
-  if (l.sizes) return n === 3 ? `You save ${f(p[1] + p[2] - p[3])} on buying both.` : `Get both sizes for ${f(p[3] - p[n] - p.ship[n])} more and shipping is free.`;
+  if (l.sizes) return n === 3 ? `You save ${f(p[1] + p[2] - p[3])} on buying both.` : `Get both ${l.sizesWord ?? 'sizes'} for ${f(p[3] - p[n] - p.ship[n])} more and shipping is free.`;
   if (n === 1) return `Add a second ${l.noun[0]} for ${f(p[2] - p[1] - p.ship[1])} more and shipping is free.`;
   if (n === 2) return `Make it ${WORDS[3 * PER]} for just ${f(p[3] - p[2])} more.`;
   return `Best value: ${f(Math.round(p[3] / (3 * PER)))} each.`;
@@ -113,7 +113,7 @@ const jsonLd = [
 // The character's own little logo (public/go/<slug>-mark.svg): bundle cards, footer, tab icon.
 const mark = `/go/${l.slug}-mark.svg`;
 const nav: [string, string][] = [['#fits', 'What fits'], ...(l.colours ? [['#colours', 'Colours'] as [string, string]] : []), ['#craft', 'Made by hand'], ['#offer', 'Bundles'], ['#faq', 'Questions']];
-const config = { prices, picks: l.picks, noun: l.noun, per: PER, three: WORDS[3 * PER], defaults: l.offer.defaults, start: DEFAULT, cartOptions: l.sizes ? Object.fromEntries(BUNDLE_SIZES.map((n) => [n, l.sizes![n].option])) : l.cart?.options ?? null, labels: l.sizes ? Object.fromEntries(BUNDLE_SIZES.map((n) => [n, qtyLabel(n)])) : null, sizes: !!l.sizes };
+const config = { prices, picks: l.picks, noun: l.noun, per: PER, three: WORDS[3 * PER], defaults: l.offer.defaults, start: DEFAULT, cartOptions: l.sizes ? Object.fromEntries(BUNDLE_SIZES.map((n) => [n, l.sizes![n].option])) : l.cart?.options ?? null, labels: l.sizes ? Object.fromEntries(BUNDLE_SIZES.map((n) => [n, qtyLabel(n)])) : null, sizes: !!l.sizes, sizesWord: l.sizesWord ?? 'sizes' };
 ---
 <LanderLayout title={l.title} description={l.description} image={absoluteUrl(l.og)} jsonLd={jsonLd} bar={l.bar} barRight={l.barRight} nav={nav} mark={mark} shop={l.shop}>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -348,7 +348,7 @@ const config = { prices, picks: l.picks, noun: l.noun, per: PER, three: WORDS[3 
     function qtyLabel(n) { return C.labels ? C.labels[n] : C.per > 1 ? 'Set of ' + n * C.per : n + ' ' + noun(n); }
     function nudge(n) {
       var p = C.prices[cur()];
-      if (C.sizes) return n === 3 ? 'You save ' + money(p[1] + p[2] - p[3]) + ' on buying both.' : 'Get both sizes for ' + money(p[3] - p[n] - p.ship[n]) + ' more and shipping is free.';
+      if (C.sizes) return n === 3 ? 'You save ' + money(p[1] + p[2] - p[3]) + ' on buying both.' : 'Get both ' + C.sizesWord + ' for ' + money(p[3] - p[n] - p.ship[n]) + ' more and shipping is free.';
       if (n === 1) return 'Add a second ' + C.noun[0] + ' for ' + money(p[2] - p[1] - p.ship[1]) + ' more and shipping is free.';
       if (n === 2) return 'Make it ' + C.three + ' for just ' + money(p[3] - p[2]) + ' more.';
       return 'Best value: ' + money(Math.round(p[3] / (3 * C.per))) + ' each.';

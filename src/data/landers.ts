@@ -26,6 +26,8 @@ export interface Lander extends BundleDef {
   /** Pieces in one pack unit, when a unit is more than one piece (Fold & Bloom sells pairs of
    * coasters): the boxes then read "Set of 2 / 4 / 6" and price per piece. Default 1. */
   per?: number;
+  /** Sizes landers: what the boxes choose between, for "Get both sizes…". Default 'sizes'. */
+  sizesWord?: string;
   /** Header link back to the shop. Default: ['/shop/bags/', 'All bags']. */
   shop?: [string, string];
   /** Right-hand side of the top bar. Default: "Handmade by Hui". */
@@ -1506,6 +1508,285 @@ export const LANDERS: Lander[] = [
       { q: 'Will my phone fit?', a: 'Yes. The bag is 20 cm tall and 14.5 cm wide, with room for a phone and your cards.' },
       { q: 'How do I wash it?', a: 'Hand wash in cool or lukewarm water, below 40°C, and lay it flat to dry, out of strong sun.' },
       arriveFaq('bag'),
+      returnsFaq,
+    ],
+  },
+  {
+    slug: 'puppy-pockets',
+    productSlug: 'puppy-face-crossbody-bag',
+    name: 'Puppy Pockets dog bag',
+    noun: ['bag', 'bags'],
+    picks: ['Cream', 'Tan'],
+    maker: 'Hui',
+    // Owner, 2026-11-12: the middle ladder, €34.95 / 2 for €59.95 / 3 for €79.95.
+    prices: {
+      EUR: { 1: 3495, 2: 5995, 3: 7995 },
+      GBP: { 1: 2695, 2: 4495, 3: 5795 },
+      USD: { 1: 3495, 2: 5995, 3: 7995 },
+    },
+    title: 'Crochet Puppy Face Bag with Floppy Ears and Top Handle | Puppy Pockets',
+    description: 'A hand-crocheted puppy face bag with floppy ears and odd eyes. Short top handle plus a 100 cm crossbody strap. Cream or tan. Free shipping on 2 or more.',
+    og: '/go/puppy-pockets-og.jpg',
+    bar: 'Free shipping on 2 bags or more',
+    hero: {
+      h1: 'A puppy with floppy ears and odd eyes,',
+      h1em: 'on a little bag you carry by the handle or crossbody.',
+      sub: 'Hui crochets each puppy by hand, with two eyes in different sizes and ears that flop as you walk. A drawstring closes the top. Carry it by the short handle, or clip on the 100 cm strap. Cream or tan.',
+      image: { src: 'products/puppy-face-crossbody-bag/02.jpg', alt: 'A cream puppy face bag with black ears and a tan one with brown ears, held up side by side by their handles' },
+      proof: sturdy,
+    },
+    story: {
+      h: 'A face that makes people smile back.',
+      paras: [
+        'One eye is bigger than the other, the nose is a little round button, and the ears hang down past the bag. That’s the whole charm.',
+        'It’s small enough for a child to carry by the handle, and big enough for an adult’s phone and keys.',
+      ],
+      subH: 'How does it close?',
+      subParas: ['With a drawstring under the handle. Pull it to close the top, so there’s no zip to catch on the yarn.'],
+    },
+    fits: {
+      h: 'Room for the everyday.',
+      lede: 'Your phone, keys, lip balm, cards, tissues and coins, with space for a child’s small toy or sweets.',
+      specs: [
+        ['Size', '15 cm tall, 16 cm wide at the top and 17 cm at the base, 2 cm deep. Measured by hand, so allow 1 to 3 cm.'],
+        ['Carry', 'By the short top handle, or crossbody on the 100 cm strap'],
+        ['Closes', 'Drawstring'],
+        ['Made from', 'Polyester yarn'],
+        ['Care', 'Hand wash in cool or lukewarm water, 40°C at most. Reshape while damp and dry flat, away from direct sun.'],
+      ],
+      image: { src: 'products/puppy-face-crossbody-bag/07.jpg', alt: 'The tan puppy bag held open, with a phone and a compact inside' },
+    },
+    colours: {
+      h: 'Pick your pup',
+      lede: 'Two puppies, each with ears, handle and nose in a darker shade.',
+      cards: [
+        { pick: 'Cream', title: 'Cream', text: 'Cream with black ears, a black handle and a black nose.', image: { src: 'products/puppy-face-crossbody-bag/04.jpg', alt: 'The cream puppy bag with black ears, worn crossbody over a grey sweatshirt' } },
+        { pick: 'Tan', title: 'Tan', text: 'Tan with dark brown ears, a brown handle and a brown nose.', image: { src: 'products/puppy-face-crossbody-bag/01.jpg', alt: 'The tan puppy bag with brown floppy ears, held by its handle' } },
+      ],
+      note: 'Can’t choose? Get one of each.',
+    },
+    uses: {
+      h: 'Where it goes',
+      items: [
+        ['Days out.', 'Phone and keys, hands free on the long strap.'],
+        ['Kids.', 'A first bag with a handle that fits little hands.'],
+        ['Dog lovers.', 'A birthday present for anyone who stops to pat every dog.'],
+        ['Matching.', 'One for you, one for a child, in two colours.'],
+      ],
+      images: [
+        { src: 'products/puppy-face-crossbody-bag/03.jpg', alt: 'The tan puppy bag worn crossbody over a black top' },
+        { src: 'products/puppy-face-crossbody-bag/05.jpg', alt: 'The tan puppy bag lying beside a phone, with its long cream strap' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, ears and all.',
+      paras: [
+        'Hui crochets the body in one colour, then the ears, handle and nose in a darker shade, and sets the two eyes at different sizes.',
+        'Because a person makes each one, no two puppies look at you quite the same way.',
+      ],
+      image: { src: 'products/puppy-face-crossbody-bag/10.jpg', alt: 'Close-up of the tan puppy’s odd eyes, round nose and brown ear' },
+    },
+    offer: {
+      h: 'Pick your pups',
+      lede: 'We suggest two: one for you and one for a dog lover you know. Two or more ship free, and each bag costs less.',
+      flag2: 'One for you, one to give',
+      notes: { 1: 'Just the one.', 2: 'One of each, or two the same.', 3: 'Any three.' },
+      defaults: ['Cream', 'Tan', 'Cream'],
+      proof: friend,
+    },
+    reviews: [friend, maria, asPictured],
+    faq: [
+      { q: 'What fits inside?', a: 'A phone, keys, lip balm, cards, tissues and coins, with room for a child’s small toy or sweets.' },
+      { q: 'How do I carry it?', a: 'By the short top handle, or crossbody on the 100 cm strap.' },
+      { q: 'How does it close?', a: 'With a drawstring under the handle. Pull it to close the top.' },
+      kidsFaq('bag'),
+      { q: 'How do I wash it?', a: 'Hand wash in cool or lukewarm water, 40°C at most. Reshape while damp and dry flat, away from direct sun.' },
+      arriveFaq('bag'),
+      returnsFaq,
+    ],
+  },
+  {
+    slug: 'stretch-dogs',
+    productSlug: 'dog-crossbody-purse',
+    name: 'Stretch Dogs crossbody bag',
+    noun: ['dog', 'dogs'],
+    picks: ['Khaki', 'Yellow'],
+    maker: 'Hui',
+    // Owner, 2026-11-12: the middle ladder, €34.95 / 2 for €59.95 / 3 for €79.95.
+    prices: {
+      EUR: { 1: 3495, 2: 5995, 3: 7995 },
+      GBP: { 1: 2695, 2: 4495, 3: 5795 },
+      USD: { 1: 3495, 2: 5995, 3: 7995 },
+    },
+    title: 'Crochet Long Dog Crossbody Bag, Chunky and Squishy | Stretch Dogs',
+    description: 'A hand-crocheted long dog crossbody bag, 34 cm nose to tail, chunky and squishy, on a 130 cm strap. Khaki or yellow. Free shipping on 2 or more.',
+    og: '/go/stretch-dogs-og.jpg',
+    bar: 'Free shipping on 2 dogs or more',
+    hero: {
+      h1: 'A long, squishy crochet dog,',
+      h1em: 'that carries your phone, keys and lipstick.',
+      sub: 'Hui crochets him in a chunky, pillowy stitch, 34 cm from nose to tail, with floppy ears and four round feet. He hangs at your side on a 130 cm strap. Khaki or yellow.',
+      image: { src: 'products/dog-crossbody-purse/01.jpg', alt: 'A yellow and a khaki long crochet dog bag lying side by side on a bed with their braided straps' },
+      proof: sturdy,
+    },
+    story: {
+      h: 'Soft enough to squeeze.',
+      paras: [
+        'The chunky stitch makes him feel more like a soft toy than a bag. He has floppy ears, a short tail and four round feet that stick out underneath.',
+        'He’s long rather than deep, so he lies flat against you and still holds the everyday things.',
+      ],
+      subH: 'How heavy is he?',
+      subParas: ['About 160 g, so you’ll hardly notice him on your shoulder.'],
+    },
+    fits: {
+      h: 'A real everyday bag.',
+      lede: 'A phone, lipstick, tissues, keys and a bus card all fit inside.',
+      specs: [
+        ['Size', '34 cm long, 15 cm tall, 2 cm deep. Measured by hand, so allow 1 to 3 cm.'],
+        ['Strap', '130 cm braided strap, worn crossbody or over the shoulder'],
+        ['Weight', 'About 160 g'],
+        ['Made from', 'Polyester-acrylic yarn'],
+        ['Care', 'Hand wash in room-temperature or lukewarm water, below 40°C. Dry flat.'],
+      ],
+      image: { src: 'products/dog-crossbody-purse/09.jpg', alt: 'The yellow dog bag lying on a bed beside a phone, with its yellow braided strap' },
+    },
+    colours: {
+      h: 'Pick your dog',
+      lede: 'Two dogs, each with ears and a tail in a darker shade.',
+      cards: [
+        { pick: 'Khaki', title: 'Khaki', text: 'Warm khaki with dark brown ears and tail, on a brown strap.', image: { src: 'products/dog-crossbody-purse/02.jpg', alt: 'The khaki dog bag with dark brown ears, held against a polka-dot shirt' } },
+        { pick: 'Yellow', title: 'Yellow', text: 'Sunny yellow with black ears and tail, on a yellow strap.', image: { src: 'products/dog-crossbody-purse/03.jpg', alt: 'The yellow dog bag with black ears, worn crossbody over a white skirt' } },
+      ],
+      note: 'Can’t choose? Get one of each.',
+    },
+    uses: {
+      h: 'Where he goes',
+      items: [
+        ['Every day.', 'Phone, keys and lipstick, hands free.'],
+        ['Kids.', 'A first bag for coins, small toys and treats.'],
+        ['Dog lovers.', 'For anyone who has a long dog, or wants one.'],
+        ['Matching.', 'One khaki, one yellow, for you and a friend.'],
+      ],
+      images: [
+        { src: 'products/dog-crossbody-purse/04.jpg', alt: 'The khaki dog bag worn crossbody over a white shirt' },
+        { src: 'products/dog-crossbody-purse/08.jpg', alt: 'The yellow dog bag lying on a bed with its braided strap' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, nose to tail.',
+      paras: [
+        'Hui crochets the long body in a chunky stitch, then the head, the floppy ears, the four round feet and the tail.',
+        'Because a person makes each one, no two dogs come out exactly alike.',
+      ],
+      image: { src: 'products/dog-crossbody-purse/05.jpg', alt: 'The khaki dog bag worn at the hip, showing his ears, feet and tail' },
+    },
+    offer: {
+      h: 'Pick your dogs',
+      lede: 'We suggest two: one for you and one for a dog lover you know. Two or more ship free, and each dog costs less.',
+      flag2: 'One for you, one to give',
+      notes: { 1: 'Just the one.', 2: 'One of each, or two the same.', 3: 'Any three.' },
+      defaults: ['Khaki', 'Yellow', 'Khaki'],
+      proof: friend,
+    },
+    reviews: [friend, secondBuy, maria],
+    faq: [
+      { q: 'What fits inside?', a: 'A phone, lipstick, tissues, keys and a bus card.' },
+      { q: 'How long is the strap?', a: '130 cm, long enough to wear crossbody or over the shoulder.' },
+      kidsFaq('dog'),
+      { q: 'How do I wash it?', a: 'Hand wash in room-temperature or lukewarm water, below 40°C, and lay it flat to dry.' },
+      arriveFaq('dog'),
+      returnsFaq,
+    ],
+  },
+  {
+    slug: 'bamboo-buddies',
+    productSlug: 'panda-crossbody-bag',
+    name: 'Bamboo Buddies panda bag',
+    noun: ['panda', 'pandas'],
+    picks: ['Mini Tote Bag', 'Crossbody Sling Bag'],
+    maker: 'Hui',
+    // Owner, 2026-11-12: pick a style, or both. Mini tote €34.95, sling €37.95 (the listing
+    // prices); both pandas €59.95, shipping free.
+    sizes: {
+      1: { option: 'Mini tote', label: 'Mini tote', pieces: 1, pick: 'Mini Tote Bag' },
+      2: { option: 'Tall sling', label: 'Tall sling', pieces: 1, pick: 'Crossbody Sling Bag' },
+      3: { option: 'Set: 1 mini tote + 1 tall sling', label: 'Both pandas', pieces: 2 },
+    },
+    sizesWord: 'styles',
+    prices: {
+      EUR: { 1: 3495, 2: 3795, 3: 5995 },
+      GBP: { 1: 2695, 2: 2895, 3: 4495 },
+      USD: { 1: 3495, 2: 3795, 3: 5995 },
+    },
+    title: 'Crochet Panda Bag: Mini Tote or Tall Sling | Bamboo Buddies',
+    description: 'A hand-crocheted grumpy panda bag in two styles: a mini tote with a short handle, or a tall sling with dangling legs. Get both and shipping is free.',
+    og: '/go/bamboo-buddies-og.jpg',
+    bar: 'Free shipping when you get both pandas',
+    hero: {
+      h1: 'A grumpy little crochet panda,',
+      h1em: 'in a mini tote or a tall sling for your phone.',
+      sub: 'Hui crochets each panda in black and white, with big eye patches, round ears and red blush marks. Pick the mini tote with its short handle, the tall sling with dangling legs, or both.',
+      image: { src: 'products/panda-crossbody-bag/03.jpg', alt: 'The panda mini tote with its black handle beside the tall panda sling with dangling arms and legs' },
+      proof: asPictured,
+    },
+    story: {
+      h: 'Unimpressed, and somehow adorable.',
+      paras: [
+        'Two big black eye patches, a little stitched frown and red blush on the cheeks give every panda the same unimpressed look.',
+        'Hui stitches the blush marks on one by one, so no two pandas match exactly.',
+      ],
+      subH: 'Which style?',
+      subParas: ['The mini tote is a wide panda face with a short handle, on a 112 cm strap. The tall sling is a whole panda with dangling arms and legs, on a 120 cm strap.'],
+    },
+    fits: {
+      h: 'Two styles, both made for your phone.',
+      lede: 'Each holds a phone, cards, keys and lip balm, and maybe a small wallet.',
+      specs: [
+        ['Mini tote', '14 cm tall, 18 cm wide at the base and 13 cm at the top, 2 cm deep, on a 112 cm strap.'],
+        ['Tall sling', '26 cm tall, 12 cm wide, 3 cm deep, on a 120 cm strap.'],
+        ['Sizing', 'Measured by hand, so allow 2 to 3 cm.'],
+        ['Weight', 'About 130 to 140 g'],
+        ['Made from', 'Polyester yarn'],
+        ['Care', 'Hand wash in cool water with mild soap and dry flat. Wash it on its own the first time, as the black yarn can bleed a little.'],
+      ],
+      image: { src: 'products/panda-crossbody-bag/10.jpg', alt: 'The panda mini tote lying beside a phone, with its black strap' },
+    },
+    uses: {
+      h: 'Where they go',
+      items: [
+        ['Every day.', 'Phone, cards and keys, hands free.'],
+        ['Matching.', 'The tote for you, the sling for a friend, or the other way round.'],
+        ['Panda lovers.', 'A birthday present that makes them laugh.'],
+        ['Kids.', 'Fair warning: they will try to claim it.'],
+      ],
+      images: [
+        { src: 'products/panda-crossbody-bag/04.jpg', alt: 'The panda mini tote worn crossbody over a grey cable-knit jumper' },
+        { src: 'products/panda-crossbody-bag/02.jpg', alt: 'The tall panda sling worn crossbody over a grey cable-knit jumper' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, frown and all.',
+      paras: [
+        'Hui crochets the white body, the black ears and eye patches, and for the sling the arms and legs. Then she stitches the frown and the red blush.',
+        'Because a person makes each one, no two pandas look quite the same.',
+      ],
+      image: { src: 'products/panda-crossbody-bag/08.jpg', alt: 'The tall panda sling worn at the front, showing its eye patches, blush and black feet' },
+    },
+    offer: {
+      h: 'Pick your panda',
+      lede: 'One panda, or both styles together. The pair ships free, and costs less than buying the two.',
+      flag2: 'Both styles',
+      notes: { 1: 'Short handle, wide face.', 2: 'Tall, with dangling legs.', 3: 'One mini tote and one tall sling.' },
+      defaults: ['Mini Tote Bag', 'Mini Tote Bag', 'Mini Tote Bag'],
+      proof: friend,
+    },
+    reviews: [friend, sturdy, maria],
+    faq: [
+      { q: 'What’s the difference between the two styles?', a: 'The mini tote is a wide panda face with a short handle, on a 112 cm strap. The tall sling is a whole panda with dangling arms and legs, on a 120 cm strap.' },
+      { q: 'What fits inside?', a: 'A phone, cards, keys and lip balm, and maybe a small wallet. It’s not big enough for A4 paper or a tablet.' },
+      { q: 'What’s in the set?', a: 'One mini tote and one tall sling. The set ships free.' },
+      { q: 'How do I wash it?', a: 'Hand wash in cool water with mild soap and lay it flat to dry. Wash it on its own the first time, as the black yarn can bleed a little.' },
+      arriveFaq('panda'),
       returnsFaq,
     ],
   },

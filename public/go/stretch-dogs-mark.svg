@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Stretch Dogs">
+  <path d="M6 20c2-1 4-1 5 1" fill="none" stroke="#4A3222" stroke-width="1.6" stroke-linecap="round"/>
+  <rect x="7" y="19" width="27" height="14" rx="7" fill="#F2C230" stroke="#4A3222" stroke-width="1.8"/>
+  <g fill="#F2C230" stroke="#4A3222" stroke-width="1.4"><circle cx="11.5" cy="35" r="3"/><circle cx="18" cy="35.5" r="3"/><circle cx="24.5" cy="35.5" r="3"/><circle cx="31" cy="35" r="3"/></g>
+  <circle cx="35" cy="19.5" r="8.5" fill="#F2C230" stroke="#4A3222" stroke-width="1.8"/>
+  <path d="M30 12.5c-3-2-5.5 0-5 3.5.4 2.6 2.4 3.6 4 2.8z" fill="#2A1C14"/>
+  <path d="M40 12.5c3-2 5.5 0 5 3.5-.4 2.6-2.4 3.6-4 2.8z" fill="#2A1C14"/>
+  <circle cx="32.5" cy="19" r="1.6" fill="#2A1C14"/>
+  <circle cx="38" cy="19" r="1.6" fill="#2A1C14"/>
+  <ellipse cx="35.3" cy="23.5" rx="2.2" ry="1.6" fill="#2A1C14"/>
+  <path d="M7 22.5c-2.5-2-3.5-4.5-2-6" fill="none" stroke="#2A1C14" stroke-width="2.6" stroke-linecap="round"/>
+</svg>
