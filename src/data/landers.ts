@@ -1318,6 +1318,102 @@ export const LANDERS: Lander[] = [
       returnsFaq,
     ],
   },
+  {
+    slug: 'pigtail-pals',
+    productSlug: 'big-eye-girl-bag',
+    name: 'Pigtail Pals phone bag',
+    noun: ['bag', 'bags'],
+    picks: ['Pink', 'Purple', 'Blue', 'Green'],
+    maker: 'Hui',
+    // Owner, 2026-11-12: the lighter price list, as for the Googly Gang.
+    prices: {
+      EUR: { 1: 2995, 2: 4995, 3: 6495 },
+      GBP: { 1: 2295, 2: 3995, 3: 4995 },
+      USD: { 1: 2995, 2: 4995, 3: 6495 },
+    },
+    title: 'Crochet Big Eye Phone Bag with Fuzzy Pigtails | Pigtail Pals',
+    description: 'A hand-crocheted drawstring phone bag with big round eyes and fuzzy pigtail hair. Pink, purple, blue or green, about 140 g. Free shipping on 2 or more.',
+    og: '/go/pigtail-pals-og.jpg',
+    bar: 'Free shipping on 2 bags or more',
+    hero: {
+      h1: 'Big round eyes and fuzzy pigtails,',
+      h1em: 'on a drawstring bag for your phone and keys.',
+      sub: 'Hui crochets each one in a flecked tweed yarn, with curly brown hair tied into two pigtails and a little flower. Pull the cords to close it, and the same cords are the strap. Pink, purple, blue or green.',
+      image: { src: 'landers/pigtail-pals/group.jpg', alt: 'Four crochet bags with big round eyes and fuzzy brown pigtail hair, in purple, green, blue and pink, sitting on stone steps' },
+      proof: asPictured,
+    },
+    story: {
+      h: 'A bag with a bit of personality.',
+      paras: [
+        'Most little bags are plain. This one looks back at you, with two big round eyes under a mop of curly hair.',
+        'The tweed yarn has flecks of pink, yellow and blue running through it, so the colour looks different up close than from across the room.',
+      ],
+      subH: 'How does it close?',
+      subParas: ['With a drawstring. Pull the cords and the top gathers shut. The same cords make the 110 cm strap.'],
+    },
+    fits: {
+      h: 'Room for your phone and the small things.',
+      lede: 'She fits most phones, plus lipstick, tissues, keys or a bus card.',
+      specs: [
+        ['Size', '25 cm tall, 15 cm wide at the top and 13 cm at the base. Measured by hand, so allow 1 to 3 cm.'],
+        ['Strap', '110 cm drawstring cords, worn crossbody or over the shoulder'],
+        ['Closes', 'Drawstring'],
+        ['Weight', 'About 140 g'],
+        ['Made from', 'Tweed-look crochet yarn, fuzzy yarn hair, polyester cords'],
+        ['Care', 'Hand wash in cool or lukewarm water, below 40°C. Dry flat, away from strong sun.'],
+      ],
+      image: { src: 'products/big-eye-girl-bag/09.jpg', alt: 'The pink bag worn crossbody over a grey sweatshirt, a hand on the pink cord' },
+    },
+    colours: {
+      h: 'Pick your Pigtail Pal',
+      lede: 'The same fuzzy hair in four colours. The cords, flower and feet match the body.',
+      cards: [
+        { pick: 'Pink', title: 'Pink', text: 'Pink tweed with pink cords, a pink flower and round pink feet.', image: { src: 'landers/pigtail-pals/pink.jpg', alt: 'The pink bag with big eyes, fuzzy brown pigtails and a pink flower' } },
+        { pick: 'Purple', title: 'Purple', text: 'Purple tweed with lilac cords, a lilac flower and lilac feet.', image: { src: 'products/big-eye-girl-bag/02.jpg', alt: 'The purple bag worn on the back over a grey sweatshirt' } },
+        { pick: 'Blue', title: 'Blue', text: 'Blue tweed with blue cords, a blue flower and round blue feet.', image: { src: 'landers/pigtail-pals/blue.jpg', alt: 'The blue bag with big eyes, fuzzy brown pigtails and a blue flower' } },
+        { pick: 'Green', title: 'Green', text: 'Green tweed with dark green cords, a green flower and green feet.', image: { src: 'landers/pigtail-pals/green.jpg', alt: 'The green bag with big eyes, fuzzy brown pigtails and a green flower' } },
+      ],
+      note: 'Can’t choose? Take two or three and mix the colours.',
+    },
+    uses: {
+      h: 'Where she goes',
+      items: [
+        ['Days out.', 'Phone and keys, hands free.'],
+        ['Weekends.', 'At about 140 g, light enough to forget she’s there.'],
+        ['Kids.', 'A first bag for coins, sweets and small toys.'],
+        ['Gifts.', 'For anyone who likes a bag with a face.'],
+      ],
+      images: [
+        { src: 'products/big-eye-girl-bag/04.jpg', alt: 'The blue bag worn crossbody over a black jumper and a white lace skirt' },
+        { src: 'products/big-eye-girl-bag/03.jpg', alt: 'The green bag worn crossbody over a grey sweatshirt' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, curl by curl.',
+      paras: [
+        'Hui crochets the tweed body, then the big round eyes, the curly hair and the two pigtails, each tied with a little bow. Last come the flower and the dangling feet.',
+        'Because a person makes them, no two heads of hair come out the same.',
+      ],
+      image: { src: 'products/big-eye-girl-bag/07.jpg', alt: 'Hands holding the blue bag up by its cords, showing the eyes, the pigtails and the flower' },
+    },
+    offer: {
+      h: 'Pick your pals',
+      lede: 'We suggest two: one for you, and one for a friend or your daughter. Two or more ship free, and each bag costs less.',
+      flag2: 'One for you, one for a friend',
+      notes: { 1: 'Just the one.', 2: 'Any two colours.', 3: 'Any three colours.' },
+      defaults: ['Pink', 'Blue', 'Green'],
+      proof: friend,
+    },
+    reviews: [friend, sturdy, maria],
+    faq: [
+      { q: 'Will my phone fit?', a: 'Most phones fit, with room for lipstick, tissues or keys. She’s 25 cm tall and 15 cm wide at the top.' },
+      { q: 'How does it close?', a: 'With a drawstring. Pull the cords and the top gathers shut. The same cords make the 110 cm strap.' },
+      kidsFaq('bag'),
+      { q: 'How do I wash it?', a: 'Hand wash in cool or lukewarm water, below 40°C, and lay it flat to dry, away from strong sun.' },
+      arriveFaq('bag'),
+      returnsFaq,
+    ],
+  },
 ];
 
 export const landerBySlug = (slug: string) => LANDERS.find((l) => l.slug === slug);
