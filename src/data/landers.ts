@@ -676,15 +676,15 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester yarn, faux pearl, metal clasps'],
         ['Care', 'Hand wash in cool water with mild soap. Squeeze, don’t wring, and dry flat.'],
       ],
-      image: { src: 'products/frog-phone-crossbody/08.jpg', alt: 'Blue frog bag with its size marked: 39 cm tall, 15 cm wide, 1 cm deep' },
+      image: { src: 'landers/star-frogs/size.jpg', alt: 'Blue frog bag with its size marked: 39 cm tall, 15 cm wide, 1 cm deep' },
     },
     colours: {
       h: 'Pick his overalls',
       lede: 'Same frog, three outfits. Every one has a green body, a big yellow mouth and pink cheeks.',
       cards: [
-        { pick: 'Pink', title: 'Pink', text: 'Pink overalls with a yellow star. The sweet one.', image: { src: 'products/frog-phone-crossbody/02.jpg', alt: 'Frog bag in pink overalls with a yellow star' } },
-        { pick: 'Blue', title: 'Blue', text: 'Sky-blue overalls with a yellow star. Easy with jeans.', image: { src: 'products/frog-phone-crossbody/04.jpg', alt: 'Frog bag in blue overalls with a yellow star, hanging from its strap' } },
-        { pick: 'Brown', title: 'Brown', text: 'Chocolate-brown overalls with an orange star and cream trim. The cosy one.', image: { src: 'products/frog-phone-crossbody/06.jpg', alt: 'Frog bag in brown overalls with an orange star' } },
+        { pick: 'Pink', title: 'Pink', text: 'Pink overalls with a yellow star. The sweet one.', image: { src: 'landers/star-frogs/pink-held.jpg', alt: 'Frog bag in pink overalls with a yellow star, held up in one hand' } },
+        { pick: 'Blue', title: 'Blue', text: 'Sky-blue overalls with a yellow star. Easy with jeans.', image: { src: 'landers/star-frogs/blue-worn.jpg', alt: 'Frog bag in blue overalls worn on a brown strap over a black hoodie' } },
+        { pick: 'Brown', title: 'Brown', text: 'Chocolate-brown overalls with an orange star and cream trim. The cosy one.', image: { src: 'landers/star-frogs/brown-worn.jpg', alt: 'Frog bag in brown overalls worn crossbody over a grey sweatshirt' } },
       ],
       note: 'Can’t pick? Take three and get one of each.',
     },
@@ -697,11 +697,6 @@ export const LANDERS: Lander[] = [
         ['Teens.', 'A bag that gets noticed at school, in a good way.'],
         ['Best friends.', 'Two friends, two colours of overalls.'],
       ],
-      images: [
-        { src: 'products/frog-phone-crossbody/09.jpg', alt: 'Hand holding the blue frog bag by its mouth' },
-        { src: 'products/frog-phone-crossbody/10.jpg', alt: 'Hand holding the pink frog bag up to show its face' },
-        { src: 'products/frog-phone-crossbody/03.jpg', alt: 'Back of the pink frog bag, with overall straps crossed' },
-      ],
     },
     craft: {
       h: 'Crocheted by hand, overalls and all.',
@@ -709,7 +704,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets each frog by hand: the green body, the big yellow mouth, the overalls with their crossed straps, and the star on the front.',
         'Because a person makes them, no two frogs match exactly. The legs hang a little differently, and every face has its own look.',
       ],
-      image: { src: 'products/frog-phone-crossbody/07.jpg', alt: 'Back of the brown frog bag, showing its crossed overall straps' },
+      image: { src: 'landers/star-frogs/mouth-open.webp', alt: 'The brown frog bag with its big yellow mouth held open, showing the space inside' },
     },
     offer: {
       h: 'Pick your frogs',
