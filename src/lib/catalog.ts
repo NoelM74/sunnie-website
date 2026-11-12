@@ -11,6 +11,10 @@ export interface CatalogItem {
   featured: number | null;
   /** Link for the bag line, when the item has no product page here. */
   href?: string;
+  /** Fixed pound and dollar prices by option, instead of converting the euro price (bundle packs). */
+  localPrices?: Partial<Record<'GBP' | 'USD', Record<string, number>>>;
+  /** Flat shipping for this item when the order is under the free-shipping threshold, if above the shop's. */
+  shipFlatCents?: Partial<Record<'EUR' | 'GBP' | 'USD', number>>;
 }
 export type Catalog = Record<string, CatalogItem>;
 

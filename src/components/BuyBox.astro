@@ -15,8 +15,10 @@ interface Props {
   /** Gallery alt texts, so each option can point at its photo. */
   alts?: string[];
   optionPhotos?: Record<string, number>;
+  /** Sell the bundle lander's single pack instead (src/lib/lander-products.ts). */
+  pack?: { slug: string; optionFor: Record<string, string>; landerSlug: string };
 }
-const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices, maker, alts = [], optionPhotos } = Astro.props;
+const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices, maker, alts = [], optionPhotos, pack } = Astro.props;
 const photoFor = (v: string) => (option ? optionPhoto(v, option.values, alts, optionPhotos) : null);
 ---
 {siteCheckout === false ? (
@@ -27,14 +29,14 @@ const photoFor = (v: string) => (option ? optionPhoto(v, option.values, alts, op
   )
 ) : inStock ? (
   <form class="buy-form" id="buy-form" method="post" action="/bag/add/">
-    <input type="hidden" name="slug" value={slug} />
+    <input type="hidden" name="slug" value={pack ? pack.slug : slug} />
     {option && (
       <fieldset class="choice">
         <legend>{option.name}</legend>
         <div class="choice-list">
           {option.values.map((v, i) => (
             <label class="choice-opt">
-              <input type="radio" name="option" value={v} required checked={i === 0} data-photo={photoFor(v) ?? undefined} />
+              <input type="radio" name="option" value={pack ? pack.optionFor[v] : v} required checked={i === 0} data-photo={photoFor(v) ?? undefined} />
               <span>{v}{optionPrices && <> · <Money eur={optionPrices[v]} /></>}</span>
             </label>
           ))}
@@ -42,17 +44,21 @@ const photoFor = (v: string) => (option ? optionPhoto(v, option.values, alts, op
       </fieldset>
     )}
     <div class="buy-row">
-      <label class="qty">
-        <span>Qty</span>
-        <select name="qty">
-          {[1, 2, 3, 4, 5].map((n) => <option value={n}>{n}</option>)}
-        </select>
-      </label>
+      {pack ? <input type="hidden" name="qty" value="1" /> : (
+        <label class="qty">
+          <span>Qty</span>
+          <select name="qty">
+            {[1, 2, 3, 4, 5].map((n) => <option value={n}>{n}</option>)}
+          </select>
+        </label>
+      )}
       <button class="btn btn-primary buy-btn" type="submit" data-buy-btn>Add to basket</button>
     </div>
     <ul class="buy-ticks" role="list">
       <li><span>Made to order by {maker}, ships in {site.shipsIn} with tracking</span></li>
-      <li><span>Free shipping from <Money eur={FREE_SHIPPING_EUR} whole /> · 30-day returns</span></li>
+      {pack
+        ? <li><span><a href={`/go/${pack.landerSlug}/`}>Free shipping on 2 or more</a>, and each one costs less · 30-day returns</span></li>
+        : <li><span>Free shipping from <Money eur={FREE_SHIPPING_EUR} whole /> · 30-day returns</span></li>}
       <li><span>No import charges to the EU, UK or US</span></li>
       <li><span>Pay in euro, pounds or dollars with PayPal or card</span></li>
     </ul>

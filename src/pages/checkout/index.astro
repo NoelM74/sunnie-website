@@ -6,8 +6,9 @@ import { BAG_COOKIE, decodeBag } from '../../lib/bag-cookie';
 import { FINN_SLUG } from '../../lib/finn';
 import { priceBag } from '../../lib/pricing';
 import { COUNTRY_CODES, countryName, type CheckoutValues } from '../../lib/checkout-form';
-import { CURRENCY_COOKIE, CURRENCY_NAMES, currencyFromRequest, formatMoney } from '../../lib/currency';
+import { CURRENCY_COOKIE, CURRENCY_NAMES, currencyForCountry, currencyFromRequest, formatMoney } from '../../lib/currency';
 import { pageTitle } from '../../lib/seo';
+import type { Currency } from '../../lib/currency';
 import { site } from '../../data/site';
 
 export const prerender = false;
@@ -15,7 +16,9 @@ export const prerender = false;
 Astro.response.headers.set('Cache-Control', 'no-store');
 const env = getEnv();
 const catalog = await loadCatalog((p) => env.ASSETS.fetch(new Request(new URL(p, Astro.request.url))));
-const currency = currencyFromRequest(Astro.cookies.get(CURRENCY_COOKIE)?.value, Astro.request);
+const state = (Astro.locals as { checkout?: { values: CheckoutValues; errors: Record<string, string>; payError?: string; currency?: Currency; switched?: string } }).checkout;
+// After a delivery-country currency switch, the new currency arrives here (the cookie on this request is still the old one).
+const currency = state?.currency ?? currencyFromRequest(Astro.cookies.get(CURRENCY_COOKIE)?.value, Astro.request);
 const priced = priceBag(await decodeBag(Astro.cookies.get(BAG_COOKIE)?.value, env.BAG_SECRET), catalog, currency);
 if (priced.lines.length === 0) {
   const res = Astro.redirect('/bag/', 303);
@@ -23,8 +26,12 @@ if (priced.lines.length === 0) {
   return res;
 }
 
-const state = (Astro.locals as { checkout?: { values: CheckoutValues; errors: Record<string, string>; payError?: string } }).checkout;
-const v: CheckoutValues = state?.values ?? { email: '', name: '', line1: '', line2: '', city: '', region: '', postcode: '', country: 'IE' };
+// Start the country on one that matches the prices shown: the visitor's own, if it does, else UK, US or Ireland.
+const visitorCountry = (Astro.request.headers.get('cf-ipcountry') ?? '').toUpperCase();
+const startCountry = COUNTRY_CODES.includes(visitorCountry) && currencyForCountry(visitorCountry) === currency
+  ? visitorCountry
+  : currency === 'GBP' ? 'GB' : currency === 'USD' ? 'US' : 'IE';
+const v: CheckoutValues = state?.values ?? { email: '', name: '', line1: '', line2: '', city: '', region: '', postcode: '', country: startCountry };
 const e = state?.errors ?? {};
 const euro = (c: number) => formatMoney(c, currency);
 const countries = COUNTRY_CODES.map((c) => ({ code: c, name: countryName(c) })).sort((a, b) => a.name.localeCompare(b.name));
@@ -43,6 +50,7 @@ const fields = [
   <div class="container narrow-wide">
     <header class="page-head"><h1>Checkout</h1></header>
     {state?.payError && <p class="notice notice-warn" role="alert">{state.payError}</p>}
+    {state?.switched && <p class="notice" role="alert">You’re sending this to {state.switched}, so your order is in {CURRENCY_NAMES[currency]}. Your total is below. Press Pay when you’re ready.</p>}
     <div class="bag-grid">
       <form class="checkout-form" method="post" action="/checkout/pay/" novalidate>
         <fieldset>

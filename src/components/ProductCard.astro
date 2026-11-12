@@ -2,6 +2,7 @@
 import { Picture } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Money from './Money.astro';
+import { packFor } from '../lib/lander-products';
 
 interface Props {
   product: CollectionEntry<'products'>;
@@ -11,6 +12,7 @@ interface Props {
 const { product, headingLevel = 'h3', eager = false } = Astro.props;
 const { name, price, inStock, isNew, images } = product.data;
 const Heading = headingLevel;
+const pack = packFor(product.id);
 const badge = !inStock ? 'Sold out' : isNew ? 'New' : null;
 ---
 <article class="card">
@@ -28,5 +30,5 @@ const badge = !inStock ? 'Sold out' : isNew ? 'New' : null;
     </div>
     <Heading class="card-title">{name}</Heading>
   </a>
-  <p class="card-price"><Money eur={price} /></p>
+  <p class="card-price">{pack ? <Money eur={pack.price.eur / 100} gbpCents={pack.price.gbp} usdCents={pack.price.usd} /> : <Money eur={price} />}</p>
 </article>

@@ -5,12 +5,12 @@ import { priceBag } from '../../src/lib/pricing';
 const catalog = { [FINN_SLUG]: { ...FINN_ITEM, thumb: '/t.webp' } };
 
 describe('Finn handoff', () => {
-  it('prices the owner-set euro bundles', () => {
+  it('prices the owner-approved bundles', () => {
     const b = priceBag([{ slug: FINN_SLUG, option: '2 frogs', qty: 1 }], catalog, 'EUR');
-    expect(b.subtotalCents).toBe(6195);
+    expect(b.subtotalCents).toBe(6995);
     expect(b.shippingCents).toBe(0);
-    const one = priceBag([{ slug: FINN_SLUG, option: '1 frog', qty: 1 }], catalog, 'EUR');
-    expect(one.subtotalCents).toBe(3495);
+    const one = priceBag([{ slug: FINN_SLUG, option: '1 frog', qty: 1 }], catalog, 'GBP');
+    expect(one.subtotalCents).toBe(2995);
     expect(one.shippingCents).toBe(500);
   });
   it('sends Finn-only bags back to Finn', () => {

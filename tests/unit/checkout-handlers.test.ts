@@ -42,6 +42,20 @@ describe('handlePay', () => {
     expect(created[0].urls).toEqual({ returnUrl: 'https://sunniedesigns.com/checkout/return/', cancelUrl: 'https://sunniedesigns.com/checkout/cancel/' });
     expect(await orders.findByPaypalId('PP-1')).toMatchObject({ ref: 'SUN-TEST01', status: 'pending' });
   });
+  it('charges in the delivery country currency: a UK address browsed in euro shows the pound total first', async () => {
+    const { pp, created } = fakePaypal();
+    const orders = memoryOrders();
+    const r = await handlePay(fd({ ...address, country: 'GB' }), bag, { currency: 'EUR', catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X' });
+    expect(r).toMatchObject({ kind: 'currency', currency: 'GBP' });
+    expect(created).toHaveLength(0);
+    const ok = await handlePay(fd({ ...address, country: 'GB' }), bag, { currency: 'GBP', catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-Y' });
+    expect(ok.kind).toBe('redirect');
+    expect(created[0].o.currency).toBe('GBP');
+  });
+  it('charges euro for an Irish address even when the visitor picked dollars', async () => {
+    const r = await handlePay(fd(address), bag, { currency: 'USD', catalog, orders: memoryOrders(), paypal: fakePaypal().pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X' });
+    expect(r).toMatchObject({ kind: 'currency', currency: 'EUR' });
+  });
   it('returns field errors without calling PayPal', async () => {
     const { pp, created } = fakePaypal();
     const r = await handlePay(fd({ ...address, email: 'bad' }), bag, { currency: 'EUR', catalog, orders: memoryOrders(), paypal: pp, paypalEnv: 'sandbox', origin: 'https://x', newRef: () => 'SUN-X' });

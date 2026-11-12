@@ -1,7 +1,7 @@
 import type { BundleDef, BundleSize } from '../lib/bundles';
 
 // Copy and photos for the bundle landers at /go/<slug>/. Prices come from
-// BUNDLE_EUR_CENTS in src/lib/bundles.ts; shipping, dispatch and returns come from
+// BUNDLE_PRICES in src/lib/bundles.ts; shipping, dispatch and returns come from
 // the shop's own settings, so a lander can never promise something checkout doesn't.
 // Delivery times live on /shipping/ only.
 //
@@ -15,10 +15,10 @@ export interface Lander extends BundleDef {
   productSlug?: string;
   /**
    * For a product that already has its own bag item (Finn & the Shamrock): that item's
-   * slug, its euro pack prices and the option name for each pack. Without this, the
-   * lander gets a generated bundle item at BUNDLE_EUR_CENTS (src/lib/bundles.ts).
+   * slug and the option name for each pack. Without this, the lander gets a generated
+   * bundle item. Prices come from BUNDLE_PRICES (src/lib/bundles.ts) either way.
    */
-  cart?: { slug: string; prices: Record<BundleSize, number>; options: Record<BundleSize, string> };
+  cart?: { slug: string; options: Record<BundleSize, string> };
   /** Dispatch line, e.g. "Posted within 4 working days". Default: the shop's "Ships in 3–5 days". */
   ships?: string;
   /** Default 30, the shop's policy. */
@@ -70,8 +70,8 @@ const secondBuy: ReviewKey = { reviewer: 'Antje-Susan', date: '2026-06-02' };
 
 export const LANDERS: Lander[] = [
   {
-    // Moved from finn.sunniedesigns.com (2026-11-12). Same bag item, prices and 60-day
-    // returns as before; prices stay put until the pricing review.
+    // Moved from finn.sunniedesigns.com (2026-11-12). Same bag item and 60-day returns;
+    // prices from the shared price lists in src/lib/bundles.ts.
     slug: 'finn-the-shamrock',
     name: 'Finn & the Shamrock frog bag',
     noun: ['frog', 'frogs'],
@@ -79,7 +79,6 @@ export const LANDERS: Lander[] = [
     maker: 'Sunnie Designs',
     cart: {
       slug: 'finn-the-shamrock',
-      prices: { 1: 3495, 2: 6195, 3: 8595 },
       options: { 1: '1 frog', 2: '2 frogs', 3: '3 frogs' },
     },
     ships: 'Posted within 4 working days',
@@ -267,7 +266,7 @@ export const LANDERS: Lander[] = [
     productSlug: 'cat-crossbody-bag-with-dangling-legs',
     name: 'Miso the cat bag',
     noun: ['cat', 'cats'],
-    picks: ['Black', 'Brown', 'Yellow'],
+    picks: ['Black Cat', 'Brown Cat', 'Yellow Cat'],
     maker: 'Hui',
     title: 'Miso | Hand-Crocheted Cat Crossbody Bag | Sunnie Designs',
     description: 'Miso is a hand-crocheted cat in a little sweater, with a wide mouth for your keys and lip balm. Black, brown or yellow. Free shipping on 2 or more, 30-day returns.',
@@ -306,9 +305,9 @@ export const LANDERS: Lander[] = [
       h: 'Three cats, three sweaters',
       lede: 'Every Miso has the same cheeky face. The sweater is what makes him yours.',
       cards: [
-        { pick: 'Black', title: 'Black in pink', text: 'Pink sweater with a little blue fish, and an orange mouth. Sharp against a camel coat.', image: { src: 'landers/miso-cat/cat-black.webp', alt: 'Black Miso in a pink sweater with a blue fish' } },
-        { pick: 'Brown', title: 'Brown in stripes', text: 'Cream and tan striped sweater with a tiny yellow face on the chest, and an orange mouth. Cosy with knitwear.', image: { src: 'landers/miso-cat/cat-brown.webp', alt: 'Brown Miso in a cream and tan striped sweater with a tiny yellow face' } },
-        { pick: 'Yellow', title: 'Yellow in blue', text: 'Blue sweater with a small pink fish, and a pink mouth. The sunny one.', image: { src: 'landers/miso-cat/cat-yellow.webp', alt: 'Yellow Miso in a blue sweater with a pink fish' } },
+        { pick: 'Black Cat', title: 'Black in pink', text: 'Pink sweater with a little blue fish, and an orange mouth. Sharp against a camel coat.', image: { src: 'landers/miso-cat/cat-black.webp', alt: 'Black Miso in a pink sweater with a blue fish' } },
+        { pick: 'Brown Cat', title: 'Brown in stripes', text: 'Cream and tan striped sweater with a tiny yellow face on the chest, and an orange mouth. Cosy with knitwear.', image: { src: 'landers/miso-cat/cat-brown.webp', alt: 'Brown Miso in a cream and tan striped sweater with a tiny yellow face' } },
+        { pick: 'Yellow Cat', title: 'Yellow in blue', text: 'Blue sweater with a small pink fish, and a pink mouth. The sunny one.', image: { src: 'landers/miso-cat/cat-yellow.webp', alt: 'Yellow Miso in a blue sweater with a pink fish' } },
       ],
       note: 'Can’t pick? The three-cat bundle takes one of each.',
     },
@@ -340,7 +339,7 @@ export const LANDERS: Lander[] = [
       lede: 'We suggest two: one to keep, and one for the cat person in your life. Two or more ship free, and each cat costs less.',
       flag2: 'Keep one, gift one',
       notes: { 1: 'Just the one, for you.', 2: 'Any two sweaters.', 3: 'One of each sweater, or any three.' },
-      defaults: ['Black', 'Brown', 'Yellow'],
+      defaults: ['Black Cat', 'Brown Cat', 'Yellow Cat'],
       proof: friend,
     },
     reviews: [sturdy, secondBuy, friend],
@@ -358,7 +357,7 @@ export const LANDERS: Lander[] = [
     productSlug: 'plush-dog-crossbody-phone-bag',
     name: 'Snout & About dog phone bag',
     noun: ['dog', 'dogs'],
-    picks: ['Grey schnauzer', 'Beige puppy', 'White terrier'],
+    picks: ['Grey Schnauzer', 'Beige Puppy', 'White Terrier'],
     maker: 'Hui',
     title: 'Snout & About | Plush Crochet Dog Phone Bag | Sunnie Designs',
     description: 'A soft, hand-crocheted dog that carries your phone: grey schnauzer, beige puppy or white terrier. Free shipping on 2 or more, 30-day returns.',
@@ -397,9 +396,9 @@ export const LANDERS: Lander[] = [
       h: 'A schnauzer, a puppy or a terrier',
       lede: 'Three dogs, all the same price. Mix them however you like.',
       cards: [
-        { pick: 'Grey schnauzer', title: 'Grey schnauzer', text: 'Grey with cream eyebrows and a white muzzle. Looks serious, isn’t.', image: { src: 'landers/snout-and-about/dog-grey.webp', alt: 'Grey schnauzer bag with cream eyebrows and a puffy black nose' } },
-        { pick: 'Beige puppy', title: 'Beige puppy', text: 'Golden beige with long floppy ears. The one everybody wants to pat.', image: { src: 'landers/snout-and-about/dog-beige.webp', alt: 'Beige puppy bag with long floppy ears' } },
-        { pick: 'White terrier', title: 'White terrier', text: 'Fluffy white with pink ears and a big black nose. Bright against a dark coat.', image: { src: 'landers/snout-and-about/dog-white.webp', alt: 'White terrier bag with pink ears and a black nose' } },
+        { pick: 'Grey Schnauzer', title: 'Grey schnauzer', text: 'Grey with cream eyebrows and a white muzzle. Looks serious, isn’t.', image: { src: 'landers/snout-and-about/dog-grey.webp', alt: 'Grey schnauzer bag with cream eyebrows and a puffy black nose' } },
+        { pick: 'Beige Puppy', title: 'Beige puppy', text: 'Golden beige with long floppy ears. The one everybody wants to pat.', image: { src: 'landers/snout-and-about/dog-beige.webp', alt: 'Beige puppy bag with long floppy ears' } },
+        { pick: 'White Terrier', title: 'White terrier', text: 'Fluffy white with pink ears and a big black nose. Bright against a dark coat.', image: { src: 'landers/snout-and-about/dog-white.webp', alt: 'White terrier bag with pink ears and a black nose' } },
       ],
       note: 'Can’t pick? The three-dog bundle takes one of each.',
     },
@@ -431,7 +430,7 @@ export const LANDERS: Lander[] = [
       lede: 'We suggest two: one for you, and one for the dog lover who will ask where you got yours. Two or more ship free, and each dog costs less.',
       flag2: 'Keep one, gift one',
       notes: { 1: 'Just the one, for you.', 2: 'Any two dogs.', 3: 'One of each, or any three.' },
-      defaults: ['Grey schnauzer', 'Beige puppy', 'White terrier'],
+      defaults: ['Grey Schnauzer', 'Beige Puppy', 'White Terrier'],
       proof: friend,
     },
     reviews: [sturdy, secondBuy, friend],

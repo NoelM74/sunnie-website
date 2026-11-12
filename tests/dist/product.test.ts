@@ -22,7 +22,7 @@ describe('product pages', () => {
       expect(html).not.toMatch(/action="\/bag\/add\/"/);
     } else {
       expect(html).toMatch(/<form[^>]*method="post"[^>]*action="\/bag\/add\/"|class="btn btn-disabled btn-block"/);
-      if (!html.includes('class="btn btn-disabled btn-block"')) expect(html).toContain('Free shipping from <span class="money" data-gbp="£');
+      if (!html.includes('class="btn btn-disabled btn-block"')) expect(html).toMatch(/Free shipping from <span class="money" data-gbp="£|Free shipping on 2 or more<\/a>/);
     }
     expect(html).toContain('Made by ');
     expect(html).toContain('property="og:type" content="product"');
@@ -30,10 +30,13 @@ describe('product pages', () => {
 
   it.each(slugs)('%s shows the same pound and dollar price the checkout charges', (slug) => {
     const html = page(`/products/${slug}/`);
-    const item = catalog[slug] as { priceCents: number; optionPriceCents: Record<string, number> | null };
+    // Pages for products with a bundle lander sell its single pack (a fixed price list), so check the item the form posts.
+    const sold = html.match(/name="slug" value="([^"]+)"/)?.[1] ?? slug;
+    const item = catalog[sold] as { priceCents: number; optionPriceCents: Record<string, number> | null; localPrices?: Record<'GBP' | 'USD', Record<string, number>> };
     const eurCents = item.optionPriceCents ? Math.min(...Object.values(item.optionPriceCents)) : item.priceCents;
+    const local = (cur: 'GBP' | 'USD') => item.localPrices?.[cur] ? Math.min(...Object.values(item.localPrices[cur])) : toLocalCents(eurCents, cur);
     const price = html.split('class="product-price"')[1].split('</p>')[0];
-    expect(price).toContain(`data-gbp="${formatMoney(toLocalCents(eurCents, 'GBP'), 'GBP')}" data-usd="${formatMoney(toLocalCents(eurCents, 'USD'), 'USD')}">${formatMoney(eurCents, 'EUR')}</span>`);
+    expect(price).toContain(`data-gbp="${formatMoney(local('GBP'), 'GBP')}" data-usd="${formatMoney(local('USD'), 'USD')}">${formatMoney(eurCents, 'EUR')}</span>`);
   });
 
   it('marks the first gallery image as high priority', () => {

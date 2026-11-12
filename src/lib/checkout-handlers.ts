@@ -1,7 +1,7 @@
 import type { Catalog } from './catalog';
 import type { BagLine } from './pricing';
 import { priceBag } from './pricing';
-import type { Currency } from './currency';
+import { currencyForCountry, type Currency } from './currency';
 import { validateCheckout, type CheckoutValues } from './checkout-form';
 import type { OrderRow, OrdersRepo } from './orders';
 import { PayPalError, type PayPalClient } from './paypal';
@@ -14,6 +14,7 @@ type PayResult =
   | { kind: 'redirect'; location: string }
   | { kind: 'invalid'; values: CheckoutValues; errors: Record<string, string> }
   | { kind: 'empty' }
+  | { kind: 'currency'; values: CheckoutValues; currency: Currency }
   | { kind: 'payError'; values: CheckoutValues; message: string };
 
 const GENERIC_PAY_ERROR = 'We could not reach PayPal just now. Your basket is saved, please try again in a minute.';
@@ -24,6 +25,10 @@ export async function handlePay(form: FormData, bag: BagLine[], deps: PayDeps): 
   if (priced.lines.length === 0) return { kind: 'empty' };
   const v = validateCheckout(form);
   if (!v.ok) return { kind: 'invalid', values: v.values, errors: v.errors as Record<string, string> };
+  // Prices are set per market, so the order is charged in the delivery country's currency.
+  // If the buyer browsed in another one, show them the new total before they pay.
+  const deliveryCurrency = currencyForCountry(v.values.country);
+  if (deliveryCurrency !== deps.currency) return { kind: 'currency', values: v.values, currency: deliveryCurrency };
   const { email, ...address } = v.values;
   const input = { ref: deps.newRef(), email, address, lines: priced.lines, subtotalCents: priced.subtotalCents, shippingCents: priced.shippingCents, totalCents: priced.totalCents, currency: priced.currency, paypalEnv: deps.paypalEnv };
 

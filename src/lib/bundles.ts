@@ -1,18 +1,25 @@
 import type { CatalogItem } from './catalog';
+import type { Currency } from './currency';
 
 // Bundle landers (/go/<slug>/) sell one product in packs of 1, 2 or 3, with a colour
-// for each piece. The bag holds a bundle as one line: a hidden catalogue item whose
-// option is the whole pack, e.g. "2 cats: Black + Brown". The bag, PayPal, the order
-// row and the emails all treat it like any other option, so none of them change.
+// for each piece. The bag holds a pack as one line: a hidden catalogue item whose
+// option is the whole pack, e.g. "2 cats: Black Cat + Brown Cat". The bag, PayPal, the
+// order row and the emails all treat it like any other option.
 
-/**
- * Euro prices for a pack of 1, 2 or 3 (2026-11-12). One piece always pays shipping
- * (it sits well under the free-shipping threshold in every currency), so the step up
- * is what sells: the second piece costs €20 more delivered, the third €18 more.
- */
-export const BUNDLE_EUR_CENTS: Record<1 | 2 | 3, number> = { 1: 3695, 2: 6195, 3: 7995 };
 export const BUNDLE_SIZES = [1, 2, 3] as const;
 export type BundleSize = (typeof BUNDLE_SIZES)[number];
+
+/**
+ * Owner-approved price lists, set per currency rather than converted (2026-11-12).
+ * One piece always pays shipping; two or more ship free under the shop's threshold.
+ * Checkout charges in the delivery country's currency, so these can't be mixed.
+ */
+export const BUNDLE_PRICES: Record<Currency, { packs: Record<BundleSize, number>; shipping: number }> = {
+  EUR: { packs: { 1: 3995, 2: 6995, 3: 8995 }, shipping: 600 },
+  GBP: { packs: { 1: 2995, 2: 4995, 3: 6495 }, shipping: 500 },
+  USD: { packs: { 1: 3995, 2: 6995, 3: 8995 }, shipping: 600 },
+};
+export const BUNDLE_EUR_CENTS = BUNDLE_PRICES.EUR.packs;
 
 export interface BundleDef {
   /** URL slug of the lander, /go/<slug>/. */
@@ -21,7 +28,7 @@ export interface BundleDef {
   name: string;
   /** What one piece is called: ['cat', 'cats']. */
   noun: [string, string];
-  /** Short colour labels, in the order the picker shows them. */
+  /** Colour names, in picker order. For a lander with a shop product, these match its option values. */
   picks: string[];
   maker: string;
 }
@@ -30,7 +37,7 @@ export const bundleSlug = (def: Pick<BundleDef, 'slug'>) => `${def.slug}-bundle`
 
 const nounFor = (def: BundleDef, n: number) => (n === 1 ? def.noun[0] : def.noun[1]);
 
-/** "2 cats: Black + Brown". Picks sort into picker order, so Brown + Black is the same line. Null if a pick is unknown. */
+/** "2 cats: Black Cat + Brown Cat". Picks sort into picker order, so either order is the same line. Null if a pick is unknown. */
 export function bundleOption(def: BundleDef, picks: string[]): string | null {
   if (!BUNDLE_SIZES.includes(picks.length as BundleSize)) return null;
   const idx = picks.map((p) => def.picks.indexOf(p));
@@ -50,16 +57,27 @@ export function bundleOptionValues(def: BundleDef): string[] {
   return out;
 }
 
+/** Catalogue price fields for a set of pack options, from BUNDLE_PRICES. */
+export function packPricing(values: string[], sizeOf: (v: string) => BundleSize) {
+  const book = (cur: Currency) => Object.fromEntries(values.map((v) => [v, BUNDLE_PRICES[cur].packs[sizeOf(v)]]));
+  return {
+    priceCents: BUNDLE_PRICES.EUR.packs[1],
+    optionPriceCents: book('EUR'),
+    localPrices: { GBP: book('GBP'), USD: book('USD') },
+    shipFlatCents: { EUR: BUNDLE_PRICES.EUR.shipping, GBP: BUNDLE_PRICES.GBP.shipping, USD: BUNDLE_PRICES.USD.shipping },
+  };
+}
+
+const sizeFromOption = (v: string) => Number(v.split(' ')[0]) as BundleSize;
+
 export function bundleCatalogItem(def: BundleDef, thumb: string): CatalogItem {
   const values = bundleOptionValues(def);
-  const size = (v: string) => Number(v.split(' ')[0]) as BundleSize;
   return {
     slug: bundleSlug(def),
     name: def.name,
-    priceCents: BUNDLE_EUR_CENTS[1],
     inStock: true,
     option: { name: 'Bundle', values },
-    optionPriceCents: Object.fromEntries(values.map((v) => [v, BUNDLE_EUR_CENTS[size(v)]])),
+    ...packPricing(values, sizeFromOption),
     siteCheckout: true,
     thumb,
     maker: def.maker,

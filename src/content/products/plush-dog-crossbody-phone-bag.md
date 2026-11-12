@@ -3,7 +3,7 @@ name: "Plush schnauzer, puppy or terrier phone bag"
 seoTitle: "Crochet Plush Dog Crossbody Phone Bag, Grey, Beige, White, Adjustable Brown Strap"
 category: "bags"
 group: "characters"
-price: 36.95
+price: 39.95
 inStock: true
 maker: "Hui"
 isNew: true

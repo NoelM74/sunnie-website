@@ -5,10 +5,11 @@ import ReviewQuote from '../../components/ReviewQuote.astro';
 import reviews from '../../data/reviews.json';
 import { site } from '../../data/site';
 import { LANDERS, type Lander, type ReviewKey } from '../../data/landers';
-import { BUNDLE_EUR_CENTS, BUNDLE_SIZES, bundleOption, bundleSlug, type BundleSize } from '../../lib/bundles';
+import { BUNDLE_SIZES, bundleCatalogItem, bundleOption, bundleSlug, type BundleSize } from '../../lib/bundles';
+import { FINN_ITEM } from '../../lib/finn';
+import { priceBag } from '../../lib/pricing';
 import { landerImage } from '../../lib/lander-images';
-import { CURRENCIES, formatMoney, toLocalCents, type Currency } from '../../lib/currency';
-import { shippingFor } from '../../lib/money';
+import { CURRENCIES, formatMoney, type Currency } from '../../lib/currency';
 import { absoluteUrl } from '../../lib/seo';
 
 export function getStaticPaths() {
@@ -29,14 +30,18 @@ const heroQuote = findReview(l.hero.proof);
 const offerQuote = findReview(l.offer.proof);
 const shown = l.reviews.map(findReview);
 
-// Prices in every currency the shop sells in, built the same way as the bag, so the
-// lander, the bag and PayPal all show the same number.
-const eurCents = l.cart?.prices ?? BUNDLE_EUR_CENTS;
-const local = (n: BundleSize, cur: Currency) => toLocalCents(eurCents[n], cur);
+// Every price on the page comes from the bag's own pricing (priceBag), so the lander,
+// the bag and PayPal can't disagree.
+const cartSlug = l.cart?.slug ?? bundleSlug(l);
+const packOption = (n: BundleSize) => (l.cart ? l.cart.options[n] : bundleOption(l, l.offer.defaults.slice(0, n))!);
+if (l.cart && l.cart.slug !== FINN_ITEM.slug) throw new Error(`Lander ${l.slug}: only Finn has his own bag item`);
+const cartItem = l.cart ? { ...FINN_ITEM, thumb: '' } : bundleCatalogItem(l, '');
+const quote = (n: BundleSize, cur: Currency) => priceBag([{ slug: cartSlug, option: packOption(n), qty: 1 }], { [cartSlug]: cartItem }, cur);
 const prices = Object.fromEntries(CURRENCIES.map((cur) => [cur, {
-  1: local(1, cur), 2: local(2, cur), 3: local(3, cur),
-  ship: Object.fromEntries(BUNDLE_SIZES.map((n) => [n, shippingFor(local(n, cur), cur)])),
-}]));
+  1: quote(1, cur).subtotalCents, 2: quote(2, cur).subtotalCents, 3: quote(3, cur).subtotalCents,
+  ship: Object.fromEntries(BUNDLE_SIZES.map((n) => [n, quote(n, cur).shippingCents])),
+}])) as Record<Currency, Record<BundleSize, number> & { ship: Record<BundleSize, number> }>;
+const local = (n: BundleSize, cur: Currency) => prices[cur][n];
 /** A price span the BaseLayout-style swap script can switch, from a per-currency cents function. */
 const money = (cents: (cur: Currency) => number) => ({
   text: formatMoney(cents('EUR'), 'EUR'),
@@ -58,8 +63,7 @@ const nudge = (n: BundleSize, cur: Currency) => {
   if (n === 2) return `Make it three for just ${f(p[3] - p[2])} more.`;
   return `Best value: ${f(Math.round(p[3] / 3))} each.`;
 };
-const cartSlug = l.cart?.slug ?? bundleSlug(l);
-const defaultOption = l.cart ? l.cart.options[DEFAULT] : bundleOption(l, l.offer.defaults.slice(0, DEFAULT))!;
+const defaultOption = packOption(DEFAULT);
 const choosesColour = l.picks.length > 1;
 const ships = l.ships ?? `Ships in ${site.shipsIn}`;
 const returnsDays = l.returnsDays ?? 30;

@@ -7,6 +7,7 @@ import { paypalClient } from '../../lib/paypal';
 import { handlePay } from '../../lib/checkout-handlers';
 import { isSameOrigin } from '../../lib/request';
 import { CURRENCY_COOKIE, currencyFromRequest } from '../../lib/currency';
+import { countryName } from '../../lib/checkout-form';
 
 export const prerender = false;
 
@@ -34,6 +35,13 @@ export const POST: APIRoute = async ({ request, cookies, redirect, rewrite, loca
   }
   if (r.kind === 'empty') {
     const res = redirect('/bag/', 303);
+    res.headers.set('Cache-Control', 'no-store');
+    return res;
+  }
+  if (r.kind === 'currency') {
+    cookies.set(CURRENCY_COOKIE, r.currency, { path: '/', maxAge: 31536000, sameSite: 'lax', secure: true });
+    (locals as unknown as Record<string, unknown>).checkout = { values: r.values, errors: {}, currency: r.currency, switched: countryName(r.values.country) };
+    const res = await rewrite('/checkout/');
     res.headers.set('Cache-Control', 'no-store');
     return res;
   }

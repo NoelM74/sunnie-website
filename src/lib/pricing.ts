@@ -19,11 +19,15 @@ export function priceBag(lines: BagLine[], catalog: Catalog, currency: Currency 
     if (!item.inStock || !item.siteCheckout || !optionOk) { dropped.push(item.name); continue; }
     const qty = clampQty(line.qty);
     const eurCents = (line.option ? item.optionPriceCents?.[line.option] : undefined) ?? item.priceCents;
-    const unitCents = toLocalCents(eurCents, currency);
+    const fixed = currency === 'EUR' ? undefined : item.localPrices?.[currency]?.[line.option ?? ''];
+    const unitCents = fixed ?? toLocalCents(eurCents, currency);
     priced.push({ slug: item.slug, name: item.name, option: item.option ? line.option : undefined, qty, unitCents, lineCents: unitCents * qty, thumb: item.thumb });
   }
   const subtotalCents = priced.reduce((s, l) => s + l.lineCents, 0);
-  const shippingCents = shippingFor(subtotalCents, currency);
+  // Under the threshold, the shop's flat rate, or an item's own higher rate (bundle packs).
+  const base = shippingFor(subtotalCents, currency);
+  const own = priced.map((l) => catalog[l.slug]?.shipFlatCents?.[currency] ?? 0);
+  const shippingCents = base === 0 ? 0 : Math.max(base, ...own);
   const threshold = freeShippingThresholdCents(currency);
   return {
     currency,

@@ -9,7 +9,7 @@ import Gallery from '../../components/Gallery.astro';
 import Money from '../../components/Money.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 import { site } from '../../data/site';
-import { LANDERS } from '../../data/landers';
+import { packFor } from '../../lib/lander-products';
 import { CATEGORY_LABELS, related } from '../../lib/products';
 import { FREE_SHIPPING_THRESHOLD_CENTS, SHIPPING_FLAT_CENTS } from '../../lib/money';
 import { Picture } from 'astro:assets';
@@ -49,7 +49,8 @@ const lowestOptionPrice = optionPriceValues ? Math.min(...optionPriceValues) : u
 const fromPrefix = lowestOptionPrice !== undefined ? 'From ' : '';
 const shownPrice = lowestOptionPrice ?? d.price;
 const canBuy = d.inStock && d.siteCheckout;
-const lander = LANDERS.find((x) => x.productSlug === product.id);
+const pack = packFor(product.id);
+const lander = pack?.lander;
 ---
 <BaseLayout
   title={productTitle(d.name)}
@@ -83,9 +84,9 @@ const lander = LANDERS.find((x) => x.productSlug === product.id);
       <div class="product-info">
         {d.isNew && d.inStock && <span class="badge">New</span>}
         <h1>{d.name}</h1>
-        <p class="product-price">{fromPrefix}<Money eur={shownPrice} /></p>
+        <p class="product-price">{pack ? <Money eur={pack.price.eur / 100} gbpCents={pack.price.gbp} usdCents={pack.price.usd} /> : <>{fromPrefix}<Money eur={shownPrice} /></>}</p>
         <p class="product-proof"><span class="hero-stars" aria-hidden="true">★★★★★</span> {site.proof.etsyRating} on Etsy · {site.proof.ebayPositive} positive from {site.proof.ebayCount} eBay ratings</p>
-        <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} etsyUrl={d.etsyUrl} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} maker={d.maker} alts={d.images.map((i) => i.alt)} optionPhotos={d.optionPhotos} />
+        <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} etsyUrl={d.etsyUrl} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} maker={d.maker} alts={d.images.map((i) => i.alt)} optionPhotos={d.optionPhotos} pack={pack ? { slug: pack.slug, optionFor: pack.optionFor, landerSlug: pack.lander.slug } : undefined} />
         {lander && canBuy && <p class="small"><a href={`/go/${lander.slug}/`}>Buying two or three? Mix the colours in a bundle and pay less for each</a></p>}
         {d.maker === 'Hui' && (
           <a class="maker-strip" href="/our-story/">
@@ -108,7 +109,9 @@ const lander = LANDERS.find((x) => x.productSlug === product.id);
         </details>
         <details class="fold">
           <summary>Delivery and returns</summary>
-          <p>Made to order and shipped in {site.shipsIn} with tracking. Shipping costs <Money eur={SHIPPING_FLAT_CENTS / 100} />, and it's free on orders of <Money eur={FREE_SHIPPING_THRESHOLD_CENTS / 100} whole /> or more. No import charges to the EU, UK or US.</p>
+          {pack
+            ? <p>Made to order and shipped in {site.shipsIn} with tracking. Shipping is <Money eur={pack.shipping.eur / 100} gbpCents={pack.shipping.gbp} usdCents={pack.shipping.usd} /> for one, and free when you <a href={`/go/${pack.lander.slug}/`}>buy two or more</a>. No import charges to the EU, UK or US.</p>
+            : <p>Made to order and shipped in {site.shipsIn} with tracking. Shipping costs <Money eur={SHIPPING_FLAT_CENTS / 100} />, and it's free on orders of <Money eur={FREE_SHIPPING_THRESHOLD_CENTS / 100} whole /> or more. No import charges to the EU, UK or US.</p>}
           <ul class="product-facts" role="list">
             {site.delivery.map((r) => <li><strong>{r.region}:</strong> {r.days} working days</li>)}
           </ul>
@@ -119,7 +122,7 @@ const lander = LANDERS.find((x) => x.productSlug === product.id);
     </div>
     {canBuy && (
       <div class="buy-bar" data-buy-bar hidden>
-        <span class="buy-bar-price">{fromPrefix}<Money eur={shownPrice} /></span>
+        <span class="buy-bar-price">{pack ? <Money eur={pack.price.eur / 100} gbpCents={pack.price.gbp} usdCents={pack.price.usd} /> : <>{fromPrefix}<Money eur={shownPrice} /></>}</span>
         <button class="btn btn-primary" type="submit" form="buy-form">Add to basket</button>
       </div>
     )}
