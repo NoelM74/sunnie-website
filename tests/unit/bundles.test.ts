@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { BUNDLE_EUR_CENTS, bundleCatalogItem, bundleOption, bundleOptionValues, bundleSlug } from '../../src/lib/bundles';
 import { LANDERS } from '../../src/data/landers';
 import { priceBag } from '../../src/lib/pricing';
+import { CURRENCIES, toLocalCents } from '../../src/lib/currency';
+import { freeShippingThresholdCents, shippingFlatCents } from '../../src/lib/money';
 import { handleBagPost } from '../../src/lib/bag-routes';
 import reviews from '../../src/data/reviews.json';
 
@@ -36,7 +38,7 @@ describe('bundles in the bag', () => {
     expect(two.subtotalCents).toBe(6195);
     expect(two.shippingCents).toBe(0);
     const three = priceBag([{ slug: 'snout-and-about-bundle', option: '3 dogs: Grey schnauzer + Beige puppy + White terrier', qty: 1 }], catalog, 'EUR');
-    expect(three.subtotalCents).toBe(8595);
+    expect(three.subtotalCents).toBe(BUNDLE_EUR_CENTS[3]);
   });
 
   it('adds a lander pack and refuses a made-up one', () => {
@@ -65,5 +67,22 @@ describe('lander content', () => {
   it('shows no delivery times: those live on /shipping/', () => {
     const text = JSON.stringify(LANDERS);
     expect(text).not.toMatch(/working days/);
+  });
+});
+
+describe('the price ladder', () => {
+  it('always charges shipping on one piece and never on two, in every currency', () => {
+    for (const cur of CURRENCIES) {
+      expect(toLocalCents(BUNDLE_EUR_CENTS[1], cur), cur).toBeLessThan(freeShippingThresholdCents(cur));
+      expect(toLocalCents(BUNDLE_EUR_CENTS[2], cur), cur).toBeGreaterThanOrEqual(freeShippingThresholdCents(cur));
+    }
+  });
+  it('makes each extra piece cost no more than the one before, delivered', () => {
+    for (const cur of CURRENCIES) {
+      const p = (n: 1 | 2 | 3) => toLocalCents(BUNDLE_EUR_CENTS[n], cur);
+      const second = p(2) - p(1) - shippingFlatCents(cur);
+      const third = p(3) - p(2);
+      expect(third, cur).toBeLessThanOrEqual(second + 100); // within one rounding step of .95 pricing
+    }
   });
 });

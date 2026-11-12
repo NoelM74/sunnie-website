@@ -50,6 +50,13 @@ const from = bundlePrice(1);
 const nounFor = (n: number) => (n === 1 ? l.noun[0] : l.noun[1]);
 const Noun = l.noun[0][0].toUpperCase() + l.noun[0].slice(1);
 const DEFAULT: BundleSize = 2;
+// The step-up line above the button. Must match nudge() in the page script.
+const nudge = (n: BundleSize, cur: Currency) => {
+  const p = prices[cur]; const f = (c: number) => formatMoney(c, cur);
+  if (n === 1) return `Add a second ${l.noun[0]} for ${f(p[2] - p[1] - p.ship[1])} more and shipping is free.`;
+  if (n === 2) return `Make it three for just ${f(p[3] - p[2])} more.`;
+  return `Best value: ${f(Math.round(p[3] / 3))} each.`;
+};
 const defaultOption = bundleOption(l, l.offer.defaults.slice(0, DEFAULT))!;
 
 // Photos.
@@ -210,6 +217,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
           <p>“{quoteText(offerQuote)}” <span class="muted">{offerQuote.reviewer}, Etsy</span></p>
         </div>
 
+        <p class="l-nudge" id="nudge" aria-live="polite">{nudge(DEFAULT, 'EUR')}</p>
         <button class="btn btn-primary l-buy-btn" type="submit" id="buyBtn">Add to basket · <span class="money" data-gbp={bundlePrice(DEFAULT).gbp} data-usd={bundlePrice(DEFAULT).usd}>{bundlePrice(DEFAULT).text}</span></button>
         <p class="small l-center">
           <b id="selLabel">{defaultOption}</b> · <span id="shipLine">free shipping</span> · 30-day returns<br />
@@ -221,11 +229,10 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
 
   <section class="l-sec l-dark">
     <div class="container">
-      <h2 class="l-center">Three promises</h2>
-      <div class="l-promises">
-        <div><h3>Made to order, shipped in {site.shipsIn}</h3><p>Hui makes yours when you order, and it ships with tracking within {site.shipsIn}. Delivery times for each country are on the <a href="/shipping/">shipping page</a>.</p></div>
-        <div><h3>Nothing to pay at your door</h3><p>Orders to the EU, UK and US arrive with no import charges. The price at checkout is the full price.</p></div>
-        <div><h3>30 days to change your mind</h3><p>Send it back within 30 days of delivery and we refund the item and the original shipping.</p></div>
+      <h2 class="l-center">Two promises</h2>
+      <div class="l-promises l-promises-2">
+        <div><h3>Made for you, not pulled off a shelf</h3><p>Hui starts yours when you order and it’s on its way within {site.shipsIn}, with tracking.</p></div>
+        <div><h3>Love it, or send it back</h3><p>You have 30 days from delivery. We refund it, shipping included.</p></div>
       </div>
     </div>
   </section>
@@ -234,7 +241,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
     <div class="container">
       <div class="l-narrow l-center">
         <h2>{site.proof.etsyRating} stars from Sunnie Designs buyers</h2>
-        <p class="lead">We're a Star Seller on Etsy, and {site.proof.ebayPositive} positive from {site.proof.ebayCount} eBay ratings. These are shop reviews, quoted word for word.</p>
+        <p class="lead">Star Seller on Etsy, and {site.proof.ebayPositive} positive from {site.proof.ebayCount} eBay ratings.</p>
       </div>
       <div class="quotes l-quotes">
         {shown.map((r) => <ReviewQuote review={r} />)}
@@ -283,9 +290,16 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
     function cur() { return C.prices[d.dataset.cur] ? d.dataset.cur : 'EUR'; }
     function money(cents) {
       var c = cur();
-      return new Intl.NumberFormat(LOCALE[c], { style: 'currency', currency: c }).format(cents / 100);
+      var whole = cents % 100 === 0; // same as formatMoney(): €20, not €20.00
+      return new Intl.NumberFormat(LOCALE[c], { style: 'currency', currency: c, minimumFractionDigits: whole ? 0 : 2, maximumFractionDigits: whole ? 0 : 2 }).format(cents / 100);
     }
     function noun(n) { return n === 1 ? C.noun[0] : C.noun[1]; }
+    function nudge(n) {
+      var p = C.prices[cur()];
+      if (n === 1) return 'Add a second ' + C.noun[0] + ' for ' + money(p[2] - p[1] - p.ship[1]) + ' more and shipping is free.';
+      if (n === 2) return 'Make it three for just ' + money(p[3] - p[2]) + ' more.';
+      return 'Best value: ' + money(Math.round(p[3] / 3)) + ' each.';
+    }
     // Must match bundleOption() in src/lib/bundles.ts: picks in picker order.
     function option() {
       var chosen = state.picks.slice(0, state.qty).sort(function (a, b) { return C.picks.indexOf(a) - C.picks.indexOf(b); });
@@ -305,6 +319,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
       $('selLabel').textContent = opt;
       $('shipLine').textContent = ship ? 'plus ' + money(ship) + ' shipping' : 'free shipping';
       $('buyBtn').textContent = 'Add to basket · ' + money(total);
+      $('nudge').textContent = nudge(state.qty);
       $('stickySel').textContent = state.qty + ' ' + noun(state.qty) + ' · ' + money(total);
       $('stickyShip').textContent = ship ? '+' + money(ship) + ' shipping' : 'Free shipping';
     }

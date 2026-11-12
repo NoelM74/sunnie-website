@@ -5,8 +5,12 @@ import type { CatalogItem } from './catalog';
 // option is the whole pack, e.g. "2 cats: Black + Brown". The bag, PayPal, the order
 // row and the emails all treat it like any other option, so none of them change.
 
-/** Owner-set euro prices, the same ladder as Finn & the Shamrock (2026-11-12). */
-export const BUNDLE_EUR_CENTS: Record<1 | 2 | 3, number> = { 1: 3495, 2: 6195, 3: 8595 };
+/**
+ * Euro prices for a pack of 1, 2 or 3 (2026-11-12). One piece always pays shipping
+ * (it sits well under the free-shipping threshold in every currency), so the step up
+ * is what sells: the second piece costs €20 more delivered, the third €18 more.
+ */
+export const BUNDLE_EUR_CENTS: Record<1 | 2 | 3, number> = { 1: 3695, 2: 6195, 3: 7995 };
 export const BUNDLE_SIZES = [1, 2, 3] as const;
 export type BundleSize = (typeof BUNDLE_SIZES)[number];
 

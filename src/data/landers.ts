@@ -35,15 +35,15 @@ const washFaq = {
 };
 const arriveFaq = (noun: string) => ({
   q: 'When will it arrive?',
-  a: `Hui makes your ${noun} to order, and it ships within 3–5 days with tracking. Delivery time depends on where you live: the <a href="/shipping/">shipping page</a> lists every country. Orders to the EU, UK and US have no import charges to pay on delivery.`,
+  a: `Hui makes your ${noun} to order, and it ships within 3–5 days with tracking. Delivery times for every country are on the <a href="/shipping/">shipping page</a>. There’s nothing extra to pay on delivery in the EU, UK or US.`,
 });
 const returnsFaq = {
   q: "What if I don't like it?",
-  a: 'Email us within 30 days of delivery to send it back. You pay the return postage, and we refund the item and the original shipping. <a href="/shipping/">How returns work</a>.',
+  a: 'Send it back within 30 days of delivery and we refund it, shipping included. Just email us first. <a href="/shipping/">How returns work</a>.',
 };
 const kidsFaq = (noun: string) => ({
   q: 'Is it for adults or kids?',
-  a: `Both. Adults wear the ${noun} as a fun crossbody, and kids use it for coins, small toys and sweets. It isn't a toy, so keep it away from children under 3.`,
+  a: `Both. Adults wear the ${noun} as a fun crossbody, and kids keep coins, small toys and sweets in it. It’s a bag rather than a toy, so not for under-3s.`,
 });
 const mouthFaq = {
   q: 'Does the mouth close?',
@@ -63,13 +63,13 @@ export const LANDERS: Lander[] = [
     picks: ['Yellow', 'Blue'],
     maker: 'Hui',
     title: 'Finn in the Hood | Hand-Crocheted Frog Crossbody Bag | Sunnie Designs',
-    description: 'A hand-crocheted frog in a hoodie whose big red mouth is the bag. Yellow or blue, mix them in a bundle. Free shipping on 2 or more, 30-day returns.',
+    description: 'A hand-crocheted frog in a hoodie that carries your phone in his big red mouth. Yellow or blue, mix them in a bundle. Free shipping on 2 or more.',
     og: '/go/finn-in-the-hood-og.jpg',
     bar: 'Free shipping on 2 frogs or more',
     hero: {
       h1: 'A frog in a hoodie.',
       h1em: 'His mouth is the bag.',
-      sub: 'Reach into his big red mouth for your keys, lip balm and bus card. No zip, no clasp, no rummaging. Finn is 27 cm of hand-crocheted frog in a pointed hood and a little vest, with long legs that swing as you walk.',
+      sub: 'Your phone, keys and lip balm go in his big red mouth. No zip, no clasp, no rummaging. Finn is 27 cm of hand-crocheted frog in a pointed hood and a little vest, with long legs that swing as you walk.',
       image: { src: 'landers/finn-in-the-hood/duo.jpg', alt: 'Two crocheted frog bags side by side on a shelf: one in a yellow hood and orange vest, one in a blue hood and vest, both with red mouths and long dangling legs' },
       proof: { reviewer: 'Nicola', date: '2026-07-22' },
     },
@@ -84,10 +84,11 @@ export const LANDERS: Lander[] = [
       subParas: ['A zip needs two hands, and a clasp makes you look down. Finn’s mouth is held open by a thick crocheted rim, so one hand goes in and comes out with your keys.'],
     },
     fits: {
-      h: 'What fits in Finn',
-      lede: 'He’s a small crossbody for the everyday few: keys, lip balm, tissues, earbuds and a bus card. Think pocket, not handbag.',
+      h: 'Your phone fits. So do your keys.',
+      lede: 'Pretty much any phone slides into his mouth. Even a 6-inch Kindle fits once it’s out of its case. Keys, lip balm and a bus card go in beside it.',
       specs: [
         ['Size', '27 cm from hood to toes, legs included. 14 cm wide at the top, 12 cm at the base, 1 cm deep. Measured by hand, so allow 1 to 3 cm.'],
+        ['Holds', 'Your phone, plus keys, lip balm and a bus card'],
         ['Opening', 'His open mouth, with a thick red rim. No zip or clasp.'],
         ['Strap', '120 cm, worn crossbody or over one shoulder'],
         ['Weight', 'About 170 g empty'],
@@ -108,9 +109,9 @@ export const LANDERS: Lander[] = [
     uses: {
       h: 'Where Finn goes',
       items: [
-        ['Coffee runs.', 'Card and keys in his mouth, coffee in your hand.'],
+        ['Coffee runs.', 'Phone and keys in his mouth, coffee in your hand.'],
         ['Gigs and festivals.', 'He sits on your front, where you can keep an eye on him.'],
-        ['A day in town.', 'Lip balm, earbuds and a bus card, without carrying a handbag.'],
+        ['A day in town.', 'Phone, lip balm and a bus card, without carrying a handbag.'],
         ['Pocket money.', 'Kids keep coins, sweets and tiny toys in him.'],
         ['The frog person in your family.', 'Every family has one. Now they have the bag.'],
       ],
@@ -138,7 +139,7 @@ export const LANDERS: Lander[] = [
     },
     reviews: [sturdy, { reviewer: 'Nicola', date: '2026-07-22' }, friend],
     faq: [
-      { q: 'What fits inside?', a: 'Keys, lip balm, tissues, earbuds and a bus card. He is 14 cm across at the top and 1 cm deep, so he is made for small things. If you want him for your phone, check it (in its case) against those sizes first, or <a href="/contact/">message us</a> and Hui will measure the pocket for you.' },
+      { q: 'Will my phone fit?', a: 'Yes. Pretty much any phone fits, and so does a 6-inch Kindle without its case. Keys, lip balm and a bus card go in beside it.' },
       mouthFaq,
       kidsFaq('frog'),
       washFaq,
@@ -175,7 +176,7 @@ export const LANDERS: Lander[] = [
     },
     fits: {
       h: 'What fits in Miso',
-      lede: 'His mouth opens wide and the bag is the whole of his body, so small things drop straight in: keys, lip balm, tissues, earbuds, a compact or a bus card. He is made for small things, not for a phone.',
+      lede: 'His mouth opens wide and the bag is the whole of his body, so small things drop straight in: keys, lip balm, tissues, earbuds, a compact or a bus card.',
       specs: [
         ['Size', '30 cm tall including his dangling legs, 14 cm wide, 1 cm deep. Measured by hand, so allow 1 to 3 cm.'],
         ['Opening', 'His wide mouth. No zip or clasp.'],
@@ -229,7 +230,7 @@ export const LANDERS: Lander[] = [
     },
     reviews: [sturdy, secondBuy, friend],
     faq: [
-      { q: 'What fits inside?', a: 'Keys, lip balm, tissues, earbuds, a compact or a bus card. Miso is made for small things, not for a phone.' },
+      { q: 'What fits inside?', a: 'Keys, lip balm, tissues, earbuds, a compact or a bus card. Want a bag for your phone? Meet <a href="/go/snout-and-about/">Snout &amp; About</a>.' },
       mouthFaq,
       kidsFaq('cat'),
       washFaq,
@@ -320,7 +321,7 @@ export const LANDERS: Lander[] = [
     },
     reviews: [sturdy, secondBuy, friend],
     faq: [
-      { q: 'Will my phone fit?', a: 'He is made for a phone. He measures 12 cm across the top, 13 cm at the bottom, 22 cm tall and 2 cm deep. If you have a very large phone in a chunky case, check it against those sizes first, or <a href="/contact/">message us</a> and Hui will measure one for you.' },
+      { q: 'Will my phone fit?', a: 'Yes. He’s made for a phone, with room beside it for keys and lip balm.' },
       { q: 'Which strap does it come with?', a: 'A 120 cm brown PU strap. It adjusts, so you can wear him crossbody, on the shoulder or carry him in your hand.' },
       kidsFaq('dog'),
       washFaq,

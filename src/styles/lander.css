@@ -168,3 +168,5 @@
 body.sticky-open { padding-bottom: 5rem; }
 @media (prefers-reduced-motion: reduce) { .l-sticky { transition: none; } }
 .l-colour img { border: 1px solid var(--border); }
+@media (min-width: 48rem) { .l-promises-2 { grid-template-columns: repeat(2, 1fr); max-width: 52rem; margin-inline: auto; } }
+.l-nudge { margin: 0; text-align: center; font-weight: 700; color: #4f5f22; min-height: 1.5em; }
