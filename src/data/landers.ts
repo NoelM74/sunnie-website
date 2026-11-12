@@ -11,8 +11,22 @@ export interface Img { src: string; alt: string }
 export interface ReviewKey { reviewer: string; date: string }
 
 export interface Lander extends BundleDef {
-  /** The shop product this lander sells, for its link and "Size and materials". */
-  productSlug: string;
+  /** The shop product this lander sells, for its "full product page" link. None for Finn & the Shamrock. */
+  productSlug?: string;
+  /**
+   * For a product that already has its own bag item (Finn & the Shamrock): that item's
+   * slug, its euro pack prices and the option name for each pack. Without this, the
+   * lander gets a generated bundle item at BUNDLE_EUR_CENTS (src/lib/bundles.ts).
+   */
+  cart?: { slug: string; prices: Record<BundleSize, number>; options: Record<BundleSize, string> };
+  /** Dispatch line, e.g. "Posted within 4 working days". Default: the shop's "Ships in 3–5 days". */
+  ships?: string;
+  /** Default 30, the shop's policy. */
+  returnsDays?: number;
+  /** Right-hand side of the top bar. Default: "Handmade by Hui". */
+  barRight?: string;
+  /** Two [heading, text] promises. Default: made to order, and the returns window. */
+  promises?: [string, string][];
   title: string;
   description: string;
   og: string;
@@ -20,8 +34,8 @@ export interface Lander extends BundleDef {
   hero: { h1: string; h1em: string; sub: string; image: Img; proof: ReviewKey };
   story: { h: string; paras: string[]; subH: string; subParas: string[] };
   fits: { h: string; lede: string; specs: [string, string][]; image: Img };
-  colours: { h: string; lede: string; cards: { pick: string; title: string; text: string; image: Img }[]; note: string };
-  uses: { h: string; items: [string, string][]; images: Img[] };
+  colours?: { h: string; lede: string; cards: { pick: string; title: string; text: string; image: Img }[]; note: string };
+  uses: { h: string; items: [string, string][]; images?: Img[] };
   craft: { h: string; paras: string[]; image: Img };
   offer: { h: string; lede: string; notes: Record<BundleSize, string>; flag2: string; /** Starting colour for pieces 1, 2 and 3. */
     defaults: [string, string, string]; proof: ReviewKey };
@@ -55,6 +69,107 @@ const sturdy: ReviewKey = { reviewer: 'hexfeather', date: '2026-09-25' };
 const secondBuy: ReviewKey = { reviewer: 'Antje-Susan', date: '2026-06-02' };
 
 export const LANDERS: Lander[] = [
+  {
+    // Moved from finn.sunniedesigns.com (2026-11-12). Same bag item, prices and 60-day
+    // returns as before; prices stay put until the pricing review.
+    slug: 'finn-the-shamrock',
+    name: 'Finn & the Shamrock frog bag',
+    noun: ['frog', 'frogs'],
+    picks: ['Green'],
+    maker: 'Sunnie Designs',
+    cart: {
+      slug: 'finn-the-shamrock',
+      prices: { 1: 3495, 2: 6195, 3: 8595 },
+      options: { 1: '1 frog', 2: '2 frogs', 3: '3 frogs' },
+    },
+    ships: 'Posted within 4 working days',
+    returnsDays: 60,
+    barRight: 'Posted within 4 working days',
+    promises: [
+      ['He looks like these photos', 'If the stitching, colour or size of your frog doesn’t match the photos on this page, we replace it or refund you in full. We pay the return postage.'],
+      ['Posted within 4 working days', 'Your frog leaves us within four working days of your order, all year. If we miss that, we refund your postage.'],
+    ],
+    title: 'Hand-Crocheted Frog Bag with Shamrock | Finn & the Shamrock',
+    description: 'Finn is a hand-crocheted frog crossbody bag that carries your phone hands-free. 39 cm tall, two straps included, sewn-on shamrock, posted within 4 working days, 60-day returns.',
+    og: '/go/finn-the-shamrock-og.jpg',
+    bar: 'Free shipping on 2 frogs or more',
+    hero: {
+      h1: 'A hand-crocheted frog that carries',
+      h1em: 'your phone, hands-free.',
+      sub: 'Drop your phone in his mouth and go. Your hands stay free, and your phone stays where you can reach it. Finn is 39 cm of hand-crocheted frog in dungarees, with a sewn-on shamrock and two straps in the box.',
+      image: { src: 'landers/finn-the-shamrock/finn-frog-bag-phone-closeup-1400.webp', alt: 'A hand dropping a phone in a cream case into the yellow mouth of Finn, a green crocheted frog bag in dungarees' },
+      proof: { reviewer: 'hexfeather', date: '2026-09-25' },
+    },
+    story: {
+      h: 'Your phone got bigger. Your pockets didn’t.',
+      paras: [
+        'Count how many times you patted your pockets today to find your phone.',
+        'Phones grew. Jeans pockets stayed the same. A handbag is too much for a walk to the shop, and a phone in your hand ends up on a café table, a car roof or a park bench.',
+        'Finn does one small job well. He hangs across your body. His mouth stays open. Your phone sits upright inside him, and you reach in without looking. Your hands stay free for the dog lead, the coffee, the buggy or the small person pulling at your sleeve.',
+      ],
+      subH: 'Why a mouth and not a zip?',
+      subParas: [
+        'A zip needs two hands. A clasp makes you look down. Finn’s mouth is a ring of yellow crochet that keeps the opening ready, so your phone drops in with one hand and comes out with one hand.',
+        'Expect a few questions at the bus stop, too. A frog in dungarees with a shamrock on his chest gets noticed.',
+      ],
+    },
+    fits: {
+      h: 'Your phone, always in reach.',
+      lede: 'The yellow mouth is the opening. Slide your phone in from the top and it stands upright inside his body, where you can reach it with one hand. One buyer carries her phone and a 6-inch Kindle in him.',
+      specs: [
+        ['Size', '39 cm tall, 14 cm wide at the top, 15 cm at the bottom, 1 cm thick. Measured by hand, so allow 1 to 2 cm.'],
+        ['Holds', 'Your phone, as in the photos, plus keys and a card'],
+        ['Opening', 'Open mouth, no zip or clasp'],
+        ['Straps', 'Two in the box: a green crocheted strap, and a 120 cm strap, adjustable and detachable, with gold-tone clasps'],
+        ['Made from', 'Soft polyester yarn, wooden buttons, faux pearl'],
+        ['Care', 'Hand wash up to 40°C. Dry flat, out of strong sun.'],
+      ],
+      image: { src: 'landers/finn-the-shamrock/finn-frog-bag-held-front-900.webp', alt: 'Finn the frog bag held out in front, a phone tucked in his yellow mouth, showing his dungarees, shamrock and long legs' },
+    },
+    uses: {
+      h: 'Where Finn goes',
+      items: [
+        ['Dog walks.', 'Phone in the frog, lead in one hand, coffee in the other.'],
+        ['Gigs and festivals.', 'He sits on your front in a crowd, where you can see him.'],
+        ['The school run.', 'Your phone on your front, not lost under a car seat.'],
+        ['Travel days.', 'Boarding pass on your phone, phone in the frog, passport in your hand.'],
+        ['St Patrick’s Day.', 'He has the shamrock already. You bring the rest.'],
+        ['A gift for someone far from Ireland.', 'A small, green, hand-made piece of home.'],
+      ],
+    },
+    craft: {
+      h: 'Four hours, one hook, one maker.',
+      paras: [
+        'No machine makes Finn. One maker spends about four hours on each frog, stitch by stitch, with one hook.',
+        'The maker crochets his body and his yellow mouth first. Then his dungarees, with cream edging along every seam. The shamrock is a separate piece, sewn to his chest with a faux pearl at the centre. Two wooden buttons hold his straps. Look close and they read “Handmade with love”.',
+        'Because a person makes him, no two frogs match exactly. The stitch tension and the angle of the shamrock change a little from one to the next. Yours is his own frog.',
+      ],
+      image: { src: 'landers/finn-the-shamrock/finn-frog-bag-worn-crossbody-900.webp', alt: 'Finn the frog bag worn across the body on a green crocheted strap, with long dangling arms and legs and a shamrock on his dungarees' },
+    },
+    offer: {
+      h: 'Pick your frogs',
+      lede: 'We suggest two: one to keep, and one for the friend who will ask where you got yours. Two or more ship free, and each frog costs less.',
+      flag2: 'Keep one, gift one',
+      notes: { 1: 'Just the one, for you.', 2: 'One to keep, one to give.', 3: 'Three gifts sorted in one order.' },
+      defaults: ['Green', 'Green', 'Green'],
+      proof: { reviewer: 'Hannah', date: '2026-06-04' },
+    },
+    reviews: [
+      { reviewer: 'hexfeather', date: '2026-09-25' },
+      { reviewer: 'Hannah', date: '2026-06-04' },
+      { reviewer: 'Sandra', date: '2026-05-21' },
+      { reviewer: 'Nelly', date: '2026-04-17' },
+    ],
+    faq: [
+      { q: 'Will my phone fit?', a: 'Yes. The photos show a large phone in a thick case going in through his mouth, and one buyer carries her phone and a 6-inch Kindle. A tablet, laptop or water bottle won’t fit.' },
+      { q: 'Is he a bag or a toy?', a: 'A bag, made for teens and adults, with two straps and gold-tone metal clasps. He’s not for under-3s: the buttons and the faux pearl are small parts.' },
+      { q: 'Which strap should I use?', a: 'He comes with both. The green crocheted strap matches his body. The 120 cm strap adjusts, so you can wear him on your hip or across your front. Unclip either one to carry him by hand.' },
+      { q: 'Does the mouth close?', a: 'No. It has no zip, clasp or magnet, so you reach straight in from the top. On a crowded train, wear him across your front.' },
+      { q: 'How do I wash him?', a: 'Hand wash in cool or warm water, up to 40°C. Lay him flat to dry, and keep him out of strong sun for long periods.' },
+      { q: 'When will it arrive?', a: 'We post within four working days, and refund your postage if we miss that. Delivery times for every country are on the <a href="/shipping/">shipping page</a>. There’s nothing extra to pay on delivery in the EU, UK or US.' },
+      { q: 'What if I don’t like him?', a: 'Send him back within 60 days, worn or not, for a full refund. If you tell us why, the next batch gets better.' },
+    ],
+  },
   {
     slug: 'finn-in-the-hood',
     productSlug: 'frog-crossbody-purse',

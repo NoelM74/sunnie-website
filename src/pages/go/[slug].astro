@@ -31,7 +31,8 @@ const shown = l.reviews.map(findReview);
 
 // Prices in every currency the shop sells in, built the same way as the bag, so the
 // lander, the bag and PayPal all show the same number.
-const local = (n: BundleSize, cur: Currency) => toLocalCents(BUNDLE_EUR_CENTS[n], cur);
+const eurCents = l.cart?.prices ?? BUNDLE_EUR_CENTS;
+const local = (n: BundleSize, cur: Currency) => toLocalCents(eurCents[n], cur);
 const prices = Object.fromEntries(CURRENCIES.map((cur) => [cur, {
   1: local(1, cur), 2: local(2, cur), 3: local(3, cur),
   ship: Object.fromEntries(BUNDLE_SIZES.map((n) => [n, shippingFor(local(n, cur), cur)])),
@@ -57,19 +58,27 @@ const nudge = (n: BundleSize, cur: Currency) => {
   if (n === 2) return `Make it three for just ${f(p[3] - p[2])} more.`;
   return `Best value: ${f(Math.round(p[3] / 3))} each.`;
 };
-const defaultOption = bundleOption(l, l.offer.defaults.slice(0, DEFAULT))!;
+const cartSlug = l.cart?.slug ?? bundleSlug(l);
+const defaultOption = l.cart ? l.cart.options[DEFAULT] : bundleOption(l, l.offer.defaults.slice(0, DEFAULT))!;
+const choosesColour = l.picks.length > 1;
+const ships = l.ships ?? `Ships in ${site.shipsIn}`;
+const returnsDays = l.returnsDays ?? 30;
+const promises = l.promises ?? [
+  ['Made for you, not pulled off a shelf', `Hui starts yours when you order and it’s on its way within ${site.shipsIn}, with tracking.`],
+  ['Love it, or send it back', `You have ${returnsDays} days from delivery. We refund it, shipping included.`],
+];
 
 // Photos.
 const pic = (src: string) => landerImage(src);
 const thumbs = await Promise.all(
-  l.colours.cards.map(async (c) => ({ pick: c.pick, src: (await getImage({ src: pic(c.image.src), width: 112, height: 112, fit: 'cover', format: 'webp' })).src })),
+  (l.colours?.cards ?? []).map(async (c) => ({ pick: c.pick, src: (await getImage({ src: pic(c.image.src), width: 112, height: 112, fit: 'cover', format: 'webp' })).src })),
 );
 const stickyThumb = (await getImage({ src: pic(l.hero.image.src), width: 96, height: 96, fit: 'cover', format: 'webp' })).src;
 
-const nav: [string, string][] = [['#fits', 'What fits'], ['#colours', 'Colours'], ['#craft', 'Made by hand'], ['#offer', 'Bundles'], ['#faq', 'Questions']];
-const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.defaults, start: DEFAULT };
+const nav: [string, string][] = [['#fits', 'What fits'], ...(l.colours ? [['#colours', 'Colours'] as [string, string]] : []), ['#craft', 'Made by hand'], ['#offer', 'Bundles'], ['#faq', 'Questions']];
+const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.defaults, start: DEFAULT, cartOptions: l.cart?.options ?? null };
 ---
-<LanderLayout title={l.title} description={l.description} image={absoluteUrl(l.og)} bar={l.bar} nav={nav}>
+<LanderLayout title={l.title} description={l.description} image={absoluteUrl(l.og)} bar={l.bar} barRight={l.barRight} nav={nav}>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="star" viewBox="0 0 16 16"><path d="M8 .9l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3l-4.5 2.3.9-5L.8 6.1l5-.7z" /></symbol>
   </svg>
@@ -84,7 +93,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
           <a href="#reviews"><span class="l-stars" role="img" aria-label="Rated 5 out of 5">{[1, 2, 3, 4, 5].map(() => <svg><use href="#star" /></svg>)}</span> {site.proof.etsyRating} on Etsy</a>
           <span>“{quoteText(heroQuote)}”</span>
         </p>
-        <p class="small muted">Free shipping on 2 or more · 30-day returns · Ships in {site.shipsIn}</p>
+        <p class="small muted">Free shipping on 2 or more · {returnsDays}-day returns · {ships}</p>
       </div>
       <div class="l-hero-art">
         <Picture src={pic(l.hero.image.src)} alt={l.hero.image.alt} widths={[480, 800, 1100]} sizes="(max-width: 56rem) 92vw, 540px" formats={['webp']} loading="eager" fetchpriority="high" class="l-photo" />
@@ -116,6 +125,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
     </div>
   </section>
 
+  {l.colours && (
   <section class="l-sec" id="colours">
     <div class="container">
       <div class="l-narrow l-center">
@@ -134,6 +144,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
       <p class="l-center l-note">{l.colours.note}</p>
     </div>
   </section>
+  )}
 
   <section class="l-sec l-tint" id="uses">
     <div class="container">
@@ -143,9 +154,9 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
           {l.uses.items.map(([b, t]) => <li><b>{b}</b> {t}</li>)}
         </ul>
       </div>
-      <div class="l-strip">
+      {l.uses.images && l.uses.images.length > 0 && <div class="l-strip">
         {l.uses.images.map((im) => <Picture src={pic(im.src)} alt={im.alt} widths={[360, 640]} sizes="(max-width: 40rem) 46vw, 340px" formats={['webp']} class="l-photo" />)}
-      </div>
+      </div>}
     </div>
   </section>
 
@@ -157,7 +168,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
       <div>
         <h2>{l.craft.h}</h2>
         {l.craft.paras.map((p) => <p class="lead">{p}</p>)}
-        <p><a href="/our-story/">Meet Hui</a></p>
+        {l.maker === 'Hui' && <p><a href="/our-story/">Meet Hui</a></p>}
       </div>
     </div>
   </section>
@@ -191,10 +202,10 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
       </div>
 
       <form class="l-buy" id="buyForm" method="post" action="/bag/add/">
-        <input type="hidden" name="slug" value={bundleSlug(l)} />
+        <input type="hidden" name="slug" value={cartSlug} />
         <input type="hidden" name="qty" value="1" />
         <input type="hidden" name="option" id="optField" value={defaultOption} />
-        <fieldset class="l-picks">
+        {choosesColour && <fieldset class="l-picks">
           <legend>Choose each {l.noun[0]}</legend>
           {[0, 1, 2].map((row) => (
             <div class="l-pick-row" data-row={row} hidden={row >= DEFAULT}>
@@ -210,7 +221,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
               </div>
             </div>
           ))}
-        </fieldset>
+        </fieldset>}
 
         <div class="l-proofbar">
           <span class="l-stars" role="img" aria-label="Rated 5 out of 5">{[1, 2, 3, 4, 5].map(() => <svg><use href="#star" /></svg>)}</span>
@@ -220,8 +231,8 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
         <p class="l-nudge" id="nudge" aria-live="polite">{nudge(DEFAULT, 'EUR')}</p>
         <button class="btn btn-primary l-buy-btn" type="submit" id="buyBtn">Add to basket · <span class="money" data-gbp={bundlePrice(DEFAULT).gbp} data-usd={bundlePrice(DEFAULT).usd}>{bundlePrice(DEFAULT).text}</span></button>
         <p class="small l-center">
-          <b id="selLabel">{defaultOption}</b> · <span id="shipLine">free shipping</span> · 30-day returns<br />
-          Ships in {site.shipsIn} with tracking · Pay with PayPal or card
+          <b id="selLabel">{defaultOption}</b> · <span id="shipLine">free shipping</span> · {returnsDays}-day returns<br />
+          {ships}, with tracking · Pay with PayPal or card
         </p>
       </form>
     </div>
@@ -231,8 +242,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
     <div class="container">
       <h2 class="l-center">Two promises</h2>
       <div class="l-promises l-promises-2">
-        <div><h3>Made for you, not pulled off a shelf</h3><p>Hui starts yours when you order and it’s on its way within {site.shipsIn}, with tracking.</p></div>
-        <div><h3>Love it, or send it back</h3><p>You have 30 days from delivery. We refund it, shipping included.</p></div>
+        {promises.map(([h, t]) => <div><h3>{h}</h3><p>{t}</p></div>)}
       </div>
     </div>
   </section>
@@ -260,9 +270,9 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
         </details>
       ))}
       <div class="l-center l-close">
-        <p>Made by hand and shipped in {site.shipsIn}. If it isn't what you hoped for, you have 30 days to send it back.</p>
+        <p>Made by hand. {ships}. If it isn’t what you hoped for, you have {returnsDays} days to send it back.</p>
         <a class="btn btn-primary l-cta" href="#offer">Choose your bundle <small>· from <span class="money" data-gbp={from.gbp} data-usd={from.usd}>{from.text}</span></small></a>
-        <p class="small"><a href={`/products/${l.productSlug}/`}>See the full product page</a></p>
+        {l.productSlug && <p class="small"><a href={`/products/${l.productSlug}/`}>See the full product page</a></p>}
       </div>
     </div>
   </section>
@@ -302,6 +312,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
     }
     // Must match bundleOption() in src/lib/bundles.ts: picks in picker order.
     function option() {
+      if (C.cartOptions) return C.cartOptions[state.qty];
       var chosen = state.picks.slice(0, state.qty).sort(function (a, b) { return C.picks.indexOf(a) - C.picks.indexOf(b); });
       return state.qty + ' ' + noun(state.qty) + ': ' + chosen.join(' + ');
     }

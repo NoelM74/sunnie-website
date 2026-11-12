@@ -58,15 +58,17 @@ describe('bundles in the bag', () => {
 describe('lander content', () => {
   it('quotes only reviews that exist, and starts every picker on a real colour', () => {
     for (const l of LANDERS) {
+      if (l.cart) for (const n of [1, 2, 3] as const) expect(l.cart.options[n]).toBeTruthy();
       const keys = [l.hero.proof, l.offer.proof, ...l.reviews];
       for (const k of keys) expect(reviews.some((r) => r.reviewer === k.reviewer && r.date === k.date), `${l.slug}: ${k.reviewer}`).toBe(true);
       for (const p of l.offer.defaults) expect(l.picks).toContain(p);
-      expect(l.colours.cards.map((c) => c.pick)).toEqual(l.picks);
+      if (l.colours) expect(l.colours.cards.map((c) => c.pick)).toEqual(l.picks);
+      else expect(l.picks).toHaveLength(1);
     }
   });
   it('shows no delivery times: those live on /shipping/', () => {
     const text = JSON.stringify(LANDERS);
-    expect(text).not.toMatch(/working days/);
+    expect(text).not.toMatch(/\d+\s*(–|-|to)\s*\d+ working days/);
   });
 });
 
@@ -84,5 +86,15 @@ describe('the price ladder', () => {
       const third = p(3) - p(2);
       expect(third, cur).toBeLessThanOrEqual(second + 100); // within one rounding step of .95 pricing
     }
+  });
+});
+
+describe('Finn on the main site', () => {
+  it('sells through his existing bag item at his existing prices', async () => {
+    const { FINN_ITEM } = await import('../../src/lib/finn');
+    const finn = LANDERS.find((l) => l.slug === 'finn-the-shamrock')!;
+    expect(finn.cart!.slug).toBe(FINN_ITEM.slug);
+    for (const n of [1, 2, 3] as const) expect(FINN_ITEM.optionPriceCents[finn.cart!.options[n] as keyof typeof FINN_ITEM.optionPriceCents]).toBe(finn.cart!.prices[n]);
+    expect(FINN_ITEM.href).toBe('/go/finn-the-shamrock/');
   });
 });

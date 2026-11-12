@@ -1,6 +1,7 @@
-// Finn & the Shamrock sells from its own funnel page at finn.sunniedesigns.com.
-// It is not a product page here: it lives only in the catalogue, so the bag and
-// PayPal checkout can take it, and the shop grids never list it.
+// Finn & the Shamrock sells from his lander at /go/finn-the-shamrock/ (moved from
+// finn.sunniedesigns.com on 2026-11-12; that domain now redirects there). He is not a
+// product page: he lives only in the catalogue, so the bag and PayPal checkout can take
+// him, and the shop grids never list him. FINN_ORIGIN stays allowed for old handoff links.
 export const FINN_SLUG = 'finn-the-shamrock';
 export const FINN_ORIGIN = 'https://finn.sunniedesigns.com';
 export const FINN_ITEM = {
@@ -13,7 +14,7 @@ export const FINN_ITEM = {
   siteCheckout: true,
   maker: 'Sunnie Designs',
   featured: null,
-  href: FINN_ORIGIN + '/',
+  href: '/go/finn-the-shamrock/',
 };
 
 /** True when every line in the bag is Finn, so the buyer goes back to Finn's thank-you page. */

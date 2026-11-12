@@ -37,8 +37,8 @@ export const GET: APIRoute = async () => {
   const finn = await getImage({ src: finnThumb, width: 160, height: 160, fit: 'cover', format: 'webp' });
   catalog[FINN_ITEM.slug] = { ...FINN_ITEM, thumb: finn.src };
   // Bundle landers (/go/<slug>/): one hidden item each, whose option is the whole pack.
-  for (const l of LANDERS) {
-    const thumb = await getImage({ src: landerImage(l.colours.cards[0].image.src), width: 160, height: 160, fit: 'cover', format: 'webp' });
+  for (const l of LANDERS.filter((x) => !x.cart)) {
+    const thumb = await getImage({ src: landerImage((l.colours?.cards[0].image ?? l.hero.image).src), width: 160, height: 160, fit: 'cover', format: 'webp' });
     const item = bundleCatalogItem(l, thumb.src);
     catalog[item.slug] = item;
   }
