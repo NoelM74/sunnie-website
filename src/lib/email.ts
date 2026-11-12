@@ -3,6 +3,7 @@ import { FINN_SLUG } from './finn';
 import { formatMoney } from './currency';
 import { countryName } from './checkout-form';
 import { site } from '../data/site';
+import { lineLabel } from './line-label';
 
 export interface Email { subject: string; html: string; text: string }
 export interface Mailer { send(to: string, email: Email): Promise<void> }
@@ -10,7 +11,7 @@ export interface Mailer { send(to: string, email: Email): Promise<void> }
 const esc = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 const lineText = (o: OrderRow) =>
-  o.lines.map((l) => `${l.qty} × ${l.name}${l.option ? ` (${l.option})` : ''}  ${formatMoney(l.lineCents, o.currency)}`);
+  o.lines.map((l) => `${lineLabel(l)}  ${formatMoney(l.lineCents, o.currency)}`);
 const addressLines = (o: OrderRow) =>
   [o.address.name, o.address.line1, o.address.line2, o.address.city, o.address.region, o.address.postcode, countryName(o.address.country)].filter(
     Boolean,

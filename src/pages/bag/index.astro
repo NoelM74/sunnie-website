@@ -6,6 +6,7 @@ import { BAG_COOKIE, decodeBag, saveBag } from '../../lib/bag-cookie';
 import { displayCents, priceBag } from '../../lib/pricing';
 import { CURRENCY_COOKIE, CURRENCY_NAMES, currencyFromRequest, formatMoney } from '../../lib/currency';
 import { pageTitle } from '../../lib/seo';
+import { unitLabel } from '../../lib/line-label';
 
 export const prerender = false;
 
@@ -50,7 +51,7 @@ const suggestions = Object.values(catalog)
               <div class="bag-line-info">
                 <a href={catalog[l.slug]?.href ?? `/products/${l.slug}/`}>{l.name}</a>
                 {l.option && <span class="small muted">{l.option}</span>}
-                <span class="small">{euro(l.unitCents)} each</span>
+                <span class="small">{unitLabel(l, euro(l.unitCents))}</span>
               </div>
               <form method="post" action="/bag/update/" class="bag-qty">
                 <input type="hidden" name="index" value={i} />

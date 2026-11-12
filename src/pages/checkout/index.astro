@@ -8,6 +8,7 @@ import { priceBag } from '../../lib/pricing';
 import { COUNTRY_CODES, countryName, type CheckoutValues } from '../../lib/checkout-form';
 import { CURRENCY_COOKIE, CURRENCY_NAMES, currencyForCountry, currencyFromRequest, formatMoney } from '../../lib/currency';
 import { pageTitle } from '../../lib/seo';
+import { lineLabel } from '../../lib/line-label';
 import type { Currency } from '../../lib/currency';
 import { site } from '../../data/site';
 
@@ -82,7 +83,7 @@ const fields = [
       </form>
       <aside class="bag-summary" aria-label="Order summary">
         <ul class="summary-lines" role="list">
-          {priced.lines.map((l) => <li><span>{l.qty} × {l.name}{l.option && ` (${l.option})`}</span><span>{euro(l.lineCents)}</span></li>)}
+          {priced.lines.map((l) => <li><span>{lineLabel(l)}</span><span>{euro(l.lineCents)}</span></li>)}
         </ul>
         <dl>
           <div><dt>Subtotal</dt><dd>{euro(priced.subtotalCents)}</dd></div>

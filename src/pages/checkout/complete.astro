@@ -8,6 +8,7 @@ import { countryName } from '../../lib/checkout-form';
 import { CURRENCY_COOKIE, currencyFromRequest, formatMoney } from '../../lib/currency';
 import { recommend, type RecCard } from '../../lib/recommend';
 import { pageTitle } from '../../lib/seo';
+import { lineLabel } from '../../lib/line-label';
 import { site } from '../../data/site';
 
 export const prerender = false;
@@ -47,7 +48,7 @@ const heading = error ? 'Payment problem' : pending ? 'Order received' : 'Thank 
         {order && (
           <section class="bag-summary" aria-label="Order details">
             <ul class="summary-lines" role="list">
-              {order.lines.map((l) => <li><span>{l.qty} × {l.name}{l.option && ` (${l.option})`}</span><span>{euro(l.lineCents)}</span></li>)}
+              {order.lines.map((l) => <li><span>{lineLabel(l)}</span><span>{euro(l.lineCents)}</span></li>)}
             </ul>
             <dl>
               <div><dt>Shipping</dt><dd>{order.shippingCents === 0 ? 'Free' : euro(order.shippingCents)}</dd></div>
