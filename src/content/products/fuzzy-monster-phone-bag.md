@@ -9,9 +9,9 @@ etsyUrl: "https://www.etsy.com/listing/4467419069/crochet-fuzzy-monster-phone-ba
 maker: "Hui"
 options: [{"name":"Colour","values":["Pink","Yellow"]}]
 materials: ["Polyester"]
-size: "W 11 × H 31 × D 1 cm, strap 102 cm"
+size: "W 11 × H 31 × D 1 cm, strap 120 cm"
 images: [{"src":"../../assets/products/fuzzy-monster-phone-bag/01.jpg","alt":"Pink and yellow fuzzy crochet monster bags with wings, side by side"},{"src":"../../assets/products/fuzzy-monster-phone-bag/02.jpg","alt":"Yellow fuzzy crochet monster bag worn crossbody, held next to a phone"},{"src":"../../assets/products/fuzzy-monster-phone-bag/03.jpg","alt":"Pink fuzzy crochet monster bag hanging by its crossbody strap"},{"src":"../../assets/products/fuzzy-monster-phone-bag/04.jpg","alt":"Yellow monster bag worn crossbody over a black jumper"},{"src":"../../assets/products/fuzzy-monster-phone-bag/05.jpg","alt":"Yellow monster bag worn at the front, with its braided strap"},{"src":"../../assets/products/fuzzy-monster-phone-bag/06.jpg","alt":"Pink monster bag worn crossbody over a grey sweatshirt"},{"src":"../../assets/products/fuzzy-monster-phone-bag/07.jpg","alt":"Pink monster bag worn at the side over grey trousers"},{"src":"../../assets/products/fuzzy-monster-phone-bag/08.jpg","alt":"Size chart for the monster bag: 31 cm tall, 11 cm wide, 1 cm deep"},{"src":"../../assets/products/fuzzy-monster-phone-bag/09.jpg","alt":"Yellow monster bag next to a phone, showing its size"},{"src":"../../assets/products/fuzzy-monster-phone-bag/10.jpg","alt":"Pink monster bag held open, with lip balm and a compact inside"}]
-faq: [{"q":"Will my phone fit?","a":"Phones up to 6.5 inches fit, with room for a cardholder, lip gloss and earbuds."},{"q":"How do I wash it?","a":"Hand wash or a gentle cold machine cycle below 40°C, washed separately, then lay flat to dry. It may shed a little fluff on the first wash."},{"q":"Can I wear it two ways?","a":"Yes. The 102 cm strap adjusts for crossbody or shoulder wear."}]
+faq: [{"q":"Will my phone fit?","a":"Phones up to 6.5 inches fit, with room for a cardholder, lip gloss and earbuds."},{"q":"How do I wash it?","a":"Hand wash or a gentle cold machine cycle below 40°C, washed separately, then lay flat to dry. It may shed a little fluff on the first wash."},{"q":"Can I wear it two ways?","a":"Yes. The 120 cm braided strap works crossbody or on the shoulder."}]
 ---
 
 A shaggy little monster with dragonfly wings that opens through its own mouth, so getting your phone out takes one reach, not a zip fight.
@@ -20,10 +20,10 @@ Hui crochets the body from fuzzy plush yarn for a shaggy, soft texture, then att
 
 - **Mouth-opening entry:** no zip or clasp, just reach in.
 - **Fits phones up to 6.5 inches:** plus a flat cardholder, lip gloss and earbuds.
-- **102 cm adjustable strap:** braided cord in a matching colour, worn crossbody or on the shoulder.
+- **120 cm braided strap:** in the same colour as the monster, worn crossbody or on the shoulder.
 - **Two colourways:** yellow body with blue wings, pink mouth, yellow antennae and limbs, brown feet, or pink body with grey wings, orange mouth, grey horns, peach arms and striped boots.
 - **About 80 g:** barely there on your shoulder.
 
 It's built for anyone who wants to be noticed at a festival, convention or themed event, and just as fun as an everyday bag.
 
-*W 11 cm, H 31 cm including the wings and legs, D 1 cm, strap 102 cm. Hand crocheted, so allow 1 to 3 cm either way.*
+*W 11 cm, H 31 cm including the wings and legs, D 1 cm, strap 120 cm. Hand crocheted, so allow 1 to 3 cm either way.*

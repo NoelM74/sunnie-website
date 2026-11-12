@@ -13,21 +13,25 @@ import { featured, showHatsInNav } from '../lib/products';
 import Money from '../components/Money.astro';
 import { faqJsonLd, organizationJsonLd, websiteJsonLd } from '../lib/seo';
 import { freeShippingAll } from '../lib/money';
-import { BUNDLE_PRICES } from '../lib/bundles';
+import { BUNDLE_PRICES, priceBook } from '../lib/bundles';
+import { landerBySlug } from '../data/landers';
 import { landerImage } from '../lib/lander-images';
 import { LANDER_PRODUCT_SLUGS } from '../lib/lander-products';
 
 const FREE_SHIPPING = freeShippingAll();
 
 const all = await getCollection('products');
-// Bestsellers are the four character bags, each with its own bundle page. "More to love"
+// Bestsellers: the four best-selling character bags (one frog only, owner 2026-11-12), each with its own bundle page. "More to love"
 // keeps the shop's other favourites on the page.
 const characters = [
-  { href: '/go/finn-the-shamrock/', mark: '/go/finn-the-shamrock-mark.svg', name: 'Finn & the Shamrock', blurb: 'The frog that carries your phone, with a shamrock sewn on his chest.', img: 'landers/finn-the-shamrock/finn-frog-bag-phone-closeup-1400.webp' },
-  { href: '/go/miso-cat/', mark: '/go/miso-cat-mark.svg', name: 'Miso the cat', blurb: 'A cat in a sweater for your keys and lip balm. Black, brown or yellow.', img: 'products/cat-crossbody-bag-with-dangling-legs/01.webp' },
-  { href: '/go/snout-and-about/', mark: '/go/snout-and-about-mark.svg', name: 'Snout & About', blurb: 'A soft little dog that carries your phone. Schnauzer, puppy or terrier.', img: 'landers/snout-and-about/life-4.webp' },
-  { href: '/go/finn-in-the-hood/', mark: '/go/finn-in-the-hood-mark.svg', name: 'Finn in the Hood', blurb: 'A frog in a hoodie with a big red mouth. Yellow or blue.', img: 'landers/finn-in-the-hood/duo.jpg' },
-];
+  { slug: 'star-frogs', name: 'The Star Frogs', blurb: 'A frog in overalls that carries your phone. Pink, blue or brown.', img: 'products/frog-phone-crossbody/01.jpg' },
+  { slug: 'big-mouth-monsters', name: 'Big Mouth Monsters', blurb: 'A fuzzy monster with a mouth for your phone. Pink or yellow.', img: 'landers/big-mouth-monsters/pair-step.webp' },
+  { slug: 'miso-cat', name: 'Miso the cat', blurb: 'A cat in a sweater for your keys and lip balm. Black, brown or yellow.', img: 'products/cat-crossbody-bag-with-dangling-legs/01.webp' },
+  { slug: 'snout-and-about', name: 'Snout & About', blurb: 'A soft little dog that carries your phone. Schnauzer, puppy or terrier.', img: 'landers/snout-and-about/life-4.webp' },
+].map((c) => {
+  const book = priceBook(landerBySlug(c.slug)!);
+  return { ...c, href: `/go/${c.slug}/`, mark: `/go/${c.slug}-mark.svg`, book };
+});
 const one = BUNDLE_PRICES.EUR.packs[1] / 100;
 const two = BUNDLE_PRICES.EUR.packs[2] / 100;
 const best = featured(all).filter((p) => !LANDER_PRODUCT_SLUGS.includes(p.id));
@@ -136,7 +140,7 @@ const tiles = [
               <span class="char-name">{c.name}</span>
               <span class="char-blurb">{c.blurb}</span>
               <span class="char-price">
-                <Money eur={one} gbpCents={BUNDLE_PRICES.GBP.packs[1]} usdCents={BUNDLE_PRICES.USD.packs[1]} /> · 2 for <Money eur={two} gbpCents={BUNDLE_PRICES.GBP.packs[2]} usdCents={BUNDLE_PRICES.USD.packs[2]} />
+                <Money eur={c.book.EUR[1] / 100} gbpCents={c.book.GBP[1]} usdCents={c.book.USD[1]} /> · 2 for <Money eur={c.book.EUR[2] / 100} gbpCents={c.book.GBP[2]} usdCents={c.book.USD[2]} />
               </span>
             </a>
           </li>

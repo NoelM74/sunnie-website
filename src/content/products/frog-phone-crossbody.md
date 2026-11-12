@@ -19,7 +19,7 @@ Stop digging through your bag for your phone. Drop it into a crochet frog in ove
 The frog's open top means no zip to fight: reach in and your phone is right there. It hangs at your hip on a 120 cm strap, and when you don't need the strap, unclip it and carry the frog as a pouch.
 
 - **Fits smartphones up to 6.7 inches:** plus a cardholder, keys, lip balm and earbuds.
-- **Metal clasps on the strap:** shorten it, lengthen it or take it off.
+- **Two straps in the box:** a woven one and a braided one, both on metal clasps.
 - **Overalls in pink, blue or brown:** with an embroidered face and tiny arms and legs.
 
 > "Super cute frog at a very fair price. Shipping was faster than expected. I ordered a second one straight away." *Antje-Susan, Etsy buyer of a Sunnie frog, translated from German*

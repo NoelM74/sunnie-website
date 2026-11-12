@@ -21,7 +21,7 @@ describe('homepage', () => {
   it('shows the four character bags as bestsellers, each linking to its bundle page', () => {
     const section = html.split('id="bestsellers"')[1].split('</section>')[0];
     expect((section.match(/class="char"/g) ?? []).length).toBe(4);
-    for (const slug of ['finn-the-shamrock', 'miso-cat', 'snout-and-about', 'finn-in-the-hood']) expect(section).toContain(`href="/go/${slug}/"`);
+    for (const slug of ['star-frogs', 'big-mouth-monsters', 'miso-cat', 'snout-and-about']) expect(section).toContain(`href="/go/${slug}/"`);
   });
   it('keeps four more favourites, none of them a character bag', () => {
     const section = html.split('id="more-h"')[1].split('</section>')[0];
