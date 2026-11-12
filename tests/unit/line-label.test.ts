@@ -19,3 +19,11 @@ describe('bag line wording', () => {
     expect(packSize('Set Of Two')).toBeNull();
   });
 });
+
+describe('pairs of coasters', () => {
+  it('says pairs, so a set of four never reads as two coasters', () => {
+    expect(unitLabel({ option: '2 pairs: Pink + Mixed' }, '€44.95')).toBe('2 pairs for €44.95');
+    expect(unitLabel({ option: '1 pair: Mixed' }, '€24.95')).toBe('1 pair for €24.95');
+    expect(unitLabel({ option: '2 dogs: Grey Schnauzer + Beige Puppy' }, '€69.95')).toBe('2 for €69.95');
+  });
+});

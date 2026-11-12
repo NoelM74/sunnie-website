@@ -23,6 +23,9 @@ export interface Lander extends BundleDef {
   ships?: string;
   /** Default 30, the shop's policy. */
   returnsDays?: number;
+  /** Pieces in one pack unit, when a unit is more than one piece (Fold & Bloom sells pairs of
+   * coasters): the boxes then read "Set of 2 / 4 / 6" and price per piece. Default 1. */
+  per?: number;
   /** Header link back to the shop. Default: ['/shop/bags/', 'All bags']. */
   shop?: [string, string];
   /** Right-hand side of the top bar. Default: "Handmade by Hui". */
@@ -1119,6 +1122,106 @@ export const LANDERS: Lander[] = [
       kidsFaq('bag'),
       { q: 'How do I wash it?', a: 'Hand wash in cool or lukewarm water, below 40°C, and lay it flat to dry. Keep it out of strong sun for long periods, as sun can fade the colours.' },
       arriveFaq('bag'),
+      returnsFaq,
+    ],
+  },
+  {
+    slug: 'fold-and-bloom',
+    productSlug: 'carnation-mug-rug-that-folds-into-a-mini',
+    name: 'Fold & Bloom carnation mug rugs',
+    noun: ['pair', 'pairs'],
+    picks: ['Pink', 'Purple', 'Mixed'],
+    per: 2,
+    maker: 'Hui',
+    shop: ['/shop/coasters/', 'Coasters'],
+    // Owner, 2026-11-12: sets of 2, 4 and 6 (sold as pairs), on the listing's ladder:
+    // 2 €24.95, 4 €44.95, 6 €59.95. Buyers pick each pair: pink, purple or one of each.
+    prices: {
+      EUR: { 1: 2495, 2: 4495, 3: 5995 },
+      GBP: { 1: 2195, 2: 3795, 3: 4995 },
+      USD: { 1: 2495, 2: 4495, 3: 5995 },
+    },
+    title: 'Crochet Carnation Coasters That Fold Into a Bouquet | Fold & Bloom',
+    description: 'Hand-crocheted carnation mug rugs that fold into a mini bouquet, then open flat under a mug. Pink, purple or mixed, 14.5 cm across. Sets of 2, 4 or 6.',
+    og: '/go/fold-and-bloom-og.jpg',
+    bar: 'Free shipping on sets of 4 or more',
+    hero: {
+      h1: 'A little bouquet of carnations',
+      h1em: 'that opens into a coaster for their tea.',
+      sub: 'Hui crochets each carnation onto a soft cream coaster with a leafy stem. Fold it into a cone and tie the leaf cord, and it’s a bouquet. Untie it, and it lies flat under a mug, 14.5 cm across.',
+      image: { src: 'landers/fold-and-bloom/hero.jpg', alt: 'Four crochet carnation bouquets folded into cones and tied with green leaf cords, two purple and two pink' },
+      proof: friend,
+    },
+    story: {
+      h: 'Flowers that don’t end up in the bin.',
+      paras: [
+        'Cut flowers look lovely for a week. These carnations are still on the table months later, under a cup of tea.',
+        'Each one folds into a cone and ties with its own leaf cord, so you hand it over like a fresh-cut stem. When they untie it, the surprise is that it’s a coaster.',
+      ],
+      subH: 'Why carnations?',
+      subParas: ['They’re a favourite for Mother’s Day and birthdays, and their ruffled petals look just as good in crochet as in a vase.'],
+    },
+    fits: {
+      h: 'Big enough for a mug.',
+      lede: 'Each coaster is 14.5 cm across. The carnation sits at the edge, so your mug or glass sits flat on the crochet.',
+      specs: [
+        ['Size', 'Coaster 14.5 cm across and 0.5 cm thick, carnation about 8 cm. Made by hand, so allow 1 to 2 cm.'],
+        ['Good for', 'Mugs, teacups and glasses'],
+        ['Weight', 'About 20 g each'],
+        ['Made from', 'Acrylic yarn'],
+        ['Folding', 'Folds into a bouquet and back without creasing'],
+        ['Care', 'Hand wash in cool water, below 40°C. Don’t wring. Dry flat.'],
+      ],
+      image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/07.jpg', alt: 'A glass tumbler sitting on a cream crochet coaster with a purple carnation at its edge' },
+    },
+    colours: {
+      h: 'Pick your pairs',
+      lede: 'Carnations come in pairs. Choose a pink pair, a purple pair, or one of each.',
+      cards: [
+        { pick: 'Pink', title: 'Pink pair', text: 'Two soft pink carnations. Sweet for a birthday or Mother’s Day.', image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/06.jpg', alt: 'A pink crochet carnation folded into a bouquet and tied with a green leaf cord' } },
+        { pick: 'Purple', title: 'Purple pair', text: 'Two deep purple carnations. Rich against a wooden table.', image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/05.jpg', alt: 'A purple crochet carnation folded into a bouquet and tied with a green leaf cord' } },
+        { pick: 'Mixed', title: 'Mixed pair', text: 'One pink and one purple, like the pair in our photos.', image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/02.jpg', alt: 'A purple and a pink crochet carnation bouquet side by side' } },
+      ],
+      note: 'Getting four or six? Mix your pairs however you like.',
+    },
+    uses: {
+      h: 'Who they’re for',
+      items: [
+        ['Mother’s Day.', 'A bouquet she keeps on the table.'],
+        ['Birthdays.', 'At about 20 g each, they tuck in beside a card.'],
+        ['Thank-yous.', 'For a teacher, a neighbour or a friend. A small gift that gets used every day.'],
+        ['Housewarmings.', 'Six bouquets for a new kitchen table.'],
+        ['Your own table.', 'Tea on a carnation, every morning.'],
+      ],
+      images: [
+        { src: 'products/carnation-mug-rug-that-folds-into-a-mini/08.jpg', alt: 'Four carnation coasters stacked, with pink and purple flowers around the edge' },
+        { src: 'products/carnation-mug-rug-that-folds-into-a-mini/04.jpg', alt: 'A pink carnation coaster lying flat, with its green stem across the cream crochet' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, petal by petal.',
+      paras: [
+        'Hui crochets each coaster in cream granny stitch, then works the ruffled carnation, the leafy stem and the leaf cord that ties the bouquet.',
+        'Because a person makes them, no two carnations ruffle quite the same way.',
+      ],
+      image: { src: 'landers/fold-and-bloom/craft.jpg', alt: 'A purple carnation coaster lying flat next to a ball of purple yarn' },
+    },
+    offer: {
+      h: 'Pick your bouquets',
+      lede: 'We suggest four: two to keep, two to give. Sets of four or six ship free, and each coaster costs less.',
+      flag2: 'Two to keep, two to give',
+      notes: { 1: 'One pair.', 2: 'Any two pairs.', 3: 'Any three pairs.' },
+      defaults: ['Mixed', 'Pink', 'Purple'],
+      proof: sturdy,
+    },
+    reviews: [friend, maria, asPictured],
+    faq: [
+      { q: 'Will my mug fit?', a: 'Yes. Each coaster is 14.5 cm across, and the carnation sits at the edge, so a mug or a glass sits flat on the crochet.' },
+      { q: 'How do I fold it into a bouquet?', a: 'Roll the coaster into a cone around the stem, with the carnation at the top, and tie it with the leaf cord. Untie it to use it as a coaster.' },
+      { q: 'Does folding crease it?', a: 'No. The yarn is soft enough to fold into a bouquet and back without leaving creases.' },
+      { q: 'What’s in a set?', a: 'Sets come in pairs: two, four or six coasters. Pick each pair in pink, purple, or one of each. Sets of four or six ship free.' },
+      { q: 'How do I wash them?', a: 'Hand wash in cool water, below 40°C. Don’t wring them, and lay them flat to dry.' },
+      arriveFaq('coasters'),
       returnsFaq,
     ],
   },

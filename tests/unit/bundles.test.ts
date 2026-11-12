@@ -163,3 +163,15 @@ describe('Fruit Bellies coasters', () => {
     expect(priceBag([{ slug: item.slug, option: bundleOption(fb, ['Cat', 'Pig', 'Bear'])!, qty: 1 }], cat, 'GBP')).toMatchObject({ subtotalCents: 3995, shippingCents: 0 });
   });
 });
+
+describe('Fold & Bloom carnation coasters (sold in pairs)', () => {
+  const fb = LANDERS.find((l) => l.slug === 'fold-and-bloom')!;
+  const item = bundleCatalogItem(fb, '');
+  const cat = { [item.slug]: item };
+  it('charges 2 / 4 / 6 coasters at the owner prices; sets of 4 or 6 ship free', () => {
+    expect(priceBag([{ slug: item.slug, option: bundleOption(fb, ['Mixed'])!, qty: 1 }], cat, 'EUR')).toMatchObject({ subtotalCents: 2495, shippingCents: 600 });
+    expect(priceBag([{ slug: item.slug, option: bundleOption(fb, ['Pink', 'Purple'])!, qty: 1 }], cat, 'EUR')).toMatchObject({ subtotalCents: 4495, shippingCents: 0 });
+    expect(priceBag([{ slug: item.slug, option: bundleOption(fb, ['Pink', 'Purple', 'Mixed'])!, qty: 1 }], cat, 'GBP')).toMatchObject({ subtotalCents: 4995, shippingCents: 0 });
+    expect(bundleOption(fb, ['Mixed', 'Pink'])).toBe('2 pairs: Pink + Mixed');
+  });
+});

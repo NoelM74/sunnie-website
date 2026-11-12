@@ -49,19 +49,23 @@ const money = (cents: (cur: Currency) => number) => ({
   usd: formatMoney(cents('USD'), 'USD'),
 });
 const bundlePrice = (n: BundleSize) => money((c) => local(n, c));
-const perPiece = (n: BundleSize) => money((c) => Math.round(local(n, c) / n));
+const PER = l.per ?? 1;
+const perPiece = (n: BundleSize) => money((c) => Math.round(local(n, c) / (n * PER)));
 const saving = (n: BundleSize) => money((c) => local(1, c) * n - local(n, c));
 const singleShip = money((c) => prices[c].ship[1]);
 const from = bundlePrice(1);
 const nounFor = (n: number) => (n === 1 ? l.noun[0] : l.noun[1]);
+// "2 frogs", or "Set of 4" when a unit holds more than one piece. Must match qtyLabel() in the page script.
+const qtyLabel = (n: number) => (PER > 1 ? `Set of ${n * PER}` : `${n} ${nounFor(n)}`);
+const WORDS = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 const Noun = l.noun[0][0].toUpperCase() + l.noun[0].slice(1);
 const DEFAULT: BundleSize = 2;
 // The step-up line above the button. Must match nudge() in the page script.
 const nudge = (n: BundleSize, cur: Currency) => {
   const p = prices[cur]; const f = (c: number) => formatMoney(c, cur);
   if (n === 1) return `Add a second ${l.noun[0]} for ${f(p[2] - p[1] - p.ship[1])} more and shipping is free.`;
-  if (n === 2) return `Make it three for just ${f(p[3] - p[2])} more.`;
-  return `Best value: ${f(Math.round(p[3] / 3))} each.`;
+  if (n === 2) return `Make it ${WORDS[3 * PER]} for just ${f(p[3] - p[2])} more.`;
+  return `Best value: ${f(Math.round(p[3] / (3 * PER)))} each.`;
 };
 const defaultOption = packOption(DEFAULT);
 const choosesColour = l.picks.length > 1;
@@ -104,7 +108,7 @@ const jsonLd = [
 // The character's own little logo (public/go/<slug>-mark.svg): bundle cards, footer, tab icon.
 const mark = `/go/${l.slug}-mark.svg`;
 const nav: [string, string][] = [['#fits', 'What fits'], ...(l.colours ? [['#colours', 'Colours'] as [string, string]] : []), ['#craft', 'Made by hand'], ['#offer', 'Bundles'], ['#faq', 'Questions']];
-const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.defaults, start: DEFAULT, cartOptions: l.cart?.options ?? null };
+const config = { prices, picks: l.picks, noun: l.noun, per: PER, three: WORDS[3 * PER], defaults: l.offer.defaults, start: DEFAULT, cartOptions: l.cart?.options ?? null };
 ---
 <LanderLayout title={l.title} description={l.description} image={absoluteUrl(l.og)} jsonLd={jsonLd} bar={l.bar} barRight={l.barRight} nav={nav} mark={mark} shop={l.shop}>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -214,9 +218,9 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
           return (
             <button class={`l-offer${n === DEFAULT ? ' l-best' : ''}`} type="button" data-qty={n} aria-pressed={n === DEFAULT ? 'true' : 'false'}>
               <span class="l-tick" aria-hidden="true">Selected</span>
-              <span class="l-marks" aria-hidden="true">{Array.from({ length: n }, () => <img src={mark} alt="" width="34" height="34" />)}</span>
+              <span class="l-marks" aria-hidden="true">{Array.from({ length: n * PER }, () => <img src={mark} alt="" width={PER > 1 ? 26 : 34} height={PER > 1 ? 26 : 34} />)}</span>
               {n === 2 && <span class="l-flag">{l.offer.flag2}</span>}
-              <span class="l-qty">{n} {nounFor(n)}</span>
+              <span class="l-qty">{qtyLabel(n)}</span>
               <span class="l-amount money" data-gbp={p.gbp} data-usd={p.usd}>{p.text}</span>
               {n === 1 ? (
                 <span class="l-per">plus <span class="money" data-gbp={singleShip.gbp} data-usd={singleShip.usd}>{singleShip.text}</span> shipping</span>
@@ -307,7 +311,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
 
   <div class="l-sticky" id="sticky" aria-hidden="true" inert>
     <div class="container l-sticky-in">
-      <span class="l-sticky-label"><img src={stickyThumb} alt="" width="48" height="48" loading="lazy" /><span><b id="stickySel">{DEFAULT} {nounFor(DEFAULT)}</b><small id="stickyShip">Free shipping</small></span></span>
+      <span class="l-sticky-label"><img src={stickyThumb} alt="" width="48" height="48" loading="lazy" /><span><b id="stickySel">{qtyLabel(DEFAULT)}</b><small id="stickyShip">Free shipping</small></span></span>
       <button class="btn btn-primary" type="button" id="stickyBtn">Add to basket</button>
     </div>
   </div>
@@ -332,11 +336,12 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
       return new Intl.NumberFormat(LOCALE[c], { style: 'currency', currency: c, minimumFractionDigits: whole ? 0 : 2, maximumFractionDigits: whole ? 0 : 2 }).format(cents / 100);
     }
     function noun(n) { return n === 1 ? C.noun[0] : C.noun[1]; }
+    function qtyLabel(n) { return C.per > 1 ? 'Set of ' + n * C.per : n + ' ' + noun(n); }
     function nudge(n) {
       var p = C.prices[cur()];
       if (n === 1) return 'Add a second ' + C.noun[0] + ' for ' + money(p[2] - p[1] - p.ship[1]) + ' more and shipping is free.';
-      if (n === 2) return 'Make it three for just ' + money(p[3] - p[2]) + ' more.';
-      return 'Best value: ' + money(Math.round(p[3] / 3)) + ' each.';
+      if (n === 2) return 'Make it ' + C.three + ' for just ' + money(p[3] - p[2]) + ' more.';
+      return 'Best value: ' + money(Math.round(p[3] / (3 * C.per))) + ' each.';
     }
     // Must match bundleOption() in src/lib/bundles.ts: picks in picker order.
     function option() {
@@ -359,7 +364,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
       $('shipLine').textContent = ship ? 'plus ' + money(ship) + ' shipping' : 'free shipping';
       $('buyBtn').textContent = 'Add to basket · ' + money(total);
       $('nudge').textContent = nudge(state.qty);
-      $('stickySel').textContent = state.qty + ' ' + noun(state.qty) + ' · ' + money(total);
+      $('stickySel').textContent = qtyLabel(state.qty) + ' · ' + money(total);
       $('stickyShip').textContent = ship ? '+' + money(ship) + ' shipping' : 'Free shipping';
     }
 

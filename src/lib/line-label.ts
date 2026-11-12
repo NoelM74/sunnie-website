@@ -20,5 +20,7 @@ export function lineLabel(l: { qty: number; name: string; option?: string }): st
 export function unitLabel(l: { option?: string }, price: string): string {
   const n = packSize(l.option);
   if (n === null) return `${price} each`;
+  // Pairs (Fold & Bloom coasters) say so, or "2 for €44.95" would read as two coasters.
+  if (/^\d+ pairs?\b/.test(l.option!)) return `${l.option!.split(':')[0]} for ${price}`;
   return n > 1 ? `${n} for ${price}` : price;
 }

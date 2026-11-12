@@ -1,12 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import { page, productFrontmatters, readCatalog } from './helpers';
 
-// The cat, pig and bear coasters moved to the Fruit Bellies bundle page (2026-11-12); its prices
+// The cat, pig and bear coasters (Fruit Bellies) and the carnation mug rugs (Fold & Bloom) moved to bundle pages (2026-11-12); their prices
 // live in src/data/landers.ts and are tested in tests/unit/bundles.test.ts.
 // Owner-supplied per-option prices (2026-10-03, Phase 1 prices 2026-10-29) for products whose option
 // values are packs or sizes. The site must charge these, never one flat price.
 const OPTION_PRICES: Record<string, Record<string, number>> = {
-  'carnation-mug-rug-that-folds-into-a-mini': { 'Set Of Two': 2495, 'Set Of Four': 4495 },
   'fat-lips-girl-crossbody-phone-bag-with-daisy': { 'Large 28 x 11 cm': 3295, 'Small 20 x 10 cm': 2795 },
   'flower-mandala-coaster': { '4 coasters + free basket': 2495, '6 coasters + free basket': 3495, '8 coasters + 2 free baskets': 4495 },
   'flower-shoulder-bag-with-flower-charm': { 'Pink Large': 3995, 'Yellow Large': 3995, 'Blue Large': 3995, 'Pink Small': 3495, 'Yellow Small': 3495, 'Blue Small': 3495 },
