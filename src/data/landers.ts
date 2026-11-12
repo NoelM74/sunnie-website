@@ -1414,6 +1414,101 @@ export const LANDERS: Lander[] = [
       returnsFaq,
     ],
   },
+  {
+    slug: 'tassel-and-twine',
+    productSlug: 'tassel-crossbody-phone-bag',
+    name: 'Tassel & Twine crossbody bag',
+    noun: ['bag', 'bags'],
+    picks: ['Cream', 'Khaki'],
+    maker: 'Hui',
+    // Owner, 2026-11-12: the middle ladder, €34.95 / 2 for €59.95 / 3 for €79.95.
+    prices: {
+      EUR: { 1: 3495, 2: 5995, 3: 7995 },
+      GBP: { 1: 2695, 2: 4495, 3: 5795 },
+      USD: { 1: 3495, 2: 5995, 3: 7995 },
+    },
+    title: 'Lined Crochet Crossbody Phone Bag with Tassel | Tassel & Twine',
+    description: 'A hand-crocheted crossbody phone bag with a tassel, canvas lining and magnetic snap. Two straps included. Cream or khaki. Free shipping on 2 or more.',
+    og: '/go/tassel-and-twine-og.jpg',
+    bar: 'Free shipping on 2 bags or more',
+    hero: {
+      h1: 'An open crochet bag with a tassel,',
+      h1em: 'lined in canvas so nothing falls through.',
+      sub: 'Hui crochets the open stitch by hand, then lines it in canvas and adds a magnetic snap. It comes with two straps, woven and faux leather, so you can wear it boho or smart. Cream or khaki.',
+      image: { src: 'landers/tassel-and-twine/pair.jpg', alt: 'A khaki and a cream crochet crossbody bag, each with a tassel, wood beads and a brown faux leather strap' },
+      proof: maria,
+    },
+    story: {
+      h: 'Pretty stitches, and nothing falls out.',
+      paras: [
+        'Open crochet looks lovely, but small things can slip through the gaps.',
+        'So this one has a canvas lining inside and a magnetic snap at the top. Your phone and cards stay where you put them.',
+      ],
+      subH: 'Two straps in the box',
+      subParas: ['A woven crochet strap for a boho look, and a faux leather strap for something smarter. Each one clips on and off.'],
+    },
+    fits: {
+      h: 'Made for your phone and cards.',
+      lede: 'At 20 cm tall and 14.5 cm wide, it holds a phone with room for your cards.',
+      specs: [
+        ['Size', '20 cm tall, 14.5 cm wide, 1.5 cm deep. Measured by hand, so allow 1 to 3 cm.'],
+        ['Straps', 'Two clip-on straps, woven crochet and faux leather. 120 cm.'],
+        ['Closes', 'Magnetic snap'],
+        ['Inside', 'Canvas lining'],
+        ['Weight', 'About 200 g'],
+        ['Made from', 'Polyester-acrylic yarn, canvas, faux leather, wood beads'],
+        ['Care', 'Hand wash in cool or lukewarm water, below 40°C. Dry flat, out of strong sun.'],
+      ],
+      image: { src: 'landers/tassel-and-twine/phone.jpg', alt: 'The khaki bag lying above a phone, about the same width, with its tassel and faux leather strap' },
+    },
+    colours: {
+      h: 'Pick your colour',
+      lede: 'Two natural shades, each with a matching tassel and wood beads.',
+      cards: [
+        { pick: 'Cream', title: 'Cream', text: 'Off-white crochet with a cream tassel. Light and summery.', image: { src: 'products/tassel-crossbody-phone-bag/02.jpg', alt: 'The cream bag worn crossbody over a pink shirt and a white dress' } },
+        { pick: 'Khaki', title: 'Khaki', text: 'Warm beige crochet with a khaki tassel. Easy with denim and browns.', image: { src: 'products/tassel-crossbody-phone-bag/01.jpg', alt: 'The khaki bag worn crossbody over a white dress and a brown belt' } },
+      ],
+      note: 'Can’t choose? Get one of each.',
+    },
+    uses: {
+      h: 'Where it goes',
+      items: [
+        ['Holidays and festivals.', 'Hands free, and light at about 200 g.'],
+        ['Weddings and dinners.', 'Clip on the faux leather strap for a smarter look.'],
+        ['Errands.', 'Phone and cards, ready to go.'],
+        ['Gifts.', 'A boho bag for a friend who loves handmade.'],
+      ],
+      images: [
+        { src: 'products/tassel-crossbody-phone-bag/04.jpg', alt: 'The cream bag worn crossbody on the faux leather strap' },
+        { src: 'products/tassel-crossbody-phone-bag/07.jpg', alt: 'The khaki bag worn crossbody over a white dress' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, stitch by stitch.',
+      paras: [
+        'Hui crochets the open stitch by hand, then sews in the canvas lining, the magnetic snap and the little Hand Made tag. The tassel and wood beads go on last.',
+        'Because a person makes each one, no two are exactly alike.',
+      ],
+      image: { src: 'landers/tassel-and-twine/inside.jpg', alt: 'The cream bag held open, showing the canvas lining and the magnetic snap inside' },
+    },
+    offer: {
+      h: 'Pick your bags',
+      lede: 'We suggest two: one in each colour, or one for you and one to give. Two or more ship free, and each bag costs less.',
+      flag2: 'One of each',
+      notes: { 1: 'Just the one.', 2: 'One of each, or two the same.', 3: 'Any three.' },
+      defaults: ['Cream', 'Khaki', 'Cream'],
+      proof: friend,
+    },
+    reviews: [friend, sturdy, asPictured],
+    faq: [
+      { q: 'Will things fall through the stitches?', a: 'No. There’s a canvas lining inside, and a magnetic snap closes the top.' },
+      { q: 'What comes with it?', a: 'Two clip-on straps, one woven crochet and one faux leather, plus the tassel with its wood beads.' },
+      { q: 'Will my phone fit?', a: 'Yes. The bag is 20 cm tall and 14.5 cm wide, with room for a phone and your cards.' },
+      { q: 'How do I wash it?', a: 'Hand wash in cool or lukewarm water, below 40°C, and lay it flat to dry, out of strong sun.' },
+      arriveFaq('bag'),
+      returnsFaq,
+    ],
+  },
 ];
 
 export const landerBySlug = (slug: string) => LANDERS.find((l) => l.slug === slug);
