@@ -112,7 +112,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
       <div class="l-hero-copy">
         <h1>{l.hero.h1} <em>{l.hero.h1em}</em></h1>
         <p class="l-hero-sub">{l.hero.sub}</p>
-        <a class="btn btn-primary l-cta" href="#offer">Choose your bundle <small><span class="l-cta-dot">· </span>from <span class="money" data-gbp={from.gbp} data-usd={from.usd}>{from.text}</span></small></a>
+        <a class="btn btn-primary l-cta" href="#offer">{l.offer.h} <small><span class="l-cta-dot">· </span>from <span class="money" data-gbp={from.gbp} data-usd={from.usd}>{from.text}</span></small></a>
         <p class="l-proof">
           <a href="#reviews"><span class="l-stars" role="img" aria-label="Rated 5 out of 5">{[1, 2, 3, 4, 5].map(() => <svg><use href="#star" /></svg>)}</span> {site.proof.etsyRating} on Etsy</a>
           <span>“{quoteText(heroQuote)}”</span>
@@ -296,7 +296,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
       ))}
       <div class="l-center l-close">
         <p>Made by hand. {ships}. If it isn’t what you hoped for, you have {returnsDays} days to send it back.</p>
-        <a class="btn btn-primary l-cta" href="#offer">Choose your bundle <small><span class="l-cta-dot">· </span>from <span class="money" data-gbp={from.gbp} data-usd={from.usd}>{from.text}</span></small></a>
+        <a class="btn btn-primary l-cta" href="#offer">{l.offer.h} <small><span class="l-cta-dot">· </span>from <span class="money" data-gbp={from.gbp} data-usd={from.usd}>{from.text}</span></small></a>
       </div>
     </div>
   </section>

@@ -219,7 +219,7 @@ export const LANDERS: Lander[] = [
         { pick: 'Yellow', title: 'Sunny yellow', text: 'Pointed yellow hood, orange vest with yellow sleeves and a yellow pocket. Bright enough to find in any crowd.', image: { src: 'landers/finn-in-the-hood/frog-sunny.webp', alt: 'Finn in yellow: a green crocheted frog in a pointed yellow hood and an orange vest with yellow sleeves' } },
         { pick: 'Blue', title: 'Blue and cream', text: 'Blue hood and vest, with cream sleeves and a cream pocket. The calmer one, and easy with jeans.', image: { src: 'landers/finn-in-the-hood/frog-blue.jpg', alt: 'Finn in blue: a green crocheted frog in a blue hood and vest with cream sleeves and pocket' } },
       ],
-      note: 'Can’t choose? The two-frog bundle takes one of each.',
+      note: 'Can’t choose? Take two and get one of each.',
     },
     uses: {
       h: 'Where Finn goes',
@@ -310,7 +310,7 @@ export const LANDERS: Lander[] = [
         { pick: 'Brown Cat', title: 'Brown in stripes', text: 'Cream and tan striped sweater with a tiny yellow face on the chest, and an orange mouth. Cosy with knitwear.', image: { src: 'landers/miso-cat/cat-brown.webp', alt: 'Brown Miso in a cream and tan striped sweater with a tiny yellow face' } },
         { pick: 'Yellow Cat', title: 'Yellow in blue', text: 'Blue sweater with a small pink fish, and a pink mouth. The sunny one.', image: { src: 'landers/miso-cat/cat-yellow.webp', alt: 'Yellow Miso in a blue sweater with a pink fish' } },
       ],
-      note: 'Can’t pick? The three-cat bundle takes one of each.',
+      note: 'Can’t pick? Take three and get one of each.',
     },
     uses: {
       h: 'Where Miso goes',
@@ -401,7 +401,7 @@ export const LANDERS: Lander[] = [
         { pick: 'Beige Puppy', title: 'Beige puppy', text: 'Golden beige with long floppy ears. The one everybody wants to pat.', image: { src: 'landers/snout-and-about/dog-beige.webp', alt: 'Beige puppy bag with long floppy ears' } },
         { pick: 'White Terrier', title: 'White terrier', text: 'Fluffy white with pink ears and a big black nose. Bright against a dark coat.', image: { src: 'landers/snout-and-about/dog-white.webp', alt: 'White terrier bag with pink ears and a black nose' } },
       ],
-      note: 'Can’t pick? The three-dog bundle takes one of each.',
+      note: 'Can’t pick? Take three and get one of each.',
     },
     uses: {
       h: 'Where he goes',
@@ -456,8 +456,8 @@ export const LANDERS: Lander[] = [
     og: '/go/party-animals-og.jpg',
     bar: 'Free shipping on 2 bags or more',
     hero: {
-      h1: 'They brought the cake.',
-      h1em: 'You bring your phone.',
+      h1: 'Dressed for a party,',
+      h1em: 'made to carry your phone.',
       sub: 'The Party Animals are soft plush crochet bags: a puppy in a party hat with a strawberry cake, a bear with a plate of cookies, and a cat in her best polka-dot bow. Your phone, keys and lip balm go inside.',
       image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/01.jpg', alt: 'Three fluffy crochet bags on a wooden shelf: a white puppy, a yellow bear and a brown cat' },
       proof: { reviewer: 'Jacqueline', date: '2026-05-31' },
@@ -501,7 +501,7 @@ export const LANDERS: Lander[] = [
         ['Days out.', 'Phone on your front, hands free.'],
         ['Birthdays.', 'A present that already looks like a party.'],
         ['A first “big kid” bag.', 'Coins, small toys and sweets have a home.'],
-        ['Teens.', 'A bag nobody else at school has.'],
+        ['Teens.', 'A bag that stands out at school, in a good way.'],
       ],
       images: [
         { src: 'products/plush-crossbody-bag-puppy-bear-cat/03.jpg', alt: 'Puppy bag worn crossbody over a beige sweatshirt' },

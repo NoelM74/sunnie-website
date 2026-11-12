@@ -1,0 +1,6 @@
+---
+// Keeps hyphenated words ("hand-crocheted", "30-day") and measurements ("39 cm") on one line, so a phone never
+// shows "hand- / crocheted". Our fonts have no non-breaking hyphen glyph, so each
+// compound gets a nowrap span instead. Runs before first paint.
+---
+<script is:inline>(function(){var re=/[\p{L}\p{N}]+(?:[-‐][\p{L}\p{N}]+)+|\d+(?:[.,]\d+)?\s(?:cm|mm|kg|g|°C)(?![\p{L}])/gu,skip=/^(SCRIPT|STYLE|TEXTAREA|INPUT|OPTION|CODE|PRE)$/;function walk(root){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentElement;return p&&!skip.test(p.tagName)&&!p.closest('.nw,[contenteditable]')&&/\w-\w|\d\s(?:cm|mm|kg|g|°C)/.test(n.nodeValue)?1:2}}),list=[],n;while(n=w.nextNode())list.push(n);list.forEach(function(t){var s=t.nodeValue,f=document.createDocumentFragment(),last=0;s.replace(re,function(m,i){if(i>last)f.appendChild(document.createTextNode(s.slice(last,i)));var e=document.createElement('span');e.className='nw';e.textContent=m;f.appendChild(e);last=i+m.length});if(last<s.length)f.appendChild(document.createTextNode(s.slice(last)));t.parentNode.replaceChild(f,t)})}walk(document.body)})();</script>
