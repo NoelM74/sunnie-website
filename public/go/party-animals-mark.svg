@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><title>The Party Animals</title>
+  <circle cx="11.5" cy="20" r="5.6" fill="#F3D97A" stroke="#4A3222" stroke-width="1.6"/>
+  <circle cx="36.5" cy="20" r="5.6" fill="#F3D97A" stroke="#4A3222" stroke-width="1.6"/>
+  <circle cx="11.5" cy="20" r="2.6" fill="#E8A9A0"/>
+  <circle cx="36.5" cy="20" r="2.6" fill="#E8A9A0"/>
+  <ellipse cx="24" cy="30.5" rx="15" ry="13.5" fill="#F7E08B" stroke="#4A3222" stroke-width="1.8"/>
+  <circle cx="18.2" cy="28.4" r="2" fill="#2A1C14"/>
+  <circle cx="29.8" cy="28.4" r="2" fill="#2A1C14"/>
+  <circle cx="18.8" cy="27.7" r=".6" fill="#fff"/>
+  <circle cx="30.4" cy="27.7" r=".6" fill="#fff"/>
+  <ellipse cx="24" cy="34" rx="5.2" ry="3.8" fill="#FFF6DA"/>
+  <ellipse cx="24" cy="32.6" rx="1.9" ry="1.4" fill="#2A1C14"/>
+  <path d="M24 34v1.4M24 35.4c-.9.8-2 .8-2.6.2M24 35.4c.9.8 2 .8 2.6.2" stroke="#2A1C14" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <circle cx="14.6" cy="33.6" r="2.1" fill="#F2A3A3" opacity=".8"/>
+  <circle cx="33.4" cy="33.6" r="2.1" fill="#F2A3A3" opacity=".8"/>
+  <g transform="rotate(-14 24 16)">
+    <path d="M17 18.5 24 2.5 31 18.5Z" fill="#fff" stroke="#4A3222" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M21.6 8 26.4 8.6M19.9 12 28.1 13M18.4 15.6 29.6 16.8" stroke="#5B8FD1" stroke-width="2.2"/>
+    <circle cx="24" cy="2.6" r="2.4" fill="#E66B5B" stroke="#4A3222" stroke-width="1.2"/>
+  </g>
+</svg>

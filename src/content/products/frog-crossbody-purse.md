@@ -1,5 +1,5 @@
 ---
-name: "Big-mouth frog in a hooded jacket"
+name: "Finn in the Hood: big-mouth hooded frog bag"
 seoTitle: "Crochet Frog Crossbody Purse, Handmade Big Mouth Hooded Phone Pouch"
 category: "bags"
 group: "characters"

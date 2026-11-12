@@ -1,9 +1,9 @@
 ---
-name: "Plush puppy, bear or cat bag"
+name: "The Party Animals: plush puppy, bear or cat bag"
 seoTitle: "Crochet Plush Crossbody Bag, Puppy Bear Cat Phone Purse, Coin Pouch"
 category: "bags"
 group: "characters"
-price: 44.95
+price: 39.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4592905283/crochet-plush-crossbody-bag-puppy-bear"
 maker: "Hui"

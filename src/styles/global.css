@@ -508,3 +508,7 @@ main:focus { outline: none; }
 .char-price { margin-top: auto; padding-top: 0.4rem; font-weight: 700; }
 @media (max-width: 55.99rem) { .hero-media { order: -1; margin: 6% 10% 0; } }
 @media (prefers-reduced-motion: reduce) { .char { transition: none; } .char:hover { transform: none; } }
+
+/* Breadcrumbs sit right above the page title, without the page header's own top gap. */
+.breadcrumbs + .page-head, .breadcrumbs + * > .page-head:first-child { padding-top: 0.25rem; }
+.breadcrumbs ol { margin-top: 0.75rem; }

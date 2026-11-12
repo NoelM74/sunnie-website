@@ -85,8 +85,10 @@ describe('shop product pages with a lander', () => {
   it('sell the single pack, one per colour the product offers', () => {
     for (const l of LANDERS.filter((x) => x.productSlug)) {
       const md = readFileSync(join(process.cwd(), 'src/content/products', `${l.productSlug}.md`), 'utf8');
-      const values: string[] = JSON.parse(md.match(/^options:\s*(.+)$/m)![1])[0].values;
-      expect([...values].sort(), l.slug).toEqual([...l.picks].sort());
+      const opts = md.match(/^options:\s*(.+)$/m);
+      const values: string[] = opts ? JSON.parse(opts[1])[0].values : [''];
+      if (opts) expect([...values].sort(), l.slug).toEqual([...l.picks].sort());
+      else expect(l.picks, l.slug).toHaveLength(1);
       expect(md, l.slug).toMatch(/^price: 39\.95$/m);
       const pack = packFor(l.productSlug!)!;
       for (const v of values) expect(catalog[pack.slug].option!.values).toContain(pack.optionFor[v]);

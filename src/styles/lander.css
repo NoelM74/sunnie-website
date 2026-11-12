@@ -21,7 +21,7 @@
 .lander h2 { font-size: clamp(1.65rem, 1.3rem + 1.4vw, 2.2rem); line-height: 1.15; margin: 0 0 1rem; }
 .lander h3 { font-size: var(--fs-h3); margin: 1.75rem 0 0.5rem; }
 
-.l-sec { padding-block: clamp(3rem, 2rem + 4vw, 5.5rem); }
+.l-sec { padding-block: clamp(2rem, 1.5rem + 2vw, 3.5rem); }
 .l-tint { background: var(--sand); }
 .l-dark { background: var(--umber); color: var(--linen); }
 .l-dark h2, .l-dark h3 { color: var(--linen); }
@@ -35,7 +35,7 @@
 .l-framed { margin: 0; }
 
 /* Hero */
-.l-hero { padding-block: clamp(2rem, 1rem + 4vw, 4.5rem); }
+.l-hero { padding-block: clamp(1.25rem, 0.75rem + 2.5vw, 3rem); }
 .l-hero-grid { display: grid; gap: 2rem; align-items: center; }
 @media (min-width: 56rem) { .l-hero-grid { grid-template-columns: 1.05fr 1fr; gap: 3.5rem; } }
 .l-hero h1 { font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.25rem); line-height: 1.08; margin: 0 0 1.1rem; }

@@ -1,11 +1,8 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { getImage } from 'astro:assets';
-import { LANDERS } from '../data/landers';
 import { formatMoney, toLocalCents, type Currency } from '../lib/currency';
 import { packFor, productHref } from '../lib/lander-products';
-import { landerImage } from '../lib/lander-images';
-import { FINN_ITEM } from '../lib/finn';
 import type { RecCard } from '../lib/recommend';
 
 export const prerender = true;
@@ -31,12 +28,5 @@ export const GET: APIRoute = async () => {
       boughtAs: pack ? [p.id, pack.slug] : [p.id],
     };
   }));
-  // Finn has no product page; his lander is the card.
-  const finn = LANDERS.find((l) => l.slug === 'finn-the-shamrock');
-  if (finn) {
-    const img = await getImage({ src: landerImage(finn.hero.image.src), width: 480, height: 480, fit: 'cover', format: 'webp' });
-    const one = (c: Currency) => (c === 'EUR' ? FINN_ITEM.optionPriceCents['1 frog'] : FINN_ITEM.localPrices[c as 'GBP' | 'USD']['1 frog']);
-    cards.push({ slug: FINN_ITEM.slug, name: 'Finn & the Shamrock frog bag', href: `/go/${finn.slug}/`, img: img.src, category: 'bags', group: 'characters', isNew: false, featured: null, price: fmt(one), boughtAs: [FINN_ITEM.slug] });
-  }
   return new Response(JSON.stringify(cards), { headers: { 'content-type': 'application/json' } });
 };
