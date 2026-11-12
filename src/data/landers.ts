@@ -926,6 +926,103 @@ export const LANDERS: Lander[] = [
       returnsFaq,
     ],
   },
+  {
+    slug: 'doll-squad',
+    productSlug: 'girl-face-crossbody-purse',
+    name: 'The Doll Squad phone bag',
+    noun: ['bag', 'bags'],
+    picks: ['Yellow', 'Pink', 'Green'],
+    maker: 'Hui',
+    // Owner, 2026-11-12: the lighter price list, as for the Googly Gang.
+    prices: {
+      EUR: { 1: 2995, 2: 4995, 3: 6495 },
+      GBP: { 1: 2295, 2: 3995, 3: 4995 },
+      USD: { 1: 2995, 2: 4995, 3: 6495 },
+    },
+    title: 'Crochet Doll Face Phone Bag: Curls, Beanie or Braids | The Doll Squad',
+    description: 'A hand-crocheted crossbody phone bag with a doll face, yarn hair and a little charm. Three girls to pick from, about 90 g. Free shipping on 2 or more.',
+    og: '/go/doll-squad-og.jpg',
+    bar: 'Free shipping on 2 bags or more',
+    hero: {
+      h1: 'Your phone, carried by a girl',
+      h1em: 'with better hair than yours.',
+      sub: 'Pick purple curls with a starfish, brown curls under a red beanie, or purple braids with a strawberry. Each one is a little hand-crocheted crossbody bag for your phone, keys and lip balm, so your hands stay free.',
+      image: { src: 'products/girl-face-crossbody-purse/01.jpg', alt: 'Three crochet doll-face phone bags with yarn hair: purple curls, a red beanie and purple braids' },
+      proof: { reviewer: 'Jacqueline', date: '2026-05-31' },
+    },
+    story: {
+      h: 'Small bag, big personality.',
+      paras: [
+        'Some days you only need your phone, your keys and a lip balm. A handbag is too much, and pockets are never enough.',
+        'Each Doll Squad bag is just that size. It hangs across your body, weighs about 90 g, and has a face that makes people smile.',
+      ],
+      subH: 'Why three girls?',
+      subParas: ['Because everyone has a favourite. Each one has her own hair and her own little charm, so friends can pick one each.'],
+    },
+    fits: {
+      h: 'Your phone fits. So does the small stuff.',
+      lede: 'She’s 18 cm tall and 11 cm wide. Your phone goes in, with room for keys, lip balm, tissues and a bus card.',
+      specs: [
+        ['Size', '18 cm tall, 11 cm wide, 1 cm deep. Measured by hand, so allow 1 to 3 cm.'],
+        ['Holds', 'A phone, keys, lip balm, tissues and a bus card'],
+        ['Strap', '120 cm, adjustable: crossbody, on one shoulder or in the hand'],
+        ['Weight', 'About 90 g'],
+        ['Made from', 'Knitted polyester yarn'],
+        ['Care', 'Hand wash in lukewarm water, below 40°C. Dry flat, out of direct sun.'],
+      ],
+      image: { src: 'products/girl-face-crossbody-purse/09.jpg', alt: 'Size guide for the doll-face bag: 18 cm tall, 11 cm wide, 1 cm deep, 120 cm strap' },
+    },
+    colours: {
+      h: 'Meet the Doll Squad',
+      lede: 'Same size, same price. Each girl has her own hair and her own charm.',
+      cards: [
+        { pick: 'Yellow', title: 'Curls and a starfish', text: 'Purple curls, a green starfish and a little candy charm, on a yellow, blue and orange bag.', image: { src: 'products/girl-face-crossbody-purse/02.jpg', alt: 'Yellow doll-face bag with purple curls and a green starfish, worn crossbody' } },
+        { pick: 'Pink', title: 'Braids and a strawberry', text: 'Purple braids, a yellow flower and a hanging strawberry, on a peach and pink bag.', image: { src: 'products/girl-face-crossbody-purse/06.jpg', alt: 'Pink doll-face bag with purple braids and a yellow flower, worn crossbody' } },
+        { pick: 'Green', title: 'The red beanie', text: 'Brown curls under a red knit beanie, on a mint and green bag.', image: { src: 'products/girl-face-crossbody-purse/04.jpg', alt: 'Green doll-face bag with brown curls under a red beanie, worn crossbody' } },
+      ],
+      note: 'Can’t pick? Take three and get the whole squad.',
+    },
+    uses: {
+      h: 'Where she goes',
+      items: [
+        ['Coffee and errands.', 'Phone, card and keys, and your hands are free.'],
+        ['Days out with friends.', 'Three friends, three girls. Everyone gets a favourite.'],
+        ['A first bag for kids.', 'Coins, small toys and sweets have a home. The strap shortens to fit.'],
+        ['Birthdays.', 'A gift with a face that already looks happy to see them.'],
+        ['Teens.', 'A bag that gets noticed at school, in a good way.'],
+      ],
+      images: [
+        { src: 'products/girl-face-crossbody-purse/03.jpg', alt: 'Yellow doll-face bag worn over a beige hoodie' },
+        { src: 'products/girl-face-crossbody-purse/05.jpg', alt: 'Green doll-face bag worn crossbody, with a phone in hand' },
+        { src: 'products/girl-face-crossbody-purse/08.jpg', alt: 'Pink doll-face bag worn over a cream jumper' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, curl by curl.',
+      paras: [
+        'Hui crochets each bag by hand, embroiders the face, then adds the hair one curl or braid at a time, and finally her charm: a starfish, a beanie or a strawberry.',
+        'Because a person makes them, no two come out quite the same. The curls fall their own way, and every face has its own little smile.',
+      ],
+      image: { src: 'products/girl-face-crossbody-purse/10.jpg', alt: 'Close-up of the red knit beanie and the strap clip on the green doll-face bag' },
+    },
+    offer: {
+      h: 'Pick your squad',
+      lede: 'We suggest two: one for you, and one for your best friend. Two or more ship free, and each bag costs less.',
+      flag2: 'Best friends',
+      notes: { 1: 'Just the one, for you.', 2: 'Any two girls.', 3: 'The whole squad, or any three.' },
+      defaults: ['Yellow', 'Pink', 'Green'],
+      proof: friend,
+    },
+    reviews: [sturdy, maria, asPictured],
+    faq: [
+      { q: 'Will my phone fit?', a: 'Yes. She’s 18 cm tall and 11 cm wide, made for a phone, with room for keys, lip balm and a bus card.' },
+      { q: 'What’s the difference between them?', a: 'Only the look. Yellow has purple curls and a starfish, green has brown curls under a red beanie, and pink has purple braids with a strawberry. Same size, same price.' },
+      kidsFaq('bag'),
+      { q: 'How do I wash it?', a: 'Hand wash in lukewarm water, below 40°C, and lay it flat to dry, out of direct sun.' },
+      arriveFaq('bag'),
+      returnsFaq,
+    ],
+  },
 ];
 
 export const landerBySlug = (slug: string) => LANDERS.find((l) => l.slug === slug);
