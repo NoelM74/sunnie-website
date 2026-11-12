@@ -6,14 +6,14 @@ import Money from '../components/Money.astro';
 import FreeShippingFrom from '../components/FreeShippingFrom.astro';
 import { SHIPPING_FLAT } from '../lib/money';
 ---
-<BaseLayout title={pageTitle('Shipping and returns')} description={`Shipping costs €6, free on orders of €50 or more, or when you buy two or more character bags. Made to order, ships in ${site.shipsIn} with tracking. Delivery times by country, worldwide. 30-day returns.`}>
+<BaseLayout title={pageTitle('Shipping and returns')} description={`Shipping costs €6, free on orders of €50 or more, or when you buy two or more from a bundle. Made to order, ships in ${site.shipsIn} with tracking. Delivery times by country, worldwide. 30-day returns.`}>
   <article class="container narrow prose">
     <header class="page-head"><h1>Shipping and returns</h1></header>
 
     <h2>Buying on this website</h2>
     <ul>
       <li><strong>Cost:</strong> <Money eur={SHIPPING_FLAT.EUR / 100} gbpCents={SHIPPING_FLAT.GBP} usdCents={SHIPPING_FLAT.USD} /> per order, worldwide. Free on orders of <FreeShippingFrom /> or more.</li>
-      <li><strong>Character bags:</strong> buy two or more <a href="/shop/bags/">character bags</a> together and shipping is free, whatever the total.</li>
+      <li><strong>Bundles:</strong> buy two or more of the same <a href="/shop/bags/">character bag</a> or <a href="/go/fruit-bellies/">Fruit Bellies coaster</a> together and shipping is free, whatever the total.</li>
       <li><strong>Processing:</strong> every piece is made to order and ships within {site.shipsIn}.</li>
       <li><strong>Tracking:</strong> every parcel is tracked, and we email you the tracking number when it ships.</li>
     </ul>

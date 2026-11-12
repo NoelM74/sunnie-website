@@ -23,6 +23,8 @@ export interface Lander extends BundleDef {
   ships?: string;
   /** Default 30, the shop's policy. */
   returnsDays?: number;
+  /** Header link back to the shop. Default: ['/shop/bags/', 'All bags']. */
+  shop?: [string, string];
   /** Right-hand side of the top bar. Default: "Handmade by Hui". */
   barRight?: string;
   /** Two [heading, text] promises. Default: made to order, and the returns window. */
@@ -825,6 +827,102 @@ export const LANDERS: Lander[] = [
       kidsFaq('monster'),
       { q: 'How do I wash it?', a: 'Hand wash in cool water with mild soap and lay it flat to dry. It may shed a little fluff at first.' },
       arriveFaq('monster'),
+      returnsFaq,
+    ],
+  },
+  {
+    slug: 'fruit-bellies',
+    productSlug: 'animal-coasters-cat-pig-and-bear',
+    name: 'The Fruit Bellies animal coaster',
+    noun: ['coaster', 'coasters'],
+    picks: ['Cat', 'Pig', 'Bear'],
+    maker: 'Hui',
+    shop: ['/shop/coasters/', 'Coasters'],
+    // Owner, 2026-11-12: one €19.95, two €34.95, the set of three €49.95.
+    prices: {
+      EUR: { 1: 1995, 2: 3495, 3: 4995 },
+      GBP: { 1: 1695, 2: 2995, 3: 3995 },
+      USD: { 1: 1995, 2: 3495, 3: 4995 },
+    },
+    title: 'Crochet Animal Coasters: Pig, Bear and Cat with Fruit | The Fruit Bellies',
+    description: 'Hand-crocheted animal coasters with fruit bellies: a watermelon pig, an orange bear and a kiwi cat. About 15 cm across, thick and soft. Free shipping on 2 or more.',
+    og: '/go/fruit-bellies-og.jpg',
+    bar: 'Free shipping on 2 coasters or more',
+    hero: {
+      h1: 'Three little animals',
+      h1em: 'that keep rings off your table.',
+      sub: 'Pick a pig with a watermelon belly, a bear with an orange slice or a cat with a kiwi. Each one is a thick, soft crochet coaster about 15 cm across, so your mug sits on the fruit, not the wood.',
+      image: { src: 'landers/fruit-bellies/trio.jpg', alt: 'Three crochet animal coasters: a bear with an orange slice, a pig with a watermelon and a cat with a kiwi' },
+      proof: sturdy,
+    },
+    story: {
+      h: 'A coaster people actually leave out.',
+      paras: [
+        'Most coasters live in a drawer until someone remembers them. These ones stay on the table, because people like looking at them.',
+        'Each Fruit Belly is thick, soft crochet, about 60 g, so it sits still under a mug and keeps a hot cup or a cold glass off the wood.',
+      ],
+      subH: 'Why fruit?',
+      subParas: ['Because a pig with a watermelon belly makes a cup of tea more fun. The fruit is where your mug goes.'],
+    },
+    fits: {
+      h: 'Big enough for your biggest mug.',
+      lede: 'Each one is about 15 cm across, so a large mug, a glass or a candle sits right on the fruit.',
+      specs: [
+        ['Size', 'About 15 cm across and 3.5 cm thick. Measured by hand, so allow 1 to 3 cm.'],
+        ['Good for', 'Mugs, glasses and candles'],
+        ['Weight', 'About 60 g each'],
+        ['Made from', 'Polyester-acrylic yarn, with safety eyes'],
+        ['Care', 'Hand wash in cool or lukewarm water, below 40°C. Dry flat.'],
+      ],
+      image: { src: 'products/animal-coasters-cat-pig-and-bear/07.jpg', alt: 'A glass sitting on the bear coaster' },
+    },
+    colours: {
+      h: 'Meet the Fruit Bellies',
+      lede: 'Three animals, three fruits. Pick a favourite, or get the whole set.',
+      cards: [
+        { pick: 'Cat', title: 'The cat', text: 'Cream with ginger stripes, two-tone ears, a kiwi belly and a striped tail.', image: { src: 'landers/fruit-bellies/cat.jpg', alt: 'Cream crochet cat coaster with ginger stripes and a kiwi centre' } },
+        { pick: 'Pig', title: 'The pig', text: 'Soft pink with a snout, little trotters, a watermelon belly and a tail.', image: { src: 'landers/fruit-bellies/pig.jpg', alt: 'Pink crochet pig coaster with a watermelon centre' } },
+        { pick: 'Bear', title: 'The bear', text: 'Caramel brown with round ears, a white muzzle and an orange-slice belly.', image: { src: 'landers/fruit-bellies/bear.jpg', alt: 'Brown crochet bear coaster with an orange-slice centre' } },
+      ],
+      note: 'Can’t pick? Take three and get the whole set.',
+    },
+    uses: {
+      h: 'Where they go',
+      items: [
+        ['Morning coffee.', 'Your mug lands on a kiwi, not the table.'],
+        ['The desk.', 'Tea next to the laptop, and no rings.'],
+        ['The coffee table.', 'Glasses down, wood protected.'],
+        ['Housewarmings.', 'A present people put straight out on the table.'],
+        ['Kids’ tables.', 'A juice cup with a friendly face under it.'],
+      ],
+      images: [
+        { src: 'products/animal-coasters-cat-pig-and-bear/06.jpg', alt: 'A glass sitting on the cat coaster' },
+        { src: 'products/animal-coasters-cat-pig-and-bear/08.jpg', alt: 'A glass sitting on the pig coaster' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, fruit and all.',
+      paras: [
+        'Hui crochets each coaster by hand: the round body, the fruit belly in rings of colour, then the ears, paws and tail.',
+        'Because a person makes them, no two come out exactly alike. The faces sit a little differently, and every tail has its own bend.',
+      ],
+      image: { src: 'landers/fruit-bellies/stack.jpg', alt: 'The pig, bear and cat coasters stacked on top of each other' },
+    },
+    offer: {
+      h: 'Pick your coasters',
+      lede: 'We suggest two: one for your mug, and one for whoever you’re having tea with. Or take the whole set. Two or more ship free, and each coaster costs less.',
+      flag2: 'Tea for two',
+      notes: { 1: 'Just the one.', 2: 'Any two animals.', 3: 'The whole set, or any three.' },
+      defaults: ['Pig', 'Cat', 'Bear'],
+      proof: friend,
+    },
+    reviews: [sturdy, maria, asPictured],
+    faq: [
+      { q: 'Will my mug fit?', a: 'Yes. Each coaster is about 15 cm across, with room for a large mug, a glass or a candle.' },
+      { q: 'Do they protect the table?', a: 'Yes. They’re thick, soft crochet, so a hot mug or a cold glass never touches the wood.' },
+      { q: 'Can I buy just one?', a: 'Yes. Pick one animal, two, or the whole set of three. Two or more ship free.' },
+      { q: 'How do I wash them?', a: 'Hand wash in cool or lukewarm water, below 40°C, and lay them flat to dry.' },
+      arriveFaq('coasters'),
       returnsFaq,
     ],
   },

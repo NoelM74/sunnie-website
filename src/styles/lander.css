@@ -10,9 +10,9 @@
 .l-head-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4.5rem; }
 .l-head .brand svg { height: 2.4rem; width: auto; display: block; }
 .l-nav { display: none; gap: 1.5rem; margin-left: auto; }
-.l-shop { color: var(--umber); font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; margin-left: 1.25rem; }
+.l-shop { white-space: nowrap; color: var(--umber); font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; margin-left: 1.25rem; }
 @media (max-width: 55.99rem) { .l-shop { margin-left: auto; } }
-.l-bag { margin-left: 1.25rem; color: var(--umber); font-weight: 700; min-height: 44px; display: inline-flex; align-items: center; }
+.l-bag { white-space: nowrap; margin-left: 1.25rem; color: var(--umber); font-weight: 700; min-height: 44px; display: inline-flex; align-items: center; }
 .l-nav a { color: var(--umber); text-decoration: none; font-weight: 600; }
 .l-nav a:hover { color: var(--terracotta-deep); text-decoration: underline; }
 @media (min-width: 56rem) { .l-nav { display: flex; } }

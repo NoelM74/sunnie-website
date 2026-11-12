@@ -152,3 +152,14 @@ describe('one shipping rate, free on packs of two or more', () => {
     for (const l of LANDERS.filter((x) => x.productSlug)) expect(packFor(l.productSlug!)!.shipping, l.slug).toEqual({ eur: 600, gbp: 500, usd: 600 });
   });
 });
+
+describe('Fruit Bellies coasters', () => {
+  const fb = LANDERS.find((l) => l.slug === 'fruit-bellies')!;
+  const item = bundleCatalogItem(fb, '');
+  const cat = { [item.slug]: item };
+  it('charges the owner prices and ships two or more free', () => {
+    expect(priceBag([{ slug: item.slug, option: bundleOption(fb, ['Pig'])!, qty: 1 }], cat, 'EUR')).toMatchObject({ subtotalCents: 1995, shippingCents: 600 });
+    expect(priceBag([{ slug: item.slug, option: bundleOption(fb, ['Pig', 'Cat'])!, qty: 1 }], cat, 'EUR')).toMatchObject({ subtotalCents: 3495, shippingCents: 0 });
+    expect(priceBag([{ slug: item.slug, option: bundleOption(fb, ['Cat', 'Pig', 'Bear'])!, qty: 1 }], cat, 'GBP')).toMatchObject({ subtotalCents: 3995, shippingCents: 0 });
+  });
+});

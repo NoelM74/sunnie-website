@@ -1,18 +1,16 @@
 ---
-name: "Cat, pig and bear animal coasters"
+name: "The Fruit Bellies: crochet animal coasters with fruit"
 seoTitle: "Crochet Animal Coasters Set of 3 Pig Bear Cat Fruit Design Handmade Drink Mats"
 category: "coasters"
 price: 19.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4500120022/crochet-animal-coasters-set-of-3-pig"
 maker: "Hui"
-options: [{"name":"Design","values":["Cat","Pig","Bear","Set Of 3"]}]
-optionPrices: {"Cat":19.95,"Pig":19.95,"Bear":19.95,"Set Of 3":49.95}
+options: [{"name":"Design","values":["Cat","Pig","Bear"]}]
 materials: ["Polyester-acrylic yarn"]
 size: "Ø 15 × H 3.5 cm"
 images: [{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/01.jpg","alt":"Cat, bear and pig crochet coasters with kiwi, orange and watermelon centres"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/02.jpg","alt":"Stack of pig, bear and cat crochet coasters with fruit centres"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/03.jpg","alt":"Cat-shaped crochet coaster with a green kiwi centre and stitched whiskers"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/04.jpg","alt":"Animal coasters, cat, pig and bear, photo 4 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/05.jpg","alt":"Animal coasters, cat, pig and bear, photo 5 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/06.jpg","alt":"Animal coasters, cat, pig and bear, photo 6 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/07.jpg","alt":"Animal coasters, cat, pig and bear, photo 7 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/08.jpg","alt":"Animal coasters, cat, pig and bear, photo 8 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/09.jpg","alt":"Animal coasters, cat, pig and bear, photo 9 of 10"},{"src":"../../assets/products/animal-coasters-cat-pig-and-bear/10.jpg","alt":"Animal coasters, cat, pig and bear, photo 10 of 10"}]
-featured: 3
-faq: [{"q":"Can I buy just one?","a":"Yes. Choose the cat, pig or bear on its own, or the set of three."},{"q":"How do I wash them?","a":"Hand wash in cool or lukewarm water below 40°C and lay flat to dry."}]
+faq: [{"q":"Can I buy just one?","a":"Yes. Pick one animal, two, or the whole set of three. Two or more ship free."},{"q":"How do I wash them?","a":"Hand wash in cool or lukewarm water below 40°C and lay flat to dry."}]
 ---
 
 Mug rings don't come out of a wooden table. These three little animals make sure you never get one.

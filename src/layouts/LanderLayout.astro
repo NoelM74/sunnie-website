@@ -14,8 +14,8 @@ import { site } from '../data/site';
 
 // Bundle landers (/go/<slug>/): the shop's look, fonts, currency and basket, with a slim
 // header so the offer stays the focus. Each is the product's only page, so it's indexed.
-interface Props { title: string; description: string; image: string; bar: string; barRight?: string; nav: [string, string][]; mark?: string; jsonLd?: object[] }
-const { title, description, image, bar, barRight = site.makerLine, nav, mark, jsonLd = [] } = Astro.props;
+interface Props { title: string; description: string; image: string; bar: string; barRight?: string; nav: [string, string][]; mark?: string; jsonLd?: object[]; shop?: [string, string] }
+const { title, description, image, bar, barRight = site.makerLine, nav, mark, jsonLd = [], shop = ['/shop/bags/', 'All bags'] } = Astro.props;
 const year = new Date().getFullYear();
 ---
 <!doctype html>
@@ -43,7 +43,7 @@ const year = new Date().getFullYear();
         <nav class="l-nav" aria-label="On this page">
           {nav.map(([href, label]) => <a href={href}>{label}</a>)}
         </nav>
-        <a class="l-shop" href="/shop/bags/">All bags</a>
+        <a class="l-shop" href={shop[0]}>{shop[1]}</a>
         <a class="l-bag" href="/bag/">Basket</a>
       </div>
     </header>

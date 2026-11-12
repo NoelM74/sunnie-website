@@ -102,7 +102,7 @@ const mark = `/go/${l.slug}-mark.svg`;
 const nav: [string, string][] = [['#fits', 'What fits'], ...(l.colours ? [['#colours', 'Colours'] as [string, string]] : []), ['#craft', 'Made by hand'], ['#offer', 'Bundles'], ['#faq', 'Questions']];
 const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.defaults, start: DEFAULT, cartOptions: l.cart?.options ?? null };
 ---
-<LanderLayout title={l.title} description={l.description} image={absoluteUrl(l.og)} jsonLd={jsonLd} bar={l.bar} barRight={l.barRight} nav={nav} mark={mark}>
+<LanderLayout title={l.title} description={l.description} image={absoluteUrl(l.og)} jsonLd={jsonLd} bar={l.bar} barRight={l.barRight} nav={nav} mark={mark} shop={l.shop}>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="star" viewBox="0 0 16 16"><path d="M8 .9l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3l-4.5 2.3.9-5L.8 6.1l5-.7z" /></symbol>
   </svg>

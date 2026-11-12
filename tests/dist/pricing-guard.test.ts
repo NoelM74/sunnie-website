@@ -1,10 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import { page, productFrontmatters, readCatalog } from './helpers';
 
+// The cat, pig and bear coasters moved to the Fruit Bellies bundle page (2026-11-12); its prices
+// live in src/data/landers.ts and are tested in tests/unit/bundles.test.ts.
 // Owner-supplied per-option prices (2026-10-03, Phase 1 prices 2026-10-29) for products whose option
 // values are packs or sizes. The site must charge these, never one flat price.
 const OPTION_PRICES: Record<string, Record<string, number>> = {
-  'animal-coasters-cat-pig-and-bear': { Cat: 1995, Pig: 1995, Bear: 1995, 'Set Of 3': 4995 },
   'carnation-mug-rug-that-folds-into-a-mini': { 'Set Of Two': 2495, 'Set Of Four': 4495 },
   'fat-lips-girl-crossbody-phone-bag-with-daisy': { 'Large 28 x 11 cm': 3295, 'Small 20 x 10 cm': 2795 },
   'flower-mandala-coaster': { '4 coasters + free basket': 2495, '6 coasters + free basket': 3495, '8 coasters + 2 free baskets': 4495 },
@@ -27,7 +28,7 @@ describe('per-option pricing guard', () => {
     }
   });
 
-  it('the catalog carries the owner prices for all 8 pack/size products', () => {
+  it('the catalog carries the owner prices for every pack/size product', () => {
     const cat = readCatalog();
     for (const slug of SLUGS) {
       expect(cat[slug]?.siteCheckout, slug).toBe(true);
