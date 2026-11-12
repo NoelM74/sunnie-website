@@ -946,7 +946,7 @@ export const LANDERS: Lander[] = [
     hero: {
       h1: 'Your phone, carried by a girl',
       h1em: 'with better hair than yours.',
-      sub: 'Pick purple curls with a starfish, brown curls under a red beanie, or purple braids with a strawberry. Each one is a little hand-crocheted crossbody bag for your phone, keys and lip balm, so your hands stay free.',
+      sub: 'Pick purple curls with a starfish, brown curls under a red beanie, or purple braids with a faux pearl. Each one is a little hand-crocheted crossbody bag for your phone, keys and lip balm, so your hands stay free.',
       image: { src: 'products/girl-face-crossbody-purse/01.jpg', alt: 'Three crochet doll-face phone bags with yarn hair: purple curls, a red beanie and purple braids' },
       proof: { reviewer: 'Jacqueline', date: '2026-05-31' },
     },
@@ -977,7 +977,7 @@ export const LANDERS: Lander[] = [
       lede: 'Same size, same price. Each girl has her own hair and her own charm.',
       cards: [
         { pick: 'Yellow', title: 'Curls and a starfish', text: 'Purple curls, a green starfish and a little candy charm, on a yellow, blue and orange bag.', image: { src: 'products/girl-face-crossbody-purse/02.jpg', alt: 'Yellow doll-face bag with purple curls and a green starfish, worn crossbody' } },
-        { pick: 'Pink', title: 'Braids and a strawberry', text: 'Purple braids, a yellow flower and a hanging strawberry, on a peach and pink bag.', image: { src: 'products/girl-face-crossbody-purse/06.jpg', alt: 'Pink doll-face bag with purple braids and a yellow flower, worn crossbody' } },
+        { pick: 'Pink', title: 'Braids and a pearl', text: 'Purple braids, a yellow flower and a hanging faux pearl, on a peach and pink bag.', image: { src: 'products/girl-face-crossbody-purse/06.jpg', alt: 'Pink doll-face bag with purple braids and a yellow flower, worn crossbody' } },
         { pick: 'Green', title: 'The red beanie', text: 'Brown curls under a red knit beanie, on a mint and green bag.', image: { src: 'products/girl-face-crossbody-purse/04.jpg', alt: 'Green doll-face bag with brown curls under a red beanie, worn crossbody' } },
       ],
       note: 'Can’t pick? Take three and get the whole squad.',
@@ -1000,7 +1000,7 @@ export const LANDERS: Lander[] = [
     craft: {
       h: 'Crocheted by hand, curl by curl.',
       paras: [
-        'Hui crochets each bag by hand, embroiders the face, then adds the hair one curl or braid at a time, and finally her charm: a starfish, a beanie or a strawberry.',
+        'Hui crochets each bag by hand, embroiders the face, then adds the hair one curl or braid at a time, and finally her charm: a starfish, a beanie or a pearl.',
         'Because a person makes them, no two come out quite the same. The curls fall their own way, and every face has its own little smile.',
       ],
       image: { src: 'products/girl-face-crossbody-purse/10.jpg', alt: 'Close-up of the red knit beanie and the strap clip on the green doll-face bag' },
@@ -1016,7 +1016,7 @@ export const LANDERS: Lander[] = [
     reviews: [sturdy, maria, asPictured],
     faq: [
       { q: 'Will my phone fit?', a: 'Yes. She’s 18 cm tall and 11 cm wide, made for a phone, with room for keys, lip balm and a bus card.' },
-      { q: 'What’s the difference between them?', a: 'Only the look. Yellow has purple curls and a starfish, green has brown curls under a red beanie, and pink has purple braids with a strawberry. Same size, same price.' },
+      { q: 'What’s the difference between them?', a: 'Only the look. Yellow has purple curls and a starfish, green has brown curls under a red beanie, and pink has purple braids with a faux pearl. Same size, same price.' },
       kidsFaq('bag'),
       { q: 'How do I wash it?', a: 'Hand wash in lukewarm water, below 40°C, and lay it flat to dry, out of direct sun.' },
       arriveFaq('bag'),
