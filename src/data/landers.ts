@@ -553,14 +553,14 @@ export const LANDERS: Lander[] = [
     og: '/go/googly-gang-og.jpg',
     bar: 'Free shipping on 2 bags or more',
     hero: {
-      h1: 'Meet the Googly Gang.',
-      h1em: 'One for your phone.',
-      sub: 'Four little crochet crossbody bags with big eyes and white bellies: a sloth, a pink cat, a yellow duck and a green frog. Your phone, a card and your keys go inside, and a magnetic snap keeps them there.',
+      h1: 'Your phone, card and keys,',
+      h1em: 'carried by a little crochet critter.',
+      sub: 'Pick a sloth, a pink cat, a yellow duck or a green frog. Each one is a little crossbody bag, crocheted by hand, that holds the essentials, clicks shut with a magnet and leaves your hands free.',
       image: { src: 'products/animal-crossbody-phone-bag/01.jpg', alt: 'Four crochet phone bags with googly eyes: a pink cat, a yellow duck, a brown sloth and a green frog' },
       proof: { reviewer: 'Jacqueline', date: '2026-05-31' },
     },
     story: {
-      h: 'Small enough to forget. Too cute to ignore.',
+      h: 'Light on your shoulder. Hard to miss.',
       paras: [
         'Some days you don’t want a handbag. You want your phone, your card and your keys, and your hands free.',
         'Each Googly Gang bag is just big enough for that. It hangs across your body, weighs about 100 g, and closes with a magnet, so there’s no zip to fight with.',
@@ -591,7 +591,7 @@ export const LANDERS: Lander[] = [
         { pick: 'Yellow Duck', title: 'The yellow duck', text: 'Sunny yellow, with a red beak and red feet.', image: { src: 'products/animal-crossbody-phone-bag/05.jpg', alt: 'Yellow duck crochet phone bag with googly eyes, a red beak and red feet' } },
         { pick: 'Green Frog', title: 'The green frog', text: 'Grass green, with a cheeky red tongue and four little legs.', image: { src: 'products/animal-crossbody-phone-bag/04.jpg', alt: 'Green frog crochet phone bag with googly eyes and a red tongue sticking out' } },
       ],
-      note: 'Can’t choose? Three bags is half the gang, and the price per bag drops.',
+      note: 'Can’t choose? Take three, and each bag costs less.',
     },
     uses: {
       h: 'Where they go',
