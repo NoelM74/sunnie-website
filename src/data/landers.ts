@@ -1146,8 +1146,8 @@ export const LANDERS: Lander[] = [
     og: '/go/fold-and-bloom-og.jpg',
     bar: 'Free shipping on sets of 4 or more',
     hero: {
-      h1: 'A little bouquet of carnations',
-      h1em: 'that opens into a coaster for their tea.',
+      h1: 'A crochet carnation bouquet',
+      h1em: 'that unfolds into a coaster for your mug.',
       sub: 'Hui crochets each carnation onto a soft cream coaster with a leafy stem. Fold it into a cone and tie the leaf cord, and it’s a bouquet. Untie it, and it lies flat under a mug, 14.5 cm across.',
       image: { src: 'landers/fold-and-bloom/hero.jpg', alt: 'Four crochet carnation bouquets folded into cones and tied with green leaf cords, two purple and two pink' },
       proof: friend,
@@ -1191,7 +1191,7 @@ export const LANDERS: Lander[] = [
         ['Birthdays.', 'At about 20 g each, they tuck in beside a card.'],
         ['Thank-yous.', 'For a teacher, a neighbour or a friend. A small gift that gets used every day.'],
         ['Housewarmings.', 'Six bouquets for a new kitchen table.'],
-        ['Your own table.', 'Tea on a carnation, every morning.'],
+        ['Your own table.', 'A coaster for your morning coffee or tea.'],
       ],
       images: [
         { src: 'products/carnation-mug-rug-that-folds-into-a-mini/08.jpg', alt: 'Four carnation coasters stacked, with pink and purple flowers around the edge' },
