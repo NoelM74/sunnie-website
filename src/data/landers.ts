@@ -158,7 +158,7 @@ export const LANDERS: Lander[] = [
     },
     reviews: [
       { reviewer: 'Daniel', date: '2026-01-20' },
-      { reviewer: 'Etsy buyer', date: '2026-01-01' },
+      { reviewer: 'A happy buyer', date: '2026-01-01' },
       { reviewer: 'Hannah', date: '2026-06-04' },
       { reviewer: 'Elijha', date: '2025-12-20' },
       { reviewer: 'Scott', date: '2025-12-19' },
@@ -256,7 +256,7 @@ export const LANDERS: Lander[] = [
       defaults: ['Yellow', 'Blue', 'Yellow'],
       proof: { reviewer: 'Josie', date: '2026-01-03' },
     },
-    reviews: [{ reviewer: 'Etsy buyer', date: '2026-01-01' }, { reviewer: 'Nikki', date: '2026-01-16' }, { reviewer: 'Nicola', date: '2026-07-22' }, maria],
+    reviews: [{ reviewer: 'A happy buyer', date: '2026-01-01' }, { reviewer: 'Nikki', date: '2026-01-16' }, { reviewer: 'Nicola', date: '2026-07-22' }, maria],
     faq: [
       { q: 'Will my phone fit?', a: 'Yes. Pretty much any phone fits, and so does a 6-inch Kindle without its case. Keys, lip balm and a bus card go in beside it.' },
       mouthFaq,

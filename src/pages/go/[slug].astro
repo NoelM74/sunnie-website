@@ -114,7 +114,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
         <p class="l-hero-sub">{l.hero.sub}</p>
         <a class="btn btn-primary l-cta" href="#offer">{l.offer.h} <small><span class="l-cta-dot">· </span>from <span class="money" data-gbp={from.gbp} data-usd={from.usd}>{from.text}</span></small></a>
         <p class="l-proof">
-          <a href="#reviews"><span class="l-stars" role="img" aria-label="Rated 5 out of 5">{[1, 2, 3, 4, 5].map(() => <svg><use href="#star" /></svg>)}</span> {site.proof.etsyRating} on Etsy</a>
+          <a href="#reviews"><span class="l-stars" role="img" aria-label="Rated 5 out of 5">{[1, 2, 3, 4, 5].map(() => <svg><use href="#star" /></svg>)}</span> Rated {site.proof.etsyRating} by buyers</a>
           <span>“{quoteText(heroQuote)}”</span>
         </p>
         <p class="small muted">Free shipping on 2 or more · {returnsDays}-day returns · {ships}</p>
@@ -250,7 +250,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
 
         <div class="l-proofbar">
           <span class="l-stars" role="img" aria-label="Rated 5 out of 5">{[1, 2, 3, 4, 5].map(() => <svg><use href="#star" /></svg>)}</span>
-          <p>“{quoteText(offerQuote)}” <span class="muted">{offerQuote.reviewer}, Etsy{offerQuote.about && ` · on our ${offerQuote.about}`}</span></p>
+          <p>“{quoteText(offerQuote)}” <span class="muted">{offerQuote.reviewer}{offerQuote.about && ` · on our ${offerQuote.about}`}</span></p>
         </div>
 
         <p class="l-nudge" id="nudge" aria-live="polite">{nudge(DEFAULT, 'EUR')}</p>
@@ -276,7 +276,7 @@ const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.default
     <div class="container">
       <div class="l-narrow l-center">
         <h2>{site.proof.etsyRating} stars from Sunnie Designs buyers</h2>
-        <p class="lead">Star Seller on Etsy, and {site.proof.ebayPositive} positive from {site.proof.ebayCount} eBay ratings.</p>
+        <p class="lead">And {site.proof.ebayPositive} positive from {site.proof.ebayCount} eBay ratings.</p>
       </div>
       <div class="quotes l-quotes">
         {shown.map((r) => <ReviewQuote review={r} />)}

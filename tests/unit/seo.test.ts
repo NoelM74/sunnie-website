@@ -91,8 +91,8 @@ describe('JSON-LD', () => {
       item: 'https://sunniedesigns.com/shop/bags/',
     });
   });
-  it('links the organisation to Etsy', () => {
-    expect(organizationJsonLd().sameAs).toContain('https://www.etsy.com/shop/SunnieDesignCo');
+  it('never links the organisation to Etsy (owner, 2026-11-12)', () => {
+    expect(organizationJsonLd().sameAs.some((u: string) => u.includes('etsy.com'))).toBe(false);
   });
   it('makes absolute URLs', () => {
     expect(absoluteUrl('/shop/')).toBe('https://sunniedesigns.com/shop/');

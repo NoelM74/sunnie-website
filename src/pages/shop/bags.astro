@@ -20,7 +20,7 @@ const faq = faqJsonLd(faqItems);
 ---
 <BaseLayout
   title={pageTitle('Handmade crochet bags and phone crossbodies')}
-  description={`Phone bags, crossbodies and totes, each one crocheted by hand and rated ${site.proof.etsyRating} on Etsy. Ships in ${site.shipsIn} with tracking.`}
+  description={`Phone bags, crossbodies and totes, each one crocheted by hand and rated ${site.proof.etsyRating} by our buyers. Ships in ${site.shipsIn} with tracking.`}
   current="bags"
   jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd('Crochet bags', productUrls), ...(faq ? [faq] : [])]}
 >

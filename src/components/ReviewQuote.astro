@@ -12,6 +12,6 @@ const month = new Date(`${review.date}T00:00:00Z`).toLocaleDateString('en-IE', {
     {translated && showOriginal && <p class="small muted" lang="de">{review.text}</p>}
   </blockquote>
   <figcaption class="small">
-    {review.reviewer}, {month}, Etsy{review.about && <span class="muted"> · on our {review.about}</span>}{translated && <span class="muted"> · Translated from German</span>}
+    {review.reviewer}, {month}{review.about && <span class="muted"> · on our {review.about}</span>}{translated && <span class="muted"> · Translated from German</span>}
   </figcaption>
 </figure>

@@ -22,7 +22,7 @@ const faq = faqJsonLd(faqItems);
 ---
 <BaseLayout
   title={pageTitle('Shop all handmade crochet bags and coasters')}
-  description={`Every crochet bag, coaster and hat from Sunnie Designs, rated ${site.proof.etsyRating} on Etsy. In-stock pieces first, ships in ${site.shipsIn}.`}
+  description={`Every crochet bag, coaster and hat from Sunnie Designs, rated ${site.proof.etsyRating} by our buyers. In-stock pieces first, ships in ${site.shipsIn}.`}
   current="shop"
   jsonLd={[
     breadcrumbJsonLd(crumbs),
@@ -59,7 +59,7 @@ const faq = faqJsonLd(faqItems);
       <p>
         Every piece is crocheted by hand, so allow a centimetre or two of size variation from the photos, and check
         the size and materials listed on each product page before you buy. Add pieces to your basket and pay here with
-        PayPal or any card, or buy the same piece on our Etsy shop if you prefer. Nollaig packs and ships every order
+        PayPal or any card. Nollaig packs and ships every order
         in {site.shipsIn} with tracking, free worldwide on orders of <FreeShippingFrom /> or more.
       </p>
     </section>

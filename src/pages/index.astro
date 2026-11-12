@@ -37,7 +37,7 @@ const coaster = best.find((p) => p.data.category === 'coasters') ?? best[2];
 const homeFaq = [
   {
     q: 'Where do I buy from Sunnie Designs?',
-    a: `Right here: add pieces to your basket and pay in euro, pounds or dollars with PayPal or any card, no account needed. Shipping is free on orders of ${FREE_SHIPPING} or more, and every order comes with 30-day returns. There are no import charges on delivery to the EU, UK or US. Every piece is also on our Etsy shop if you prefer Etsy.`,
+    a: `Right here: add pieces to your basket and pay in euro, pounds or dollars with PayPal or any card, no account needed. Shipping is free on orders of ${FREE_SHIPPING} or more, and every order comes with 30-day returns. There are no import charges on delivery to the EU, UK or US.`,
   },
   {
     q: 'Who makes the pieces?',
@@ -96,7 +96,7 @@ const tiles = [
         </div>
         <p class="hero-trust">
           <span class="hero-stars" aria-hidden="true">★★★★★</span>
-          Rated {site.proof.etsyRating} on Etsy · {site.proof.ebayPositive} positive across {site.proof.ebayCount} eBay ratings
+          Rated {site.proof.etsyRating} by our buyers · {site.proof.ebayPositive} positive across {site.proof.ebayCount} eBay ratings
         </p>
       </div>
       <a class="hero-media" href={hero.href}>
@@ -166,7 +166,7 @@ const tiles = [
           piece yours.
         </p>
         <p>
-          Rated {site.proof.etsyRating} on Etsy and a Star Seller. Every order helps keep slow, handmade craft
+          Our buyers rate us {site.proof.etsyRating} out of 5. Every order helps keep slow, handmade craft
           going.
         </p>
         <p><a href="/our-story/">Read our story</a></p>
@@ -197,7 +197,7 @@ const tiles = [
         <h2 id="reviews-h">What buyers say</h2>
         <a href="/reviews/">Read all reviews</a>
       </div>
-      <p class="lead">Every quote here comes from a verified Etsy buyer, not a script.</p>
+      <p class="lead">Every quote here comes from a real buyer, word for word.</p>
       <div class="quotes">
         {quotes.map((r) => <ReviewQuote review={r} />)}
       </div>

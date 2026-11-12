@@ -9,20 +9,19 @@ const list = reviews as ((typeof reviews)[number] & { lang: 'en' | 'de' })[];
 ---
 <BaseLayout
   title={pageTitle('Customer reviews')}
-  description={`Reviews from Sunnie Designs buyers on Etsy, where we're a Star Seller rated ${site.proof.etsyRating}.`}
+  description={`Reviews from Sunnie Designs buyers, who rate us ${site.proof.etsyRating} out of 5.`}
 >
   <div class="container">
     <header class="page-head">
       <h1>What buyers say</h1>
       <p>
-        We're rated {site.proof.etsyRating} out of 5 on Etsy, where we're a Star Seller, and {site.proof.ebayPositive}
-        positive across {site.proof.ebayCount} ratings on eBay. Every quote below comes straight from a buyer's Etsy
+        Our buyers rate us {site.proof.etsyRating} out of 5, and we're {site.proof.ebayPositive}
+        positive across {site.proof.ebayCount} ratings on eBay. Every quote below comes straight from a buyer's
         review, and a few long ones are shortened. German reviews show the English translation first, with the original underneath.
       </p>
     </header>
     <div class="quotes">
       {list.map((r) => <ReviewQuote review={r} showOriginal />)}
     </div>
-    <p class="section"><a href={site.etsyShopUrl} rel="noopener">See our Etsy shop</a></p>
   </div>
 </BaseLayout>

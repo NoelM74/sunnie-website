@@ -8,7 +8,6 @@ interface Props {
   slug: string;
   option?: { name: string; values: string[] };
   inStock: boolean;
-  etsyUrl?: string;
   siteCheckout?: boolean;
   optionPrices?: Record<string, number>;
   maker: string;
@@ -18,15 +17,11 @@ interface Props {
   /** Sell the bundle lander's single pack instead (src/lib/lander-products.ts). */
   pack?: { slug: string; optionFor: Record<string, string>; landerSlug: string };
 }
-const { slug, option, inStock, etsyUrl, siteCheckout = true, optionPrices, maker, alts = [], optionPhotos, pack } = Astro.props;
+const { slug, option, inStock, siteCheckout = true, optionPrices, maker, alts = [], optionPhotos, pack } = Astro.props;
 const photoFor = (v: string) => (option ? optionPhoto(v, option.values, alts, optionPhotos) : null);
 ---
 {siteCheckout === false ? (
-  etsyUrl ? (
-    <a class="btn btn-primary btn-block etsy-link" href={etsyUrl} rel="noopener">Buy on Etsy</a>
-  ) : (
-    <span class="btn btn-disabled btn-block">Not available online</span>
-  )
+  <a class="btn btn-primary btn-block" href={`mailto:${site.email.hello}?subject=${encodeURIComponent('Ordering: ' + slug)}`}>Email us to order</a>
 ) : inStock ? (
   <form class="buy-form" id="buy-form" method="post" action="/bag/add/">
     <input type="hidden" name="slug" value={pack ? pack.slug : slug} />
