@@ -1985,6 +1985,100 @@ export const LANDERS: Lander[] = [
       returnsFaq,
     ],
   },
+  {
+    slug: 'fuzzy-pups',
+    productSlug: 'fluffy-dog-crossbody-bag',
+    name: 'Fuzzy Pups dog bag',
+    noun: ['bag', 'bags'],
+    picks: ['Brown', 'Beige', 'Blue'],
+    maker: 'Hui',
+    // Owner, 2026-11-12: the middle ladder, €34.95 / 2 for €59.95 / 3 for €79.95.
+    prices: {
+      EUR: { 1: 3495, 2: 5995, 3: 7995 },
+      GBP: { 1: 2695, 2: 4495, 3: 5795 },
+      USD: { 1: 3495, 2: 5995, 3: 7995 },
+    },
+    title: 'Fluffy Crochet Puppy Crossbody Bag with Big Nose | Fuzzy Pups',
+    description: 'A hand-crocheted fluffy puppy crossbody bag with floppy ears and a big black nose. Fits a 6.5 inch phone. Brown, beige or blue. Free shipping on 2 or more.',
+    og: '/go/fuzzy-pups-og.jpg',
+    bar: 'Free shipping on 2 bags or more',
+    hero: {
+      h1: 'A fuzzy crochet puppy with a big black nose,',
+      h1em: 'that carries your phone and your cards.',
+      sub: 'Hui crochets each puppy in a soft loop-stitch fur, with floppy ears, little black eyes and a big fluffy nose. It hangs on an adjustable brown faux leather strap. Brown, beige or blue.',
+      image: { src: 'landers/fuzzy-pups/group.jpg', alt: 'Three fluffy crochet puppy bags on a wooden shelf, in beige, brown and blue, each with a big black nose and floppy ears' },
+      proof: sturdy,
+    },
+    story: {
+      h: 'Soft as a teddy, and still a proper bag.',
+      paras: [
+        'The loop stitch makes a dense, curly fur that feels like a teddy bear and keeps its shape day after day.',
+        'Two floppy ears, two little eyes and one big fluffy nose. That’s the whole face, and it’s enough.',
+      ],
+      subH: 'How heavy is it?',
+      subParas: ['About 110 g, so you’ll forget you’re wearing it.'],
+    },
+    fits: {
+      h: 'Room for your phone and a few small things.',
+      lede: 'Phones up to 6.5 inches fit, with room for a cardholder, a small notebook or a travel-size bottle.',
+      specs: [
+        ['Size', '18 cm tall, 13 cm wide, 3 cm deep. Measured by hand, so allow 1 to 3 cm.'],
+        ['Strap', '120 cm brown faux leather, adjusted with a knot at the metal ring'],
+        ['Weight', 'About 110 g'],
+        ['Made from', 'Polyester loop-stitch yarn, black safety eyes'],
+        ['Care', 'Hand wash only, in cool water below 40°C. Wash it on its own and dry flat.'],
+      ],
+      image: { src: 'landers/fuzzy-pups/phone.jpg', alt: 'The brown puppy bag with a phone, a compact and a small tube poking out of the top' },
+    },
+    colours: {
+      h: 'Pick your pup',
+      lede: 'Three colours, each with the same big black nose and brown strap.',
+      cards: [
+        { pick: 'Brown', title: 'Brown', text: 'Warm caramel brown, like a golden retriever.', image: { src: 'landers/fuzzy-pups/brown.jpg', alt: 'The brown fluffy puppy bag on its brown strap' } },
+        { pick: 'Beige', title: 'Beige', text: 'Soft cream beige. Bright against a dark coat.', image: { src: 'landers/fuzzy-pups/beige.jpg', alt: 'The beige fluffy puppy bag on its brown strap' } },
+        { pick: 'Blue', title: 'Blue', text: 'A soft lavender blue. The one people ask about.', image: { src: 'landers/fuzzy-pups/blue.jpg', alt: 'The blue fluffy puppy bag on its brown strap' } },
+      ],
+      note: 'Can’t choose? Take two or three and mix the colours.',
+    },
+    uses: {
+      h: 'Where it goes',
+      items: [
+        ['Every day.', 'Phone and cards, hands free.'],
+        ['Winter coats.', 'Fluffy fur that looks right with knits and wool.'],
+        ['Dog lovers.', 'A present for anyone who stops to pat every dog.'],
+        ['Matching.', 'Two colours, for you and a friend.'],
+      ],
+      images: [
+        { src: 'landers/fuzzy-pups/beige-worn.jpg', alt: 'The beige puppy bag worn on the shoulder over a black hoodie and jeans' },
+        { src: 'landers/fuzzy-pups/blue-worn.jpg', alt: 'The blue puppy bag worn crossbody over a black jumper and a white lace skirt' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, curl by curl.',
+      paras: [
+        'Hui crochets the body in a dense loop stitch, then the two floppy ears and the big round nose, and sets in the little black eyes.',
+        'Because a person makes each one, no two puppies come out exactly alike.',
+      ],
+      image: { src: 'landers/fuzzy-pups/brown-close.jpg', alt: 'Close-up of the brown puppy bag, showing the curly loop-stitch fur, the floppy ears and the big black nose' },
+    },
+    offer: {
+      h: 'Pick your pups',
+      lede: 'We suggest two: one for you and one for a dog lover you know. Two or more ship free, and each bag costs less.',
+      flag2: 'One for you, one to give',
+      notes: { 1: 'Just the one.', 2: 'Any two colours.', 3: 'Any three colours.' },
+      defaults: ['Brown', 'Beige', 'Blue'],
+      proof: friend,
+    },
+    reviews: [friend, maria, asPictured],
+    faq: [
+      { q: 'Will my phone fit?', a: 'Yes, phones up to 6.5 inches, with room for a cardholder, a small notebook or a travel-size bottle.' },
+      { q: 'Can I adjust the strap?', a: 'Yes. The 120 cm brown faux leather strap adjusts with a knot at the metal ring. Wear it short on one shoulder, or long across the body.' },
+      kidsFaq('bag'),
+      { q: 'How do I wash it?', a: 'Hand wash only, in cool water below 40°C. Wash it on its own the first time, and lay it flat to dry.' },
+      arriveFaq('bag'),
+      returnsFaq,
+    ],
+  },
 ];
 
 export const landerBySlug = (slug: string) => LANDERS.find((l) => l.slug === slug);
