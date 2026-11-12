@@ -1,4 +1,5 @@
 import { site } from '../data/site';
+import { FREE_SHIPPING_FROM, SHIPPING_FLAT } from './money';
 
 export const BRAND_SUFFIX = ` | ${site.name}`;
 const MAX_TITLE = 60;
@@ -62,6 +63,52 @@ export interface ProductLdInput {
   /** Per-option prices (euros), when they differ. Present and with 2+ distinct
    * values, the offer becomes an AggregateOffer with a low/high price range. */
   optionPrices?: number[];
+  /** Days to return after delivery (30 shop-wide; 60 for Finn & the Shamrock). */
+  returnDays?: number;
+}
+
+// Shipping and returns for Google Shopping, taken from site.delivery and the shipping and terms pages.
+// Rest of the world isn't listed: its 8–30 day spread and many countries don't fit the format.
+const EU_EXCEPT_IE = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE'];
+const DELIVERY_COUNTRIES: { countries: string[]; days: string }[] = [
+  { countries: ['IE'], days: site.delivery[0].days },
+  { countries: ['GB'], days: site.delivery[1].days },
+  { countries: EU_EXCEPT_IE, days: site.delivery[2].days },
+  { countries: ['US', 'CA'], days: site.delivery[3].days },
+];
+export const SHOPPING_COUNTRIES = DELIVERY_COUNTRIES.flatMap((d) => d.countries);
+const range = (r: string) => r.split(/[–-]/).map((n) => Number(n.trim()));
+
+export function shippingDetailsLd(priceEur: number) {
+  const [hMin, hMax] = range(site.shipsIn.replace(/\s*days?/, ''));
+  const rate = priceEur * 100 >= FREE_SHIPPING_FROM.EUR ? 0 : SHIPPING_FLAT.EUR / 100;
+  return DELIVERY_COUNTRIES.map((d) => {
+    const [tMin, tMax] = range(d.days);
+    return {
+      '@type': 'OfferShippingDetails',
+      shippingRate: { '@type': 'MonetaryAmount', value: rate.toFixed(2), currency: 'EUR' },
+      shippingDestination: d.countries.map((c) => ({ '@type': 'DefinedRegion', addressCountry: c })),
+      deliveryTime: {
+        '@type': 'ShippingDeliveryTime',
+        handlingTime: { '@type': 'QuantitativeValue', minValue: hMin, maxValue: hMax, unitCode: 'DAY' },
+        transitTime: { '@type': 'QuantitativeValue', minValue: tMin, maxValue: tMax, unitCode: 'DAY' },
+      },
+    };
+  });
+}
+
+export function returnPolicyLd(days = 30) {
+  return {
+    '@type': 'MerchantReturnPolicy',
+    applicableCountry: SHOPPING_COUNTRIES,
+    returnPolicyCountry: 'IE',
+    returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+    merchantReturnDays: days,
+    returnMethod: 'https://schema.org/ReturnByMail',
+    returnFees: 'https://schema.org/ReturnFeesCustomerResponsibility',
+    refundType: 'https://schema.org/FullRefund',
+    merchantReturnLink: absoluteUrl('/shipping/#returns'),
+  };
 }
 
 export function productJsonLd(p: ProductLdInput) {
@@ -77,6 +124,9 @@ export function productJsonLd(p: ProductLdInput) {
           highPrice: Math.max(...distinctPrices).toFixed(2),
           offerCount: distinctPrices.length,
           availability,
+          itemCondition: 'https://schema.org/NewCondition',
+          shippingDetails: shippingDetailsLd(Math.min(...distinctPrices)),
+          hasMerchantReturnPolicy: returnPolicyLd(p.returnDays),
         }
       : {
           '@type': 'Offer',
@@ -85,6 +135,8 @@ export function productJsonLd(p: ProductLdInput) {
           price: p.price.toFixed(2),
           availability,
           itemCondition: 'https://schema.org/NewCondition',
+          shippingDetails: shippingDetailsLd(p.price),
+          hasMerchantReturnPolicy: returnPolicyLd(p.returnDays),
         };
   return {
     '@context': 'https://schema.org',
@@ -140,6 +192,7 @@ export function organizationJsonLd() {
     logo: absoluteUrl('/apple-touch-icon.png'),
     email: site.email.hello,
     sameAs: [site.pinterestUrl, site.facebookUrl],
+    hasMerchantReturnPolicy: returnPolicyLd(),
   };
 }
 
