@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Miso the cat">
+  <g>
+    <path d="M9.5 19.5 11.2 6.8a1.6 1.6 0 0 1 2.6-1l8 6.1" fill="#1A1512" stroke="#1A1512" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M38.5 19.5 36.8 6.8a1.6 1.6 0 0 0-2.6-1l-8 6.1" fill="#1A1512" stroke="#1A1512" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M12.8 15.6 13.9 9.3l4.4 3.4" fill="#F2A9BE"/>
+    <path d="M35.2 15.6 34.1 9.3l-4.4 3.4" fill="#F2A9BE"/>
+    <path d="M24 9.4c9.4 0 15.6 6.2 15.6 14.4 0 8.6-6.6 14.6-15.6 14.6S8.4 32.4 8.4 23.8C8.4 15.6 14.6 9.4 24 9.4Z" fill="#1A1512"/>
+    <circle cx="17.4" cy="22.2" r="5" fill="#FBF5EB"/>
+    <circle cx="30.6" cy="22.2" r="5" fill="#FBF5EB"/>
+    <circle cx="17.9" cy="22.6" r="2.5" fill="#1A1512"/>
+    <circle cx="30.1" cy="22.6" r="2.5" fill="#1A1512"/>
+    <circle cx="18.9" cy="21.5" r=".9" fill="#FBF5EB"/>
+    <circle cx="31.1" cy="21.5" r=".9" fill="#FBF5EB"/>
+    <ellipse cx="24" cy="29.4" rx="7.2" ry="4.6" fill="#DF5F26"/>
+    <path d="M24 27.2c1 0 1.6.6 1.6 1.2s-.7 1.2-1.6 1.2-1.6-.6-1.6-1.2.7-1.2 1.6-1.2Z" fill="#1A1512"/>
+    <path d="M24 29.6v1.9M24 31.5c-.9 0-1.5.6-2.2.2M24 31.5c.9 0 1.5.6 2.2.2" stroke="#1A1512" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <path d="M13.6 26.2 9.2 25M13.4 29 9.4 29.6M34.4 26.2 38.8 25M34.6 29l4 .6" stroke="#FBF5EB" stroke-width="1.3" stroke-linecap="round" opacity=".75"/>
+    <path d="M13.4 36.4h21.2c1 0 1.8.8 1.8 1.8v2.4c0 1-.8 1.8-1.8 1.8H13.4c-1 0-1.8-.8-1.8-1.8v-2.4c0-1 .8-1.8 1.8-1.8Z" fill="#D9436F"/>
+    <path d="M15 38.6h18M15 40.6h18" stroke="#FBF5EB" stroke-width="1.1" stroke-linecap="round" opacity=".85"/>
+    <path d="M16.6 42.2v3.4M31.4 42.2v3.4" stroke="#1A1512" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="16.6" cy="46.4" r="1.8" fill="#1A1512"/>
+    <circle cx="31.4" cy="46.4" r="1.8" fill="#1A1512"/>
+  </g>
+</svg>

@@ -12,10 +12,9 @@ import { site } from '../data/site';
 import { featured, newest, showHatsInNav } from '../lib/products';
 import Money from '../components/Money.astro';
 import { faqJsonLd, organizationJsonLd, websiteJsonLd } from '../lib/seo';
-import { formatAll } from '../lib/currency';
-import { FREE_SHIPPING_THRESHOLD_CENTS } from '../lib/money';
+import { freeShippingAll } from '../lib/money';
 
-const FREE_SHIPPING = formatAll(FREE_SHIPPING_THRESHOLD_CENTS, { whole: true });
+const FREE_SHIPPING = freeShippingAll();
 
 const all = await getCollection('products');
 const best = featured(all);

@@ -5,7 +5,8 @@ import { ORDER_COOKIE, verifyValue } from '../../lib/bag-cookie';
 import { d1Orders } from '../../lib/orders';
 import { RETURN_MESSAGES } from '../../lib/checkout-handlers';
 import { countryName } from '../../lib/checkout-form';
-import { formatMoney } from '../../lib/currency';
+import { CURRENCY_COOKIE, currencyFromRequest, formatMoney } from '../../lib/currency';
+import { recommend, type RecCard } from '../../lib/recommend';
 import { pageTitle } from '../../lib/seo';
 import { site } from '../../data/site';
 
@@ -25,6 +26,10 @@ const order = ref ? await d1Orders(env.ORDERS).findByRef(ref) : null;
 // a hint for when we don't yet have the order (e.g. it hasn't replicated to this read).
 const pending = order ? order.status === 'review' : Astro.url.searchParams.get('pending') === '1';
 const euro = (c: number) => formatMoney(c, order?.currency ?? 'EUR');
+// "You might also like": four pieces picked for this order (src/lib/recommend.ts).
+const recCurrency = order?.currency ?? currencyFromRequest(Astro.cookies.get(CURRENCY_COOKIE)?.value, Astro.request);
+const recRes = error ? null : await env.ASSETS.fetch(new Request(new URL('/recs.json', Astro.request.url))).catch(() => null);
+const recs = recRes?.ok ? recommend((await recRes.json()) as RecCard[], order?.lines.map((l) => l.slug) ?? []) : [];
 const heading = error ? 'Payment problem' : pending ? 'Order received' : 'Thank you for your order';
 ---
 <BaseLayout title={pageTitle(error ? 'Payment problem' : 'Thank you')} description="Your Sunnie Designs order." path="/checkout/complete/" noindex>
@@ -56,4 +61,15 @@ const heading = error ? 'Payment problem' : pending ? 'Order received' : 'Thank 
       </>
     )}
   </div>
+  {recs.length > 0 && (
+    <section class="container section recs" aria-labelledby="recs-h">
+      <h2 id="recs-h">You might also like</h2>
+      <p class="muted">Each one made by hand, just like yours.</p>
+      <ul class="grid" role="list">
+        {recs.map((r) => (
+          <li><a class="card card-link" href={r.href}><img src={r.img} alt="" width="480" height="480" loading="lazy" decoding="async" /><span class="card-title">{r.name}</span><span class="card-price">{r.price[recCurrency]}</span></a></li>
+        ))}
+      </ul>
+    </section>
+  )}
 </BaseLayout>

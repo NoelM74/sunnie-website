@@ -485,3 +485,10 @@ main:focus { outline: none; }
 .ship-table th, .ship-table td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
 .ship-table thead th { font-weight: 700; }
 .ship-table tbody th { font-weight: 600; }
+
+/* Thank-you page: "You might also like" */
+.recs { margin-top: clamp(2.5rem, 2rem + 3vw, 4rem); padding-top: 2rem; border-top: 1px solid var(--border); }
+.recs h2 { margin-bottom: 0.25rem; }
+.recs .grid img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-sm); }
+.recs .card-title { display: block; margin-top: 0.6rem; }
+.recs .card-price { display: block; font-weight: 700; margin-top: 0.2rem; }

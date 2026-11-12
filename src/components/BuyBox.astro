@@ -1,6 +1,6 @@
 ---
 import Money from './Money.astro';
-import { FREE_SHIPPING_EUR } from '../lib/money';
+import FreeShippingFrom from './FreeShippingFrom.astro';
 import { site } from '../data/site';
 import { optionPhoto } from '../lib/product-schema';
 
@@ -58,7 +58,7 @@ const photoFor = (v: string) => (option ? optionPhoto(v, option.values, alts, op
       <li><span>Made to order by {maker}, ships in {site.shipsIn} with tracking</span></li>
       {pack
         ? <li><span><a href={`/go/${pack.landerSlug}/`}>Free shipping on 2 or more</a>, and each one costs less · 30-day returns</span></li>
-        : <li><span>Free shipping from <Money eur={FREE_SHIPPING_EUR} whole /> · 30-day returns</span></li>}
+        : <li><span>Free shipping from <FreeShippingFrom /> · 30-day returns</span></li>}
       <li><span>No import charges to the EU, UK or US</span></li>
       <li><span>Pay in euro, pounds or dollars with PayPal or card</span></li>
     </ul>

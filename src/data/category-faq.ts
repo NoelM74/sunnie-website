@@ -1,8 +1,7 @@
 import { site } from './site';
-import { formatAll } from '../lib/currency';
-import { FREE_SHIPPING_THRESHOLD_CENTS } from '../lib/money';
+import { freeShippingAll } from '../lib/money';
 
-const FREE_SHIPPING = formatAll(FREE_SHIPPING_THRESHOLD_CENTS, { whole: true });
+const FREE_SHIPPING = freeShippingAll();
 
 export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: string; a: string }[]> = {
   bags: [

@@ -3,8 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEnv } from '../../lib/env';
 import { loadCatalog } from '../../lib/catalog';
 import { BAG_COOKIE, decodeBag, saveBag } from '../../lib/bag-cookie';
-import { priceBag } from '../../lib/pricing';
-import { CURRENCY_COOKIE, CURRENCY_NAMES, currencyFromRequest, formatMoney, toLocalCents } from '../../lib/currency';
+import { displayCents, priceBag } from '../../lib/pricing';
+import { CURRENCY_COOKIE, CURRENCY_NAMES, currencyFromRequest, formatMoney } from '../../lib/currency';
 import { pageTitle } from '../../lib/seo';
 
 export const prerender = false;
@@ -85,7 +85,7 @@ const suggestions = Object.values(catalog)
         <h2 id="suggest-h">Popular pieces</h2>
         <ul class="grid" role="list">
           {suggestions.map((s) => (
-            <li><a class="card card-link" href={`/products/${s.slug}/`}><img src={s.thumb} alt="" width="160" height="160" loading="lazy" /><span class="card-title">{s.name}</span><span class="card-price">{euro(toLocalCents(s.priceCents, currency))}</span></a></li>
+            <li><a class="card card-link" href={`/products/${s.slug}/`}><img src={s.thumb} alt="" width="160" height="160" loading="lazy" /><span class="card-title">{s.name}</span><span class="card-price">{euro(displayCents(s, currency))}</span></a></li>
           ))}
         </ul>
       </section>

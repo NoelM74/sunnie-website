@@ -1,6 +1,6 @@
 ---
 import Money from '../components/Money.astro';
-import { FREE_SHIPPING_EUR } from '../lib/money';
+import FreeShippingFrom from '../components/FreeShippingFrom.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
@@ -18,7 +18,7 @@ const c = site.company;
     <p>Your contract with us starts when your payment goes through and we show your order number.</p>
 
     <h2>Delivery</h2>
-    <p>Each piece is made by hand to order and ships within {site.shipsIn} with tracking. Shipping costs <Money eur={5} /> per order, and it's free on orders of <Money eur={FREE_SHIPPING_EUR} whole /> or more. We ship worldwide. There are no import charges to pay on delivery to the EU, the UK or the US. Buyers in other countries may have to pay import charges set by their country.</p>
+    <p>Each piece is made by hand to order and ships within {site.shipsIn} with tracking. Shipping costs <Money eur={5} /> per order, and it's free on orders of <FreeShippingFrom /> or more. We ship worldwide. There are no import charges to pay on delivery to the EU, the UK or the US. Buyers in other countries may have to pay import charges set by their country.</p>
 
     <h2>Returns and your right to cancel</h2>
     <p>You can cancel and return any item within 30 days of delivery, for any reason. This is longer than the 14 days the law requires.</p>

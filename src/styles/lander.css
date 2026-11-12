@@ -170,3 +170,14 @@ body.sticky-open { padding-bottom: 5rem; }
 .l-colour img { border: 1px solid var(--border); }
 @media (min-width: 48rem) { .l-promises-2 { grid-template-columns: repeat(2, 1fr); max-width: 52rem; margin-inline: auto; } }
 .l-nudge { margin: 0; text-align: center; font-weight: 700; color: #4f5f22; min-height: 1.5em; }
+
+/* Character marks: one per piece on each bundle card, and in the footer */
+.l-marks { display: flex; gap: 0.15rem; justify-content: center; margin-bottom: 0.15rem; }
+.l-marks img { width: 34px; height: 34px; }
+.l-foot-brand { display: flex; align-items: center; gap: 0.6rem; }
+@media (max-width: 47.99rem) {
+  .l-offer .l-marks { grid-column: 1; grid-row: 1; justify-content: flex-start; margin: 0.15rem 0 0; }
+  .l-offer .l-qty { grid-row: 2; }
+  .l-offer .l-amount { grid-row: 1 / span 2; align-self: center; }
+  .l-marks img { width: 28px; height: 28px; }
+}

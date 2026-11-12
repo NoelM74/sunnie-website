@@ -8,6 +8,14 @@ export interface PricedBag { currency: Currency; lines: PricedLine[]; subtotalCe
 
 const clampQty = (q: number) => Math.min(5, Math.max(1, Math.trunc(Number(q)) || 1));
 
+/** The "from" price of an item in `currency`, for cards and suggestions. */
+export function displayCents(item: Catalog[string], currency: Currency): number {
+  const fixed = currency === 'EUR' ? undefined : item.localPrices?.[currency];
+  if (fixed && Object.keys(fixed).length) return Math.min(...Object.values(fixed));
+  const eur = item.optionPriceCents ? Math.min(...Object.values(item.optionPriceCents)) : item.priceCents;
+  return toLocalCents(eur, currency);
+}
+
 /** All cents in the result are in `currency`. Unit prices convert first, so a line always matches the product page. */
 export function priceBag(lines: BagLine[], catalog: Catalog, currency: Currency = 'EUR'): PricedBag {
   const priced: PricedLine[] = [];

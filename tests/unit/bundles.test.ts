@@ -115,3 +115,9 @@ describe('lander content', () => {
     expect(FINN_ITEM.href).toBe('/go/finn-the-shamrock/');
   });
 });
+
+describe('lander marks', () => {
+  it('every lander has its character logo', () => {
+    for (const l of LANDERS) expect(() => readFileSync(join(process.cwd(), 'public/go', `${l.slug}-mark.svg`)), l.slug).not.toThrow();
+  });
+});

@@ -7,8 +7,19 @@ import finnThumb from '../assets/finn/finn-thumb.webp';
 import { LANDERS } from '../data/landers';
 import { bundleCatalogItem } from '../lib/bundles';
 import { landerImage } from '../lib/lander-images';
+import { packFor } from '../lib/lander-products';
 
 export const prerender = true;
+
+function singlePackPricing(slug: string, values: string[]) {
+  const pack = packFor(slug);
+  if (!pack) return {};
+  const keys = values.length ? values : [''];
+  return {
+    localPrices: { GBP: Object.fromEntries(keys.map((k) => [k, pack.price.gbp])), USD: Object.fromEntries(keys.map((k) => [k, pack.price.usd])) },
+    shipFlatCents: { EUR: pack.shipping.eur, GBP: pack.shipping.gbp, USD: pack.shipping.usd },
+  };
+}
 
 export const GET: APIRoute = async () => {
   const products = await getCollection('products');
@@ -30,6 +41,8 @@ export const GET: APIRoute = async () => {
         thumb: thumb.src,
         maker: p.data.maker,
         featured: p.data.featured ?? null,
+        // Products with a bundle lander charge its single-pack price list here too.
+        ...singlePackPricing(p.id, opt?.values ?? []),
       }] as const;
     }),
   );

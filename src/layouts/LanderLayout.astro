@@ -13,8 +13,8 @@ import { site } from '../data/site';
 // Ad landers (/go/<slug>/): the shop's look, fonts, currency and basket, without the shop
 // menu, so the only way forward is the offer. Kept out of search: the product page is the
 // page to rank, and this one exists for paid traffic.
-interface Props { title: string; description: string; image: string; bar: string; barRight?: string; nav: [string, string][] }
-const { title, description, image, bar, barRight = site.makerLine, nav } = Astro.props;
+interface Props { title: string; description: string; image: string; bar: string; barRight?: string; nav: [string, string][]; mark?: string }
+const { title, description, image, bar, barRight = site.makerLine, nav, mark } = Astro.props;
 const year = new Date().getFullYear();
 ---
 <!doctype html>
@@ -26,7 +26,7 @@ const year = new Date().getFullYear();
     <link rel="preload" href={bodyWoff2} as="font" type="font/woff2" crossorigin />
     {/* Same currency pick as BaseLayout: saved choice, else a guess from the time zone. */}
     <script is:inline>(function(){try{var d=document.documentElement,m=/(?:^|; )sunnie_cur=(EUR|GBP|USD)(?:;|$)/.exec(document.cookie),c=m&&m[1];if(!c&&/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)){d.dataset.cur='EUR';return}if(!c){var z=Intl.DateTimeFormat().resolvedOptions().timeZone||'';c=/^Europe\/(London|Belfast|Isle_of_Man|Jersey|Guernsey)$/.test(z)?'GBP':/^(America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Juneau|Sitka|Nome|Yakutat|Metlakatla|Adak|Boise|Detroit|Menominee|Puerto_Rico|Indiana\/\w+|Kentucky\/\w+|North_Dakota\/\w+)|Pacific\/Honolulu)$/.test(z)?'USD':'EUR';document.cookie='sunnie_cur='+c+';path=/;max-age=31536000;samesite=lax;secure'}d.dataset.cur=c}catch(e){}})();</script>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={mark ?? '/favicon.svg'} type="image/svg+xml" />
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#FBF6EE" />
@@ -49,7 +49,7 @@ const year = new Date().getFullYear();
     </main>
     <footer class="site-footer l-foot">
       <div class="container l-foot-in">
-        <p class="footer-brand">{site.name}</p>
+        <p class="footer-brand l-foot-brand">{mark && <img src={mark} alt="" width="40" height="40" />}{site.name}</p>
         <nav aria-label="Help">
           <a href="/shipping/">Shipping and returns</a>
           <a href="/contact/">Contact</a>

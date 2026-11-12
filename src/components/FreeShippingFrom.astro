@@ -1,0 +1,6 @@
+---
+import Money from './Money.astro';
+import { FREE_SHIPPING_FROM } from '../lib/money';
+// The free-shipping amount in the visitor's currency: €50, £45 or $55.
+---
+<Money eur={FREE_SHIPPING_FROM.EUR / 100} gbpCents={FREE_SHIPPING_FROM.GBP} usdCents={FREE_SHIPPING_FROM.USD} />
