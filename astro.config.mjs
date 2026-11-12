@@ -37,7 +37,7 @@ export default defineConfig({
       // (`/bag/`) and checkout routes (`/checkout/...`) are excluded.
       filter: (page) => {
         const path = new URL(page).pathname;
-        return path !== '/404/' && path !== '/bag/' && !path.startsWith('/checkout/');
+        return path !== '/404/' && path !== '/bag/' && !path.startsWith('/checkout/') && !path.startsWith('/go/');
       },
     }),
   ],

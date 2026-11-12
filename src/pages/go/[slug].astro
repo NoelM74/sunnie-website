@@ -1,0 +1,343 @@
+---
+import { getImage, Picture } from 'astro:assets';
+import LanderLayout from '../../layouts/LanderLayout.astro';
+import ReviewQuote from '../../components/ReviewQuote.astro';
+import reviews from '../../data/reviews.json';
+import { site } from '../../data/site';
+import { LANDERS, type Lander, type ReviewKey } from '../../data/landers';
+import { BUNDLE_EUR_CENTS, BUNDLE_SIZES, bundleOption, bundleSlug, type BundleSize } from '../../lib/bundles';
+import { landerImage } from '../../lib/lander-images';
+import { CURRENCIES, formatMoney, toLocalCents, type Currency } from '../../lib/currency';
+import { shippingFor } from '../../lib/money';
+import { absoluteUrl } from '../../lib/seo';
+
+export function getStaticPaths() {
+  return LANDERS.map((lander) => ({ params: { slug: lander.slug }, props: { lander } }));
+}
+
+interface Props { lander: Lander }
+const { lander: l } = Astro.props;
+
+type Review = (typeof reviews)[number] & { lang: 'en' | 'de'; en?: string };
+const findReview = (k: ReviewKey): Review => {
+  const r = (reviews as Review[]).find((x) => x.reviewer === k.reviewer && x.date === k.date);
+  if (!r) throw new Error(`Lander ${l.slug}: no review from ${k.reviewer} on ${k.date} in reviews.json`);
+  return r;
+};
+const quoteText = (r: Review) => (r.lang === 'de' && r.en ? r.en : r.text);
+const heroQuote = findReview(l.hero.proof);
+const offerQuote = findReview(l.offer.proof);
+const shown = l.reviews.map(findReview);
+
+// Prices in every currency the shop sells in, built the same way as the bag, so the
+// lander, the bag and PayPal all show the same number.
+const local = (n: BundleSize, cur: Currency) => toLocalCents(BUNDLE_EUR_CENTS[n], cur);
+const prices = Object.fromEntries(CURRENCIES.map((cur) => [cur, {
+  1: local(1, cur), 2: local(2, cur), 3: local(3, cur),
+  ship: Object.fromEntries(BUNDLE_SIZES.map((n) => [n, shippingFor(local(n, cur), cur)])),
+}]));
+/** A price span the BaseLayout-style swap script can switch, from a per-currency cents function. */
+const money = (cents: (cur: Currency) => number) => ({
+  text: formatMoney(cents('EUR'), 'EUR'),
+  gbp: formatMoney(cents('GBP'), 'GBP'),
+  usd: formatMoney(cents('USD'), 'USD'),
+});
+const bundlePrice = (n: BundleSize) => money((c) => local(n, c));
+const perPiece = (n: BundleSize) => money((c) => Math.round(local(n, c) / n));
+const saving = (n: BundleSize) => money((c) => local(1, c) * n - local(n, c));
+const singleShip = money((c) => prices[c].ship[1]);
+const from = bundlePrice(1);
+const nounFor = (n: number) => (n === 1 ? l.noun[0] : l.noun[1]);
+const Noun = l.noun[0][0].toUpperCase() + l.noun[0].slice(1);
+const DEFAULT: BundleSize = 2;
+const defaultOption = bundleOption(l, l.offer.defaults.slice(0, DEFAULT))!;
+
+// Photos.
+const pic = (src: string) => landerImage(src);
+const thumbs = await Promise.all(
+  l.colours.cards.map(async (c) => ({ pick: c.pick, src: (await getImage({ src: pic(c.image.src), width: 112, height: 112, fit: 'cover', format: 'webp' })).src })),
+);
+const stickyThumb = (await getImage({ src: pic(l.hero.image.src), width: 96, height: 96, fit: 'cover', format: 'webp' })).src;
+
+const nav: [string, string][] = [['#fits', 'What fits'], ['#colours', 'Colours'], ['#craft', 'Made by hand'], ['#offer', 'Bundles'], ['#faq', 'Questions']];
+const config = { prices, picks: l.picks, noun: l.noun, defaults: l.offer.defaults, start: DEFAULT };
+---
+<LanderLayout title={l.title} description={l.description} image={absoluteUrl(l.og)} bar={l.bar} nav={nav}>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="star" viewBox="0 0 16 16"><path d="M8 .9l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3l-4.5 2.3.9-5L.8 6.1l5-.7z" /></symbol>
+  </svg>
+
+  <header class="l-hero" id="top">
+    <div class="container l-hero-grid">
+      <div class="l-hero-copy">
+        <h1>{l.hero.h1} <em>{l.hero.h1em}</em></h1>
+        <p class="l-hero-sub">{l.hero.sub}</p>
+        <a class="btn btn-primary l-cta" href="#offer">Choose your bundle <small>· from <span class="money" data-gbp={from.gbp} data-usd={from.usd}>{from.text}</span></small></a>
+        <p class="l-proof">
+          <a href="#reviews"><span class="l-stars" role="img" aria-label="Rated 5 out of 5">{[1, 2, 3, 4, 5].map(() => <svg><use href="#star" /></svg>)}</span> {site.proof.etsyRating} on Etsy</a>
+          <span>“{quoteText(heroQuote)}”</span>
+        </p>
+        <p class="small muted">Free shipping on 2 or more · 30-day returns · Ships in {site.shipsIn}</p>
+      </div>
+      <div class="l-hero-art">
+        <Picture src={pic(l.hero.image.src)} alt={l.hero.image.alt} widths={[480, 800, 1100]} sizes="(max-width: 56rem) 92vw, 540px" formats={['webp']} loading="eager" fetchpriority="high" class="l-photo" />
+      </div>
+    </div>
+  </header>
+
+  <section class="l-sec" id="why">
+    <div class="container l-narrow l-prose">
+      <h2>{l.story.h}</h2>
+      {l.story.paras.map((p) => <p>{p}</p>)}
+      <h3>{l.story.subH}</h3>
+      {l.story.subParas.map((p) => <p>{p}</p>)}
+    </div>
+  </section>
+
+  <section class="l-sec l-tint" id="fits">
+    <div class="container l-split">
+      <div>
+        <h2>{l.fits.h}</h2>
+        <p class="lead">{l.fits.lede}</p>
+        <dl class="l-specs">
+          {l.fits.specs.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
+        </dl>
+      </div>
+      <figure class="l-framed">
+        <Picture src={pic(l.fits.image.src)} alt={l.fits.image.alt} widths={[480, 800]} sizes="(max-width: 56rem) 92vw, 520px" formats={['webp']} class="l-photo" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="l-sec" id="colours">
+    <div class="container">
+      <div class="l-narrow l-center">
+        <h2>{l.colours.h}</h2>
+        <p class="lead">{l.colours.lede}</p>
+      </div>
+      <div class={`l-colours l-colours-${l.colours.cards.length}`}>
+        {l.colours.cards.map((c) => (
+          <article class="l-colour">
+            <Picture src={pic(c.image.src)} alt={c.image.alt} widths={[400, 700]} sizes="(max-width: 40rem) 92vw, 360px" formats={['webp']} class="l-photo" />
+            <h3>{c.title}</h3>
+            <p>{c.text}</p>
+          </article>
+        ))}
+      </div>
+      <p class="l-center l-note">{l.colours.note}</p>
+    </div>
+  </section>
+
+  <section class="l-sec l-tint" id="uses">
+    <div class="container">
+      <div class="l-narrow">
+        <h2>{l.uses.h}</h2>
+        <ul class="l-uses" role="list">
+          {l.uses.items.map(([b, t]) => <li><b>{b}</b> {t}</li>)}
+        </ul>
+      </div>
+      <div class="l-strip">
+        {l.uses.images.map((im) => <Picture src={pic(im.src)} alt={im.alt} widths={[360, 640]} sizes="(max-width: 40rem) 46vw, 340px" formats={['webp']} class="l-photo" />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="l-sec l-dark" id="craft">
+    <div class="container l-split l-split-rev">
+      <figure class="l-framed">
+        <Picture src={pic(l.craft.image.src)} alt={l.craft.image.alt} widths={[480, 800]} sizes="(max-width: 56rem) 92vw, 520px" formats={['webp']} class="l-photo" />
+      </figure>
+      <div>
+        <h2>{l.craft.h}</h2>
+        {l.craft.paras.map((p) => <p class="lead">{p}</p>)}
+        <p><a href="/our-story/">Meet Hui</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="l-sec" id="offer">
+    <div class="container">
+      <div class="l-narrow l-center">
+        <h2>{l.offer.h}</h2>
+        <p class="lead">{l.offer.lede}</p>
+      </div>
+
+      <div class="l-offers" role="group" aria-label="Choose a bundle">
+        {BUNDLE_SIZES.map((n) => {
+          const p = bundlePrice(n); const per = perPiece(n); const save = saving(n);
+          return (
+            <button class={`l-offer${n === DEFAULT ? ' l-best' : ''}`} type="button" data-qty={n} aria-pressed={n === DEFAULT ? 'true' : 'false'}>
+              <span class="l-tick" aria-hidden="true">Selected</span>
+              {n === 2 && <span class="l-flag">{l.offer.flag2}</span>}
+              <span class="l-qty">{n} {nounFor(n)}</span>
+              <span class="l-amount money" data-gbp={p.gbp} data-usd={p.usd}>{p.text}</span>
+              {n === 1 ? (
+                <span class="l-per">plus <span class="money" data-gbp={singleShip.gbp} data-usd={singleShip.usd}>{singleShip.text}</span> shipping</span>
+              ) : (
+                <span class="l-per"><span class="money" data-gbp={per.gbp} data-usd={per.usd}>{per.text}</span> each · save <span class="money" data-gbp={save.gbp} data-usd={save.usd}>{save.text}</span></span>
+              )}
+              {n > 1 && <span class="l-free">Free shipping</span>}
+              <span class="l-onote">{l.offer.notes[n]}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <form class="l-buy" id="buyForm" method="post" action="/bag/add/">
+        <input type="hidden" name="slug" value={bundleSlug(l)} />
+        <input type="hidden" name="qty" value="1" />
+        <input type="hidden" name="option" id="optField" value={defaultOption} />
+        <fieldset class="l-picks">
+          <legend>Choose each {l.noun[0]}</legend>
+          {[0, 1, 2].map((row) => (
+            <div class="l-pick-row" data-row={row} hidden={row >= DEFAULT}>
+              <span class="l-pick-label" id={`pick-label-${row}`}>{Noun} {row + 1}</span>
+              <div class="l-chips" role="radiogroup" aria-labelledby={`pick-label-${row}`}>
+                {thumbs.map((t) => (
+                  <label class="l-chip">
+                    <input type="radio" name={`pick${row}`} value={t.pick} checked={t.pick === l.offer.defaults[row]} disabled={row >= DEFAULT} />
+                    <img src={t.src} alt="" width="56" height="56" decoding="async" />
+                    <span>{t.pick}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
+        </fieldset>
+
+        <div class="l-proofbar">
+          <span class="l-stars" role="img" aria-label="Rated 5 out of 5">{[1, 2, 3, 4, 5].map(() => <svg><use href="#star" /></svg>)}</span>
+          <p>“{quoteText(offerQuote)}” <span class="muted">{offerQuote.reviewer}, Etsy</span></p>
+        </div>
+
+        <button class="btn btn-primary l-buy-btn" type="submit" id="buyBtn">Add to basket · <span class="money" data-gbp={bundlePrice(DEFAULT).gbp} data-usd={bundlePrice(DEFAULT).usd}>{bundlePrice(DEFAULT).text}</span></button>
+        <p class="small l-center">
+          <b id="selLabel">{defaultOption}</b> · <span id="shipLine">free shipping</span> · 30-day returns<br />
+          Ships in {site.shipsIn} with tracking · Pay with PayPal or card
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <section class="l-sec l-dark">
+    <div class="container">
+      <h2 class="l-center">Three promises</h2>
+      <div class="l-promises">
+        <div><h3>Made to order, shipped in {site.shipsIn}</h3><p>Hui makes yours when you order, and it ships with tracking within {site.shipsIn}. Delivery times for each country are on the <a href="/shipping/">shipping page</a>.</p></div>
+        <div><h3>Nothing to pay at your door</h3><p>Orders to the EU, UK and US arrive with no import charges. The price at checkout is the full price.</p></div>
+        <div><h3>30 days to change your mind</h3><p>Send it back within 30 days of delivery and we refund the item and the original shipping.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="l-sec" id="reviews">
+    <div class="container">
+      <div class="l-narrow l-center">
+        <h2>{site.proof.etsyRating} stars from Sunnie Designs buyers</h2>
+        <p class="lead">We're a Star Seller on Etsy, and {site.proof.ebayPositive} positive from {site.proof.ebayCount} eBay ratings. These are shop reviews, quoted word for word.</p>
+      </div>
+      <div class="quotes l-quotes">
+        {shown.map((r) => <ReviewQuote review={r} />)}
+      </div>
+      <p class="l-center"><a href="/reviews/">Read more reviews</a></p>
+    </div>
+  </section>
+
+  <section class="l-sec l-tint" id="faq">
+    <div class="container l-narrow">
+      <h2>Questions</h2>
+      {l.faq.map((f, i) => (
+        <details class="l-faq" open={i === 0}>
+          <summary>{f.q}</summary>
+          <p set:html={f.a} />
+        </details>
+      ))}
+      <div class="l-center l-close">
+        <p>Made by hand and shipped in {site.shipsIn}. If it isn't what you hoped for, you have 30 days to send it back.</p>
+        <a class="btn btn-primary l-cta" href="#offer">Choose your bundle <small>· from <span class="money" data-gbp={from.gbp} data-usd={from.usd}>{from.text}</span></small></a>
+        <p class="small"><a href={`/products/${l.productSlug}/`}>See the full product page</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="l-sticky" id="sticky" aria-hidden="true" inert>
+    <div class="container l-sticky-in">
+      <span class="l-sticky-label"><img src={stickyThumb} alt="" width="48" height="48" loading="lazy" /><span><b id="stickySel">{DEFAULT} {nounFor(DEFAULT)}</b><small id="stickyShip">Free shipping</small></span></span>
+      <button class="btn btn-primary" type="button" id="stickyBtn">Add to basket</button>
+    </div>
+  </div>
+
+  <script is:inline type="application/json" id="lander-config" set:html={JSON.stringify(config).replace(/</g, '\\u003c')} />
+  <script is:inline>
+  (function () {
+    'use strict';
+    var C = JSON.parse(document.getElementById('lander-config').textContent);
+    var d = document.documentElement;
+    var LOCALE = { EUR: 'en-IE', GBP: 'en-GB', USD: 'en-US' };
+    var state = { qty: C.start, picks: C.defaults.slice() };
+    var $ = function (id) { return document.getElementById(id); };
+    var offers = [].slice.call(document.querySelectorAll('.l-offer'));
+    var rows = [].slice.call(document.querySelectorAll('.l-pick-row'));
+    var form = $('buyForm');
+
+    function cur() { return C.prices[d.dataset.cur] ? d.dataset.cur : 'EUR'; }
+    function money(cents) {
+      var c = cur();
+      return new Intl.NumberFormat(LOCALE[c], { style: 'currency', currency: c }).format(cents / 100);
+    }
+    function noun(n) { return n === 1 ? C.noun[0] : C.noun[1]; }
+    // Must match bundleOption() in src/lib/bundles.ts: picks in picker order.
+    function option() {
+      var chosen = state.picks.slice(0, state.qty).sort(function (a, b) { return C.picks.indexOf(a) - C.picks.indexOf(b); });
+      return state.qty + ' ' + noun(state.qty) + ': ' + chosen.join(' + ');
+    }
+
+    function render() {
+      var p = C.prices[cur()], total = p[state.qty], ship = p.ship[state.qty];
+      offers.forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.qty === state.qty)); });
+      rows.forEach(function (r, i) {
+        var on = i < state.qty;
+        r.hidden = !on;
+        r.querySelectorAll('input').forEach(function (inp) { inp.disabled = !on; inp.checked = inp.value === state.picks[i]; });
+      });
+      var opt = option();
+      $('optField').value = opt;
+      $('selLabel').textContent = opt;
+      $('shipLine').textContent = ship ? 'plus ' + money(ship) + ' shipping' : 'free shipping';
+      $('buyBtn').textContent = 'Add to basket · ' + money(total);
+      $('stickySel').textContent = state.qty + ' ' + noun(state.qty) + ' · ' + money(total);
+      $('stickyShip').textContent = ship ? '+' + money(ship) + ' shipping' : 'Free shipping';
+    }
+
+    offers.forEach(function (b) {
+      b.addEventListener('click', function () { state.qty = +b.dataset.qty; render(); });
+    });
+    rows.forEach(function (r, i) {
+      r.addEventListener('change', function (e) {
+        if (e.target && e.target.name === 'pick' + i && C.picks.indexOf(e.target.value) >= 0) { state.picks[i] = e.target.value; render(); }
+      });
+    });
+    $('stickyBtn').addEventListener('click', function () {
+      if (form.requestSubmit) form.requestSubmit(); else form.submit();
+    });
+
+    // Sticky bar: after the hero, hidden while the offer is on screen.
+    var sticky = $('sticky'), hero = document.querySelector('.l-hero'), offerEl = $('offer');
+    var heroGone = false, offerOn = false;
+    function sync() {
+      var show = heroGone && !offerOn;
+      if (!show && sticky.contains(document.activeElement)) $('buyBtn').focus();
+      sticky.classList.toggle('show', show);
+      sticky.inert = !show;
+      sticky.setAttribute('aria-hidden', String(!show));
+      document.body.classList.toggle('sticky-open', show);
+    }
+    window.addEventListener('scroll', function () { heroGone = hero.getBoundingClientRect().bottom < 60; sync(); }, { passive: true });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (e) { offerOn = e[e.length - 1].isIntersecting; sync(); }, { rootMargin: '0px 0px -15% 0px' }).observe(offerEl);
+    }
+    render();
+    sync();
+  })();
+  </script>
+</LanderLayout>

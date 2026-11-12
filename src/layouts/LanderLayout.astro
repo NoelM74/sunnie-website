@@ -1,0 +1,66 @@
+---
+import '@fontsource-variable/source-serif-4';
+import '@fontsource-variable/source-sans-3';
+import headingWoff2 from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url';
+import bodyWoff2 from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2?url';
+import logo from '../assets/brand/logo-wordmark.svg?raw';
+import '../styles/tokens.css';
+import '../styles/global.css';
+import '../styles/lander.css';
+import Seo from '../components/Seo.astro';
+import { site } from '../data/site';
+
+// Ad landers (/go/<slug>/): the shop's look, fonts, currency and basket, without the shop
+// menu, so the only way forward is the offer. Kept out of search: the product page is the
+// page to rank, and this one exists for paid traffic.
+interface Props { title: string; description: string; image: string; bar: string; nav: [string, string][] }
+const { title, description, image, bar, nav } = Astro.props;
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href={headingWoff2} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={bodyWoff2} as="font" type="font/woff2" crossorigin />
+    {/* Same currency pick as BaseLayout: saved choice, else a guess from the time zone. */}
+    <script is:inline>(function(){try{var d=document.documentElement,m=/(?:^|; )sunnie_cur=(EUR|GBP|USD)(?:;|$)/.exec(document.cookie),c=m&&m[1];if(!c&&/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)){d.dataset.cur='EUR';return}if(!c){var z=Intl.DateTimeFormat().resolvedOptions().timeZone||'';c=/^Europe\/(London|Belfast|Isle_of_Man|Jersey|Guernsey)$/.test(z)?'GBP':/^(America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Juneau|Sitka|Nome|Yakutat|Metlakatla|Adak|Boise|Detroit|Menominee|Puerto_Rico|Indiana\/\w+|Kentucky\/\w+|North_Dakota\/\w+)|Pacific\/Honolulu)$/.test(z)?'USD':'EUR';document.cookie='sunnie_cur='+c+';path=/;max-age=31536000;samesite=lax;secure'}d.dataset.cur=c}catch(e){}})();</script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#FBF6EE" />
+    <Seo title={title} description={description} path={Astro.url.pathname} image={image} type="product" noindex />
+  </head>
+  <body class="lander">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="l-bar">{bar} <span aria-hidden="true">|</span> <b>{site.makerLine}</b></div>
+    <header class="l-head">
+      <div class="container l-head-in">
+        <a href="/" class="brand" aria-label="Sunnie Designs home"><Fragment set:html={logo} /></a>
+        <nav class="l-nav" aria-label="On this page">
+          {nav.map(([href, label]) => <a href={href}>{label}</a>)}
+        </nav>
+        <a class="l-bag" href="/bag/">Basket</a>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer l-foot">
+      <div class="container l-foot-in">
+        <p class="footer-brand">{site.name}</p>
+        <nav aria-label="Help">
+          <a href="/shipping/">Shipping and returns</a>
+          <a href="/contact/">Contact</a>
+          <a href="/terms/">Terms</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/shop/">The full shop</a>
+        </nav>
+        <p class="small">Prices show in euro, pounds or dollars, by your location. Bundle savings compare with buying each piece at the single price. Every piece is made by hand, so stitching and colour vary a little.</p>
+        <p class="footer-legal">© {year} {site.name} is a trading name of {site.company.legalName}, CRO {site.company.cro}, {site.company.registeredOffice}, Ireland. <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a></p>
+      </div>
+    </footer>
+    <script is:inline>(function(){var d=document.documentElement;window.sunnieMoney=function(){var k=d.dataset.cur==='GBP'?'gbp':d.dataset.cur==='USD'?'usd':'';document.querySelectorAll('.money').forEach(function(m){if(!m.dataset.eur)m.dataset.eur=m.textContent;m.textContent=k?m.dataset[k]:m.dataset.eur})};window.sunnieMoney()})();</script>
+  </body>
+</html>
