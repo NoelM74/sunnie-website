@@ -11,7 +11,7 @@ import ProductGrid from '../../components/ProductGrid.astro';
 import { site } from '../../data/site';
 import { LANDER_PRODUCT_SLUGS, packFor } from '../../lib/lander-products';
 import { CATEGORY_LABELS, related } from '../../lib/products';
-import { SHIPPING_FLAT_CENTS } from '../../lib/money';
+import { SHIPPING_FLAT } from '../../lib/money';
 import FreeShippingFrom from '../../components/FreeShippingFrom.astro';
 import { Picture } from 'astro:assets';
 import huiPhoto from '../../assets/story/hui.jpg';
@@ -113,7 +113,7 @@ const lander = pack?.lander;
           <summary>Delivery and returns</summary>
           {pack
             ? <p>Made to order and shipped in {site.shipsIn} with tracking. Shipping is <Money eur={pack.shipping.eur / 100} gbpCents={pack.shipping.gbp} usdCents={pack.shipping.usd} /> for one, and free when you <a href={`/go/${pack.lander.slug}/`}>buy two or more</a>. No import charges to the EU, UK or US.</p>
-            : <p>Made to order and shipped in {site.shipsIn} with tracking. Shipping costs <Money eur={SHIPPING_FLAT_CENTS / 100} />, and it's free on orders of <FreeShippingFrom /> or more. No import charges to the EU, UK or US.</p>}
+            : <p>Made to order and shipped in {site.shipsIn} with tracking. Shipping costs <Money eur={SHIPPING_FLAT.EUR / 100} gbpCents={SHIPPING_FLAT.GBP} usdCents={SHIPPING_FLAT.USD} />, and it's free on orders of <FreeShippingFrom /> or more. No import charges to the EU, UK or US.</p>}
           <ul class="product-facts" role="list">
             {site.delivery.map((r) => <li><strong>{r.region}:</strong> {r.days} working days</li>)}
           </ul>

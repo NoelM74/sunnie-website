@@ -14,7 +14,8 @@ export interface CatalogItem {
   /** Fixed pound and dollar prices by option, instead of converting the euro price (bundle packs). */
   localPrices?: Partial<Record<'GBP' | 'USD', Record<string, number>>>;
   /** Flat shipping for this item when the order is under the free-shipping threshold, if above the shop's. */
-  shipFlatCents?: Partial<Record<'EUR' | 'GBP' | 'USD', number>>;
+  /** Options that ship free on their own (bundle packs of 2 or more). */
+  shipsFree?: string[];
 }
 export type Catalog = Record<string, CatalogItem>;
 

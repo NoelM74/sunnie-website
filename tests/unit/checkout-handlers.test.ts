@@ -38,7 +38,7 @@ describe('handlePay', () => {
     const { pp, created } = fakePaypal();
     const r = await handlePay(fd(address), bag, { currency: 'EUR', catalog, orders, paypal: pp, paypalEnv: 'sandbox', origin: 'https://sunniedesigns.com', newRef: () => 'SUN-TEST01' });
     expect(r).toEqual({ kind: 'redirect', location: 'https://paypal.test/approve?token=PP-1' });
-    expect(created[0].o).toMatchObject({ ref: 'SUN-TEST01', subtotalCents: 2995, shippingCents: 500, totalCents: 3495 });
+    expect(created[0].o).toMatchObject({ ref: 'SUN-TEST01', subtotalCents: 2995, shippingCents: 600, totalCents: 3595 });
     expect(created[0].urls).toEqual({ returnUrl: 'https://sunniedesigns.com/checkout/return/', cancelUrl: 'https://sunniedesigns.com/checkout/cancel/' });
     expect(await orders.findByPaypalId('PP-1')).toMatchObject({ ref: 'SUN-TEST01', status: 'pending' });
   });

@@ -188,3 +188,7 @@ body.sticky-open { padding-bottom: 5rem; }
   .l-marks img { width: 28px; height: 28px; }
 }
 
+@media (min-width: 40rem) { .l-colours-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 64rem) { .l-colours-4 { grid-template-columns: repeat(4, 1fr); } }
+/* Phones: the bar's two halves each get a tidy line of their own */
+@media (max-width: 30rem) { .l-bar span { display: none; } .l-bar b { display: block; } }

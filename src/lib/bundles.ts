@@ -1,5 +1,6 @@
 import type { CatalogItem } from './catalog';
 import type { Currency } from './currency';
+import { SHIPPING_FLAT } from './money';
 
 // Bundle landers (/go/<slug>/) sell one product in packs of 1, 2 or 3, with a colour
 // for each piece. The bag holds a pack as one line: a hidden catalogue item whose
@@ -9,17 +10,19 @@ import type { Currency } from './currency';
 export const BUNDLE_SIZES = [1, 2, 3] as const;
 export type BundleSize = (typeof BUNDLE_SIZES)[number];
 
+export type PriceBook = Record<Currency, Record<BundleSize, number>>;
+
 /**
  * Owner-approved price lists, set per currency rather than converted (2026-11-12).
- * One piece always pays shipping; two or more ship free under the shop's threshold.
+ * One piece pays the shop's flat shipping; a pack of two or more always ships free.
  * Checkout charges in the delivery country's currency, so these can't be mixed.
  */
 export const BUNDLE_PRICES: Record<Currency, { packs: Record<BundleSize, number>; shipping: number }> = {
-  EUR: { packs: { 1: 3995, 2: 6995, 3: 8995 }, shipping: 600 },
-  GBP: { packs: { 1: 2995, 2: 4995, 3: 6495 }, shipping: 500 },
-  USD: { packs: { 1: 3995, 2: 6995, 3: 8995 }, shipping: 600 },
+  EUR: { packs: { 1: 3995, 2: 6995, 3: 8995 }, shipping: SHIPPING_FLAT.EUR },
+  GBP: { packs: { 1: 2995, 2: 4995, 3: 6495 }, shipping: SHIPPING_FLAT.GBP },
+  USD: { packs: { 1: 3995, 2: 6995, 3: 8995 }, shipping: SHIPPING_FLAT.USD },
 };
-export const BUNDLE_EUR_CENTS = BUNDLE_PRICES.EUR.packs;
+export const STANDARD_PRICES: PriceBook = { EUR: BUNDLE_PRICES.EUR.packs, GBP: BUNDLE_PRICES.GBP.packs, USD: BUNDLE_PRICES.USD.packs };
 
 export interface BundleDef {
   /** URL slug of the lander, /go/<slug>/. */
@@ -31,7 +34,11 @@ export interface BundleDef {
   /** Colour names, in picker order. For a lander with a shop product, these match its option values. */
   picks: string[];
   maker: string;
+  /** This product's own price list. Default: STANDARD_PRICES. */
+  prices?: PriceBook;
 }
+
+export const priceBook = (def: Pick<BundleDef, 'prices'>): PriceBook => def.prices ?? STANDARD_PRICES;
 
 export const bundleSlug = (def: Pick<BundleDef, 'slug'>) => `${def.slug}-bundle`;
 
@@ -58,13 +65,14 @@ export function bundleOptionValues(def: BundleDef): string[] {
 }
 
 /** Catalogue price fields for a set of pack options, from BUNDLE_PRICES. */
-export function packPricing(values: string[], sizeOf: (v: string) => BundleSize) {
-  const book = (cur: Currency) => Object.fromEntries(values.map((v) => [v, BUNDLE_PRICES[cur].packs[sizeOf(v)]]));
+export function packPricing(values: string[], sizeOf: (v: string) => BundleSize, prices: PriceBook = STANDARD_PRICES) {
+  const book = (cur: Currency) => Object.fromEntries(values.map((v) => [v, prices[cur][sizeOf(v)]]));
   return {
-    priceCents: BUNDLE_PRICES.EUR.packs[1],
+    priceCents: prices.EUR[1],
     optionPriceCents: book('EUR'),
     localPrices: { GBP: book('GBP'), USD: book('USD') },
-    shipFlatCents: { EUR: BUNDLE_PRICES.EUR.shipping, GBP: BUNDLE_PRICES.GBP.shipping, USD: BUNDLE_PRICES.USD.shipping },
+    /** Packs of two or more ship free whatever the basket total. */
+    shipsFree: values.filter((v) => sizeOf(v) > 1),
   };
 }
 
@@ -77,7 +85,7 @@ export function bundleCatalogItem(def: BundleDef, thumb: string): CatalogItem {
     name: def.name,
     inStock: true,
     option: { name: 'Bundle', values },
-    ...packPricing(values, sizeFromOption),
+    ...packPricing(values, sizeFromOption, priceBook(def)),
     siteCheckout: true,
     thumb,
     maker: def.maker,

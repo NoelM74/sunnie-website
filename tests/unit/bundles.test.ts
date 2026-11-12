@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { BUNDLE_PRICES, bundleCatalogItem, bundleOption, bundleOptionValues, bundleSlug } from '../../src/lib/bundles';
+import { BUNDLE_PRICES, bundleCatalogItem, bundleOption, bundleOptionValues, bundleSlug, priceBook } from '../../src/lib/bundles';
 import { LANDERS } from '../../src/data/landers';
 import { priceBag } from '../../src/lib/pricing';
 import { handleBagPost } from '../../src/lib/bag-routes';
@@ -89,7 +89,7 @@ describe('shop product pages with a lander', () => {
       const values: string[] = opts ? JSON.parse(opts[1])[0].values : [''];
       if (opts) expect([...values].sort(), l.slug).toEqual([...l.picks].sort());
       else expect(l.picks, l.slug).toHaveLength(1);
-      expect(md, l.slug).toMatch(/^price: 39\.95$/m);
+      expect(md, l.slug).toMatch(new RegExp(`^price: ${(priceBook(l).EUR[1] / 100).toFixed(2)}$`, 'm'));
       const pack = packFor(l.productSlug!)!;
       for (const v of values) expect(catalog[pack.slug].option!.values).toContain(pack.optionFor[v]);
     }
@@ -130,5 +130,25 @@ describe('one page per product', () => {
     for (const l of LANDERS.filter((x) => x.productSlug)) {
       expect(redirects, l.slug).toContain(`/products/${l.productSlug}/ /go/${l.slug}/ 301`);
     }
+  });
+});
+
+describe('one shipping rate, free on packs of two or more', () => {
+  const gang = LANDERS.find((l) => l.slug === 'googly-gang')!;
+  const item = bundleCatalogItem(gang, '');
+  const cat = { [item.slug]: item };
+  it('charges the shop rate on one bag, in every currency', () => {
+    const one = bundleOption(gang, ['Sloth'])!;
+    expect(priceBag([{ slug: item.slug, option: one, qty: 1 }], cat, 'EUR')).toMatchObject({ subtotalCents: 2995, shippingCents: 600 });
+    expect(priceBag([{ slug: item.slug, option: one, qty: 1 }], cat, 'GBP')).toMatchObject({ subtotalCents: 2295, shippingCents: 500 });
+    expect(priceBag([{ slug: item.slug, option: one, qty: 1 }], cat, 'USD')).toMatchObject({ subtotalCents: 2995, shippingCents: 600 });
+  });
+  it('ships a pack of two free even under the free-shipping total', () => {
+    const two = bundleOption(gang, ['Sloth', 'Green Frog'])!;
+    expect(priceBag([{ slug: item.slug, option: two, qty: 1 }], cat, 'EUR')).toMatchObject({ subtotalCents: 4995, shippingCents: 0, freeShippingGapCents: 0 });
+    expect(priceBag([{ slug: item.slug, option: two, qty: 1 }], cat, 'GBP')).toMatchObject({ subtotalCents: 3995, shippingCents: 0 });
+  });
+  it('gives every product the same single-bag shipping', () => {
+    for (const l of LANDERS.filter((x) => x.productSlug)) expect(packFor(l.productSlug!)!.shipping, l.slug).toEqual({ eur: 600, gbp: 500, usd: 600 });
   });
 });

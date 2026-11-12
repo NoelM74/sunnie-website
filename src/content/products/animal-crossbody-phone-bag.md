@@ -1,16 +1,16 @@
 ---
-name: "Dangling-leg animal phone bag: sloth, cat, duck or frog"
-seoTitle: "Crochet animal crossbody phone bag, kawaii character purse handmade"
+name: "The Googly Gang: crochet animal crossbody phone bag"
+seoTitle: "Crochet animal crossbody phone bag: sloth, cat, duck or frog"
 category: "bags"
 group: "characters"
-price: 34.95
+price: 29.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4506899315/crochet-animal-crossbody-phone-bag"
 maker: "Hui"
 options: [{"name":"Design","values":["Sloth","Pink Cat","Yellow Duck","Green Frog"]}]
 materials: ["Polyester"]
 size: "W 12 × H 19 × D 2 cm, strap 110 cm"
-images: [{"src":"../../assets/products/animal-crossbody-phone-bag/01.jpg","alt":"Pink cat, yellow duck, sloth and green frog crochet phone bags lined up"},{"src":"../../assets/products/animal-crossbody-phone-bag/02.jpg","alt":"Brown sloth crochet crossbody phone bag with big eyes, held in a hand"},{"src":"../../assets/products/animal-crossbody-phone-bag/03.jpg","alt":"Pink cat crochet crossbody phone bag with dangling legs, held in a hand"},{"src":"../../assets/products/animal-crossbody-phone-bag/04.jpg","alt":"Animal crossbody phone bag, photo 4 of 10"},{"src":"../../assets/products/animal-crossbody-phone-bag/05.jpg","alt":"Animal crossbody phone bag, photo 5 of 10"},{"src":"../../assets/products/animal-crossbody-phone-bag/06.jpg","alt":"Animal crossbody phone bag, photo 6 of 10"},{"src":"../../assets/products/animal-crossbody-phone-bag/07.jpg","alt":"Animal crossbody phone bag, photo 7 of 10"},{"src":"../../assets/products/animal-crossbody-phone-bag/08.jpg","alt":"Animal crossbody phone bag, photo 8 of 10"},{"src":"../../assets/products/animal-crossbody-phone-bag/09.jpg","alt":"Animal crossbody phone bag, photo 9 of 10"},{"src":"../../assets/products/animal-crossbody-phone-bag/10.jpg","alt":"Animal crossbody phone bag, photo 10 of 10"}]
+images: [{"src":"../../assets/products/animal-crossbody-phone-bag/01.jpg","alt":"Pink cat, yellow duck, sloth and green frog crochet phone bags lined up"},{"src":"../../assets/products/animal-crossbody-phone-bag/02.jpg","alt":"Brown sloth crochet crossbody phone bag with big eyes, held in a hand"},{"src":"../../assets/products/animal-crossbody-phone-bag/03.jpg","alt":"Pink cat crochet crossbody phone bag with dangling legs, held in a hand"},{"src":"../../assets/products/animal-crossbody-phone-bag/04.jpg","alt":"Green frog crochet phone bag with googly eyes and a red tongue"},{"src":"../../assets/products/animal-crossbody-phone-bag/05.jpg","alt":"Yellow duck crochet phone bag with a red beak and red feet"},{"src":"../../assets/products/animal-crossbody-phone-bag/06.jpg","alt":"Frog, duck, pink cat and sloth crochet phone bags in a row"},{"src":"../../assets/products/animal-crossbody-phone-bag/07.jpg","alt":"Sloth crochet phone bag worn crossbody over a white T-shirt"},{"src":"../../assets/products/animal-crossbody-phone-bag/08.jpg","alt":"Sloth crochet phone bag worn at the hip"},{"src":"../../assets/products/animal-crossbody-phone-bag/09.jpg","alt":"Pink cat crochet phone bag worn over a cream T-shirt"},{"src":"../../assets/products/animal-crossbody-phone-bag/10.jpg","alt":"Pink cat crochet phone bag worn crossbody with long dangling legs"}]
 faq: [{"q":"Which characters are available?","a":"Pink cat, green frog, yellow duck or brown sloth, each with its own face."},{"q":"What fits inside?","a":"A phone, a few cards, keys and lip balm. It's built for the essentials, not an everything bag."},{"q":"How do I wash it?","a":"Hand wash in cool water with mild detergent, reshape gently and lay flat to dry. Do not machine wash or tumble dry, and keep the magnetic snap dry when you can."}]
 ---
 

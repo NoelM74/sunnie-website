@@ -1,7 +1,7 @@
 import type { BundleDef, BundleSize } from '../lib/bundles';
 
 // Copy and photos for the bundle landers at /go/<slug>/. Prices come from
-// BUNDLE_PRICES in src/lib/bundles.ts; shipping, dispatch and returns come from
+// the lander's own `prices`, else STANDARD_PRICES in src/lib/bundles.ts; shipping, dispatch and returns come from
 // the shop's own settings, so a lander can never promise something checkout doesn't.
 // Delivery times live on /shipping/ only.
 //
@@ -531,6 +531,105 @@ export const LANDERS: Lander[] = [
       { q: 'Which strap does it come with?', a: 'A 120 cm brown PU leather strap. It adjusts, so you can wear it crossbody, on the shoulder or carry it in your hand.' },
       kidsFaq('bag'),
       washFaq,
+      arriveFaq('bag'),
+      returnsFaq,
+    ],
+  },
+  {
+    slug: 'googly-gang',
+    productSlug: 'animal-crossbody-phone-bag',
+    name: 'The Googly Gang animal phone bag',
+    noun: ['bag', 'bags'],
+    picks: ['Sloth', 'Pink Cat', 'Yellow Duck', 'Green Frog'],
+    maker: 'Hui',
+    // Owner, 2026-11-12: a lighter bag, so a lower price list than the others.
+    prices: {
+      EUR: { 1: 2995, 2: 4995, 3: 6495 },
+      GBP: { 1: 2295, 2: 3995, 3: 4995 },
+      USD: { 1: 2995, 2: 4995, 3: 6495 },
+    },
+    title: 'Crochet Animal Phone Bag: Sloth, Cat, Duck or Frog | The Googly Gang',
+    description: 'A hand-crocheted crossbody phone bag with googly eyes and a magnetic snap. Pick a sloth, pink cat, yellow duck or green frog. Free shipping on 2 or more.',
+    og: '/go/googly-gang-og.jpg',
+    bar: 'Free shipping on 2 bags or more',
+    hero: {
+      h1: 'Meet the Googly Gang.',
+      h1em: 'One for your phone.',
+      sub: 'Four little crochet crossbody bags with big eyes and white bellies: a sloth, a pink cat, a yellow duck and a green frog. Your phone, a card and your keys go inside, and a magnetic snap keeps them there.',
+      image: { src: 'products/animal-crossbody-phone-bag/01.jpg', alt: 'Four crochet phone bags with googly eyes: a pink cat, a yellow duck, a brown sloth and a green frog' },
+      proof: { reviewer: 'Jacqueline', date: '2026-05-31' },
+    },
+    story: {
+      h: 'Small enough to forget. Too cute to ignore.',
+      paras: [
+        'Some days you don’t want a handbag. You want your phone, your card and your keys, and your hands free.',
+        'Each Googly Gang bag is just big enough for that. It hangs across your body, weighs about 100 g, and closes with a magnet, so there’s no zip to fight with.',
+      ],
+      subH: 'Why the eyes?',
+      subParas: ['Because they make people smile. Each character has its own face and its own mood, from the sleepy sloth to the cheeky frog.'],
+    },
+    fits: {
+      h: 'Made for your phone and the small stuff.',
+      lede: 'It’s a slim bag, 19 cm tall and 12 cm wide. Your phone goes in, with room for a card or two, keys and lip balm.',
+      specs: [
+        ['Size', '19 cm tall, 12 cm wide, 2 cm deep. Measured by hand, so allow 1 to 2 cm.'],
+        ['Holds', 'A phone, a few cards, keys and lip balm'],
+        ['Closes', 'Magnetic snap'],
+        ['Strap', '110 cm, long enough to wear crossbody'],
+        ['Weight', 'About 100 g'],
+        ['Made from', 'Polyester yarn'],
+        ['Care', 'Hand wash in cool water. Dry flat.'],
+      ],
+      image: { src: 'products/animal-crossbody-phone-bag/10.jpg', alt: 'Pink cat crochet phone bag worn crossbody over a cream T-shirt' },
+    },
+    colours: {
+      h: 'Meet the gang',
+      lede: 'Same size, same price. Pick your favourite, or start a collection.',
+      cards: [
+        { pick: 'Sloth', title: 'The sloth', text: 'Warm brown, with two buck teeth, little white claws and a very relaxed look.', image: { src: 'products/animal-crossbody-phone-bag/02.jpg', alt: 'Brown sloth crochet phone bag with googly eyes, buck teeth and white claws' } },
+        { pick: 'Pink Cat', title: 'The pink cat', text: 'Bright pink, with yellow eyes, whiskers and long legs that dangle as you walk.', image: { src: 'products/animal-crossbody-phone-bag/03.jpg', alt: 'Pink cat crochet phone bag with yellow eyes, whiskers and long dangling legs' } },
+        { pick: 'Yellow Duck', title: 'The yellow duck', text: 'Sunny yellow, with a red beak and red feet.', image: { src: 'products/animal-crossbody-phone-bag/05.jpg', alt: 'Yellow duck crochet phone bag with googly eyes, a red beak and red feet' } },
+        { pick: 'Green Frog', title: 'The green frog', text: 'Grass green, with a cheeky red tongue and four little legs.', image: { src: 'products/animal-crossbody-phone-bag/04.jpg', alt: 'Green frog crochet phone bag with googly eyes and a red tongue sticking out' } },
+      ],
+      note: 'Can’t choose? Three bags is half the gang, and the price per bag drops.',
+    },
+    uses: {
+      h: 'Where they go',
+      items: [
+        ['Walks and errands.', 'Phone, card, keys. That’s all you need.'],
+        ['Festivals and days out.', 'Small, light and on your front, where you can see it.'],
+        ['Gifts.', 'A friend who loves sloths, cats, ducks or frogs is easy to shop for.'],
+        ['A first bag for kids.', 'Coins, a hair clip and a few sweets have a home.'],
+        ['Teens.', 'A bag that gets noticed for the right reasons.'],
+      ],
+      images: [
+        { src: 'products/animal-crossbody-phone-bag/07.jpg', alt: 'Sloth crochet phone bag worn crossbody over a white T-shirt and jeans' },
+        { src: 'products/animal-crossbody-phone-bag/09.jpg', alt: 'Pink cat crochet phone bag worn over a cream T-shirt and white skirt' },
+        { src: 'products/animal-crossbody-phone-bag/06.jpg', alt: 'The four Googly Gang bags in a row: frog, duck, pink cat and sloth' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, one at a time.',
+      paras: [
+        'Hui crochets each bag in soft polyester yarn, then adds the face, the belly and the legs by hand.',
+        'Because a person makes them, no two are quite the same. Legs come out a little longer or shorter, and every face has its own expression.',
+      ],
+      image: { src: 'products/animal-crossbody-phone-bag/08.jpg', alt: 'Sloth crochet phone bag worn at the hip, showing its face and claws' },
+    },
+    offer: {
+      h: 'Pick your gang',
+      lede: 'We suggest two: one for you, and one for the friend who keeps sending you animal videos. Two or more ship free, and each bag costs less.',
+      flag2: 'One for you, one for a friend',
+      notes: { 1: 'Just the one, for you.', 2: 'Any two characters.', 3: 'Any three, or three of a favourite.' },
+      defaults: ['Pink Cat', 'Green Frog', 'Sloth'],
+      proof: friend,
+    },
+    reviews: [sturdy, friend, { reviewer: 'Jacqueline', date: '2026-05-31' }],
+    faq: [
+      { q: 'Will my phone fit?', a: 'Yes. The bag is 19 cm tall and 12 cm wide, so your phone goes in with room for a card and keys.' },
+      { q: 'Does it close?', a: 'Yes, with a magnetic snap. It clicks shut on its own, so there’s no zip to open.' },
+      kidsFaq('bag'),
+      { q: 'How do I wash it?', a: 'Hand wash in cool water with a mild detergent, reshape it and lay it flat to dry. Don’t put it in the machine or the dryer.' },
       arriveFaq('bag'),
       returnsFaq,
     ],

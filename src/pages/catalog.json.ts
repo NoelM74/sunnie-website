@@ -17,7 +17,6 @@ function singlePackPricing(slug: string, values: string[]) {
   const keys = values.length ? values : [''];
   return {
     localPrices: { GBP: Object.fromEntries(keys.map((k) => [k, pack.price.gbp])), USD: Object.fromEntries(keys.map((k) => [k, pack.price.usd])) },
-    shipFlatCents: { EUR: pack.shipping.eur, GBP: pack.shipping.gbp, USD: pack.shipping.usd },
     href: `/go/${pack.lander.slug}/`,
   };
 }
