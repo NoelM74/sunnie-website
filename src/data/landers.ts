@@ -28,6 +28,9 @@ export interface Lander extends BundleDef {
   per?: number;
   /** Sizes landers: what the boxes choose between, for "Get both sizes…". Default 'sizes'. */
   sizesWord?: string;
+  /** Sizes landers: 'both' (two choices and a set of both, Pearl & Daisy) or 'packs' (three growing
+   * packs, Mandala Blooms: nudges up a pack, prices per piece). Default 'both'. */
+  sizesKind?: 'both' | 'packs';
   /** Header link back to the shop. Default: ['/shop/bags/', 'All bags']. */
   shop?: [string, string];
   /** Right-hand side of the top bar. Default: "Handmade by Hui". */
@@ -1787,6 +1790,198 @@ export const LANDERS: Lander[] = [
       { q: 'What’s in the set?', a: 'One mini tote and one tall sling. The set ships free.' },
       { q: 'How do I wash it?', a: 'Hand wash in cool water with mild soap and lay it flat to dry. Wash it on its own the first time, as the black yarn can bleed a little.' },
       arriveFaq('panda'),
+      returnsFaq,
+    ],
+  },
+  {
+    slug: 'potted-roses',
+    productSlug: 'rose-flower-coaster-with-mini-basket',
+    name: 'Potted Roses coasters',
+    noun: ['pair', 'pairs'],
+    picks: ['Yellow', 'Purple', 'Pink', 'Red', 'White', 'Blue'],
+    per: 2,
+    maker: 'Hui',
+    shop: ['/shop/coasters/', 'Coasters'],
+    // Owner, 2026-11-12: sets of 2 / 4 / 6 at €29.95 / €49.95 / €69.95, each pair in one colour.
+    prices: {
+      EUR: { 1: 2995, 2: 4995, 3: 6995 },
+      GBP: { 1: 2595, 2: 4195, 3: 5895 },
+      USD: { 1: 2995, 2: 4995, 3: 6995 },
+    },
+    title: 'Crochet Rose Coasters That Fold Into a Mini Basket | Potted Roses',
+    description: 'Hand-crocheted rose coasters, 16 cm across, each with its own mini basket to fold into. Six colours, sets of 2, 4 or 6. Free shipping on 4 or more.',
+    og: '/go/potted-roses-og.jpg',
+    bar: 'Free shipping on sets of 4 or more',
+    hero: {
+      h1: 'Twelve crochet roses around a coaster,',
+      h1em: 'that folds into its own little flower pot.',
+      sub: 'Hui crochets twelve tiny roses with green leaves around a soft white coaster, 16 cm across. When you’re not using it, fold it up and tuck it into its mini basket, and it sits on the shelf like a pot of roses.',
+      image: { src: 'products/rose-flower-coaster-with-mini-basket/03.jpg', alt: 'Six crochet rose coasters folded into their mini baskets like little pots of roses, in blue, white, red, yellow, pink and purple' },
+      proof: sturdy,
+    },
+    story: {
+      h: 'A coaster that doesn’t hide in a drawer.',
+      paras: [
+        'Under a mug, it’s a ring of roses that keeps hot cups and cold glasses off the table.',
+        'Between cups, it folds into its basket and becomes a little pot of roses on the shelf. Every coaster comes with its own basket.',
+      ],
+      subH: 'How many roses?',
+      subParas: ['Twelve on every coaster, each about 3 cm across, with tiny green leaves between them.'],
+    },
+    fits: {
+      h: 'Room for a big mug.',
+      lede: 'Each coaster is 16 cm across, with a soft white centre where your mug or glass sits.',
+      specs: [
+        ['Coaster', '16 cm across, with twelve roses about 3 cm each'],
+        ['Basket', '7 cm wide and 6 cm tall, one with every coaster'],
+        ['Weight', 'About 40 g each'],
+        ['Made from', 'Acrylic yarn'],
+        ['Sizing', 'Made by hand, so allow 1 to 2 cm.'],
+        ['Care', 'Hand wash in cool or lukewarm water, below 40°C. Dry flat, out of direct sun.'],
+      ],
+      image: { src: 'products/rose-flower-coaster-with-mini-basket/04.jpg', alt: 'A yellow rose coaster lying flat, with twelve roses around its white centre' },
+    },
+    colours: {
+      h: 'Pick your colours',
+      lede: 'Six colours. Each pair comes in one colour, so a set of six can be three different colours.',
+      cards: [
+        { pick: 'Yellow', title: 'Yellow', text: 'Sunny yellow roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/04.jpg', alt: 'The yellow rose coaster' } },
+        { pick: 'Purple', title: 'Purple', text: 'Soft lilac roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/06.jpg', alt: 'The purple rose coaster' } },
+        { pick: 'Pink', title: 'Pink', text: 'Pale pink roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/07.jpg', alt: 'The pink rose coaster' } },
+        { pick: 'Red', title: 'Red', text: 'Classic red roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/05.jpg', alt: 'The red rose coaster' } },
+        { pick: 'White', title: 'White', text: 'All-white roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/08.jpg', alt: 'The white rose coaster' } },
+        { pick: 'Blue', title: 'Blue', text: 'Bright blue roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/09.jpg', alt: 'The blue rose coaster' } },
+      ],
+      note: 'Getting four or six? Mix the colours however you like.',
+    },
+    uses: {
+      h: 'Where they go',
+      items: [
+        ['Morning coffee.', 'Your mug sits inside a ring of roses.'],
+        ['Shelves.', 'Folded into their baskets, they look like little potted roses.'],
+        ['Birthdays.', 'A gift that looks like flowers and gets used every day.'],
+        ['Housewarmings.', 'Six coasters, six baskets, for a new kitchen.'],
+      ],
+      images: [
+        { src: 'products/rose-flower-coaster-with-mini-basket/01.jpg', alt: 'Six rose coasters lying flat in yellow, white, purple, blue, red and pink' },
+        { src: 'products/rose-flower-coaster-with-mini-basket/10.jpg', alt: 'Six rose coasters stacked in a rainbow of colours' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, rose by rose.',
+      paras: [
+        'Hui crochets the white centre, then twelve tiny roses and the leaves between them, and a basket to match.',
+        'Because a person makes them, no two roses curl quite the same way.',
+      ],
+      image: { src: 'products/rose-flower-coaster-with-mini-basket/07.jpg', alt: 'Close-up of the pink rose coaster, with its roses and green leaves' },
+    },
+    offer: {
+      h: 'Pick your roses',
+      lede: 'We suggest four: two to keep and two to give. Sets of four or six ship free, and each coaster costs less.',
+      flag2: 'Two to keep, two to give',
+      notes: { 1: 'One pair.', 2: 'Any two pairs.', 3: 'Any three pairs.' },
+      defaults: ['Pink', 'Yellow', 'Purple'],
+      proof: friend,
+    },
+    reviews: [friend, maria, asPictured],
+    faq: [
+      { q: 'What’s the basket for?', a: 'Fold the coaster up and tuck it inside, and it sits on the shelf like a little pot of roses. Every coaster comes with its own basket.' },
+      { q: 'Will my mug fit?', a: 'Yes. Each coaster is 16 cm across, with a soft white centre for your mug or glass.' },
+      { q: 'What’s in a set?', a: 'Sets come in pairs: two, four or six coasters, each with its basket. Pick a colour for each pair. Sets of four or six ship free.' },
+      { q: 'How do I wash them?', a: 'Hand wash in cool or lukewarm water, below 40°C, and lay them flat to dry, out of direct sun.' },
+      arriveFaq('coasters'),
+      returnsFaq,
+    ],
+  },
+  {
+    slug: 'mandala-blooms',
+    productSlug: 'flower-mandala-coaster',
+    name: 'Mandala Blooms coasters',
+    noun: ['coaster', 'coasters'],
+    picks: ['4 coasters + free basket', '6 coasters + free basket', '8 coasters + 2 free baskets'],
+    maker: 'Hui',
+    shop: ['/shop/coasters/', 'Coasters'],
+    // Owner, 2026-11-12: the listing's packs, 4 / 6 / 8 at €24.95 / €34.95 / €44.95, colours
+    // mixed by Hui. The 4-pack pays shipping; 6 and 8 ship free.
+    sizes: {
+      1: { option: '4 coasters + 1 basket', label: 'Pack of 4', pieces: 4, pick: '4 coasters + free basket', free: false },
+      2: { option: '6 coasters + 1 basket', label: 'Pack of 6', pieces: 6, pick: '6 coasters + free basket', free: true },
+      3: { option: '8 coasters + 2 baskets', label: 'Pack of 8', pieces: 8, pick: '8 coasters + 2 free baskets', free: true },
+    },
+    sizesKind: 'packs',
+    prices: {
+      EUR: { 1: 2495, 2: 3495, 3: 4495 },
+      GBP: { 1: 2195, 2: 2995, 3: 3795 },
+      USD: { 1: 2495, 2: 3495, 3: 4495 },
+    },
+    title: 'Crochet Flower Mandala Coasters with Mini Basket | Mandala Blooms',
+    description: 'Hand-crocheted flower mandala coasters in a mix of colours, with a free mini basket. Packs of 4, 6 or 8. Free shipping on 6 or more.',
+    og: '/go/mandala-blooms-og.jpg',
+    bar: 'Free shipping on packs of 6 or 8',
+    hero: {
+      h1: 'Crochet flower mandala coasters,',
+      h1em: 'in a mix of colours, with a basket to keep them in.',
+      sub: 'Hui crochets each coaster in a sunburst of white petals and tiny green leaves, with a scalloped edge in a bright colour. Every pack comes in a mix of colours, with a free crochet basket.',
+      image: { src: 'products/flower-mandala-coaster/01.jpg', alt: 'Eight crochet flower mandala coasters in yellow, purple, red, pink and blue, around a brown crochet basket' },
+      proof: sturdy,
+    },
+    story: {
+      h: 'Pretty enough to leave out.',
+      paras: [
+        'Each one is a little flower mandala: a soft centre, a ring of white petals with green leaves, and a ruffled edge in yellow, purple, pink, red or an ombre shade.',
+        'Every pack comes in a mix of colours chosen by Hui, so the table looks like a bunch of flowers.',
+      ],
+      subH: 'What’s the basket for?',
+      subParas: ['Stack the coasters inside it between cups, so they stay together and tidy. The 8-pack comes with two.'],
+    },
+    fits: {
+      h: 'Made for mugs and glasses.',
+      lede: 'The soft stitch grips the table, so a heavy mug sits steady, and it soaks up drips before they reach the wood.',
+      specs: [
+        ['Packs', '4 coasters and a basket, 6 and a basket, or 8 and two baskets'],
+        ['Colours', 'A mix from yellow, purple, pink, red and ombre shades, chosen by Hui'],
+        ['Made from', 'Polyester yarn'],
+        ['Sizing', 'Hooked by hand, one at a time, so small size differences are part of the look'],
+        ['Care', 'Hand wash gently in cool or lukewarm water, below 40°C. Press the water out in a towel and dry flat, away from direct sun.'],
+      ],
+      image: { src: 'products/flower-mandala-coaster/05.jpg', alt: 'A glass tumbler sitting on a purple flower mandala coaster' },
+    },
+    uses: {
+      h: 'Where they go',
+      items: [
+        ['The kitchen table.', 'A coaster for everyone, in different colours.'],
+        ['The nightstand.', 'For a glass of water, or your rings and earrings.'],
+        ['The desk.', 'Tea next to the laptop, and no rings on the wood.'],
+        ['Under a candle or a plant pot.', 'They work as little doilies too.'],
+      ],
+      images: [
+        { src: 'products/flower-mandala-coaster/02.jpg', alt: 'Pink, red, purple and yellow flower mandala coasters on a dark tray' },
+        { src: 'products/flower-mandala-coaster/03.jpg', alt: 'Purple, blue, yellow and pink ombre flower mandala coasters on a dark tray' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, one at a time.',
+      paras: [
+        'Hui hooks each coaster from the centre out: the soft middle, the white petals, the tiny green leaves, then the scalloped edge.',
+        'Because a person makes them, small differences in size and colour are part of the look.',
+      ],
+      image: { src: 'products/flower-mandala-coaster/04.jpg', alt: 'A stack of flower mandala coasters with a brown crochet basket on top' },
+    },
+    offer: {
+      h: 'Pick your pack',
+      lede: 'We suggest six: enough for the table, with a basket to keep them together. Packs of six or eight ship free.',
+      flag2: 'Enough for the table',
+      notes: { 1: '4 coasters and a basket.', 2: '6 coasters and a basket.', 3: '8 coasters and 2 baskets.' },
+      defaults: ['6 coasters + free basket', '6 coasters + free basket', '6 coasters + free basket'],
+      proof: friend,
+    },
+    reviews: [friend, maria, asPictured],
+    faq: [
+      { q: 'What comes in each pack?', a: 'Four coasters and a mini basket, six and a basket, or eight and two baskets.' },
+      { q: 'Can I choose the colours?', a: 'Each pack comes in a mix of colours chosen by Hui, from yellow, purple, pink, red and the ombre shades.' },
+      { q: 'What else can I use them for?', a: 'They work as little doilies under a candle or a small plant pot, or for your rings and earrings at night.' },
+      { q: 'How do I wash them?', a: 'Hand wash gently in cool or lukewarm water, below 40°C. Press the water out in a towel and lay them flat to dry, away from direct sun.' },
+      arriveFaq('coasters'),
       returnsFaq,
     ],
   },

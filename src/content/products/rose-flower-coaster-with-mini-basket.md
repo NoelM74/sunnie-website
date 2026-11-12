@@ -1,17 +1,16 @@
 ---
-name: "Rose coasters with mini baskets"
+name: "Potted Roses: crochet rose coasters with mini baskets"
 seoTitle: "Crochet rose flower coaster with mini basket, 12 roses handmade mug rug"
 category: "coasters"
 price: 29.95
 inStock: true
 etsyUrl: "https://www.etsy.com/listing/4506497053/crochet-rose-flower-coaster-with-mini"
 maker: "Hui"
-options: [{"name":"Size","values":["2 Coasters and Pots","4 Coasters and Pots","6 coasters and Pots"]}]
-optionPrices: {"2 Coasters and Pots":29.95,"4 Coasters and Pots":54.95,"6 coasters and Pots":74.95}
+options: [{"name":"Colour","values":["Yellow","Purple","Pink","Red","White","Blue"]}]
 materials: ["Acrylic"]
 size: "Ø 16 cm"
-images: [{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/01.jpg","alt":"Six crochet rose coasters in yellow, white, purple, blue, red and pink"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/02.jpg","alt":"Yellow crochet rose coaster with a mug set on top"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/03.jpg","alt":"Six crochet rose coasters folded into their mini baskets like flower pots"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/04.jpg","alt":"Rose flower coaster with mini basket, photo 4 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/05.jpg","alt":"Rose flower coaster with mini basket, photo 5 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/06.jpg","alt":"Rose flower coaster with mini basket, photo 6 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/07.jpg","alt":"Rose flower coaster with mini basket, photo 7 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/08.jpg","alt":"Rose flower coaster with mini basket, photo 8 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/09.jpg","alt":"Rose flower coaster with mini basket, photo 9 of 10"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/10.jpg","alt":"Rose flower coaster with mini basket, photo 10 of 10"}]
-faq: [{"q":"What sizes can I order?","a":"Sets of 2, 4 or 6 coasters, each with its own matching basket."},{"q":"What's the basket for?","a":"Fold the coaster up and tuck it inside to store it like a small potted flower."},{"q":"How do I wash it?","a":"Hand wash in cool or lukewarm water under 40°C, lay flat to dry and keep out of direct sunlight."}]
+images: [{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/01.jpg","alt":"Six crochet rose coasters in yellow, white, purple, blue, red and pink"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/02.jpg","alt":"Yellow crochet rose coaster with a mug set on top"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/03.jpg","alt":"Six crochet rose coasters folded into their mini baskets like flower pots"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/04.jpg","alt":"A yellow rose coaster lying flat, with twelve roses around its white centre"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/05.jpg","alt":"The red rose coaster lying flat"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/06.jpg","alt":"The purple rose coaster lying flat"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/07.jpg","alt":"The pink rose coaster lying flat"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/08.jpg","alt":"The white rose coaster lying flat"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/09.jpg","alt":"The blue rose coaster lying flat"},{"src":"../../assets/products/rose-flower-coaster-with-mini-basket/10.jpg","alt":"Six rose coasters stacked in a rainbow of colours"}]
+faq: [{"q":"What sizes can I order?","a":"Sets of 2, 4 or 6 coasters, each with its own matching basket. Pick a colour for each pair."},{"q":"What's the basket for?","a":"Fold the coaster up and tuck it inside to store it like a small potted flower."},{"q":"How do I wash it?","a":"Hand wash in cool or lukewarm water under 40°C, lay flat to dry and keep out of direct sunlight."}]
 ---
 
 Mug rings and hot glass marks are the kind of thing this rose coaster prevents, and it tucks into its own tiny basket when you are not using it.

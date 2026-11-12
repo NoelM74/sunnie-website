@@ -50,7 +50,7 @@ const money = (cents: (cur: Currency) => number) => ({
 });
 const bundlePrice = (n: BundleSize) => money((c) => local(n, c));
 const PER = l.per ?? 1;
-const perPiece = (n: BundleSize) => money((c) => Math.round(local(n, c) / (n * PER)));
+const perPiece = (n: BundleSize) => money((c) => Math.round(local(n, c) / (l.sizes ? l.sizes[n].pieces : n * PER)));
 const saving = (n: BundleSize) => money((c) => local(1, c) * n - local(n, c));
 const singleShip = money((c) => prices[c].ship[1]);
 const from = bundlePrice(1);
@@ -62,11 +62,21 @@ const pieces = (n: BundleSize) => (l.sizes ? l.sizes[n].pieces : n * PER);
 const setSaving = money((c) => local(1, c) + local(2, c) - local(3, c));
 const WORDS = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 const Noun = l.noun[0][0].toUpperCase() + l.noun[0].slice(1);
-const DEFAULT: BundleSize = l.sizes ? 3 : 2;
-const FLAG: BundleSize = l.sizes ? 3 : 2;
+const PACKS = l.sizes && l.sizesKind === 'packs';
+/** Pack icons shrink as the count grows, so eight still clear the price. */
+const markSize = (n: BundleSize) => (pieces(n) > 6 ? 17 : PER > 1 || pieces(n) > 3 ? 22 : 34);
+const DEFAULT: BundleSize = l.sizes && !PACKS ? 3 : 2;
+const FLAG: BundleSize = DEFAULT;
+/** Shown as free when the bag really charges no shipping for this box alone. */
+const shipsFreeBox = (n: BundleSize) => prices.EUR.ship[n] === 0;
 // The step-up line above the button. Must match nudge() in the page script.
 const nudge = (n: BundleSize, cur: Currency) => {
   const p = prices[cur]; const f = (c: number) => formatMoney(c, cur);
+  if (PACKS) {
+    if (n === 3) return `Best value: ${f(Math.round(p[3] / pieces(3)))} each.`;
+    const m = (n + 1) as BundleSize; const freeNext = p.ship[n] > 0 && p.ship[m] === 0;
+    return `Make it ${pieces(m)} for just ${f(p[m] - p[n] - (freeNext ? p.ship[n] : 0))} more${freeNext ? ' and shipping is free' : ''}.`;
+  }
   if (l.sizes) return n === 3 ? `You save ${f(p[1] + p[2] - p[3])} on buying both.` : `Get both ${l.sizesWord ?? 'sizes'} for ${f(p[3] - p[n] - p.ship[n])} more and shipping is free.`;
   if (n === 1) return `Add a second ${l.noun[0]} for ${f(p[2] - p[1] - p.ship[1])} more and shipping is free.`;
   if (n === 2) return `Make it ${WORDS[3 * PER]} for just ${f(p[3] - p[2])} more.`;
@@ -113,7 +123,7 @@ const jsonLd = [
 // The character's own little logo (public/go/<slug>-mark.svg): bundle cards, footer, tab icon.
 const mark = `/go/${l.slug}-mark.svg`;
 const nav: [string, string][] = [['#fits', 'What fits'], ...(l.colours ? [['#colours', 'Colours'] as [string, string]] : []), ['#craft', 'Made by hand'], ['#offer', 'Bundles'], ['#faq', 'Questions']];
-const config = { prices, picks: l.picks, noun: l.noun, per: PER, three: WORDS[3 * PER], defaults: l.offer.defaults, start: DEFAULT, cartOptions: l.sizes ? Object.fromEntries(BUNDLE_SIZES.map((n) => [n, l.sizes![n].option])) : l.cart?.options ?? null, labels: l.sizes ? Object.fromEntries(BUNDLE_SIZES.map((n) => [n, qtyLabel(n)])) : null, sizes: !!l.sizes, sizesWord: l.sizesWord ?? 'sizes' };
+const config = { prices, picks: l.picks, noun: l.noun, per: PER, three: WORDS[3 * PER], defaults: l.offer.defaults, start: DEFAULT, cartOptions: l.sizes ? Object.fromEntries(BUNDLE_SIZES.map((n) => [n, l.sizes![n].option])) : l.cart?.options ?? null, labels: l.sizes ? Object.fromEntries(BUNDLE_SIZES.map((n) => [n, qtyLabel(n)])) : null, sizes: !!l.sizes, sizesWord: l.sizesWord ?? 'sizes', packs: !!PACKS, pieces: Object.fromEntries(BUNDLE_SIZES.map((n) => [n, pieces(n)])) };
 ---
 <LanderLayout title={l.title} description={l.description} image={absoluteUrl(l.og)} jsonLd={jsonLd} bar={l.bar} barRight={l.barRight} nav={nav} mark={mark} shop={l.shop}>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -223,11 +233,15 @@ const config = { prices, picks: l.picks, noun: l.noun, per: PER, three: WORDS[3 
           return (
             <button class={`l-offer${n === DEFAULT ? ' l-best' : ''}`} type="button" data-qty={n} aria-pressed={n === DEFAULT ? 'true' : 'false'}>
               <span class="l-tick" aria-hidden="true">Selected</span>
-              <span class="l-marks" aria-hidden="true">{Array.from({ length: pieces(n) }, () => <img src={mark} alt="" width={PER > 1 ? 26 : 34} height={PER > 1 ? 26 : 34} />)}</span>
+              <span class="l-marks" aria-hidden="true">{Array.from({ length: pieces(n) }, () => <img src={mark} alt="" width={markSize(n)} height={markSize(n)} />)}</span>
               {n === FLAG && <span class="l-flag">{l.offer.flag2}</span>}
               <span class="l-qty">{qtyLabel(n)}</span>
               <span class="l-amount money" data-gbp={p.gbp} data-usd={p.usd}>{p.text}</span>
-              {l.sizes ? (
+              {PACKS ? (
+                shipsFreeBox(n)
+                  ? <span class="l-per"><span class="money" data-gbp={per.gbp} data-usd={per.usd}>{per.text}</span> each</span>
+                  : <span class="l-per">plus <span class="money" data-gbp={singleShip.gbp} data-usd={singleShip.usd}>{singleShip.text}</span> shipping</span>
+              ) : l.sizes ? (
                 n === 3
                   ? <span class="l-per">save <span class="money" data-gbp={setSaving.gbp} data-usd={setSaving.usd}>{setSaving.text}</span> on buying both</span>
                   : <span class="l-per">plus <span class="money" data-gbp={singleShip.gbp} data-usd={singleShip.usd}>{singleShip.text}</span> shipping</span>
@@ -236,7 +250,7 @@ const config = { prices, picks: l.picks, noun: l.noun, per: PER, three: WORDS[3 
               ) : (
                 <span class="l-per"><span class="money" data-gbp={per.gbp} data-usd={per.usd}>{per.text}</span> each · save <span class="money" data-gbp={save.gbp} data-usd={save.usd}>{save.text}</span></span>
               )}
-              {pieces(n) > 1 && <span class="l-free">Free shipping</span>}
+              {shipsFreeBox(n) && <span class="l-free">Free shipping</span>}
               <span class="l-onote">{l.offer.notes[n]}</span>
             </button>
           );
@@ -348,6 +362,11 @@ const config = { prices, picks: l.picks, noun: l.noun, per: PER, three: WORDS[3 
     function qtyLabel(n) { return C.labels ? C.labels[n] : C.per > 1 ? 'Set of ' + n * C.per : n + ' ' + noun(n); }
     function nudge(n) {
       var p = C.prices[cur()];
+      if (C.packs) {
+        if (n === 3) return 'Best value: ' + money(Math.round(p[3] / C.pieces[3])) + ' each.';
+        var m = n + 1, freeNext = p.ship[n] > 0 && p.ship[m] === 0;
+        return 'Make it ' + C.pieces[m] + ' for just ' + money(p[m] - p[n] - (freeNext ? p.ship[n] : 0)) + ' more' + (freeNext ? ' and shipping is free' : '') + '.';
+      }
       if (C.sizes) return n === 3 ? 'You save ' + money(p[1] + p[2] - p[3]) + ' on buying both.' : 'Get both ' + C.sizesWord + ' for ' + money(p[3] - p[n] - p.ship[n]) + ' more and shipping is free.';
       if (n === 1) return 'Add a second ' + C.noun[0] + ' for ' + money(p[2] - p[1] - p.ship[1]) + ' more and shipping is free.';
       if (n === 2) return 'Make it ' + C.three + ' for just ' + money(p[3] - p[2]) + ' more.';

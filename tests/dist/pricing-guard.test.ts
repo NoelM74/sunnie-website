@@ -1,15 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { page, productFrontmatters, readCatalog } from './helpers';
 
-// The cat, pig and bear coasters (Fruit Bellies) and the carnation mug rugs (Fold & Bloom) the doll bag (Pearl & Daisy) and the panda (Bamboo Buddies) moved to bundle pages (2026-11-12); their prices
+// The cat, pig and bear coasters (Fruit Bellies) and the carnation mug rugs (Fold & Bloom) the doll bag (Pearl & Daisy) the panda (Bamboo Buddies) and the rose and mandala coasters (Potted Roses, Mandala Blooms) moved to bundle pages (2026-11-12); their prices
 // live in src/data/landers.ts and are tested in tests/unit/bundles.test.ts.
 // Owner-supplied per-option prices (2026-10-03, Phase 1 prices 2026-10-29) for products whose option
 // values are packs or sizes. The site must charge these, never one flat price.
 const OPTION_PRICES: Record<string, Record<string, number>> = {
-  'flower-mandala-coaster': { '4 coasters + free basket': 2495, '6 coasters + free basket': 3495, '8 coasters + 2 free baskets': 4495 },
   'flower-shoulder-bag-with-flower-charm': { 'Pink Large': 3995, 'Yellow Large': 3995, 'Blue Large': 3995, 'Pink Small': 3495, 'Yellow Small': 3495, 'Blue Small': 3495 },
   'rainbow-crochet-wizard-hat': { '2–5 years -48cm brim': 2995, '5–9 years -58cm brim': 3195 },
-  'rose-flower-coaster-with-mini-basket': { '2 Coasters and Pots': 2995, '4 Coasters and Pots': 5495, '6 coasters and Pots': 7495 },
 };
 const SLUGS = Object.keys(OPTION_PRICES);
 

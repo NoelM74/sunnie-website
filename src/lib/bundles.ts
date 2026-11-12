@@ -41,7 +41,7 @@ export interface BundleDef {
    * priced from `prices` by box number. A box with 2+ pieces is a set and ships free.
    * `pick` is the matching option on the shop product page, if any.
    */
-  sizes?: Record<BundleSize, { option: string; label: string; pieces: number; pick?: string }>;
+  sizes?: Record<BundleSize, { option: string; label: string; pieces: number; pick?: string; /** Ships free on its own. Default: pieces > 1. */ free?: boolean }>;
 }
 
 export const priceBook = (def: Pick<BundleDef, 'prices'>): PriceBook => def.prices ?? STANDARD_PRICES;
@@ -94,7 +94,7 @@ function sizesPricing(def: BundleDef) {
     priceCents: Math.min(...BUNDLE_SIZES.map((n) => prices.EUR[n])),
     optionPriceCents: book('EUR'),
     localPrices: { GBP: book('GBP'), USD: book('USD') },
-    shipsFree: BUNDLE_SIZES.filter((n) => sizes[n].pieces > 1).map((n) => sizes[n].option),
+    shipsFree: BUNDLE_SIZES.filter((n) => sizes[n].free ?? sizes[n].pieces > 1).map((n) => sizes[n].option),
   };
 }
 
