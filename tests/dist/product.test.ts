@@ -46,9 +46,9 @@ describe('product pages', () => {
     expect(html).toMatch(/<img[^>]*fetchpriority="high"/);
   });
 
-  it('frog page offers its colour choices as required radios', () => {
-    const html = page('/products/frog-phone-crossbody/');
-    for (const c of ['Pink', 'Blue', 'Brown']) expect(html).toMatch(new RegExp(`type="radio"[^>]*name="option"[^>]*value="${c}"`));
+  it('a product page offers its colour choices as required radios', () => {
+    const html = page('/products/cable-knit-tote-bag/');
+    for (const c of ['Cream', 'Khaki', 'Terracotta']) expect(html).toMatch(new RegExp(`type="radio"[^>]*name="option"[^>]*value="${c}"`));
     expect(html).toMatch(/type="radio"[^>]*required/);
   });
 });

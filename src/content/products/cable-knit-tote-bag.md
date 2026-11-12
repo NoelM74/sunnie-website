@@ -5,9 +5,11 @@ category: "bags"
 group: "totes"
 price: 29.95
 inStock: true
+featured: 1
 etsyUrl: "https://www.etsy.com/listing/4501259489/cable-knit-tote-bag-aran-pattern"
 maker: "Hui"
-options: [{"name":"Colour","values":["Cream","Khaki","Terracotta"]}]
+options: [{"name":"Colour","values":["Cream","Khaki","Terracotta"]}]
+
 optionPhotos: {"Khaki":1,"Cream":2,"Terracotta":3}
 materials: ["Cable knit","Acrylic"]
 size: "W 37 × H 35 × D 5 cm, strap 27 cm"
