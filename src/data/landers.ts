@@ -777,14 +777,14 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester plush and yarn'],
         ['Care', 'Hand wash in cool water and dry flat. A little fluff may shed at first.'],
       ],
-      image: { src: 'products/fuzzy-monster-phone-bag/10.jpg', alt: 'Pink monster bag held open, with lip balm and a compact inside its mouth' },
+      image: { src: 'landers/big-mouth-monsters/yellow-phone.jpg', alt: 'Yellow monster bag lying next to a phone, showing its size' },
     },
     colours: {
       h: 'Pick your monster',
       lede: 'Same shaggy shape, two very different moods.',
       cards: [
-        { pick: 'Pink', title: 'The pink one', text: 'Pink fur, grey wings and antennae, a bright orange mouth, and green boots with purple socks.', image: { src: 'landers/big-mouth-monsters/pink-step.webp', alt: 'Pink fuzzy monster bag with grey wings, an orange mouth and green boots' } },
-        { pick: 'Yellow', title: 'The yellow one', text: 'Yellow fur, blue and white wings, rosy cheeks, a peach mouth, and one brown boot.', image: { src: 'products/fuzzy-monster-phone-bag/02.jpg', alt: 'Yellow fuzzy monster bag with blue and white wings and a peach mouth' } },
+        { pick: 'Pink', title: 'The pink one', text: 'Pink fur, grey wings and antennae, a bright orange mouth, and green boots with purple socks.', image: { src: 'landers/big-mouth-monsters/pink-worn.jpg', alt: 'Pink fuzzy monster bag on its pink braided strap, worn over a grey sweatshirt' } },
+        { pick: 'Yellow', title: 'The yellow one', text: 'Yellow fur, blue and white wings, rosy cheeks, a peach mouth, and one brown boot.', image: { src: 'landers/big-mouth-monsters/yellow-tile.jpg', alt: 'Yellow fuzzy monster bag with blue and white wings and a peach mouth, sitting by a wicker basket' } },
       ],
       note: 'Can’t choose? Take two and get one of each.',
     },
@@ -799,7 +799,6 @@ export const LANDERS: Lander[] = [
       ],
       images: [
         { src: 'landers/big-mouth-monsters/yellow-worn.jpg', alt: 'Yellow monster bag worn crossbody over a black jumper and white lace skirt' },
-        { src: 'products/fuzzy-monster-phone-bag/06.jpg', alt: 'Pink monster bag worn crossbody over a grey sweatshirt' },
         { src: 'landers/big-mouth-monsters/stairs-pair.jpg', alt: 'Pink and yellow monster bags sitting together on a stair' },
       ],
     },
@@ -809,7 +808,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets each monster by hand, then adds the fur, the wings, the antennae and the big round eyes.',
         'No two come out quite the same. The fur falls its own way, and every face has its own surprised look.',
       ],
-      image: { src: 'products/fuzzy-monster-phone-bag/05.jpg', alt: 'Yellow monster bag worn at the front, with its braided strap' },
+      image: { src: 'landers/big-mouth-monsters/yellow-held.jpg', alt: 'Yellow monster bag held up by its braided yellow strap' },
     },
     offer: {
       h: 'Pick your monsters',
