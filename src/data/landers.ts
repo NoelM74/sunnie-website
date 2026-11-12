@@ -672,7 +672,7 @@ export const LANDERS: Lander[] = [
         ['Size', '39 cm tall including his legs, 15 cm wide, 1 cm deep. Measured by hand, so allow 1 to 2 cm.'],
         ['Holds', 'Phones up to 6.7 inches, plus a card holder, keys and earbuds'],
         ['Opening', 'His open mouth. No zip or clasp.'],
-        ['Straps', 'Two in the box: a woven strap and a braided one. Both clip on with metal clasps, so you can swap them or carry him as a pouch.'],
+        ['Straps', 'Two in the box, both 120 cm: a woven strap and a braided one. Both clip on with metal clasps, so you can swap them or carry him as a pouch.'],
         ['Made from', 'Polyester yarn, faux pearl, metal clasps'],
         ['Care', 'Hand wash in cool water with mild soap. Squeeze, don’t wring, and dry flat.'],
       ],
@@ -729,7 +729,7 @@ export const LANDERS: Lander[] = [
     ],
     faq: [
       { q: 'Will my phone fit?', a: 'Yes. Phones up to 6.7 inches fit, with room for a card holder, keys and earbuds.' },
-      { q: 'Which strap does he come with?', a: 'Both: a woven strap and a braided one. They clip on with metal clasps, so you can swap them whenever you like, or take the strap off and carry him as a pouch.' },
+      { q: 'Which strap does he come with?', a: 'Both: a woven strap and a braided one, each 120 cm long. They clip on with metal clasps, so you can swap them whenever you like, or take the strap off and carry him as a pouch.' },
       mouthFaq,
       kidsFaq('frog'),
       { q: 'How do I wash him?', a: 'Hand wash in cool water with mild soap. Squeeze gently, don’t wring, and lay him flat to dry.' },
