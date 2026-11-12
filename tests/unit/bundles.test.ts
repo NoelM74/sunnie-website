@@ -104,6 +104,7 @@ describe('lander content', () => {
       for (const k of keys) expect(reviews.some((r) => r.reviewer === k.reviewer && r.date === k.date), `${l.slug}: ${k.reviewer}`).toBe(true);
       for (const p of l.offer.defaults) expect(l.picks).toContain(p);
       if (l.colours) expect(l.colours.cards.map((c) => c.pick)).toEqual(l.picks);
+      else if (l.sizes) expect(Object.values(l.sizes).flatMap((s) => (s.pick ? [s.pick] : [])).sort()).toEqual([...l.picks].sort());
       else expect(l.picks).toHaveLength(1);
     }
   });
@@ -173,5 +174,21 @@ describe('Fold & Bloom carnation coasters (sold in pairs)', () => {
     expect(priceBag([{ slug: item.slug, option: bundleOption(fb, ['Pink', 'Purple'])!, qty: 1 }], cat, 'EUR')).toMatchObject({ subtotalCents: 4495, shippingCents: 0 });
     expect(priceBag([{ slug: item.slug, option: bundleOption(fb, ['Pink', 'Purple', 'Mixed'])!, qty: 1 }], cat, 'GBP')).toMatchObject({ subtotalCents: 4995, shippingCents: 0 });
     expect(bundleOption(fb, ['Mixed', 'Pink'])).toBe('2 pairs: Pink + Mixed');
+  });
+});
+
+describe('Pearl & Daisy (sizes: small, large, or the big and little set)', () => {
+  const pd = LANDERS.find((l) => l.slug === 'pearl-and-daisy')!;
+  const item = bundleCatalogItem(pd, '');
+  const cat = { [item.slug]: item };
+  const line = (option: string) => [{ slug: item.slug, option, qty: 1 }];
+  it('keeps each size at its listing price; only the set ships free', () => {
+    expect(priceBag(line('Small, 20 cm'), cat, 'EUR')).toMatchObject({ subtotalCents: 2795, shippingCents: 600 });
+    expect(priceBag(line('Large, 28 cm'), cat, 'EUR')).toMatchObject({ subtotalCents: 3295, shippingCents: 600 });
+    expect(priceBag(line('Set: 1 large + 1 small'), cat, 'EUR')).toMatchObject({ subtotalCents: 4995, shippingCents: 0 });
+    expect(priceBag(line('Set: 1 large + 1 small'), cat, 'GBP')).toMatchObject({ subtotalCents: 4195, shippingCents: 0 });
+  });
+  it('maps the shop page sizes to the lander options', () => {
+    expect(packFor('fat-lips-girl-crossbody-phone-bag-with-daisy')!.optionFor).toEqual({ 'Small 20 x 10 cm': 'Small, 20 cm', 'Large 28 x 11 cm': 'Large, 28 cm' });
   });
 });

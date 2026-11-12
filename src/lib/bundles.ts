@@ -36,6 +36,12 @@ export interface BundleDef {
   maker: string;
   /** This product's own price list. Default: STANDARD_PRICES. */
   prices?: PriceBook;
+  /**
+   * Sell sizes instead of 1, 2 or 3 of a kind (Pearl & Daisy): each box is one bag option,
+   * priced from `prices` by box number. A box with 2+ pieces is a set and ships free.
+   * `pick` is the matching option on the shop product page, if any.
+   */
+  sizes?: Record<BundleSize, { option: string; label: string; pieces: number; pick?: string }>;
 }
 
 export const priceBook = (def: Pick<BundleDef, 'prices'>): PriceBook => def.prices ?? STANDARD_PRICES;
@@ -78,7 +84,24 @@ export function packPricing(values: string[], sizeOf: (v: string) => BundleSize,
 
 const sizeFromOption = (v: string) => Number(v.split(' ')[0]) as BundleSize;
 
+/** Catalogue fields for a sizes lander: one option per box, only sets ship free. */
+function sizesPricing(def: BundleDef) {
+  const sizes = def.sizes!;
+  const prices = priceBook(def);
+  const book = (cur: Currency) => Object.fromEntries(BUNDLE_SIZES.map((n) => [sizes[n].option, prices[cur][n]]));
+  return {
+    option: { name: 'Size', values: BUNDLE_SIZES.map((n) => sizes[n].option) },
+    priceCents: Math.min(...BUNDLE_SIZES.map((n) => prices.EUR[n])),
+    optionPriceCents: book('EUR'),
+    localPrices: { GBP: book('GBP'), USD: book('USD') },
+    shipsFree: BUNDLE_SIZES.filter((n) => sizes[n].pieces > 1).map((n) => sizes[n].option),
+  };
+}
+
 export function bundleCatalogItem(def: BundleDef, thumb: string): CatalogItem {
+  if (def.sizes) {
+    return { slug: bundleSlug(def), name: def.name, inStock: true, ...sizesPricing(def), siteCheckout: true, thumb, maker: def.maker, featured: null, href: `/go/${def.slug}/` };
+  }
   const values = bundleOptionValues(def);
   return {
     slug: bundleSlug(def),

@@ -15,7 +15,9 @@ export function packFor(productSlug: string) {
     /** Product option value → the single-pack option the bag takes ('' for a product with no options). */
     optionFor: (l.cart
       ? Object.fromEntries([...l.picks, ''].map((p) => [p, l.cart!.options[1]]))
-      : Object.fromEntries(l.picks.map((p) => [p, bundleOption(l, [p])!]))) as Record<string, string>,
+      : l.sizes
+        ? Object.fromEntries(Object.values(l.sizes).flatMap((s) => (s.pick ? [[s.pick, s.option]] : [])))
+        : Object.fromEntries(l.picks.map((p) => [p, bundleOption(l, [p])!]))) as Record<string, string>,
     price: { eur: priceBook(l).EUR[1], gbp: priceBook(l).GBP[1], usd: priceBook(l).USD[1] },
     shipping: { eur: SHIPPING_FLAT.EUR, gbp: SHIPPING_FLAT.GBP, usd: SHIPPING_FLAT.USD },
   };

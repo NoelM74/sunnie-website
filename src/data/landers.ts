@@ -1225,6 +1225,99 @@ export const LANDERS: Lander[] = [
       returnsFaq,
     ],
   },
+  {
+    slug: 'pearl-and-daisy',
+    productSlug: 'fat-lips-girl-crossbody-phone-bag-with-daisy',
+    name: 'Pearl & Daisy doll bag',
+    noun: ['bag', 'bags'],
+    picks: ['Large 28 x 11 cm', 'Small 20 x 10 cm'],
+    maker: 'Hui',
+    // Owner, 2026-11-12: one large, one small, or a set of one large + one small. Keep the
+    // listing prices: large €32.95, small €27.95; the set €49.95, shipping free.
+    sizes: {
+      1: { option: 'Small, 20 cm', label: 'Small bag', pieces: 1, pick: 'Small 20 x 10 cm' },
+      2: { option: 'Large, 28 cm', label: 'Large bag', pieces: 1, pick: 'Large 28 x 11 cm' },
+      3: { option: 'Set: 1 large + 1 small', label: 'Big & little set', pieces: 2 },
+    },
+    prices: {
+      EUR: { 1: 2795, 2: 3295, 3: 4995 },
+      GBP: { 1: 2395, 2: 2795, 3: 4195 },
+      USD: { 1: 2795, 2: 3295, 3: 4995 },
+    },
+    title: 'Crochet Doll Phone Bag with Red Lips and Pearls | Pearl & Daisy',
+    description: 'A hand-crocheted doll phone bag with big red lips, pearls and a daisy. Large 28 cm or small 20 cm, or both as a matching set that ships free.',
+    og: '/go/pearl-and-daisy-og.jpg',
+    bar: 'Free shipping on the big & little set',
+    hero: {
+      h1: 'Big red lips, pearls and a daisy,',
+      h1em: 'on a crochet bag that carries your phone.',
+      sub: 'Pick the large, 28 cm tall with room for your phone and cards, or the small, 20 cm tall, made for a phone on its own. Or get both as a matching big and little set.',
+      image: { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/03.jpg', alt: 'The large and the small crochet doll bags side by side, each with big red lips, a pearl necklace and a daisy' },
+      proof: asPictured,
+    },
+    story: {
+      h: 'Made to be noticed.',
+      paras: [
+        'She has big red pouty lips, pearl beads in her curly blonde hair and around her neck, and a daisy on her dress. Even her feet get polka-dot bows.',
+        'Hui crochets every one by hand, from her curls down to her bows.',
+      ],
+      subH: 'Why two sizes?',
+      subParas: ['The large is an everyday phone bag with room for a few extras. The small is the same doll, lighter, for days you only carry your phone. Together they make a matching pair.'],
+    },
+    fits: {
+      h: 'Two sizes, both made for your phone.',
+      lede: 'The large fits most phones with room for cards or a key. The small is snugger, made for a phone on its own.',
+      specs: [
+        ['Large', '28 cm tall, 11 cm wide, 1 cm deep, on a 105 cm strap. About 140 g.'],
+        ['Small', '20 cm tall, 10 cm wide, 1 cm deep, on a 100 cm strap. About 80 g.'],
+        ['Sizing', 'Measured by hand, so allow 1 to 3 cm.'],
+        ['Wear it', 'Over the shoulder or crossbody'],
+        ['Opening', 'Open top, no zip or clasp'],
+        ['Made from', 'Polyester yarn, faux pearls'],
+        ['Care', 'Hand wash in cool water with mild soap, reshape and dry flat. Go gently on the pearls.'],
+      ],
+      image: { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/09.jpg', alt: 'The doll bag lying next to a phone, with its long braided strap' },
+    },
+    uses: {
+      h: 'Where she goes',
+      items: [
+        ['Every day.', 'Phone in, hands free.'],
+        ['Matching days.', 'The big one for you, the little one for your daughter or your best friend.'],
+        ['Gifts.', 'For anyone who loves cute, unusual things.'],
+        ['Weekends.', 'Light enough to forget she’s there.'],
+      ],
+      images: [
+        { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/02.jpg', alt: 'The doll bag worn crossbody over a grey sweatshirt' },
+        { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/05.jpg', alt: 'The doll bag worn crossbody over a navy jumper' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, curls and all.',
+      paras: [
+        'Hui crochets each doll by hand: the curly hair, the big red lips, the dress with its stitched crosses and the legs with their bows. Then she adds the pearls and the daisy.',
+        'Because a person makes her, no two come out exactly alike.',
+      ],
+      image: { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/07.jpg', alt: 'Close-up of the thick red crochet lips, the pearl necklace and the white daisy' },
+    },
+    offer: {
+      h: 'Pick your size',
+      lede: 'One bag, or both sizes together. The big and little set ships free, and costs less than buying the two.',
+      flag2: 'Matching pair',
+      notes: { 1: 'Fits a phone.', 2: 'Fits a phone and cards.', 3: 'One large and one small.' },
+      defaults: ['Large 28 x 11 cm', 'Large 28 x 11 cm', 'Large 28 x 11 cm'],
+      proof: friend,
+    },
+    reviews: [friend, sturdy, maria],
+    faq: [
+      { q: 'Which size should I get?', a: 'The large if you carry a phone plus cards or a key. The small if it’s just your phone. Or get both as the set.' },
+      { q: 'What’s in the set?', a: 'One large bag and one small bag, the same doll in both sizes. The set ships free.' },
+      { q: 'How long is the strap?', a: 'The large comes on a 105 cm strap and the small on a 100 cm strap. Wear either over the shoulder or crossbody.' },
+      { q: 'Does it close?', a: 'No. The top is open, with no zip or clasp, so you reach straight in. On a crowded train, wear it across your front.' },
+      { q: 'How do I wash it?', a: 'Hand wash in cool water with mild soap, reshape and lay flat to dry. Go gently on the pearls.' },
+      arriveFaq('bag'),
+      returnsFaq,
+    ],
+  },
 ];
 
 export const landerBySlug = (slug: string) => LANDERS.find((l) => l.slug === slug);

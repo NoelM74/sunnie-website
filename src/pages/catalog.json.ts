@@ -14,6 +14,8 @@ export const prerender = true;
 function singlePackPricing(slug: string, values: string[]) {
   const pack = packFor(slug);
   if (!pack) return {};
+  // A sizes lander (Pearl & Daisy) prices each size differently: keep the product's own option prices.
+  if (pack.lander.sizes) return { href: `/go/${pack.lander.slug}/` };
   const keys = values.length ? values : [''];
   return {
     localPrices: { GBP: Object.fromEntries(keys.map((k) => [k, pack.price.gbp])), USD: Object.fromEntries(keys.map((k) => [k, pack.price.usd])) },
