@@ -26,17 +26,17 @@ const all = await getCollection('products');
 const rating = decimal(site.proof.etsyRating, 'de');
 const shipsIn = site.shipsIn.replace('days', 'Tagen');
 const characters = [
-  { slug: 'star-frogs', name: 'The Star Frogs', blurb: 'Ein Frosch in Latzhose, der dein Handy trägt. Rosa, Blau oder Braun.', img: 'products/frog-phone-crossbody/01.jpg' },
-  { slug: 'big-mouth-monsters', name: 'Big Mouth Monsters', blurb: 'Ein flauschiges Monster mit einem Maul für dein Handy. Rosa oder Gelb.', img: 'landers/big-mouth-monsters/pair-step.webp' },
-  { slug: 'miso-cat', name: 'Miso, die Katze', blurb: 'Eine Katze im Pullover für Schlüssel und Lippenpflege. Schwarz, Braun oder Gelb.', img: 'products/cat-crossbody-bag-with-dangling-legs/01.webp' },
-  { slug: 'snout-and-about', name: 'Snout & About', blurb: 'Ein weicher kleiner Hund, der dein Handy trägt. Schnauzer, Welpe oder Terrier.', img: 'landers/snout-and-about/life-4.webp' },
+  { slug: 'star-frogs', name: 'The Star Frogs', blurb: 'Ein Frosch in Latzhose, der dein Handy trägt. Rosa, Blau oder Braun.', img: 'products/frog-phone-crossbody/frog-phone-crossbody-01.jpg' },
+  { slug: 'big-mouth-monsters', name: 'Big Mouth Monsters', blurb: 'Ein flauschiges Monster mit einem Maul für dein Handy. Rosa oder Gelb.', img: 'landers/big-mouth-monsters/big-mouth-monsters-pair-step.webp' },
+  { slug: 'miso-cat', name: 'Miso, die Katze', blurb: 'Eine Katze im Pullover für Schlüssel und Lippenpflege. Schwarz, Braun oder Gelb.', img: 'products/cat-crossbody-bag-with-dangling-legs/cat-crossbody-bag-with-dangling-legs-01.webp' },
+  { slug: 'snout-and-about', name: 'Snout & About', blurb: 'Ein weicher kleiner Hund, der dein Handy trägt. Schnauzer, Welpe oder Terrier.', img: 'landers/snout-and-about/snout-and-about-life-4.webp' },
 ].map((c) => ({ ...c, href: `/de/go/${c.slug}/`, mark: `/go/${c.slug}-mark.svg`, book: priceBook(landerBySlug(c.slug)!) }));
 const two = BUNDLE_PRICES.EUR.packs[2] / 100;
 const best = featured(all).filter((p) => !LANDER_PRODUCT_SLUGS.includes(p.id) && hasGerman(p.id));
-const hero = { href: '/de/go/snout-and-about/', img: landerImage('landers/snout-and-about/trio.webp'), alt: 'Drei weiche gehäkelte Hundetaschen auf einem Holzregal: ein grauer Schnauzer, ein beiger Welpe und ein weißer Terrier' };
+const hero = { href: '/de/go/snout-and-about/', img: landerImage('landers/snout-and-about/snout-and-about-trio.webp'), alt: 'Drei weiche gehäkelte Hundetaschen auf einem Holzregal: ein grauer Schnauzer, ein beiger Welpe und ein weißer Terrier' };
 const coaster = all.find((p) => p.id === 'sunflower-coasters-set-of-4')!;
 const tiles = [
-  { label: 'Taschen', href: '/de/shop/taschen/', img: landerImage('landers/finn-in-the-hood/life-3.webp') },
+  { label: 'Taschen', href: '/de/shop/taschen/', img: landerImage('landers/finn-in-the-hood/finn-in-the-hood-life-3.webp') },
   { label: 'Untersetzer', href: '/de/shop/untersetzer/', img: coaster.data.images[0].src },
 ];
 const free = `${formatMoney(FREE_SHIPPING_FROM.EUR, 'EUR', 'de')} (${formatMoney(FREE_SHIPPING_FROM.GBP, 'GBP', 'de')} oder ${formatMoney(FREE_SHIPPING_FROM.USD, 'USD', 'de')})`;

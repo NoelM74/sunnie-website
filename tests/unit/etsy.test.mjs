@@ -97,7 +97,7 @@ describe('toProduct and toMarkdown', () => {
   it('renders YAML frontmatter with relative image paths', () => {
     const md = toMarkdown(toProduct(row(), { featured: 2 }), 'poodle-crossbody-bag');
     expect(md.startsWith('---\nname: "Poodle crossbody bag"\n')).toBe(true);
-    expect(md).toContain('"src":"../../assets/products/poodle-crossbody-bag/01.jpg"');
+    expect(md).toContain('"src":"../../assets/products/poodle-crossbody-bag/poodle-crossbody-bag-01.jpg"');
     expect(md).toContain('featured: 2');
     expect(md).toContain('\n---\n\nFluffy poodle.');
   });

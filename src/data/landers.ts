@@ -109,7 +109,7 @@ export const LANDERS: Lander[] = [
       h1: 'A hand-crocheted frog that carries',
       h1em: 'your phone, hands-free.',
       sub: 'Drop your phone in his mouth and go. Your hands stay free, and your phone stays where you can reach it. Finn is 39 cm of hand-crocheted frog in dungarees, with a sewn-on shamrock and two straps in the box.',
-      image: { src: 'landers/finn-the-shamrock/finn-frog-bag-phone-closeup-1400.webp', alt: 'A hand dropping a phone in a cream case into the yellow mouth of Finn, a green crocheted frog bag in dungarees' },
+      image: { src: 'landers/finn-the-shamrock/finn-the-shamrock-finn-frog-bag-phone-closeup-1400.webp', alt: 'A hand dropping a phone in a cream case into the yellow mouth of Finn, a green crocheted frog bag in dungarees' },
       proof: { reviewer: 'hexfeather', date: '2026-09-25' },
     },
     story: {
@@ -136,7 +136,7 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Soft polyester yarn, wooden buttons, faux pearl'],
         ['Care', 'Hand wash up to 40°C. Dry flat, out of strong sun.'],
       ],
-      image: { src: 'landers/finn-the-shamrock/finn-frog-bag-held-front-900.webp', alt: 'Finn the frog bag held out in front, a phone tucked in his yellow mouth, showing his dungarees, shamrock and long legs' },
+      image: { src: 'landers/finn-the-shamrock/finn-the-shamrock-finn-frog-bag-held-front-900.webp', alt: 'Finn the frog bag held out in front, a phone tucked in his yellow mouth, showing his dungarees, shamrock and long legs' },
     },
     uses: {
       h: 'Where Finn goes',
@@ -156,7 +156,7 @@ export const LANDERS: Lander[] = [
         'The maker crochets his body and his yellow mouth first. Then his dungarees, with cream edging along every seam. The shamrock is a separate piece, sewn to his chest with a faux pearl at the centre. Two wooden buttons hold his straps. Look close and they read “Handmade with love”.',
         'Because a person makes him, no two frogs match exactly. The stitch tension and the angle of the shamrock change a little from one to the next. Yours is his own frog.',
       ],
-      image: { src: 'landers/finn-the-shamrock/finn-frog-bag-worn-crossbody-900.webp', alt: 'Finn the frog bag worn across the body on a green crocheted strap, with long dangling arms and legs and a shamrock on his dungarees' },
+      image: { src: 'landers/finn-the-shamrock/finn-the-shamrock-finn-frog-bag-worn-crossbody-900.webp', alt: 'Finn the frog bag worn across the body on a green crocheted strap, with long dangling arms and legs and a shamrock on his dungarees' },
     },
     offer: {
       h: 'Pick your frogs',
@@ -199,7 +199,7 @@ export const LANDERS: Lander[] = [
       h1: 'A frog in a hoodie.',
       h1em: 'His mouth is the bag.',
       sub: 'Your phone, keys and lip balm go in his big red mouth. No zip, no clasp, no rummaging. Finn is 27 cm of hand-crocheted frog in a pointed hood and a little vest, with long legs that swing as you walk.',
-      image: { src: 'landers/finn-in-the-hood/duo.jpg', alt: 'Two crocheted frog bags side by side on a shelf: one in a yellow hood and orange vest, one in a blue hood and vest, both with red mouths and long dangling legs' },
+      image: { src: 'landers/finn-in-the-hood/finn-in-the-hood-duo.jpg', alt: 'Two crocheted frog bags side by side on a shelf: one in a yellow hood and orange vest, one in a blue hood and vest, both with red mouths and long dangling legs' },
       proof: { reviewer: 'Nicola', date: '2026-07-22' },
     },
     story: {
@@ -224,14 +224,14 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester yarn, with red buttons on his vest'],
         ['Care', 'Hand wash up to 40°C. Dry flat, out of strong sun.'],
       ],
-      image: { src: 'landers/finn-in-the-hood/opening.webp', alt: 'Fingers holding Finn’s thick red mouth rim open to show the green crochet inside' },
+      image: { src: 'landers/finn-in-the-hood/finn-in-the-hood-opening.webp', alt: 'Fingers holding Finn’s thick red mouth rim open to show the green crochet inside' },
     },
     colours: {
       h: 'Pick his hoodie',
       lede: 'Same frog, two outfits. Both have a green body, a cream belly and a thick red mouth.',
       cards: [
-        { pick: 'Yellow', title: 'Sunny yellow', text: 'Pointed yellow hood, orange vest with yellow sleeves and a yellow pocket. Bright enough to find in any crowd.', image: { src: 'landers/finn-in-the-hood/frog-sunny.webp', alt: 'Finn in yellow: a green crocheted frog in a pointed yellow hood and an orange vest with yellow sleeves' } },
-        { pick: 'Blue', title: 'Blue and cream', text: 'Blue hood and vest, with cream sleeves and a cream pocket. The calmer one, and easy with jeans.', image: { src: 'landers/finn-in-the-hood/frog-blue.jpg', alt: 'Finn in blue: a green crocheted frog in a blue hood and vest with cream sleeves and pocket' } },
+        { pick: 'Yellow', title: 'Sunny yellow', text: 'Pointed yellow hood, orange vest with yellow sleeves and a yellow pocket. Bright enough to find in any crowd.', image: { src: 'landers/finn-in-the-hood/finn-in-the-hood-frog-sunny.webp', alt: 'Finn in yellow: a green crocheted frog in a pointed yellow hood and an orange vest with yellow sleeves' } },
+        { pick: 'Blue', title: 'Blue and cream', text: 'Blue hood and vest, with cream sleeves and a cream pocket. The calmer one, and easy with jeans.', image: { src: 'landers/finn-in-the-hood/finn-in-the-hood-frog-blue.jpg', alt: 'Finn in blue: a green crocheted frog in a blue hood and vest with cream sleeves and pocket' } },
       ],
       note: 'Can’t choose? Take two and get one of each.',
     },
@@ -245,9 +245,9 @@ export const LANDERS: Lander[] = [
         ['The frog person in your family.', 'Every family has one. Now they have the bag.'],
       ],
       images: [
-        { src: 'landers/finn-in-the-hood/life-1.webp', alt: 'Blue Finn worn crossbody over a black knit jumper' },
-        { src: 'landers/finn-in-the-hood/life-3.webp', alt: 'Yellow Finn worn over a navy hoodie' },
-        { src: 'landers/finn-in-the-hood/gift.webp', alt: 'Yellow Finn hanging by his strap from a cream door handle' },
+        { src: 'landers/finn-in-the-hood/finn-in-the-hood-life-1.webp', alt: 'Blue Finn worn crossbody over a black knit jumper' },
+        { src: 'landers/finn-in-the-hood/finn-in-the-hood-life-3.webp', alt: 'Yellow Finn worn over a navy hoodie' },
+        { src: 'landers/finn-in-the-hood/finn-in-the-hood-gift.webp', alt: 'Yellow Finn hanging by his strap from a cream door handle' },
       ],
     },
     craft: {
@@ -256,7 +256,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets every Finn by hand, stitch by stitch: the green body and cream belly, the hood, the little vest with its patch pocket and red buttons, and the long legs that hang loose.',
         'Because a person makes him, no two frogs come out exactly alike. The hood sits at its own angle and the stitches vary a little. That’s how you know he wasn’t printed in a factory.',
       ],
-      image: { src: 'landers/finn-in-the-hood/craft.webp', alt: 'Close-up of the orange vest on yellow Finn, with its yellow patch pocket, red buttons and the red mouth rim above' },
+      image: { src: 'landers/finn-in-the-hood/finn-in-the-hood-craft.webp', alt: 'Close-up of the orange vest on yellow Finn, with its yellow patch pocket, red buttons and the red mouth rim above' },
     },
     offer: {
       h: 'Pick your frogs',
@@ -291,7 +291,7 @@ export const LANDERS: Lander[] = [
       h1: 'A cat in a sweater',
       h1em: 'that carries your keys.',
       sub: 'Miso is a hand-crocheted cat bag with big round eyes, a wide-open mouth and long legs that dangle as you walk. Keys, lip balm and earbuds go in his mouth. Pick black, brown or yellow, each in his own sweater.',
-      image: { src: 'products/cat-crossbody-bag-with-dangling-legs/01.webp', alt: 'Three crochet cat bags on a wooden shelf: black in a pink sweater, yellow in a blue sweater and brown in a striped sweater' },
+      image: { src: 'products/cat-crossbody-bag-with-dangling-legs/cat-crossbody-bag-with-dangling-legs-01.webp', alt: 'Three crochet cat bags on a wooden shelf: black in a pink sweater, yellow in a blue sweater and brown in a striped sweater' },
       proof: sturdy,
     },
     story: {
@@ -314,15 +314,15 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester yarn'],
         ['Care', 'Hand wash up to 40°C. Dry flat, out of strong sun.'],
       ],
-      image: { src: 'products/cat-crossbody-bag-with-dangling-legs/08.webp', alt: 'Brown Miso open, with his wide orange mouth holding earbuds and a compact' },
+      image: { src: 'products/cat-crossbody-bag-with-dangling-legs/cat-crossbody-bag-with-dangling-legs-08.webp', alt: 'Brown Miso open, with his wide orange mouth holding earbuds and a compact' },
     },
     colours: {
       h: 'Three cats, three sweaters',
       lede: 'Every Miso has the same cheeky face. The sweater is what makes him yours.',
       cards: [
-        { pick: 'Black Cat', title: 'Black in pink', text: 'Pink sweater with a little blue fish, and an orange mouth. Sharp against a camel coat.', image: { src: 'landers/miso-cat/cat-black.webp', alt: 'Black Miso in a pink sweater with a blue fish' } },
-        { pick: 'Brown Cat', title: 'Brown in stripes', text: 'Cream and tan striped sweater with a tiny yellow face on the chest, and an orange mouth. Cosy with knitwear.', image: { src: 'landers/miso-cat/cat-brown.webp', alt: 'Brown Miso in a cream and tan striped sweater with a tiny yellow face' } },
-        { pick: 'Yellow Cat', title: 'Yellow in blue', text: 'Blue sweater with a small pink fish, and a pink mouth. The sunny one.', image: { src: 'landers/miso-cat/cat-yellow.webp', alt: 'Yellow Miso in a blue sweater with a pink fish' } },
+        { pick: 'Black Cat', title: 'Black in pink', text: 'Pink sweater with a little blue fish, and an orange mouth. Sharp against a camel coat.', image: { src: 'landers/miso-cat/miso-cat-cat-black.webp', alt: 'Black Miso in a pink sweater with a blue fish' } },
+        { pick: 'Brown Cat', title: 'Brown in stripes', text: 'Cream and tan striped sweater with a tiny yellow face on the chest, and an orange mouth. Cosy with knitwear.', image: { src: 'landers/miso-cat/miso-cat-cat-brown.webp', alt: 'Brown Miso in a cream and tan striped sweater with a tiny yellow face' } },
+        { pick: 'Yellow Cat', title: 'Yellow in blue', text: 'Blue sweater with a small pink fish, and a pink mouth. The sunny one.', image: { src: 'landers/miso-cat/miso-cat-cat-yellow.webp', alt: 'Yellow Miso in a blue sweater with a pink fish' } },
       ],
       note: 'Can’t pick? Take three and get one of each.',
     },
@@ -336,9 +336,9 @@ export const LANDERS: Lander[] = [
         ['Birthdays for cat people.', 'You already know exactly who.'],
       ],
       images: [
-        { src: 'landers/miso-cat/life-4.webp', alt: 'Black Miso worn crossbody over a long beige trench coat' },
-        { src: 'landers/miso-cat/life-2.webp', alt: 'Brown Miso worn over an oatmeal jumper' },
-        { src: 'landers/miso-cat/life-6.webp', alt: 'Yellow Miso worn on a striped shirt' },
+        { src: 'landers/miso-cat/miso-cat-life-4.webp', alt: 'Black Miso worn crossbody over a long beige trench coat' },
+        { src: 'landers/miso-cat/miso-cat-life-2.webp', alt: 'Brown Miso worn over an oatmeal jumper' },
+        { src: 'landers/miso-cat/miso-cat-life-6.webp', alt: 'Yellow Miso worn on a striped shirt' },
       ],
     },
     craft: {
@@ -347,7 +347,7 @@ export const LANDERS: Lander[] = [
         'There is no factory and no mould. Hui crochets each Miso stitch by stitch: his face and big round eyes, the sweater with its fish or stripes, and the long arms and legs that hang loose.',
         'Because a person makes him, no two cats are exactly alike. The eyes sit at slightly different angles, and each one looks cheeky in his own way.',
       ],
-      image: { src: 'landers/miso-cat/craft.webp', alt: 'A hand holding the finished brown Miso, showing his striped sweater and strap' },
+      image: { src: 'landers/miso-cat/miso-cat-craft.webp', alt: 'A hand holding the finished brown Miso, showing his striped sweater and strap' },
     },
     offer: {
       h: 'Pick your cats',
@@ -382,7 +382,7 @@ export const LANDERS: Lander[] = [
       h1: 'A soft little dog',
       h1em: 'that carries your phone.',
       sub: 'Your phone goes in, his puffy nose points out, and your hands stay free. Hand-crocheted in fluffy plush yarn as a grey schnauzer, a beige puppy or a white terrier, on a brown adjustable strap.',
-      image: { src: 'landers/snout-and-about/trio.webp', alt: 'Three plush crochet dog bags on a wooden shelf: a grey schnauzer, a beige puppy and a white terrier' },
+      image: { src: 'landers/snout-and-about/snout-and-about-trio.webp', alt: 'Three plush crochet dog bags on a wooden shelf: a grey schnauzer, a beige puppy and a white terrier' },
       proof: { reviewer: 'Jacqueline', date: '2026-05-31' },
     },
     story: {
@@ -405,15 +405,15 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester plush yarn, PU strap'],
         ['Care', 'Hand wash up to 40°C. Dry flat, out of strong sun.'],
       ],
-      image: { src: 'landers/snout-and-about/inside.webp', alt: 'The beige puppy bag on a grey coat with a phone and its brown strap' },
+      image: { src: 'landers/snout-and-about/snout-and-about-inside.webp', alt: 'The beige puppy bag on a grey coat with a phone and its brown strap' },
     },
     colours: {
       h: 'A schnauzer, a puppy or a terrier',
       lede: 'Three dogs, all the same price. Mix them however you like.',
       cards: [
-        { pick: 'Grey Schnauzer', title: 'Grey schnauzer', text: 'Grey with cream eyebrows and a white muzzle. Looks serious, isn’t.', image: { src: 'landers/snout-and-about/dog-grey.webp', alt: 'Grey schnauzer bag with cream eyebrows and a puffy black nose' } },
-        { pick: 'Beige Puppy', title: 'Beige puppy', text: 'Golden beige with long floppy ears. The one everybody wants to pat.', image: { src: 'landers/snout-and-about/dog-beige.webp', alt: 'Beige puppy bag with long floppy ears' } },
-        { pick: 'White Terrier', title: 'White terrier', text: 'Fluffy white with pink ears and a big black nose. Bright against a dark coat.', image: { src: 'landers/snout-and-about/dog-white.webp', alt: 'White terrier bag with pink ears and a black nose' } },
+        { pick: 'Grey Schnauzer', title: 'Grey schnauzer', text: 'Grey with cream eyebrows and a white muzzle. Looks serious, isn’t.', image: { src: 'landers/snout-and-about/snout-and-about-dog-grey.webp', alt: 'Grey schnauzer bag with cream eyebrows and a puffy black nose' } },
+        { pick: 'Beige Puppy', title: 'Beige puppy', text: 'Golden beige with long floppy ears. The one everybody wants to pat.', image: { src: 'landers/snout-and-about/snout-and-about-dog-beige.webp', alt: 'Beige puppy bag with long floppy ears' } },
+        { pick: 'White Terrier', title: 'White terrier', text: 'Fluffy white with pink ears and a big black nose. Bright against a dark coat.', image: { src: 'landers/snout-and-about/snout-and-about-dog-white.webp', alt: 'White terrier bag with pink ears and a black nose' } },
       ],
       note: 'Can’t pick? Take three and get one of each.',
     },
@@ -427,9 +427,9 @@ export const LANDERS: Lander[] = [
         ['A gift for a dog lover.', 'Especially one whose own dog looks just like him.'],
       ],
       images: [
-        { src: 'landers/snout-and-about/life-1.webp', alt: 'Beige puppy bag worn crossbody over a cream cable-knit jumper' },
-        { src: 'landers/snout-and-about/life-4.webp', alt: 'White terrier bag worn crossbody over a brown jumper' },
-        { src: 'landers/snout-and-about/life-2.webp', alt: 'Grey schnauzer bag worn over a long beige coat' },
+        { src: 'landers/snout-and-about/snout-and-about-life-1.webp', alt: 'Beige puppy bag worn crossbody over a cream cable-knit jumper' },
+        { src: 'landers/snout-and-about/snout-and-about-life-4.webp', alt: 'White terrier bag worn crossbody over a brown jumper' },
+        { src: 'landers/snout-and-about/snout-and-about-life-2.webp', alt: 'Grey schnauzer bag worn over a long beige coat' },
       ],
     },
     craft: {
@@ -438,7 +438,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets every dog by hand in plush yarn, then gives him his puffy nose and eyes. The schnauzer gets his cream eyebrows, the puppy his floppy ears.',
         'Because a person makes him, no two dogs come out quite the same. The fluff falls its own way, and every face has its own expression.',
       ],
-      image: { src: 'landers/snout-and-about/detail.webp', alt: 'Close-up of the soft plush yarn and the knotted brown strap' },
+      image: { src: 'landers/snout-and-about/snout-and-about-detail.webp', alt: 'Close-up of the soft plush yarn and the knotted brown strap' },
     },
     offer: {
       h: 'Pick your dogs',
@@ -473,7 +473,7 @@ export const LANDERS: Lander[] = [
       h1: 'Dressed for a party,',
       h1em: 'made to carry your phone.',
       sub: 'The Party Animals are soft plush crochet bags: a puppy in a party hat with a strawberry cake, a bear with a plate of cookies, and a cat in her best polka-dot bow. Your phone, keys and lip balm go inside.',
-      image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/01.jpg', alt: 'Three fluffy crochet bags on a wooden shelf: a white puppy, a yellow bear and a brown cat' },
+      image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/plush-crossbody-bag-puppy-bear-cat-01.jpg', alt: 'Three fluffy crochet bags on a wooden shelf: a white puppy, a yellow bear and a brown cat' },
       proof: { reviewer: 'Jacqueline', date: '2026-05-31' },
     },
     story: {
@@ -496,15 +496,15 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester plush yarn, PU leather strap'],
         ['Care', 'Hand wash up to 40°C. Dry flat, out of strong sun.'],
       ],
-      image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/13.jpg', alt: 'The puppy bag open, holding a phone, a wallet and a compact' },
+      image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/plush-crossbody-bag-puppy-bear-cat-13.jpg', alt: 'The puppy bag open, holding a phone, a wallet and a compact' },
     },
     colours: {
       h: 'Meet the guests',
       lede: 'Same size, same price. Pick a favourite, or bring the whole party.',
       cards: [
-        { pick: 'White Puppy', title: 'The puppy', text: 'White plush, long black floppy ears, a blue party hat and a tiny strawberry cake.', image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/02.jpg', alt: 'White puppy bag with black floppy ears, a blue party hat and a strawberry cake' } },
-        { pick: 'Yellow Bear', title: 'The bear', text: 'Buttery yellow, with a striped party hat and a little plate of chocolate cookies.', image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/06.jpg', alt: 'Yellow bear bag in a striped party hat, holding a plate of cookies, worn over a black jumper' } },
-        { pick: 'Brown Cat', title: 'The cat', text: 'Soft brown plush, whiskers, and a brown-and-white polka-dot bow.', image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/09.jpg', alt: 'Brown cat bag with a polka-dot bow, held up by its strap' } },
+        { pick: 'White Puppy', title: 'The puppy', text: 'White plush, long black floppy ears, a blue party hat and a tiny strawberry cake.', image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/plush-crossbody-bag-puppy-bear-cat-02.jpg', alt: 'White puppy bag with black floppy ears, a blue party hat and a strawberry cake' } },
+        { pick: 'Yellow Bear', title: 'The bear', text: 'Buttery yellow, with a striped party hat and a little plate of chocolate cookies.', image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/plush-crossbody-bag-puppy-bear-cat-06.jpg', alt: 'Yellow bear bag in a striped party hat, holding a plate of cookies, worn over a black jumper' } },
+        { pick: 'Brown Cat', title: 'The cat', text: 'Soft brown plush, whiskers, and a brown-and-white polka-dot bow.', image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/plush-crossbody-bag-puppy-bear-cat-09.jpg', alt: 'Brown cat bag with a polka-dot bow, held up by its strap' } },
       ],
       note: 'Can’t pick? Three bags, one of each, is the whole party.',
     },
@@ -518,9 +518,9 @@ export const LANDERS: Lander[] = [
         ['Teens.', 'A bag that stands out at school, in a good way.'],
       ],
       images: [
-        { src: 'products/plush-crossbody-bag-puppy-bear-cat/03.jpg', alt: 'Puppy bag worn crossbody over a beige sweatshirt' },
-        { src: 'products/plush-crossbody-bag-puppy-bear-cat/08.jpg', alt: 'Bear bag worn over a black jumper' },
-        { src: 'products/plush-crossbody-bag-puppy-bear-cat/11.jpg', alt: 'Cat bag worn crossbody over a cream jumper' },
+        { src: 'products/plush-crossbody-bag-puppy-bear-cat/plush-crossbody-bag-puppy-bear-cat-03.jpg', alt: 'Puppy bag worn crossbody over a beige sweatshirt' },
+        { src: 'products/plush-crossbody-bag-puppy-bear-cat/plush-crossbody-bag-puppy-bear-cat-08.jpg', alt: 'Bear bag worn over a black jumper' },
+        { src: 'products/plush-crossbody-bag-puppy-bear-cat/plush-crossbody-bag-puppy-bear-cat-11.jpg', alt: 'Cat bag worn crossbody over a cream jumper' },
       ],
     },
     craft: {
@@ -529,7 +529,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets each Party Animal by hand in plush yarn, then adds the face, the ears and the little extras: the puppy’s cake, the bear’s cookies, the cat’s bow.',
         'Because a person makes them, no two come out quite the same. The fluff falls its own way, and every face has its own expression.',
       ],
-      image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/12.jpg', alt: 'The cat bag worn at the side, showing its whiskers and bow' },
+      image: { src: 'products/plush-crossbody-bag-puppy-bear-cat/plush-crossbody-bag-puppy-bear-cat-12.jpg', alt: 'The cat bag worn at the side, showing its whiskers and bow' },
     },
     offer: {
       h: 'Pick your party',
@@ -570,7 +570,7 @@ export const LANDERS: Lander[] = [
       h1: 'Your phone, card and keys,',
       h1em: 'carried by a little crochet critter.',
       sub: 'Pick a sloth, a pink cat, a yellow duck or a green frog. Each one is a little crossbody bag, crocheted by hand, that holds the essentials, clicks shut with a magnet and leaves your hands free.',
-      image: { src: 'products/animal-crossbody-phone-bag/01.jpg', alt: 'Four crochet phone bags with googly eyes: a pink cat, a yellow duck, a brown sloth and a green frog' },
+      image: { src: 'products/animal-crossbody-phone-bag/animal-crossbody-phone-bag-01.jpg', alt: 'Four crochet phone bags with googly eyes: a pink cat, a yellow duck, a brown sloth and a green frog' },
       proof: { reviewer: 'Jacqueline', date: '2026-05-31' },
     },
     story: {
@@ -594,16 +594,16 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester yarn'],
         ['Care', 'Hand wash in cool water. Dry flat.'],
       ],
-      image: { src: 'products/animal-crossbody-phone-bag/10.jpg', alt: 'Pink cat crochet phone bag worn crossbody over a cream T-shirt' },
+      image: { src: 'products/animal-crossbody-phone-bag/animal-crossbody-phone-bag-10.jpg', alt: 'Pink cat crochet phone bag worn crossbody over a cream T-shirt' },
     },
     colours: {
       h: 'Meet the gang',
       lede: 'Same size, same price. Pick your favourite, or start a collection.',
       cards: [
-        { pick: 'Sloth', title: 'The sloth', text: 'Warm brown, with two buck teeth, little white claws and a very relaxed look.', image: { src: 'products/animal-crossbody-phone-bag/02.jpg', alt: 'Brown sloth crochet phone bag with googly eyes, buck teeth and white claws' } },
-        { pick: 'Pink Cat', title: 'The pink cat', text: 'Bright pink, with yellow eyes, whiskers and long legs that dangle as you walk.', image: { src: 'products/animal-crossbody-phone-bag/03.jpg', alt: 'Pink cat crochet phone bag with yellow eyes, whiskers and long dangling legs' } },
-        { pick: 'Yellow Duck', title: 'The yellow duck', text: 'Sunny yellow, with a red beak and red feet.', image: { src: 'products/animal-crossbody-phone-bag/05.jpg', alt: 'Yellow duck crochet phone bag with googly eyes, a red beak and red feet' } },
-        { pick: 'Green Frog', title: 'The green frog', text: 'Grass green, with a cheeky red tongue and four little legs.', image: { src: 'products/animal-crossbody-phone-bag/04.jpg', alt: 'Green frog crochet phone bag with googly eyes and a red tongue sticking out' } },
+        { pick: 'Sloth', title: 'The sloth', text: 'Warm brown, with two buck teeth, little white claws and a very relaxed look.', image: { src: 'products/animal-crossbody-phone-bag/animal-crossbody-phone-bag-02.jpg', alt: 'Brown sloth crochet phone bag with googly eyes, buck teeth and white claws' } },
+        { pick: 'Pink Cat', title: 'The pink cat', text: 'Bright pink, with yellow eyes, whiskers and long legs that dangle as you walk.', image: { src: 'products/animal-crossbody-phone-bag/animal-crossbody-phone-bag-03.jpg', alt: 'Pink cat crochet phone bag with yellow eyes, whiskers and long dangling legs' } },
+        { pick: 'Yellow Duck', title: 'The yellow duck', text: 'Sunny yellow, with a red beak and red feet.', image: { src: 'products/animal-crossbody-phone-bag/animal-crossbody-phone-bag-05.jpg', alt: 'Yellow duck crochet phone bag with googly eyes, a red beak and red feet' } },
+        { pick: 'Green Frog', title: 'The green frog', text: 'Grass green, with a cheeky red tongue and four little legs.', image: { src: 'products/animal-crossbody-phone-bag/animal-crossbody-phone-bag-04.jpg', alt: 'Green frog crochet phone bag with googly eyes and a red tongue sticking out' } },
       ],
       note: 'Can’t choose? Take three, and each bag costs less.',
     },
@@ -617,9 +617,9 @@ export const LANDERS: Lander[] = [
         ['Teens.', 'A bag that gets noticed for the right reasons.'],
       ],
       images: [
-        { src: 'products/animal-crossbody-phone-bag/07.jpg', alt: 'Sloth crochet phone bag worn crossbody over a white T-shirt and jeans' },
-        { src: 'products/animal-crossbody-phone-bag/09.jpg', alt: 'Pink cat crochet phone bag worn over a cream T-shirt and white skirt' },
-        { src: 'products/animal-crossbody-phone-bag/06.jpg', alt: 'The four Googly Gang bags in a row: frog, duck, pink cat and sloth' },
+        { src: 'products/animal-crossbody-phone-bag/animal-crossbody-phone-bag-07.jpg', alt: 'Sloth crochet phone bag worn crossbody over a white T-shirt and jeans' },
+        { src: 'products/animal-crossbody-phone-bag/animal-crossbody-phone-bag-09.jpg', alt: 'Pink cat crochet phone bag worn over a cream T-shirt and white skirt' },
+        { src: 'products/animal-crossbody-phone-bag/animal-crossbody-phone-bag-06.jpg', alt: 'The four Googly Gang bags in a row: frog, duck, pink cat and sloth' },
       ],
     },
     craft: {
@@ -628,7 +628,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets each bag in soft polyester yarn, then adds the face, the belly and the legs by hand.',
         'Because a person makes them, no two are quite the same. Legs come out a little longer or shorter, and every face has its own expression.',
       ],
-      image: { src: 'products/animal-crossbody-phone-bag/08.jpg', alt: 'Sloth crochet phone bag worn at the hip, showing its face and claws' },
+      image: { src: 'products/animal-crossbody-phone-bag/animal-crossbody-phone-bag-08.jpg', alt: 'Sloth crochet phone bag worn at the hip, showing its face and claws' },
     },
     offer: {
       h: 'Pick your gang',
@@ -663,7 +663,7 @@ export const LANDERS: Lander[] = [
       h1: 'A frog in overalls',
       h1em: 'that carries your phone.',
       sub: 'Pick pink, blue or brown overalls, each with a star on the front. Your phone drops into his big yellow mouth, your hands stay free, and two straps come in the box.',
-      image: { src: 'products/frog-phone-crossbody/01.jpg', alt: 'Three crochet frog bags in pink, brown and blue overalls sitting on stone steps' },
+      image: { src: 'products/frog-phone-crossbody/frog-phone-crossbody-01.jpg', alt: 'Three crochet frog bags in pink, brown and blue overalls sitting on stone steps' },
       proof: { reviewer: 'Rita', date: '2025-12-20' },
     },
     story: {
@@ -686,15 +686,15 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester yarn, faux pearl, metal clasps'],
         ['Care', 'Hand wash in cool water with mild soap. Squeeze, don’t wring, and dry flat.'],
       ],
-      image: { src: 'landers/star-frogs/size.jpg', alt: 'Blue frog bag with its size marked: 39 cm tall, 15 cm wide, 1 cm deep' },
+      image: { src: 'landers/star-frogs/star-frogs-size.jpg', alt: 'Blue frog bag with its size marked: 39 cm tall, 15 cm wide, 1 cm deep' },
     },
     colours: {
       h: 'Pick his overalls',
       lede: 'Same frog, three outfits. Every one has a green body, a big yellow mouth and pink cheeks.',
       cards: [
-        { pick: 'Pink', title: 'Pink', text: 'Pink overalls with a yellow star. The sweet one.', image: { src: 'landers/star-frogs/pink-held.jpg', alt: 'Frog bag in pink overalls with a yellow star, held up in one hand' } },
-        { pick: 'Blue', title: 'Blue', text: 'Sky-blue overalls with a yellow star. Easy with jeans.', image: { src: 'landers/star-frogs/blue-worn.jpg', alt: 'Frog bag in blue overalls worn on a brown strap over a black hoodie' } },
-        { pick: 'Brown', title: 'Brown', text: 'Chocolate-brown overalls with an orange star and cream trim. The cosy one.', image: { src: 'landers/star-frogs/brown-worn.jpg', alt: 'Frog bag in brown overalls worn crossbody over a grey sweatshirt' } },
+        { pick: 'Pink', title: 'Pink', text: 'Pink overalls with a yellow star. The sweet one.', image: { src: 'landers/star-frogs/star-frogs-pink-held.jpg', alt: 'Frog bag in pink overalls with a yellow star, held up in one hand' } },
+        { pick: 'Blue', title: 'Blue', text: 'Sky-blue overalls with a yellow star. Easy with jeans.', image: { src: 'landers/star-frogs/star-frogs-blue-worn.jpg', alt: 'Frog bag in blue overalls worn on a brown strap over a black hoodie' } },
+        { pick: 'Brown', title: 'Brown', text: 'Chocolate-brown overalls with an orange star and cream trim. The cosy one.', image: { src: 'landers/star-frogs/star-frogs-brown-worn.jpg', alt: 'Frog bag in brown overalls worn crossbody over a grey sweatshirt' } },
       ],
       note: 'Can’t pick? Take three and get one of each.',
     },
@@ -714,7 +714,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets each frog by hand: the green body, the big yellow mouth, the overalls with their crossed straps, and the star on the front.',
         'Because a person makes them, no two frogs match exactly. The legs hang a little differently, and every face has its own look.',
       ],
-      image: { src: 'landers/star-frogs/mouth-open.webp', alt: 'The brown frog bag with its big yellow mouth held open, showing the space inside' },
+      image: { src: 'landers/star-frogs/star-frogs-mouth-open.webp', alt: 'The brown frog bag with its big yellow mouth held open, showing the space inside' },
     },
     offer: {
       h: 'Pick your frogs',
@@ -763,7 +763,7 @@ export const LANDERS: Lander[] = [
       h1: 'A fuzzy monster that holds your phone,',
       h1em: 'and hands it straight back.',
       sub: 'Two shaggy little crochet monsters with wings and big eyes: one pink, one yellow. The wide mouth is the opening, so your phone, lip gloss and earbuds are one reach away. No zip, no digging.',
-      image: { src: 'landers/big-mouth-monsters/pair-step.webp', alt: 'Pink and yellow fuzzy crochet monster bags with wings and wide orange and peach mouths, sitting on a stone step' },
+      image: { src: 'landers/big-mouth-monsters/big-mouth-monsters-pair-step.webp', alt: 'Pink and yellow fuzzy crochet monster bags with wings and wide orange and peach mouths, sitting on a stone step' },
       proof: { reviewer: 'A happy buyer', date: '2026-03-07' },
     },
     story: {
@@ -787,14 +787,14 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester plush and yarn'],
         ['Care', 'Hand wash in cool water and dry flat. A little fluff may shed at first.'],
       ],
-      image: { src: 'landers/big-mouth-monsters/yellow-phone.jpg', alt: 'Yellow monster bag lying next to a phone, showing its size' },
+      image: { src: 'landers/big-mouth-monsters/big-mouth-monsters-yellow-phone.jpg', alt: 'Yellow monster bag lying next to a phone, showing its size' },
     },
     colours: {
       h: 'Pick your monster',
       lede: 'Same shaggy shape, two very different moods.',
       cards: [
-        { pick: 'Pink', title: 'The pink one', text: 'Pink fur, grey wings and antennae, a bright orange mouth, and green boots with purple socks.', image: { src: 'landers/big-mouth-monsters/pink-worn.jpg', alt: 'Pink fuzzy monster bag on its pink braided strap, worn over a grey sweatshirt' } },
-        { pick: 'Yellow', title: 'The yellow one', text: 'Yellow fur, blue and white wings, rosy cheeks, a peach mouth, and one brown boot.', image: { src: 'landers/big-mouth-monsters/yellow-tile.jpg', alt: 'Yellow fuzzy monster bag with blue and white wings and a peach mouth, sitting by a wicker basket' } },
+        { pick: 'Pink', title: 'The pink one', text: 'Pink fur, grey wings and antennae, a bright orange mouth, and green boots with purple socks.', image: { src: 'landers/big-mouth-monsters/big-mouth-monsters-pink-worn.jpg', alt: 'Pink fuzzy monster bag on its pink braided strap, worn over a grey sweatshirt' } },
+        { pick: 'Yellow', title: 'The yellow one', text: 'Yellow fur, blue and white wings, rosy cheeks, a peach mouth, and one brown boot.', image: { src: 'landers/big-mouth-monsters/big-mouth-monsters-yellow-tile.jpg', alt: 'Yellow fuzzy monster bag with blue and white wings and a peach mouth, sitting by a wicker basket' } },
       ],
       note: 'Can’t choose? Take two and get one of each.',
     },
@@ -808,8 +808,8 @@ export const LANDERS: Lander[] = [
         ['Teens.', 'A bag that gets noticed at school, in a good way.'],
       ],
       images: [
-        { src: 'landers/big-mouth-monsters/yellow-worn.jpg', alt: 'Yellow monster bag worn crossbody over a black jumper and white lace skirt' },
-        { src: 'landers/big-mouth-monsters/stairs-pair.jpg', alt: 'Pink and yellow monster bags sitting together on a stair' },
+        { src: 'landers/big-mouth-monsters/big-mouth-monsters-yellow-worn.jpg', alt: 'Yellow monster bag worn crossbody over a black jumper and white lace skirt' },
+        { src: 'landers/big-mouth-monsters/big-mouth-monsters-stairs-pair.jpg', alt: 'Pink and yellow monster bags sitting together on a stair' },
       ],
     },
     craft: {
@@ -818,7 +818,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets each monster by hand, then adds the fur, the wings, the antennae and the big round eyes.',
         'No two come out quite the same. The fur falls its own way, and every face has its own surprised look.',
       ],
-      image: { src: 'landers/big-mouth-monsters/yellow-held.jpg', alt: 'Yellow monster bag held up by its braided yellow strap' },
+      image: { src: 'landers/big-mouth-monsters/big-mouth-monsters-yellow-held.jpg', alt: 'Yellow monster bag held up by its braided yellow strap' },
     },
     offer: {
       h: 'Pick your monsters',
@@ -860,7 +860,7 @@ export const LANDERS: Lander[] = [
       h1: 'Three little animals',
       h1em: 'that keep rings off your table.',
       sub: 'Pick a pig with a watermelon belly, a bear with an orange slice or a cat with a kiwi. Each one is a thick, soft crochet coaster about 15 cm across, so your mug sits on the fruit, not the wood.',
-      image: { src: 'landers/fruit-bellies/trio.jpg', alt: 'Three crochet animal coasters: a bear with an orange slice, a pig with a watermelon and a cat with a kiwi' },
+      image: { src: 'landers/fruit-bellies/fruit-bellies-trio.jpg', alt: 'Three crochet animal coasters: a bear with an orange slice, a pig with a watermelon and a cat with a kiwi' },
       proof: sturdy,
     },
     story: {
@@ -882,15 +882,15 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester-acrylic yarn, with safety eyes'],
         ['Care', 'Hand wash in cool or lukewarm water, below 40°C. Dry flat.'],
       ],
-      image: { src: 'products/animal-coasters-cat-pig-and-bear/07.jpg', alt: 'A glass sitting on the bear coaster' },
+      image: { src: 'products/animal-coasters-cat-pig-and-bear/animal-coasters-cat-pig-and-bear-07.jpg', alt: 'A glass sitting on the bear coaster' },
     },
     colours: {
       h: 'Meet the Fruit Bellies',
       lede: 'Three animals, three fruits. Pick a favourite, or get the whole set.',
       cards: [
-        { pick: 'Cat', title: 'The cat', text: 'Cream with ginger stripes, two-tone ears, a kiwi belly and a striped tail.', image: { src: 'landers/fruit-bellies/cat.jpg', alt: 'Cream crochet cat coaster with ginger stripes and a kiwi centre' } },
-        { pick: 'Pig', title: 'The pig', text: 'Soft pink with a snout, little trotters, a watermelon belly and a tail.', image: { src: 'landers/fruit-bellies/pig.jpg', alt: 'Pink crochet pig coaster with a watermelon centre' } },
-        { pick: 'Bear', title: 'The bear', text: 'Caramel brown with round ears, a white muzzle and an orange-slice belly.', image: { src: 'landers/fruit-bellies/bear.jpg', alt: 'Brown crochet bear coaster with an orange-slice centre' } },
+        { pick: 'Cat', title: 'The cat', text: 'Cream with ginger stripes, two-tone ears, a kiwi belly and a striped tail.', image: { src: 'landers/fruit-bellies/fruit-bellies-cat.jpg', alt: 'Cream crochet cat coaster with ginger stripes and a kiwi centre' } },
+        { pick: 'Pig', title: 'The pig', text: 'Soft pink with a snout, little trotters, a watermelon belly and a tail.', image: { src: 'landers/fruit-bellies/fruit-bellies-pig.jpg', alt: 'Pink crochet pig coaster with a watermelon centre' } },
+        { pick: 'Bear', title: 'The bear', text: 'Caramel brown with round ears, a white muzzle and an orange-slice belly.', image: { src: 'landers/fruit-bellies/fruit-bellies-bear.jpg', alt: 'Brown crochet bear coaster with an orange-slice centre' } },
       ],
       note: 'Can’t pick? Take three and get the whole set.',
     },
@@ -904,8 +904,8 @@ export const LANDERS: Lander[] = [
         ['Kids’ tables.', 'A juice cup with a friendly face under it.'],
       ],
       images: [
-        { src: 'products/animal-coasters-cat-pig-and-bear/06.jpg', alt: 'A glass sitting on the cat coaster' },
-        { src: 'products/animal-coasters-cat-pig-and-bear/08.jpg', alt: 'A glass sitting on the pig coaster' },
+        { src: 'products/animal-coasters-cat-pig-and-bear/animal-coasters-cat-pig-and-bear-06.jpg', alt: 'A glass sitting on the cat coaster' },
+        { src: 'products/animal-coasters-cat-pig-and-bear/animal-coasters-cat-pig-and-bear-08.jpg', alt: 'A glass sitting on the pig coaster' },
       ],
     },
     craft: {
@@ -914,7 +914,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets each coaster by hand: the round body, the fruit belly in rings of colour, then the ears, paws and tail.',
         'Because a person makes them, no two come out exactly alike. The faces sit a little differently, and every tail has its own bend.',
       ],
-      image: { src: 'landers/fruit-bellies/stack.jpg', alt: 'The pig, bear and cat coasters stacked on top of each other' },
+      image: { src: 'landers/fruit-bellies/fruit-bellies-stack.jpg', alt: 'The pig, bear and cat coasters stacked on top of each other' },
     },
     offer: {
       h: 'Pick your coasters',
@@ -955,7 +955,7 @@ export const LANDERS: Lander[] = [
       h1: 'Your phone, carried by a girl',
       h1em: 'with better hair than yours.',
       sub: 'Pick purple curls with a starfish, brown curls under a red beanie, or purple braids with a faux pearl. Each one is a little hand-crocheted crossbody bag for your phone, keys and lip balm, so your hands stay free.',
-      image: { src: 'products/girl-face-crossbody-purse/01.jpg', alt: 'Three crochet doll-face phone bags with yarn hair: purple curls, a red beanie and purple braids' },
+      image: { src: 'products/girl-face-crossbody-purse/girl-face-crossbody-purse-01.jpg', alt: 'Three crochet doll-face phone bags with yarn hair: purple curls, a red beanie and purple braids' },
       proof: { reviewer: 'Jacqueline', date: '2026-05-31' },
     },
     story: {
@@ -978,15 +978,15 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Knitted polyester yarn'],
         ['Care', 'Hand wash in lukewarm water, below 40°C. Dry flat, out of direct sun.'],
       ],
-      image: { src: 'products/girl-face-crossbody-purse/09.jpg', alt: 'Size guide for the doll-face bag: 18 cm tall, 11 cm wide, 1 cm deep, 120 cm strap' },
+      image: { src: 'products/girl-face-crossbody-purse/girl-face-crossbody-purse-09.jpg', alt: 'Size guide for the doll-face bag: 18 cm tall, 11 cm wide, 1 cm deep, 120 cm strap' },
     },
     colours: {
       h: 'Meet the Doll Squad',
       lede: 'Same size, same price. Each girl has her own hair and her own charm.',
       cards: [
-        { pick: 'Yellow', title: 'Curls and a starfish', text: 'Purple curls, a green starfish and a little candy charm, on a yellow, blue and orange bag.', image: { src: 'products/girl-face-crossbody-purse/02.jpg', alt: 'Yellow doll-face bag with purple curls and a green starfish, worn crossbody' } },
-        { pick: 'Pink', title: 'Braids and a pearl', text: 'Purple braids, a yellow flower and a hanging faux pearl, on a peach and pink bag.', image: { src: 'products/girl-face-crossbody-purse/06.jpg', alt: 'Pink doll-face bag with purple braids and a yellow flower, worn crossbody' } },
-        { pick: 'Green', title: 'The red beanie', text: 'Brown curls under a red knit beanie, on a mint and green bag.', image: { src: 'products/girl-face-crossbody-purse/04.jpg', alt: 'Green doll-face bag with brown curls under a red beanie, worn crossbody' } },
+        { pick: 'Yellow', title: 'Curls and a starfish', text: 'Purple curls, a green starfish and a little candy charm, on a yellow, blue and orange bag.', image: { src: 'products/girl-face-crossbody-purse/girl-face-crossbody-purse-02.jpg', alt: 'Yellow doll-face bag with purple curls and a green starfish, worn crossbody' } },
+        { pick: 'Pink', title: 'Braids and a pearl', text: 'Purple braids, a yellow flower and a hanging faux pearl, on a peach and pink bag.', image: { src: 'products/girl-face-crossbody-purse/girl-face-crossbody-purse-06.jpg', alt: 'Pink doll-face bag with purple braids and a yellow flower, worn crossbody' } },
+        { pick: 'Green', title: 'The red beanie', text: 'Brown curls under a red knit beanie, on a mint and green bag.', image: { src: 'products/girl-face-crossbody-purse/girl-face-crossbody-purse-04.jpg', alt: 'Green doll-face bag with brown curls under a red beanie, worn crossbody' } },
       ],
       note: 'Can’t pick? Take three and get the whole squad.',
     },
@@ -1000,9 +1000,9 @@ export const LANDERS: Lander[] = [
         ['Teens.', 'A bag that gets noticed at school, in a good way.'],
       ],
       images: [
-        { src: 'products/girl-face-crossbody-purse/03.jpg', alt: 'Yellow doll-face bag worn over a beige hoodie' },
-        { src: 'products/girl-face-crossbody-purse/05.jpg', alt: 'Green doll-face bag worn crossbody, with a phone in hand' },
-        { src: 'products/girl-face-crossbody-purse/08.jpg', alt: 'Pink doll-face bag worn over a cream jumper' },
+        { src: 'products/girl-face-crossbody-purse/girl-face-crossbody-purse-03.jpg', alt: 'Yellow doll-face bag worn over a beige hoodie' },
+        { src: 'products/girl-face-crossbody-purse/girl-face-crossbody-purse-05.jpg', alt: 'Green doll-face bag worn crossbody, with a phone in hand' },
+        { src: 'products/girl-face-crossbody-purse/girl-face-crossbody-purse-08.jpg', alt: 'Pink doll-face bag worn over a cream jumper' },
       ],
     },
     craft: {
@@ -1011,7 +1011,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets each bag by hand, embroiders the face, then adds the hair one curl or braid at a time, and finally her charm: a starfish, a beanie or a pearl.',
         'Because a person makes them, no two come out quite the same. The curls fall their own way, and every face has its own little smile.',
       ],
-      image: { src: 'products/girl-face-crossbody-purse/10.jpg', alt: 'Close-up of the red knit beanie and the strap clip on the green doll-face bag' },
+      image: { src: 'products/girl-face-crossbody-purse/girl-face-crossbody-purse-10.jpg', alt: 'Close-up of the red knit beanie and the strap clip on the green doll-face bag' },
     },
     offer: {
       h: 'Pick your squad',
@@ -1052,7 +1052,7 @@ export const LANDERS: Lander[] = [
       h1: 'A pocket-sized garden',
       h1em: 'that carries your phone two ways.',
       sub: 'Rows of hand-crocheted flowers in purple and pink, green and orange, or blue and red. Carry it by its little handle, or clip on the long strap and wear it crossbody. A wooden button keeps your phone, keys and lip balm inside.',
-      image: { src: 'products/flower-crossbody-bag-with-detachable-strap/01.webp', alt: 'Three crochet flower bags: purple with pink flowers, blue with red flowers and green with orange flowers' },
+      image: { src: 'products/flower-crossbody-bag-with-detachable-strap/flower-crossbody-bag-with-detachable-strap-01.webp', alt: 'Three crochet flower bags: purple with pink flowers, blue with red flowers and green with orange flowers' },
       proof: { reviewer: 'Caitlin', date: '2026-02-13' },
     },
     story: {
@@ -1076,15 +1076,15 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester yarn, wooden button'],
         ['Care', 'Hand wash in cool or lukewarm water, below 40°C. Dry flat, out of strong sun.'],
       ],
-      image: { src: 'products/flower-crossbody-bag-with-detachable-strap/09.webp', alt: 'Purple flower bag open, with a phone and a compact inside' },
+      image: { src: 'products/flower-crossbody-bag-with-detachable-strap/flower-crossbody-bag-with-detachable-strap-09.webp', alt: 'Purple flower bag open, with a phone and a compact inside' },
     },
     colours: {
       h: 'Pick your flowers',
       lede: 'Same bag, three gardens. Every one is the same size and the same price.',
       cards: [
-        { pick: 'Purple', title: 'Purple and pink', text: 'Lilac, with pink and violet flowers and a purple handle. The soft one.', image: { src: 'products/flower-crossbody-bag-with-detachable-strap/02.webp', alt: 'Purple crochet flower bag with pink flowers, a top handle and a wooden button' } },
-        { pick: 'Green', title: 'Green and orange', text: 'Grass green, with bright orange flowers. The sunny one.', image: { src: 'products/flower-crossbody-bag-with-detachable-strap/03.webp', alt: 'Green crochet flower bag with orange flowers and a top handle' } },
-        { pick: 'Blue', title: 'Blue and red', text: 'Sky blue, with red flowers and a red handle. The bold one.', image: { src: 'products/flower-crossbody-bag-with-detachable-strap/04.webp', alt: 'Blue crochet flower bag with red flowers and a red top handle' } },
+        { pick: 'Purple', title: 'Purple and pink', text: 'Lilac, with pink and violet flowers and a purple handle. The soft one.', image: { src: 'products/flower-crossbody-bag-with-detachable-strap/flower-crossbody-bag-with-detachable-strap-02.webp', alt: 'Purple crochet flower bag with pink flowers, a top handle and a wooden button' } },
+        { pick: 'Green', title: 'Green and orange', text: 'Grass green, with bright orange flowers. The sunny one.', image: { src: 'products/flower-crossbody-bag-with-detachable-strap/flower-crossbody-bag-with-detachable-strap-03.webp', alt: 'Green crochet flower bag with orange flowers and a top handle' } },
+        { pick: 'Blue', title: 'Blue and red', text: 'Sky blue, with red flowers and a red handle. The bold one.', image: { src: 'products/flower-crossbody-bag-with-detachable-strap/flower-crossbody-bag-with-detachable-strap-04.webp', alt: 'Blue crochet flower bag with red flowers and a red top handle' } },
       ],
       note: 'Can’t pick? Take three and get the whole garden.',
     },
@@ -1098,9 +1098,9 @@ export const LANDERS: Lander[] = [
         ['A first “big kid” bag.', 'Coins, small toys and sweets, buttoned in.'],
       ],
       images: [
-        { src: 'products/flower-crossbody-bag-with-detachable-strap/05.webp', alt: 'Purple flower bag worn crossbody over a cream T-shirt and white skirt' },
-        { src: 'products/flower-crossbody-bag-with-detachable-strap/06.webp', alt: 'Green flower bag worn crossbody over a white dress' },
-        { src: 'products/flower-crossbody-bag-with-detachable-strap/07.webp', alt: 'Blue flower bag worn crossbody, with a phone in hand' },
+        { src: 'products/flower-crossbody-bag-with-detachable-strap/flower-crossbody-bag-with-detachable-strap-05.webp', alt: 'Purple flower bag worn crossbody over a cream T-shirt and white skirt' },
+        { src: 'products/flower-crossbody-bag-with-detachable-strap/flower-crossbody-bag-with-detachable-strap-06.webp', alt: 'Green flower bag worn crossbody over a white dress' },
+        { src: 'products/flower-crossbody-bag-with-detachable-strap/flower-crossbody-bag-with-detachable-strap-07.webp', alt: 'Blue flower bag worn crossbody, with a phone in hand' },
       ],
     },
     craft: {
@@ -1109,7 +1109,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets each flower on its own, joins them into one little bag, then adds the handle and sews on the wooden button.',
         'Because a person makes them, no two come out quite the same. The petals sit a little differently on every bag.',
       ],
-      image: { src: 'products/flower-crossbody-bag-with-detachable-strap/08.webp', alt: 'Purple flower bag laid flat with its long cream strap clipped on' },
+      image: { src: 'products/flower-crossbody-bag-with-detachable-strap/flower-crossbody-bag-with-detachable-strap-08.webp', alt: 'Purple flower bag laid flat with its long cream strap clipped on' },
     },
     offer: {
       h: 'Pick your garden',
@@ -1154,7 +1154,7 @@ export const LANDERS: Lander[] = [
       h1: 'A crochet carnation bouquet',
       h1em: 'that unfolds into a coaster for your mug.',
       sub: 'Hui crochets each carnation onto a soft cream coaster with a leafy stem. Fold it into a cone and tie the leaf cord, and it’s a bouquet. Untie it, and it lies flat under a mug, 14.5 cm across.',
-      image: { src: 'landers/fold-and-bloom/hero.jpg', alt: 'Four crochet carnation bouquets folded into cones and tied with green leaf cords, two purple and two pink' },
+      image: { src: 'landers/fold-and-bloom/fold-and-bloom-hero.jpg', alt: 'Four crochet carnation bouquets folded into cones and tied with green leaf cords, two purple and two pink' },
       proof: friend,
     },
     story: {
@@ -1177,15 +1177,15 @@ export const LANDERS: Lander[] = [
         ['Folding', 'Folds into a bouquet and back without creasing'],
         ['Care', 'Hand wash in cool water, below 40°C. Don’t wring. Dry flat.'],
       ],
-      image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/07.jpg', alt: 'A glass tumbler sitting on a cream crochet coaster with a purple carnation at its edge' },
+      image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/carnation-mug-rug-that-folds-into-a-mini-07.jpg', alt: 'A glass tumbler sitting on a cream crochet coaster with a purple carnation at its edge' },
     },
     colours: {
       h: 'Pick your pairs',
       lede: 'Carnations come in pairs. Choose a pink pair, a purple pair, or one of each.',
       cards: [
-        { pick: 'Pink', title: 'Pink pair', text: 'Two soft pink carnations. Sweet for a birthday or Mother’s Day.', image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/06.jpg', alt: 'A pink crochet carnation folded into a bouquet and tied with a green leaf cord' } },
-        { pick: 'Purple', title: 'Purple pair', text: 'Two deep purple carnations. Rich against a wooden table.', image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/05.jpg', alt: 'A purple crochet carnation folded into a bouquet and tied with a green leaf cord' } },
-        { pick: 'Mixed', title: 'Mixed pair', text: 'One pink and one purple, like the pair in our photos.', image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/02.jpg', alt: 'A purple and a pink crochet carnation bouquet side by side' } },
+        { pick: 'Pink', title: 'Pink pair', text: 'Two soft pink carnations. Sweet for a birthday or Mother’s Day.', image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/carnation-mug-rug-that-folds-into-a-mini-06.jpg', alt: 'A pink crochet carnation folded into a bouquet and tied with a green leaf cord' } },
+        { pick: 'Purple', title: 'Purple pair', text: 'Two deep purple carnations. Rich against a wooden table.', image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/carnation-mug-rug-that-folds-into-a-mini-05.jpg', alt: 'A purple crochet carnation folded into a bouquet and tied with a green leaf cord' } },
+        { pick: 'Mixed', title: 'Mixed pair', text: 'One pink and one purple, like the pair in our photos.', image: { src: 'products/carnation-mug-rug-that-folds-into-a-mini/carnation-mug-rug-that-folds-into-a-mini-02.jpg', alt: 'A purple and a pink crochet carnation bouquet side by side' } },
       ],
       note: 'Getting four or six? Mix your pairs however you like.',
     },
@@ -1199,8 +1199,8 @@ export const LANDERS: Lander[] = [
         ['Your own table.', 'A coaster for your morning coffee or tea.'],
       ],
       images: [
-        { src: 'products/carnation-mug-rug-that-folds-into-a-mini/08.jpg', alt: 'Four carnation coasters stacked, with pink and purple flowers around the edge' },
-        { src: 'products/carnation-mug-rug-that-folds-into-a-mini/04.jpg', alt: 'A pink carnation coaster lying flat, with its green stem across the cream crochet' },
+        { src: 'products/carnation-mug-rug-that-folds-into-a-mini/carnation-mug-rug-that-folds-into-a-mini-08.jpg', alt: 'Four carnation coasters stacked, with pink and purple flowers around the edge' },
+        { src: 'products/carnation-mug-rug-that-folds-into-a-mini/carnation-mug-rug-that-folds-into-a-mini-04.jpg', alt: 'A pink carnation coaster lying flat, with its green stem across the cream crochet' },
       ],
     },
     craft: {
@@ -1209,7 +1209,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets each coaster in cream granny stitch, then works the ruffled carnation, the leafy stem and the leaf cord that ties the bouquet.',
         'Because a person makes them, no two carnations ruffle quite the same way.',
       ],
-      image: { src: 'landers/fold-and-bloom/craft.jpg', alt: 'A purple carnation coaster lying flat next to a ball of purple yarn' },
+      image: { src: 'landers/fold-and-bloom/fold-and-bloom-craft.jpg', alt: 'A purple carnation coaster lying flat next to a ball of purple yarn' },
     },
     offer: {
       h: 'Pick your bouquets',
@@ -1257,7 +1257,7 @@ export const LANDERS: Lander[] = [
       h1: 'Big red lips, pearls and a daisy,',
       h1em: 'on a crochet bag that carries your phone.',
       sub: 'Pick the large, 28 cm tall with room for your phone and cards, or the small, 20 cm tall, made for a phone on its own. Or get both as a matching big and little set.',
-      image: { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/03.jpg', alt: 'The large and the small crochet doll bags side by side, each with big red lips, a pearl necklace and a daisy' },
+      image: { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/fat-lips-girl-crossbody-phone-bag-with-daisy-03.jpg', alt: 'The large and the small crochet doll bags side by side, each with big red lips, a pearl necklace and a daisy' },
       proof: asPictured,
     },
     story: {
@@ -1281,7 +1281,7 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester yarn, faux pearls'],
         ['Care', 'Hand wash in cool water with mild soap, reshape and dry flat. Go gently on the pearls.'],
       ],
-      image: { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/09.jpg', alt: 'The doll bag lying next to a phone, with its long braided strap' },
+      image: { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/fat-lips-girl-crossbody-phone-bag-with-daisy-09.jpg', alt: 'The doll bag lying next to a phone, with its long braided strap' },
     },
     uses: {
       h: 'Where she goes',
@@ -1292,8 +1292,8 @@ export const LANDERS: Lander[] = [
         ['Weekends.', 'Light enough to forget she’s there.'],
       ],
       images: [
-        { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/02.jpg', alt: 'The doll bag worn crossbody over a grey sweatshirt' },
-        { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/05.jpg', alt: 'The doll bag worn crossbody over a navy jumper' },
+        { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/fat-lips-girl-crossbody-phone-bag-with-daisy-02.jpg', alt: 'The doll bag worn crossbody over a grey sweatshirt' },
+        { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/fat-lips-girl-crossbody-phone-bag-with-daisy-05.jpg', alt: 'The doll bag worn crossbody over a navy jumper' },
       ],
     },
     craft: {
@@ -1302,7 +1302,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets each doll by hand: the curly hair, the big red lips, the dress with its stitched crosses and the legs with their bows. Then she adds the pearls and the daisy.',
         'Because a person makes her, no two come out exactly alike.',
       ],
-      image: { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/07.jpg', alt: 'Close-up of the thick red crochet lips, the pearl necklace and the white daisy' },
+      image: { src: 'products/fat-lips-girl-crossbody-phone-bag-with-daisy/fat-lips-girl-crossbody-phone-bag-with-daisy-07.jpg', alt: 'Close-up of the thick red crochet lips, the pearl necklace and the white daisy' },
     },
     offer: {
       h: 'Pick your size',
@@ -1344,7 +1344,7 @@ export const LANDERS: Lander[] = [
       h1: 'Big round eyes and fuzzy pigtails,',
       h1em: 'on a drawstring bag for your phone and keys.',
       sub: 'Hui crochets each one in a flecked tweed yarn, with curly brown hair tied into two pigtails and a little flower. Pull the cords to close it, and the same cords are the strap. Pink, purple, blue or green.',
-      image: { src: 'landers/pigtail-pals/group.jpg', alt: 'Four crochet bags with big round eyes and fuzzy brown pigtail hair, in purple, green, blue and pink, sitting on stone steps' },
+      image: { src: 'landers/pigtail-pals/pigtail-pals-group.jpg', alt: 'Four crochet bags with big round eyes and fuzzy brown pigtail hair, in purple, green, blue and pink, sitting on stone steps' },
       proof: asPictured,
     },
     story: {
@@ -1367,16 +1367,16 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Tweed-look crochet yarn, fuzzy yarn hair, polyester cords'],
         ['Care', 'Hand wash in cool or lukewarm water, below 40°C. Dry flat, away from strong sun.'],
       ],
-      image: { src: 'products/big-eye-girl-bag/09.jpg', alt: 'The pink bag worn crossbody over a grey sweatshirt, a hand on the pink cord' },
+      image: { src: 'products/big-eye-girl-bag/big-eye-girl-bag-09.jpg', alt: 'The pink bag worn crossbody over a grey sweatshirt, a hand on the pink cord' },
     },
     colours: {
       h: 'Pick your Pigtail Pal',
       lede: 'The same fuzzy hair in four colours. The cords, flower and feet match the body.',
       cards: [
-        { pick: 'Pink', title: 'Pink', text: 'Pink tweed with pink cords, a pink flower and round pink feet.', image: { src: 'landers/pigtail-pals/pink.jpg', alt: 'The pink bag with big eyes, fuzzy brown pigtails and a pink flower' } },
-        { pick: 'Purple', title: 'Purple', text: 'Purple tweed with lilac cords, a lilac flower and lilac feet.', image: { src: 'products/big-eye-girl-bag/02.jpg', alt: 'The purple bag worn on the back over a grey sweatshirt' } },
-        { pick: 'Blue', title: 'Blue', text: 'Blue tweed with blue cords, a blue flower and round blue feet.', image: { src: 'landers/pigtail-pals/blue.jpg', alt: 'The blue bag with big eyes, fuzzy brown pigtails and a blue flower' } },
-        { pick: 'Green', title: 'Green', text: 'Green tweed with dark green cords, a green flower and green feet.', image: { src: 'landers/pigtail-pals/green.jpg', alt: 'The green bag with big eyes, fuzzy brown pigtails and a green flower' } },
+        { pick: 'Pink', title: 'Pink', text: 'Pink tweed with pink cords, a pink flower and round pink feet.', image: { src: 'landers/pigtail-pals/pigtail-pals-pink.jpg', alt: 'The pink bag with big eyes, fuzzy brown pigtails and a pink flower' } },
+        { pick: 'Purple', title: 'Purple', text: 'Purple tweed with lilac cords, a lilac flower and lilac feet.', image: { src: 'products/big-eye-girl-bag/big-eye-girl-bag-02.jpg', alt: 'The purple bag worn on the back over a grey sweatshirt' } },
+        { pick: 'Blue', title: 'Blue', text: 'Blue tweed with blue cords, a blue flower and round blue feet.', image: { src: 'landers/pigtail-pals/pigtail-pals-blue.jpg', alt: 'The blue bag with big eyes, fuzzy brown pigtails and a blue flower' } },
+        { pick: 'Green', title: 'Green', text: 'Green tweed with dark green cords, a green flower and green feet.', image: { src: 'landers/pigtail-pals/pigtail-pals-green.jpg', alt: 'The green bag with big eyes, fuzzy brown pigtails and a green flower' } },
       ],
       note: 'Can’t choose? Take two or three and mix the colours.',
     },
@@ -1389,8 +1389,8 @@ export const LANDERS: Lander[] = [
         ['Gifts.', 'For anyone who likes a bag with a face.'],
       ],
       images: [
-        { src: 'products/big-eye-girl-bag/04.jpg', alt: 'The blue bag worn crossbody over a black jumper and a white lace skirt' },
-        { src: 'products/big-eye-girl-bag/03.jpg', alt: 'The green bag worn crossbody over a grey sweatshirt' },
+        { src: 'products/big-eye-girl-bag/big-eye-girl-bag-04.jpg', alt: 'The blue bag worn crossbody over a black jumper and a white lace skirt' },
+        { src: 'products/big-eye-girl-bag/big-eye-girl-bag-03.jpg', alt: 'The green bag worn crossbody over a grey sweatshirt' },
       ],
     },
     craft: {
@@ -1399,7 +1399,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets the tweed body, then the big round eyes, the curly hair and the two pigtails, each tied with a little bow. Last come the flower and the dangling feet.',
         'Because a person makes them, no two heads of hair come out the same.',
       ],
-      image: { src: 'products/big-eye-girl-bag/07.jpg', alt: 'Hands holding the blue bag up by its cords, showing the eyes, the pigtails and the flower' },
+      image: { src: 'products/big-eye-girl-bag/big-eye-girl-bag-07.jpg', alt: 'Hands holding the blue bag up by its cords, showing the eyes, the pigtails and the flower' },
     },
     offer: {
       h: 'Pick your pals',
@@ -1440,7 +1440,7 @@ export const LANDERS: Lander[] = [
       h1: 'An open crochet bag with a tassel,',
       h1em: 'lined in canvas so nothing falls through.',
       sub: 'Hui crochets the open stitch by hand, then lines it in canvas and adds a magnetic snap. It comes with two straps, woven and faux leather, so you can wear it boho or smart. Cream or khaki.',
-      image: { src: 'landers/tassel-and-twine/pair.jpg', alt: 'A khaki and a cream crochet crossbody bag, each with a tassel, wood beads and a brown faux leather strap' },
+      image: { src: 'landers/tassel-and-twine/tassel-and-twine-pair.jpg', alt: 'A khaki and a cream crochet crossbody bag, each with a tassel, wood beads and a brown faux leather strap' },
       proof: maria,
     },
     story: {
@@ -1464,14 +1464,14 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester-acrylic yarn, canvas, faux leather, wood beads'],
         ['Care', 'Hand wash in cool or lukewarm water, below 40°C. Dry flat, out of strong sun.'],
       ],
-      image: { src: 'landers/tassel-and-twine/phone.jpg', alt: 'The khaki bag lying above a phone, about the same width, with its tassel and faux leather strap' },
+      image: { src: 'landers/tassel-and-twine/tassel-and-twine-phone.jpg', alt: 'The khaki bag lying above a phone, about the same width, with its tassel and faux leather strap' },
     },
     colours: {
       h: 'Pick your colour',
       lede: 'Two natural shades, each with a matching tassel and wood beads.',
       cards: [
-        { pick: 'Cream', title: 'Cream', text: 'Off-white crochet with a cream tassel. Light and summery.', image: { src: 'products/tassel-crossbody-phone-bag/02.jpg', alt: 'The cream bag worn crossbody over a pink shirt and a white dress' } },
-        { pick: 'Khaki', title: 'Khaki', text: 'Warm beige crochet with a khaki tassel. Easy with denim and browns.', image: { src: 'products/tassel-crossbody-phone-bag/01.jpg', alt: 'The khaki bag worn crossbody over a white dress and a brown belt' } },
+        { pick: 'Cream', title: 'Cream', text: 'Off-white crochet with a cream tassel. Light and summery.', image: { src: 'products/tassel-crossbody-phone-bag/tassel-crossbody-phone-bag-02.jpg', alt: 'The cream bag worn crossbody over a pink shirt and a white dress' } },
+        { pick: 'Khaki', title: 'Khaki', text: 'Warm beige crochet with a khaki tassel. Easy with denim and browns.', image: { src: 'products/tassel-crossbody-phone-bag/tassel-crossbody-phone-bag-01.jpg', alt: 'The khaki bag worn crossbody over a white dress and a brown belt' } },
       ],
       note: 'Can’t choose? Get one of each.',
     },
@@ -1484,8 +1484,8 @@ export const LANDERS: Lander[] = [
         ['Gifts.', 'A boho bag for a friend who loves handmade.'],
       ],
       images: [
-        { src: 'products/tassel-crossbody-phone-bag/04.jpg', alt: 'The cream bag worn crossbody on the faux leather strap' },
-        { src: 'products/tassel-crossbody-phone-bag/07.jpg', alt: 'The khaki bag worn crossbody over a white dress' },
+        { src: 'products/tassel-crossbody-phone-bag/tassel-crossbody-phone-bag-04.jpg', alt: 'The cream bag worn crossbody on the faux leather strap' },
+        { src: 'products/tassel-crossbody-phone-bag/tassel-crossbody-phone-bag-07.jpg', alt: 'The khaki bag worn crossbody over a white dress' },
       ],
     },
     craft: {
@@ -1494,7 +1494,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets the open stitch by hand, then sews in the canvas lining, the magnetic snap and the little Hand Made tag. The tassel and wood beads go on last.',
         'Because a person makes each one, no two are exactly alike.',
       ],
-      image: { src: 'landers/tassel-and-twine/inside.jpg', alt: 'The cream bag held open, showing the canvas lining and the magnetic snap inside' },
+      image: { src: 'landers/tassel-and-twine/tassel-and-twine-inside.jpg', alt: 'The cream bag held open, showing the canvas lining and the magnetic snap inside' },
     },
     offer: {
       h: 'Pick your bags',
@@ -1535,7 +1535,7 @@ export const LANDERS: Lander[] = [
       h1: 'A puppy with floppy ears and odd eyes,',
       h1em: 'on a little bag you carry by the handle or crossbody.',
       sub: 'Hui crochets each puppy by hand, with two eyes in different sizes and ears that flop as you walk. A drawstring closes the top. Carry it by the short handle, or clip on the 100 cm strap. Cream or tan.',
-      image: { src: 'products/puppy-face-crossbody-bag/02.jpg', alt: 'A cream puppy face bag with black ears and a tan one with brown ears, held up side by side by their handles' },
+      image: { src: 'products/puppy-face-crossbody-bag/puppy-face-crossbody-bag-02.jpg', alt: 'A cream puppy face bag with black ears and a tan one with brown ears, held up side by side by their handles' },
       proof: sturdy,
     },
     story: {
@@ -1557,14 +1557,14 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester yarn'],
         ['Care', 'Hand wash in cool or lukewarm water, 40°C at most. Reshape while damp and dry flat, away from direct sun.'],
       ],
-      image: { src: 'products/puppy-face-crossbody-bag/07.jpg', alt: 'The tan puppy bag held open, with a phone and a compact inside' },
+      image: { src: 'products/puppy-face-crossbody-bag/puppy-face-crossbody-bag-07.jpg', alt: 'The tan puppy bag held open, with a phone and a compact inside' },
     },
     colours: {
       h: 'Pick your pup',
       lede: 'Two puppies, each with ears, handle and nose in a darker shade.',
       cards: [
-        { pick: 'Cream', title: 'Cream', text: 'Cream with black ears, a black handle and a black nose.', image: { src: 'products/puppy-face-crossbody-bag/04.jpg', alt: 'The cream puppy bag with black ears, worn crossbody over a grey sweatshirt' } },
-        { pick: 'Tan', title: 'Tan', text: 'Tan with dark brown ears, a brown handle and a brown nose.', image: { src: 'products/puppy-face-crossbody-bag/01.jpg', alt: 'The tan puppy bag with brown floppy ears, held by its handle' } },
+        { pick: 'Cream', title: 'Cream', text: 'Cream with black ears, a black handle and a black nose.', image: { src: 'products/puppy-face-crossbody-bag/puppy-face-crossbody-bag-04.jpg', alt: 'The cream puppy bag with black ears, worn crossbody over a grey sweatshirt' } },
+        { pick: 'Tan', title: 'Tan', text: 'Tan with dark brown ears, a brown handle and a brown nose.', image: { src: 'products/puppy-face-crossbody-bag/puppy-face-crossbody-bag-01.jpg', alt: 'The tan puppy bag with brown floppy ears, held by its handle' } },
       ],
       note: 'Can’t choose? Get one of each.',
     },
@@ -1577,8 +1577,8 @@ export const LANDERS: Lander[] = [
         ['Matching.', 'One for you, one for a child, in two colours.'],
       ],
       images: [
-        { src: 'products/puppy-face-crossbody-bag/03.jpg', alt: 'The tan puppy bag worn crossbody over a black top' },
-        { src: 'products/puppy-face-crossbody-bag/05.jpg', alt: 'The tan puppy bag lying beside a phone, with its long cream strap' },
+        { src: 'products/puppy-face-crossbody-bag/puppy-face-crossbody-bag-03.jpg', alt: 'The tan puppy bag worn crossbody over a black top' },
+        { src: 'products/puppy-face-crossbody-bag/puppy-face-crossbody-bag-05.jpg', alt: 'The tan puppy bag lying beside a phone, with its long cream strap' },
       ],
     },
     craft: {
@@ -1587,7 +1587,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets the body in one colour, then the ears, handle and nose in a darker shade, and sets the two eyes at different sizes.',
         'Because a person makes each one, no two puppies look at you quite the same way.',
       ],
-      image: { src: 'products/puppy-face-crossbody-bag/10.jpg', alt: 'Close-up of the tan puppy’s odd eyes, round nose and brown ear' },
+      image: { src: 'products/puppy-face-crossbody-bag/puppy-face-crossbody-bag-10.jpg', alt: 'Close-up of the tan puppy’s odd eyes, round nose and brown ear' },
     },
     offer: {
       h: 'Pick your pups',
@@ -1629,7 +1629,7 @@ export const LANDERS: Lander[] = [
       h1: 'A long, squishy crochet dog,',
       h1em: 'that carries your phone, keys and lipstick.',
       sub: 'Hui crochets him in a chunky, pillowy stitch, 34 cm from nose to tail, with floppy ears and four round feet. He hangs at your side on a 130 cm strap. Khaki or yellow.',
-      image: { src: 'products/dog-crossbody-purse/01.jpg', alt: 'A yellow and a khaki long crochet dog bag lying side by side on a bed with their braided straps' },
+      image: { src: 'products/dog-crossbody-purse/dog-crossbody-purse-01.jpg', alt: 'A yellow and a khaki long crochet dog bag lying side by side on a bed with their braided straps' },
       proof: sturdy,
     },
     story: {
@@ -1651,14 +1651,14 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester-acrylic yarn'],
         ['Care', 'Hand wash in room-temperature or lukewarm water, below 40°C. Dry flat.'],
       ],
-      image: { src: 'products/dog-crossbody-purse/09.jpg', alt: 'The yellow dog bag lying on a bed beside a phone, with its yellow braided strap' },
+      image: { src: 'products/dog-crossbody-purse/dog-crossbody-purse-09.jpg', alt: 'The yellow dog bag lying on a bed beside a phone, with its yellow braided strap' },
     },
     colours: {
       h: 'Pick your dog',
       lede: 'Two dogs, each with ears and a tail in a darker shade.',
       cards: [
-        { pick: 'Khaki', title: 'Khaki', text: 'Warm khaki with dark brown ears and tail, on a brown strap.', image: { src: 'products/dog-crossbody-purse/02.jpg', alt: 'The khaki dog bag with dark brown ears, held against a polka-dot shirt' } },
-        { pick: 'Yellow', title: 'Yellow', text: 'Sunny yellow with black ears and tail, on a yellow strap.', image: { src: 'products/dog-crossbody-purse/03.jpg', alt: 'The yellow dog bag with black ears, worn crossbody over a white skirt' } },
+        { pick: 'Khaki', title: 'Khaki', text: 'Warm khaki with dark brown ears and tail, on a brown strap.', image: { src: 'products/dog-crossbody-purse/dog-crossbody-purse-02.jpg', alt: 'The khaki dog bag with dark brown ears, held against a polka-dot shirt' } },
+        { pick: 'Yellow', title: 'Yellow', text: 'Sunny yellow with black ears and tail, on a yellow strap.', image: { src: 'products/dog-crossbody-purse/dog-crossbody-purse-03.jpg', alt: 'The yellow dog bag with black ears, worn crossbody over a white skirt' } },
       ],
       note: 'Can’t choose? Get one of each.',
     },
@@ -1671,8 +1671,8 @@ export const LANDERS: Lander[] = [
         ['Matching.', 'One khaki, one yellow, for you and a friend.'],
       ],
       images: [
-        { src: 'products/dog-crossbody-purse/04.jpg', alt: 'The khaki dog bag worn crossbody over a white shirt' },
-        { src: 'products/dog-crossbody-purse/08.jpg', alt: 'The yellow dog bag lying on a bed with its braided strap' },
+        { src: 'products/dog-crossbody-purse/dog-crossbody-purse-04.jpg', alt: 'The khaki dog bag worn crossbody over a white shirt' },
+        { src: 'products/dog-crossbody-purse/dog-crossbody-purse-08.jpg', alt: 'The yellow dog bag lying on a bed with its braided strap' },
       ],
     },
     craft: {
@@ -1681,7 +1681,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets the long body in a chunky stitch, then the head, the floppy ears, the four round feet and the tail.',
         'Because a person makes each one, no two dogs come out exactly alike.',
       ],
-      image: { src: 'products/dog-crossbody-purse/05.jpg', alt: 'The khaki dog bag worn at the hip, showing his ears, feet and tail' },
+      image: { src: 'products/dog-crossbody-purse/dog-crossbody-purse-05.jpg', alt: 'The khaki dog bag worn at the hip, showing his ears, feet and tail' },
     },
     offer: {
       h: 'Pick your dogs',
@@ -1729,7 +1729,7 @@ export const LANDERS: Lander[] = [
       h1: 'A grumpy little crochet panda,',
       h1em: 'in a mini tote or a tall sling for your phone.',
       sub: 'Hui crochets each panda in black and white, with big eye patches, round ears and red blush marks. Pick the mini tote with its short handle, the tall sling with dangling legs, or both.',
-      image: { src: 'products/panda-crossbody-bag/03.jpg', alt: 'The panda mini tote with its black handle beside the tall panda sling with dangling arms and legs' },
+      image: { src: 'products/panda-crossbody-bag/panda-crossbody-bag-03.jpg', alt: 'The panda mini tote with its black handle beside the tall panda sling with dangling arms and legs' },
       proof: asPictured,
     },
     story: {
@@ -1752,7 +1752,7 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester yarn'],
         ['Care', 'Hand wash in cool water with mild soap and dry flat. Wash it on its own the first time, as the black yarn can bleed a little.'],
       ],
-      image: { src: 'products/panda-crossbody-bag/10.jpg', alt: 'The panda mini tote lying beside a phone, with its black strap' },
+      image: { src: 'products/panda-crossbody-bag/panda-crossbody-bag-10.jpg', alt: 'The panda mini tote lying beside a phone, with its black strap' },
     },
     uses: {
       h: 'Where they go',
@@ -1763,8 +1763,8 @@ export const LANDERS: Lander[] = [
         ['Kids.', 'Fair warning: they will try to claim it.'],
       ],
       images: [
-        { src: 'products/panda-crossbody-bag/04.jpg', alt: 'The panda mini tote worn crossbody over a grey cable-knit jumper' },
-        { src: 'products/panda-crossbody-bag/02.jpg', alt: 'The tall panda sling worn crossbody over a grey cable-knit jumper' },
+        { src: 'products/panda-crossbody-bag/panda-crossbody-bag-04.jpg', alt: 'The panda mini tote worn crossbody over a grey cable-knit jumper' },
+        { src: 'products/panda-crossbody-bag/panda-crossbody-bag-02.jpg', alt: 'The tall panda sling worn crossbody over a grey cable-knit jumper' },
       ],
     },
     craft: {
@@ -1773,7 +1773,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets the white body, the black ears and eye patches, and for the sling the arms and legs. Then she stitches the frown and the red blush.',
         'Because a person makes each one, no two pandas look quite the same.',
       ],
-      image: { src: 'products/panda-crossbody-bag/08.jpg', alt: 'The tall panda sling worn at the front, showing its eye patches, blush and black feet' },
+      image: { src: 'products/panda-crossbody-bag/panda-crossbody-bag-08.jpg', alt: 'The tall panda sling worn at the front, showing its eye patches, blush and black feet' },
     },
     offer: {
       h: 'Pick your panda',
@@ -1816,7 +1816,7 @@ export const LANDERS: Lander[] = [
       h1: 'Twelve crochet roses around a coaster,',
       h1em: 'that folds into its own little flower pot.',
       sub: 'Hui crochets twelve tiny roses with green leaves around a soft white coaster, 16 cm across. When you’re not using it, fold it up and tuck it into its mini basket, and it sits on the shelf like a pot of roses.',
-      image: { src: 'products/rose-flower-coaster-with-mini-basket/03.jpg', alt: 'Six crochet rose coasters folded into their mini baskets like little pots of roses, in blue, white, red, yellow, pink and purple' },
+      image: { src: 'products/rose-flower-coaster-with-mini-basket/rose-flower-coaster-with-mini-basket-03.jpg', alt: 'Six crochet rose coasters folded into their mini baskets like little pots of roses, in blue, white, red, yellow, pink and purple' },
       proof: sturdy,
     },
     story: {
@@ -1839,18 +1839,18 @@ export const LANDERS: Lander[] = [
         ['Sizing', 'Made by hand, so allow 1 to 2 cm.'],
         ['Care', 'Hand wash in cool or lukewarm water, below 40°C. Dry flat, out of direct sun.'],
       ],
-      image: { src: 'products/rose-flower-coaster-with-mini-basket/04.jpg', alt: 'A yellow rose coaster lying flat, with twelve roses around its white centre' },
+      image: { src: 'products/rose-flower-coaster-with-mini-basket/rose-flower-coaster-with-mini-basket-04.jpg', alt: 'A yellow rose coaster lying flat, with twelve roses around its white centre' },
     },
     colours: {
       h: 'Pick your colours',
       lede: 'Six colours. Each pair comes in one colour, so a set of six can be three different colours.',
       cards: [
-        { pick: 'Yellow', title: 'Yellow', text: 'Sunny yellow roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/04.jpg', alt: 'The yellow rose coaster' } },
-        { pick: 'Purple', title: 'Purple', text: 'Soft lilac roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/06.jpg', alt: 'The purple rose coaster' } },
-        { pick: 'Pink', title: 'Pink', text: 'Pale pink roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/07.jpg', alt: 'The pink rose coaster' } },
-        { pick: 'Red', title: 'Red', text: 'Classic red roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/05.jpg', alt: 'The red rose coaster' } },
-        { pick: 'White', title: 'White', text: 'All-white roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/08.jpg', alt: 'The white rose coaster' } },
-        { pick: 'Blue', title: 'Blue', text: 'Bright blue roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/09.jpg', alt: 'The blue rose coaster' } },
+        { pick: 'Yellow', title: 'Yellow', text: 'Sunny yellow roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/rose-flower-coaster-with-mini-basket-04.jpg', alt: 'The yellow rose coaster' } },
+        { pick: 'Purple', title: 'Purple', text: 'Soft lilac roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/rose-flower-coaster-with-mini-basket-06.jpg', alt: 'The purple rose coaster' } },
+        { pick: 'Pink', title: 'Pink', text: 'Pale pink roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/rose-flower-coaster-with-mini-basket-07.jpg', alt: 'The pink rose coaster' } },
+        { pick: 'Red', title: 'Red', text: 'Classic red roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/rose-flower-coaster-with-mini-basket-05.jpg', alt: 'The red rose coaster' } },
+        { pick: 'White', title: 'White', text: 'All-white roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/rose-flower-coaster-with-mini-basket-08.jpg', alt: 'The white rose coaster' } },
+        { pick: 'Blue', title: 'Blue', text: 'Bright blue roses.', image: { src: 'products/rose-flower-coaster-with-mini-basket/rose-flower-coaster-with-mini-basket-09.jpg', alt: 'The blue rose coaster' } },
       ],
       note: 'Getting four or six? Mix the colours however you like.',
     },
@@ -1863,8 +1863,8 @@ export const LANDERS: Lander[] = [
         ['Housewarmings.', 'Six coasters, six baskets, for a new kitchen.'],
       ],
       images: [
-        { src: 'products/rose-flower-coaster-with-mini-basket/01.jpg', alt: 'Six rose coasters lying flat in yellow, white, purple, blue, red and pink' },
-        { src: 'products/rose-flower-coaster-with-mini-basket/10.jpg', alt: 'Six rose coasters stacked in a rainbow of colours' },
+        { src: 'products/rose-flower-coaster-with-mini-basket/rose-flower-coaster-with-mini-basket-01.jpg', alt: 'Six rose coasters lying flat in yellow, white, purple, blue, red and pink' },
+        { src: 'products/rose-flower-coaster-with-mini-basket/rose-flower-coaster-with-mini-basket-10.jpg', alt: 'Six rose coasters stacked in a rainbow of colours' },
       ],
     },
     craft: {
@@ -1873,7 +1873,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets the white centre, then twelve tiny roses and the leaves between them, and a basket to match.',
         'Because a person makes them, no two roses curl quite the same way.',
       ],
-      image: { src: 'products/rose-flower-coaster-with-mini-basket/07.jpg', alt: 'Close-up of the pink rose coaster, with its roses and green leaves' },
+      image: { src: 'products/rose-flower-coaster-with-mini-basket/rose-flower-coaster-with-mini-basket-07.jpg', alt: 'Close-up of the pink rose coaster, with its roses and green leaves' },
     },
     offer: {
       h: 'Pick your roses',
@@ -1922,7 +1922,7 @@ export const LANDERS: Lander[] = [
       h1: 'Crochet flower mandala coasters,',
       h1em: 'in a mix of colours, with a basket to keep them in.',
       sub: 'Hui crochets each coaster in a sunburst of white petals and tiny green leaves, with a scalloped edge in a bright colour. Every pack comes in a mix of colours, with a free crochet basket.',
-      image: { src: 'products/flower-mandala-coaster/01.jpg', alt: 'Eight crochet flower mandala coasters in yellow, purple, red, pink and blue, around a brown crochet basket' },
+      image: { src: 'products/flower-mandala-coaster/flower-mandala-coaster-01.jpg', alt: 'Eight crochet flower mandala coasters in yellow, purple, red, pink and blue, around a brown crochet basket' },
       proof: sturdy,
     },
     story: {
@@ -1944,7 +1944,7 @@ export const LANDERS: Lander[] = [
         ['Sizing', 'Hooked by hand, one at a time, so small size differences are part of the look'],
         ['Care', 'Hand wash gently in cool or lukewarm water, below 40°C. Press the water out in a towel and dry flat, away from direct sun.'],
       ],
-      image: { src: 'products/flower-mandala-coaster/05.jpg', alt: 'A glass tumbler sitting on a purple flower mandala coaster' },
+      image: { src: 'products/flower-mandala-coaster/flower-mandala-coaster-05.jpg', alt: 'A glass tumbler sitting on a purple flower mandala coaster' },
     },
     uses: {
       h: 'Where they go',
@@ -1955,8 +1955,8 @@ export const LANDERS: Lander[] = [
         ['Under a candle or a plant pot.', 'They work as little doilies too.'],
       ],
       images: [
-        { src: 'products/flower-mandala-coaster/02.jpg', alt: 'Pink, red, purple and yellow flower mandala coasters on a dark tray' },
-        { src: 'products/flower-mandala-coaster/03.jpg', alt: 'Purple, blue, yellow and pink ombre flower mandala coasters on a dark tray' },
+        { src: 'products/flower-mandala-coaster/flower-mandala-coaster-02.jpg', alt: 'Pink, red, purple and yellow flower mandala coasters on a dark tray' },
+        { src: 'products/flower-mandala-coaster/flower-mandala-coaster-03.jpg', alt: 'Purple, blue, yellow and pink ombre flower mandala coasters on a dark tray' },
       ],
     },
     craft: {
@@ -1965,7 +1965,7 @@ export const LANDERS: Lander[] = [
         'Hui hooks each coaster from the centre out: the soft middle, the white petals, the tiny green leaves, then the scalloped edge.',
         'Because a person makes them, small differences in size and colour are part of the look.',
       ],
-      image: { src: 'products/flower-mandala-coaster/04.jpg', alt: 'A stack of flower mandala coasters with a brown crochet basket on top' },
+      image: { src: 'products/flower-mandala-coaster/flower-mandala-coaster-04.jpg', alt: 'A stack of flower mandala coasters with a brown crochet basket on top' },
     },
     offer: {
       h: 'Pick your pack',
@@ -2006,7 +2006,7 @@ export const LANDERS: Lander[] = [
       h1: 'A fuzzy crochet puppy with a big black nose,',
       h1em: 'that carries your phone and your cards.',
       sub: 'Hui crochets each puppy in a soft loop-stitch fur, with floppy ears, little black eyes and a big fluffy nose. It hangs on an adjustable brown faux leather strap. Brown, beige or blue.',
-      image: { src: 'landers/fuzzy-pups/group.jpg', alt: 'Three fluffy crochet puppy bags on a wooden shelf, in beige, brown and blue, each with a big black nose and floppy ears' },
+      image: { src: 'landers/fuzzy-pups/fuzzy-pups-group.jpg', alt: 'Three fluffy crochet puppy bags on a wooden shelf, in beige, brown and blue, each with a big black nose and floppy ears' },
       proof: sturdy,
     },
     story: {
@@ -2028,15 +2028,15 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester loop-stitch yarn, black safety eyes'],
         ['Care', 'Hand wash only, in cool water below 40°C. Wash it on its own and dry flat.'],
       ],
-      image: { src: 'landers/fuzzy-pups/phone.jpg', alt: 'The brown puppy bag with a phone, a compact and a small tube poking out of the top' },
+      image: { src: 'landers/fuzzy-pups/fuzzy-pups-phone.jpg', alt: 'The brown puppy bag with a phone, a compact and a small tube poking out of the top' },
     },
     colours: {
       h: 'Pick your pup',
       lede: 'Three colours, each with the same big black nose and brown strap.',
       cards: [
-        { pick: 'Brown', title: 'Brown', text: 'Warm caramel brown, like a golden retriever.', image: { src: 'landers/fuzzy-pups/brown.jpg', alt: 'The brown fluffy puppy bag on its brown strap' } },
-        { pick: 'Beige', title: 'Beige', text: 'Soft cream beige. Bright against a dark coat.', image: { src: 'landers/fuzzy-pups/beige.jpg', alt: 'The beige fluffy puppy bag on its brown strap' } },
-        { pick: 'Blue', title: 'Blue', text: 'A soft lavender blue. The one people ask about.', image: { src: 'landers/fuzzy-pups/blue.jpg', alt: 'The blue fluffy puppy bag on its brown strap' } },
+        { pick: 'Brown', title: 'Brown', text: 'Warm caramel brown, like a golden retriever.', image: { src: 'landers/fuzzy-pups/fuzzy-pups-brown.jpg', alt: 'The brown fluffy puppy bag on its brown strap' } },
+        { pick: 'Beige', title: 'Beige', text: 'Soft cream beige. Bright against a dark coat.', image: { src: 'landers/fuzzy-pups/fuzzy-pups-beige.jpg', alt: 'The beige fluffy puppy bag on its brown strap' } },
+        { pick: 'Blue', title: 'Blue', text: 'A soft lavender blue. The one people ask about.', image: { src: 'landers/fuzzy-pups/fuzzy-pups-blue.jpg', alt: 'The blue fluffy puppy bag on its brown strap' } },
       ],
       note: 'Can’t choose? Take two or three and mix the colours.',
     },
@@ -2049,8 +2049,8 @@ export const LANDERS: Lander[] = [
         ['Matching.', 'Two colours, for you and a friend.'],
       ],
       images: [
-        { src: 'landers/fuzzy-pups/beige-worn.jpg', alt: 'The beige puppy bag worn on the shoulder over a black hoodie and jeans' },
-        { src: 'landers/fuzzy-pups/blue-worn.jpg', alt: 'The blue puppy bag worn crossbody over a black jumper and a white lace skirt' },
+        { src: 'landers/fuzzy-pups/fuzzy-pups-beige-worn.jpg', alt: 'The beige puppy bag worn on the shoulder over a black hoodie and jeans' },
+        { src: 'landers/fuzzy-pups/fuzzy-pups-blue-worn.jpg', alt: 'The blue puppy bag worn crossbody over a black jumper and a white lace skirt' },
       ],
     },
     craft: {
@@ -2059,7 +2059,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets the body in a dense loop stitch, then the two floppy ears and the big round nose, and sets in the little black eyes.',
         'Because a person makes each one, no two puppies come out exactly alike.',
       ],
-      image: { src: 'landers/fuzzy-pups/brown-close.jpg', alt: 'Close-up of the brown puppy bag, showing the curly loop-stitch fur, the floppy ears and the big black nose' },
+      image: { src: 'landers/fuzzy-pups/fuzzy-pups-brown-close.jpg', alt: 'Close-up of the brown puppy bag, showing the curly loop-stitch fur, the floppy ears and the big black nose' },
     },
     offer: {
       h: 'Pick your pups',

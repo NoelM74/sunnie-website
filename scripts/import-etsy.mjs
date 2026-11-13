@@ -28,7 +28,7 @@ for (const row of rows) {
   mkdirSync(imgDir, { recursive: true });
 
   for (const [i, url] of product.imageUrls.entries()) {
-    const out = join(imgDir, `${String(i + 1).padStart(2, '0')}.jpg`);
+    const out = join(imgDir, `${slug}-${String(i + 1).padStart(2, '0')}.jpg`);
     if (existsSync(out) && !force) continue;
     const res = await fetch(url);
     if (!res.ok) throw new Error(`${slug}: image ${i + 1} failed with ${res.status} (${url})`);

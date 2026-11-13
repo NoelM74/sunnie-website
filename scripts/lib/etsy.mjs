@@ -124,7 +124,7 @@ export function toProduct(row, override = {}) {
 
 export function toMarkdown(p, slug) {
   const images = p.imageUrls.map((_, i) => ({
-    src: `../../assets/products/${slug}/${String(i + 1).padStart(2, '0')}.jpg`,
+    src: `../../assets/products/${slug}/${slug}-${String(i + 1).padStart(2, '0')}.jpg`,
     alt: imageAlt(p.name, i, p.imageUrls.length),
   }));
   const fm = {
