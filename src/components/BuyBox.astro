@@ -16,23 +16,28 @@ interface Props {
   optionPhotos?: Record<string, number>;
   /** Sell the bundle lander's single pack instead (src/lib/lander-products.ts). */
   pack?: { slug: string; optionFor: Record<string, string>; landerSlug: string };
+  lang?: 'en' | 'de';
+  /** German pages: the option group's name and each value's label (the value sent to the bag stays English). */
+  optionLabels?: { name: string; values: Record<string, string> };
 }
-const { slug, option, inStock, siteCheckout = true, optionPrices, maker, alts = [], optionPhotos, pack } = Astro.props;
+const { slug, option, inStock, siteCheckout = true, optionPrices, maker, alts = [], optionPhotos, pack, lang = 'en', optionLabels } = Astro.props;
+const de = lang === 'de';
+const shipsIn = de ? site.shipsIn.replace('days', 'Tagen') : site.shipsIn;
 const photoFor = (v: string) => (option ? optionPhoto(v, option.values, alts, optionPhotos) : null);
 ---
 {siteCheckout === false ? (
-  <a class="btn btn-primary btn-block" href={`mailto:${site.email.hello}?subject=${encodeURIComponent('Ordering: ' + slug)}`}>Email us to order</a>
+  <a class="btn btn-primary btn-block" href={`mailto:${site.email.hello}?subject=${encodeURIComponent('Ordering: ' + slug)}`}>{de ? 'Per E-Mail bestellen' : 'Email us to order'}</a>
 ) : inStock ? (
   <form class="buy-form" id="buy-form" method="post" action="/bag/add/">
     <input type="hidden" name="slug" value={pack ? pack.slug : slug} />
     {option && (
       <fieldset class="choice">
-        <legend>{option.name}</legend>
+        <legend>{optionLabels?.name ?? option.name}</legend>
         <div class="choice-list">
           {option.values.map((v, i) => (
             <label class="choice-opt">
               <input type="radio" name="option" value={pack ? pack.optionFor[v] : v} required checked={i === 0} data-photo={photoFor(v) ?? undefined} />
-              <span>{v}{optionPrices && <> · <Money eur={optionPrices[v]} /></>}</span>
+              <span>{optionLabels?.values[v] ?? v}{optionPrices && <> · <Money eur={optionPrices[v]} lang={lang} /></>}</span>
             </label>
           ))}
         </div>
@@ -41,23 +46,34 @@ const photoFor = (v: string) => (option ? optionPhoto(v, option.values, alts, op
     <div class="buy-row">
       {pack ? <input type="hidden" name="qty" value="1" /> : (
         <label class="qty">
-          <span>Qty</span>
+          <span>{de ? 'Anzahl' : 'Qty'}</span>
           <select name="qty">
             {[1, 2, 3, 4, 5].map((n) => <option value={n}>{n}</option>)}
           </select>
         </label>
       )}
-      <button class="btn btn-primary buy-btn" type="submit" data-buy-btn>Add to basket</button>
+      <button class="btn btn-primary buy-btn" type="submit" data-buy-btn>{de ? 'In den Warenkorb' : 'Add to basket'}</button>
     </div>
     <ul class="buy-ticks" role="list">
-      <li><span>Made to order by {maker}, ships in {site.shipsIn} with tracking</span></li>
-      {pack
-        ? <li><span><a href={`/go/${pack.landerSlug}/`}>Free shipping on 2 or more</a>, and each one costs less · 30-day returns</span></li>
-        : <li><span>Free shipping from <FreeShippingFrom /> · 30-day returns</span></li>}
-      <li><span>No import charges to the EU, UK or US</span></li>
-      <li><span>Pay in euro, pounds or dollars with PayPal or card</span></li>
+      {de ? (
+        <>
+          <li><span>Auf Bestellung gemacht von {maker}, Versand in {shipsIn} mit Sendungsverfolgung</span></li>
+          <li><span>Kostenloser Versand ab <FreeShippingFrom lang="de" /> · 30 Tage Rückgabe</span></li>
+          <li><span>Keine Einfuhrabgaben in die EU, nach Großbritannien oder in die USA</span></li>
+          <li><span>Bezahlen in Euro, Pfund oder Dollar mit PayPal oder Karte</span></li>
+        </>
+      ) : (
+        <>
+          <li><span>Made to order by {maker}, ships in {site.shipsIn} with tracking</span></li>
+          {pack
+            ? <li><span><a href={`/go/${pack.landerSlug}/`}>Free shipping on 2 or more</a>, and each one costs less · 30-day returns</span></li>
+            : <li><span>Free shipping from <FreeShippingFrom /> · 30-day returns</span></li>}
+          <li><span>No import charges to the EU, UK or US</span></li>
+          <li><span>Pay in euro, pounds or dollars with PayPal or card</span></li>
+        </>
+      )}
     </ul>
   </form>
 ) : (
-  <span class="btn btn-disabled btn-block">Sold out</span>
+  <span class="btn btn-disabled btn-block">{de ? 'Ausverkauft' : 'Sold out'}</span>
 )}

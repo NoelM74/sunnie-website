@@ -10,6 +10,7 @@ import { unitLabel } from '../../lib/line-label';
 import { LANG_COOKIE, langFrom } from '../../i18n/lang';
 import { SHOP_UI } from '../../i18n/shop-ui';
 import { shownLine } from '../../i18n/de/lines';
+import { PRODUCTS_DE } from '../../i18n/de/products';
 
 export const prerender = false;
 
@@ -32,7 +33,7 @@ const U = SHOP_UI[lang].bag;
 const curName = SHOP_UI[lang].currencyNames[currency];
 const euro = (c: number) => formatMoney(c, currency, lang);
 /** Bundle pages have German versions: link a German shopper back to theirs. */
-const deHref = (href: string) => (lang === 'de' && href.startsWith('/go/') ? `/de${href}` : href);
+const deHref = (href: string) => (lang === 'de' && href.startsWith('/go/') ? `/de${href}` : lang === 'de' && href.startsWith('/products/') && PRODUCTS_DE[href.split('/')[2]] ? `/de/produkte/${href.split('/')[2]}/` : href);
 const suggestions = Object.values(catalog)
   .filter((i) => i.featured !== null && i.inStock && !priced.lines.some((l) => l.slug === i.slug))
   .sort((a, b) => (a.featured ?? 9) - (b.featured ?? 9))

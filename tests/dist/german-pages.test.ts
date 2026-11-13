@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { DIST } from './helpers';
 import { LANDERS_DE } from '../../src/i18n/de/landers';
+import { PRODUCTS_DE } from '../../src/i18n/de/products';
 
 const slugs = Object.keys(LANDERS_DE);
 const page = (p: string) => readFileSync(join(DIST, p, 'index.html'), 'utf8');
@@ -35,5 +36,18 @@ describe('German legal pages', () => {
   });
   it('names who represents the company in the Impressum', () => {
     expect(page('de/impressum')).toContain('Noel Murphy');
+  });
+});
+
+describe('German home, shop and product pages', () => {
+  const pages = ['de', 'de/shop/taschen', 'de/shop/untersetzer', ...Object.keys(PRODUCTS_DE).map((s) => `de/produkte/${s}`)];
+  it.each(pages)('%s is German and only links to German pages that exist', (p) => {
+    const html = page(p);
+    expect(html).toMatch(/<html lang="de"/);
+    expect(html).toContain('hreflang="de"');
+    for (const [, href] of html.matchAll(/href="(\/de\/[^"#]*)/g)) expect(existsSync(join(DIST, href, 'index.html')), href).toBe(true);
+  });
+  it.each(Object.keys(PRODUCTS_DE))('%s English page points to its German page', (slug) => {
+    expect(page(`products/${slug}`)).toContain(`hreflang="de" href="https://sunniedesigns.com/de/produkte/${slug}/"`);
   });
 });

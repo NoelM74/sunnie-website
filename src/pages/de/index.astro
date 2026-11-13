@@ -1,0 +1,191 @@
+---
+import { getCollection } from 'astro:content';
+import { Picture } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqList from '../../components/FaqList.astro';
+import ProductGrid from '../../components/ProductGrid.astro';
+import ReviewQuote from '../../components/ReviewQuote.astro';
+import Money from '../../components/Money.astro';
+import FreeShippingFrom from '../../components/FreeShippingFrom.astro';
+import reviews from '../../data/reviews.json';
+import storyPhoto from '../../assets/story/hui.jpg';
+import { site } from '../../data/site';
+import { featured } from '../../lib/products';
+import { faqJsonLd } from '../../lib/seo';
+import { formatMoney } from '../../lib/currency';
+import { FREE_SHIPPING_FROM } from '../../lib/money';
+import { BUNDLE_PRICES, priceBook } from '../../lib/bundles';
+import { landerBySlug } from '../../data/landers';
+import { landerImage } from '../../lib/lander-images';
+import { LANDER_PRODUCT_SLUGS } from '../../lib/lander-products';
+import { decimal } from '../../i18n/lang';
+import { hasGerman } from '../../i18n/de/catalog';
+
+// The German home page: the same bestsellers and favourites as the English one, linking to German pages.
+const all = await getCollection('products');
+const rating = decimal(site.proof.etsyRating, 'de');
+const shipsIn = site.shipsIn.replace('days', 'Tagen');
+const characters = [
+  { slug: 'star-frogs', name: 'The Star Frogs', blurb: 'Ein Frosch in Latzhose, der dein Handy trägt. Rosa, Blau oder Braun.', img: 'products/frog-phone-crossbody/01.jpg' },
+  { slug: 'big-mouth-monsters', name: 'Big Mouth Monsters', blurb: 'Ein flauschiges Monster mit einem Maul für dein Handy. Rosa oder Gelb.', img: 'landers/big-mouth-monsters/pair-step.webp' },
+  { slug: 'miso-cat', name: 'Miso, die Katze', blurb: 'Eine Katze im Pullover für Schlüssel und Lippenpflege. Schwarz, Braun oder Gelb.', img: 'products/cat-crossbody-bag-with-dangling-legs/01.webp' },
+  { slug: 'snout-and-about', name: 'Snout & About', blurb: 'Ein weicher kleiner Hund, der dein Handy trägt. Schnauzer, Welpe oder Terrier.', img: 'landers/snout-and-about/life-4.webp' },
+].map((c) => ({ ...c, href: `/de/go/${c.slug}/`, mark: `/go/${c.slug}-mark.svg`, book: priceBook(landerBySlug(c.slug)!) }));
+const two = BUNDLE_PRICES.EUR.packs[2] / 100;
+const best = featured(all).filter((p) => !LANDER_PRODUCT_SLUGS.includes(p.id) && hasGerman(p.id));
+const hero = { href: '/de/go/snout-and-about/', img: landerImage('landers/snout-and-about/trio.webp'), alt: 'Drei weiche gehäkelte Hundetaschen auf einem Holzregal: ein grauer Schnauzer, ein beiger Welpe und ein weißer Terrier' };
+const coaster = all.find((p) => p.id === 'sunflower-coasters-set-of-4')!;
+const tiles = [
+  { label: 'Taschen', href: '/de/shop/taschen/', img: landerImage('landers/finn-in-the-hood/life-3.webp') },
+  { label: 'Untersetzer', href: '/de/shop/untersetzer/', img: coaster.data.images[0].src },
+];
+const free = `${formatMoney(FREE_SHIPPING_FROM.EUR, 'EUR', 'de')} (${formatMoney(FREE_SHIPPING_FROM.GBP, 'GBP', 'de')} oder ${formatMoney(FREE_SHIPPING_FROM.USD, 'USD', 'de')})`;
+const homeFaq = [
+  { q: 'Wo kaufe ich bei Sunnie Designs?', a: `Genau hier: Leg Stücke in den Warenkorb und bezahl in Euro, Pfund oder Dollar mit PayPal oder jeder Karte, ohne Konto. Der Versand ist kostenlos bei Bestellungen ab ${free}, und zu jeder Bestellung gehören 30 Tage Rückgabe. Bei Lieferung in die EU, nach Großbritannien oder in die USA fallen keine Einfuhrabgaben an.` },
+  { q: 'Wer macht die Stücke?', a: `Hui entwirft jedes Stück und häkelt es Masche für Masche. Nollaig kümmert sich um den Shop: Fotos, Verpacken und Nachrichten, meist mit Antwort innerhalb von 24 Stunden.` },
+  { q: 'Welches Garn verwendet ihr?', a: 'Baumwolle, Polyester oder Acryl, je nach Design. Keine Tierwolle.' },
+  { q: 'Wie schnell wird verschickt?', a: `Bestellungen gehen innerhalb von ${shipsIn} mit Sendungsverfolgung raus.` },
+];
+const homeFaqLd = faqJsonLd(homeFaq);
+const HOME_REVIEWS = ['hexfeather|2026-09-25', 'Hannah|2026-06-04', 'Antje-Susan|2026-06-02'];
+const quotes = HOME_REVIEWS.map((key) => reviews.find((x) => `${x.reviewer}|${x.date}` === key)! as (typeof reviews)[number] & { lang: 'en' | 'de' });
+const alternates = [{ lang: 'en', href: '/' }, { lang: 'de', href: '/de/' }];
+---
+<BaseLayout
+  lang="de"
+  alternates={alternates}
+  title="Sunnie Designs | Handgehäkelte Taschen und Untersetzer"
+  description="Handgehäkelte Figurentaschen und Untersetzer, jedes Stück von Hand gemacht von Hui. Kostenloser Versand ab 50 €, 30 Tage Rückgabe."
+  path="/de/"
+  jsonLd={homeFaqLd ? [homeFaqLd] : []}
+>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Handgehäkelte Figurentaschen</p>
+        <h1 class="hero-title">
+          Trag ein bisschen
+          <span class="hero-joy">Freude<svg viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 22 2, 38 13, 58 7 S 96 3, 117 8" pathLength="1" /></svg></span> mit dir.
+        </h1>
+        <p class="hero-sub">
+          Frösche, Katzen und Hunde, jedes Stück von Hand gemacht von Hui. Platz für Handy und Schlüssel, und ein Gesicht,
+          bei dem Leute fragen, woher du es hast. Nimm zwei beliebige Taschen, und der Versand ist kostenlos.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#bestsellers">Zu den Bestsellern</a>
+          <a class="btn-ghost" href="/de/shop/taschen/">Alle Taschen</a>
+        </div>
+        <p class="hero-trust">
+          <span class="hero-stars" aria-hidden="true">★★★★★</span>
+          Von unseren Käufern mit {rating} bewertet · {site.proof.ebayPositive} positiv bei {site.proof.ebayCount} eBay-Bewertungen
+        </p>
+      </div>
+      <a class="hero-media" href={hero.href}>
+        <span class="hero-sun" aria-hidden="true"></span>
+        <span class="hero-sticker" aria-hidden="true">von<br />Hand</span>
+        <Picture src={hero.img} alt={hero.alt} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 56rem) 46vw, 100vw" loading="eager" fetchpriority="high" />
+        <span class="hero-caption">Snout &amp; About · 2 für <Money eur={two} gbpCents={BUNDLE_PRICES.GBP.packs[2]} usdCents={BUNDLE_PRICES.USD.packs[2]} lang="de" /></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="trust" aria-label="Warum bei uns kaufen">
+    <ul class="container trust-list" role="list">
+      <li><strong>Kostenloser Versand ab <FreeShippingFrom lang="de" /></strong><span>Versand in {shipsIn}</span></li>
+      <li><strong><span class="trust-star" aria-hidden="true">★ </span>{rating} von 5</strong><span>von unseren Käufern</span></li>
+      <li><strong>{site.proof.ebayPositive} positiv</strong><span>bei {site.proof.ebayCount} eBay-Bewertungen</span></li>
+      <li><strong>Handgemacht von Hui</strong><span>Auf Bestellung gemacht</span></li>
+    </ul>
+  </section>
+
+  <section class="section" id="bestsellers" aria-labelledby="best-h">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="best-h">Bestseller</h2>
+        <a href="/de/shop/taschen/">Alle Taschen</a>
+      </div>
+      <p class="lead">Vier Figuren, jede von Hand gehäkelt. Nimm zwei, und der Versand ist kostenlos.</p>
+      <ul class="chars" role="list">
+        {characters.map((c) => (
+          <li>
+            <a class="char" href={c.href}>
+              <span class="char-media">
+                <Picture src={landerImage(c.img)} alt="" formats={['avif', 'webp']} widths={[360, 600, 800]} sizes="(min-width: 64rem) 270px, (min-width: 40rem) 45vw, 92vw" loading="lazy" />
+                <img class="char-mark" src={c.mark} alt="" width="52" height="52" loading="lazy" />
+              </span>
+              <span class="char-name">{c.name}</span>
+              <span class="char-blurb">{c.blurb}</span>
+              <span class="char-price">
+                <Money eur={c.book.EUR[1] / 100} gbpCents={c.book.GBP[1]} usdCents={c.book.USD[1]} lang="de" /> · 2 für <Money eur={c.book.EUR[2] / 100} gbpCents={c.book.GBP[2]} usdCents={c.book.USD[2]} lang="de" />
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  {best.length > 0 && (
+    <section class="section" aria-labelledby="more-h">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="more-h">Noch mehr zum Verlieben</h2>
+          <a href="/de/shop/untersetzer/">Untersetzer</a>
+        </div>
+        <ProductGrid products={best} lang="de" />
+      </div>
+    </section>
+  )}
+
+  <section class="section section-sand" aria-labelledby="story-h">
+    <div class="container story">
+      <Picture src={storyPhoto} alt="Hui, die jedes Stück von Sunnie Designs entwirft und häkelt, an einem Cafefenster neben einer Vase mit orangefarbenen Blumen" formats={['avif', 'webp']} widths={[480, 800]} sizes="(min-width: 56rem) 40vw, 100vw" loading="lazy" class="story-img" style="object-position: 50% 20%" />
+      <div>
+        <h2 id="story-h">Handgemacht von Hui, Masche für Masche</h2>
+        <p class="lead">
+          Jedes Stück entsteht Masche für Masche, von der ersten Reihe bis zum letzten Knoten. Handgearbeitetes Garn
+          bedeutet kleine Abweichungen von den Fotos, ein, zwei Zentimeter, genau die Art von Unvollkommenheit, die ein
+          Stück zu deinem macht.
+        </p>
+        <p>Unsere Käufer bewerten uns mit {rating} von 5. Jede Bestellung hilft, langsames, handgemachtes Handwerk am Leben zu halten.</p>
+        <p><a href="/our-story/" hreflang="en">Unsere Geschichte (auf Englisch)</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cats-h">
+    <div class="container">
+      <h2 id="cats-h">Nach Art einkaufen</h2>
+      <p class="lead">Taschen für jeden Tag und Untersetzer für den Tisch.</p>
+      <ul class="tiles" role="list" style={`--tile-cols: ${tiles.length}`}>
+        {tiles.map((t) => (
+          <li>
+            <a class="tile" href={t.href}>
+              <Picture src={t.img} alt="" formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 56rem) 50vw, (min-width: 40rem) 50vw, 100vw" loading="lazy" />
+              <span class="tile-label">{t.label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-sand" aria-labelledby="reviews-h">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="reviews-h">Das sagen unsere Käufer</h2>
+      </div>
+      <p class="lead">Jedes Zitat hier stammt von echten Käufern. Englische Bewertungen haben wir übersetzt.</p>
+      <div class="quotes">
+        {quotes.map((r) => <ReviewQuote review={r} lang="de" />)}
+      </div>
+    </div>
+  </section>
+
+  <div class="section">
+    <div class="container">
+      <FaqList items={homeFaq} heading="Gut zu wissen" />
+    </div>
+  </div>
+  <script is:inline>try{document.cookie='sunnie_lang=de;path=/;max-age=31536000;samesite=lax;secure'}catch(e){}</script>
+</BaseLayout>

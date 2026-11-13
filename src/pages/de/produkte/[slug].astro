@@ -1,0 +1,134 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { getImage, Picture } from 'astro:assets';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import BuyBox from '../../../components/BuyBox.astro';
+import FaqList from '../../../components/FaqList.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Money from '../../../components/Money.astro';
+import ProductGrid from '../../../components/ProductGrid.astro';
+import FreeShippingFrom from '../../../components/FreeShippingFrom.astro';
+import huiPhoto from '../../../assets/story/hui.jpg';
+import { site } from '../../../data/site';
+import { related } from '../../../lib/products';
+import { SHIPPING_FLAT } from '../../../lib/money';
+import { decimal } from '../../../i18n/lang';
+import { PRODUCTS_DE, type ProductDe } from '../../../i18n/de/products';
+import { CATEGORY_DE, hasGerman } from '../../../i18n/de/catalog';
+import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, metaDescription, productJsonLd, pageTitle } from '../../../lib/seo';
+
+// German product pages: the English product (photos, price, options, stock) with the German
+// words from src/i18n/de/products.ts.
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  return products.filter((p) => PRODUCTS_DE[p.id]).map((product) => ({ params: { slug: product.id }, props: { product, all: products, de: PRODUCTS_DE[product.id] } }));
+}
+
+interface Props { product: CollectionEntry<'products'>; all: CollectionEntry<'products'>[]; de: ProductDe }
+const { product, all, de } = Astro.props;
+const d = product.data;
+if (de.option && (!d.options[0] || d.options[0].values.some((v) => !de.option!.values[v]))) throw new Error(`German product ${product.id}: every option value needs a German label`);
+
+const path = `/de/produkte/${product.id}/`;
+const cat = CATEGORY_DE[d.category];
+const crumbs = [
+  { name: 'Startseite', path: '/de/' },
+  { name: cat.label, path: cat.path },
+  { name: de.name, path },
+];
+const images = d.images.map((img, i) => ({ ...img, alt: de.alts[i] ?? `${de.name}, Foto ${i + 1} von ${d.images.length}` }));
+const ldImages = await Promise.all(d.images.slice(0, 3).map(async (img) => absoluteUrl((await getImage({ src: img.src, width: 1200, format: 'jpg' })).src)));
+const description = metaDescription(de.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().split(/(?<=\.)\s/).slice(0, 2).join(' '));
+const optionPriceValues = d.optionPrices ? Object.values(d.optionPrices) : undefined;
+const lowestOptionPrice = optionPriceValues ? Math.min(...optionPriceValues) : undefined;
+const fromPrefix = lowestOptionPrice !== undefined ? 'ab ' : '';
+const shownPrice = lowestOptionPrice ?? d.price;
+const canBuy = d.inStock && d.siteCheckout;
+const faq = faqJsonLd(de.faq);
+const shipsIn = site.shipsIn.replace('days', 'Tagen');
+const REGION: Record<string, string> = { Ireland: 'Irland', 'United Kingdom': 'Vereinigtes Königreich', EU: 'EU', 'United States and Canada': 'USA und Kanada', Norway: 'Norwegen' };
+const alternates = [{ lang: 'en', href: `/products/${product.id}/` }, { lang: 'de', href: path }];
+const germanOnly = all.filter((p) => hasGerman(p.id));
+---
+<BaseLayout
+  lang="de"
+  alternates={alternates}
+  title={pageTitle(de.name)}
+  description={description}
+  path={path}
+  image={ldImages[0]}
+  type="product"
+  current={d.category}
+  jsonLd={[
+    productJsonLd({
+      name: de.name,
+      description,
+      url: absoluteUrl(path),
+      images: ldImages,
+      price: d.price,
+      inStock: d.inStock,
+      sku: product.id,
+      material: de.materials.join(', ') || undefined,
+      color: de.option ? Object.values(de.option.values).join(', ') : undefined,
+      category: cat.label,
+      optionPrices: optionPriceValues,
+    }),
+    breadcrumbJsonLd(crumbs),
+    ...(faq ? [faq] : []),
+  ]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <div class="product">
+      <Gallery images={images} name={de.name} lang="de" />
+      <div class="product-info">
+        {d.isNew && d.inStock && <span class="badge">Neu</span>}
+        <h1>{de.name}</h1>
+        <p class="product-price">{fromPrefix}<Money eur={shownPrice} lang="de" /></p>
+        <p class="product-proof"><span class="hero-stars" aria-hidden="true">★★★★★</span> Von Käufern mit {decimal(site.proof.etsyRating, 'de')} bewertet · {site.proof.ebayPositive} positiv bei {site.proof.ebayCount} eBay-Bewertungen</p>
+        <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} maker={d.maker} alts={d.images.map((i) => i.alt)} optionPhotos={d.optionPhotos} lang="de" optionLabels={de.option} />
+        {d.maker === 'Hui' && (
+          <a class="maker-strip" href="/our-story/">
+            <Picture src={huiPhoto} alt="" widths={[96, 192]} sizes="48px" formats={['webp']} class="maker-photo" />
+            <span><strong>Gemacht von Hui</strong>, Masche für Masche. Jedes Stück ist ein wenig anders, weil jedes von Hand gemacht ist. Deins gibt es genau so nur einmal. <span class="maker-more">Lerne Hui kennen</span></span>
+          </a>
+        )}
+      </div>
+    </div>
+    <div class="product-details">
+      <div class="prose product-body" set:html={de.body} />
+      <div class="product-more">
+        <details class="fold" open>
+          <summary>Größe und Material</summary>
+          <ul class="product-facts" role="list">
+            {de.size && <li><strong>Größe:</strong> {de.size}</li>}
+            {de.materials.length > 0 && <li><strong>Material:</strong> {de.materials.join(', ')}</li>}
+            <li><strong>Versand in:</strong> {shipsIn}</li>
+          </ul>
+        </details>
+        <details class="fold">
+          <summary>Lieferung und Rückgabe</summary>
+          <p>Auf Bestellung gemacht und innerhalb von {shipsIn} mit Sendungsverfolgung verschickt. Der Versand kostet <Money eur={SHIPPING_FLAT.EUR / 100} gbpCents={SHIPPING_FLAT.GBP} usdCents={SHIPPING_FLAT.USD} lang="de" /> und ist kostenlos bei Bestellungen ab <FreeShippingFrom lang="de" />. Keine Einfuhrabgaben in die EU, nach Großbritannien oder in die USA.</p>
+          <ul class="product-facts" role="list">
+            {site.delivery.map((r) => <li><strong>{REGION[r.region] ?? r.region}:</strong> {r.days} Werktage</li>)}
+          </ul>
+          <p>Rückgabe innerhalb von 30 Tagen. <a href="/de/versand/">Versand und Rückgabe</a></p>
+        </details>
+        {de.faq.length > 0 && <FaqList items={de.faq} heading="Fragen" id="product-faq" accordion />}
+      </div>
+    </div>
+    {canBuy && (
+      <div class="buy-bar" data-buy-bar hidden>
+        <span class="buy-bar-price">{fromPrefix}<Money eur={shownPrice} lang="de" /></span>
+        <button class="btn btn-primary" type="submit" form="buy-form">In den Warenkorb</button>
+      </div>
+    )}
+    <section class="section related" aria-labelledby="related-h">
+      <h2 id="related-h">Das könnte dir auch gefallen</h2>
+      <ProductGrid products={related(germanOnly, product)} lang="de" />
+    </section>
+  </div>
+  <script is:inline>(function(){var bar=document.querySelector('[data-buy-bar]'),btn=document.querySelector('[data-buy-btn]');if(!bar||!btn||!('IntersectionObserver' in window))return;new IntersectionObserver(function(e){bar.hidden=e[0].isIntersecting||e[0].boundingClientRect.top>0}).observe(btn)})();</script>
+  <script is:inline>try{document.cookie='sunnie_lang=de;path=/;max-age=31536000;samesite=lax;secure'}catch(e){}</script>
+</BaseLayout>

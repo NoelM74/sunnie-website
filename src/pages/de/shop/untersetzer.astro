@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import ProductGrid from '../../../components/ProductGrid.astro';
+import { sortForGrid } from '../../../lib/products';
+import { germanHref, hasGerman } from '../../../i18n/de/catalog';
+import { absoluteUrl, breadcrumbJsonLd, itemListJsonLd, pageTitle } from '../../../lib/seo';
+
+// German coasters page: the coasters that have a German page.
+const items = sortForGrid((await getCollection('products')).filter((p) => p.data.category === 'coasters' && hasGerman(p.id)));
+const crumbs = [{ name: 'Startseite', path: '/de/' }, { name: 'Untersetzer', path: '/de/shop/untersetzer/' }];
+const alternates = [{ lang: 'en', href: '/shop/coasters/' }, { lang: 'de', href: '/de/shop/untersetzer/' }];
+---
+<BaseLayout
+  lang="de"
+  alternates={alternates}
+  title={pageTitle('Gehäkelte Untersetzer')}
+  description="Handgehäkelte Untersetzer: Blumen, Mandalas und Tiere, in Sets für den ganzen Tisch. Dick, weich und schön genug, um liegen zu bleiben."
+  current="coasters"
+  jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd('Gehäkelte Untersetzer', items.map((p) => absoluteUrl(germanHref(p.id)!)))]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <header class="page-head">
+      <h1>Gehäkelte Untersetzer</h1>
+      <p>
+        Blumen, Mandalas und kleine Tiere, jeder Untersetzer von Hand gehäkelt. Sie halten heiße Becher und kalte
+        Gläser vom Tisch fern und sehen gut aus, auch wenn gerade keine Tasse darauf steht.
+      </p>
+    </header>
+    <ProductGrid products={items} lang="de" />
+    <p><a href="/shop/coasters/" hreflang="en" lang="en">See every coaster (in English)</a></p>
+  </div>
+  <script is:inline>try{document.cookie='sunnie_lang=de;path=/;max-age=31536000;samesite=lax;secure'}catch(e){}</script>
+</BaseLayout>

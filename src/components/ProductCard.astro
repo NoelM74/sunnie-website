@@ -3,20 +3,25 @@ import { Picture } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Money from './Money.astro';
 import { packFor, productHref } from '../lib/lander-products';
+import { germanHref, germanName } from '../i18n/de/catalog';
 
 interface Props {
   product: CollectionEntry<'products'>;
   headingLevel?: 'h2' | 'h3';
   eager?: boolean;
+  lang?: 'en' | 'de';
 }
-const { product, headingLevel = 'h3', eager = false } = Astro.props;
-const { name, price, inStock, isNew, images } = product.data;
+const { product, headingLevel = 'h3', eager = false, lang = 'en' } = Astro.props;
+const { price, inStock, isNew, images } = product.data;
+const de = lang === 'de';
+const name = de ? germanName(product.id, product.data.name) : product.data.name;
+const href = (de && germanHref(product.id)) || productHref(product.id);
 const Heading = headingLevel;
 const pack = packFor(product.id);
-const badge = !inStock ? 'Sold out' : isNew ? 'New' : null;
+const badge = !inStock ? (de ? 'Ausverkauft' : 'Sold out') : isNew ? (de ? 'Neu' : 'New') : null;
 ---
 <article class="card">
-  <a class="card-link" href={productHref(product.id)}>
+  <a class="card-link" href={href}>
     <div class="card-media">
       <Picture
         src={images[0].src}
@@ -30,5 +35,5 @@ const badge = !inStock ? 'Sold out' : isNew ? 'New' : null;
     </div>
     <Heading class="card-title">{name}</Heading>
   </a>
-  <p class="card-price">{pack ? <Money eur={pack.price.eur / 100} gbpCents={pack.price.gbp} usdCents={pack.price.usd} /> : <Money eur={price} />}</p>
+  <p class="card-price">{pack ? <Money eur={pack.price.eur / 100} gbpCents={pack.price.gbp} usdCents={pack.price.usd} lang={lang} /> : <Money eur={price} lang={lang} />}</p>
 </article>

@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import ProductGrid from '../../../components/ProductGrid.astro';
+import { site } from '../../../data/site';
+import { GROUP_ORDER, inGroup } from '../../../lib/products';
+import { decimal } from '../../../i18n/lang';
+import { germanHref, hasGerman } from '../../../i18n/de/catalog';
+import { absoluteUrl, breadcrumbJsonLd, itemListJsonLd, pageTitle } from '../../../lib/seo';
+
+// German bags page: the bags that have a German page, by group.
+const GROUP_DE = { characters: 'Figuren und Tiere', flowers: 'Blumen', totes: 'Shopper und Schultertaschen' } as const;
+const all = (await getCollection('products')).filter((p) => hasGerman(p.id));
+const groups = GROUP_ORDER.map((g) => ({ key: g, label: GROUP_DE[g], items: inGroup(all, g) })).filter((g) => g.items.length > 0);
+const crumbs = [{ name: 'Startseite', path: '/de/' }, { name: 'Taschen', path: '/de/shop/taschen/' }];
+const urls = groups.flatMap((g) => g.items).map((p) => absoluteUrl(germanHref(p.id)!));
+const alternates = [{ lang: 'en', href: '/shop/bags/' }, { lang: 'de', href: '/de/shop/taschen/' }];
+---
+<BaseLayout
+  lang="de"
+  alternates={alternates}
+  title={pageTitle('Handgehäkelte Taschen und Handytaschen')}
+  description={`Handytaschen, Umhängetaschen und Shopper, jede von Hand gehäkelt und von unseren Käufern mit ${decimal(site.proof.etsyRating, 'de')} bewertet. Versand in ${site.shipsIn.replace('days', 'Tagen')} mit Sendungsverfolgung.`}
+  current="bags"
+  jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd('Gehäkelte Taschen', urls)]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <header class="page-head">
+      <h1>Gehäkelte Taschen</h1>
+      <p>
+        Das Handy den ganzen Tag in der Hand zu halten, nervt schnell. Diese Umhängetaschen, Shopper und Figurentaschen
+        sind von Hand gehäkelt und gemacht für Handy, Karten und Schlüssel. Tipp auf eine Tasche für Größe, Farben und
+        mehr Fotos.
+      </p>
+    </header>
+    {groups.map((g) => (
+      <section class="section" aria-labelledby={`g-${g.key}`}>
+        <h2 id={`g-${g.key}`}>{g.label}</h2>
+        <ProductGrid products={g.items} lang="de" />
+      </section>
+    ))}
+    <p><a href="/shop/bags/" hreflang="en" lang="en">See every bag (in English)</a></p>
+  </div>
+  <script is:inline>try{document.cookie='sunnie_lang=de;path=/;max-age=31536000;samesite=lax;secure'}catch(e){}</script>
+</BaseLayout>

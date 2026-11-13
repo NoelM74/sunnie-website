@@ -42,6 +42,8 @@ describe('German basket labels', () => {
     expect(l.name).toBe('The Star Frogs Frosch-Handytasche');
     expect(l.option).toBe('3 Frösche: Rosa + Blau + Braun');
     expect(shownLine({ slug: 'finn-the-shamrock', name: 'Finn', option: '2 frogs', qty: 1 }, 'de').option).toBe('2 Frösche');
-    expect(shownLine({ slug: 'rainbow-tote-bag', name: 'Rainbow tote', qty: 1 }, 'de').name).toBe('Rainbow tote');
+    expect(shownLine({ slug: 'giraffe-crossbody-bag-for-kids', name: 'Giraffe bag', qty: 1 }, 'de').name).toBe('Giraffe bag');
+    const tote = shownLine({ slug: 'rainbow-tote-bag', name: 'Rainbow tote', option: 'warm rainbow', qty: 1 }, 'de');
+    expect([tote.name, tote.option]).toEqual(['Regenbogen-Netztasche mit Herz-Geldbörse', 'Warmer Regenbogen']);
   });
 });

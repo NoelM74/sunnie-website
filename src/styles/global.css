@@ -518,3 +518,5 @@ main:focus { outline: none; }
 
 /* German product names are long hyphenated compounds: let them break at the hyphen in the basket. */
 :lang(de) .bag-line-info .nw, :lang(de) .summary-lines .nw { white-space: normal; }
+:lang(de) .card-title .nw, :lang(de) h1 .nw, :lang(de) h2 .nw, :lang(de) h3 .nw, :lang(de) .breadcrumbs .nw, :lang(de) .char-name .nw { white-space: normal; }
+:lang(de) .card-title, :lang(de) h1, :lang(de) h2 { hyphens: auto; overflow-wrap: break-word; }

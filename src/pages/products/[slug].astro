@@ -15,6 +15,7 @@ import { SHIPPING_FLAT } from '../../lib/money';
 import FreeShippingFrom from '../../components/FreeShippingFrom.astro';
 import { Picture } from 'astro:assets';
 import huiPhoto from '../../assets/story/hui.jpg';
+import { PRODUCTS_DE } from '../../i18n/de/products';
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, firstSentences, metaDescription, productJsonLd, productTitle } from '../../lib/seo';
 
 export async function getStaticPaths() {
@@ -55,6 +56,7 @@ const pack = packFor(product.id);
 const lander = pack?.lander;
 ---
 <BaseLayout
+  alternates={PRODUCTS_DE[product.id] ? [{ lang: 'en', href: path }, { lang: 'de', href: `/de/produkte/${product.id}/` }] : []}
   title={productTitle(d.name)}
   description={description}
   path={path}

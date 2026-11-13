@@ -7,13 +7,14 @@ interface Props {
   products: CollectionEntry<'products'>[];
   headingLevel?: 'h2' | 'h3';
   eagerFirst?: number;
+  lang?: 'en' | 'de';
 }
-const { products, headingLevel = 'h3', eagerFirst = 0 } = Astro.props;
+const { products, headingLevel = 'h3', eagerFirst = 0, lang = 'en' } = Astro.props;
 ---
 <ul class="grid" role="list">
   {products.map((p, i) => (
     <li data-tags={tagsFor(p).join(' ')} data-price={Math.round(p.data.price * 100)} data-new={p.data.isNew ? 1 : 0} data-i={i}>
-      <ProductCard product={p} headingLevel={headingLevel} eager={i < eagerFirst} />
+      <ProductCard product={p} headingLevel={headingLevel} eager={i < eagerFirst} lang={lang} />
     </li>
   ))}
 </ul>

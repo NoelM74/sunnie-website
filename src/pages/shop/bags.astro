@@ -19,6 +19,7 @@ const faqItems = categoryFaq.bags;
 const faq = faqJsonLd(faqItems);
 ---
 <BaseLayout
+  alternates={[{ lang: 'en', href: '/shop/bags/' }, { lang: 'de', href: '/de/shop/taschen/' }]}
   title={pageTitle('Handmade crochet bags and phone crossbodies')}
   description={`Phone bags, crossbodies and totes, each one crocheted by hand and rated ${site.proof.etsyRating} by our buyers. Ships in ${site.shipsIn} with tracking.`}
   current="bags"

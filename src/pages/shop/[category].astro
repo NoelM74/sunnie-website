@@ -40,6 +40,7 @@ const faqItems = categoryFaq[category];
 const faq = faqJsonLd(faqItems);
 ---
 <BaseLayout
+  alternates={category === 'coasters' ? [{ lang: 'en', href: '/shop/coasters/' }, { lang: 'de', href: '/de/shop/untersetzer/' }] : []}
   title={pageTitle(copy.title)}
   description={copy.description}
   current={category}
