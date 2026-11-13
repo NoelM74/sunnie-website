@@ -20,7 +20,14 @@ describe('validateCheckout', () => {
     expect(r.ok).toBe(false);
   });
   it('knows common countries', () => {
-    for (const c of ['IE', 'GB', 'DE', 'US', 'CA', 'AU', 'CN', 'JP']) expect(COUNTRY_CODES).toContain(c);
+    for (const c of ['IE', 'GB', 'DE', 'US', 'CA', 'NZ', 'CN', 'JP']) expect(COUNTRY_CODES).toContain(c);
     expect(countryName('IE')).toBe('Ireland');
+  });
+  it("won't take orders for Australia, Iceland or Italy", () => {
+    for (const c of ['AU', 'IS', 'IT']) {
+      expect(COUNTRY_CODES).not.toContain(c);
+      const r = validateCheckout(fd({ ...good, country: c }));
+      expect(r.ok).toBe(false);
+    }
   });
 });

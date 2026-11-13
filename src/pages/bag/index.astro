@@ -74,7 +74,7 @@ const suggestions = Object.values(catalog)
             <div><dt>Shipping</dt><dd>{priced.shippingCents === 0 ? 'Free' : euro(priced.shippingCents)}</dd></div>
             <div class="bag-total"><dt>Total</dt><dd>{euro(priced.totalCents)}</dd></div>
           </dl>
-          {priced.freeShippingGapCents > 0 && <p class="small">Add {euro(priced.freeShippingGapCents)} more for free worldwide shipping.</p>}
+          {priced.freeShippingGapCents > 0 && <p class="small">Add {euro(priced.freeShippingGapCents)} more for free shipping.</p>}
           <p class="small muted">Prices in {CURRENCY_NAMES[currency]}. You pay in {CURRENCY_NAMES[currency]}.</p>
           <a class="btn btn-primary btn-block" href="/checkout/">Checkout</a>
           <a class="btn-ghost" href="/shop/">Continue shopping</a>

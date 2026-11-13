@@ -14,6 +14,8 @@ export const site = {
   pinterestUrl: 'https://www.pinterest.com/Sunnie_Designs/',
   facebookUrl: 'https://www.facebook.com/sunniedesigns',
   shipsIn: '3–5 days',
+  /** Owner, 2026-11-13: we don't ship to these countries. Kept out of the checkout and Google Shopping. */
+  noShipTo: ['AU', 'IS', 'IT'] as string[],
   /** Owner-supplied, 2026-10-09. Working days after dispatch. */
   delivery: [
     { region: 'Ireland', carrier: 'An Post', days: '7–12' },

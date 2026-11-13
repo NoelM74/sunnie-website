@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
+import { noShipList } from '../lib/checkout-form';
 import { pageTitle } from '../lib/seo';
 import Money from '../components/Money.astro';
 import FreeShippingFrom from '../components/FreeShippingFrom.astro';
@@ -12,7 +13,7 @@ import { SHIPPING_FLAT } from '../lib/money';
 
     <h2>Buying on this website</h2>
     <ul>
-      <li><strong>Cost:</strong> <Money eur={SHIPPING_FLAT.EUR / 100} gbpCents={SHIPPING_FLAT.GBP} usdCents={SHIPPING_FLAT.USD} /> per order, worldwide. Free on orders of <FreeShippingFrom /> or more.</li>
+      <li><strong>Cost:</strong> <Money eur={SHIPPING_FLAT.EUR / 100} gbpCents={SHIPPING_FLAT.GBP} usdCents={SHIPPING_FLAT.USD} /> per order. Free on orders of <FreeShippingFrom /> or more.</li>
       <li><strong>Bundles:</strong> buy two or more of the same <a href="/shop/bags/">character bag</a> or <a href="/go/fruit-bellies/">Fruit Bellies coaster</a>, a set of four or six <a href="/go/fold-and-bloom/">Fold &amp; Bloom carnations</a>, the <a href="/go/pearl-and-daisy/">Pearl &amp; Daisy</a> big and little set, both <a href="/go/bamboo-buddies/">Bamboo Buddies</a> pandas, a set of four or six <a href="/go/potted-roses/">Potted Roses</a>, or a pack of six or eight <a href="/go/mandala-blooms/">Mandala Blooms</a>, and shipping is free, whatever the total.</li>
       <li><strong>Processing:</strong> every piece is made to order and ships within {site.shipsIn}.</li>
       <li><strong>Tracking:</strong> every parcel is tracked, and we email you the tracking number when it ships.</li>
@@ -28,6 +29,7 @@ import { SHIPPING_FLAT } from '../lib/money';
       </table>
     </div>
     <p>Delivery times count from the day your parcel ships, so add {site.shipsIn} for making and packing.</p>
+    <p>We ship to most countries, but not to {noShipList}.</p>
     <p>
       There are no import charges to pay on delivery to the EU, the UK or the US. The price you see at checkout is
       the full price. Other countries may charge their own import fees on arrival.
