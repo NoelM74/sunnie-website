@@ -135,7 +135,7 @@ const tiles = [
           <li>
             <a class="char" href={c.href}>
               <span class="char-media">
-                <Picture src={landerImage(c.img)} alt="" formats={['avif', 'webp']} widths={[360, 600, 800]} sizes="(min-width: 64rem) 270px, (min-width: 40rem) 45vw, 92vw" loading="lazy" />
+                <Picture src={landerImage(c.img)} alt={landerBySlug(c.slug)!.name} formats={['avif', 'webp']} widths={[360, 600, 800]} sizes="(min-width: 64rem) 270px, (min-width: 40rem) 45vw, 92vw" loading="lazy" />
                 <img class="char-mark" src={c.mark} alt="" width="52" height="52" loading="lazy" />
               </span>
               <span class="char-name">{c.name}</span>
@@ -187,7 +187,7 @@ const tiles = [
         {tiles.map((t) => (
           <li>
             <a class="tile" href={t.href}>
-              <Picture src={t.img} alt="" formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 56rem) 50vw, (min-width: 40rem) 50vw, 100vw" loading="lazy" />
+              <Picture src={t.img} alt={`Crochet ${t.label.toLowerCase()}`} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 56rem) 50vw, (min-width: 40rem) 50vw, 100vw" loading="lazy" />
               <span class="tile-label">{t.label}</span>
             </a>
           </li>

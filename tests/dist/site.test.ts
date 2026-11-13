@@ -47,3 +47,13 @@ describe('crawl files', () => {
     expect(existsSync(join(DIST, 'sitemap-index.xml'))).toBe(true);
   });
 });
+
+describe('image alt text', () => {
+  it('every photo on a public page has alt text (decorative icons keep alt="")', () => {
+    for (const f of files) {
+      if (/[\\/](bag|checkout)[\\/]/.test(f)) continue;
+      const bare = (readFileSync(f, 'utf8').match(/<img\b[^>]*>/g) ?? []).filter((t) => /\salt(\s|>|\/)/.test(t));
+      expect(bare, rel(f)).toEqual([]);
+    }
+  });
+});

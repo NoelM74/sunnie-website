@@ -90,7 +90,7 @@ const germanOnly = all.filter((p) => hasGerman(p.id));
         <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} maker={d.maker} alts={d.images.map((i) => i.alt)} optionPhotos={d.optionPhotos} lang="de" optionLabels={de.option} />
         {d.maker === 'Hui' && (
           <a class="maker-strip" href="/our-story/">
-            <Picture src={huiPhoto} alt="" widths={[96, 192]} sizes="48px" formats={['webp']} class="maker-photo" />
+            <Picture src={huiPhoto} alt="Hui, die jedes Stück von Sunnie Designs macht" widths={[96, 192]} sizes="48px" formats={['webp']} class="maker-photo" />
             <span><strong>Gemacht von Hui</strong>, Masche für Masche. Jedes Stück ist ein wenig anders, weil jedes von Hand gemacht ist. Deins gibt es genau so nur einmal. <span class="maker-more">Lerne Hui kennen</span></span>
           </a>
         )}
