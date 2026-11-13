@@ -1,7 +1,8 @@
 import { getCollection } from 'astro:content';
 import { getImage } from 'astro:assets';
 import { site } from '../data/site';
-import { productHref } from './lander-products';
+import { packFor, productHref } from './lander-products';
+import { toLocalCents, type Currency } from './currency';
 import { CATEGORY_LABELS, GROUP_LABELS } from './products';
 import { absoluteUrl, firstSentences } from './seo';
 
@@ -17,13 +18,22 @@ export const BASE_HEADERS = [
   'condition', 'brand', 'google_product_category', 'product_type', 'additional_image_link',
 ];
 
+/** A product's lowest price in `currency`, as its page and the checkout charge it: a bundle page's
+ * own single-pack price list, else the euro price converted (rounded up to .95). */
+export function fromCents(slug: string, priceEur: number, currency: Currency): number {
+  const pack = packFor(slug);
+  if (pack && !pack.lander.sizes) return currency === 'GBP' ? pack.price.gbp : currency === 'USD' ? pack.price.usd : pack.price.eur;
+  return toLocalCents(Math.round(priceEur * 100), currency);
+}
+
 const cell = (v: string) => `"${v.replace(/"/g, '""')}"`;
 
 /** One row per product at its lowest ("From") price, shared by the Pinterest and Google feeds.
  * No review columns: Etsy reviews are shop-level, not per product. `extra` adds columns. */
 export async function productFeedCsv(
   extraHeaders: string[] = [],
-  extra: (priceEur: number) => string[] = () => [],
+  extra: (priceCents: number) => string[] = () => [],
+  currency: Currency = 'EUR',
 ): Promise<Response> {
   const products = (await getCollection('products')).sort((a, b) => a.id.localeCompare(b.id));
   const rows = await Promise.all(
@@ -38,14 +48,14 @@ export async function productFeedCsv(
         firstSentences(p.body ?? '', 4),
         absoluteUrl(productHref(p.id)),
         await photo(main.src),
-        `${p.data.price.toFixed(2)} EUR`,
+        `${(fromCents(p.id, p.data.price, currency) / 100).toFixed(2)} ${currency}`,
         p.data.inStock ? 'in stock' : 'out of stock',
         'new',
         site.name,
         GOOGLE_CATEGORY[p.data.category] ?? '',
         type,
         extras.join(','),
-        ...extra(p.data.price),
+        ...extra(fromCents(p.id, p.data.price, currency)),
       ].map(cell).join(',');
     }),
   );

@@ -1,5 +1,6 @@
 import { site } from '../data/site';
 import { FREE_SHIPPING_FROM, SHIPPING_FLAT } from './money';
+import type { Currency } from './currency';
 
 export const BRAND_SUFFIX = ` | ${site.name}`;
 const MAX_TITLE = 60;
@@ -206,13 +207,15 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   };
 }
 
-/** The Google feed `shipping` value for one item: one group per country, each
- * country:region:service:price:min_handling:max_handling:min_transit:max_transit. */
-export function shippingFeedValue(priceEur: number): string {
+/** The Google feed `shipping` value for one item in `currency`, for the countries given (default all
+ * we ship to): one group per country, country:region:service:price:min_handling:max_handling:min_transit:max_transit. */
+export function shippingFeedValue(priceCents: number, currency: Currency = 'EUR', only?: string[]): string {
   const [hMin, hMax] = range(site.shipsIn.replace(/\s*days?/, ''));
-  const rate = priceEur * 100 >= FREE_SHIPPING_FROM.EUR ? 0 : SHIPPING_FLAT.EUR / 100;
+  const rate = priceCents >= FREE_SHIPPING_FROM[currency] ? 0 : SHIPPING_FLAT[currency] / 100;
   return DELIVERY_COUNTRIES.flatMap((d) => {
     const [tMin, tMax] = range(d.days);
-    return d.countries.map((c) => `${c}:::${rate.toFixed(2)} EUR:${hMin}:${hMax}:${tMin}:${tMax}`);
+    return d.countries
+      .filter((c) => !only || only.includes(c))
+      .map((c) => `${c}:::${rate.toFixed(2)} ${currency}:${hMin}:${hMax}:${tMin}:${tMax}`);
   }).join(',');
 }
