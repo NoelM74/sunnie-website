@@ -14,15 +14,15 @@ export const site = {
   pinterestUrl: 'https://www.pinterest.com/Sunnie_Designs/',
   facebookUrl: 'https://www.facebook.com/sunniedesigns',
   shipsIn: '3–5 days',
-  /** Owner, 2026-11-13: we don't ship to these countries. Kept out of the checkout and Google Shopping. */
-  noShipTo: ['AU', 'IS', 'IT'] as string[],
-  /** Owner-supplied, 2026-10-09. Working days after dispatch. */
+  /** Carriers and days owner-supplied 2026-10-09 (working days after dispatch). The countries are
+   * the owner's list of 2026-11-13, the only ones the checkout and Google Shopping offer.
+   * Norway keeps the old "rest of the world" carrier and days. */
   delivery: [
-    { region: 'Ireland', carrier: 'An Post', days: '7–12' },
-    { region: 'United Kingdom', carrier: 'Evri', days: '5–8' },
-    { region: 'Rest of the EU', carrier: 'DHL Mail or La Poste', days: '6–14' },
-    { region: 'United States and Canada', carrier: 'USPS (via Dragonfly)', days: '6–12' },
-    { region: 'Rest of the world', carrier: 'YunExpress', days: '8–30' },
+    { region: 'Ireland', countries: ['IE'], carrier: 'An Post', days: '7–12' },
+    { region: 'United Kingdom', countries: ['GB'], carrier: 'Evri', days: '5–8' },
+    { region: 'EU', countries: ['AT', 'BE', 'DK', 'FI', 'FR', 'DE', 'NL', 'PL', 'PT', 'ES', 'SE'], carrier: 'DHL Mail or La Poste', days: '6–14' },
+    { region: 'United States and Canada', countries: ['US', 'CA'], carrier: 'USPS (via Dragonfly)', days: '6–12' },
+    { region: 'Norway', countries: ['NO'], carrier: 'YunExpress', days: '8–30' },
   ],
   replyTime: 'within 24 hours',
   company: {

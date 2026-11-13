@@ -67,15 +67,8 @@ export interface ProductLdInput {
   returnDays?: number;
 }
 
-// Shipping and returns for Google Shopping, taken from site.delivery and the shipping and terms pages.
-// Italy is left out: we don't ship there (site.noShipTo). Rest of the world isn't listed: its 8–30 day spread and many countries don't fit the format.
-const EU_EXCEPT_IE = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE'];
-const DELIVERY_COUNTRIES: { countries: string[]; days: string }[] = [
-  { countries: ['IE'], days: site.delivery[0].days },
-  { countries: ['GB'], days: site.delivery[1].days },
-  { countries: EU_EXCEPT_IE, days: site.delivery[2].days },
-  { countries: ['US', 'CA'], days: site.delivery[3].days },
-];
+// Shipping and returns for Google Shopping, taken from site.delivery: every country we ship to.
+const DELIVERY_COUNTRIES = site.delivery;
 export const SHOPPING_COUNTRIES = DELIVERY_COUNTRIES.flatMap((d) => d.countries);
 const range = (r: string) => r.split(/[–-]/).map((n) => Number(n.trim()));
 

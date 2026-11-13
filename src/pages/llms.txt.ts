@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { productHref } from '../lib/lander-products';
 import { getCollection } from 'astro:content';
 import { site } from '../data/site';
-import { noShipList } from '../lib/checkout-form';
+import { shipToList } from '../lib/checkout-form';
 import { CATEGORY_LABELS, formatPrice, inCategory, type Category } from '../lib/products';
 import { absoluteUrl } from '../lib/seo';
 
@@ -50,7 +50,7 @@ export const GET: APIRoute = async () => {
 - Yarns are cotton, polyester or acrylic depending on the design, with no animal wool
 - Buy directly on sunniedesigns.com with PayPal or card
 - Free shipping on orders of €50 (£45, $55) or more (otherwise €6, £5, $6)
-- No shipping to ${noShipList}
+- Ships to ${shipToList}
 - No import charges on delivery to the EU, UK or US
 - 30-day returns
 

@@ -59,7 +59,7 @@ const washFaq = {
 };
 const arriveFaq = (noun: string) => ({
   q: 'When will it arrive?',
-  a: `Hui makes your ${noun} to order, and it ships within 3–5 days with tracking. Delivery times for every country are on the <a href="/shipping/">shipping page</a>. There’s nothing extra to pay on delivery in the EU, UK or US.`,
+  a: `Hui makes your ${noun} to order, and it ships within 3–5 days with tracking. Delivery times for each country are on the <a href="/shipping/">shipping page</a>. There’s nothing extra to pay on delivery in the EU, UK or US.`,
 });
 const returnsFaq = {
   q: "What if I don't like it?",
@@ -180,7 +180,7 @@ export const LANDERS: Lander[] = [
       { q: 'Which strap should I use?', a: 'He comes with both. The green crocheted strap matches his body. The 120 cm strap adjusts, so you can wear him on your hip or across your front. Unclip either one to carry him by hand.' },
       { q: 'Does the mouth close?', a: 'No. It has no zip, clasp or magnet, so you reach straight in from the top. On a crowded train, wear him across your front.' },
       { q: 'How do I wash him?', a: 'Hand wash in cool or warm water, up to 40°C. Lay him flat to dry, and keep him out of strong sun for long periods.' },
-      { q: 'When will it arrive?', a: 'We post within four working days, and refund your postage if we miss that. Delivery times for every country are on the <a href="/shipping/">shipping page</a>. There’s nothing extra to pay on delivery in the EU, UK or US.' },
+      { q: 'When will it arrive?', a: 'We post within four working days, and refund your postage if we miss that. Delivery times for each country are on the <a href="/shipping/">shipping page</a>. There’s nothing extra to pay on delivery in the EU, UK or US.' },
       { q: 'What if I don’t like him?', a: 'Send him back within 60 days, worn or not, for a full refund. If you tell us why, the next batch gets better.' },
     ],
   },
