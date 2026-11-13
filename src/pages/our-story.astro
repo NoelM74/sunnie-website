@@ -6,6 +6,7 @@ import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
 ---
 <BaseLayout
+  alternates={[{ lang: 'en', href: '/our-story/' }, { lang: 'de', href: '/de/ueber-uns/' }]}
   title={pageTitle('Our story')}
   description="Meet Hui, who designs and crochets every Sunnie Designs piece by hand, and Nollaig, who runs the shop."
   current="story"

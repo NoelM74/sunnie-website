@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import { pageTitle } from '../../lib/seo';
+
+// German version of /care/.
+const alternates = [{ lang: 'en', href: '/care/' }, { lang: 'de', href: '/de/pflege/' }];
+---
+<BaseLayout lang="de" alternates={alternates} title={pageTitle('Pflegehinweise')} description="So wäschst, trocknest und bewahrst du deine Häkeltasche, deine Mütze oder deine Untersetzer auf, damit sie ihre Form behalten. Pflege für Baumwoll-, Polyester- und Acrylgarn, Schritt für Schritt.">
+  <article class="container narrow prose">
+    <header class="page-head"><h1>So pflegst du deine Häkelstücke</h1></header>
+    <p>
+      Jedes Stück ist aus Baumwoll-, Polyester- oder Acrylgarn gehäkelt, je nach Design, ohne Tierwolle. Wasch es
+      grundsätzlich von Hand und folge dann dem Pflegehinweis des jeweiligen Produkts: Manche Stücke, wie der
+      Zaubererhut, vertragen stattdessen einen Schonwaschgang bei 40 °C. Die genauen Materialien und Pflegehinweise
+      stehen auf der Produktseite.
+    </p>
+    <h2>Waschen</h2>
+    <ul>
+      <li>Von Hand in kühlem Wasser mit mildem Waschmittel waschen, sofern auf der Produktseite nichts anderes steht.</li>
+      <li>Das Wasser sanft ausdrücken. Verdrehen oder Auswringen zieht die Maschen aus der Form.</li>
+      <li>Stücke mit Perlen, Metallketten oder Anhängern punktuell reinigen und diese Teile trocken halten.</li>
+    </ul>
+    <h2>Trocknen</h2>
+    <ul>
+      <li>Das Stück feucht in Form ziehen und flach auf einem Handtuch trocknen lassen, nicht neben direkter Wärme.</li>
+      <li>Nicht in den Trockner.</li>
+    </ul>
+    <h2>Flauschiges und plüschiges Garn</h2>
+    <p>Bürste Plüschstücke wie die Pudeltasche sanft mit einem breiten Kamm, damit sich das Fell wieder aufstellt.</p>
+    <h2>Aufbewahren</h2>
+    <p>Stopf Taschen mit Seidenpapier aus, damit sie ihre Form behalten, und halte sie aus der prallen Sonne, um die Farben zu schonen.</p>
+    <p>Unsicher bei einem Stück? Schreib an <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.</p>
+  </article>
+</BaseLayout>

@@ -40,7 +40,7 @@ describe('German legal pages', () => {
 });
 
 describe('German home, shop and product pages', () => {
-  const pages = ['de', 'de/shop/taschen', 'de/shop/untersetzer', ...Object.keys(PRODUCTS_DE).map((s) => `de/produkte/${s}`)];
+  const pages = ['de', 'de/shop/taschen', 'de/shop/untersetzer', 'de/pflege', 'de/ueber-uns', 'de/bewertungen', ...Object.keys(PRODUCTS_DE).map((s) => `de/produkte/${s}`)];
   it.each(pages)('%s is German and only links to German pages that exist', (p) => {
     const html = page(p);
     expect(html).toMatch(/<html lang="de"/);

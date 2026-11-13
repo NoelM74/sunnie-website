@@ -20,7 +20,7 @@ export const SHOP_UI = {
       shipping: 'Shipping and returns', care: 'Care guide', terms: 'Terms', contact: 'Contact',
       story: 'Our story', reviews: 'Reviews', privacy: 'Privacy', company: 'Company details',
       shippingHref: '/shipping/', termsHref: '/terms/', impressum: null as string | null,
-      bagsHref: '/shop/bags/', coastersHref: '/shop/coasters/',
+      bagsHref: '/shop/bags/', coastersHref: '/shop/coasters/', careHref: '/care/', storyHref: '/our-story/', reviewsHref: '/reviews/',
     },
     bag: {
       title: 'Your basket', h1: 'Your basket', description: 'Your Sunnie Designs basket.',
@@ -80,7 +80,7 @@ export const SHOP_UI = {
       shipping: 'Versand und Rückgabe', care: 'Pflegehinweise', terms: 'AGB', contact: 'Kontakt',
       story: 'Unsere Geschichte', reviews: 'Bewertungen', privacy: 'Datenschutz', company: 'Impressum',
       shippingHref: '/de/versand/', termsHref: '/de/agb/', impressum: 'Impressum' as string | null,
-      bagsHref: '/de/shop/taschen/', coastersHref: '/de/shop/untersetzer/',
+      bagsHref: '/de/shop/taschen/', coastersHref: '/de/shop/untersetzer/', careHref: '/de/pflege/', storyHref: '/de/ueber-uns/', reviewsHref: '/de/bewertungen/',
     },
     bag: {
       title: 'Dein Warenkorb', h1: 'Dein Warenkorb', description: 'Dein Warenkorb bei Sunnie Designs.',

@@ -8,6 +8,7 @@ import { pageTitle } from '../lib/seo';
 const list = reviews as ((typeof reviews)[number] & { lang: 'en' | 'de' })[];
 ---
 <BaseLayout
+  alternates={[{ lang: 'en', href: '/reviews/' }, { lang: 'de', href: '/de/bewertungen/' }]}
   title={pageTitle('Customer reviews')}
   description={`Reviews from Sunnie Designs buyers, who rate us ${site.proof.etsyRating} out of 5.`}
 >

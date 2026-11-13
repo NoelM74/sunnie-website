@@ -15,8 +15,8 @@ const links = [
   { key: 'bags', href: lang === 'de' ? '/de/shop/taschen/' : '/shop/bags/', label: U.nav.bags },
   { key: 'coasters', href: lang === 'de' ? '/de/shop/untersetzer/' : '/shop/coasters/', label: U.nav.coasters },
   ...(showHatsInNav(products) ? [{ key: 'hats', href: '/shop/hats/', label: U.nav.hats }] : []),
-  { key: 'story', href: '/our-story/', label: U.nav.story },
-  { key: 'reviews', href: '/reviews/', label: U.nav.reviews },
+  { key: 'story', href: lang === 'de' ? '/de/ueber-uns/' : '/our-story/', label: U.nav.story },
+  { key: 'reviews', href: lang === 'de' ? '/de/bewertungen/' : '/reviews/', label: U.nav.reviews },
 ];
 const items = links.map((l) => {
   const exact = Astro.url.pathname === l.href;

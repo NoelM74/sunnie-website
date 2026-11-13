@@ -1,0 +1,51 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import storyPhoto from '../../assets/story/hui-and-nollaig.jpg';
+import { site } from '../../data/site';
+import { pageTitle } from '../../lib/seo';
+import { decimal } from '../../i18n/lang';
+
+// German version of /our-story/.
+const alternates = [{ lang: 'en', href: '/our-story/' }, { lang: 'de', href: '/de/ueber-uns/' }];
+---
+<BaseLayout
+  lang="de"
+  alternates={alternates}
+  title={pageTitle('Über uns')}
+  description="Lerne Hui kennen, die jedes Stück von Sunnie Designs entwirft und von Hand häkelt, und Nollaig, der den Shop führt."
+  current="story"
+>
+  <article class="container narrow">
+    <header class="page-head">
+      <h1>Lerne Hui kennen, die jedes Stück macht</h1>
+      <p>Sunnie Designs sind zwei Menschen: Hui, die jedes Stück entwirft und häkelt, und Nollaig, der den Shop führt.</p>
+    </header>
+    <Picture src={storyPhoto} alt="Hui und Nollaig, die beiden Menschen hinter Sunnie Designs, an einer felsigen Küste am Meer" formats={['avif', 'webp']} widths={[600, 1000]} sizes="(min-width: 48rem) 44rem, 100vw" class="story-img" style="object-position: 50% 45%" loading="eager" />
+    <div class="prose">
+      <h2>Von Hand gemacht, ein Stück nach dem anderen</h2>
+      <p>
+        Hui entwirft jeden Frosch, jeden Pudel und jede Sonnenblume hier und häkelt sie Masche für Masche, von der
+        ersten Reihe bis zum letzten Knoten. Handgearbeitetes Garn bedeutet, dass ein Stück ein, zwei Zentimeter von
+        den Fotos abweichen kann, und jede Größe auf dieser Website ist von Hand gemessen und steht auf der
+        Produktseite.
+      </p>
+      <p>
+        Unsere Dankeskarte sagt es am besten: Kleine, gewollte Unvollkommenheiten machen ein Stück zu deinem. Du
+        trägst etwas, das ein Mensch gemacht hat, und jede Bestellung hilft, langsames Handwerk am Leben zu halten.
+        Unsere Käufer bewerten den Shop mit {decimal(site.proof.etsyRating, 'de')} von 5.
+      </p>
+      <h2>Die Shop-Seite</h2>
+      <p>
+        Nollaig macht die Fotos, verpackt deine Bestellung und beantwortet deine Nachrichten, meist innerhalb von
+        24 Stunden. Bestellungen gehen innerhalb von {site.shipsIn.replace('days', 'Tagen')} mit Sendungsverfolgung raus.
+      </p>
+      <h2>Sag Hallo</h2>
+      <p>
+        Fragen zu einer Bestellung: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>. Eine Wunschfarbe oder
+        ein besonderer Wunsch: Schreib Hui an <a href={`mailto:${site.email.hui}`}>{site.email.hui}</a>.
+      </p>
+      <p><a class="btn btn-primary" href="/de/shop/taschen/">Finde deine Tasche</a></p>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ReviewQuote from '../../components/ReviewQuote.astro';
+import reviews from '../../data/reviews.json';
+import { site } from '../../data/site';
+import { pageTitle } from '../../lib/seo';
+import { decimal } from '../../i18n/lang';
+
+// German version of /reviews/: German reviews as written, English ones in a marked translation.
+const list = reviews as ((typeof reviews)[number] & { lang: 'en' | 'de' })[];
+const rating = decimal(site.proof.etsyRating, 'de');
+const alternates = [{ lang: 'en', href: '/reviews/' }, { lang: 'de', href: '/de/bewertungen/' }];
+---
+<BaseLayout lang="de" alternates={alternates} current="reviews" title={pageTitle('Kundenbewertungen')} description={`Bewertungen von Käufern bei Sunnie Designs, die uns mit ${rating} von 5 bewerten.`}>
+  <div class="container">
+    <header class="page-head">
+      <h1>Das sagen unsere Käufer</h1>
+      <p>
+        Unsere Käufer bewerten uns mit {rating} von 5, und bei eBay sind wir {site.proof.ebayPositive} positiv bei
+        {site.proof.ebayCount} Bewertungen. Jedes Zitat hier stammt direkt aus einer Käuferbewertung, ein paar lange
+        sind gekürzt. Englische Bewertungen haben wir übersetzt, das Original steht darunter.
+      </p>
+    </header>
+    <div class="quotes">
+      {list.map((r) => <ReviewQuote review={r} lang="de" showOriginal />)}
+    </div>
+  </div>
+</BaseLayout>

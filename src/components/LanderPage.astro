@@ -240,7 +240,7 @@ const config = {
       <div>
         <h2>{l.craft.h}</h2>
         {l.craft.paras.map((p) => <p class="lead">{p}</p>)}
-        {l.maker === 'Hui' && <p><a href="/our-story/">{T.meetHui}</a></p>}
+        {l.maker === 'Hui' && <p><a href={lang === 'de' ? '/de/ueber-uns/' : '/our-story/'}>{T.meetHui}</a></p>}
       </div>
     </div>
   </section>
@@ -337,7 +337,7 @@ const config = {
       <div class="quotes l-quotes">
         {shown.map((r) => <ReviewQuote review={r} lang={lang} />)}
       </div>
-      <p class="l-center"><a href="/reviews/">{T.moreReviews}</a></p>
+      <p class="l-center"><a href={lang === 'de' ? '/de/bewertungen/' : '/reviews/'}>{T.moreReviews}</a></p>
     </div>
   </section>
 

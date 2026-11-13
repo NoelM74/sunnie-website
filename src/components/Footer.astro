@@ -25,7 +25,7 @@ const year = new Date().getFullYear();
       <h2>{F.help}</h2>
       <ul>
         <li><a href={F.shippingHref}>{F.shipping}</a></li>
-        <li><a href="/care/">{F.care}</a></li>
+        <li><a href={F.careHref}>{F.care}</a></li>
         <li><a href={F.termsHref}>{F.terms}</a></li>
         {F.impressum && <li><a href="/de/impressum/">{F.impressum}</a></li>}
         <li><a href="/contact/">{F.contact}</a></li>
@@ -34,8 +34,8 @@ const year = new Date().getFullYear();
     <nav aria-label={F.about}>
       <h2>{F.about}</h2>
       <ul>
-        <li><a href="/our-story/">{F.story}</a></li>
-        <li><a href="/reviews/">{F.reviews}</a></li>
+        <li><a href={F.storyHref}>{F.story}</a></li>
+        <li><a href={F.reviewsHref}>{F.reviews}</a></li>
         <li><a href="/privacy/">{F.privacy}</a></li>
         <li><a href={site.pinterestUrl} rel="noopener">Pinterest</a></li>
         <li><a href={site.facebookUrl} rel="noopener">Facebook</a></li>
