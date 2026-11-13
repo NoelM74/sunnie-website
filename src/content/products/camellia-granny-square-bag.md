@@ -1,5 +1,5 @@
 ---
-name: "Camellia flower granny square purse"
+name: "Camellia Blooms: 3D camellia granny square purse"
 seoTitle: "Crochet Camellia Granny Square Bag, 3D Flower Drawstring Crossbody"
 category: "bags"
 group: "flowers"
@@ -9,7 +9,7 @@ etsyUrl: "https://www.etsy.com/listing/4467432960/crochet-camellia-granny-square
 maker: "Hui"
 options: [{"name":"Colour","values":["Red","Green","Pink","Orange"]}]
 materials: ["Polyester"]
-size: "W 16 × H 15 cm"
+size: "W 16 × H 21 cm"
 images: [{"src":"../../assets/products/camellia-granny-square-bag/camellia-granny-square-bag-01.jpg","alt":"Four crochet granny square bags with orange, green, pink and red 3D flowers"},{"src":"../../assets/products/camellia-granny-square-bag/camellia-granny-square-bag-02.jpg","alt":"Cream granny square bag with a large red 3D camellia flower and bud charm"},{"src":"../../assets/products/camellia-granny-square-bag/camellia-granny-square-bag-03.jpg","alt":"Cream granny square bag with a large green 3D camellia flower and bud charm"},{"src":"../../assets/products/camellia-granny-square-bag/camellia-granny-square-bag-04.jpg","alt":"Camellia granny square bag, photo 4 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/camellia-granny-square-bag-05.jpg","alt":"Camellia granny square bag, photo 5 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/camellia-granny-square-bag-06.jpg","alt":"Camellia granny square bag, photo 6 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/camellia-granny-square-bag-07.jpg","alt":"Camellia granny square bag, photo 7 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/camellia-granny-square-bag-08.jpg","alt":"Camellia granny square bag, photo 8 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/camellia-granny-square-bag-09.jpg","alt":"Camellia granny square bag, photo 9 of 10"},{"src":"../../assets/products/camellia-granny-square-bag/camellia-granny-square-bag-10.jpg","alt":"Camellia granny square bag, photo 10 of 10"}]
 faq: [{"q":"What fits inside?","a":"A phone, cardholder, lip balm and keys fit comfortably for daily essentials."},{"q":"How do I wash it?","a":"Hand wash gently in cool water with mild soap, do not wring, and lay flat to dry. Do not machine wash or tumble dry."},{"q":"Can I wear it on the shoulder?","a":"Yes. The braided cord strap adjusts for crossbody or shoulder carry."}]
 ---
@@ -26,4 +26,4 @@ Hui works each bag in granny square stitch with an open shell-stitch panel throu
 
 A pretty, practical pick for anyone who wants florals without the fuss, and an easy gift for a friend who likes cottagecore style.
 
-*Top W 12 cm, bottom W 16 cm, H 15 cm. Each bag is crocheted by hand, so allow 1 to 3 cm either way.*
+*Top W 12 cm, bottom W 16 cm, H 21 cm, D 1 cm. Strap 110 cm. About 90 g. Each bag is crocheted by hand, so allow 1 to 3 cm either way.*

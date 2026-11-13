@@ -1789,5 +1789,88 @@ export const LANDERS_DE: Record<string, LanderDe> = {
       returnsFaq(G.f),
     ],
   },
+  'camellia-blooms': {
+    name: 'Camellia Blooms Blumentäschchen',
+    title: 'Gehäkeltes Granny-Square-Täschchen mit 3D-Kamelie | Camellia Blooms',
+    description: 'Ein handgehäkeltes Granny-Square-Täschchen mit 3D-Kamelie vorne und Kordelzug. Rot, Rosa, Orange oder Grün. 110-cm-Gurt. Kostenloser Versand ab 2 Stück.',
+    bar: 'Kostenloser Versand ab 2 Täschchen',
+    noun: ['Täschchen', 'Täschchen', 'ein zweites Täschchen'],
+    picks: { Red: 'Rot', Pink: 'Rosa', Orange: 'Orange', Green: 'Grün' },
+    hero: {
+      h1: 'Ein gehäkeltes Granny-Square-Täschchen mit 3D-Kamelie,',
+      h1em: 'das Handy, Karten und Schlüssel trägt.',
+      sub: 'Hui legt jede Kamelie Blütenblatt für Blütenblatt und setzt sie auf einen Kranz grüner Blätter, mitten in ein cremefarbenes Granny Square. Ein grüner Kordelzug schließt das Täschchen oben, mit einer kleinen Blütenknospe am Ende. Rot, Rosa, Orange oder Grün.',
+      alt: 'Vier gehäkelte Granny-Square-Täschchen auf Steinstufen, mit orangefarbener, grüner, rosa und roter 3D-Kamelie und passenden Knospenanhängern',
+    },
+    story: {
+      h: 'Eine Blume zum Mitnehmen.',
+      paras: [
+        'Die Kamelie steht in mehreren Lagen aus Blütenblättern aus dem Täschchen heraus, so sieht sie aus wie eine echte Blüte, nicht wie ein flacher Aufnäher.',
+        'Rundherum ein klassisches Granny Square in Creme, mit gewelltem Rand und grünem Kordelzug. An der Kordel hängt eine kleine Knospe in der Farbe der Blume.',
+      ],
+      subH: 'Wie schwer ist es?',
+      subParas: ['Rund 90 g, du merkst es auf der Schulter kaum.'],
+    },
+    fits: {
+      h: 'Platz für dein Handy und die kleinen Dinge.',
+      lede: 'Ein Handy, ein Kartenetui, Lippenpflege und Schlüssel passen hinein.',
+      specs: [
+        ['Größe', '21 cm hoch, oben 12 cm breit, unten 16 cm, 1 cm tief. Von Hand gemacht, also 1 bis 3 cm Abweichung möglich.'],
+        ['Passt hinein', 'Ein Handy, ein Kartenetui, Lippenpflege und Schlüssel'],
+        ['Verschluss', 'Grüner Kordelzug: zuziehen zum Schließen, lockern zum Hineingreifen'],
+        ['Gurt', '110 cm, geflochtene cremefarbene Kordel. Quer über dem Körper oder über einer Schulter.'],
+        ['Gewicht', 'Rund 90 g'],
+        ['Material', 'Polyestergarn'],
+        ['Pflege', 'Sanft von Hand in kühlem Wasser mit milder Seife waschen. Nicht auswringen und flach liegend trocknen. Nicht in die Waschmaschine oder den Trockner.'],
+      ],
+      alt: 'Das orangefarbene Kamelientäschchen in einer Hand vor einem weißen Hemd, so sieht man die Größe',
+    },
+    colours: {
+      h: 'Wähle deine Blume',
+      lede: 'Dasselbe Täschchen, vier Kamelien. Kombiniere sie im Set, wie du magst.',
+      cards: [
+        { title: 'Rot', text: 'Eine leuchtend rote Kamelie mit roter Knospe an der Kordel.', alt: 'Cremefarbenes Granny-Square-Täschchen mit roter 3D-Kamelie und roter Knospe am grünen Kordelzug' },
+        { title: 'Rosa', text: 'Eine zartrosa Kamelie mit rosa Knospe.', alt: 'Cremefarbenes Granny-Square-Täschchen mit rosa 3D-Kamelie und rosa Knospe' },
+        { title: 'Orange', text: 'Eine warme orangefarbene Kamelie mit orangefarbener Knospe.', alt: 'Cremefarbenes Granny-Square-Täschchen mit orangefarbener 3D-Kamelie und orangefarbener Knospe' },
+        { title: 'Grün', text: 'Eine frische salbeigrüne Kamelie mit grüner Knospe.', alt: 'Cremefarbenes Granny-Square-Täschchen mit salbeigrüner 3D-Kamelie und grüner Knospe' },
+      ],
+      note: 'Du kannst dich nicht entscheiden? Nimm zwei oder drei und mische die Farben.',
+    },
+    uses: {
+      h: 'Wohin es mitkommt',
+      items: [
+        ['Jeden Tag.', 'Handy, Karten und Schlüssel, die Hände frei.'],
+        ['Frühling und Sommer.', 'Passt zu weißem Hemd, Jeans oder Sommerkleid.'],
+        ['Muttertag.', 'Eine Blume, die länger hält als ein Strauß aus dem Laden.'],
+        ['Geschenke.', 'Vier Farben, da findest du leicht eine für eine Freundin.'],
+      ],
+      alts: [
+        'Das grüne Kamelientäschchen an der Hüfte, zu weißem Hemd und heller Jeans',
+        'Das rosa Kamelientäschchen quer über einem rosa Hemd und weißem gepunktetem Rock getragen',
+      ],
+    },
+    craft: {
+      h: 'Von Hand gehäkelt, Blütenblatt für Blütenblatt.',
+      paras: [
+        'Hui häkelt zuerst das cremefarbene Granny Square, baut dann die Kamelie in spiralförmigen Lagen auf und näht sie auf ihren Blätterkranz. Zum Schluss kommen der Kordelzug und die kleine Knospe.',
+        'Weil ein Mensch jede Blume formt, gleicht keine genau der anderen.',
+      ],
+      alt: 'Nahaufnahme der roten Kamelie mit den gelagerten Blütenblättern, den grünen Blättern und den Granny-Square-Maschen drumherum',
+    },
+    offer: {
+      h: 'Wähle deine Täschchen',
+      lede: 'Wir empfehlen zwei: eins zum Behalten und eins zum Verschenken, oder zwei Farben für dich. Ab zwei Täschchen ist der Versand kostenlos, und jedes kostet weniger.',
+      flag2: 'Eins behalten, eins verschenken',
+      notes: { 1: 'Nur eins.', 2: 'Zwei beliebige Farben.', 3: 'Drei beliebige Farben.' },
+    },
+    faq: [
+      { q: 'Was passt hinein?', a: 'Ein Handy, ein Kartenetui, Lippenpflege und Schlüssel.' },
+      { q: 'Wie wird es geschlossen?', a: 'Mit einem grünen Kordelzug oben. Zuziehen zum Schließen, lockern zum Hineingreifen.' },
+      { q: 'Kann ich es über der Schulter tragen?', a: 'Ja. Der 110-cm-Kordelgurt lässt sich quer über dem Körper oder über einer Schulter tragen.' },
+      { q: 'Wie wasche ich es?', a: 'Sanft von Hand in kühlem Wasser mit milder Seife waschen. Nicht auswringen und flach liegend trocknen. Nicht in die Waschmaschine oder den Trockner.' },
+      arriveFaq('dein Täschchen'),
+      returnsFaq(G.n),
+    ],
+  },
 };
 

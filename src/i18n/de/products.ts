@@ -426,34 +426,6 @@ export const PRODUCTS_DE: Record<string, ProductDe> = {
       'Gelbe gehäkelte Monstertasche quer über dem Körper getragen, von hinten auf einer Treppe',
     ],
   },
-  'camellia-granny-square-bag': {
-    name: 'Granny-Square-Täschchen mit Kamelie',
-    seoTitle: 'Gehäkeltes Granny-Square-Täschchen mit 3D-Kamelie und Kordelzug',
-    body: `<p>Ein gehäkeltes Täschchen mit einer vollen 3D-Kamelienblüte vorne, gemacht, um wirklich Handy und Schlüssel zu tragen, nicht nur hübsch im Regal zu stehen.</p>
-<p>Hui häkelt jede Tasche im Granny-Square-Muster mit einem luftigen Muschelmuster in der unteren Hälfte, baut die Kamelie in spiralförmigen Lagen auf und näht sie von Hand auf eine Blattbasis. Eine passende Blütenknospe sitzt an der grünen Kordel, die den gewellten Rand zusammenzieht.</p>
-<ul>
-<li><strong>3D-Kamelie:</strong> von Hand geschichtete Blütenblätter machen die Blume zum echten Mittelpunkt, kein flacher Aufnäher.</li>
-<li><strong>Kordelzug:</strong> eine grüne Kordel läuft durch den gewellten Rand und zieht ihn zu, so fällt nichts heraus.</li>
-<li><strong>Geflochtener cremefarbener Gurt:</strong> verstellbar, quer über dem Körper oder über der Schulter.</li>
-<li><strong>Für Handy, Kartenetui, Lippenpflege und Schlüssel:</strong> genug für einen Abend ohne große Tasche.</li>
-<li><strong>Vier Blütenfarben:</strong> Rot, Salbeigrün, Rosa oder Orange, alle auf cremefarbenem Grund.</li>
-</ul>
-<p>Eine hübsche, praktische Wahl für alle, die Blumen ohne viel Aufwand wollen, und ein einfaches Geschenk für eine Freundin, die den Cottagecore-Stil mag.</p>
-<p><em>Oben B 12 cm, unten B 16 cm, H 15 cm. Jede Tasche ist von Hand gehäkelt, rechne also mit 1 bis 3 cm Abweichung.</em></p>`,
-    faq: [
-      { q: 'Was passt hinein?', a: 'Ein Handy, ein Kartenetui, Lippenpflege und Schlüssel passen bequem hinein, das Nötigste für jeden Tag.' },
-      { q: 'Wie wasche ich es?', a: 'Sanft von Hand in kühlem Wasser mit milder Seife waschen, nicht auswringen und flach liegend trocknen. Nicht in die Waschmaschine oder den Trockner.' },
-      { q: 'Kann ich es über der Schulter tragen?', a: 'Ja. Der geflochtene Kordelgurt lässt sich für quer über dem Körper oder über der Schulter verstellen.' },
-    ],
-    option: { name: 'Farbe', values: { Red: 'Rot', Green: 'Grün', Pink: 'Rosa', Orange: 'Orange' } },
-    materials: ['Polyester'],
-    size: 'B 16 × H 15 cm',
-    alts: [
-      'Vier gehäkelte Granny-Square-Täschchen mit orangefarbener, grüner, rosa und roter 3D-Blume',
-      'Cremefarbenes Granny-Square-Täschchen mit großer roter 3D-Kamelie und Knospenanhänger',
-      'Cremefarbenes Granny-Square-Täschchen mit großer grüner 3D-Kamelie und Knospenanhänger',
-    ],
-  },
   'clown-crossbody-phone-bag': {
     name: 'Clown-Handytasche mit Spitzhut',
     seoTitle: 'Gehäkelte Clown-Handytasche mit Spitzhut, zum Umhängen',

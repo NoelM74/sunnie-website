@@ -2174,6 +2174,103 @@ export const LANDERS: Lander[] = [
       returnsFaq,
     ],
   },
+  {
+    slug: 'camellia-blooms',
+    productSlug: 'camellia-granny-square-bag',
+    name: 'Camellia Blooms flower purse',
+    noun: ['purse', 'purses'],
+    picks: ['Red', 'Pink', 'Orange', 'Green'],
+    maker: 'Hui',
+    // Same ladder as Petal Pockets (owner did not pick one, 2026-11-13): €34.95 / 2 for €59.95 / 3 for €79.95.
+    prices: {
+      EUR: { 1: 3495, 2: 5995, 3: 7995 },
+      GBP: { 1: 2695, 2: 4495, 3: 5795 },
+      USD: { 1: 3495, 2: 5995, 3: 7995 },
+    },
+    title: 'Crochet Granny Square Purse with a 3D Camellia | Camellia Blooms',
+    description: 'A hand-crocheted granny square purse with a 3D camellia on the front and a drawstring top. Red, pink, orange or green. 110 cm strap. Free shipping on 2 or more.',
+    og: '/go/camellia-blooms-og.jpg',
+    bar: 'Free shipping on 2 purses or more',
+    hero: {
+      h1: 'A crochet granny square purse with a 3D camellia,',
+      h1em: 'that carries your phone, cards and keys.',
+      sub: 'Hui layers each camellia petal by petal and sets it on a ring of green leaves, in the middle of a cream granny square. A green drawstring closes the top, with a little flower bud on the end. Red, pink, orange or green.',
+      image: { src: 'landers/camellia-blooms/camellia-blooms-steps.jpg', alt: 'Four crochet granny square purses on stone steps, with orange, green, pink and red 3D camellias and matching bud charms' },
+      proof: sturdy,
+    },
+    story: {
+      h: 'A flower you can carry.',
+      paras: [
+        'The camellia stands out from the bag in layers of petals, so it looks like a real bloom, not a flat patch.',
+        'Around it is a classic granny square in cream, with a scalloped top and a green drawstring. A small bud in the same colour as the flower hangs from the cord.',
+      ],
+      subH: 'How heavy is it?',
+      subParas: ['About 90 g, so you’ll hardly notice it on your shoulder.'],
+    },
+    fits: {
+      h: 'Room for your phone and the small things.',
+      lede: 'A phone, a cardholder, lip balm and keys fit inside.',
+      specs: [
+        ['Size', '21 cm tall, 12 cm wide at the top, 16 cm at the bottom, 1 cm deep. Made by hand, so allow 1 to 3 cm.'],
+        ['Holds', 'A phone, a cardholder, lip balm and keys'],
+        ['Closes', 'Green drawstring: pull to close, loosen to reach in'],
+        ['Strap', '110 cm braided cream cord. Crossbody or on one shoulder.'],
+        ['Weight', 'About 90 g'],
+        ['Made from', 'Polyester yarn'],
+        ['Care', 'Hand wash gently in cool water with mild soap. Don’t wring it, and lay it flat to dry. No washing machine or tumble dryer.'],
+      ],
+      image: { src: 'landers/camellia-blooms/camellia-blooms-orange-held.jpg', alt: 'The orange camellia purse held in one hand against a white shirt, showing its size' },
+    },
+    colours: {
+      h: 'Pick your flower',
+      lede: 'Same purse, four camellias. Mix them in a bundle however you like.',
+      cards: [
+        { pick: 'Red', title: 'Red', text: 'A bright red camellia with a red bud on the cord.', image: { src: 'landers/camellia-blooms/camellia-blooms-red.jpg', alt: 'Cream granny square purse with a red 3D camellia and a red bud charm on the green drawstring' } },
+        { pick: 'Pink', title: 'Pink', text: 'A soft pink camellia with a pink bud.', image: { src: 'landers/camellia-blooms/camellia-blooms-pink.jpg', alt: 'Cream granny square purse with a pink 3D camellia and a pink bud charm' } },
+        { pick: 'Orange', title: 'Orange', text: 'A warm orange camellia with an orange bud.', image: { src: 'landers/camellia-blooms/camellia-blooms-orange.jpg', alt: 'Cream granny square purse with an orange 3D camellia and an orange bud charm' } },
+        { pick: 'Green', title: 'Green', text: 'A fresh sage green camellia with a green bud.', image: { src: 'landers/camellia-blooms/camellia-blooms-green.jpg', alt: 'Cream granny square purse with a sage green 3D camellia and a green bud charm' } },
+      ],
+      note: 'Can’t choose? Take two or three and mix the colours.',
+    },
+    uses: {
+      h: 'Where it goes',
+      items: [
+        ['Every day.', 'Phone, cards and keys, with your hands free.'],
+        ['Spring and summer.', 'Looks right with a white shirt, jeans or a sundress.'],
+        ['Mother’s Day.', 'A flower that lasts longer than a bunch from the shop.'],
+        ['Gifts.', 'Four colours, so it’s easy to pick one for a friend.'],
+      ],
+      images: [
+        { src: 'landers/camellia-blooms/camellia-blooms-green-worn.jpg', alt: 'The green camellia purse worn at the hip over a white shirt and light jeans' },
+        { src: 'landers/camellia-blooms/camellia-blooms-pink-worn.jpg', alt: 'The pink camellia purse worn crossbody over a pink shirt and a white dotted skirt' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, petal by petal.',
+      paras: [
+        'Hui crochets the cream granny square first, then builds the camellia in spiralling layers and stitches it onto its ring of leaves. Last come the drawstring and the little bud.',
+        'Because a person shapes each flower, no two come out exactly alike.',
+      ],
+      image: { src: 'landers/camellia-blooms/camellia-blooms-red-close.jpg', alt: 'Close-up of the red camellia, showing the layered petals, the green leaves and the granny square stitches around it' },
+    },
+    offer: {
+      h: 'Pick your purses',
+      lede: 'We suggest two: one to keep and one to give, or two colours for yourself. Two or more ship free, and each purse costs less.',
+      flag2: 'One to keep, one to give',
+      notes: { 1: 'Just the one.', 2: 'Any two colours.', 3: 'Any three colours.' },
+      defaults: ['Red', 'Pink', 'Orange'],
+      proof: friend,
+    },
+    reviews: [friend, maria, asPictured],
+    faq: [
+      { q: 'What fits inside?', a: 'A phone, a cardholder, lip balm and keys.' },
+      { q: 'How does it close?', a: 'With a green drawstring at the top. Pull it to close, loosen it to reach in.' },
+      { q: 'Can I wear it on the shoulder?', a: 'Yes. The 110 cm braided strap works crossbody or on one shoulder.' },
+      { q: 'How do I wash it?', a: 'Hand wash gently in cool water with mild soap. Don’t wring it, and lay it flat to dry. No washing machine or tumble dryer.' },
+      arriveFaq('purse'),
+      returnsFaq,
+    ],
+  },
 ];
 
 export const landerBySlug = (slug: string) => LANDERS.find((l) => l.slug === slug);
