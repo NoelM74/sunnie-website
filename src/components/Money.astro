@@ -4,10 +4,10 @@ import { formatMoney, toLocalCents, toLocalWholeCents } from '../lib/currency';
 // One price. The HTML text is euro, so search engines and text-only readers see one clean
 // price; the script at the end of BaseLayout swaps in pounds or dollars from the data attributes.
 // gbpCents/usdCents: a fixed price list (bundle packs) instead of converting the euro price.
-interface Props { eur: number; whole?: boolean; gbpCents?: number; usdCents?: number }
-const { eur, whole = false, gbpCents, usdCents } = Astro.props;
+interface Props { eur: number; whole?: boolean; gbpCents?: number; usdCents?: number; lang?: 'en' | 'de' }
+const { eur, whole = false, gbpCents, usdCents, lang = 'en' } = Astro.props;
 const cents = Math.round(eur * 100);
 const fixed = { GBP: gbpCents, USD: usdCents };
-const local = (c: 'GBP' | 'USD') => formatMoney(fixed[c] ?? (whole ? toLocalWholeCents(cents, c) : toLocalCents(cents, c)), c);
+const local = (c: 'GBP' | 'USD') => formatMoney(fixed[c] ?? (whole ? toLocalWholeCents(cents, c) : toLocalCents(cents, c)), c, lang);
 ---
-<span class="money" data-gbp={local('GBP')} data-usd={local('USD')}>{formatMoney(cents, 'EUR')}</span>
+<span class="money" data-gbp={local('GBP')} data-usd={local('USD')}>{formatMoney(cents, 'EUR', lang)}</span>

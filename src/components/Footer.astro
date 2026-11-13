@@ -24,9 +24,10 @@ const year = new Date().getFullYear();
     <nav aria-label={F.help}>
       <h2>{F.help}</h2>
       <ul>
-        <li><a href="/shipping/">{F.shipping}</a></li>
+        <li><a href={F.shippingHref}>{F.shipping}</a></li>
         <li><a href="/care/">{F.care}</a></li>
-        <li><a href="/terms/">{F.terms}</a></li>
+        <li><a href={F.termsHref}>{F.terms}</a></li>
+        {F.impressum && <li><a href="/de/impressum/">{F.impressum}</a></li>}
         <li><a href="/contact/">{F.contact}</a></li>
       </ul>
     </nav>
@@ -41,5 +42,5 @@ const year = new Date().getFullYear();
       </ul>
     </nav>
   </div>
-  <p class="container footer-legal">© {year} {site.name} · {site.company.legalName}, CRO {site.company.cro} · <a href="/contact/">{F.company}</a></p>
+  <p class="container footer-legal">© {year} {site.name} · {site.company.legalName}, CRO {site.company.cro} · <a href={F.impressum ? '/de/impressum/' : '/contact/'}>{F.company}</a></p>
 </footer>

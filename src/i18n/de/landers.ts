@@ -83,7 +83,7 @@ export const LANDERS_DE: Record<string, LanderDe> = {
       { q: 'Welchen Gurt soll ich nehmen?', a: 'Er kommt mit beiden. Der grüne gehäkelte Gurt passt zu seinem Körper. Der 120-cm-Gurt ist verstellbar, so trägst du ihn an der Hüfte oder vorne quer. Hak einen der beiden aus, um ihn in der Hand zu tragen.' },
       { q: 'Lässt sich das Maul schließen?', a: 'Nein. Es hat keinen Reißverschluss, keinen Verschluss und keinen Magneten, du greifst also direkt von oben hinein. Im vollen Zug trägst du ihn am besten vorne.' },
       { q: 'Wie wasche ich ihn?', a: 'Von Hand in kühlem oder warmem Wasser waschen, bis 40 °C. Flach liegend trocknen und nicht lange in die pralle Sonne legen.' },
-      { q: 'Wann kommt er an?', a: 'Wir verschicken innerhalb von vier Werktagen und erstatten dir die Versandkosten, wenn wir das nicht schaffen. Die Lieferzeiten für jedes Land stehen auf der <a href="/shipping/">Versandseite</a>. Bei Lieferung in die EU, nach Großbritannien oder in die USA zahlst du nichts extra.' },
+      { q: 'Wann kommt er an?', a: 'Wir verschicken innerhalb von vier Werktagen und erstatten dir die Versandkosten, wenn wir das nicht schaffen. Die Lieferzeiten für jedes Land stehen auf der <a href="/de/versand/">Versandseite</a>. Bei Lieferung in die EU, nach Großbritannien oder in die USA zahlst du nichts extra.' },
       { q: 'Was, wenn er mir nicht gefällt?', a: 'Schick ihn innerhalb von 60 Tagen zurück, getragen oder nicht, und du bekommst den vollen Preis erstattet. Wenn du uns sagst, warum, wird die nächste Serie besser.' },
     ],
   },

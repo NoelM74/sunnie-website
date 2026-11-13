@@ -36,3 +36,9 @@ export const shipToList = (() => {
   const n = COUNTRY_CODES.map((c) => countryName(c)).sort();
   return `${n.slice(0, -1).join(', ')} and ${n[n.length - 1]}`;
 })();
+
+/** The same list in German: "Belgien, Dänemark, … und Vereinigtes Königreich". */
+export const shipToListDe = (() => {
+  const n = COUNTRY_CODES.map((c) => countryName(c, 'de')).sort((a, b) => a.localeCompare(b, 'de'));
+  return `${n.slice(0, -1).join(', ')} und ${n[n.length - 1]}`;
+})();

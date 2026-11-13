@@ -86,7 +86,7 @@ const fields = [
             {e.country && <p class="field-error" id="country-err">{e.country}</p>}
           </div>
         </fieldset>
-        <p class="small">{agree[0]}<a href="/terms/">{agree[1]}</a>{agree[2]}</p>
+        <p class="small">{agree[0]}<a href={SHOP_UI[lang].footer.termsHref}>{agree[1]}</a>{agree[2]}</p>
         <button class="btn btn-primary btn-block" type="submit">{U.pay}</button>
         <p class="small muted">{U.payNote(curName)}</p>
       </form>

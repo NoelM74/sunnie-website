@@ -65,7 +65,7 @@ const done = order ? U.done(order.ref, order.email) : null;
             <p class="small"><strong>{U.to}</strong><br />{[order.address.name, order.address.line1, order.address.line2, order.address.city, order.address.region, order.address.postcode, countryName(order.address.country, lang)].filter(Boolean).join(', ')}</p>
           </section>
         )}
-        <p>{U.questions[0]}<a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>{U.questions[1]}<a href="/terms/">{U.questions[2]}</a>{U.questions[3]}</p>
+        <p>{U.questions[0]}<a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>{U.questions[1]}<a href={SHOP_UI[lang].footer.termsHref}>{U.questions[2]}</a>{U.questions[3]}</p>
         <p><a class="btn-ghost" href="/shop/">{U.keep}</a></p>
       </>
     )}

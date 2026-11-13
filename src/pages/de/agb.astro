@@ -1,0 +1,59 @@
+---
+import { SHIPPING_FLAT } from '../../lib/money';
+import { shipToListDe } from '../../lib/checkout-form';
+import Money from '../../components/Money.astro';
+import FreeShippingFrom from '../../components/FreeShippingFrom.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import { pageTitle } from '../../lib/seo';
+
+// German version of /terms/: a translation that keeps the meaning of the English terms exactly.
+// The English terms are the original; the owner has them checked by a German-speaking adviser.
+const c = site.company;
+const shipsIn = site.shipsIn.replace('days', 'Tagen');
+const alternates = [{ lang: 'en', href: '/terms/' }, { lang: 'de', href: '/de/agb/' }];
+---
+<BaseLayout lang="de" alternates={alternates} title={pageTitle('Verkaufsbedingungen (AGB)')} description="Verkaufsbedingungen für Bestellungen auf sunniedesigns.com: Preise, Lieferung, 30 Tage Rückgabe und dein Widerrufsrecht.">
+  <article class="container narrow prose">
+    <header class="page-head"><h1>Verkaufsbedingungen</h1><p>Stand: September 2026. Dies ist eine Übersetzung unserer englischen <a href="/terms/" hreflang="en" lang="en">Terms of sale</a>.</p></header>
+
+    <h2>Bei wem du kaufst</h2>
+    <p>Diese Website wird betrieben von {c.legalName}, handelnd als {c.tradingAs}. Firmennummer (CRO, Irland) {c.cro}. Eingetragener Sitz: {c.registeredOffice}, Irland. E-Mail: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>. Weitere Angaben im <a href="/de/impressum/">Impressum</a>.</p>
+
+    <h2>Preise und Zahlung</h2>
+    <p>Preise werden in Euro, Pfund oder US-Dollar angezeigt. Du bezahlst in der Währung, die in deinem Warenkorb an der Kasse angezeigt wird. Preise in Pfund und Dollar werden aus dem Kurs der Europäischen Zentralbank berechnet und auf die nächste ,95 aufgerundet, sie können sich also von Tag zu Tag ändern. Es gilt der Preis, der beim Bezahlen in deinem Warenkorb steht. {c.legalName} ist nicht umsatzsteuerpflichtig registriert, daher wird keine Umsatzsteuer berechnet. Du bezahlst über PayPal, mit einem PayPal-Konto oder mit Debit- oder Kreditkarte. Deine Kartendaten sehen wir nie.</p>
+    <p>Dein Vertrag mit uns kommt zustande, wenn deine Zahlung durchgeht und wir dir deine Bestellnummer anzeigen.</p>
+
+    <h2>Lieferung</h2>
+    <p>Jedes Stück wird auf Bestellung von Hand gemacht und innerhalb von {shipsIn} mit Sendungsverfolgung verschickt. Der Versand kostet <Money eur={SHIPPING_FLAT.EUR / 100} gbpCents={SHIPPING_FLAT.GBP} usdCents={SHIPPING_FLAT.USD} lang="de" /> pro Bestellung und ist kostenlos bei Bestellungen ab <FreeShippingFrom lang="de" /> oder wenn du zwei oder mehr derselben Figurentasche oder des Fruit-Bellies-Untersetzers kaufst, ein Fold-&amp;-Bloom-Set mit vier oder sechs, das Pearl-&amp;-Daisy-Set in Groß und Klein, beide Bamboo-Buddies-Pandas, ein Potted-Roses-Set mit vier oder sechs oder ein Mandala-Blooms-Pack mit sechs oder acht. Wir liefern nach {shipToListDe}. Bei Lieferung in die EU, nach Großbritannien oder in die USA fallen keine Einfuhrabgaben an. Käufer in anderen Ländern müssen möglicherweise Einfuhrabgaben ihres Landes zahlen.</p>
+
+    <h2 id="widerruf">Rückgabe und Widerrufsrecht</h2>
+    <p>Du kannst jeden Artikel innerhalb von 30 Tagen nach Lieferung aus beliebigem Grund widerrufen und zurückgeben. Das ist länger als die 14 Tage, die das Gesetz vorschreibt.</p>
+    <ol>
+      <li>Schreib eine E-Mail an <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a> mit deiner Bestellnummer, oder schick uns das Muster-Widerrufsformular unten.</li>
+      <li>Schick den Artikel innerhalb von 14 Tagen, nachdem du uns informiert hast, in dem Zustand zurück, in dem du ihn erhalten hast. Du darfst ihn prüfen, so wie du es in einem Laden tun würdest. Die Kosten der Rücksendung trägst du.</li>
+      <li>Wir erstatten den Preis des Artikels und die ursprünglichen Standardversandkosten innerhalb von 14 Tagen, nachdem wir den Artikel zurückerhalten haben oder du uns einen Versandnachweis geschickt hast, je nachdem, was zuerst eintritt, über die Zahlungsart, die du verwendet hast.</li>
+    </ol>
+
+    <h2>Beschädigte oder falsche Artikel</h2>
+    <p>Wenn etwas beschädigt, fehlerhaft oder anders als beschrieben ankommt, schreib uns mit einem Foto. Wir übernehmen die Rücksendung und schicken dir Ersatz oder erstatten den vollen Preis. Deine gesetzlichen Rechte als Verbraucher bleiben davon unberührt.</p>
+
+    <h2>Muster-Widerrufsformular</h2>
+    <p>(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)</p>
+    <p>An {c.legalName}, {c.registeredOffice}, Irland, {site.email.hello}:<br />
+    Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren: ____<br />
+    Bestellt am (*) / erhalten am (*): ____<br />
+    Bestellnummer: ____<br />
+    Name des/der Verbraucher(s): ____<br />
+    Anschrift des/der Verbraucher(s): ____<br />
+    Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier): ____<br />
+    Datum: ____<br />
+    (*) Unzutreffendes streichen.</p>
+
+    <h2>Beschwerden und anwendbares Recht</h2>
+    <p>Wenn du unzufrieden bist, schreib an {site.email.hello}, und wir antworten in der Regel innerhalb von 24 Stunden. Für diese Bedingungen gilt irisches Recht. Nichts darin schränkt die Rechte ein, die du als Verbraucher in deinem eigenen Land hast.</p>
+
+    <h2>Bestellungen auf Etsy</h2>
+    <p>Für Bestellungen in unserem Etsy-Shop gelten der Bestellvorgang von Etsy und die Richtlinien, die bei jedem Etsy-Angebot stehen.</p>
+  </article>
+</BaseLayout>

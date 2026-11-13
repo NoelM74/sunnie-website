@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import { shipToListDe } from '../../lib/checkout-form';
+import { pageTitle } from '../../lib/seo';
+import Money from '../../components/Money.astro';
+import FreeShippingFrom from '../../components/FreeShippingFrom.astro';
+import { SHIPPING_FLAT } from '../../lib/money';
+
+// German version of /shipping/. Same facts, from the same settings.
+const REGION: Record<string, string> = { Ireland: 'Irland', 'United Kingdom': 'Vereinigtes Königreich', EU: 'EU', 'United States and Canada': 'USA und Kanada', Norway: 'Norwegen' };
+const CARRIER: Record<string, string> = { 'DHL Mail or La Poste': 'DHL Mail oder La Poste', 'Tracked post': 'Post mit Sendungsverfolgung' };
+const shipsIn = site.shipsIn.replace('days', 'Tagen');
+const alternates = [{ lang: 'en', href: '/shipping/' }, { lang: 'de', href: '/de/versand/' }];
+---
+<BaseLayout lang="de" alternates={alternates} title={pageTitle('Versand und Rückgabe')} description={`Versand kostet 6 €, kostenlos ab 50 € oder beim Kauf von zwei oder mehr aus einem Set. Auf Bestellung gemacht, Versand in ${shipsIn} mit Sendungsverfolgung. Lieferzeiten nach Land. 30 Tage Rückgabe.`}>
+  <article class="container narrow prose">
+    <header class="page-head"><h1>Versand und Rückgabe</h1></header>
+
+    <h2>Einkaufen auf dieser Website</h2>
+    <ul>
+      <li><strong>Kosten:</strong> <Money eur={SHIPPING_FLAT.EUR / 100} gbpCents={SHIPPING_FLAT.GBP} usdCents={SHIPPING_FLAT.USD} lang="de" /> pro Bestellung. Kostenlos bei Bestellungen ab <FreeShippingFrom lang="de" />.</li>
+      <li><strong>Sets:</strong> Kaufst du zwei oder mehr derselben <a href="/shop/bags/">Figurentasche</a> oder des <a href="/de/go/fruit-bellies/">Fruit-Bellies-Untersetzers</a>, ein 4er- oder 6er-Set <a href="/de/go/fold-and-bloom/">Fold &amp; Bloom Nelken</a>, das Groß-und-klein-Set von <a href="/de/go/pearl-and-daisy/">Pearl &amp; Daisy</a>, beide <a href="/de/go/bamboo-buddies/">Bamboo Buddies</a> Pandas, ein 4er- oder 6er-Set <a href="/de/go/potted-roses/">Potted Roses</a> oder ein 6er- oder 8er-Pack <a href="/de/go/mandala-blooms/">Mandala Blooms</a>, ist der Versand kostenlos, egal wie hoch die Summe ist.</li>
+      <li><strong>Bearbeitung:</strong> Jedes Stück wird auf Bestellung gemacht und innerhalb von {shipsIn} verschickt.</li>
+      <li><strong>Sendungsverfolgung:</strong> Jedes Paket ist nachverfolgbar, und wir schicken dir die Sendungsnummer per E-Mail, sobald es verschickt ist.</li>
+    </ul>
+
+    <h3>Lieferzeiten</h3>
+    <div class="table-wrap">
+      <table class="ship-table">
+        <thead><tr><th scope="col">Ziel</th><th scope="col">Versanddienst</th><th scope="col">Lieferung nach Versand</th></tr></thead>
+        <tbody>
+          {site.delivery.map((d) => <tr><th scope="row">{REGION[d.region] ?? d.region}</th><td>{CARRIER[d.carrier] ?? d.carrier}</td><td>{d.days} Werktage</td></tr>)}
+        </tbody>
+      </table>
+    </div>
+    <p>Die Lieferzeiten zählen ab dem Tag, an dem dein Paket verschickt wird. Rechne also noch {site.shipsIn.replace("days", "Tage")} für Anfertigung und Verpackung dazu.</p>
+    <p>Wir liefern nach {shipToListDe}.</p>
+    <p>
+      Bei Lieferung in die EU, nach Großbritannien oder in die USA fallen keine Einfuhrabgaben an. Der Preis an der Kasse ist
+      der volle Preis. Andere Länder können bei der Ankunft eigene Einfuhrabgaben erheben.
+    </p>
+
+    <h2 id="returns">Rückgabe</h2>
+    <p>
+      Du kannst jeden Artikel innerhalb von 30 Tagen nach Lieferung zurückgeben (60 Tage für <a href="/de/go/finn-the-shamrock/">Finn &amp; the Shamrock</a>). Die Rücksendung zahlst du, und wir erstatten den Preis
+      des Artikels plus die ursprünglichen Versandkosten innerhalb von 14 Tagen, nachdem wir ihn zurückbekommen haben oder du uns einen Versandnachweis geschickt hast,
+      je nachdem, was zuerst eintritt. Alle Einzelheiten, auch zum Widerruf, findest du in unseren <a href="/de/agb/">Verkaufsbedingungen</a>.
+    </p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import { pageTitle } from '../../lib/seo';
+
+// Provider details for German visitors (Impressum), from the company facts in src/data/site.ts.
+const c = site.company;
+---
+<BaseLayout lang="de" title={pageTitle('Impressum')} description={`Impressum von ${c.tradingAs}: ${c.legalName}, eingetragen in Irland, CRO ${c.cro}.`}>
+  <article class="container narrow prose">
+    <header class="page-head"><h1>Impressum</h1></header>
+    <h2>Anbieter</h2>
+    <p>{c.legalName}, handelnd als {c.tradingAs}<br />
+    Rechtsform: Limited nach irischem Recht<br />
+    Eingetragener Sitz: {c.registeredOffice}, Irland</p>
+    <h2>Vertretungsberechtigt</h2>
+    <p>Noel Murphy, Director</p>
+    <h2>Registereintrag</h2>
+    <p>Companies Registration Office (CRO), Irland<br />
+    Firmennummer: {c.cro}</p>
+    <h2>Umsatzsteuer</h2>
+    <p>{c.legalName} ist nicht umsatzsteuerpflichtig registriert und hat daher keine Umsatzsteuer-Identifikationsnummer.</p>
+    <h2>Kontakt</h2>
+    <p>E-Mail: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a><br />
+    Wir antworten in der Regel innerhalb von 24 Stunden.</p>
+  </article>
+</BaseLayout>

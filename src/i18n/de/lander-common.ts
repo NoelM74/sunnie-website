@@ -17,11 +17,11 @@ export const washFaq = (g: Gender) => ({
 /** `thing`: what Hui makes, with its article, e.g. "deinen Frosch", "deine Tasche". */
 export const arriveFaq = (thing: string) => ({
   q: 'Wann kommt meine Bestellung an?',
-  a: `Hui fertigt ${thing} auf Bestellung an, und die Bestellung geht innerhalb von 3–5 Tagen mit Sendungsverfolgung raus. Die Lieferzeiten für jedes Land stehen auf der <a href="/shipping/">Versandseite</a>. Bei Lieferung in die EU, nach Großbritannien oder in die USA zahlst du nichts extra.`,
+  a: `Hui fertigt ${thing} auf Bestellung an, und die Bestellung geht innerhalb von 3–5 Tagen mit Sendungsverfolgung raus. Die Lieferzeiten für jedes Land stehen auf der <a href="/de/versand/">Versandseite</a>. Bei Lieferung in die EU, nach Großbritannien oder in die USA zahlst du nichts extra.`,
 });
 export const returnsFaq = (g: Gender) => ({
   q: `Was, wenn ${g.nom} mir nicht ${g.likes}?`,
-  a: `Schick ${g.acc} innerhalb von 30 Tagen nach Lieferung zurück, und wir erstatten den Preis, Versand inklusive. Schreib uns einfach vorher eine E-Mail. <a href="/shipping/#returns">So funktioniert die Rückgabe</a>.`,
+  a: `Schick ${g.acc} innerhalb von 30 Tagen nach Lieferung zurück, und wir erstatten den Preis, Versand inklusive. Schreib uns einfach vorher eine E-Mail. <a href="/de/versand/#returns">So funktioniert die Rückgabe</a>.`,
 });
 /** `the`: the bag with its article in the accusative, e.g. "den Frosch", "die Tasche". */
 export const kidsFaq = (g: Gender, the: string) => ({

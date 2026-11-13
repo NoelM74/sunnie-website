@@ -7,7 +7,7 @@ import Money from '../components/Money.astro';
 import FreeShippingFrom from '../components/FreeShippingFrom.astro';
 import { SHIPPING_FLAT } from '../lib/money';
 ---
-<BaseLayout title={pageTitle('Shipping and returns')} description={`Shipping costs €6, free on orders of €50 or more, or when you buy two or more from a bundle. Made to order, ships in ${site.shipsIn} with tracking. Delivery times by country. 30-day returns.`}>
+<BaseLayout alternates={[{ lang: 'en', href: '/shipping/' }, { lang: 'de', href: '/de/versand/' }]} title={pageTitle('Shipping and returns')} description={`Shipping costs €6, free on orders of €50 or more, or when you buy two or more from a bundle. Made to order, ships in ${site.shipsIn} with tracking. Delivery times by country. 30-day returns.`}>
   <article class="container narrow prose">
     <header class="page-head"><h1>Shipping and returns</h1></header>
 

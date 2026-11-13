@@ -26,3 +26,14 @@ describe('German bundle pages', () => {
     }
   });
 });
+
+describe('German legal pages', () => {
+  it.each(['de/versand', 'de/agb', 'de/impressum'])('%s is built, in German, and its /de/ links exist', (p) => {
+    const html = page(p);
+    expect(html).toMatch(/<html lang="de"/);
+    for (const [, href] of html.matchAll(/href="(\/de\/[^"#]*)/g)) expect(existsSync(join(DIST, href, 'index.html')), href).toBe(true);
+  });
+  it('names who represents the company in the Impressum', () => {
+    expect(page('de/impressum')).toContain('Noel Murphy');
+  });
+});
