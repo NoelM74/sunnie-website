@@ -2100,7 +2100,7 @@ export const LANDERS: Lander[] = [
       h1: 'A crochet phone bag with a 3D rose or sunflower,',
       h1em: 'that carries your phone, cards and keys.',
       sub: 'Hui coils the rose petal by petal in soft pink, or layers the sunflower in rounds of yellow around a brown centre, then stitches it onto a cream bag with a green stem and leaves. A drawstring closes the top, and the strap is 110 cm.',
-      image: { src: 'landers/petal-pockets/petal-pockets-pair.jpg', alt: 'The rose bag and the sunflower bag hanging side by side from a wooden basket on a shelf' },
+      image: { src: 'landers/petal-pockets/petal-pockets-shelf.jpg', alt: 'The sunflower bag and the rose bag standing side by side on a wooden shelf, with their braided cream straps' },
       proof: { reviewer: 'Caitlin', date: '2026-02-13' },
     },
     story: {
@@ -2131,7 +2131,7 @@ export const LANDERS: Lander[] = [
       lede: 'Same bag, two flowers. Mix them in a bundle however you like.',
       cards: [
         { pick: 'Rose', title: 'Rose', text: 'A soft pink rose with spiralling, coiled petals, on a green stem with two leaves.', image: { src: 'landers/petal-pockets/petal-pockets-rose.jpg', alt: 'Cream crochet phone bag with a large pink 3D rose, a green stem and two leaves, on its braided strap' } },
-        { pick: 'Sunflower', title: 'Sunflower', text: 'A bright yellow sunflower with layered petals and a brown centre, on a brown stem with two leaves.', image: { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-03.jpg', alt: 'Cream crochet phone bag with a large yellow 3D sunflower and stem' } },
+        { pick: 'Sunflower', title: 'Sunflower', text: 'A bright yellow sunflower with layered petals and a brown centre, on a brown stem with two leaves.', image: { src: 'landers/petal-pockets/petal-pockets-sunflower.jpg', alt: 'Cream crochet phone bag with a large yellow 3D sunflower, a brown stem and two green leaves, on its braided strap' } },
       ],
       note: 'Can’t choose? Take two and get one of each.',
     },
@@ -2144,7 +2144,7 @@ export const LANDERS: Lander[] = [
         ['Gifts.', 'For a friend who loves flowers, or one who loves sunflowers in particular.'],
       ],
       images: [
-        { src: 'landers/petal-pockets/petal-pockets-rose-worn.jpg', alt: 'The rose bag worn crossbody over a grey sweatshirt, seen from behind' },
+        { src: 'landers/petal-pockets/petal-pockets-rose-worn-front.jpg', alt: 'The rose bag worn crossbody over a grey zip-up sweatshirt and skirt' },
         { src: 'landers/petal-pockets/petal-pockets-sunflower-worn.jpg', alt: 'The sunflower bag worn crossbody over a black top and a white ruffled skirt' },
       ],
     },
@@ -2154,7 +2154,7 @@ export const LANDERS: Lander[] = [
         'Hui crochets the cream bag first, then builds the flower on its own: the rose coiled petal by petal, or the sunflower in layered rounds around its centre. Last come the stem and the two leaves.',
         'Because a person shapes each flower, no two come out exactly alike.',
       ],
-      image: { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-08.jpg', alt: 'A hand holding the sunflower bag up close, showing the layered yellow petals and brown centre' },
+      image: { src: 'landers/petal-pockets/petal-pockets-sunflower-held.jpg', alt: 'A hand holding the sunflower bag up by its braided strap, showing the layered yellow petals and brown centre' },
     },
     offer: {
       h: 'Pick your bags',

@@ -1719,7 +1719,7 @@ export const LANDERS_DE: Record<string, LanderDe> = {
       h1: 'Eine gehäkelte Handytasche mit 3D-Rose oder Sonnenblume,',
       h1em: 'die Handy, Karten und Schlüssel trägt.',
       sub: 'Hui formt die Rose Blatt für Blatt in zartem Rosa oder legt die Sonnenblume in gelben Runden um eine braune Mitte und näht sie dann auf eine cremefarbene Tasche mit Stiel und grünen Blättern. Ein Kordelzug schließt die Tasche oben, und der Gurt ist 110 cm lang.',
-      alt: 'Die Rosentasche und die Sonnenblumentasche nebeneinander an einem Holzkorb auf einem Regal',
+      alt: 'Die Sonnenblumentasche und die Rosentasche nebeneinander auf einem Holzregal, mit ihren geflochtenen cremefarbenen Gurten',
     },
     story: {
       h: 'Blumen, die du jeden Tag tragen kannst.',
@@ -1749,7 +1749,7 @@ export const LANDERS_DE: Record<string, LanderDe> = {
       lede: 'Dieselbe Tasche, zwei Blumen. Kombiniere sie im Set, wie du magst.',
       cards: [
         { title: 'Rose', text: 'Eine zartrosa Rose mit spiralförmig gewundenen Blütenblättern, an einem grünen Stiel mit zwei Blättern.', alt: 'Cremefarbene gehäkelte Handytasche mit großer rosa 3D-Rose, grünem Stiel und zwei Blättern, am geflochtenen Gurt' },
-        { title: 'Sonnenblume', text: 'Eine leuchtend gelbe Sonnenblume mit gelagerten Blütenblättern und brauner Mitte, an einem braunen Stiel mit zwei Blättern.', alt: 'Cremefarbene gehäkelte Handytasche mit großer gelber 3D-Sonnenblume und Stiel' },
+        { title: 'Sonnenblume', text: 'Eine leuchtend gelbe Sonnenblume mit gelagerten Blütenblättern und brauner Mitte, an einem braunen Stiel mit zwei Blättern.', alt: 'Cremefarbene gehäkelte Handytasche mit großer gelber 3D-Sonnenblume, braunem Stiel und zwei grünen Blättern, am geflochtenen Gurt' },
       ],
       note: 'Du kannst dich nicht entscheiden? Nimm zwei, je eine von beiden.',
     },
@@ -1762,7 +1762,7 @@ export const LANDERS_DE: Record<string, LanderDe> = {
         ['Geschenke.', 'Für eine Freundin, die Blumen liebt, oder eine, die ganz besonders Sonnenblumen liebt.'],
       ],
       alts: [
-        'Die Rosentasche quer über einem grauen Sweatshirt getragen, von hinten',
+        'Die Rosentasche quer über einer grauen Sweatjacke und Rock getragen',
         'Die Sonnenblumentasche quer über einem schwarzen Oberteil und weißem Rüschenrock getragen',
       ],
     },
@@ -1772,7 +1772,7 @@ export const LANDERS_DE: Record<string, LanderDe> = {
         'Hui häkelt zuerst die cremefarbene Tasche und baut dann die Blume einzeln auf: die Rose Blatt für Blatt gewunden oder die Sonnenblume in gelagerten Runden um ihre Mitte. Zum Schluss kommen der Stiel und die zwei Blätter.',
         'Weil ein Mensch jede Blume formt, gleicht keine genau der anderen.',
       ],
-      alt: 'Eine Hand hält die Sonnenblumentasche nah und zeigt die gelagerten gelben Blütenblätter und die braune Mitte',
+      alt: 'Eine Hand hält die Sonnenblumentasche am geflochtenen Gurt hoch und zeigt die gelagerten gelben Blütenblätter und die braune Mitte',
     },
     offer: {
       h: 'Wähle deine Taschen',
