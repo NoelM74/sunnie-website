@@ -20,19 +20,19 @@ const faq = faqJsonLd(faqItems);
 ---
 <BaseLayout
   alternates={[{ lang: 'en', href: '/shop/bags/' }, { lang: 'de', href: '/de/shop/taschen/' }]}
-  title={pageTitle('Handmade crochet bags and phone crossbodies')}
-  description={`Phone bags, crossbodies and totes, each one crocheted by hand and rated ${site.proof.etsyRating} by our buyers. Ships in ${site.shipsIn} with tracking.`}
+  title={pageTitle('Crochet crossbody phone bags, animal bags and totes')}
+  description={`Handmade crochet crossbody phone bags, animal bags and totes: frogs, cats, dogs, pandas and flowers, each one crocheted by hand and rated ${site.proof.etsyRating} by our buyers. Ships in ${site.shipsIn} with tracking.`}
   current="bags"
   jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd('Crochet bags', productUrls), ...(faq ? [faq] : [])]}
 >
   <div class="container">
     <Breadcrumbs items={crumbs} />
     <header class="page-head">
-      <h1>Crochet bags</h1>
+      <h1>Crochet bags: crossbody phone bags, animal bags and totes</h1>
       <p>
-        Carrying a phone in your hand all day gets old fast. These crossbodies, totes and character bags are
-        crocheted by hand and built to hold your phone, cards and keys, so tap any bag for its size, colours and
-        more photos.
+        Carrying a phone in your hand all day gets old fast. These crochet crossbody phone bags, animal bags and
+        totes are made by hand to hold your phone, cards and keys with your hands free: frogs, cats, dogs, a panda
+        and a few monsters, plus flower bags and roomy totes. Tap any bag for its size, colours and more photos.
       </p>
     </header>
     <ProductBrowser products={bags} by="group" />
@@ -44,6 +44,13 @@ const faq = faqJsonLd(faqItems);
         run bigger, 25 to 37 cm wide, with room for a water bottle, a paperback or an 11-inch tablet. The
         <a href="/products/daisy-granny-square-tote-bag-with-matching-coin/">daisy granny square tote</a> is a good
         example, with its own coin purse that clips to the handle.
+      </p>
+      <p>
+        Looking for a crochet animal bag? The <a href="/go/star-frogs/">Star Frogs</a> and
+        <a href="/go/finn-the-shamrock/">Finn &amp; the Shamrock</a> are frogs whose mouth is the opening,
+        <a href="/go/miso-cat/">Miso</a> is a cat in a sweater, and <a href="/go/snout-and-about/">Snout &amp; About</a>
+        and <a href="/go/fuzzy-pups/">Fuzzy Pups</a> are soft little dogs. Buy two of the same bag and shipping is
+        free, with each one costing less.
       </p>
       <p>
         For a phone, check the width and fit listed on each product page: the

@@ -6,8 +6,16 @@ const FREE_SHIPPING = freeShippingAll();
 export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: string; a: string }[]> = {
   bags: [
     {
-      q: 'What phone sizes fit in a crossbody bag?',
-      a: 'Each product page lists its exact width and what fits. The frog phone crossbody, for example, fits phones up to 6.7 inches.',
+      q: 'Which crochet crossbody bags fit a phone?',
+      a: 'Most of our character bags are made as crossbody phone bags. The Star Frogs and the smiling blue monster bag fit phones up to 6.7 inches, the Big Mouth Monsters and Fuzzy Pups up to 6.5 inches, and Finn & the Shamrock takes a large phone in a thick case. Each product page lists its exact size and what fits.',
+    },
+    {
+      q: 'Which animals do the crochet animal bags come as?',
+      a: 'Frogs (Finn & the Shamrock, Finn in the Hood and the Star Frogs), a cat (Miso), dogs (Snout & About, Fuzzy Pups, Puppy Pockets, Stretch Dogs and the fluffy poodle), a panda (Bamboo Buddies), a plush puppy, bear and cat (the Party Animals), and a sloth, cat, duck and frog (the Googly Gang).',
+    },
+    {
+      q: 'Is it cheaper to buy two?',
+      a: 'Yes, on the character bags with a bundle page. Two or more of the same bag ship free, and each one costs less than buying it on its own. Mix the colours however you like.',
     },
     {
       q: 'Can I adjust the strap length?',
@@ -24,8 +32,12 @@ export const categoryFaq: Record<'bags' | 'coasters' | 'hats' | 'shop', { q: str
   ],
   coasters: [
     {
-      q: 'How many coasters come in a set?',
-      a: 'Pack sizes vary by design, from a single coaster up to a set of eight. See each product page for its exact pack sizes.',
+      q: 'What crochet coaster sets do you sell?',
+      a: 'Mandala Blooms in packs of 4, 6 or 8 with free mini baskets, large mandala coasters in a set of 5, sunflower coasters in a set of 4, Potted Roses and Fold & Bloom carnations in sets of 2, 4 or 6, and the Fruit Bellies animal coasters as one, two or the set of three.',
+    },
+    {
+      q: 'Do coaster sets ship free?',
+      a: `Orders of ${FREE_SHIPPING} or more ship free. On top of that, Fold & Bloom and Potted Roses sets of four or six, Mandala Blooms packs of six or eight, and two or more Fruit Bellies ship free whatever the total.`,
     },
     {
       q: 'What size are the coasters?',
