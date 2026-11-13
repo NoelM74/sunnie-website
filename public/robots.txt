@@ -4,3 +4,4 @@ Allow: /
 # Machine-readable site summary for AI agents: /llms.txt
 
 Sitemap: https://sunniedesigns.com/sitemap-index.xml
+Sitemap: https://sunniedesigns.com/sitemap-images.xml
