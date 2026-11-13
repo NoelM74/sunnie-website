@@ -16,13 +16,13 @@ export const site = {
   shipsIn: '3–5 days',
   /** Carriers and days owner-supplied 2026-10-09 (working days after dispatch). The countries are
    * the owner's list of 2026-11-13, the only ones the checkout and Google Shopping offer.
-   * Norway keeps the old "rest of the world" carrier and days. */
+   * Norway keeps the old "rest of the world" days; owner: don't name YunExpress, we use various companies. */
   delivery: [
     { region: 'Ireland', countries: ['IE'], carrier: 'An Post', days: '7–12' },
     { region: 'United Kingdom', countries: ['GB'], carrier: 'Evri', days: '5–8' },
     { region: 'EU', countries: ['AT', 'BE', 'DK', 'FI', 'FR', 'DE', 'NL', 'PL', 'PT', 'ES', 'SE'], carrier: 'DHL Mail or La Poste', days: '6–14' },
     { region: 'United States and Canada', countries: ['US', 'CA'], carrier: 'USPS (via Dragonfly)', days: '6–12' },
-    { region: 'Norway', countries: ['NO'], carrier: 'YunExpress', days: '8–30' },
+    { region: 'Norway', countries: ['NO'], carrier: 'Tracked post', days: '8–30' },
   ],
   replyTime: 'within 24 hours',
   company: {
