@@ -1112,7 +1112,7 @@ export const LANDERS_DE: Record<string, LanderDe> = {
       lede: 'Dieselben flauschigen Haare in vier Farben. Kordeln, Blume und Füße passen zum Körper.',
       cards: [
         { title: 'Rosa', text: 'Rosa Tweed mit rosa Kordeln, rosa Blume und runden rosa Füßen.', alt: 'Die rosa Tasche mit großen Augen, flauschigen braunen Zöpfen und rosa Blume' },
-        { title: 'Lila', text: 'Lila Tweed mit fliederfarbenen Kordeln, fliederfarbener Blume und fliederfarbenen Füßen.', alt: 'Die lila Tasche auf dem Rücken über einem grauen Sweatshirt getragen' },
+        { title: 'Lila', text: 'Lila Tweed mit fliederfarbenen Kordeln, fliederfarbener Blume und fliederfarbenen Füßen.', alt: 'Die lila Tasche mit großen Augen, flauschigen braunen Zöpfen, fliederfarbener Blume und fliederfarbenen Kordeln' },
         { title: 'Blau', text: 'Blauer Tweed mit blauen Kordeln, blauer Blume und runden blauen Füßen.', alt: 'Die blaue Tasche mit großen Augen, flauschigen braunen Zöpfen und blauer Blume' },
         { title: 'Grün', text: 'Grüner Tweed mit dunkelgrünen Kordeln, grüner Blume und grünen Füßen.', alt: 'Die grüne Tasche mit großen Augen, flauschigen braunen Zöpfen und grüner Blume' },
       ],
@@ -1587,7 +1587,7 @@ export const LANDERS_DE: Record<string, LanderDe> = {
         ['Packungen', '4 Untersetzer und ein Körbchen, 6 und ein Körbchen oder 8 und zwei Körbchen'],
         ['Farben', 'Eine Mischung aus Gelb, Lila, Rosa, Rot und Farbverläufen, von Hui ausgesucht'],
         ['Material', 'Polyestergarn'],
-        ['Maße', 'Einzeln von Hand gehäkelt, kleine Größenunterschiede gehören zum Look'],
+        ['Größe', 'Rund 14 cm Durchmesser. Einzeln von Hand gehäkelt, kleine Größenunterschiede gehören zum Look'],
         ['Pflege', 'Sanft von Hand in kühlem oder lauwarmem Wasser waschen, unter 40 °C. Das Wasser in einem Handtuch ausdrücken und flach liegend trocknen, nicht in direkter Sonne.'],
       ],
       alt: 'Ein Glas auf einem lila Blumen-Mandala-Untersetzer',

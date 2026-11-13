@@ -1374,7 +1374,7 @@ export const LANDERS: Lander[] = [
       lede: 'The same fuzzy hair in four colours. The cords, flower and feet match the body.',
       cards: [
         { pick: 'Pink', title: 'Pink', text: 'Pink tweed with pink cords, a pink flower and round pink feet.', image: { src: 'landers/pigtail-pals/pigtail-pals-pink.jpg', alt: 'The pink bag with big eyes, fuzzy brown pigtails and a pink flower' } },
-        { pick: 'Purple', title: 'Purple', text: 'Purple tweed with lilac cords, a lilac flower and lilac feet.', image: { src: 'products/big-eye-girl-bag/big-eye-girl-bag-02.jpg', alt: 'The purple bag worn on the back over a grey sweatshirt' } },
+        { pick: 'Purple', title: 'Purple', text: 'Purple tweed with lilac cords, a lilac flower and lilac feet.', image: { src: 'landers/pigtail-pals/pigtail-pals-purple.jpg', alt: 'The purple bag with big eyes, fuzzy brown pigtails, a lilac flower and lilac cords' } },
         { pick: 'Blue', title: 'Blue', text: 'Blue tweed with blue cords, a blue flower and round blue feet.', image: { src: 'landers/pigtail-pals/pigtail-pals-blue.jpg', alt: 'The blue bag with big eyes, fuzzy brown pigtails and a blue flower' } },
         { pick: 'Green', title: 'Green', text: 'Green tweed with dark green cords, a green flower and green feet.', image: { src: 'landers/pigtail-pals/pigtail-pals-green.jpg', alt: 'The green bag with big eyes, fuzzy brown pigtails and a green flower' } },
       ],
@@ -1941,7 +1941,7 @@ export const LANDERS: Lander[] = [
         ['Packs', '4 coasters and a basket, 6 and a basket, or 8 and two baskets'],
         ['Colours', 'A mix from yellow, purple, pink, red and ombre shades, chosen by Hui'],
         ['Made from', 'Polyester yarn'],
-        ['Sizing', 'Hooked by hand, one at a time, so small size differences are part of the look'],
+        ['Size', 'About 14 cm across. Hooked by hand, one at a time, so small size differences are part of the look'],
         ['Care', 'Hand wash gently in cool or lukewarm water, below 40°C. Press the water out in a towel and dry flat, away from direct sun.'],
       ],
       image: { src: 'products/flower-mandala-coaster/flower-mandala-coaster-05.jpg', alt: 'A glass tumbler sitting on a purple flower mandala coaster' },
