@@ -4,9 +4,12 @@ import { getEnv } from '../../lib/env';
 import { loadCatalog } from '../../lib/catalog';
 import { BAG_COOKIE, decodeBag, saveBag } from '../../lib/bag-cookie';
 import { displayCents, priceBag } from '../../lib/pricing';
-import { CURRENCY_COOKIE, CURRENCY_NAMES, currencyFromRequest, formatMoney } from '../../lib/currency';
+import { CURRENCY_COOKIE, currencyFromRequest, formatMoney } from '../../lib/currency';
 import { pageTitle } from '../../lib/seo';
 import { unitLabel } from '../../lib/line-label';
+import { LANG_COOKIE, langFrom } from '../../i18n/lang';
+import { SHOP_UI } from '../../i18n/shop-ui';
+import { shownLine } from '../../i18n/de/lines';
 
 export const prerender = false;
 
@@ -23,70 +26,76 @@ if (priced.dropped.length) {
 const notice = Astro.url.searchParams.get('n');
 const cancelled = Astro.url.searchParams.get('cancelled') === '1';
 const declined = Astro.url.searchParams.get('declined') === '1';
-const euro = (c: number) => formatMoney(c, currency);
+// German if the shopper last came from a German page.
+const lang = langFrom(Astro.cookies.get(LANG_COOKIE)?.value);
+const U = SHOP_UI[lang].bag;
+const curName = SHOP_UI[lang].currencyNames[currency];
+const euro = (c: number) => formatMoney(c, currency, lang);
+/** Bundle pages have German versions: link a German shopper back to theirs. */
+const deHref = (href: string) => (lang === 'de' && href.startsWith('/go/') ? `/de${href}` : href);
 const suggestions = Object.values(catalog)
   .filter((i) => i.featured !== null && i.inStock && !priced.lines.some((l) => l.slug === i.slug))
   .sort((a, b) => (a.featured ?? 9) - (b.featured ?? 9))
   .slice(0, 4);
 ---
-<BaseLayout title={pageTitle('Your basket')} description="Your Sunnie Designs basket." path="/bag/" noindex>
+<BaseLayout title={pageTitle(U.title)} description={U.description} path="/bag/" noindex lang={lang}>
   <div class="container narrow-wide">
-    <header class="page-head"><h1>Your basket</h1></header>
-    {notice === 'added' && <p class="notice" role="status">Added to your basket.</p>}
-    {notice === 'invalid' && <p class="notice notice-warn" role="status">That piece couldn't be added. Please choose an option and try again.</p>}
-    {cancelled && <p class="notice" role="status">Payment cancelled. Your basket is just as you left it.</p>}
-    {declined && <p class="notice notice-warn" role="alert">Your payment did not go through, so nothing was charged. Please try again or choose another card.</p>}
-    {priced.dropped.length > 0 && <p class="notice notice-warn" role="status">Some items are no longer available and were removed: {priced.dropped.join(', ')}.</p>}
+    <header class="page-head"><h1>{U.h1}</h1></header>
+    {notice === 'added' && <p class="notice" role="status">{U.added}</p>}
+    {notice === 'invalid' && <p class="notice notice-warn" role="status">{U.invalid}</p>}
+    {cancelled && <p class="notice" role="status">{U.cancelled}</p>}
+    {declined && <p class="notice notice-warn" role="alert">{U.declined}</p>}
+    {priced.dropped.length > 0 && <p class="notice notice-warn" role="status">{U.dropped(priced.dropped.join(', '))}</p>}
     {priced.lines.length === 0 ? (
       <div class="bag-empty">
-        <p>Your basket is empty.</p>
-        <p><a class="btn btn-primary" href="/shop/bags/">Browse bags</a> <a class="btn-ghost" href="/shop/">Shop all</a></p>
+        <p>{U.empty}</p>
+        <p><a class="btn btn-primary" href="/shop/bags/">{U.browse}</a> <a class="btn-ghost" href="/shop/">{U.all}</a></p>
       </div>
     ) : (
       <div class="bag-grid">
         <ul class="bag-lines" role="list">
-          {priced.lines.map((l, i) => (
+          {priced.lines.map((line, i) => { const l = shownLine(line, lang); return (
             <li class="bag-line">
               <img src={l.thumb} alt="" width="80" height="80" loading="lazy" />
               <div class="bag-line-info">
-                <a href={catalog[l.slug]?.href ?? `/products/${l.slug}/`}>{l.name}</a>
+                <a href={deHref(catalog[l.slug]?.href ?? `/products/${l.slug}/`)}>{l.name}</a>
                 {l.option && <span class="small muted">{l.option}</span>}
-                <span class="small">{unitLabel(l, euro(l.unitCents))}</span>
+                <span class="small">{unitLabel(line, euro(l.unitCents), lang)}</span>
               </div>
               <form method="post" action="/bag/update/" class="bag-qty">
                 <input type="hidden" name="index" value={i} />
-                <label><span class="visually-hidden">Quantity for {l.name}</span>
+                <label><span class="visually-hidden">{U.qtyFor(l.name)}</span>
                   <select name="qty">{[1, 2, 3, 4, 5].map((n) => <option value={n} selected={n === l.qty}>{n}</option>)}</select>
                 </label>
-                <button type="submit" class="btn-ghost" aria-label={`Update quantity for ${l.name}`}>Update</button>
+                <button type="submit" class="btn-ghost" aria-label={U.updateFor(l.name)}>{U.update}</button>
               </form>
               <form method="post" action="/bag/remove/">
                 <input type="hidden" name="index" value={i} />
-                <button type="submit" class="btn-ghost" aria-label={`Remove ${l.name} from basket`}>Remove</button>
+                <button type="submit" class="btn-ghost" aria-label={U.removeFor(l.name)}>{U.remove}</button>
               </form>
               <span class="bag-line-total">{euro(l.lineCents)}</span>
             </li>
-          ))}
+          ); })}
         </ul>
-        <aside class="bag-summary" aria-label="Order summary">
+        <aside class="bag-summary" aria-label={U.summary}>
           <dl>
-            <div><dt>Subtotal</dt><dd>{euro(priced.subtotalCents)}</dd></div>
-            <div><dt>Shipping</dt><dd>{priced.shippingCents === 0 ? 'Free' : euro(priced.shippingCents)}</dd></div>
-            <div class="bag-total"><dt>Total</dt><dd>{euro(priced.totalCents)}</dd></div>
+            <div><dt>{U.subtotal}</dt><dd>{euro(priced.subtotalCents)}</dd></div>
+            <div><dt>{U.shipping}</dt><dd>{priced.shippingCents === 0 ? U.free : euro(priced.shippingCents)}</dd></div>
+            <div class="bag-total"><dt>{U.total}</dt><dd>{euro(priced.totalCents)}</dd></div>
           </dl>
-          {priced.freeShippingGapCents > 0 && <p class="small">Add {euro(priced.freeShippingGapCents)} more for free shipping.</p>}
-          <p class="small muted">Prices in {CURRENCY_NAMES[currency]}. You pay in {CURRENCY_NAMES[currency]}.</p>
-          <a class="btn btn-primary btn-block" href="/checkout/">Checkout</a>
-          <a class="btn-ghost" href="/shop/">Continue shopping</a>
+          {priced.freeShippingGapCents > 0 && <p class="small">{U.gap(euro(priced.freeShippingGapCents))}</p>}
+          <p class="small muted">{U.currencyNote(curName)}</p>
+          <a class="btn btn-primary btn-block" href="/checkout/">{U.checkout}</a>
+          <a class="btn-ghost" href="/shop/">{U.continue}</a>
         </aside>
       </div>
     )}
     {(priced.lines.length === 0 || priced.freeShippingGapCents > 0) && suggestions.length > 0 && (
       <section class="section" aria-labelledby="suggest-h">
-        <h2 id="suggest-h">Popular pieces</h2>
+        <h2 id="suggest-h">{U.popular}</h2>
         <ul class="grid" role="list">
           {suggestions.map((s) => (
-            <li><a class="card card-link" href={s.href ?? `/products/${s.slug}/`}><img src={s.thumb} alt="" width="160" height="160" loading="lazy" /><span class="card-title">{s.name}</span><span class="card-price">{euro(displayCents(s, currency))}</span></a></li>
+            <li><a class="card card-link" href={deHref(s.href ?? `/products/${s.slug}/`)}><img src={s.thumb} alt="" width="160" height="160" loading="lazy" /><span class="card-title">{s.name}</span><span class="card-price">{euro(displayCents(s, currency))}</span></a></li>
           ))}
         </ul>
       </section>

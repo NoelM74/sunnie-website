@@ -1,41 +1,45 @@
 ---
 import { site } from '../data/site';
+import type { Lang } from '../i18n/lang';
+import { SHOP_UI } from '../i18n/shop-ui';
+interface Props { lang?: Lang }
+const F = SHOP_UI[Astro.props.lang ?? 'en'].footer;
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
       <p class="footer-brand">{site.name}</p>
-      <p>{site.makerLine}. Ships in {site.shipsIn}.</p>
+      <p>{F.ships(site.makerLine, site.shipsIn)}</p>
       <p><a href={`mailto:${site.email.hello}`}>{site.email.hello}</a></p>
     </div>
-    <nav aria-label="Shop">
-      <h2>Shop</h2>
+    <nav aria-label={F.shop}>
+      <h2>{F.shop}</h2>
       <ul>
-        <li><a href="/shop/bags/">Bags</a></li>
-        <li><a href="/shop/coasters/">Coasters</a></li>
-        <li><a href="/shop/">Shop all</a></li>
+        <li><a href="/shop/bags/">{F.bags}</a></li>
+        <li><a href="/shop/coasters/">{F.coasters}</a></li>
+        <li><a href="/shop/">{F.all}</a></li>
       </ul>
     </nav>
-    <nav aria-label="Help">
-      <h2>Help</h2>
+    <nav aria-label={F.help}>
+      <h2>{F.help}</h2>
       <ul>
-        <li><a href="/shipping/">Shipping and returns</a></li>
-        <li><a href="/care/">Care guide</a></li>
-        <li><a href="/terms/">Terms</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/shipping/">{F.shipping}</a></li>
+        <li><a href="/care/">{F.care}</a></li>
+        <li><a href="/terms/">{F.terms}</a></li>
+        <li><a href="/contact/">{F.contact}</a></li>
       </ul>
     </nav>
-    <nav aria-label="About">
-      <h2>About</h2>
+    <nav aria-label={F.about}>
+      <h2>{F.about}</h2>
       <ul>
-        <li><a href="/our-story/">Our story</a></li>
-        <li><a href="/reviews/">Reviews</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/our-story/">{F.story}</a></li>
+        <li><a href="/reviews/">{F.reviews}</a></li>
+        <li><a href="/privacy/">{F.privacy}</a></li>
         <li><a href={site.pinterestUrl} rel="noopener">Pinterest</a></li>
         <li><a href={site.facebookUrl} rel="noopener">Facebook</a></li>
       </ul>
     </nav>
   </div>
-  <p class="container footer-legal">© {year} {site.name} · {site.company.legalName}, CRO {site.company.cro} · <a href="/contact/">Company details</a></p>
+  <p class="container footer-legal">© {year} {site.name} · {site.company.legalName}, CRO {site.company.cro} · <a href="/contact/">{F.company}</a></p>
 </footer>

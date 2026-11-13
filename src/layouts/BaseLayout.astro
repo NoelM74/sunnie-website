@@ -10,6 +10,8 @@ import Seo from '../components/Seo.astro';
 import JsonLd from '../components/JsonLd.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import type { Lang } from '../i18n/lang';
+import { SHOP_UI } from '../i18n/shop-ui';
 
 interface Props {
   title: string;
@@ -21,11 +23,14 @@ interface Props {
   canonical?: boolean;
   jsonLd?: object[];
   current?: 'bags' | 'coasters' | 'hats' | 'story' | 'shop' | 'reviews';
+  lang?: Lang;
+  /** The same page in each language (hreflang). */
+  alternates?: { lang: string; href: string }[];
 }
-const { jsonLd = [], current, path = Astro.url.pathname, ...seo } = Astro.props;
+const { jsonLd = [], current, path = Astro.url.pathname, lang = 'en', ...seo } = Astro.props;
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,16 +42,16 @@ const { jsonLd = [], current, path = Astro.url.pathname, ...seo } = Astro.props;
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#FBF6EE" />
-    <Seo path={path} {...seo} />
+    <Seo path={path} {...seo} locale={lang === 'de' ? 'de_DE' : undefined} />
     {jsonLd.length > 0 && <JsonLd data={jsonLd} />}
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <Header current={current} />
+    <a class="skip-link" href="#main">{SHOP_UI[lang].skip}</a>
+    <Header current={current} lang={lang} />
     <main id="main" tabindex="-1">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
     {/* Swap euro prices for pounds or dollars (data attributes on .money, see Money.astro). */}
     <script is:inline>(function(){var d=document.documentElement;window.sunnieMoney=function(){var k=d.dataset.cur==='GBP'?'gbp':d.dataset.cur==='USD'?'usd':'';document.querySelectorAll('.money').forEach(function(m){if(!m.dataset.eur)m.dataset.eur=m.textContent;m.textContent=k?m.dataset[k]:m.dataset.eur})};window.sunnieMoney()})();</script>
   <NoBreakHyphens />

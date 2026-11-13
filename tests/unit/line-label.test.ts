@@ -27,3 +27,21 @@ describe('pairs of coasters', () => {
     expect(unitLabel({ option: '2 dogs: Grey Schnauzer + Beige Puppy' }, '€69.95')).toBe('2 for €69.95');
   });
 });
+
+describe('German basket labels', () => {
+  it('reads packs and single pieces in German', async () => {
+    const { unitLabel, lineLabel } = await import('../../src/lib/line-label');
+    expect(unitLabel({ option: '2 frogs: Pink + Blue' }, '69,95 €', 'de')).toBe('2 für 69,95 €');
+    expect(unitLabel({ option: '2 pairs: Pink + Pink' }, '44,95 €', 'de')).toBe('2 Paare für 44,95 €');
+    expect(unitLabel({}, '34,95 €', 'de')).toBe('34,95 € pro Stück');
+    expect(lineLabel({ qty: 1, name: 'x', option: '2 frogs: Pink + Blue' }, { name: 'Frosch', option: '2 Frösche: Rosa + Blau' })).toBe('Frosch, 2 Frösche: Rosa + Blau');
+  });
+  it('shows bundle packs from a German page in German', async () => {
+    const { shownLine } = await import('../../src/i18n/de/lines');
+    const l = shownLine({ slug: 'star-frogs-bundle', name: 'The Star Frogs frog phone bag', option: '3 frogs: Pink + Blue + Brown', qty: 1 }, 'de');
+    expect(l.name).toBe('The Star Frogs Frosch-Handytasche');
+    expect(l.option).toBe('3 Frösche: Rosa + Blau + Braun');
+    expect(shownLine({ slug: 'finn-the-shamrock', name: 'Finn', option: '2 frogs', qty: 1 }, 'de').option).toBe('2 Frösche');
+    expect(shownLine({ slug: 'rainbow-tote-bag', name: 'Rainbow tote', qty: 1 }, 'de').name).toBe('Rainbow tote');
+  });
+});

@@ -6,11 +6,14 @@ import { BAG_COOKIE, decodeBag } from '../../lib/bag-cookie';
 import { FINN_SLUG } from '../../lib/finn';
 import { priceBag } from '../../lib/pricing';
 import { COUNTRY_CODES, countryName, type CheckoutValues } from '../../lib/checkout-form';
-import { CURRENCY_COOKIE, CURRENCY_NAMES, currencyForCountry, currencyFromRequest, formatMoney } from '../../lib/currency';
+import { CURRENCY_COOKIE, currencyForCountry, currencyFromRequest, formatMoney } from '../../lib/currency';
 import { pageTitle } from '../../lib/seo';
 import { lineLabel } from '../../lib/line-label';
 import type { Currency } from '../../lib/currency';
 import { site } from '../../data/site';
+import { LANG_COOKIE, langFrom } from '../../i18n/lang';
+import { SHOP_UI, tr } from '../../i18n/shop-ui';
+import { shownLine } from '../../i18n/de/lines';
 
 export const prerender = false;
 
@@ -33,64 +36,70 @@ const startCountry = COUNTRY_CODES.includes(visitorCountry) && currencyForCountr
   ? visitorCountry
   : currency === 'GBP' ? 'GB' : currency === 'USD' ? 'US' : 'IE';
 const v: CheckoutValues = state?.values ?? { email: '', name: '', line1: '', line2: '', city: '', region: '', postcode: '', country: startCountry };
-const e = state?.errors ?? {};
-const euro = (c: number) => formatMoney(c, currency);
-const countries = COUNTRY_CODES.map((c) => ({ code: c, name: countryName(c) })).sort((a, b) => a.name.localeCompare(b.name));
+// German if the shopper last came from a German page.
+const lang = langFrom(Astro.cookies.get(LANG_COOKIE)?.value);
+const U = SHOP_UI[lang].checkout;
+const B = SHOP_UI[lang].bag;
+const curName = SHOP_UI[lang].currencyNames[currency];
+const e = Object.fromEntries(Object.entries(state?.errors ?? {}).map(([k, m]) => [k, tr(lang, m)]));
+const euro = (c: number) => formatMoney(c, currency, lang);
+const countries = COUNTRY_CODES.map((c) => ({ code: c, name: countryName(c, lang) })).sort((a, b) => a.name.localeCompare(b.name, lang));
+const agree = U.agree(site.shipsIn, priced.lines.some((l) => l.slug === FINN_SLUG));
 const field = (k: keyof CheckoutValues, label: string, opts: { type?: 'text' | 'email'; auto?: string; optional?: boolean } = {}) => ({ k, label, ...opts });
 const fields = [
-  field('email', 'Email', { type: 'email', auto: 'email' }),
-  field('name', 'Full name', { auto: 'name' }),
-  field('line1', 'Address line 1', { auto: 'address-line1' }),
-  field('line2', 'Address line 2', { auto: 'address-line2', optional: true }),
-  field('city', 'Town or city', { auto: 'address-level2' }),
-  field('region', 'County, state or region', { auto: 'address-level1', optional: true }),
-  field('postcode', 'Postcode or Eircode', { auto: 'postal-code', optional: true }),
+  field('email', U.fields.email, { type: 'email', auto: 'email' }),
+  field('name', U.fields.name, { auto: 'name' }),
+  field('line1', U.fields.line1, { auto: 'address-line1' }),
+  field('line2', U.fields.line2, { auto: 'address-line2', optional: true }),
+  field('city', U.fields.city, { auto: 'address-level2' }),
+  field('region', U.fields.region, { auto: 'address-level1', optional: true }),
+  field('postcode', U.fields.postcode, { auto: 'postal-code', optional: true }),
 ];
 ---
-<BaseLayout title={pageTitle('Checkout')} description="Pay securely with PayPal or card." path="/checkout/" noindex>
+<BaseLayout title={pageTitle(U.title)} description={U.description} path="/checkout/" noindex lang={lang}>
   <div class="container narrow-wide">
-    <header class="page-head"><h1>Checkout</h1></header>
-    {state?.payError && <p class="notice notice-warn" role="alert">{state.payError}</p>}
-    {state?.switched && <p class="notice" role="alert">You’re sending this to {state.switched}, so your order is in {CURRENCY_NAMES[currency]}. Your total is below. Press Pay when you’re ready.</p>}
+    <header class="page-head"><h1>{U.h1}</h1></header>
+    {state?.payError && <p class="notice notice-warn" role="alert">{tr(lang, state.payError)}</p>}
+    {state?.switched && <p class="notice" role="alert">{U.switched(countryName(v.country, lang), curName)}</p>}
     <div class="bag-grid">
       <form class="checkout-form" method="post" action="/checkout/pay/" novalidate>
         <fieldset>
-          <legend>Delivery details</legend>
+          <legend>{U.legend}</legend>
           {fields.map((f) => {
             const hintId = f.k === 'region' ? `${f.k}-hint` : undefined;
             const errId = e[f.k] ? `${f.k}-err` : undefined;
             const describedBy = [hintId, errId].filter(Boolean).join(' ') || undefined;
             return (
               <div class="field">
-                <label for={f.k}>{f.label}{f.optional && <span class="muted"> (optional)</span>}</label>
+                <label for={f.k}>{f.label}{f.optional && <span class="muted">{U.optional}</span>}</label>
                 <input id={f.k} name={f.k} type={f.type ?? 'text'} autocomplete={f.auto} value={v[f.k]} required={!f.optional} aria-invalid={e[f.k] ? 'true' : undefined} aria-describedby={describedBy} />
-                {hintId && <p class="small muted" id={hintId}>US and Canada: use the 2-letter state or province code, for example CA or ON.</p>}
+                {hintId && <p class="small muted" id={hintId}>{U.regionHint}</p>}
                 {e[f.k] && <p class="field-error" id={errId}>{e[f.k]}</p>}
               </div>
             );
           })}
           <div class="field">
-            <label for="country">Country</label>
+            <label for="country">{U.fields.country}</label>
             <select id="country" name="country" autocomplete="country" required aria-invalid={e.country ? 'true' : undefined} aria-describedby={e.country ? 'country-err' : undefined}>
               {countries.map((c) => <option value={c.code} selected={c.code === v.country}>{c.name}</option>)}
             </select>
             {e.country && <p class="field-error" id="country-err">{e.country}</p>}
           </div>
         </fieldset>
-        <p class="small">By paying you agree to our <a href="/terms/">terms of sale</a>. Ships within {site.shipsIn} with tracking. Returns accepted within 30 days{priced.lines.some((l) => l.slug === FINN_SLUG) && ' (60 days for Finn & the Shamrock)'}.</p>
-        <button class="btn btn-primary btn-block" type="submit">Pay with PayPal or card</button>
-        <p class="small muted">You'll pay in {CURRENCY_NAMES[currency]} on PayPal's secure page. You can pay by card without a PayPal account.</p>
+        <p class="small">{agree[0]}<a href="/terms/">{agree[1]}</a>{agree[2]}</p>
+        <button class="btn btn-primary btn-block" type="submit">{U.pay}</button>
+        <p class="small muted">{U.payNote(curName)}</p>
       </form>
-      <aside class="bag-summary" aria-label="Order summary">
+      <aside class="bag-summary" aria-label={B.summary}>
         <ul class="summary-lines" role="list">
-          {priced.lines.map((l) => <li><span>{lineLabel(l)}</span><span>{euro(l.lineCents)}</span></li>)}
+          {priced.lines.map((l) => <li><span>{lineLabel(l, shownLine(l, lang))}</span><span>{euro(l.lineCents)}</span></li>)}
         </ul>
         <dl>
-          <div><dt>Subtotal</dt><dd>{euro(priced.subtotalCents)}</dd></div>
-          <div><dt>Shipping</dt><dd>{priced.shippingCents === 0 ? 'Free' : euro(priced.shippingCents)}</dd></div>
-          <div class="bag-total"><dt>Total</dt><dd>{euro(priced.totalCents)}</dd></div>
+          <div><dt>{B.subtotal}</dt><dd>{euro(priced.subtotalCents)}</dd></div>
+          <div><dt>{B.shipping}</dt><dd>{priced.shippingCents === 0 ? B.free : euro(priced.shippingCents)}</dd></div>
+          <div class="bag-total"><dt>{B.total}</dt><dd>{euro(priced.totalCents)}</dd></div>
         </dl>
-        <a class="btn-ghost" href="/bag/">Edit basket</a>
+        <a class="btn-ghost" href="/bag/">{U.edit}</a>
       </aside>
     </div>
   </div>

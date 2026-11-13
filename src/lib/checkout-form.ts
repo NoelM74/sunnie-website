@@ -7,8 +7,8 @@ type Errors = Partial<Record<keyof CheckoutValues, string>>;
 /** Only the countries we ship to (site.delivery). */
 export const COUNTRY_CODES = site.delivery.flatMap((d) => d.countries);
 
-const names = new Intl.DisplayNames(['en'], { type: 'region' });
-export const countryName = (code: string) => names.of(code) ?? code;
+const names = { en: new Intl.DisplayNames(['en'], { type: 'region' }), de: new Intl.DisplayNames(['de'], { type: 'region' }) };
+export const countryName = (code: string, lang: 'en' | 'de' = 'en') => names[lang].of(code) ?? code;
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const LIMITS: Record<keyof CheckoutValues, number> = { email: 254, name: 300, line1: 300, line2: 300, city: 120, region: 300, postcode: 60, country: 2 };
@@ -33,6 +33,6 @@ export function validateCheckout(form: FormData) {
 
 /** "Austria, Belgium, … and the United States": every country we ship to, for copy. */
 export const shipToList = (() => {
-  const n = COUNTRY_CODES.map(countryName).sort();
+  const n = COUNTRY_CODES.map((c) => countryName(c)).sort();
   return `${n.slice(0, -1).join(', ')} and ${n[n.length - 1]}`;
 })();

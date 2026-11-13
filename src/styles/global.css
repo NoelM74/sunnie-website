@@ -457,7 +457,7 @@ main:focus { outline: none; }
 .bag-grid { display: grid; gap: 2rem; }
 @media (min-width: 56rem) { .bag-grid { grid-template-columns: 1.6fr 1fr; align-items: start; } }
 .bag-lines { list-style: none; margin: 0; padding: 0; }
-.bag-line { display: grid; grid-template-columns: 80px 1fr auto; gap: 0.5rem 1rem; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border); max-width: none; }
+.bag-line { display: grid; grid-template-columns: 80px minmax(0, 1fr) auto; gap: 0.5rem 1rem; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border); max-width: none; }
 .bag-line img { border-radius: var(--radius-sm); grid-row: span 2; }
 .bag-line-info { display: flex; flex-direction: column; gap: 0.15rem; }
 .bag-line-total { font-weight: 700; justify-self: end; }
@@ -515,3 +515,6 @@ main:focus { outline: none; }
 /* Breadcrumbs sit right above the page title, without the page header's own top gap. */
 .breadcrumbs + .page-head, .breadcrumbs + * > .page-head:first-child { padding-top: 0.25rem; }
 .breadcrumbs ol { margin-top: 0.75rem; }
+
+/* German product names are long hyphenated compounds: let them break at the hyphen in the basket. */
+:lang(de) .bag-line-info .nw, :lang(de) .summary-lines .nw { white-space: normal; }

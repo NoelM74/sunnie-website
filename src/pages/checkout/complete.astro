@@ -10,6 +10,9 @@ import { recommend, type RecCard } from '../../lib/recommend';
 import { pageTitle } from '../../lib/seo';
 import { lineLabel } from '../../lib/line-label';
 import { site } from '../../data/site';
+import { LANG_COOKIE, langFrom } from '../../i18n/lang';
+import { SHOP_UI, tr } from '../../i18n/shop-ui';
+import { shownLine } from '../../i18n/de/lines';
 
 export const prerender = false;
 
@@ -18,54 +21,59 @@ const env = getEnv();
 // Never render free text from the query string: `error` is a fixed code, and any
 // value we don't recognise falls back to the generic 'notfound' copy.
 const errorCode = Astro.url.searchParams.get('error');
+// German if the shopper last came from a German page.
+const lang = langFrom(Astro.cookies.get(LANG_COOKIE)?.value);
+const U = SHOP_UI[lang].complete;
 const error = errorCode
-  ? Object.hasOwn(RETURN_MESSAGES, errorCode) ? RETURN_MESSAGES[errorCode as keyof typeof RETURN_MESSAGES] : RETURN_MESSAGES.notfound
+  ? tr(lang, Object.hasOwn(RETURN_MESSAGES, errorCode) ? RETURN_MESSAGES[errorCode as keyof typeof RETURN_MESSAGES] : RETURN_MESSAGES.notfound)
   : null;
 const ref = error ? null : await verifyValue(Astro.cookies.get(ORDER_COOKIE)?.value, env.BAG_SECRET);
 const order = ref ? await d1Orders(env.ORDERS).findByRef(ref) : null;
 // The order's own status is the source of truth for "still pending"; ?pending=1 is only
 // a hint for when we don't yet have the order (e.g. it hasn't replicated to this read).
 const pending = order ? order.status === 'review' : Astro.url.searchParams.get('pending') === '1';
-const euro = (c: number) => formatMoney(c, order?.currency ?? 'EUR');
+const euro = (c: number) => formatMoney(c, order?.currency ?? 'EUR', lang);
 // "You might also like": four pieces picked for this order (src/lib/recommend.ts).
 const recCurrency = order?.currency ?? currencyFromRequest(Astro.cookies.get(CURRENCY_COOKIE)?.value, Astro.request);
 const recRes = error ? null : await env.ASSETS.fetch(new Request(new URL('/recs.json', Astro.request.url))).catch(() => null);
 const recs = recRes?.ok ? recommend((await recRes.json()) as RecCard[], order?.lines.map((l) => l.slug) ?? []) : [];
-const heading = error ? 'Payment problem' : pending ? 'Order received' : 'Thank you for your order';
+const heading = error ? U.problem : pending ? U.received : U.thanks;
+const pend = order ? U.pending(order.ref, order.email) : null;
+const done = order ? U.done(order.ref, order.email) : null;
 ---
-<BaseLayout title={pageTitle(error ? 'Payment problem' : 'Thank you')} description="Your Sunnie Designs order." path="/checkout/complete/" noindex>
+<BaseLayout title={pageTitle(error ? U.problemTitle : U.thanksTitle)} description={U.description} path="/checkout/complete/" noindex lang={lang}>
   <div class="container narrow">
     {error ? (
-      <header class="page-head"><h1>Payment problem</h1><p>{error}</p><p><a class="btn btn-primary" href="/bag/">Back to your basket</a></p></header>
+      <header class="page-head"><h1>{U.problem}</h1><p>{error}</p><p><a class="btn btn-primary" href="/bag/">{U.back}</a></p></header>
     ) : (
       <>
         <header class="page-head">
           <h1>{heading}</h1>
-          {order && pending && <p class="lead">Thank you. Order <strong>{order.ref}</strong>. PayPal is still confirming your payment. We will email {order.email} as soon as PayPal confirms your payment.</p>}
-          {order && !pending && <p class="lead">Order <strong>{order.ref}</strong>. A confirmation is on its way to {order.email}.</p>}
-          {!pending && <p>Your pieces ship within {site.shipsIn} with tracking.</p>}
+          {pend && pending && <p class="lead">{pend[0]}<strong>{pend[1]}</strong>{pend[2]}</p>}
+          {done && !pending && <p class="lead">{done[0]}<strong>{done[1]}</strong>{done[2]}</p>}
+          {!pending && <p>{U.ships(site.shipsIn)}</p>}
         </header>
         {order && (
-          <section class="bag-summary" aria-label="Order details">
+          <section class="bag-summary" aria-label={U.details}>
             <ul class="summary-lines" role="list">
-              {order.lines.map((l) => <li><span>{lineLabel(l)}</span><span>{euro(l.lineCents)}</span></li>)}
+              {order.lines.map((l) => <li><span>{lineLabel(l, shownLine(l, lang))}</span><span>{euro(l.lineCents)}</span></li>)}
             </ul>
             <dl>
-              <div><dt>Shipping</dt><dd>{order.shippingCents === 0 ? 'Free' : euro(order.shippingCents)}</dd></div>
-              <div class="bag-total"><dt>{order.status === 'paid' ? 'Total paid' : 'Total'}</dt><dd>{euro(order.totalCents)}</dd></div>
+              <div><dt>{U.shipping}</dt><dd>{order.shippingCents === 0 ? U.free : euro(order.shippingCents)}</dd></div>
+              <div class="bag-total"><dt>{order.status === 'paid' ? U.paid : U.total}</dt><dd>{euro(order.totalCents)}</dd></div>
             </dl>
-            <p class="small"><strong>Delivering to</strong><br />{[order.address.name, order.address.line1, order.address.line2, order.address.city, order.address.region, order.address.postcode, countryName(order.address.country)].filter(Boolean).join(', ')}</p>
+            <p class="small"><strong>{U.to}</strong><br />{[order.address.name, order.address.line1, order.address.line2, order.address.city, order.address.region, order.address.postcode, countryName(order.address.country, lang)].filter(Boolean).join(', ')}</p>
           </section>
         )}
-        <p>Questions about your order? Email <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>. See our <a href="/terms/">terms of sale</a> for returns.</p>
-        <p><a class="btn-ghost" href="/shop/">Keep shopping</a></p>
+        <p>{U.questions[0]}<a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>{U.questions[1]}<a href="/terms/">{U.questions[2]}</a>{U.questions[3]}</p>
+        <p><a class="btn-ghost" href="/shop/">{U.keep}</a></p>
       </>
     )}
   </div>
   {recs.length > 0 && (
     <section class="container section recs" aria-labelledby="recs-h">
-      <h2 id="recs-h">You might also like</h2>
-      <p class="muted">Each one made by hand, just like yours.</p>
+      <h2 id="recs-h">{U.also}</h2>
+      <p class="muted">{U.alsoNote}</p>
       <ul class="grid" role="list">
         {recs.map((r) => (
           <li><a class="card card-link" href={r.href}><img src={r.img} alt="" width="480" height="480" loading="lazy" decoding="async" /><span class="card-title">{r.name}</span><span class="card-price">{r.price[recCurrency]}</span></a></li>
