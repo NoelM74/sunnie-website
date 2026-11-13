@@ -15,6 +15,8 @@ import { related } from '../../../lib/products';
 import { SHIPPING_FLAT } from '../../../lib/money';
 import { decimal } from '../../../i18n/lang';
 import { PRODUCTS_DE, type ProductDe } from '../../../i18n/de/products';
+import ProductReviews from '../../../components/ProductReviews.astro';
+import { ratingLd, reviewsFor } from '../../../lib/product-reviews';
 import { CATEGORY_DE, hasGerman } from '../../../i18n/de/catalog';
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, metaDescription, productJsonLd, pageTitle } from '../../../lib/seo';
 
@@ -73,6 +75,7 @@ const germanOnly = all.filter((p) => hasGerman(p.id));
       color: de.option ? Object.values(de.option.values).join(', ') : undefined,
       category: cat.label,
       optionPrices: optionPriceValues,
+      rating: ratingLd(reviewsFor(product.id), 'de'),
     }),
     breadcrumbJsonLd(crumbs),
     ...(faq ? [faq] : []),
@@ -124,6 +127,7 @@ const germanOnly = all.filter((p) => hasGerman(p.id));
         <button class="btn btn-primary" type="submit" form="buy-form">In den Warenkorb</button>
       </div>
     )}
+    <ProductReviews reviews={reviewsFor(product.id)} name={de.name} lang="de" />
     <section class="section related" aria-labelledby="related-h">
       <h2 id="related-h">Das könnte dir auch gefallen</h2>
       <ProductGrid products={related(germanOnly, product)} lang="de" />

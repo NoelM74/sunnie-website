@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { DIST, jsonLd, page, productCount, readCatalog } from './helpers';
 import { formatMoney, toLocalCents } from '../../src/lib/currency';
+import { reviewsFor } from '../../src/lib/product-reviews';
 
 const slugs = readdirSync(join(DIST, 'products'));
 const catalog = readCatalog();
@@ -17,7 +18,8 @@ describe('product pages', () => {
     const product = jsonLd(html).find((d) => d['@type'] === 'Product');
     expect(product?.offers.priceCurrency).toBe('EUR');
     expect(product?.offers.url).toBe(`https://sunniedesigns.com/products/${slug}/`);
-    expect(product).not.toHaveProperty('aggregateRating');
+    // Stars only for products with their own reviews (src/data/product-reviews.json), never shop-wide ones.
+    if (reviewsFor(slug).length === 0) expect(product).not.toHaveProperty('aggregateRating');
     expect(html).toMatch(/€\d+\.\d{2}/);
     if (catalog[slug]?.siteCheckout === false) {
       expect(html).toContain('Buy on Etsy');

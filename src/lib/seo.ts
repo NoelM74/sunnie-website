@@ -66,6 +66,8 @@ export interface ProductLdInput {
   optionPrices?: number[];
   /** Days to return after delivery (30 shop-wide; 60 for Finn & the Shamrock). */
   returnDays?: number;
+  /** aggregateRating and review, from ratingLd() in src/lib/product-reviews.ts: only reviews shown on the page. */
+  rating?: Record<string, unknown>;
 }
 
 // Shipping and returns for Google Shopping, taken from site.delivery: every country we ship to.
@@ -145,6 +147,7 @@ export function productJsonLd(p: ProductLdInput) {
     ...(p.color ? { color: p.color } : {}),
     ...(p.category ? { category: p.category } : {}),
     offers,
+    ...(p.rating ?? {}),
   };
 }
 

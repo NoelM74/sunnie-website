@@ -1,0 +1,21 @@
+---
+import ReviewQuote from './ReviewQuote.astro';
+import { averageRating, type ProductReview } from '../lib/product-reviews';
+import type { Lang } from '../i18n/lang';
+
+// Reviews of this product, with the rating Google shows as stars (the two must match).
+interface Props { reviews: ProductReview[]; name: string; lang?: Lang; id?: string }
+const { reviews, name, lang = 'en', id = 'product-reviews' } = Astro.props;
+const avg = averageRating(reviews);
+const n = reviews.length;
+const avgText = lang === 'de' ? avg.toFixed(1).replace('.', ',') : avg.toFixed(1);
+---
+{n > 0 && (
+  <section class="section" id={id} aria-labelledby={`${id}-h`}>
+    <h2 id={`${id}-h`}>{lang === 'de' ? `Bewertungen: ${name}` : `Reviews: ${name}`}</h2>
+    <p class="lead"><span class="hero-stars" aria-hidden="true">★★★★★</span> {lang === 'de' ? `${avgText} von 5, aus ${n} ${n === 1 ? 'Bewertung' : 'Bewertungen'}` : `${avgText} out of 5, from ${n} ${n === 1 ? 'review' : 'reviews'}`}</p>
+    <div class="quotes">
+      {reviews.map((r) => <ReviewQuote review={{ ...r, en: r.lang === 'de' ? r.en : undefined, de: r.lang === 'en' ? r.de : undefined }} lang={lang} />)}
+    </div>
+  </section>
+)}

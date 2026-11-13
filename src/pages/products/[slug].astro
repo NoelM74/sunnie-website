@@ -16,6 +16,8 @@ import FreeShippingFrom from '../../components/FreeShippingFrom.astro';
 import { Picture } from 'astro:assets';
 import huiPhoto from '../../assets/story/hui.jpg';
 import { PRODUCTS_DE } from '../../i18n/de/products';
+import ProductReviews from '../../components/ProductReviews.astro';
+import { ratingLd, reviewsFor } from '../../lib/product-reviews';
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, firstSentences, metaDescription, productJsonLd, productTitle } from '../../lib/seo';
 
 export async function getStaticPaths() {
@@ -76,6 +78,7 @@ const lander = pack?.lander;
       color,
       category: CATEGORY_LABELS[d.category],
       optionPrices: optionPriceValues,
+      rating: ratingLd(reviewsFor(product.id), 'en'),
     }),
     breadcrumbJsonLd(crumbs),
     ...(faq ? [faq] : []),
@@ -130,6 +133,7 @@ const lander = pack?.lander;
         <button class="btn btn-primary" type="submit" form="buy-form">Add to basket</button>
       </div>
     )}
+    <ProductReviews reviews={reviewsFor(product.id)} name={d.name} />
     <section class="section related" aria-labelledby="related-h">
       <h2 id="related-h">You might also like</h2>
       <ProductGrid products={related(all, product)} />
