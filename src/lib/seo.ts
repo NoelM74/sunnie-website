@@ -212,3 +212,14 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
     })),
   };
 }
+
+/** The Google feed `shipping` value for one item: one group per country, each
+ * country:region:service:price:min_handling:max_handling:min_transit:max_transit. */
+export function shippingFeedValue(priceEur: number): string {
+  const [hMin, hMax] = range(site.shipsIn.replace(/\s*days?/, ''));
+  const rate = priceEur * 100 >= FREE_SHIPPING_FROM.EUR ? 0 : SHIPPING_FLAT.EUR / 100;
+  return DELIVERY_COUNTRIES.flatMap((d) => {
+    const [tMin, tMax] = range(d.days);
+    return d.countries.map((c) => `${c}:::${rate.toFixed(2)} EUR:${hMin}:${hMax}:${tMin}:${tMax}`);
+  }).join(',');
+}
