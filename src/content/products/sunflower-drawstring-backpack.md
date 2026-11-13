@@ -1,5 +1,5 @@
 ---
-name: "Sunflower drawstring backpack"
+name: "Crochet sunflower mini backpack"
 seoTitle: "Crochet sunflower drawstring backpack, green handmade bucket bag with flowers"
 category: "bags"
 group: "totes"

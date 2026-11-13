@@ -1,5 +1,5 @@
 ---
-name: "Rainbow wizard hat for kids"
+name: "Crochet rainbow wizard hat for kids"
 seoTitle: "Rainbow Crochet Wizard Hat, Pointed Kids Winter Elf Costume Cap"
 category: "hats"
 price: 29.95
