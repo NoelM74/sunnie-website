@@ -2100,7 +2100,7 @@ export const LANDERS: Lander[] = [
       h1: 'A crochet phone bag with a 3D rose or sunflower,',
       h1em: 'that carries your phone, cards and keys.',
       sub: 'Hui coils the rose petal by petal in soft pink, or layers the sunflower in rounds of yellow around a brown centre, then stitches it onto a cream bag with a green stem and leaves. A drawstring closes the top, and the strap is 110 cm.',
-      image: { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-01.jpg', alt: 'Two cream crochet phone bags side by side, one with a yellow 3D sunflower and one with a pink 3D rose, each on a green stem' },
+      image: { src: 'landers/petal-pockets/petal-pockets-pair.jpg', alt: 'The rose bag and the sunflower bag hanging side by side from a wooden basket on a shelf' },
       proof: { reviewer: 'Caitlin', date: '2026-02-13' },
     },
     story: {
@@ -2124,13 +2124,13 @@ export const LANDERS: Lander[] = [
         ['Made from', 'Polyester-acrylic yarn'],
         ['Care', 'Hand wash or gentle machine wash in cool water below 40°C, separately from dark colours. Dry flat, no tumble dryer.'],
       ],
-      image: { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-09.jpg', alt: 'The sunflower bag with a phone in its case slipping in at the top, beside the braided strap' },
+      image: { src: 'landers/petal-pockets/petal-pockets-phone.jpg', alt: 'The sunflower bag with a phone in a clear case sitting in the top, beside its braided cream strap' },
     },
     colours: {
       h: 'Pick your flower',
       lede: 'Same bag, two flowers. Mix them in a bundle however you like.',
       cards: [
-        { pick: 'Rose', title: 'Rose', text: 'A soft pink rose with spiralling, coiled petals, on a green stem with two leaves.', image: { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-02.jpg', alt: 'Cream crochet phone bag with a large pink 3D rose and green leaves' } },
+        { pick: 'Rose', title: 'Rose', text: 'A soft pink rose with spiralling, coiled petals, on a green stem with two leaves.', image: { src: 'landers/petal-pockets/petal-pockets-rose.jpg', alt: 'Cream crochet phone bag with a large pink 3D rose, a green stem and two leaves, on its braided strap' } },
         { pick: 'Sunflower', title: 'Sunflower', text: 'A bright yellow sunflower with layered petals and a brown centre, on a brown stem with two leaves.', image: { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-03.jpg', alt: 'Cream crochet phone bag with a large yellow 3D sunflower and stem' } },
       ],
       note: 'Can’t choose? Take two and get one of each.',
@@ -2144,8 +2144,8 @@ export const LANDERS: Lander[] = [
         ['Gifts.', 'For a friend who loves flowers, or one who loves sunflowers in particular.'],
       ],
       images: [
-        { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-04.jpg', alt: 'The rose bag worn crossbody over a grey sweatshirt' },
-        { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-06.jpg', alt: 'The sunflower bag worn crossbody over a black top and a white skirt' },
+        { src: 'landers/petal-pockets/petal-pockets-rose-worn.jpg', alt: 'The rose bag worn crossbody over a grey sweatshirt, seen from behind' },
+        { src: 'landers/petal-pockets/petal-pockets-sunflower-worn.jpg', alt: 'The sunflower bag worn crossbody over a black top and a white ruffled skirt' },
       ],
     },
     craft: {

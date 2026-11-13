@@ -1719,7 +1719,7 @@ export const LANDERS_DE: Record<string, LanderDe> = {
       h1: 'Eine gehäkelte Handytasche mit 3D-Rose oder Sonnenblume,',
       h1em: 'die Handy, Karten und Schlüssel trägt.',
       sub: 'Hui formt die Rose Blatt für Blatt in zartem Rosa oder legt die Sonnenblume in gelben Runden um eine braune Mitte und näht sie dann auf eine cremefarbene Tasche mit Stiel und grünen Blättern. Ein Kordelzug schließt die Tasche oben, und der Gurt ist 110 cm lang.',
-      alt: 'Zwei cremefarbene gehäkelte Handytaschen nebeneinander, eine mit gelber 3D-Sonnenblume und eine mit rosa 3D-Rose, jede an einem grünen Stiel',
+      alt: 'Die Rosentasche und die Sonnenblumentasche nebeneinander an einem Holzkorb auf einem Regal',
     },
     story: {
       h: 'Blumen, die du jeden Tag tragen kannst.',
@@ -1742,13 +1742,13 @@ export const LANDERS_DE: Record<string, LanderDe> = {
         ['Material', 'Garn aus Polyester und Acryl'],
         ['Pflege', 'Von Hand oder im Schonwaschgang in kühlem Wasser unter 40 °C waschen, getrennt von dunklen Farben. Flach liegend trocknen, nicht in den Trockner.'],
       ],
-      alt: 'Die Sonnenblumentasche, oben gleitet ein Handy in seiner Hülle hinein, daneben der geflochtene Gurt',
+      alt: 'Die Sonnenblumentasche mit einem Handy in transparenter Hülle oben drin, daneben der geflochtene cremefarbene Gurt',
     },
     colours: {
       h: 'Wähle deine Blume',
       lede: 'Dieselbe Tasche, zwei Blumen. Kombiniere sie im Set, wie du magst.',
       cards: [
-        { title: 'Rose', text: 'Eine zartrosa Rose mit spiralförmig gewundenen Blütenblättern, an einem grünen Stiel mit zwei Blättern.', alt: 'Cremefarbene gehäkelte Handytasche mit großer rosa 3D-Rose und grünen Blättern' },
+        { title: 'Rose', text: 'Eine zartrosa Rose mit spiralförmig gewundenen Blütenblättern, an einem grünen Stiel mit zwei Blättern.', alt: 'Cremefarbene gehäkelte Handytasche mit großer rosa 3D-Rose, grünem Stiel und zwei Blättern, am geflochtenen Gurt' },
         { title: 'Sonnenblume', text: 'Eine leuchtend gelbe Sonnenblume mit gelagerten Blütenblättern und brauner Mitte, an einem braunen Stiel mit zwei Blättern.', alt: 'Cremefarbene gehäkelte Handytasche mit großer gelber 3D-Sonnenblume und Stiel' },
       ],
       note: 'Du kannst dich nicht entscheiden? Nimm zwei, je eine von beiden.',
@@ -1762,8 +1762,8 @@ export const LANDERS_DE: Record<string, LanderDe> = {
         ['Geschenke.', 'Für eine Freundin, die Blumen liebt, oder eine, die ganz besonders Sonnenblumen liebt.'],
       ],
       alts: [
-        'Die Rosentasche quer über einem grauen Sweatshirt getragen',
-        'Die Sonnenblumentasche quer über einem schwarzen Oberteil und weißem Rock getragen',
+        'Die Rosentasche quer über einem grauen Sweatshirt getragen, von hinten',
+        'Die Sonnenblumentasche quer über einem schwarzen Oberteil und weißem Rüschenrock getragen',
       ],
     },
     craft: {
