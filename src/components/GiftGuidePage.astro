@@ -1,0 +1,90 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import FaqList from './FaqList.astro';
+import ProductCard from './ProductCard.astro';
+import ProductGrid from './ProductGrid.astro';
+import { GIFT_GUIDES, type GiftGuide } from '../data/gift-guides';
+import { GIFT_GUIDES_DE } from '../i18n/de/gift-guides';
+import { germanHref } from '../i18n/de/catalog';
+import { productHref } from '../lib/lander-products';
+import { CATEGORY_LABELS } from '../lib/products';
+import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageTitle } from '../lib/seo';
+import type { Lang } from '../i18n/lang';
+
+// One gift guide, in English (/gifts/<slug>/) or German (/de/geschenke/<German slug>/).
+interface Props { guide: GiftGuide; lang?: Lang }
+const { guide: g, lang = 'en' } = Astro.props;
+const de = lang === 'de' ? GIFT_GUIDES_DE[g.slug] : undefined;
+if (lang === 'de' && !de) throw new Error(`Gift guide ${g.slug}: no German copy`);
+const t = de ?? g;
+const products = await getCollection('products');
+const bySlug = (s: string) => {
+  const p = products.find((x) => x.id === s);
+  if (!p) throw new Error(`Gift guide ${g.slug}: no product ${s}`);
+  return p;
+};
+const picks = (g.picks ?? []).map((pk) => {
+  const why = de ? de.why?.[pk.product] : pk.why;
+  if (!why) throw new Error(`Gift guide ${g.slug}: no German line for ${pk.product}`);
+  return { why, product: bySlug(pk.product) };
+});
+// "Under €X" guides: every in-stock piece below the price, cheapest first, by category.
+const CAT_DE = { bags: 'Taschen', coasters: 'Untersetzer', hats: 'Mützen' } as const;
+const under = g.under
+  ? (['bags', 'coasters', 'hats'] as const)
+      .map((c) => ({ c, items: products.filter((p) => p.data.category === c && p.data.inStock && p.data.price < g.under!).sort((a, b) => a.data.price - b.data.price) }))
+      .filter((x) => x.items.length > 0)
+  : [];
+const listed: CollectionEntry<'products'>[] = [...picks.map((p) => p.product), ...under.flatMap((u) => u.items)];
+const hrefOf = (id: string) => (de ? germanHref(id) ?? productHref(id) : productHref(id));
+const base = de ? '/de/geschenke/' : '/gifts/';
+const guidePath = (x: GiftGuide) => (de ? `/de/geschenke/${GIFT_GUIDES_DE[x.slug].slug}/` : `/gifts/${x.slug}/`);
+const path = guidePath(g);
+const crumbs = de
+  ? [{ name: 'Startseite', path: '/de/' }, { name: 'Geschenkideen', path: base }, { name: t.h1, path }]
+  : [{ name: 'Home', path: '/' }, { name: 'Gift guides', path: base }, { name: t.h1, path }];
+const faq = faqJsonLd(t.faq);
+const others = GIFT_GUIDES.filter((x) => x.slug !== g.slug);
+const alternates = GIFT_GUIDES_DE[g.slug] ? [{ lang: 'en', href: `/gifts/${g.slug}/` }, { lang: 'de', href: `/de/geschenke/${GIFT_GUIDES_DE[g.slug].slug}/` }] : [];
+---
+<BaseLayout
+  lang={lang}
+  alternates={alternates}
+  title={pageTitle(t.title)}
+  description={t.description}
+  jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd(t.h1, listed.map((p) => hrefOf(p.id))), ...(faq ? [faq] : [])]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <header class="page-head">
+      <h1>{t.h1}</h1>
+      <p>{t.intro}</p>
+    </header>
+    {picks.length > 0 && (
+      <ul class="grid gift-picks" role="list">
+        {picks.map((pk) => (
+          <li>
+            <ProductCard product={pk.product} headingLevel="h2" lang={lang} />
+            <p class="small gift-why">{pk.why}</p>
+          </li>
+        ))}
+      </ul>
+    )}
+    {under.map((u) => (
+      <section class="section" aria-labelledby={`u-${u.c}`}>
+        <h2 id={`u-${u.c}`}>{de ? `${CAT_DE[u.c]} unter ${g.under} €` : `${CATEGORY_LABELS[u.c]} under €${g.under}`}</h2>
+        <ProductGrid products={u.items} lang={lang} />
+      </section>
+    ))}
+    <FaqList items={t.faq} heading={de ? 'Gut zu wissen' : undefined} />
+    <section class="section" aria-labelledby="more-guides">
+      <h2 id="more-guides">{de ? 'Weitere Geschenkideen' : 'More gift guides'}</h2>
+      <ul role="list">
+        {others.map((o) => <li><a href={guidePath(o)}>{de ? GIFT_GUIDES_DE[o.slug].h1 : o.h1}</a></li>)}
+      </ul>
+    </section>
+  </div>
+  {de && <script is:inline>try{document.cookie='sunnie_lang=de;path=/;max-age=31536000;samesite=lax;secure'}catch(e){}</script>}
+</BaseLayout>

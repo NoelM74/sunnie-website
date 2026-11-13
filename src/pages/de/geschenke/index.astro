@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { GIFT_GUIDES } from '../../../data/gift-guides';
+import { GIFT_GUIDES_DE } from '../../../i18n/de/gift-guides';
+import { breadcrumbJsonLd, itemListJsonLd, pageTitle } from '../../../lib/seo';
+
+const guides = GIFT_GUIDES.filter((g) => GIFT_GUIDES_DE[g.slug]).map((g) => GIFT_GUIDES_DE[g.slug]);
+const crumbs = [{ name: 'Startseite', path: '/de/' }, { name: 'Geschenkideen', path: '/de/geschenke/' }];
+---
+<BaseLayout
+  lang="de"
+  alternates={[{ lang: 'en', href: '/gifts/' }, { lang: 'de', href: '/de/geschenke/' }]}
+  title={pageTitle('Handgemachte Geschenkideen')}
+  description="Handgemachte Geschenkideen von Sunnie Designs: Häkelgeschenke für Frosch-, Hunde- und Katzenfans, zum Muttertag, Untersetzer-Sets zur Einweihung und Geschenke unter 40 €."
+  jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd('Geschenkideen', guides.map((g) => `/de/geschenke/${g.slug}/`))]}
+>
+  <div class="container narrow prose">
+    <Breadcrumbs items={crumbs} />
+    <header class="page-head">
+      <h1>Handgemachte Geschenkideen</h1>
+      <p>Jedes Stück im Shop ist von Hui von Hand gehäkelt. Diese Seiten sortieren sie danach, für wen du einkaufst.</p>
+    </header>
+    <ul role="list" class="gift-guides">
+      {guides.map((g) => (
+        <li><h2><a href={`/de/geschenke/${g.slug}/`}>{g.h1}</a></h2><p>{g.intro}</p></li>
+      ))}
+    </ul>
+  </div>
+  <script is:inline>try{document.cookie='sunnie_lang=de;path=/;max-age=31536000;samesite=lax;secure'}catch(e){}</script>
+</BaseLayout>

@@ -93,6 +93,27 @@ export const GIFT_GUIDES: GiftGuide[] = [
     ],
   },
   {
+    slug: 'mothers-day-gifts',
+    title: "Mother's Day gifts: handmade crochet flowers and bags",
+    description: "Handmade Mother's Day gift ideas: crochet carnations that fold into a bouquet, rose coasters in a basket, flower bags and a matching big and little set.",
+    h1: "Mother's Day gifts",
+    intro: 'Flowers that last longer than a week, and bags made for the things she actually carries. Every piece here is crocheted by hand by Hui, so it arrives as a present someone made, not one pulled off a shelf.',
+    picks: [
+      { product: 'carnation-mug-rug-that-folds-into-a-mini', why: 'A crochet carnation that folds into a bouquet tied with a leaf cord, then opens into a coaster for her tea. Pink, purple or mixed, in sets of 2, 4 or 6.' },
+      { product: 'rose-flower-coaster-with-mini-basket', why: 'Twelve tiny roses around a 16 cm coaster that folds into its own little basket, so it sits on the shelf like a pot of roses. Six colours.' },
+      { product: 'fat-lips-girl-crossbody-phone-bag-with-daisy', why: 'A doll bag with big red lips, pearls and a daisy, in a large and a small size. The big and little set is made for matching days with a daughter.' },
+      { product: 'flower-shoulder-bag-with-flower-charm', why: 'Rows of puffy flower buds, in a large and a small size, so mother and child can match without carrying the same bag. Pink, blue or yellow.' },
+      { product: '3d-flower-crochet-phone-bag', why: 'A phone bag with a sculpted 3D rose or sunflower on the front, on a 110 cm strap. Rated 5.0 from 2 reviews.' },
+      { product: 'tulip-phone-bag', why: 'A phone bag covered in tiny crocheted tulips or sunflowers, with a faux pearl charm and a bud to match.' },
+      { product: 'camellia-granny-square-bag', why: 'A granny square purse with a full 3D camellia on the front and a drawstring top. Red, green, pink or orange.' },
+    ],
+    faq: [
+      { q: 'When should I order for Mother’s Day?', a: 'Every piece is made to order and ships within 3 to 5 days, and delivery time after that depends on the country. The shipping page lists the delivery time for each country, so order with that in mind.' },
+      { q: 'Can I send it straight to her?', a: 'Yes. Enter her address at checkout and we ship it to her with tracking.' },
+      { q: 'Is buying a set cheaper?', a: 'Yes. Fold & Bloom and Potted Roses sets of four or six ship free, and the Pearl & Daisy big and little set costs less than the two bags on their own and ships free.' },
+    ],
+  },
+  {
     slug: 'handmade-gifts-under-40',
     title: 'Handmade gifts under €40: crochet bags, coasters and hats',
     description: 'Handmade gifts under €40: every crochet bag, coaster set and hat in the shop below €40, each one made by hand by Hui.',

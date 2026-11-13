@@ -1,0 +1,11 @@
+---
+import GiftGuidePage from '../../../components/GiftGuidePage.astro';
+import { GIFT_GUIDES, type GiftGuide } from '../../../data/gift-guides';
+import { GIFT_GUIDES_DE } from '../../../i18n/de/gift-guides';
+
+export function getStaticPaths() {
+  return GIFT_GUIDES.filter((g) => GIFT_GUIDES_DE[g.slug]).map((guide) => ({ params: { slug: GIFT_GUIDES_DE[guide.slug].slug }, props: { guide } }));
+}
+interface Props { guide: GiftGuide }
+---
+<GiftGuidePage guide={Astro.props.guide} lang="de" />

@@ -7,6 +7,7 @@ import { breadcrumbJsonLd, itemListJsonLd, pageTitle } from '../../lib/seo';
 const crumbs = [{ name: 'Home', path: '/' }, { name: 'Gift guides', path: '/gifts/' }];
 ---
 <BaseLayout
+  alternates={[{ lang: 'en', href: '/gifts/' }, { lang: 'de', href: '/de/geschenke/' }]}
   title={pageTitle('Handmade gift guides')}
   description="Handmade gift ideas from Sunnie Designs: crochet gifts for frog, dog and cat lovers, coaster sets for a housewarming, and handmade gifts under €40."
   jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd('Gift guides', GIFT_GUIDES.map((g) => `/gifts/${g.slug}/`))]}

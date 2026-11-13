@@ -526,3 +526,4 @@ main:focus { outline: none; }
 .gift-why { margin: 0; }
 .gift-guides { padding: 0; list-style: none; }
 .gift-guides li + li { margin-top: 1.5rem; }
+:lang(de) .gift-why .nw, :lang(de) .prose .nw, :lang(de) .faq .nw { white-space: normal; }
