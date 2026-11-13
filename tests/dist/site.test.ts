@@ -8,7 +8,7 @@ const files = htmlFiles();
 describe('every page', () => {
   it.each(files.map((f) => [rel(f), f]))('%s follows layout rules', (_name, file) => {
     const html = readFileSync(file, 'utf8');
-    expect(html).toMatch(/<html lang="en"/);
+    expect(html).toMatch(_name.startsWith('de/') ? /<html lang="de"/ : /<html lang="en"/);
     expect(html.match(/<h1[\s>]/g) ?? []).toHaveLength(1);
     expect(html).toContain('class="skip-link" href="#main"');
     // The 404 page opts out of canonical/og:url: it isn't a real, indexable URL.

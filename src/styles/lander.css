@@ -196,3 +196,6 @@ body.sticky-open { padding-bottom: 5rem; }
 /* Six colours (Potted Roses): two across even on phones, three on wide screens. */
 .l-colours-6 { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 @media (min-width: 64rem) { .l-colours-6 { grid-template-columns: repeat(3, 1fr); } }
+
+/* German runs to long compound words: let headings and box labels break them. */
+:lang(de) h1, :lang(de) h2, :lang(de) h3, :lang(de) .l-qty, :lang(de) .l-flag, :lang(de) .l-uses b { hyphens: auto; overflow-wrap: break-word; }

@@ -1,0 +1,443 @@
+---
+import { getImage, Picture } from 'astro:assets';
+import LanderLayout from '../layouts/LanderLayout.astro';
+import ReviewQuote from './ReviewQuote.astro';
+import reviews from '../data/reviews.json';
+import { site } from '../data/site';
+import type { Lander, ReviewKey } from '../data/landers';
+import { BUNDLE_SIZES, bundleCatalogItem, bundleOption, bundleSlug, type BundleSize } from '../lib/bundles';
+import { FINN_ITEM } from '../lib/finn';
+import { priceBag } from '../lib/pricing';
+import { landerImage } from '../lib/lander-images';
+import { CURRENCIES, formatMoney as fmt, type Currency } from '../lib/currency';
+import { absoluteUrl, faqJsonLd, productJsonLd } from '../lib/seo';
+import { decimal, type Lang } from '../i18n/lang';
+import { LANDER_UI } from '../i18n/lander-ui';
+import type { LanderDe } from '../i18n/de/lander-types';
+import { germanOption, localizeLander } from '../i18n/de/localize';
+
+// A bundle page (/go/<slug>/, and /de/go/<slug>/ in German). The German page is the English
+// lander with its words swapped (src/i18n/de/), so photos, picks, prices and checkout are shared.
+interface Props { lander: Lander; lang?: Lang; de?: LanderDe; alternates?: { lang: string; href: string }[] }
+const { lander: en, lang = 'en', de } = Astro.props;
+if (lang === 'de' && !de) throw new Error(`Lander ${en.slug}: German page without German copy`);
+const l = lang === 'de' ? localizeLander(en, de!) : en;
+const T = LANDER_UI[lang];
+const formatMoney = (cents: number, cur: Currency) => fmt(cents, cur, lang);
+const rating = decimal(site.proof.etsyRating, lang);
+const base = lang === 'de' ? '/de/go/' : '/go/';
+/** German labels for a pick, a pack and the noun; English as they are. */
+const pickLabel = (p: string) => (lang === 'de' ? de!.picks?.[p] ?? p : p);
+const showOption = (o: string) => (lang === 'de' ? germanOption(en, de!, o) : o);
+const nounWords: [string, string] = lang === 'de' ? [de!.noun[0], de!.noun[1]] : [l.noun[0], l.noun[1]];
+
+type Review = (typeof reviews)[number] & { lang: 'en' | 'de'; en?: string; de?: string; about?: string };
+const findReview = (k: ReviewKey): Review => {
+  const r = (reviews as Review[]).find((x) => x.reviewer === k.reviewer && x.date === k.date);
+  if (!r) throw new Error(`Lander ${l.slug}: no review from ${k.reviewer} on ${k.date} in reviews.json`);
+  return r;
+};
+const quoteText = (r: Review) => (lang === 'de' ? (r.lang === 'en' && r.de ? r.de : r.text) : r.lang === 'de' && r.en ? r.en : r.text);
+const heroQuote = findReview(l.hero.proof);
+const offerQuote = findReview(l.offer.proof);
+const shown = l.reviews.map(findReview);
+
+// Every price on the page comes from the bag's own pricing (priceBag), so the lander,
+// the bag and PayPal can't disagree.
+const cartSlug = l.cart?.slug ?? bundleSlug(l);
+const packOption = (n: BundleSize) => (l.sizes ? l.sizes[n].option : l.cart ? l.cart.options[n] : bundleOption(l, l.offer.defaults.slice(0, n))!);
+if (l.cart && l.cart.slug !== FINN_ITEM.slug) throw new Error(`Lander ${l.slug}: only Finn has his own bag item`);
+const cartItem = l.cart ? { ...FINN_ITEM, thumb: '' } : bundleCatalogItem(l, '');
+const quote = (n: BundleSize, cur: Currency) => priceBag([{ slug: cartSlug, option: packOption(n), qty: 1 }], { [cartSlug]: cartItem }, cur);
+const prices = Object.fromEntries(CURRENCIES.map((cur) => [cur, {
+  1: quote(1, cur).subtotalCents, 2: quote(2, cur).subtotalCents, 3: quote(3, cur).subtotalCents,
+  ship: Object.fromEntries(BUNDLE_SIZES.map((n) => [n, quote(n, cur).shippingCents])),
+}])) as Record<Currency, Record<BundleSize, number> & { ship: Record<BundleSize, number> }>;
+const local = (n: BundleSize, cur: Currency) => prices[cur][n];
+/** A price span the BaseLayout-style swap script can switch, from a per-currency cents function. */
+const money = (cents: (cur: Currency) => number) => ({
+  text: formatMoney(cents('EUR'), 'EUR'),
+  gbp: formatMoney(cents('GBP'), 'GBP'),
+  usd: formatMoney(cents('USD'), 'USD'),
+});
+const bundlePrice = (n: BundleSize) => money((c) => local(n, c));
+const PER = l.per ?? 1;
+const perPiece = (n: BundleSize) => money((c) => Math.round(local(n, c) / (l.sizes ? l.sizes[n].pieces : n * PER)));
+const saving = (n: BundleSize) => money((c) => local(1, c) * n - local(n, c));
+const singleShip = money((c) => prices[c].ship[1]);
+const from = bundlePrice(1);
+const nounFor = (n: number) => (n === 1 ? nounWords[0] : nounWords[1]);
+// "2 frogs", or "Set of 4" when a unit holds more than one piece.
+const qtyLabel = (n: BundleSize) => (l.sizes ? l.sizes[n].label : PER > 1 ? T.setOf(n * PER) : `${n} ${nounFor(n)}`);
+const pieces = (n: BundleSize) => (l.sizes ? l.sizes[n].pieces : n * PER);
+/** Sizes landers: what the set saves against buying each bag on its own. */
+const setSaving = money((c) => local(1, c) + local(2, c) - local(3, c));
+const WORDS = T.numbers;
+const Noun = nounWords[0][0].toUpperCase() + nounWords[0].slice(1);
+const PACKS = l.sizes && l.sizesKind === 'packs';
+/** Pack icons shrink as the count grows, so eight still clear the price. */
+const markSize = (n: BundleSize) => (pieces(n) > 6 ? 17 : PER > 1 || pieces(n) > 3 ? 22 : 34);
+const DEFAULT: BundleSize = l.sizes && !PACKS ? 3 : 2;
+const FLAG: BundleSize = DEFAULT;
+/** Shown as free when the bag really charges no shipping for this box alone. */
+const shipsFreeBox = (n: BundleSize) => prices.EUR.ship[n] === 0;
+// The step-up line above the button, for every box and currency (the page script swaps them in).
+const N = T.nudge;
+const nudge = (n: BundleSize, cur: Currency) => {
+  const p = prices[cur]; const f = (c: number) => formatMoney(c, cur);
+  if (PACKS) {
+    if (n === 3) return N.bestValue(f(Math.round(p[3] / pieces(3))));
+    const m = (n + 1) as BundleSize; const freeNext = p.ship[n] > 0 && p.ship[m] === 0;
+    return N.packUp(pieces(m), f(p[m] - p[n] - (freeNext ? p.ship[n] : 0)), freeNext);
+  }
+  if (l.sizes) return n === 3 ? N.bothSave(f(p[1] + p[2] - p[3])) : N.bothGet(l.sizesWord ?? T.sizesWord, f(p[3] - p[n] - p.ship[n]));
+  if (n === 1) return N.second(lang === 'de' ? de!.noun[2] : l.noun[0], f(p[2] - p[1] - p.ship[1]));
+  if (n === 2) return N.three(WORDS[3 * PER], f(p[3] - p[2]));
+  return N.bestValue(f(Math.round(p[3] / (3 * PER))));
+};
+const defaultOption = packOption(DEFAULT);
+const choosesColour = !l.sizes && l.picks.length > 1;
+const ships = l.ships ?? T.shipsIn(site.shipsIn);
+const returnsDays = l.returnsDays ?? 30;
+const promises = l.promises ?? T.promises(site.shipsIn, returnsDays);
+
+// Photos.
+const pic = (src: string) => landerImage(src);
+const thumbs = await Promise.all(
+  (l.colours?.cards ?? []).map(async (c) => ({ pick: c.pick, src: (await getImage({ src: pic(c.image.src), width: 112, height: 112, fit: 'cover', format: 'webp' })).src })),
+);
+const stickyThumb = (await getImage({ src: pic(l.hero.image.src), width: 96, height: 96, fit: 'cover', format: 'webp' })).src;
+
+// Search: this is the product's only page, so it carries the Product data (prices in euro, like the shop).
+// Hero, the fits photo and each colour (Google Shopping shows the extras), deduplicated.
+const ldSrcs = [...new Set([l.hero.image.src, l.fits.image.src, ...(l.colours?.cards ?? []).map((c) => c.image.src)])];
+const ldImages = await Promise.all(ldSrcs.map(async (src) => absoluteUrl((await getImage({ src: pic(src), width: 1200, format: 'jpg' })).src)));
+const faqLd = faqJsonLd(l.faq.map((f) => ({ q: f.q, a: f.a.replace(/<[^>]+>/g, '') })));
+const jsonLd = [
+  productJsonLd({
+    name: l.name,
+    description: l.description,
+    url: absoluteUrl(`${base}${l.slug}/`),
+    images: ldImages,
+    // One piece's price: a single Offer is what Google Shopping lists (packs are on the page).
+    price: prices.EUR[1] / 100,
+    inStock: true,
+    sku: cartSlug,
+    color: l.picks.length > 1 ? l.picks.join(', ') : undefined,
+    category: l.noun[0] === 'coaster' ? 'Coasters' : 'Bags',
+    material: l.fits.specs.find(([k]) => k === (lang === 'de' ? 'Material' : 'Made from'))?.[1],
+    returnDays: l.slug === 'finn-the-shamrock' ? 60 : 30,
+  }),
+  ...(faqLd ? [faqLd] : []),
+];
+// The character's own little logo (public/go/<slug>-mark.svg): bundle cards, footer, tab icon.
+const mark = `/go/${l.slug}-mark.svg`;
+const nav: [string, string][] = [['#fits', T.nav.fits], ...(l.colours ? [['#colours', T.nav.colours] as [string, string]] : []), ['#craft', T.nav.craft], ['#offer', T.nav.offer], ['#faq', T.nav.faq]];
+// Everything the page script shows, worked out here for each currency and box, so the script holds no
+// wording of its own and the German page needs no second copy of it.
+const shipText = (n: BundleSize, cur: Currency) => (prices[cur].ship[n] ? `${T.plus} ${formatMoney(prices[cur].ship[n], cur)} ${T.shipping}` : T.freeShippingLower);
+const texts = Object.fromEntries(CURRENCIES.map((cur) => [cur, Object.fromEntries(BUNDLE_SIZES.map((n) => [n, {
+  nudge: nudge(n, cur),
+  ship: shipText(n, cur),
+  btn: `${T.addToBasket} · ${formatMoney(prices[cur][n], cur)}`,
+  sticky: `${qtyLabel(n)} · ${formatMoney(prices[cur][n], cur)}`,
+  stickyShip: prices[cur].ship[n] ? `+${formatMoney(prices[cur].ship[n], cur)} ${T.shipping}` : T.freeShipping,
+}]))]));
+const cartOptions = l.sizes ? Object.fromEntries(BUNDLE_SIZES.map((n) => [n, l.sizes![n].option])) : l.cart?.options ?? null;
+const config = {
+  texts, picks: l.picks, noun: l.noun, nounShown: nounWords, pickLabels: Object.fromEntries(l.picks.map((p) => [p, pickLabel(p)])),
+  defaults: l.offer.defaults, start: DEFAULT, cartOptions,
+  optionLabels: cartOptions ? Object.fromEntries(BUNDLE_SIZES.map((n) => [n, showOption(cartOptions[n])])) : null,
+};
+---
+<LanderLayout title={l.title} description={l.description} image={absoluteUrl(l.og)} jsonLd={jsonLd} bar={l.bar} barRight={l.barRight} nav={nav} mark={mark} shop={l.shop} lang={lang} alternates={Astro.props.alternates}>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="star" viewBox="0 0 16 16"><path d="M8 .9l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3l-4.5 2.3.9-5L.8 6.1l5-.7z" /></symbol>
+  </svg>
+
+  <header class="l-hero" id="top">
+    <div class="container l-hero-grid">
+      <div class="l-hero-copy">
+        <h1>{l.hero.h1} <em>{l.hero.h1em}</em></h1>
+        <p class="l-hero-sub">{l.hero.sub}</p>
+        <a class="btn btn-primary l-cta" href="#offer">{l.offer.h} <small><span class="l-cta-dot">· </span>{T.from} <span class="money" data-gbp={from.gbp} data-usd={from.usd}>{from.text}</span></small></a>
+        <p class="l-proof">
+          <a href="#reviews"><span class="l-stars" role="img" aria-label={T.rated5}>{[1, 2, 3, 4, 5].map(() => <svg><use href="#star" /></svg>)}</span> {T.ratedBy(rating)}</a>
+          <span>“{quoteText(heroQuote)}”</span>
+        </p>
+        <p class="small muted">{T.heroSmall(returnsDays, ships)}</p>
+      </div>
+      <div class="l-hero-art">
+        <Picture src={pic(l.hero.image.src)} alt={l.hero.image.alt} widths={[480, 800, 1100]} sizes="(max-width: 56rem) 92vw, 540px" formats={['webp']} loading="eager" fetchpriority="high" class="l-photo" />
+      </div>
+    </div>
+  </header>
+
+  <section class="l-sec" id="why">
+    <div class="container l-narrow l-prose">
+      <h2>{l.story.h}</h2>
+      {l.story.paras.map((p) => <p>{p}</p>)}
+      <h3>{l.story.subH}</h3>
+      {l.story.subParas.map((p) => <p>{p}</p>)}
+    </div>
+  </section>
+
+  <section class="l-sec l-tint" id="fits">
+    <div class="container l-split">
+      <div>
+        <h2>{l.fits.h}</h2>
+        <p class="lead">{l.fits.lede}</p>
+        <dl class="l-specs">
+          {l.fits.specs.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
+        </dl>
+      </div>
+      <figure class="l-framed">
+        <Picture src={pic(l.fits.image.src)} alt={l.fits.image.alt} widths={[480, 800]} sizes="(max-width: 56rem) 92vw, 520px" formats={['webp']} class="l-photo" />
+      </figure>
+    </div>
+  </section>
+
+  {l.colours && (
+  <section class="l-sec" id="colours">
+    <div class="container">
+      <div class="l-narrow l-center">
+        <h2>{l.colours.h}</h2>
+        <p class="lead">{l.colours.lede}</p>
+      </div>
+      <div class={`l-colours l-colours-${l.colours.cards.length}`}>
+        {l.colours.cards.map((c) => (
+          <article class="l-colour">
+            <Picture src={pic(c.image.src)} alt={c.image.alt} widths={[400, 700]} sizes="(max-width: 40rem) 92vw, 360px" formats={['webp']} class="l-photo" />
+            <h3>{c.title}</h3>
+            <p>{c.text}</p>
+          </article>
+        ))}
+      </div>
+      <p class="l-center l-note">{l.colours.note}</p>
+    </div>
+  </section>
+  )}
+
+  <section class="l-sec l-tint" id="uses">
+    <div class="container">
+      <div class="l-narrow">
+        <h2>{l.uses.h}</h2>
+        <ul class="l-uses" role="list">
+          {l.uses.items.map(([b, t]) => <li><b>{b}</b> {t}</li>)}
+        </ul>
+      </div>
+      {l.uses.images && l.uses.images.length > 0 && <div class="l-strip">
+        {l.uses.images.map((im) => <Picture src={pic(im.src)} alt={im.alt} widths={[360, 640]} sizes="(max-width: 40rem) 46vw, 340px" formats={['webp']} class="l-photo" />)}
+      </div>}
+    </div>
+  </section>
+
+  <section class="l-sec l-dark" id="craft">
+    <div class="container l-split l-split-rev">
+      <figure class="l-framed">
+        <Picture src={pic(l.craft.image.src)} alt={l.craft.image.alt} widths={[480, 800]} sizes="(max-width: 56rem) 92vw, 520px" formats={['webp']} class="l-photo" />
+      </figure>
+      <div>
+        <h2>{l.craft.h}</h2>
+        {l.craft.paras.map((p) => <p class="lead">{p}</p>)}
+        {l.maker === 'Hui' && <p><a href="/our-story/">{T.meetHui}</a></p>}
+      </div>
+    </div>
+  </section>
+
+  <section class="l-sec" id="offer">
+    <div class="container">
+      <div class="l-narrow l-center">
+        <h2>{l.offer.h}</h2>
+        <p class="lead">{l.offer.lede}</p>
+      </div>
+
+      <div class="l-offers" role="group" aria-label={T.chooseBundle}>
+        {BUNDLE_SIZES.map((n) => {
+          const p = bundlePrice(n); const per = perPiece(n); const save = saving(n);
+          return (
+            <button class={`l-offer${n === DEFAULT ? ' l-best' : ''}`} type="button" data-qty={n} aria-pressed={n === DEFAULT ? 'true' : 'false'}>
+              <span class="l-tick" aria-hidden="true">{T.selected}</span>
+              <span class="l-marks" aria-hidden="true">{Array.from({ length: pieces(n) }, () => <img src={mark} alt="" width={markSize(n)} height={markSize(n)} />)}</span>
+              {n === FLAG && <span class="l-flag">{l.offer.flag2}</span>}
+              <span class="l-qty">{qtyLabel(n)}</span>
+              <span class="l-amount money" data-gbp={p.gbp} data-usd={p.usd}>{p.text}</span>
+              {PACKS ? (
+                shipsFreeBox(n)
+                  ? <span class="l-per"><span class="money" data-gbp={per.gbp} data-usd={per.usd}>{per.text}</span> {T.each}</span>
+                  : <span class="l-per">{T.plus} <span class="money" data-gbp={singleShip.gbp} data-usd={singleShip.usd}>{singleShip.text}</span> {T.shipping}</span>
+              ) : l.sizes ? (
+                n === 3
+                  ? <span class="l-per">{T.save} <span class="money" data-gbp={setSaving.gbp} data-usd={setSaving.usd}>{setSaving.text}</span> {T.saveBoth}</span>
+                  : <span class="l-per">{T.plus} <span class="money" data-gbp={singleShip.gbp} data-usd={singleShip.usd}>{singleShip.text}</span> {T.shipping}</span>
+              ) : n === 1 ? (
+                <span class="l-per">{T.plus} <span class="money" data-gbp={singleShip.gbp} data-usd={singleShip.usd}>{singleShip.text}</span> {T.shipping}</span>
+              ) : (
+                <span class="l-per"><span class="money" data-gbp={per.gbp} data-usd={per.usd}>{per.text}</span> {T.each} · {T.save} <span class="money" data-gbp={save.gbp} data-usd={save.usd}>{save.text}</span></span>
+              )}
+              {shipsFreeBox(n) && <span class="l-free">{T.freeShipping}</span>}
+              <span class="l-onote">{l.offer.notes[n]}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <form class="l-buy" id="buyForm" method="post" action="/bag/add/">
+        <input type="hidden" name="slug" value={cartSlug} />
+        <input type="hidden" name="qty" value="1" />
+        <input type="hidden" name="option" id="optField" value={defaultOption} />
+        {choosesColour && <fieldset class="l-picks">
+          <legend>{T.chooseEach(l.noun[0])}</legend>
+          {[0, 1, 2].map((row) => (
+            <div class="l-pick-row" data-row={row} hidden={row >= DEFAULT}>
+              <span class="l-pick-label" id={`pick-label-${row}`}>{Noun} {row + 1}</span>
+              <div class="l-chips" role="radiogroup" aria-labelledby={`pick-label-${row}`}>
+                {thumbs.map((t) => (
+                  <label class="l-chip">
+                    <input type="radio" name={`pick${row}`} value={t.pick} checked={t.pick === l.offer.defaults[row]} disabled={row >= DEFAULT} />
+                    <img src={t.src} alt="" width="56" height="56" decoding="async" />
+                    <span>{pickLabel(t.pick)}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
+        </fieldset>}
+
+        <div class="l-proofbar">
+          <span class="l-stars" role="img" aria-label="Rated 5 out of 5">{[1, 2, 3, 4, 5].map(() => <svg><use href="#star" /></svg>)}</span>
+          <p>“{quoteText(offerQuote)}” <span class="muted">{offerQuote.reviewer}{offerQuote.about && T.onOur(offerQuote.about)}</span></p>
+        </div>
+
+        <p class="l-nudge" id="nudge" aria-live="polite">{nudge(DEFAULT, 'EUR')}</p>
+        <button class="btn btn-primary l-buy-btn" type="submit" id="buyBtn">{T.addToBasket} · <span class="money" data-gbp={bundlePrice(DEFAULT).gbp} data-usd={bundlePrice(DEFAULT).usd}>{bundlePrice(DEFAULT).text}</span></button>
+        <p class="small l-center">
+          <b id="selLabel">{showOption(defaultOption)}</b> · <span id="shipLine">{T.freeShippingLower}</span> · {T.returns(returnsDays)}<br />
+          {ships}, {T.tracking}
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <section class="l-sec l-dark">
+    <div class="container">
+      <h2 class="l-center">{T.twoPromises}</h2>
+      <div class="l-promises l-promises-2">
+        {promises.map(([h, t]) => <div><h3>{h}</h3><p>{t}</p></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="l-sec" id="reviews">
+    <div class="container">
+      <div class="l-narrow l-center">
+        <h2>{T.reviewsH(rating)}</h2>
+        <p class="lead">{T.reviewsLede(site.proof.ebayPositive, site.proof.ebayCount)}</p>
+      </div>
+      <div class="quotes l-quotes">
+        {shown.map((r) => <ReviewQuote review={r} lang={lang} />)}
+      </div>
+      <p class="l-center"><a href="/reviews/">{T.moreReviews}</a></p>
+    </div>
+  </section>
+
+  <section class="l-sec l-tint" id="faq">
+    <div class="container l-narrow">
+      <h2>{T.questions}</h2>
+      {l.faq.map((f, i) => (
+        <details class="l-faq" open={i === 0}>
+          <summary>{f.q}</summary>
+          <p set:html={f.a} />
+        </details>
+      ))}
+      <div class="l-center l-close">
+        <p>{T.close(ships, returnsDays)}</p>
+        <a class="btn btn-primary l-cta" href="#offer">{l.offer.h} <small><span class="l-cta-dot">· </span>{T.from} <span class="money" data-gbp={from.gbp} data-usd={from.usd}>{from.text}</span></small></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="l-sticky" id="sticky" aria-hidden="true" inert>
+    <div class="container l-sticky-in">
+      <span class="l-sticky-label"><img src={stickyThumb} alt="" width="48" height="48" loading="lazy" /><span><b id="stickySel">{qtyLabel(DEFAULT)}</b><small id="stickyShip">{T.freeShipping}</small></span></span>
+      <button class="btn btn-primary" type="button" id="stickyBtn">{T.addToBasket}</button>
+    </div>
+  </div>
+
+  <script is:inline type="application/json" id="lander-config" set:html={JSON.stringify(config).replace(/</g, '\\u003c')} />
+  <script is:inline>
+  (function () {
+    'use strict';
+    var C = JSON.parse(document.getElementById('lander-config').textContent);
+    var d = document.documentElement;
+    var state = { qty: C.start, picks: C.defaults.slice() };
+    var $ = function (id) { return document.getElementById(id); };
+    var offers = [].slice.call(document.querySelectorAll('.l-offer'));
+    var rows = [].slice.call(document.querySelectorAll('.l-pick-row'));
+    var form = $('buyForm');
+
+    function cur() { return C.texts[d.dataset.cur] ? d.dataset.cur : 'EUR'; }
+    function noun(n) { return n === 1 ? C.noun[0] : C.noun[1]; }
+    // Must match bundleOption() in src/lib/bundles.ts: picks in picker order.
+    function chosen() {
+      return state.picks.slice(0, state.qty).sort(function (a, b) { return C.picks.indexOf(a) - C.picks.indexOf(b); });
+    }
+    function option() {
+      if (C.cartOptions) return C.cartOptions[state.qty];
+      return state.qty + ' ' + noun(state.qty) + ': ' + chosen().join(' + ');
+    }
+    // The same pack in the page's language.
+    function shown() {
+      if (C.optionLabels) return C.optionLabels[state.qty];
+      return state.qty + ' ' + (state.qty === 1 ? C.nounShown[0] : C.nounShown[1]) + ': ' + chosen().map(function (p) { return C.pickLabels[p]; }).join(' + ');
+    }
+
+    function render() {
+      var t = C.texts[cur()][state.qty];
+      offers.forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.qty === state.qty)); });
+      rows.forEach(function (r, i) {
+        var on = i < state.qty;
+        r.hidden = !on;
+        r.querySelectorAll('input').forEach(function (inp) { inp.disabled = !on; inp.checked = inp.value === state.picks[i]; });
+      });
+      $('optField').value = option();
+      $('selLabel').textContent = shown();
+      $('shipLine').textContent = t.ship;
+      $('buyBtn').textContent = t.btn;
+      $('nudge').textContent = t.nudge;
+      $('stickySel').textContent = t.sticky;
+      $('stickyShip').textContent = t.stickyShip;
+    }
+
+    offers.forEach(function (b) {
+      b.addEventListener('click', function () { state.qty = +b.dataset.qty; render(); });
+    });
+    rows.forEach(function (r, i) {
+      r.addEventListener('change', function (e) {
+        if (e.target && e.target.name === 'pick' + i && C.picks.indexOf(e.target.value) >= 0) { state.picks[i] = e.target.value; render(); }
+      });
+    });
+    $('stickyBtn').addEventListener('click', function () {
+      if (form.requestSubmit) form.requestSubmit(); else form.submit();
+    });
+
+    // Sticky bar: after the hero, hidden while the offer is on screen.
+    var sticky = $('sticky'), hero = document.querySelector('.l-hero'), offerEl = $('offer');
+    var heroGone = false, offerOn = false;
+    function sync() {
+      var show = heroGone && !offerOn;
+      if (!show && sticky.contains(document.activeElement)) $('buyBtn').focus();
+      sticky.classList.toggle('show', show);
+      sticky.inert = !show;
+      sticky.setAttribute('aria-hidden', String(!show));
+      document.body.classList.toggle('sticky-open', show);
+    }
+    window.addEventListener('scroll', function () { heroGone = hero.getBoundingClientRect().bottom < 60; sync(); }, { passive: true });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (e) { offerOn = e[e.length - 1].isIntersecting; sync(); }, { rootMargin: '0px 0px -15% 0px' }).observe(offerEl);
+    }
+    render();
+    sync();
+  })();
+  </script>
+</LanderLayout>

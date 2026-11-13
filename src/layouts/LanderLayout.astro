@@ -11,15 +11,21 @@ import '../styles/lander.css';
 import Seo from '../components/Seo.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { site } from '../data/site';
+import { LANG_COOKIE, type Lang } from '../i18n/lang';
+import { LAYOUT_UI } from '../i18n/lander-ui';
 
 // Bundle landers (/go/<slug>/): the shop's look, fonts, currency and basket, with a slim
 // header so the offer stays the focus. Each is the product's only page, so it's indexed.
-interface Props { title: string; description: string; image: string; bar: string; barRight?: string; nav: [string, string][]; mark?: string; jsonLd?: object[]; shop?: [string, string] }
-const { title, description, image, bar, barRight = site.makerLine, nav, mark, jsonLd = [], shop = ['/shop/bags/', 'All bags'] } = Astro.props;
+interface Props { title: string; description: string; image: string; bar: string; barRight?: string; nav: [string, string][]; mark?: string; jsonLd?: object[]; shop?: [string, string]; lang?: Lang; alternates?: { lang: string; href: string }[] }
+const { title, description, image, bar, barRight = site.makerLine, nav, mark, jsonLd = [], lang = 'en', alternates = [] } = Astro.props;
+const U = LAYOUT_UI[lang];
+const shop = Astro.props.shop ?? ['/shop/bags/', U.allBags];
+// The same page in the other language, for the footer switch.
+const other = alternates.find((a) => a.lang === U.other.lang);
 const year = new Date().getFullYear();
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -31,20 +37,22 @@ const year = new Date().getFullYear();
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#FBF6EE" />
-    <Seo title={title} description={description} path={Astro.url.pathname} image={image} type="product" />
+    <Seo title={title} description={description} path={Astro.url.pathname} image={image} type="product" alternates={alternates} locale={lang === 'de' ? 'de_DE' : undefined} />
+    {/* The bag and checkout follow the language of the last page you shopped on. */}
+    <script is:inline define:vars={{ c: `${LANG_COOKIE}=${lang};path=/;max-age=31536000;samesite=lax;secure` }}>try{document.cookie=c}catch(e){}</script>
     {jsonLd.length > 0 && <JsonLd data={jsonLd} />}
   </head>
   <body class="lander">
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">{U.skip}</a>
     <div class="l-bar">{bar} <span aria-hidden="true">|</span> <b>{barRight}</b></div>
     <header class="l-head">
       <div class="container l-head-in">
-        <a href="/" class="brand" aria-label="Sunnie Designs home"><Fragment set:html={logo} /></a>
-        <nav class="l-nav" aria-label="On this page">
+        <a href="/" class="brand" aria-label={U.home}><Fragment set:html={logo} /></a>
+        <nav class="l-nav" aria-label={U.onPage}>
           {nav.map(([href, label]) => <a href={href}>{label}</a>)}
         </nav>
         <a class="l-shop" href={shop[0]}>{shop[1]}</a>
-        <a class="l-bag" href="/bag/">Basket</a>
+        <a class="l-bag" href="/bag/">{U.basket}</a>
       </div>
     </header>
     <main id="main" tabindex="-1">
@@ -53,15 +61,12 @@ const year = new Date().getFullYear();
     <footer class="site-footer l-foot">
       <div class="container l-foot-in">
         <p class="footer-brand l-foot-brand">{mark && <img src={mark} alt="" width="40" height="40" />}{site.name}</p>
-        <nav aria-label="Help">
-          <a href="/shipping/">Shipping and returns</a>
-          <a href="/contact/">Contact</a>
-          <a href="/terms/">Terms</a>
-          <a href="/privacy/">Privacy</a>
-          <a href="/shop/">The full shop</a>
+        <nav aria-label={U.help}>
+          {U.links.map(([href, label]) => <a href={href}>{label}</a>)}
+          {other && <a href={other.href} hreflang={other.lang} lang={other.lang}>{U.other.label}</a>}
         </nav>
-        <p class="small">Prices show in euro, pounds or dollars, by your location. Bundle savings compare with buying each piece at the single price. Every piece is made by hand, so stitching and colour vary a little.</p>
-        <p class="footer-legal">© {year} {site.name} is a trading name of {site.company.legalName}, CRO {site.company.cro}, {site.company.registeredOffice}, Ireland. <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a></p>
+        <p class="small">{U.note}</p>
+        <p class="footer-legal">© {year} {U.legal(site.name, site.company.legalName, site.company.cro, site.company.registeredOffice)} <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a></p>
       </div>
     </footer>
     <script is:inline>(function(){var d=document.documentElement;window.sunnieMoney=function(){var k=d.dataset.cur==='GBP'?'gbp':d.dataset.cur==='USD'?'usd':'';document.querySelectorAll('.money').forEach(function(m){if(!m.dataset.eur)m.dataset.eur=m.textContent;m.textContent=k?m.dataset[k]:m.dataset.eur})};window.sunnieMoney()})();</script>

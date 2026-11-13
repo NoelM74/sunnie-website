@@ -24,9 +24,10 @@ export function toLocalWholeCents(eurCents: number, cur: Currency): number {
   return Math.ceil((eurCents * RATE[cur]) / 100) * 100;
 }
 
-export function formatMoney(cents: number, cur: Currency): string {
+/** `lang` 'de' writes German style (34,95 €, 29,95 £) for the German pages. */
+export function formatMoney(cents: number, cur: Currency, lang: 'en' | 'de' = 'en'): string {
   const whole = cents % 100 === 0;
-  return new Intl.NumberFormat(LOCALE[cur], {
+  return new Intl.NumberFormat(lang === 'de' ? 'de-DE' : LOCALE[cur], {
     style: 'currency',
     currency: cur,
     minimumFractionDigits: whole ? 0 : 2,

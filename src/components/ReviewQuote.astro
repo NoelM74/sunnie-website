@@ -1,17 +1,20 @@
 ---
-interface Review { reviewer: string; date: string; rating: number; text: string; lang: 'en' | 'de'; en?: string; about?: string }
-interface Props { review: Review; showOriginal?: boolean }
-const { review, showOriginal = false } = Astro.props;
-const translated = review.lang === 'de' && review.en;
-const month = new Date(`${review.date}T00:00:00Z`).toLocaleDateString('en-IE', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+import type { Lang } from '../i18n/lang';
+interface Review { reviewer: string; date: string; rating: number; text: string; lang: 'en' | 'de'; en?: string; de?: string; about?: string }
+interface Props { review: Review; showOriginal?: boolean; lang?: Lang }
+const { review, showOriginal = false, lang = 'en' } = Astro.props;
+// German pages show German reviews as written and English ones in a marked translation.
+const translated = lang === 'de' ? review.lang === 'en' && !!review.de : review.lang === 'de' && !!review.en;
+const text = lang === 'de' ? (review.lang === 'en' && review.de ? review.de : review.text) : translated ? review.en : review.text;
+const month = new Date(`${review.date}T00:00:00Z`).toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-IE', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 ---
 <figure class="quote">
-  <p class="quote-stars" role="img" aria-label={`${review.rating} out of 5 stars`}><span aria-hidden="true">{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</span></p>
+  <p class="quote-stars" role="img" aria-label={lang === 'de' ? `${review.rating} von 5 Sternen` : `${review.rating} out of 5 stars`}><span aria-hidden="true">{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</span></p>
   <blockquote>
-    <p>{translated ? review.en : review.text}</p>
-    {translated && showOriginal && <p class="small muted" lang="de">{review.text}</p>}
+    <p>{text}</p>
+    {translated && showOriginal && <p class="small muted" lang={review.lang}>{review.text}</p>}
   </blockquote>
   <figcaption class="small">
-    {review.reviewer}, {month}{review.about && <span class="muted"> · on our {review.about}</span>}{translated && <span class="muted"> · Translated from German</span>}
+    {review.reviewer}, {month}{lang === 'en' && review.about && <span class="muted"> · on our {review.about}</span>}{translated && <span class="muted">{lang === 'de' ? ' · Aus dem Englischen übersetzt' : ' · Translated from German'}</span>}
   </figcaption>
 </figure>

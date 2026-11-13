@@ -10,6 +10,9 @@ interface Props {
   type?: 'website' | 'product';
   noindex?: boolean;
   canonical?: boolean;
+  /** The same page in each language (hreflang), including this one. */
+  alternates?: { lang: string; href: string }[];
+  locale?: string;
 }
 const {
   title,
@@ -19,6 +22,8 @@ const {
   type = 'website',
   noindex = false,
   canonical: showCanonical = true,
+  alternates = [],
+  locale,
 } = Astro.props;
 const canonical = absoluteUrl(path);
 ---
@@ -27,6 +32,9 @@ const canonical = absoluteUrl(path);
 <meta name="p:domain_verify" content="eb8a6310b014d4a1965aebb23b3150bc" />
 {showCanonical && <link rel="canonical" href={canonical} />}
 {noindex && <meta name="robots" content="noindex" />}
+{alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={absoluteUrl(a.href)} />)}
+{alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={absoluteUrl(alternates.find((a) => a.lang === 'en')!.href)} />}
+{locale && <meta property="og:locale" content={locale} />}
 <meta property="og:site_name" content={site.name} />
 <meta property="og:type" content={type} />
 <meta property="og:title" content={title} />

@@ -1,0 +1,15 @@
+---
+import LanderPage from '../../../components/LanderPage.astro';
+import { LANDERS, type Lander } from '../../../data/landers';
+import { LANDERS_DE } from '../../../i18n/de/landers';
+import type { LanderDe } from '../../../i18n/de/lander-types';
+
+// German bundle pages: one for each lander with German copy in src/i18n/de/landers.ts.
+export function getStaticPaths() {
+  return LANDERS.filter((l) => LANDERS_DE[l.slug]).map((lander) => ({ params: { slug: lander.slug }, props: { lander, de: LANDERS_DE[lander.slug] } }));
+}
+interface Props { lander: Lander; de: LanderDe }
+const { lander, de } = Astro.props;
+const alternates = [{ lang: 'en', href: `/go/${lander.slug}/` }, { lang: 'de', href: `/de/go/${lander.slug}/` }];
+---
+<LanderPage lander={lander} lang="de" de={de} alternates={alternates} />
