@@ -1,5 +1,5 @@
 ---
-name: "3D rose or sunflower phone bag"
+name: "Petal Pockets: 3D rose or sunflower phone bag"
 seoTitle: "3D Flower Crochet Phone Bag, Sunflower Rose Cottagecore Crossbody"
 category: "bags"
 group: "flowers"

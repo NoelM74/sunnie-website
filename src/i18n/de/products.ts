@@ -291,34 +291,6 @@ export const PRODUCTS_DE: Record<string, ProductDe> = {
       'Regenbogengestreifte gehäkelte Heißluftballon-Tasche an ihrem geflochtenen Gurt hängend',
     ],
   },
-  '3d-flower-crochet-phone-bag': {
-    name: 'Handytasche mit 3D-Rose oder Sonnenblume',
-    seoTitle: 'Gehäkelte Handytasche mit 3D-Blume, Rose oder Sonnenblume, zum Umhängen',
-    body: `<p>Eine gehäkelte Handytasche mit einer plastisch geformten Blume vorne, groß genug, um aufzufallen, klein genug für jeden Tag.</p>
-<p>Hui häkelt die Sonnenblume in Lagen aus gelben Blütenblättern mit brauner Mitte, oder formt die Rose Blatt für Blatt in zartem Rosa, und näht sie dann auf eine cremefarbene Tasche mit grünem Stiel und Blättern. Ein Kordelzug schließt die Tasche oben, und ein Karabiner hält den Gurt sicher.</p>
-<ul>
-<li><strong>Für Handys bis 6,5 Zoll:</strong> dazu ein flaches Kartenetui, Schlüssel, Lippenpflege und Kopfhörer.</li>
-<li><strong>110 cm verstellbarer Gurt:</strong> mit Karabiner, quer über dem Körper oder über der Schulter.</li>
-<li><strong>Kordelzug:</strong> zuziehen zum Schließen, lockern zum Hineingreifen.</li>
-<li><strong>Zwei Designs:</strong> gelagerte Sonnenblume oder gewundene Rose.</li>
-<li><strong>Rund 80 g:</strong> so leicht, dass du sie vergisst.</li>
-</ul>
-<p>Eine hübsche Alltagstasche für alle, die Blumen an ihrem Outfit mögen, oder ein Frühlingsgeschenk, das direkt getragen werden kann.</p>
-<p><em>B 12 × H 18 × T 1 cm, Gurt 110 cm. Jede Blume wird von Hand geformt, rechne also mit 1 bis 3 cm Abweichung.</em></p>`,
-    faq: [
-      { q: 'Passt mein Handy hinein?', a: 'Handys bis 6,5 Zoll passen, mit Platz für ein Kartenetui, Schlüssel, Lippenpflege und Kopfhörer.' },
-      { q: 'Was ist der Unterschied zwischen den beiden Designs?', a: 'Die Sonnenblume hat gelagerte gelbe Blütenblätter mit brauner Mitte. Die Rose hat spiralförmig gewundene rosa Blütenblätter. Beide sitzen auf einer cremefarbenen Tasche mit grünem Stiel und Blättern.' },
-      { q: 'Wie wasche ich sie?', a: 'Von Hand oder im Schonwaschgang in kühlem Wasser unter 40 °C waschen, getrennt von dunklen Farben, flach liegend trocknen und nicht in den Trockner.' },
-    ],
-    option: { name: 'Farbe', values: { Rose: 'Rose', Sunflower: 'Sonnenblume' } },
-    materials: ['Garn aus Polyester und Acryl'],
-    size: 'B 12 × H 18 × T 1 cm, Gurt 110 cm',
-    alts: [
-      'Gehäkelte Handytaschen mit 3D-Sonnenblume und 3D-Rose nebeneinander',
-      'Cremefarbene gehäkelte Handytasche mit großer rosa 3D-Rose und grünen Blättern',
-      'Cremefarbene gehäkelte Handytasche mit großer gelber 3D-Sonnenblume und Stiel',
-    ],
-  },
   'bear-phone-bag': {
     name: 'Bären-Handytasche mit Schal',
     seoTitle: 'Gehäkelte Bären-Handytasche mit gestreiftem Schal, für Kinder und Erwachsene',

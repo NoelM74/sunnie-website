@@ -2079,6 +2079,101 @@ export const LANDERS: Lander[] = [
       returnsFaq,
     ],
   },
+  {
+    slug: 'petal-pockets',
+    productSlug: '3d-flower-crochet-phone-bag',
+    name: 'Petal Pockets flower phone bag',
+    noun: ['bag', 'bags'],
+    picks: ['Rose', 'Sunflower'],
+    maker: 'Hui',
+    // Owner, 2026-11-13: the middle ladder, €34.95 / 2 for €59.95 / 3 for €79.95.
+    prices: {
+      EUR: { 1: 3495, 2: 5995, 3: 7995 },
+      GBP: { 1: 2695, 2: 4495, 3: 5795 },
+      USD: { 1: 3495, 2: 5995, 3: 7995 },
+    },
+    title: 'Crochet Phone Bag with a 3D Rose or Sunflower | Petal Pockets',
+    description: 'A hand-crocheted phone bag with a sculpted 3D rose or sunflower on the front. Fits phones up to 6.5 inches, drawstring top, 110 cm strap. Free shipping on 2 or more.',
+    og: '/go/petal-pockets-og.jpg',
+    bar: 'Free shipping on 2 bags or more',
+    hero: {
+      h1: 'A crochet phone bag with a 3D rose or sunflower,',
+      h1em: 'that carries your phone, cards and keys.',
+      sub: 'Hui coils the rose petal by petal in soft pink, or layers the sunflower in rounds of yellow around a brown centre, then stitches it onto a cream bag with a green stem and leaves. A drawstring closes the top, and the strap is 110 cm.',
+      image: { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-01.jpg', alt: 'Two cream crochet phone bags side by side, one with a yellow 3D sunflower and one with a pink 3D rose, each on a green stem' },
+      proof: { reviewer: 'Caitlin', date: '2026-02-13' },
+    },
+    story: {
+      h: 'Flowers you can wear every day.',
+      paras: [
+        'Most flower bags have a flat patch sewn on. On these, the flower stands out from the bag: a rose you could almost pick, or a sunflower with petals you can feel.',
+        'Underneath, it’s a practical phone bag. It hangs across your body, weighs about 80 g, and pulls shut with a drawstring, so your phone and cards stay put.',
+      ],
+      subH: 'Rose or sunflower?',
+      subParas: ['The rose is soft pink with spiralling, coiled petals. The sunflower is bright yellow with layered petals and a brown centre. Both sit on the same cream bag, with a stem and two green leaves.'],
+    },
+    fits: {
+      h: 'Room for your phone and the small things.',
+      lede: 'Phones up to 6.5 inches fit, with room for a flat cardholder, keys, lip balm and earbuds.',
+      specs: [
+        ['Size', '12 cm wide, 18 cm tall, 1 cm deep. Each flower is shaped by hand, so allow 1 to 3 cm.'],
+        ['Holds', 'Phones up to 6.5 inches, plus a cardholder, keys, lip balm and earbuds'],
+        ['Closes', 'Drawstring: pull to close, loosen to reach in'],
+        ['Strap', '110 cm, adjustable, with a lobster clasp. Crossbody or on the shoulder.'],
+        ['Weight', 'About 80 g'],
+        ['Made from', 'Polyester-acrylic yarn'],
+        ['Care', 'Hand wash or gentle machine wash in cool water below 40°C, separately from dark colours. Dry flat, no tumble dryer.'],
+      ],
+      image: { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-09.jpg', alt: 'The sunflower bag with a phone in its case slipping in at the top, beside the braided strap' },
+    },
+    colours: {
+      h: 'Pick your flower',
+      lede: 'Same bag, two flowers. Mix them in a bundle however you like.',
+      cards: [
+        { pick: 'Rose', title: 'Rose', text: 'A soft pink rose with spiralling, coiled petals, on a green stem with two leaves.', image: { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-02.jpg', alt: 'Cream crochet phone bag with a large pink 3D rose and green leaves' } },
+        { pick: 'Sunflower', title: 'Sunflower', text: 'A bright yellow sunflower with layered petals and a brown centre, on a brown stem with two leaves.', image: { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-03.jpg', alt: 'Cream crochet phone bag with a large yellow 3D sunflower and stem' } },
+      ],
+      note: 'Can’t choose? Take two and get one of each.',
+    },
+    uses: {
+      h: 'Where it goes',
+      items: [
+        ['Every day.', 'Phone, cards and keys, with your hands free.'],
+        ['Spring and summer days out.', 'A flower that goes with a white skirt or a sundress.'],
+        ['Mother’s Day.', 'A rose that lasts longer than a bunch from the shop.'],
+        ['Gifts.', 'For a friend who loves flowers, or one who loves sunflowers in particular.'],
+      ],
+      images: [
+        { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-04.jpg', alt: 'The rose bag worn crossbody over a grey sweatshirt' },
+        { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-06.jpg', alt: 'The sunflower bag worn crossbody over a black top and a white skirt' },
+      ],
+    },
+    craft: {
+      h: 'Crocheted by hand, petal by petal.',
+      paras: [
+        'Hui crochets the cream bag first, then builds the flower on its own: the rose coiled petal by petal, or the sunflower in layered rounds around its centre. Last come the stem and the two leaves.',
+        'Because a person shapes each flower, no two come out exactly alike.',
+      ],
+      image: { src: 'products/3d-flower-crochet-phone-bag/3d-flower-crochet-phone-bag-08.jpg', alt: 'A hand holding the sunflower bag up close, showing the layered yellow petals and brown centre' },
+    },
+    offer: {
+      h: 'Pick your bags',
+      lede: 'We suggest two: one rose and one sunflower, or one for you and one to give. Two or more ship free, and each bag costs less.',
+      flag2: 'One of each',
+      notes: { 1: 'Just the one.', 2: 'A rose and a sunflower, or two the same.', 3: 'Any three.' },
+      defaults: ['Rose', 'Sunflower', 'Rose'],
+      proof: friend,
+    },
+    reviews: [{ reviewer: 'Caitlin', date: '2026-02-13' }, sturdy, maria],
+    faq: [
+      { q: 'Will my phone fit?', a: 'Yes, phones up to 6.5 inches, with room for a cardholder, keys, lip balm and earbuds.' },
+      { q: 'How does it close?', a: 'With a drawstring at the top. Pull it to close, loosen it to reach in.' },
+      { q: 'Can I wear it on the shoulder?', a: 'Yes. The 110 cm strap adjusts and clips on with a lobster clasp, so you can wear it crossbody or on one shoulder.' },
+      { q: 'How do I wash it?', a: 'Hand wash or use a gentle machine cycle in cool water below 40°C, separately from dark colours. Lay it flat to dry, and don’t tumble dry.' },
+      arriveFaq('bag'),
+      returnsFaq,
+    ],
+  },
 ];
 
 export const landerBySlug = (slug: string) => LANDERS.find((l) => l.slug === slug);

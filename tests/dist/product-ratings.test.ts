@@ -15,7 +15,7 @@ const PAGES: Record<string, string[]> = {
   'fuzzy-monster-phone-bag': ['go/big-mouth-monsters', 'de/go/big-mouth-monsters'],
   'cable-knit-tote-bag': ['products/cable-knit-tote-bag', 'de/produkte/cable-knit-tote-bag'],
   'sheep-crossbody-bag': ['products/sheep-crossbody-bag', 'de/produkte/sheep-crossbody-bag'],
-  '3d-flower-crochet-phone-bag': ['products/3d-flower-crochet-phone-bag', 'de/produkte/3d-flower-crochet-phone-bag'],
+  '3d-flower-crochet-phone-bag': ['go/petal-pockets', 'de/go/petal-pockets'],
 };
 
 describe('product star ratings', () => {

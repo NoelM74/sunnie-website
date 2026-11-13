@@ -1708,5 +1708,86 @@ export const LANDERS_DE: Record<string, LanderDe> = {
       returnsFaq(G.f),
     ],
   },
+  'petal-pockets': {
+    name: 'Petal Pockets Blumen-Handytasche',
+    title: 'Gehäkelte Handytasche mit 3D-Rose oder Sonnenblume | Petal Pockets',
+    description: 'Eine handgehäkelte Handytasche mit plastisch geformter 3D-Rose oder Sonnenblume vorne. Für Handys bis 6,5 Zoll, mit Kordelzug und 110-cm-Gurt. Kostenloser Versand ab 2 Stück.',
+    bar: 'Kostenloser Versand ab 2 Taschen',
+    noun: ['Tasche', 'Taschen', 'eine zweite Tasche'],
+    picks: { Rose: 'Rose', Sunflower: 'Sonnenblume' },
+    hero: {
+      h1: 'Eine gehäkelte Handytasche mit 3D-Rose oder Sonnenblume,',
+      h1em: 'die Handy, Karten und Schlüssel trägt.',
+      sub: 'Hui formt die Rose Blatt für Blatt in zartem Rosa oder legt die Sonnenblume in gelben Runden um eine braune Mitte und näht sie dann auf eine cremefarbene Tasche mit Stiel und grünen Blättern. Ein Kordelzug schließt die Tasche oben, und der Gurt ist 110 cm lang.',
+      alt: 'Zwei cremefarbene gehäkelte Handytaschen nebeneinander, eine mit gelber 3D-Sonnenblume und eine mit rosa 3D-Rose, jede an einem grünen Stiel',
+    },
+    story: {
+      h: 'Blumen, die du jeden Tag tragen kannst.',
+      paras: [
+        'Bei den meisten Blumentaschen ist ein flacher Aufnäher aufgesetzt. Bei diesen steht die Blume aus der Tasche heraus: eine Rose, die man fast pflücken könnte, oder eine Sonnenblume mit Blütenblättern zum Anfassen.',
+        'Darunter ist es eine praktische Handytasche. Sie hängt quer über deinem Körper, wiegt rund 80 g und lässt sich mit einem Kordelzug schließen, so bleiben Handy und Karten, wo sie sind.',
+      ],
+      subH: 'Rose oder Sonnenblume?',
+      subParas: ['Die Rose ist zartrosa mit spiralförmig gewundenen Blütenblättern. Die Sonnenblume ist leuchtend gelb mit gelagerten Blütenblättern und brauner Mitte. Beide sitzen auf derselben cremefarbenen Tasche, mit Stiel und zwei grünen Blättern.'],
+    },
+    fits: {
+      h: 'Platz für dein Handy und die kleinen Dinge.',
+      lede: 'Handys bis 6,5 Zoll passen hinein, mit Platz für ein flaches Kartenetui, Schlüssel, Lippenpflege und Kopfhörer.',
+      specs: [
+        ['Größe', '12 cm breit, 18 cm hoch, 1 cm tief. Jede Blume wird von Hand geformt, also 1 bis 3 cm Abweichung möglich.'],
+        ['Passt hinein', 'Handys bis 6,5 Zoll, dazu ein Kartenetui, Schlüssel, Lippenpflege und Kopfhörer'],
+        ['Verschluss', 'Kordelzug: zuziehen zum Schließen, lockern zum Hineingreifen'],
+        ['Gurt', '110 cm, verstellbar, mit Karabiner. Quer über dem Körper oder über der Schulter.'],
+        ['Gewicht', 'Rund 80 g'],
+        ['Material', 'Garn aus Polyester und Acryl'],
+        ['Pflege', 'Von Hand oder im Schonwaschgang in kühlem Wasser unter 40 °C waschen, getrennt von dunklen Farben. Flach liegend trocknen, nicht in den Trockner.'],
+      ],
+      alt: 'Die Sonnenblumentasche, oben gleitet ein Handy in seiner Hülle hinein, daneben der geflochtene Gurt',
+    },
+    colours: {
+      h: 'Wähle deine Blume',
+      lede: 'Dieselbe Tasche, zwei Blumen. Kombiniere sie im Set, wie du magst.',
+      cards: [
+        { title: 'Rose', text: 'Eine zartrosa Rose mit spiralförmig gewundenen Blütenblättern, an einem grünen Stiel mit zwei Blättern.', alt: 'Cremefarbene gehäkelte Handytasche mit großer rosa 3D-Rose und grünen Blättern' },
+        { title: 'Sonnenblume', text: 'Eine leuchtend gelbe Sonnenblume mit gelagerten Blütenblättern und brauner Mitte, an einem braunen Stiel mit zwei Blättern.', alt: 'Cremefarbene gehäkelte Handytasche mit großer gelber 3D-Sonnenblume und Stiel' },
+      ],
+      note: 'Du kannst dich nicht entscheiden? Nimm zwei, je eine von beiden.',
+    },
+    uses: {
+      h: 'Wohin sie mitkommt',
+      items: [
+        ['Jeden Tag.', 'Handy, Karten und Schlüssel, die Hände frei.'],
+        ['Frühlings- und Sommertage.', 'Eine Blume, die zu einem weißen Rock oder einem Sommerkleid passt.'],
+        ['Muttertag.', 'Eine Rose, die länger hält als ein Strauß aus dem Laden.'],
+        ['Geschenke.', 'Für eine Freundin, die Blumen liebt, oder eine, die ganz besonders Sonnenblumen liebt.'],
+      ],
+      alts: [
+        'Die Rosentasche quer über einem grauen Sweatshirt getragen',
+        'Die Sonnenblumentasche quer über einem schwarzen Oberteil und weißem Rock getragen',
+      ],
+    },
+    craft: {
+      h: 'Von Hand gehäkelt, Blütenblatt für Blütenblatt.',
+      paras: [
+        'Hui häkelt zuerst die cremefarbene Tasche und baut dann die Blume einzeln auf: die Rose Blatt für Blatt gewunden oder die Sonnenblume in gelagerten Runden um ihre Mitte. Zum Schluss kommen der Stiel und die zwei Blätter.',
+        'Weil ein Mensch jede Blume formt, gleicht keine genau der anderen.',
+      ],
+      alt: 'Eine Hand hält die Sonnenblumentasche nah und zeigt die gelagerten gelben Blütenblätter und die braune Mitte',
+    },
+    offer: {
+      h: 'Wähle deine Taschen',
+      lede: 'Wir empfehlen zwei: eine Rose und eine Sonnenblume, oder eine für dich und eine zum Verschenken. Ab zwei Taschen ist der Versand kostenlos, und jede Tasche kostet weniger.',
+      flag2: 'Je eine von beiden',
+      notes: { 1: 'Nur eine.', 2: 'Eine Rose und eine Sonnenblume oder zwei gleiche.', 3: 'Drei beliebige.' },
+    },
+    faq: [
+      { q: 'Passt mein Handy hinein?', a: 'Ja, Handys bis 6,5 Zoll, mit Platz für ein Kartenetui, Schlüssel, Lippenpflege und Kopfhörer.' },
+      { q: 'Wie wird sie geschlossen?', a: 'Mit einem Kordelzug oben. Zuziehen zum Schließen, lockern zum Hineingreifen.' },
+      { q: 'Kann ich sie über der Schulter tragen?', a: 'Ja. Der 110-cm-Gurt ist verstellbar und wird mit einem Karabiner eingehakt, so trägst du sie quer über dem Körper oder über einer Schulter.' },
+      { q: 'Wie wasche ich sie?', a: 'Von Hand oder im Schonwaschgang in kühlem Wasser unter 40 °C waschen, getrennt von dunklen Farben. Flach liegend trocknen und nicht in den Trockner.' },
+      arriveFaq('deine Tasche'),
+      returnsFaq(G.f),
+    ],
+  },
 };
 
