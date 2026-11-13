@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { GIFT_GUIDES } from '../../data/gift-guides';
+import { breadcrumbJsonLd, itemListJsonLd, pageTitle } from '../../lib/seo';
+
+const crumbs = [{ name: 'Home', path: '/' }, { name: 'Gift guides', path: '/gifts/' }];
+---
+<BaseLayout
+  title={pageTitle('Handmade gift guides')}
+  description="Handmade gift ideas from Sunnie Designs: crochet gifts for frog, dog and cat lovers, coaster sets for a housewarming, and handmade gifts under €40."
+  jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd('Gift guides', GIFT_GUIDES.map((g) => `/gifts/${g.slug}/`))]}
+>
+  <div class="container narrow prose">
+    <Breadcrumbs items={crumbs} />
+    <header class="page-head">
+      <h1>Handmade gift guides</h1>
+      <p>Every piece in the shop is crocheted by hand by Hui. These guides group them by who you're buying for.</p>
+    </header>
+    <ul role="list" class="gift-guides">
+      {GIFT_GUIDES.map((g) => (
+        <li><h2><a href={`/gifts/${g.slug}/`}>{g.h1}</a></h2><p>{g.intro}</p></li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

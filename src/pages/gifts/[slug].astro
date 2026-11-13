@@ -1,0 +1,72 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FaqList from '../../components/FaqList.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ProductGrid from '../../components/ProductGrid.astro';
+import { GIFT_GUIDES, type GiftGuide } from '../../data/gift-guides';
+import { productHref } from '../../lib/lander-products';
+import { CATEGORY_LABELS } from '../../lib/products';
+import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageTitle } from '../../lib/seo';
+
+export function getStaticPaths() {
+  return GIFT_GUIDES.map((guide) => ({ params: { slug: guide.slug }, props: { guide } }));
+}
+interface Props { guide: GiftGuide }
+const { guide: g } = Astro.props;
+const products = await getCollection('products');
+const bySlug = (s: string) => {
+  const p = products.find((x) => x.id === s);
+  if (!p) throw new Error(`Gift guide ${g.slug}: no product ${s}`);
+  return p;
+};
+const picks = (g.picks ?? []).map((pk) => ({ ...pk, product: bySlug(pk.product) }));
+// "Under €X" guides: every in-stock piece below the price, cheapest first, by category.
+const under = g.under
+  ? (['bags', 'coasters', 'hats'] as const)
+      .map((c) => ({ c, items: products.filter((p) => p.data.category === c && p.data.inStock && p.data.price < g.under!).sort((a, b) => a.data.price - b.data.price) }))
+      .filter((x) => x.items.length > 0)
+  : [];
+const listed: CollectionEntry<'products'>[] = [...picks.map((p) => p.product), ...under.flatMap((u) => u.items)];
+const path = `/gifts/${g.slug}/`;
+const crumbs = [{ name: 'Home', path: '/' }, { name: 'Gift guides', path: '/gifts/' }, { name: g.h1, path }];
+const faq = faqJsonLd(g.faq);
+const others = GIFT_GUIDES.filter((x) => x.slug !== g.slug);
+---
+<BaseLayout
+  title={pageTitle(g.title)}
+  description={g.description}
+  jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd(g.h1, listed.map((p) => productHref(p.id))), ...(faq ? [faq] : [])]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <header class="page-head">
+      <h1>{g.h1}</h1>
+      <p>{g.intro}</p>
+    </header>
+    {picks.length > 0 && (
+      <ul class="grid gift-picks" role="list">
+        {picks.map((pk) => (
+          <li>
+            <ProductCard product={pk.product} headingLevel="h2" />
+            <p class="small gift-why">{pk.why}</p>
+          </li>
+        ))}
+      </ul>
+    )}
+    {under.map((u) => (
+      <section class="section" aria-labelledby={`u-${u.c}`}>
+        <h2 id={`u-${u.c}`}>{CATEGORY_LABELS[u.c]} under €{g.under}</h2>
+        <ProductGrid products={u.items} />
+      </section>
+    ))}
+    <FaqList items={g.faq} />
+    <section class="section" aria-labelledby="more-guides">
+      <h2 id="more-guides">More gift guides</h2>
+      <ul role="list">
+        {others.map((o) => <li><a href={`/gifts/${o.slug}/`}>{o.h1}</a></li>)}
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
