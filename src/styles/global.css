@@ -553,3 +553,15 @@ button.btn-ghost { background: none; border: 0; font: inherit; font-weight: 700;
 @media (max-width: 22.5rem) { .menu-btn { font-size: 0; gap: 0; } }
 @media (max-width: 22.5rem) { .buy-btn { padding-inline: 0.75rem; font-size: var(--fs-body); } }
 :lang(de) .choice-opt .nw { white-space: normal; }
+
+/* Checkout: the order summary comes first, so phone buyers see the total before the pay button.
+   On wide screens it sits in the right column beside the form. */
+@media (min-width: 56rem) {
+  .bag-grid > .checkout-form { grid-column: 1; grid-row: 1; }
+  .bag-grid > .checkout-summary { grid-column: 2; grid-row: 1; }
+}
+/* Home page: seasonal gift guide band. */
+.gift-band { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; background: var(--butter); border: 1px solid var(--border-strong); border-radius: var(--radius); padding: 1.5rem; }
+.gift-band h2 { margin: 0 0 0.35rem; }
+.gift-band p { margin: 0; }
+.gift-band-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }

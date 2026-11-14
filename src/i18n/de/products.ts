@@ -146,7 +146,7 @@ export const PRODUCTS_DE: Record<string, ProductDe> = {
       { q: 'Wie wasche ich sie?', a: 'Von Hand in kühlem Wasser unter 40 °C waschen oder im Schonwaschgang der Maschine. Flach liegend trocknen, nicht in den Trockner.' },
     ],
     option: { name: 'Farbe', values: { Cream: 'Creme', Khaki: 'Khaki', Terracotta: 'Terrakotta' } },
-    materials: ['Zopfstrick', 'Acryl'],
+    materials: ['Acrylgarn'],
     size: 'B 37 × H 35 × T 5 cm, Henkel 27 cm',
     alts: [
       'Beige Strick-Tasche mit Zopfmuster, hängend, mit Aran-Zöpfen',
@@ -850,7 +850,7 @@ export const PRODUCTS_DE: Record<string, ProductDe> = {
       { q: 'Kann man ihn als Kostüm tragen?', a: 'Ja, er ist auch ein Verkleidungsstück für fantasievolles Spielen.' },
       { q: 'Wie wasche ich ihn?', a: 'Von Hand oder in der Maschine im kühlen Waschgang bei höchstens 40 °C waschen, getrennt von dunklen Farben, feucht in Form ziehen und flach liegend trocknen.' },
     ],
-    option: { name: 'Größe', values: { '2–5 years -48cm brim': '2–5 Jahre, 48 cm Krempe', '5–9 years -58cm brim': '5–9 Jahre, 58 cm Krempe' } },
+    option: { name: 'Größe', values: { '2–5 years, 48 cm brim': '2–5 Jahre, 48 cm Krempe', '5–9 years, 58 cm brim': '5–9 Jahre, 58 cm Krempe' } },
     materials: ['Acryl'],
     size: '2–5 Jahre Krempe 48 cm / 5–9 Jahre Krempe 58 cm',
     alts: [

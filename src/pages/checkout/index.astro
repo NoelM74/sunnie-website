@@ -62,6 +62,17 @@ const fields = [
     {state?.payError && <p class="notice notice-warn" role="alert">{tr(lang, state.payError)}</p>}
     {state?.switched && <p class="notice" role="alert">{U.switched(countryName(v.country, lang), curName)}</p>}
     <div class="bag-grid">
+      <aside class="bag-summary checkout-summary" aria-label={B.summary}>
+        <ul class="summary-lines" role="list">
+          {priced.lines.map((l) => <li><span>{lineLabel(l, shownLine(l, lang))}</span><span>{euro(l.lineCents)}</span></li>)}
+        </ul>
+        <dl>
+          <div><dt>{B.subtotal}</dt><dd>{euro(priced.subtotalCents)}</dd></div>
+          <div><dt>{B.shipping}</dt><dd>{priced.shippingCents === 0 ? B.free : euro(priced.shippingCents)}</dd></div>
+          <div class="bag-total"><dt>{B.total}</dt><dd>{euro(priced.totalCents)}</dd></div>
+        </dl>
+        <a class="btn-ghost" href="/bag/">{U.edit}</a>
+      </aside>
       <form class="checkout-form" method="post" action="/checkout/pay/" novalidate>
         <fieldset>
           <legend>{U.legend}</legend>
@@ -90,17 +101,6 @@ const fields = [
         <button class="btn btn-primary btn-block" type="submit">{U.pay}</button>
         <p class="small muted">{U.payNote(curName)}</p>
       </form>
-      <aside class="bag-summary" aria-label={B.summary}>
-        <ul class="summary-lines" role="list">
-          {priced.lines.map((l) => <li><span>{lineLabel(l, shownLine(l, lang))}</span><span>{euro(l.lineCents)}</span></li>)}
-        </ul>
-        <dl>
-          <div><dt>{B.subtotal}</dt><dd>{euro(priced.subtotalCents)}</dd></div>
-          <div><dt>{B.shipping}</dt><dd>{priced.shippingCents === 0 ? B.free : euro(priced.shippingCents)}</dd></div>
-          <div class="bag-total"><dt>{B.total}</dt><dd>{euro(priced.totalCents)}</dd></div>
-        </dl>
-        <a class="btn-ghost" href="/bag/">{U.edit}</a>
-      </aside>
     </div>
   </div>
 </BaseLayout>

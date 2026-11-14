@@ -7,7 +7,7 @@ import { page, productFrontmatters, readCatalog } from './helpers';
 // values are packs or sizes. The site must charge these, never one flat price.
 const OPTION_PRICES: Record<string, Record<string, number>> = {
   'flower-shoulder-bag-with-flower-charm': { 'Pink Large': 3995, 'Yellow Large': 3995, 'Blue Large': 3995, 'Pink Small': 3495, 'Yellow Small': 3495, 'Blue Small': 3495 },
-  'rainbow-crochet-wizard-hat': { '2–5 years -48cm brim': 2995, '5–9 years -58cm brim': 3195 },
+  'rainbow-crochet-wizard-hat': { '2–5 years, 48 cm brim': 2995, '5–9 years, 58 cm brim': 3195 },
 };
 const SLUGS = Object.keys(OPTION_PRICES);
 
