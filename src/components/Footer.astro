@@ -28,7 +28,7 @@ const year = new Date().getFullYear();
         <li><a href={F.careHref}>{F.care}</a></li>
         <li><a href={F.termsHref}>{F.terms}</a></li>
         {F.impressum && <li><a href="/de/impressum/">{F.impressum}</a></li>}
-        <li><a href="/contact/">{F.contact}</a></li>
+        <li><a href={F.impressum ? '/de/kontakt/' : '/contact/'}>{F.contact}</a></li>
       </ul>
     </nav>
     <nav aria-label={F.about}>

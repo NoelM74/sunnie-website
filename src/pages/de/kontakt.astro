@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import { pageTitle } from '../../lib/seo';
+
+// German version of /contact/. Same facts, from src/data/site.ts.
+const c = site.company;
+---
+<BaseLayout lang="de" alternates={[{ lang: 'en', href: '/contact/' }, { lang: 'de', href: '/de/kontakt/' }]} title={pageTitle('Kontakt')} description={`Schreib Sunnie Designs an ${site.email.hello}. Ein echter Mensch antwortet, in der Regel innerhalb von 24 Stunden.`}>
+  <article class="container narrow prose">
+    <header class="page-head"><h1>Kontakt</h1></header>
+    <p>Frage zu einer Bestellung, einer Wunschfarbe oder etwas anderem: Schreib uns eine E-Mail, und ein echter Mensch antwortet, in der Regel innerhalb von 24 Stunden.</p>
+    <p><a class="btn btn-primary" href={`mailto:${site.email.hello}`}>E-Mail an {site.email.hello}</a></p>
+    <h2>Firmenangaben</h2>
+    <p>{c.legalName}, handelnd als {c.tradingAs}. CRO {c.cro}. Eingetragener Sitz: {c.registeredOffice}, Irland. Alle Angaben stehen im <a href="/de/impressum/">Impressum</a>.</p>
+  </article>
+</BaseLayout>

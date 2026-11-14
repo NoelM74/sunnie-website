@@ -13,6 +13,30 @@ export interface GiftGuideDe {
 }
 
 export const GIFT_GUIDES_DE: Record<string, GiftGuideDe> = {
+  'christmas-gifts': {
+    slug: 'weihnachtsgeschenke',
+    title: 'Handgemachte Weihnachtsgeschenke: Häkeltaschen, Untersetzer und Mützen',
+    description: 'Handgemachte Weihnachtsgeschenke: handgehäkelte Figurentaschen, eine Zopfmuster-Tasche, Untersetzer-Sets und eine Regenbogen-Zauberermütze für Kinder. Auf Bestellung gemacht, also früh bestellen.',
+    h1: 'Handgemachte Weihnachtsgeschenke',
+    intro: 'Ein Geschenk, das jemand von Hand gemacht hat, für alle, für die man schwer etwas findet. Jedes Stück hier ist von Hui gehäkelt oder gestrickt und wird auf Bestellung gemacht, es lohnt sich also, für Weihnachten früh zu bestellen.',
+    why: {
+      'frog-phone-crossbody': 'Ein Frosch in Latzhose, dessen großes gelbes Maul ein Handy bis 6,7 Zoll hält. Rosa, blaue oder braune Latzhose, zwei Gurte im Paket und 12 Fünf-Sterne-Bewertungen.',
+      'fuzzy-monster-phone-bag': 'Ein zotteliges Monster mit Libellenflügeln. Das Handy kommt durch das offene Maul hinein, ganz ohne Reißverschluss. Für Handys bis 6,5 Zoll. Rosa oder Gelb.',
+      'plush-dog-crossbody-phone-bag': 'Für Hundefans: eine weiche Plüsch-Handytasche als grauer Schnauzer, beiger Welpe oder weißer Terrier, mit plastischer 3D-Nase.',
+      'cable-knit-tote-bag': 'Eine grob gestrickte Zopfmuster-Tasche für kalte Tage, mit Platz für einen Laptop mit 13 bis 15 Zoll in der Hülle. Creme, Khaki oder Terrakotta.',
+      'sheep-crossbody-bag': 'Ein kleines Lamm mit lockigem Noppenkopf und baumelnden Beinen. Für Handys bis 6,7 Zoll, mit Knopfverschluss.',
+      'panda-crossbody-bag': 'Ein mürrisch guckender Panda mit roten Wangen, als Mini-Tasche oder hohe Umhängetasche. Für Handy, Karten, Schlüssel und Lippenpflege.',
+      'rainbow-crochet-wizard-hat': 'Für Kinder: eine Regenbogenmütze mit Spitze und Stern obendrauf. Die gerüschte Krempe lässt sich über die Ohren ziehen. Größen für 2 bis 5 und 5 bis 9 Jahre.',
+      'flower-mandala-coaster': 'Für Gastgeber: Blumen-Mandala-Untersetzer mit rund 14 cm Durchmesser, im 4er-, 6er- oder 8er-Pack mit kostenlosen Mini-Körbchen. Ab sechs ist der Versand kostenlos.',
+      'animal-coasters-cat-pig-and-bear': 'Ein Schwein mit Wassermelonenbauch, ein Bär mit Orangenscheibe und eine Katze mit Kiwi, dick und weich, rund 15 cm im Durchmesser.',
+    },
+    faq: [
+      { q: 'Wann sollte ich für Weihnachten bestellen?', a: 'So früh wie möglich. Jedes Stück wird auf Bestellung gemacht und innerhalb von 3–5 Tagen verschickt. Danach dauert die Lieferung in die EU 6 bis 14 Werktage, nach Großbritannien 5 bis 8, in die USA und nach Kanada 6 bis 12 und nach Irland 7 bis 12. Bestell am besten bis zum 1. Dezember.' },
+      { q: 'Kann ich es direkt an die Person schicken?', a: 'Ja. Gib an der Kasse ihre Adresse ein, und wir schicken es ihr mit Sendungsverfolgung.' },
+      { q: 'Sind zwei günstiger?', a: 'Ja, bei den Stücken mit Set-Seite, zum Beispiel Star Frogs, Big Mouth Monsters und Snout & About. Ab zwei ist der Versand kostenlos, und jedes Stück kostet weniger.' },
+      { q: 'Was, wenn es nicht passt?', a: 'Du kannst es innerhalb von 30 Tagen nach Lieferung zurückgeben und bekommst den Preis und die ursprünglichen Versandkosten erstattet.' },
+    ],
+  },
   'gifts-for-frog-lovers': {
     slug: 'geschenke-fuer-froschfans',
     title: 'Geschenke für Froschfans: handgehäkelte Froschtaschen',

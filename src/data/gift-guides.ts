@@ -16,6 +16,30 @@ export interface GiftGuide {
 
 export const GIFT_GUIDES: GiftGuide[] = [
   {
+    slug: 'christmas-gifts',
+    title: 'Handmade Christmas gifts: crochet bags, coasters and hats',
+    description: 'Handmade Christmas gift ideas: hand-crocheted character bags, a cable knit tote, coaster sets and a rainbow wizard hat for kids. Made to order by Hui, so order early.',
+    h1: 'Handmade Christmas gifts',
+    intro: 'A present someone made by hand, for the people who are hard to buy for. Every piece here is crocheted or knitted by Hui and made to order, so it pays to order early for Christmas.',
+    picks: [
+      { product: 'frog-phone-crossbody', why: 'A frog in overalls whose big yellow mouth holds a phone up to 6.7 inches. Pink, blue or brown overalls, two straps in the box, and 12 five-star reviews.' },
+      { product: 'fuzzy-monster-phone-bag', why: 'A shaggy monster with dragonfly wings. Your phone goes in through its open mouth, with no zip. Fits phones up to 6.5 inches. Pink or yellow.' },
+      { product: 'plush-dog-crossbody-phone-bag', why: 'For the dog lover: a soft plush phone bag as a grey schnauzer, a beige puppy or a white terrier, with a puffy 3D nose.' },
+      { product: 'cable-knit-tote-bag', why: 'A chunky cable knit tote for cold weather, with room for a 13 to 15 inch laptop in a sleeve. Cream, khaki or terracotta.' },
+      { product: 'sheep-crossbody-bag', why: 'A little lamb with a curly bobble-stitch head and dangling legs. Fits phones up to 6.7 inches and closes with a button.' },
+      { product: 'panda-crossbody-bag', why: 'A grumpy-looking panda with red blush marks, as a mini tote or a tall sling. Holds a phone, cards, keys and lip balm.' },
+      { product: 'rainbow-crochet-wizard-hat', why: 'For kids: a rainbow hat with a pointed peak and a star on top. The ruffled brim pulls down over the ears. Sizes for 2 to 5 and 5 to 9 years.' },
+      { product: 'flower-mandala-coaster', why: 'For the host: flower mandala coasters about 14 cm across, in packs of 4, 6 or 8 with free mini baskets. Six or eight ship free.' },
+      { product: 'animal-coasters-cat-pig-and-bear', why: 'A pig with a watermelon belly, a bear with an orange slice and a cat with a kiwi, thick and soft, about 15 cm across.' },
+    ],
+    faq: [
+      { q: 'When should I order for Christmas?', a: 'As early as you can. Every piece is made to order and ships within 3 to 5 days. After that, delivery takes 5 to 8 working days to the UK, 6 to 12 to the US and Canada, 6 to 14 to the EU and 7 to 12 to Ireland. To be safe, order by 1 December.' },
+      { q: 'Can I send it straight to the person?', a: 'Yes. Enter their address at checkout and we ship it to them with tracking.' },
+      { q: 'Is buying two cheaper?', a: 'Yes, on the pieces with a bundle page, such as the Star Frogs, Big Mouth Monsters and Snout & About. Two or more ship free, and each one costs less.' },
+      { q: 'What if it isn’t right?', a: 'You can return it within 30 days of delivery for a refund of the item and the original shipping.' },
+    ],
+  },
+  {
     slug: 'gifts-for-frog-lovers',
     title: 'Gifts for frog lovers: handmade crochet frog bags',
     description: 'Gift ideas for frog lovers: hand-crocheted frog bags that carry a phone, keys and lip balm. Frogs in overalls, a hoodie or dungarees with a shamrock.',

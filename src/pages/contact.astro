@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
 ---
-<BaseLayout title={pageTitle('Contact')} description={`Email Sunnie Designs at ${site.email.hello}. A real person replies ${site.replyTime}.`}>
+<BaseLayout alternates={[{ lang: 'en', href: '/contact/' }, { lang: 'de', href: '/de/kontakt/' }]} title={pageTitle('Contact')} description={`Email Sunnie Designs at ${site.email.hello}. A real person replies ${site.replyTime}.`}>
   <article class="container narrow prose">
     <header class="page-head"><h1>Contact us</h1></header>
     <p>Question about an order, a custom colour or anything else: email us and a real person replies, usually {site.replyTime}.</p>

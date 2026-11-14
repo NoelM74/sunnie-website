@@ -113,7 +113,7 @@ export const LAYOUT_UI = {
     allBags: 'Alle Taschen',
     basket: 'Warenkorb',
     help: 'Hilfe',
-    links: [['/de/versand/', 'Versand und Rückgabe'], ['/contact/', 'Kontakt'], ['/de/agb/', 'AGB'], ['/de/impressum/', 'Impressum'], ['/privacy/', 'Datenschutz'], ['/shop/', 'Zum ganzen Shop']] as [string, string][],
+    links: [['/de/versand/', 'Versand und Rückgabe'], ['/de/kontakt/', 'Kontakt'], ['/de/agb/', 'AGB'], ['/de/impressum/', 'Impressum'], ['/privacy/', 'Datenschutz'], ['/shop/', 'Zum ganzen Shop']] as [string, string][],
     note: 'Preise in Euro, Pfund oder Dollar, je nach Standort. Die Ersparnis bei Sets bezieht sich auf den Einzelpreis. Jedes Stück ist von Hand gemacht, daher weichen Maschen und Farbe leicht ab.',
     legal: (name: string, legal: string, cro: string, office: string) => `${name} ist ein Handelsname der ${legal}, CRO ${cro}, ${office}, Irland.`,
     other: { lang: 'en', label: 'English' },
