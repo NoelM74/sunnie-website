@@ -5,7 +5,7 @@ export interface CheckoutValues extends Address { email: string }
 type Errors = Partial<Record<keyof CheckoutValues, string>>;
 
 /** Only the countries we ship to (site.delivery). */
-export const COUNTRY_CODES = site.delivery.flatMap((d) => d.countries);
+export const COUNTRY_CODES: readonly string[] = site.delivery.flatMap((d) => d.countries);
 
 const names = { en: new Intl.DisplayNames(['en'], { type: 'region' }), de: new Intl.DisplayNames(['de'], { type: 'region' }) };
 export const countryName = (code: string, lang: 'en' | 'de' = 'en') => names[lang].of(code) ?? code;

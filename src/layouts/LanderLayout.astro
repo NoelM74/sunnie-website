@@ -44,7 +44,7 @@ const year = new Date().getFullYear();
   </head>
   <body class="lander">
     <a class="skip-link" href="#main">{U.skip}</a>
-    <div class="l-bar">{bar} <span aria-hidden="true">|</span> <b>{barRight}</b></div>
+    <aside class="l-bar" aria-label={lang === 'de' ? 'Hinweis' : 'Notice'}>{bar} <span aria-hidden="true">|</span> <b>{barRight}</b></aside>
     <header class="l-head">
       <div class="container l-head-in">
         <a href="/" class="brand" aria-label={U.home}><Fragment set:html={logo} /></a>

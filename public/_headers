@@ -1,0 +1,9 @@
+# Security headers for every static page and file. The bag and checkout pages are served by
+# the Worker and get the same set in src/middleware.ts.
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Content-Security-Policy: frame-ancestors 'none'; base-uri 'self'; object-src 'none'

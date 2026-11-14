@@ -5,6 +5,15 @@ import { site } from './data/site';
  * Without this, the buyer sees a blank 500. Instead: log the cause, show a short
  * "briefly unavailable" page, and for config errors name the failing key (never its
  * value) in a header so a misconfigured deploy can be diagnosed with curl. */
+const SECURITY_HEADERS: [string, string][] = [
+  ['Strict-Transport-Security', 'max-age=31536000'],
+  ['X-Content-Type-Options', 'nosniff'],
+  ['X-Frame-Options', 'DENY'],
+  ['Referrer-Policy', 'strict-origin-when-cross-origin'],
+  ['Permissions-Policy', 'camera=(), microphone=(), geolocation=(), interest-cohort=()'],
+  ['Content-Security-Policy', "frame-ancestors 'none'; base-uri 'self'; object-src 'none'"],
+];
+
 export const onRequest = defineMiddleware(async (ctx, next) => {
   try {
     // Astro turns a throw inside a page into its own blank 500, so check config up front.
@@ -13,7 +22,11 @@ export const onRequest = defineMiddleware(async (ctx, next) => {
       const { getEnv } = await import('./lib/env');
       getEnv();
     }
-    return await next();
+    const res = await next();
+    // Pages served by the Worker (bag, checkout) get the same security headers as the
+    // static pages, which take theirs from public/_headers.
+    if (!ctx.isPrerendered) for (const [k, v] of SECURITY_HEADERS) if (!res.headers.has(k)) res.headers.set(k, v);
+    return res;
   } catch (err) {
     const e = err as Error;
     console.error('route failed', ctx.url.pathname, e?.name, e?.message);

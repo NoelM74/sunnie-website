@@ -104,7 +104,7 @@
 .l-onote { font-size: var(--fs-small); margin-top: 0.25rem; }
 
 @media (max-width: 47.99rem) {
-  .l-offer { display: grid; grid-template-columns: 1fr auto; text-align: left; align-items: center; gap: 0.1rem 1rem; padding: 1.1rem 1rem 0.9rem; }
+  .l-offer { display: grid; grid-template-columns: minmax(0, 1fr) auto; text-align: left; align-items: center; gap: 0.1rem 1rem; padding: 1.1rem 1rem 0.9rem; }
   .l-offer .l-qty { grid-column: 1; grid-row: 1; }
   .l-offer .l-amount { grid-column: 2; grid-row: 1; font-size: 1.5rem; }
   .l-offer .l-per { grid-column: 1 / -1; }
@@ -201,3 +201,8 @@ body.sticky-open { padding-bottom: 5rem; }
 :lang(de) h1, :lang(de) h2, :lang(de) h3, :lang(de) .l-qty, :lang(de) .l-flag, :lang(de) .l-uses b { hyphens: auto; overflow-wrap: break-word; }
 /* German hyphenated compounds can be wider than a phone: let headings break them at the hyphen. */
 :lang(de) h1 .nw, :lang(de) h2 .nw, :lang(de) h3 .nw { white-space: normal; }
+
+/* Very small phones (320px): the "best pick" flag must stay inside its card. */
+@media (max-width: 22.5rem) { .l-flag { left: 0.5rem; padding-inline: 0.5rem; max-width: calc(100% - 1rem); overflow: hidden; text-overflow: ellipsis; } }
+/* Small phones: the logo, "all bags" link and basket stay on one row (German labels are longer). */
+@media (max-width: 26rem) { .l-head-in { gap: 0.5rem; } .l-head .brand svg { height: 2rem; } .l-bag { margin-left: 0.5rem; } }

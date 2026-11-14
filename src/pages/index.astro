@@ -32,7 +32,6 @@ const characters = [
   const book = priceBook(landerBySlug(c.slug)!);
   return { ...c, href: `/go/${c.slug}/`, mark: `/go/${c.slug}-mark.svg`, book };
 });
-const one = BUNDLE_PRICES.EUR.packs[1] / 100;
 const two = BUNDLE_PRICES.EUR.packs[2] / 100;
 const best = featured(all).filter((p) => !LANDER_PRODUCT_SLUGS.includes(p.id));
 const hero = { href: '/go/snout-and-about/', img: landerImage('landers/snout-and-about/snout-and-about-trio.webp'), alt: 'Three soft crochet dog bags on a wooden shelf: a grey schnauzer, a beige puppy and a white terrier' };

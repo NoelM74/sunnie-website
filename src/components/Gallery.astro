@@ -10,7 +10,7 @@ const { images, name, lang = 'en' } = Astro.props;
 const de = lang === 'de';
 ---
 <div class="gallery">
-  <ul class="gallery-main" role="list" aria-label={de ? `Fotos: ${name}` : `Photos of ${name}`}>
+  <ul class="gallery-main" role="list" tabindex="0" aria-label={de ? `Fotos: ${name}` : `Photos of ${name}`}>
     {images.map((img, i) => (
       <li class="gallery-slide" id={`photo-${i + 1}`}>
         <Picture
