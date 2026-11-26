@@ -15,7 +15,7 @@ describe('customer email', () => {
   const e = buildCustomerEmail(row);
   it('has the reference, items, totals and dispatch promise', () => {
     expect(e.subject).toBe('Your Sunnie Designs order SUN-ABC123');
-    for (const s of ['SUN-ABC123', '2 × Frog phone crossbody (Pink)', '€59.90', 'Free', '3–5 days', '30 days', 'Springfield Tectop Limited', 'CRO 571256']) {
+    for (const s of ['SUN-ABC123', '2 × Frog phone crossbody (Pink)', '€59.90', 'Free', '3–5 days', '30 days', 'trading name of Noel Murphy', 'V94 R2DX']) {
       expect(e.text).toContain(s);
       expect(e.html).toContain(s.replace('&', '&amp;'));
     }

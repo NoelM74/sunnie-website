@@ -51,7 +51,8 @@ describe('shopping-ready product data', () => {
     const org = jsonLd(page('/')).find((d) => d['@type'] === 'Organization');
     expect(org.hasMerchantReturnPolicy.merchantReturnDays).toBe(30);
     // Business identity for Google: legal name, registered address and a customer service contact.
-    expect(org.legalName).toBe('Springfield Tectop Limited');
+    expect(org.legalName).toBe('Noel Murphy');
+    expect(org.address.postalCode).toBe('V94 R2DX');
     expect(org.address.addressCountry).toBe('IE');
     expect(org.contactPoint.email).toBe('hello@sunniedesigns.com');
   });

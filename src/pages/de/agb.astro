@@ -9,7 +9,7 @@ import { pageTitle } from '../../lib/seo';
 
 // German version of /terms/: a translation that keeps the meaning of the English terms exactly.
 // The English terms are the original; the owner has them checked by a German-speaking adviser.
-const c = site.company;
+const c = site.seller;
 const shipsIn = site.shipsIn.replace('days', 'Tagen');
 const alternates = [{ lang: 'en', href: '/terms/' }, { lang: 'de', href: '/de/agb/' }];
 ---
@@ -18,10 +18,10 @@ const alternates = [{ lang: 'en', href: '/terms/' }, { lang: 'de', href: '/de/ag
     <header class="page-head"><h1>Verkaufsbedingungen</h1><p>Stand: September 2026. Dies ist eine Übersetzung unserer englischen <a href="/terms/" hreflang="en" lang="en">Terms of sale</a>.</p></header>
 
     <h2>Bei wem du kaufst</h2>
-    <p>Diese Website wird betrieben von {c.legalName}, handelnd als {c.tradingAs}. Firmennummer (CRO, Irland) {c.cro}. Eingetragener Sitz: {c.registeredOffice}, Irland. E-Mail: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>. Weitere Angaben im <a href="/de/impressum/">Impressum</a>.</p>
+    <p>Diese Website wird betrieben von {c.name}, Einzelunternehmer, handelnd als {c.tradingAs}. Anschrift: {c.address}, Irland. Telefon: {site.phone.display}. E-Mail: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>. Weitere Angaben im <a href="/de/impressum/">Impressum</a>.</p>
 
     <h2>Preise und Zahlung</h2>
-    <p>Preise werden in Euro, Pfund oder US-Dollar angezeigt. Du bezahlst in der Währung, die in deinem Warenkorb an der Kasse angezeigt wird. Preise in Pfund und Dollar werden aus dem Kurs der Europäischen Zentralbank berechnet und auf die nächste ,95 aufgerundet, sie können sich also von Tag zu Tag ändern. Es gilt der Preis, der beim Bezahlen in deinem Warenkorb steht. {c.legalName} ist nicht umsatzsteuerpflichtig registriert, daher wird keine Umsatzsteuer berechnet. Du bezahlst über PayPal, mit einem PayPal-Konto oder mit Debit- oder Kreditkarte. Deine Kartendaten sehen wir nie.</p>
+    <p>Preise werden in Euro, Pfund oder US-Dollar angezeigt. Du bezahlst in der Währung, die in deinem Warenkorb an der Kasse angezeigt wird. Preise in Pfund und Dollar werden aus dem Kurs der Europäischen Zentralbank berechnet und auf die nächste ,95 aufgerundet, sie können sich also von Tag zu Tag ändern. Es gilt der Preis, der beim Bezahlen in deinem Warenkorb steht. {c.name} ist nicht umsatzsteuerpflichtig registriert, daher wird keine Umsatzsteuer berechnet. Du bezahlst über PayPal, mit einem PayPal-Konto oder mit Debit- oder Kreditkarte. Deine Kartendaten sehen wir nie.</p>
     <p>Dein Vertrag mit uns kommt zustande, wenn deine Zahlung durchgeht und wir dir deine Bestellnummer anzeigen.</p>
 
     <h2>Lieferung</h2>
@@ -40,7 +40,7 @@ const alternates = [{ lang: 'en', href: '/terms/' }, { lang: 'de', href: '/de/ag
 
     <h2>Muster-Widerrufsformular</h2>
     <p>(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)</p>
-    <p>An {c.legalName}, {c.registeredOffice}, Irland, {site.email.hello}:<br />
+    <p>An {c.name}, handelnd als {c.tradingAs}, {c.address}, Irland, {site.email.hello}:<br />
     Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren: ____<br />
     Bestellt am (*) / erhalten am (*): ____<br />
     Bestellnummer: ____<br />

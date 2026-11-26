@@ -29,11 +29,14 @@ export const site = {
   replyTime: 'within 24 hours',
   /** Owner, 2026-11-26: shown on the contact pages, the Impressum and in Google's business data. */
   phone: { display: '+353 87 118 7806', tel: '+353871187806' },
-  company: {
-    legalName: 'Springfield Tectop Limited',
+  /** Owner, 2026-11-26: Sunnie Designs is run by Noel Murphy as a sole trader, not VAT registered.
+   * The same name and address as Google Merchant Center and PayPal. Shown on the contact pages, terms,
+   * privacy notice, Impressum, footers, order emails and in Google's business data. */
+  seller: {
+    name: 'Noel Murphy',
     tradingAs: 'Sunnie Designs',
-    cro: '571256',
-    registeredOffice: 'Clareview Car Sales, Ennis Road, Co. Limerick, V94 EA3A',
+    address: 'Springfield, Clonlara, Co. Clare, V94 R2DX',
+    parts: { street: 'Springfield', locality: 'Clonlara', region: 'Co. Clare', postcode: 'V94 R2DX', country: 'IE' },
   },
   // Owner, 2026-11-26: no eBay rating claims (Google can't check them); the rating links to /reviews/.
   proof: {

@@ -6,17 +6,17 @@ import FreeShippingFrom from '../components/FreeShippingFrom.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
-const c = site.company;
+const c = site.seller;
 ---
 <BaseLayout alternates={[{ lang: 'en', href: '/terms/' }, { lang: 'de', href: '/de/agb/' }]} title={pageTitle('Terms of sale')} description="Terms of sale for orders placed on sunniedesigns.com: prices, delivery, 30-day returns and your right to cancel.">
   <article class="container narrow prose">
     <header class="page-head"><h1>Terms of sale</h1><p>Last updated: September 2026.</p></header>
 
     <h2>Who you're buying from</h2>
-    <p>This website is run by {c.legalName}, trading as {c.tradingAs}. Company registration number (CRO) {c.cro}. Registered office: {c.registeredOffice}. Email: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.</p>
+    <p>This website is run by {c.name}, a sole trader, trading as {c.tradingAs}. Address: {c.address}, Ireland. Phone: {site.phone.display}. Email: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.</p>
 
     <h2>Prices and payment</h2>
-    <p>Prices show in euro, pounds or US dollars. You pay in the currency shown in your basket at checkout. Pound and dollar prices are worked out from the European Central Bank rate and rounded up to the next .95, so they can change from day to day. The price in your basket when you pay is the price you pay. {c.legalName} is not registered for VAT, so no VAT is added. You pay through PayPal, by PayPal account or by debit or credit card. We never see your card details.</p>
+    <p>Prices show in euro, pounds or US dollars. You pay in the currency shown in your basket at checkout. Pound and dollar prices are worked out from the European Central Bank rate and rounded up to the next .95, so they can change from day to day. The price in your basket when you pay is the price you pay. {c.name} is not registered for VAT, so no VAT is added. You pay through PayPal, by PayPal account or by debit or credit card. We never see your card details.</p>
     <p>Your contract with us starts when your payment goes through and we show your order number.</p>
 
     <h2>Delivery</h2>
@@ -35,7 +35,7 @@ const c = site.company;
 
     <h2>Model cancellation form</h2>
     <p>(Complete and return this form only if you wish to cancel the contract.)</p>
-    <p>To {c.legalName}, {c.registeredOffice}, {site.email.hello}:<br />
+    <p>To {c.name}, trading as {c.tradingAs}, {c.address}, Ireland, {site.email.hello}:<br />
     I/We hereby give notice that I/We cancel my/our contract of sale of the following goods: ____<br />
     Ordered on / received on: ____<br />
     Order number: ____<br />

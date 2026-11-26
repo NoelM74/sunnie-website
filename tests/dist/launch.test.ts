@@ -26,10 +26,10 @@ describe('launch gate', () => {
     // like a phone number split across whitespace ("087 123 4567") is still caught.
     const PRIVATE = new Set([
       '7df22bde96c35f50f16eb0d941a5ab79bc7b55bc22e5373000292a448da9a0e1',
-      'cedc30674aaf7154b9a5978e5dbda83f1b9febb69c73301f7a6c804d8c448772',
       'a5c1835f2f1f4d4d0db26a840ca90c1dc156e01cdc57b339bd11a4c68e9172f7',
       // 'springfield' removed: it is now the public company name (Springfield Tectop Limited).
-      '27e47dae7bf675104f17a2d0149e3bd399f60e1ccae3bc91916cbfa782085c77',
+      // Owner, 2026-11-26: the seller address (Clonlara, V94 R2DX) is now public on purpose, so those
+      // two hashes were removed as well.
     ]);
     for (const f of distTextFiles()) {
       expect(findLeaks(readFileSync(f, 'utf8'), PRIVATE), rel(f)).toEqual([]);

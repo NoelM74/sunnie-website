@@ -16,7 +16,7 @@ const addressLines = (o: OrderRow) =>
   [o.address.name, o.address.line1, o.address.line2, o.address.city, o.address.region, o.address.postcode, countryName(o.address.country)].filter(
     Boolean,
   );
-const COMPANY = `${site.company.legalName}, trading as ${site.company.tradingAs}. CRO ${site.company.cro}. Registered office: ${site.company.registeredOffice}.`;
+const COMPANY = `${site.seller.tradingAs} is the trading name of ${site.seller.name}, ${site.seller.address}, Ireland.`;
 const totals = (o: OrderRow) => [
   `Subtotal: ${formatMoney(o.subtotalCents, o.currency)}`,
   `Shipping: ${o.shippingCents === 0 ? 'Free' : formatMoney(o.shippingCents, o.currency)}`,

@@ -43,5 +43,5 @@ const year = new Date().getFullYear();
       </ul>
     </nav>
   </div>
-  <p class="container footer-legal">© {year} {site.name} · {site.company.legalName}, CRO {site.company.cro} · <a href={F.impressum ? '/de/impressum/' : '/contact/'}>{F.company}</a></p>
+  <p class="container footer-legal">© {year} {F.legal(site.name, site.seller.name, site.seller.address)} · <a href={F.impressum ? '/de/impressum/' : '/contact/'}>{F.company}</a></p>
 </footer>
