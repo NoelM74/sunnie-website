@@ -6,7 +6,7 @@ import { pageTitle } from '../../lib/seo';
 // German version of /privacy/: a straight translation, same facts (owner approved publishing, 2026-11-26).
 const s = site.seller;
 ---
-<BaseLayout lang="de" alternates={[{ lang: 'en', href: '/privacy/' }, { lang: 'de', href: '/de/datenschutz/' }]} title={pageTitle('Datenschutzerklärung')} description="Wie Sunnie Designs mit deinen Daten umgeht: was wir bei einer Bestellung erfassen, wer sie verarbeitet und welche unbedingt erforderlichen Cookies wir verwenden.">
+<BaseLayout lang="de" alternates={[{ lang: 'en', href: '/privacy/' }, { lang: 'de', href: '/de/datenschutz/' }]} title={pageTitle('Datenschutzerklärung')} description="Wie Sunnie Designs mit deinen Daten umgeht: was wir bei einer Bestellung erfassen, wer sie verarbeitet und welche fünf kleinen Cookies der Shop zum Funktionieren braucht.">
   <article class="container narrow prose">
     <header class="page-head"><h1>Datenschutzerklärung</h1></header>
     <p>Zuletzt aktualisiert: November 2026.</p>
@@ -27,7 +27,15 @@ const s = site.seller;
     <h2>Wie lange wir Bestelldaten aufbewahren</h2>
     <p>Wir bewahren Bestelldaten 6 Jahre auf, um die irischen Steuerregeln zu erfüllen.</p>
     <h2>Cookies</h2>
-    <p>Wir verwenden zwei unbedingt erforderliche Cookies: eines, das sich merkt, was in deinem Warenkorb liegt, und eines, das deine Bestellbestätigung anzeigt. Wir setzen keine Tracking- oder Werbe-Cookies.</p>
+    <p>Wir verwenden fünf kleine Cookies, nur damit der Shop funktioniert:</p>
+    <ul>
+      <li><strong>sunnie_bag:</strong> was in deinem Warenkorb liegt (30 Tage gespeichert).</li>
+      <li><strong>sunnie_n:</strong> wie viele Artikel im Warenkorb liegen, für die Zahl neben „Warenkorb“ (30 Tage).</li>
+      <li><strong>sunnie_order:</strong> zeigt nach dem Bezahlen deine Bestellbestätigung an (1 Tag).</li>
+      <li><strong>sunnie_cur:</strong> die Währung, die du gewählt hast: Euro, Pfund oder Dollar (1 Jahr).</li>
+      <li><strong>sunnie_lang:</strong> ob du zuletzt auf Englisch oder Deutsch eingekauft hast, damit Warenkorb und Kasse passen (1 Jahr).</li>
+    </ul>
+    <p>Keines davon identifiziert dich oder verfolgt dich auf anderen Websites. Wir setzen keine Tracking- oder Werbe-Cookies.</p>
     <h2>E-Mails an uns</h2>
     <p>Wenn du uns eine E-Mail schreibst, verwenden wir deine Adresse und deine Nachricht nur, um zu antworten, und löschen sie, wenn wir sie nicht mehr brauchen.</p>
     <h2>Bestellungen bei Etsy</h2>

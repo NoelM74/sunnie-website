@@ -3,10 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
 ---
-<BaseLayout alternates={[{ lang: 'en', href: '/privacy/' }, { lang: 'de', href: '/de/datenschutz/' }]} title={pageTitle('Privacy')} description="How Sunnie Designs handles your data: what we collect when you order, who processes it, and the two strictly necessary cookies we use.">
+<BaseLayout alternates={[{ lang: 'en', href: '/privacy/' }, { lang: 'de', href: '/de/datenschutz/' }]} title={pageTitle('Privacy')} description="How Sunnie Designs handles your data: what we collect when you order, who processes it, and the five small cookies the shop needs to work.">
   <article class="container narrow prose">
     <header class="page-head"><h1>Privacy notice</h1></header>
-    <p>Last updated: September 2026.</p>
+    <p>Last updated: November 2026.</p>
     <h2>Who we are</h2>
     <p>Sunnie Designs sells handmade crochet pieces. Contact us about privacy at <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.</p>
     <p>
@@ -48,10 +48,15 @@ import { pageTitle } from '../lib/seo';
     <h2>How long we keep order records</h2>
     <p>We keep order records for 6 years, to meet Irish tax rules.</p>
     <h2>Cookies</h2>
-    <p>
-      We use two strictly necessary cookies: one to remember what's in your bag, and one to show your order
-      confirmation. We set no tracking or advertising cookies.
-    </p>
+    <p>We use five small cookies, only to make the shop work:</p>
+    <ul>
+      <li><strong>sunnie_bag:</strong> what's in your basket (kept for 30 days).</li>
+      <li><strong>sunnie_n:</strong> how many items are in your basket, for the number next to "Basket" (30 days).</li>
+      <li><strong>sunnie_order:</strong> shows your order confirmation after you pay (1 day).</li>
+      <li><strong>sunnie_cur:</strong> the currency you chose: euro, pounds or dollars (1 year).</li>
+      <li><strong>sunnie_lang:</strong> whether you last shopped in English or German, so the basket and checkout match (1 year).</li>
+    </ul>
+    <p>None of them identifies you or follows you to other websites. We set no tracking or advertising cookies.</p>
     <h2>Emails you send us</h2>
     <p>If you email us, we use your address and message only to reply, and we delete them when we no longer need them.</p>
     <h2>Orders on Etsy</h2>
