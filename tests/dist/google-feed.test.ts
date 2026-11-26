@@ -58,3 +58,12 @@ describe('UK and US feed prices match what the checkout charges', () => {
     expect(checked).toBeGreaterThan(5);
   });
 });
+
+describe('feed links open the page in the feed currency', () => {
+  it.each(FEEDS)('$file', ({ file, cur }) => {
+    for (const r of read(file).rows) {
+      if (cur === 'EUR') expect(r[3]).not.toContain('?cur=');
+      else expect(r[3]).toMatch(new RegExp(`/\\?cur=${cur}$`));
+    }
+  });
+});

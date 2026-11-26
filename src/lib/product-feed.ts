@@ -46,7 +46,8 @@ export async function productFeedCsv(
         `SD-${p.id.toUpperCase()}`,
         p.data.seoTitle ?? p.data.name,
         firstSentences(p.body ?? '', 4),
-        absoluteUrl(productHref(p.id)),
+        // UK and US feeds: the page opens in pounds or dollars, so Google sees the feed's price.
+        absoluteUrl(productHref(p.id)) + (currency === 'EUR' ? '' : `?cur=${currency}`),
         await photo(main.src),
         `${(fromCents(p.id, p.data.price, currency) / 100).toFixed(2)} ${currency}`,
         p.data.inStock ? 'in stock' : 'out of stock',

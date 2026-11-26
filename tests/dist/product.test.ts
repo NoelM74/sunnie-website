@@ -16,8 +16,8 @@ describe('product pages', () => {
   it.each(slugs)('%s has Product data, a price and a buy action', (slug) => {
     const html = page(`/products/${slug}/`);
     const product = jsonLd(html).find((d) => d['@type'] === 'Product');
-    expect(product?.offers.priceCurrency).toBe('EUR');
-    expect(product?.offers.url).toBe(`https://sunniedesigns.com/products/${slug}/`);
+    expect(product?.offers[0].priceCurrency).toBe('EUR');
+    expect(product?.offers[0].url).toBe(`https://sunniedesigns.com/products/${slug}/`);
     // Stars only for products with their own reviews (src/data/product-reviews.json), never shop-wide ones.
     if (reviewsFor(slug).length === 0) expect(product).not.toHaveProperty('aggregateRating');
     expect(html).toMatch(/€\d+\.\d{2}/);

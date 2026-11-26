@@ -75,12 +75,23 @@ describe('JSON-LD', () => {
     });
     expect(ld['@type']).toBe('Product');
     expect(ld.brand.name).toBe('Sunnie Designs');
-    expect(ld.offers).toMatchObject({
+    expect(ld.offers[0]).toMatchObject({
       priceCurrency: 'EUR',
       price: '24.95',
       availability: 'https://schema.org/SoldOut',
     });
     expect(ld).not.toHaveProperty('aggregateRating');
+  });
+  it('adds a pound offer for the UK and a dollar offer for the US, at the prices the page shows', () => {
+    const ld = productJsonLd({ name: 'Frog bag', description: 'A frog.', url: 'https://sunniedesigns.com/go/frog/', images: [], price: 34.95, inStock: true, localPrices: { GBP: 26.95, USD: 34.95 } });
+    expect(ld.offers.map((o: { priceCurrency: string }) => o.priceCurrency)).toEqual(['EUR', 'GBP', 'USD']);
+    const [eur, gbp, usd] = ld.offers;
+    expect(gbp).toHaveProperty('price', '26.95');
+    expect(gbp.eligibleRegion.map((r: { name: string }) => r.name)).toEqual(['GB']);
+    expect(usd.eligibleRegion.map((r: { name: string }) => r.name)).toEqual(['US']);
+    expect(eur.eligibleRegion.map((r: { name: string }) => r.name)).not.toContain('GB');
+    expect(gbp.shippingDetails[0].shippingRate).toMatchObject({ value: '5.00', currency: 'GBP' });
+    expect(gbp.shippingDetails.flatMap((d: { shippingDestination: { addressCountry: string }[] }) => d.shippingDestination.map((x) => x.addressCountry))).toEqual(['GB']);
   });
   it('builds absolute breadcrumb URLs', () => {
     const ld = breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'Bags', path: '/shop/bags/' }]);
@@ -127,7 +138,7 @@ describe('JSON-LD', () => {
       inStock: true,
       optionPrices: [16.95, 21.95, 27.95],
     });
-    expect(ld.offers).toMatchObject({
+    expect(ld.offers[0]).toMatchObject({
       '@type': 'AggregateOffer',
       priceCurrency: 'EUR',
       lowPrice: '16.95',
@@ -135,7 +146,7 @@ describe('JSON-LD', () => {
       offerCount: 3,
       availability: 'https://schema.org/InStock',
     });
-    expect(ld.offers).not.toHaveProperty('price');
+    expect(ld.offers[0]).not.toHaveProperty('price');
   });
 
   it('stays a plain Offer when every option price is the same', () => {
@@ -148,8 +159,8 @@ describe('JSON-LD', () => {
       inStock: true,
       optionPrices: [24.95, 24.95],
     });
-    expect(ld.offers['@type']).toBe('Offer');
-    expect(ld.offers.price).toBe('24.95');
+    expect(ld.offers[0]['@type']).toBe('Offer');
+    expect(ld.offers[0]).toHaveProperty('price', '24.95');
   });
 
   it('omits sku, material, color and category when not given', () => {

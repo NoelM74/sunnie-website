@@ -125,6 +125,7 @@ const jsonLd = [
     images: ldImages,
     // One piece's price: a single Offer is what Google Shopping lists (packs are on the page).
     price: prices.EUR[1] / 100,
+    localPrices: { GBP: prices.GBP[1] / 100, USD: prices.USD[1] / 100 },
     inStock: true,
     sku: cartSlug,
     color: l.picks.length > 1 ? l.picks.join(', ') : undefined,

@@ -1,6 +1,6 @@
 import { site } from '../data/site';
 import { FREE_SHIPPING_FROM, SHIPPING_FLAT } from './money';
-import type { Currency } from './currency';
+import { toLocalCents, type Currency } from './currency';
 
 export const BRAND_SUFFIX = ` | ${site.name}`;
 const MAX_TITLE = 60;
@@ -64,6 +64,9 @@ export interface ProductLdInput {
   /** Per-option prices (euros), when they differ. Present and with 2+ distinct
    * values, the offer becomes an AggregateOffer with a low/high price range. */
   optionPrices?: number[];
+  /** Fixed pound and dollar prices for one piece (bundle pages). Without them the euro price is converted
+   * the same way the page converts it (toLocalCents), so the offers always match the prices shown. */
+  localPrices?: { GBP: number; USD: number };
   /** Days to return after delivery (30 shop-wide; 60 for Finn & the Shamrock). */
   returnDays?: number;
   /** aggregateRating and review, from ratingLd() in src/lib/product-reviews.ts: only reviews shown on the page. */
@@ -75,15 +78,24 @@ const DELIVERY_COUNTRIES = site.delivery;
 export const SHOPPING_COUNTRIES = DELIVERY_COUNTRIES.flatMap((d) => d.countries);
 const range = (r: string) => r.split(/[–-]/).map((n) => Number(n.trim()));
 
-export function shippingDetailsLd(priceEur: number) {
+/** Which offer each country gets: pounds for the UK, dollars for the US, euro everywhere else
+ * (the same split as the three Merchant Center feeds and the checkout). */
+const CURRENCY_COUNTRIES: Record<Currency, string[]> = {
+  GBP: ['GB'],
+  USD: ['US'],
+  EUR: SHOPPING_COUNTRIES.filter((c) => c !== 'GB' && c !== 'US'),
+};
+
+export function shippingDetailsLd(price: number, currency: Currency = 'EUR') {
   const [hMin, hMax] = range(site.shipsIn.replace(/\s*days?/, ''));
-  const rate = priceEur * 100 >= FREE_SHIPPING_FROM.EUR ? 0 : SHIPPING_FLAT.EUR / 100;
-  return DELIVERY_COUNTRIES.map((d) => {
+  const rate = Math.round(price * 100) >= FREE_SHIPPING_FROM[currency] ? 0 : SHIPPING_FLAT[currency] / 100;
+  const only = CURRENCY_COUNTRIES[currency];
+  return DELIVERY_COUNTRIES.filter((d) => d.countries.some((c) => only.includes(c))).map((d) => {
     const [tMin, tMax] = range(d.days);
     return {
       '@type': 'OfferShippingDetails',
-      shippingRate: { '@type': 'MonetaryAmount', value: rate.toFixed(2), currency: 'EUR' },
-      shippingDestination: d.countries.map((c) => ({ '@type': 'DefinedRegion', addressCountry: c })),
+      shippingRate: { '@type': 'MonetaryAmount', value: rate.toFixed(2), currency },
+      shippingDestination: d.countries.filter((c) => only.includes(c)).map((c) => ({ '@type': 'DefinedRegion', addressCountry: c })),
       deliveryTime: {
         '@type': 'ShippingDeliveryTime',
         handlingTime: { '@type': 'QuantitativeValue', minValue: hMin, maxValue: hMax, unitCode: 'DAY' },
@@ -110,30 +122,22 @@ export function returnPolicyLd(days = 30) {
 export function productJsonLd(p: ProductLdInput) {
   const distinctPrices = p.optionPrices ? [...new Set(p.optionPrices)] : [];
   const availability = p.inStock ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut';
-  const offers =
-    distinctPrices.length > 1
-      ? {
-          '@type': 'AggregateOffer',
-          url: p.url,
-          priceCurrency: 'EUR',
-          lowPrice: Math.min(...distinctPrices).toFixed(2),
-          highPrice: Math.max(...distinctPrices).toFixed(2),
-          offerCount: distinctPrices.length,
-          availability,
-          itemCondition: 'https://schema.org/NewCondition',
-          shippingDetails: shippingDetailsLd(Math.min(...distinctPrices)),
-          hasMerchantReturnPolicy: returnPolicyLd(p.returnDays),
-        }
-      : {
-          '@type': 'Offer',
-          url: p.url,
-          priceCurrency: 'EUR',
-          price: p.price.toFixed(2),
-          availability,
-          itemCondition: 'https://schema.org/NewCondition',
-          shippingDetails: shippingDetailsLd(p.price),
-          hasMerchantReturnPolicy: returnPolicyLd(p.returnDays),
-        };
+  // One offer per currency (euro, pounds, dollars), each limited to the countries charged in it, so the
+  // price Google reads matches the feed and the page for every country (Merchant Center: multiple Offer
+  // objects with priceCurrency when a page shows several currencies).
+  const conv = (eur: number, cur: Currency) => toLocalCents(Math.round(eur * 100), cur) / 100;
+  const offerFor = (cur: Currency) => {
+    const eligibleRegion = CURRENCY_COUNTRIES[cur].map((c) => ({ '@type': 'Country', name: c }));
+    const common = { url: p.url, priceCurrency: cur, eligibleRegion, availability, itemCondition: 'https://schema.org/NewCondition', hasMerchantReturnPolicy: returnPolicyLd(p.returnDays) };
+    if (distinctPrices.length > 1) {
+      const local = distinctPrices.map((e) => conv(e, cur));
+      const low = Math.min(...local);
+      return { '@type': 'AggregateOffer', ...common, lowPrice: low.toFixed(2), highPrice: Math.max(...local).toFixed(2), offerCount: local.length, shippingDetails: shippingDetailsLd(low, cur) };
+    }
+    const price = cur === 'EUR' ? p.price : p.localPrices ? p.localPrices[cur] : conv(p.price, cur);
+    return { '@type': 'Offer', ...common, price: price.toFixed(2), shippingDetails: shippingDetailsLd(price, cur) };
+  };
+  const offers = (['EUR', 'GBP', 'USD'] as Currency[]).map(offerFor);
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -187,7 +191,10 @@ export function organizationJsonLd() {
     name: site.name,
     url: site.url,
     logo: absoluteUrl('/apple-touch-icon.png'),
+    legalName: site.company.legalName,
     email: site.email.hello,
+    address: { '@type': 'PostalAddress', streetAddress: site.company.registeredOffice, addressCountry: 'IE' },
+    contactPoint: { '@type': 'ContactPoint', contactType: 'customer service', email: site.email.hello, availableLanguage: ['English', 'German'] },
     sameAs: [site.pinterestUrl, site.facebookUrl],
     hasMerchantReturnPolicy: returnPolicyLd(),
   };
