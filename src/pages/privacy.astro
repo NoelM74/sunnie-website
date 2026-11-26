@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 import { pageTitle } from '../lib/seo';
 ---
-<BaseLayout title={pageTitle('Privacy')} description="How Sunnie Designs handles your data: what we collect when you order, who processes it, and the two strictly necessary cookies we use.">
+<BaseLayout alternates={[{ lang: 'en', href: '/privacy/' }, { lang: 'de', href: '/de/datenschutz/' }]} title={pageTitle('Privacy')} description="How Sunnie Designs handles your data: what we collect when you order, who processes it, and the two strictly necessary cookies we use.">
   <article class="container narrow prose">
     <header class="page-head"><h1>Privacy notice</h1></header>
     <p>Last updated: September 2026.</p>

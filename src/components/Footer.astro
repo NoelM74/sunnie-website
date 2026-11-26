@@ -37,11 +37,11 @@ const year = new Date().getFullYear();
         <li><a href={F.storyHref}>{F.story}</a></li>
         <li><a href={F.reviewsHref}>{F.reviews}</a></li>
         <li><a href={F.giftsHref}>{F.gifts}</a></li>
-        <li><a href="/privacy/">{F.privacy}</a></li>
+        <li><a href={F.impressum ? '/de/datenschutz/' : '/privacy/'}>{F.privacy}</a></li>
         <li><a href={site.pinterestUrl} rel="noopener">Pinterest</a></li>
         <li><a href={site.facebookUrl} rel="noopener">Facebook</a></li>
       </ul>
     </nav>
   </div>
-  <p class="container footer-legal">© {year} {F.legal(site.name, site.seller.name, site.seller.address)} · <a href={F.impressum ? '/de/impressum/' : '/contact/'}>{F.company}</a></p>
+  <p class="container footer-legal">© {year} {F.legal(site.name, site.seller.name)} · <a href={F.impressum ? '/de/impressum/' : '/contact/'}>{F.company}</a></p>
 </footer>

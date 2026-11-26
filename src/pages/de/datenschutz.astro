@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import { pageTitle } from '../../lib/seo';
+
+// German version of /privacy/: a straight translation, same facts (owner approved publishing, 2026-11-26).
+const s = site.seller;
+---
+<BaseLayout lang="de" alternates={[{ lang: 'en', href: '/privacy/' }, { lang: 'de', href: '/de/datenschutz/' }]} title={pageTitle('Datenschutzerklärung')} description="Wie Sunnie Designs mit deinen Daten umgeht: was wir bei einer Bestellung erfassen, wer sie verarbeitet und welche unbedingt erforderlichen Cookies wir verwenden.">
+  <article class="container narrow prose">
+    <header class="page-head"><h1>Datenschutzerklärung</h1></header>
+    <p>Zuletzt aktualisiert: November 2026.</p>
+    <h2>Wer wir sind</h2>
+    <p>Sunnie Designs verkauft handgemachte Häkelstücke. Bei Fragen zum Datenschutz erreichst du uns unter <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.</p>
+    <p>Verantwortlicher für diese Website ist {s.name}, handelnd als {s.tradingAs}, {s.address}, Irland. E-Mail: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a>.</p>
+    <h2>Was diese Website erfasst</h2>
+    <p>Diese Website verwendet keine Tracking- oder Werbeskripte. Cloudflare, unser Hoster, führt übliche Server-Logs und zusammengefasste Besucherzahlen. Nichts davon identifiziert dich.</p>
+    <h2>Wenn du bestellst</h2>
+    <p>Wenn du auf sunniedesigns.com kaufst, erfassen wir deinen Namen, deine E-Mail-Adresse, deine Lieferadresse und was du gekauft hast, um deine Bestellung auszuführen und dir Neuigkeiten zu deiner Bestellung zu schicken.</p>
+    <p>Wenn du einen Bestellvorgang beginnst, aber die Zahlung nicht abschließt, werden die eingegebenen Daten mit der unbezahlten Bestellung gespeichert. Unbezahlte Bestellungen löschen wir nach 90 Tagen.</p>
+    <h2>Unsere Rechtsgrundlage</h2>
+    <p>Wir verarbeiten deine Bestelldaten, weil das zur Erfüllung des Vertrags zwischen uns erforderlich ist: deine Bestellung annehmen, die Zahlung abwickeln und deine Stücke liefern. Danach bewahren wir Bestelldaten auf, um unsere gesetzlichen Pflichten zu erfüllen, darunter die irischen steuerlichen Aufbewahrungsregeln, nach denen wir sie 6 Jahre aufbewahren müssen.</p>
+    <h2>Wer deine Daten verarbeitet</h2>
+    <p>PayPal verarbeitet deine Zahlungsdaten als eigenständiger Verantwortlicher nach seiner eigenen Datenschutzerklärung, nicht in unserem Auftrag. Resend, das unsere Bestell-E-Mails verschickt, und Cloudflare, das die Website hostet und die Bestelldatenbank speichert, handeln als Auftragsverarbeiter für uns.</p>
+    <h2>Übermittlung in Drittländer</h2>
+    <p>Einige dieser Anbieter können deine Daten außerhalb des Europäischen Wirtschaftsraums verarbeiten. In diesem Fall geschieht das auf Grundlage der Standardvertragsklauseln der Europäischen Kommission oder eines Angemessenheitsbeschlusses.</p>
+    <h2>Wie lange wir Bestelldaten aufbewahren</h2>
+    <p>Wir bewahren Bestelldaten 6 Jahre auf, um die irischen Steuerregeln zu erfüllen.</p>
+    <h2>Cookies</h2>
+    <p>Wir verwenden zwei unbedingt erforderliche Cookies: eines, das sich merkt, was in deinem Warenkorb liegt, und eines, das deine Bestellbestätigung anzeigt. Wir setzen keine Tracking- oder Werbe-Cookies.</p>
+    <h2>E-Mails an uns</h2>
+    <p>Wenn du uns eine E-Mail schreibst, verwenden wir deine Adresse und deine Nachricht nur, um zu antworten, und löschen sie, wenn wir sie nicht mehr brauchen.</p>
+    <h2>Bestellungen bei Etsy</h2>
+    <p>Käufe in unserem Etsy-Shop werden von Etsy nach der Datenschutzerklärung von Etsy abgewickelt.</p>
+    <h2>Deine Rechte</h2>
+    <p>Nach der DSGVO kannst du verlangen, die Daten einzusehen, zu berichtigen oder zu löschen, die wir über dich gespeichert haben. Schreib uns eine E-Mail, und wir antworten innerhalb eines Monats. Du kannst dich außerdem bei der irischen Datenschutzbehörde (Data Protection Commission) beschweren.</p>
+  </article>
+  <script is:inline>try{document.cookie='sunnie_lang=de;path=/;max-age=31536000;samesite=lax;secure'}catch(e){}</script>
+</BaseLayout>

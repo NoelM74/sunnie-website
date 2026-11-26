@@ -103,7 +103,7 @@ export const LAYOUT_UI = {
     help: 'Help',
     links: [['/shipping/', 'Shipping and returns'], ['/contact/', 'Contact'], ['/terms/', 'Terms'], ['/privacy/', 'Privacy'], ['/shop/', 'The full shop']] as [string, string][],
     note: 'Prices show in euro, pounds or dollars, by your location. Bundle savings compare with buying each piece at the single price. Every piece is made by hand, so stitching and colour vary a little.',
-    legal: (name: string, seller: string, address: string) => `${name} is the trading name of ${seller}, ${address}, Ireland.`,
+    legal: (name: string, seller: string) => `${name} is the trading name of ${seller}, Ireland.`,
     other: { lang: 'de', label: 'Deutsch' },
   },
   de: {
@@ -113,9 +113,9 @@ export const LAYOUT_UI = {
     allBags: 'Alle Taschen',
     basket: 'Warenkorb',
     help: 'Hilfe',
-    links: [['/de/versand/', 'Versand und Rückgabe'], ['/de/kontakt/', 'Kontakt'], ['/de/agb/', 'AGB'], ['/de/impressum/', 'Impressum'], ['/privacy/', 'Datenschutz'], ['/shop/', 'Zum ganzen Shop']] as [string, string][],
+    links: [['/de/versand/', 'Versand und Rückgabe'], ['/de/kontakt/', 'Kontakt'], ['/de/agb/', 'AGB'], ['/de/impressum/', 'Impressum'], ['/de/datenschutz/', 'Datenschutz'], ['/shop/', 'Zum ganzen Shop']] as [string, string][],
     note: 'Preise in Euro, Pfund oder Dollar, je nach Standort. Die Ersparnis bei Sets bezieht sich auf den Einzelpreis. Jedes Stück ist von Hand gemacht, daher weichen Maschen und Farbe leicht ab.',
-    legal: (name: string, seller: string, address: string) => `${name} ist der Handelsname von ${seller}, ${address}, Irland.`,
+    legal: (name: string, seller: string) => `${name} ist der Handelsname von ${seller}, Irland.`,
     other: { lang: 'en', label: 'English' },
   },
 } satisfies Record<Lang, unknown>;
