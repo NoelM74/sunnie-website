@@ -16,7 +16,7 @@ const faq = [
 <BaseLayout
   alternates={[{ lang: 'en', href: '/gifts/' }, { lang: 'de', href: '/de/geschenke/' }]}
   title={pageTitle('Handmade gifts: crochet gift ideas')}
-  description="Handmade gifts, crocheted by hand: Christmas gifts, gifts for frog, dog and cat lovers, coaster sets for a housewarming and gifts under €40. No import charges to the EU, UK or US."
+  description="Handmade gifts, crocheted by hand: Christmas gifts, gifts for frog, dog and cat lovers, coaster sets and gifts under €40. No import charges to the EU, UK or US."
   jsonLd={[breadcrumbJsonLd(crumbs), itemListJsonLd('Handmade gifts', GIFT_GUIDES.map((g) => `/gifts/${g.slug}/`)), faqJsonLd(faq)!]}
 >
   <div class="container narrow prose">
