@@ -89,7 +89,7 @@ const germanOnly = all.filter((p) => hasGerman(p.id));
         {d.isNew && d.inStock && <span class="badge">Neu</span>}
         <h1>{de.name}</h1>
         <p class="product-price">{fromPrefix}<Money eur={shownPrice} lang="de" /></p>
-        <p class="product-proof"><span class="hero-stars" aria-hidden="true">★★★★★</span> Von Käufern mit {decimal(site.proof.etsyRating, 'de')} bewertet · {site.proof.ebayPositive} positiv bei {site.proof.ebayCount} eBay-Bewertungen</p>
+        <p class="product-proof"><span class="hero-stars" aria-hidden="true">★★★★★</span> Von Käufern mit {decimal(site.proof.etsyRating, 'de')} bewertet · <a href="/de/bewertungen/">Bewertungen lesen</a></p>
         <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} maker={d.maker} alts={d.images.map((i) => i.alt)} optionPhotos={d.optionPhotos} lang="de" optionLabels={de.option} />
         {d.maker === 'Hui' && (
           <a class="maker-strip" href="/de/ueber-uns/">

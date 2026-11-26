@@ -13,7 +13,7 @@ describe('homepage', () => {
   });
 
   it('shows the trust bar facts', () => {
-    for (const t of ['Free shipping from <span class="money" data-gbp="£', 'Ships in 3–5 days', '4.9 out of 5', 'from our buyers', '287 eBay ratings', 'Handmade by Hui']) {
+    for (const t of ['Free shipping from <span class="money" data-gbp="£', 'Ships in 3–5 days', '4.9 out of 5', 'from our buyers', '30-day returns', 'Handmade by Hui']) {
       expect(html).toContain(t);
     }
   });

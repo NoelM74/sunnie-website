@@ -11,6 +11,7 @@ const c = site.company;
     <header class="page-head"><h1>Kontakt</h1></header>
     <p>Frage zu einer Bestellung, einer Wunschfarbe oder etwas anderem: Schreib uns eine E-Mail, und ein echter Mensch antwortet, in der Regel innerhalb von 24 Stunden.</p>
     <p><a class="btn btn-primary" href={`mailto:${site.email.hello}`}>E-Mail an {site.email.hello}</a></p>
+    <p>Oder ruf uns an: <a href={`tel:${site.phone.tel}`}>{site.phone.display}</a>.</p>
     <h2>Firmenangaben</h2>
     <p>{c.legalName}, handelnd als {c.tradingAs}. CRO {c.cro}. Eingetragener Sitz: {c.registeredOffice}, Irland. Alle Angaben stehen im <a href="/de/impressum/">Impressum</a>.</p>
   </article>

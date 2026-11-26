@@ -66,7 +66,7 @@ const year = new Date().getFullYear();
           {other && <a href={other.href} hreflang={other.lang} lang={other.lang}>{U.other.label}</a>}
         </nav>
         <p class="small">{U.note}</p>
-        <p class="footer-legal">© {year} {U.legal(site.name, site.company.legalName, site.company.cro, site.company.registeredOffice)} <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a></p>
+        <p class="footer-legal">© {year} {U.legal(site.name, site.company.legalName, site.company.cro, site.company.registeredOffice)} <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a> · <a href={`tel:${site.phone.tel}`}>{site.phone.display}</a></p>
       </div>
     </footer>
     <script is:inline>(function(){var d=document.documentElement;window.sunnieMoney=function(){var k=d.dataset.cur==='GBP'?'gbp':d.dataset.cur==='USD'?'usd':'';document.querySelectorAll('.money').forEach(function(m){if(!m.dataset.eur)m.dataset.eur=m.textContent;m.textContent=k?m.dataset[k]:m.dataset.eur})};window.sunnieMoney()})();</script>

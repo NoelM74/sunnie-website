@@ -22,6 +22,7 @@ const c = site.company;
     <p>{c.legalName} ist nicht umsatzsteuerpflichtig registriert und hat daher keine Umsatzsteuer-Identifikationsnummer.</p>
     <h2>Kontakt</h2>
     <p>E-Mail: <a href={`mailto:${site.email.hello}`}>{site.email.hello}</a><br />
+    Telefon: <a href={`tel:${site.phone.tel}`}>{site.phone.display}</a><br />
     Wir antworten in der Regel innerhalb von 24 Stunden.</p>
   </article>
 </BaseLayout>

@@ -92,7 +92,7 @@ const lander = pack?.lander;
         {d.isNew && d.inStock && <span class="badge">New</span>}
         <h1>{d.name}</h1>
         <p class="product-price">{pack ? <Money eur={pack.price.eur / 100} gbpCents={pack.price.gbp} usdCents={pack.price.usd} /> : <>{fromPrefix}<Money eur={shownPrice} /></>}</p>
-        <p class="product-proof"><span class="hero-stars" aria-hidden="true">★★★★★</span> Rated {site.proof.etsyRating} by buyers · {site.proof.ebayPositive} positive from {site.proof.ebayCount} eBay ratings</p>
+        <p class="product-proof"><span class="hero-stars" aria-hidden="true">★★★★★</span> Rated {site.proof.etsyRating} by buyers · <a href="/reviews/">Read the reviews</a></p>
         <BuyBox slug={product.id} option={d.options[0]} inStock={d.inStock} siteCheckout={d.siteCheckout} optionPrices={d.optionPrices} maker={d.maker} alts={d.images.map((i) => i.alt)} optionPhotos={d.optionPhotos} pack={pack ? { slug: pack.slug, optionFor: pack.optionFor, landerSlug: pack.lander.slug } : undefined} />
         {lander && canBuy && <p class="small"><a href={`/go/${lander.slug}/`}>Buying two or three? Mix the colours in a bundle and pay less for each</a></p>}
         {d.maker === 'Hui' && (

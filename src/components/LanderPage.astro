@@ -342,7 +342,7 @@ const config = {
         <>
           <div class="l-narrow l-center">
             <h2>{T.reviewsH(rating)}</h2>
-            <p class="lead">{T.reviewsLede(site.proof.ebayPositive, site.proof.ebayCount)}</p>
+            <p class="lead">{T.reviewsLede} <a href={lang === 'de' ? '/de/bewertungen/' : '/reviews/'}>{T.moreReviews}</a></p>
           </div>
           <div class="quotes l-quotes">
             {shown.map((r) => <ReviewQuote review={r} lang={lang} />)}

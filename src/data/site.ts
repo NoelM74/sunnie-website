@@ -14,6 +14,8 @@ export const site = {
   pinterestUrl: 'https://www.pinterest.com/Sunnie_Designs/',
   facebookUrl: 'https://www.facebook.com/sunniedesigns',
   shipsIn: '3–5 days',
+  /** Owner, 2026-11-26: orders ship from Ireland, Spain or China. Shown on the shipping pages. */
+  shipsFrom: { en: 'Ireland, Spain or China', de: 'Irland, Spanien oder China' },
   /** Carriers and days owner-supplied 2026-10-09 (working days after dispatch). The countries are
    * the owner's list of 2026-11-13, the only ones the checkout and Google Shopping offer.
    * Norway keeps the old "rest of the world" days; owner: don't name YunExpress, we use various companies. */
@@ -25,15 +27,16 @@ export const site = {
     { region: 'Norway', countries: ['NO'], carrier: 'Tracked post', days: '8–30' },
   ],
   replyTime: 'within 24 hours',
+  /** Owner, 2026-11-26: shown on the contact pages, the Impressum and in Google's business data. */
+  phone: { display: '+353 87 118 7806', tel: '+353871187806' },
   company: {
     legalName: 'Springfield Tectop Limited',
     tradingAs: 'Sunnie Designs',
     cro: '571256',
     registeredOffice: 'Clareview Car Sales, Ennis Road, Co. Limerick, V94 EA3A',
   },
+  // Owner, 2026-11-26: no eBay rating claims (Google can't check them); the rating links to /reviews/.
   proof: {
     etsyRating: '4.9',
-    ebayCount: '287',
-    ebayPositive: '100%',
   },
 } as const;

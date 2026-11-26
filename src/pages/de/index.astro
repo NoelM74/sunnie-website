@@ -78,7 +78,7 @@ const alternates = [{ lang: 'en', href: '/' }, { lang: 'de', href: '/de/' }];
         </div>
         <p class="hero-trust">
           <span class="hero-stars" aria-hidden="true">★★★★★</span>
-          Von unseren Käufern mit {rating} bewertet · {site.proof.ebayPositive} positiv bei {site.proof.ebayCount} eBay-Bewertungen
+          Von unseren Käufern mit {rating} bewertet · <a href="/de/bewertungen/">Bewertungen lesen</a>
         </p>
       </div>
       <a class="hero-media" href={hero.href}>
@@ -93,8 +93,8 @@ const alternates = [{ lang: 'en', href: '/' }, { lang: 'de', href: '/de/' }];
   <section class="trust" aria-label="Warum bei uns kaufen">
     <ul class="container trust-list" role="list">
       <li><strong>Kostenloser Versand ab <FreeShippingFrom lang="de" /></strong><span>Versand in {shipsIn}</span></li>
-      <li><strong><span class="trust-star" aria-hidden="true">★ </span>{rating} von 5</strong><span>von unseren Käufern</span></li>
-      <li><strong>{site.proof.ebayPositive} positiv</strong><span>bei {site.proof.ebayCount} eBay-Bewertungen</span></li>
+      <li><strong><span class="trust-star" aria-hidden="true">★ </span>{rating} von 5</strong><span><a href="/de/bewertungen/">von unseren Käufern</a></span></li>
+      <li><strong>30 Tage Rückgabe</strong><span>Für jedes Stück</span></li>
       <li><strong>Handgemacht von Hui</strong><span>Auf Bestellung gemacht</span></li>
     </ul>
   </section>

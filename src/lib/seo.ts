@@ -194,7 +194,7 @@ export function organizationJsonLd() {
     legalName: site.company.legalName,
     email: site.email.hello,
     address: { '@type': 'PostalAddress', streetAddress: site.company.registeredOffice, addressCountry: 'IE' },
-    contactPoint: { '@type': 'ContactPoint', contactType: 'customer service', email: site.email.hello, availableLanguage: ['English', 'German'] },
+    contactPoint: { '@type': 'ContactPoint', contactType: 'customer service', email: site.email.hello, telephone: site.phone.tel, availableLanguage: ['English', 'German'] },
     sameAs: [site.pinterestUrl, site.facebookUrl],
     hasMerchantReturnPolicy: returnPolicyLd(),
   };
