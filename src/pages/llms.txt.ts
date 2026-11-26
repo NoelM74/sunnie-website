@@ -5,6 +5,8 @@ import { site } from '../data/site';
 import { shipToList } from '../lib/checkout-form';
 import { CATEGORY_LABELS, formatPrice, inCategory, type Category } from '../lib/products';
 import { absoluteUrl } from '../lib/seo';
+import { GIFT_GUIDES } from '../data/gift-guides';
+import { GIFT_GUIDES_DE } from '../i18n/de/gift-guides';
 
 const CATEGORY_ORDER: Category[] = ['bags', 'coasters', 'hats'];
 
@@ -25,6 +27,10 @@ export const GET: APIRoute = async () => {
     ['/shop/hats/', 'Crochet hats, sized by age.'],
   ]
     .map(([path, desc]) => `- [${path}](${absoluteUrl(path)}): ${desc}`)
+    .join('\n');
+
+  const gifts = GIFT_GUIDES.map((g) => `- [${g.h1}](${absoluteUrl(`/gifts/${g.slug}/`)}): ${g.description}`)
+    .concat(GIFT_GUIDES.filter((g) => GIFT_GUIDES_DE[g.slug]).map((g) => `- [${GIFT_GUIDES_DE[g.slug].h1}](${absoluteUrl(`/de/geschenke/${GIFT_GUIDES_DE[g.slug].slug}/`)}) (Deutsch): ${GIFT_GUIDES_DE[g.slug].description}`))
     .join('\n');
 
   const pages = [
@@ -59,6 +65,10 @@ ${sections}
 ## Shop
 
 ${shop}
+
+## Gift guides
+
+${gifts}
 
 ## Pages
 

@@ -17,7 +17,7 @@ featured: 2
 faq: [{"q":"What fits inside?","a":"Books, a tablet, a phone and an umbrella, in one open compartment."},{"q":"Can I wear it as a backpack?","a":"Yes. Wear both straps as a backpack, or pull them together for a single-shoulder carry."},{"q":"How do I wash it?","a":"Hand wash in cool or warm water below 40°C, reshape while damp and lay flat to dry, out of prolonged direct sun."}]
 ---
 
-A crochet backpack shaped like a little garden pot, topped with a ring of yellow sunflowers and roomy enough for actual daily use.
+A crochet sunflower backpack shaped like a little garden pot, topped with a ring of yellow sunflowers and roomy enough for actual daily use.
 
 Hui works the bucket body in soft green yarn, then finishes the top with a ring of crocheted sunflowers, brown centres and leaf vines included. Close the single compartment with a drawstring that ends in a small crocheted leaf charm.
 
